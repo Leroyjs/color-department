@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("HelveticaNeueCyr-Bold.woff2") format("woff2"),
+    url("HelveticaNeueCyr-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("HelveticaNeueCyr-Medium.woff2") format("woff2"),
+    url("HelveticaNeueCyr-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Steelfish";
+  src: url("SteelfishRg-Bold.woff2") format("woff2"),
+    url("SteelfishRg-Bold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
