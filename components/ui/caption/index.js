@@ -1,0 +1,1 @@
+export { CAPTION } from "./caption";
