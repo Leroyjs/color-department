@@ -1,4 +1,9 @@
-import { fontSizes, offsets, subsequenceOfBreakpoints } from "./constants";
+import {
+  fontSizes,
+  offsets,
+  sizes,
+  subsequenceOfBreakpoints,
+} from "./constants";
 
 import { getCurrentColor } from "./get-value-utils";
 import { getResponsiveStyle } from "./media-query-utils";
@@ -43,6 +48,9 @@ const getCurrentStylesByDirection = (styleName) => (direction, type) => {
 export const getCurrentColorStyles = (color, theme) =>
   `color: ${getCurrentColor(color, theme)};`;
 
+export const getCurrentBackgroundColorStyles = (color, theme) =>
+  `background-color: ${getCurrentColor(color, theme)};`;
+
 export const getCurrentFontSizeStyle = (type) =>
   getCurrentStyleByDictionary(fontSizes)("fontSize")(type);
 
@@ -51,3 +59,15 @@ export const getCurrentMarginStyle = (direction, type) =>
 
 export const getCurrentPaddingStyle = (direction, type) =>
   getCurrentStylesByDirection("padding")(direction, type);
+
+export const getCurrentGridTemplateColumsStyle = () =>
+  getResponsiveStyle("gridTemplateColumns")([
+    "repeat(8, 12.5vw)",
+    "repeat(8, 12.5vw)",
+    "repeat(8, 12.5vw)",
+    "repeat(8, 12.5vw)",
+    "repeat(8, 12.5vw)",
+    "repeat(6, 16.666667vw)",
+    "repeat(6, 16.666667vw)",
+    "repeat(2, 50vw)",
+  ]);
