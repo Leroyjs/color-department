@@ -19,6 +19,7 @@ export {
   getCurrentMarginStyle,
   getCurrentFontSizeStyle,
   getCurrentColorStyles,
+  getCurrentGridTemplateColumsStyle,
   getCurrentBackgroundColorStyles,
 } from "./get-styles-utils";
 
