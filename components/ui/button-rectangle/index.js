@@ -1,1 +1,1 @@
-export { button } from "./button-rectangle";
+export { ButtonRectangle } from "./button-rectangle";

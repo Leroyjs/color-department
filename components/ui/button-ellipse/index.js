@@ -1,1 +1,1 @@
-export { BUTTONELLIPSE } from "./button-ellipse";
+export { ButtonEllipse } from "./button-ellipse";

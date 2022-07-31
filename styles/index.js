@@ -19,6 +19,7 @@ export {
   getCurrentMarginStyle,
   getCurrentFontSizeStyle,
   getCurrentColorStyles,
+  getCurrentBackgroundColorStyles,
 } from "./get-styles-utils";
 
 // Функции, которые возвращают значение стиля

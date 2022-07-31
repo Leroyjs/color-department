@@ -2,23 +2,21 @@ import {
   propTypesColors,
   propTypesMargin,
   propTypesPadding,
-  propTypesTextTag,
 } from "../../types";
 
 import { PropTypes } from "prop-types";
 import React from "react";
-import { button } from "./button-ellipse.style";
+import { Button } from "./button-ellipse.style";
+import { H3 } from "components";
 
-export const BUTTONELLIPSE = ({ tag = "button", children, wrapperProps, ...props }) => {
-  const StyledInner = () => <Text {...props}>{children}</Text>;
+export const ButtonEllipse = ({ children, ...props }) => (
+  <Button {...props}>
+    <H3 tag="span">{children}</H3>
+  </Button>
+);
 
-  return React.createElement(tag, wrapperProps, StyledInner());
-};
-
-BUTTONELLIPSE.propTypes = {
+ButtonEllipse.propTypes = {
   children: PropTypes.node.isRequired,
-  wrapperProps: PropTypes.object,
-  ...propTypesTextTag,
   ...propTypesColors,
   ...propTypesMargin,
   ...propTypesPadding,

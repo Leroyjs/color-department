@@ -2,24 +2,23 @@ import {
   propTypesColors,
   propTypesMargin,
   propTypesPadding,
-  propTypesTextTag,
 } from "../../types";
 
 import { PropTypes } from "prop-types";
 import React from "react";
-import { button } from "./button-rectangle.style";
+import { Button } from "./button-rectangle.style";
+import { H3 } from "components";
 
-export const BUTTONRECTANGLE = ({ tag = "button", children, wrapperProps, ...props }) => {
-  const StyledInner = () => <Text {...props}>{children}</Text>;
+export const ButtonRectangle = ({ children, ...props }) => (
+  <Button {...props}>
+    <H3 tag="span">{children}</H3>
+  </Button>
+);
 
-  return React.createElement(tag, wrapperProps, StyledInner());
-};
-
-BUTTONRECTANGLE.propTypes = {
+ButtonRectangle.propTypes = {
   children: PropTypes.node.isRequired,
-  wrapperProps: PropTypes.object,
-  ...propTypesTextTag,
-  ...propTypesColors,
+  isDisabled: PropTypes.bool,
+
   ...propTypesMargin,
   ...propTypesPadding,
 };
