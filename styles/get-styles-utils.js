@@ -48,6 +48,9 @@ const getCurrentStylesByDirection = (styleName) => (direction, type) => {
 export const getCurrentColorStyles = (color, theme) =>
   `color: ${getCurrentColor(color, theme)};`;
 
+export const getCurrentBackgroundColorStyles = (color, theme) =>
+  `background-color: ${getCurrentColor(color, theme)};`;
+
 export const getCurrentFontSizeStyle = (type) =>
   getCurrentStyleByDictionary(fontSizes)("fontSize")(type);
 
