@@ -1,8 +1,8 @@
 import {
-    colors,
-    fontFamilies,
-    getCurrentFontSizeStyle,
-    hexToRGBA,
+  colors,
+  fontFamilies,
+  getCurrentFontSizeStyle,
+  hexToRGBA,
 } from "styles";
 
 import styled from "@emotion/styled";
@@ -14,9 +14,7 @@ export const HumburgerWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  &: hover {
-    transform: rotate(90deg);
-  }
+  &:hover {transform: rotate(90deg);}
   transition: transform 0.5s;
 `
 

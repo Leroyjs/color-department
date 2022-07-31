@@ -1,52 +1,62 @@
-import { Title, ButtonWrapper, HeaderWrapper } from "./header.style";
-import { useEffect, useState, useRef } from "react";
-import { Hamburger, Blob } from "../../common";
-import { getCurrentColor } from "styles";
-import { useTheme } from "@emotion/react";
+import { Caption, H3 } from 'components';
+import { useEffect, useRef, useState } from "react";
+import theme from '../../../__data__/theme';
+import { Blob, Hamburger } from "../../common";
+import { HeaderItem, HeaderWrapper, Title } from "./header.style";
 
-export const Header = ({ transparentToComponent, onChange, ...props }) => {
+export const Header = ({ transparentToComponent, onToggleMenu, onChange, ...props }) => {
 
-  const [transparentBg, setTransparentBg] = useState(0);
   const headerRef = useRef(null);
+  //Прозрачность фона
+  const [transparentBg, setTransparentBg] = useState(0);
+  //Открытие меню
+  const [toggleMenu, setToggleMenu] = useState(false);
+  //Обработка события нажатия на бургер
+  const onHumburgerClick = () => {
+    let newToggleState = !toggleMenu;
+    setToggleMenu(newToggleState);
+    onToggleMenu(newToggleState);
+  }
 
-  const theme = useTheme();
-
+  //Обработка скрола, для изменения прозрачности
   useEffect(() => {
     if (transparentToComponent) {
-      console.log(
-        //getCurrentColor(undefined,)
-
-      )
       const observedComponent = transparentToComponent.current;
       const height = observedComponent.offsetHeight - headerRef.current.offsetHeight;
 
       let tmpPosition = undefined;
       let tmpTransparent = undefined;
 
-      window.addEventListener('scroll', () => {
+      const scrollListener = () => {
         tmpPosition = observedComponent.getBoundingClientRect();
         tmpTransparent = Number(Math.abs(tmpPosition.y / height).toFixed(2));
-        console.log(tmpTransparent, tmpPosition.y)
         if (tmpTransparent < 1 || transparentBg !== 1) { setTransparentBg(tmpTransparent > 1 ? 1 : tmpTransparent) }
-      })
+      }
+
+      window.addEventListener('scroll', scrollListener);
+
+      return () => { window.removeEventListener('scroll', scrollListener) }
     }
-  })
+  }, [])
 
   return (
     <HeaderWrapper ref={headerRef} transparency={transparentBg}>
-      <ButtonWrapper >
+      <HeaderItem onClick={onHumburgerClick}>
         <Hamburger />
-      </ButtonWrapper>
-      <ButtonWrapper onClick={() => { console.log('трахать') }}>
-        <Blob fill={getCurrentColor("primary", theme)} />
-      </ButtonWrapper>
-      <Title>
-        <span>color department</span>
-        <span>los angeles</span>
-      </Title>
-      <ButtonWrapper lg={true} hover={true}>
-        <span>Lets talk</span>
-      </ButtonWrapper>
+      </HeaderItem>
+      <HeaderItem onClick={() => theme.setNextThemeName()}>
+        <Blob />
+      </HeaderItem>
+      <HeaderItem l={true}>
+        <Title>
+          <H3 color={'white'}>color department</H3>
+          <H3 color={'white'}>los angeles</H3>
+        </Title>
+      </HeaderItem>
+      <HeaderItem m={true} hover={true} {...props}>
+        <Caption color={'white'}>Lets talk</Caption>
+      </HeaderItem>
+
     </HeaderWrapper>
   );
 } 

@@ -1,7 +1,7 @@
 import { HumburgerWrapper, HumburgerLine } from './humburger.style'
 
 export const Hamburger = ({ ...props }) => (
-    <HumburgerWrapper onClick={()=>{console.log('Дрочит меня')}}>
+    <HumburgerWrapper>
         <HumburgerLine />
         <HumburgerLine />
         <HumburgerLine />

@@ -45,3 +45,5 @@ export {
   // Пример использования: hexToRGBA('#FFFFFF', 0.2) => rgba(255, 255, 255, 0.2)
   hexToRGBA,
 } from "./utils";
+
+export { mapStyle } from './map';

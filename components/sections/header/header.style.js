@@ -3,14 +3,16 @@ import {
   fontFamilies,
   getCurrentFontSizeStyle,
   hexToRGBA,
+  getCurrentColor,
+  getCurrentBackgroundColorStyles
 } from "styles";
 
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
-
+//Задает прозрачность хедеру
 export const HeaderDynamicStyle = props => css`
-  &: before {
+  &:before {
     position: absolute;
     width: 100%;
     top: 0;
@@ -36,14 +38,7 @@ export const HeaderWrapper = styled.div`
 `
 
 export const Title = styled.div`
-  ${getCurrentFontSizeStyle("h3")};
   text-transform: uppercase;
-  
-  max-width: 800px;
-  flex: 1 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 
   span {
     display: block;
@@ -52,29 +47,41 @@ export const Title = styled.div`
   }
 `
 
-const ButtonDynamicStyle = props =>
-  css`
-    max-width: ${props.lg ? 400 : 200}px;
-    
-    ${(props.hover) ? `&: hover { 
-      background-color: ${colors.yellow};
-      color: ${colors.black};
-    }` : ""}
+//TODO на гриды
+const HeaderItemWidth = props => {
+  let size = 200;
+  if (props.m) { size = 400 }
+  else if (props.l) { size = 800 }
+  return `max-width: ${size}px`;
+}
 
-    ${props.active ? `
-      background-color: ${colors.yellow};
-      color: ${colors.black};      
-      ` : ""}
-    
-    transition : background-color 0.3s, color 0.3s;
-  
-`
 
-export const ButtonWrapper = styled.div`
+export const HeaderItem = styled.div`
   flex: 1 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  ${ButtonDynamicStyle};
+  cursor: pointer;
+
+  &:hover {
+    & span {
+      color: ${colors.black};
+      transition : color 0.5s;    
+    } 
+
+    .blob-svg {
+      fill: ${colors.black};
+      transition: fill 0.5s;
+    }
+
+    .humburger-btn {
+
+    }
+
+    ${({ theme }) => getCurrentBackgroundColorStyles('primary', theme)};
+  }
+
+  transition : background-color 0.5s, color 0.5s;
+
+  ${HeaderItemWidth}
 `

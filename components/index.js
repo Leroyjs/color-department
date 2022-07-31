@@ -6,8 +6,11 @@ import { Caption } from "./ui/caption";
 import { Input } from "./ui/input";
 
 import { Header } from "./sections/header";
+import { Menu } from "./sections/menu";
+
 import { ThemeProvider } from "./common/theme-provider";
 import { ButtonEllipse } from "./ui/button-ellipse";
 import { ButtonRectangle } from "./ui/button-rectangle";
+import { GoogleMap } from "./common/google-map";
 
-export { Header, ThemeProvider, Input, H1, H2, H3, Text, Caption, ButtonEllipse, ButtonRectangle };
+export { GoogleMap, Menu, Header, ThemeProvider, Input, H1, H2, H3, Text, Caption, ButtonEllipse, ButtonRectangle };
