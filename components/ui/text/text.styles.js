@@ -8,15 +8,15 @@ import {
 
 import styled from "@emotion/styled";
 
-export const Text = styled.span`
-  font-family: ${fontFamilies.mainFont};
+export const TextInner = styled.span`
+  font-family: ${fontFamilies.subFont};
   font-style: normal;
-  font-weight: 800;
+  font-weight: 500;
   display: inline-block;
-  line-height: 100%;
+  line-height: 140%;
 
   ${applyMargins};
   ${applyPaddings}
   ${applyColor};
-  ${getCurrentFontSizeStyle("h1")};
+  ${getCurrentFontSizeStyle("text")};
 `;

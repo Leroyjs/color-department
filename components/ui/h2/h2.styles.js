@@ -18,5 +18,5 @@ export const Text = styled.span`
   ${applyMargins};
   ${applyPaddings}
   ${applyColor};
-  ${getCurrentFontSizeStyle("h1")};
+  ${getCurrentFontSizeStyle("h2")};
 `;
