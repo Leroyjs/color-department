@@ -16,6 +16,9 @@ const Home = () => {
 
       <div style={{ 'height': '800px', 'border': 'solid red 1px', 'backgroundColor': 'white' }}></div>
 
+      <main>dfvdfv
+
+      </main>
     </>
   );
 };
