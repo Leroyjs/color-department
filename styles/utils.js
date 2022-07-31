@@ -13,3 +13,13 @@ export const getSizeInVw = (resolution) => (size) => `${size / resolution}vw`;
 export const getRubberSizeAtDesktopXLG = getSizeInVw(
   breakpointsWidth[namesOfBreakpoints.desktopXLG]
 );
+
+export const getArrayOfIndex = (countOfItems) => {
+  let array = [];
+
+  for (let i = 0; i < countOfItems; i++) {
+    array.push(i);
+  }
+
+  return array;
+};

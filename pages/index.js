@@ -1,10 +1,12 @@
 import "styles/global.style";
 
+import { Grid } from "components";
+
 const Home = () => {
   return (
     <>
-      <main>dfvdfv
-        
+      <main>
+        <Grid />
       </main>
     </>
   );
