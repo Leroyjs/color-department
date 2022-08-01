@@ -19,6 +19,7 @@ export {
   getCurrentMarginStyle,
   getCurrentFontSizeStyle,
   getCurrentColorStyles,
+  getCurrentGridTemplateColumsStyle,
   getCurrentBackgroundColorStyles,
 } from "./get-styles-utils";
 
@@ -44,6 +45,7 @@ export {
   // Функция для преобразования цвета из формата HEX в RGBA.
   // Пример использования: hexToRGBA('#FFFFFF', 0.2) => rgba(255, 255, 255, 0.2)
   hexToRGBA,
+  getArrayOfIndex,
 } from "./utils";
 
 export { mapStyle } from './map';

@@ -72,8 +72,11 @@ export const typesOfoffset = Object.keys(offsets[desktopLG]);
 //TODO
 export const sizes = {
   [desktopLG]: {
-    cellSide: 200,
-    halfCellSide: 100,
+    x4: "50vw",
+    x3: "37.5vw",
+    x2: "25vw",
+    x1: "12.5vw",
+    half: "6.25vw",
   },
 };
 
