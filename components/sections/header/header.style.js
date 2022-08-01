@@ -27,6 +27,7 @@ export const HeaderDynamicStyle = props => css`
 
 export const HeaderWrapper = styled.div`
   ${HeaderDynamicStyle};
+  z-index: 100;
   position: fixed;  
   left: 0;
   right: 0;

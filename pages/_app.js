@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Script from "next/script";
-import { ThemeProvider } from "components";
+import { ThemeProvider, Grid } from "components";
 
 function App({ Component, pageProps }) {
   //google карта
@@ -16,6 +16,7 @@ function App({ Component, pageProps }) {
       <ThemeProvider>
         <Component {...pageProps} />
       </ThemeProvider>
+      <Grid/>
     </>
   );
 }

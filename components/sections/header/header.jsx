@@ -1,10 +1,10 @@
-import { Caption, H3 } from 'components';
+import { Caption, H3, Menu } from 'components';
 import { useEffect, useRef, useState } from "react";
 import theme from '../../../__data__/theme';
 import { Blob, Hamburger } from "../../common";
 import { HeaderItem, HeaderWrapper, Title } from "./header.style";
 
-export const Header = ({ transparentToComponent, onToggleMenu, onChange, ...props }) => {
+export const Header = ({ transparentToComponent, onChange, ...props }) => {
 
   const headerRef = useRef(null);
   //Прозрачность фона
@@ -15,7 +15,6 @@ export const Header = ({ transparentToComponent, onToggleMenu, onChange, ...prop
   const onHumburgerClick = () => {
     let newToggleState = !toggleMenu;
     setToggleMenu(newToggleState);
-    onToggleMenu(newToggleState);
   }
 
   //Обработка скрола, для изменения прозрачности
@@ -40,23 +39,27 @@ export const Header = ({ transparentToComponent, onToggleMenu, onChange, ...prop
   }, [])
 
   return (
-    <HeaderWrapper ref={headerRef} transparency={transparentBg}>
-      <HeaderItem onClick={onHumburgerClick}>
-        <Hamburger />
-      </HeaderItem>
-      <HeaderItem onClick={() => theme.setNextThemeName()}>
-        <Blob />
-      </HeaderItem>
-      <HeaderItem l={true}>
-        <Title>
-          <H3 color={'white'}>color department</H3>
-          <H3 color={'white'}>los angeles</H3>
-        </Title>
-      </HeaderItem>
-      <HeaderItem m={true} hover={true} {...props}>
-        <Caption color={'white'}>Lets talk</Caption>
-      </HeaderItem>
+    <>
+      <HeaderWrapper ref={headerRef} transparency={transparentBg} isMenuOpen={toggleMenu}>
+        <HeaderItem onClick={onHumburgerClick}>
+          <Hamburger />
+        </HeaderItem>
+        <HeaderItem onClick={() => theme.setNextThemeName()}>
+          <Blob />
+        </HeaderItem>
+        <HeaderItem l={true}>
+          <Title>
+            <H3 color={'white'}>color department</H3>
+            <H3 color={'white'}>los angeles</H3>
+          </Title>
+        </HeaderItem>
+        <HeaderItem m={true} hover={true} {...props}>
+          <Caption color={'white'}>Lets talk</Caption>
+        </HeaderItem>
 
-    </HeaderWrapper>
+      </HeaderWrapper>
+      <Menu isOpen={toggleMenu}></Menu>
+    </>
+
   );
 } 

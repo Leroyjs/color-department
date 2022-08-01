@@ -11,7 +11,7 @@ import { Menu } from "./sections/menu";
 import { GoogleMap } from "./common/google-map";
 import { Text } from "./ui/text";
 import { ThemeProvider } from "./common/theme-provider";
-
+import { FoxPaw } from "./common/fox-paw";
 export {
   ThemeProvider,
   Input,
@@ -25,5 +25,6 @@ export {
   Grid,
   GoogleMap,
   Menu,
-  Header
+  Header,
+  FoxPaw
 };

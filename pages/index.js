@@ -32,7 +32,7 @@ const Home = () => {
     return (
         <>
             <Header isListenScroll={isOpenMenu} onToggleMenu={changeMenuState} transparentToComponent={videoContant}></Header>
-            <div ref={videoContant} style={{ 'height': '800px', 'border': 'solid white 1px', 'backgroundColor': 'red' }}></div>
+            <div ref={videoContant} style={{ 'height': '800px', 'filter': 'brightness(0.5)', 'background-image': 'url(./Yp2.gif)', 'background-size': 'cover' }}></div>
             <main style={{ height: '100vh', overflow: "visible" }}>
                 <DropDown title="Service" onChange={(option) => setValue(option)} options={options} value={value} />
 
