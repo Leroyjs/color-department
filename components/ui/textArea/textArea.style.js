@@ -12,7 +12,7 @@ export const InputWrapper = styled.div`
 `;
 
 const lineHeight = 90
-export const TextAreaWrapper = styled('textarea')(({isError}) => ({
+export const TextAreaInput = styled('textarea')(({isError}) => ({
 
     width: '100%',
     minHeight: lineHeight * 4 + 'px',
@@ -25,10 +25,41 @@ export const TextAreaWrapper = styled('textarea')(({isError}) => ({
     fontFamily: fontFamilies.mainFont,
 
     lineHeight: lineHeight + 'px',
-    backgroundImage: `linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${isError ? colors.red : colors.white} 0px)`,
+    backgroundImage: `linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${isError ? colors.red : hexToRGBA(colors.white, 0.2)} 0px)`,
     backgroundSize: `100% ${lineHeight}px`,
     backgroundPositionY: `${-0.2 * lineHeight}px`,
 }));
+
+export const TextAreaWrapper = styled.div`
+  width: 100%;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    font-size: ${fontSizes.desktopLG.h3};
+    font-family: ${fontFamilies.mainFont};
+    line-height: ${lineHeight + 'px'};
+    background-image: ${`linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${colors.white} 0px)`};
+    background-size: ${`100% ${lineHeight}px`};
+    background-position-y: ${`${-0.2 * lineHeight}px`};
+    transition: transform 0.5s;
+    transform: scaleX(${({isActive}) => (isActive ? 1 : 0)});
+    transform-origin: left;
+  }
+
+  &:hover:after {
+    transform: scaleX(1);
+  }
+`
 
 export const Error = styled.div`
   width: 100%;
