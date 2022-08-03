@@ -10,6 +10,7 @@ export const MenuItemWrapper = styled.li`
     padding: 12px 0;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
     &:hover {
         ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)};
         span {

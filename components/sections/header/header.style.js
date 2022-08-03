@@ -1,14 +1,9 @@
 import {
-  colors,
-  fontFamilies,
-  getCurrentFontSizeStyle,
-  hexToRGBA,
-  getCurrentColor,
-  getCurrentBackgroundColorStyles
+  colors, getCurrentBackgroundColorStyles, hexToRGBA
 } from "styles";
 
-import styled from "@emotion/styled";
 import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 
 //Задает прозрачность хедеру
 export const HeaderDynamicStyle = props => css`
@@ -56,7 +51,6 @@ const HeaderItemWidth = props => {
   return `max-width: ${size}px`;
 }
 
-
 export const HeaderItem = styled.div`
   flex: 1 0 auto;
   display: flex;
@@ -75,14 +69,9 @@ export const HeaderItem = styled.div`
       transition: fill 0.5s;
     }
 
-    .humburger-btn {
-
-    }
-
     ${({ theme }) => getCurrentBackgroundColorStyles('primary', theme)};
   }
 
-  transition : background-color 0.5s, color 0.5s;
-
+  transition : background-color 0.5s;
   ${HeaderItemWidth}
 `

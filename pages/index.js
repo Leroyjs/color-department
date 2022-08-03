@@ -1,9 +1,9 @@
 
-import { useState, useRef } from "react";
+import { Header } from "components";
+import { useRef, useState } from "react";
+import "styles/global.style";
 import { DropDown } from "../components/ui/dropDown";
 import { TextArea } from "../components/ui/textArea";
-import "styles/global.style";
-import { Header, Menu, GoogleMap } from "components";
 
 const options = [
     {
@@ -25,13 +25,10 @@ const Home = () => {
     const videoContant = useRef(null);
     const [isOpenMenu, setOpenMenu] = useState(false);
 
-    const changeMenuState = (newMenuState) => {
-        setOpenMenu(newMenuState)
-    }
     const [value, setValue] = useState(null);
     return (
         <>
-            <Header isListenScroll={isOpenMenu} onToggleMenu={changeMenuState} transparentToComponent={videoContant}></Header>
+            <Header isListenScroll={isOpenMenu} transparentToComponent={videoContant}></Header>
             <div ref={videoContant} style={{ 'height': '800px', 'filter': 'brightness(0.5)', 'background-image': 'url(./Yp2.gif)', 'background-size': 'cover' }}></div>
             <main style={{ height: '100vh', overflow: "visible" }}>
                 <DropDown title="Service" onChange={(option) => setValue(option)} options={options} value={value} />

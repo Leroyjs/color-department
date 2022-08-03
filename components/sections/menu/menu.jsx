@@ -1,7 +1,8 @@
-import { MenuWrapper, MenuList, MenuMap, MenuBody, MenuFooter, MenuFooterItem } from "./menu.style";
-import { MenuItem } from './menu-item/menu-item';
 import { Caption } from "components";
-import { FoxPaw } from "components";
+import { MenuItem } from './menu-item/menu-item';
+import { CompanyInfo, MenuBody, MenuFooter, MenuFooterItem, MenuList, MenuMap, MenuWrapper } from "./menu.style";
+import { Freezer } from "utils";
+
 
 const footerItems = [
     { title: 'vimeo', link: 'ref)' },
@@ -17,7 +18,7 @@ const menuItems = [
     { title: "let's talk", link: '++' }
 ]
 
-export const Menu = (props) => {
+export const Menu = ({ isOpen, props }) => {
 
     const navigateByLink = (link) => (_) => {
         console.log(link)
@@ -28,17 +29,24 @@ export const Menu = (props) => {
             <MenuBody>
                 <MenuList>
                     {
-                        menuItems.map((item) => <MenuItem title={item.title} onClick={navigateByLink(item.link)}></MenuItem>)
+                        menuItems.map((item) => <MenuItem
+                            key={item.title}
+                            title={item.title}
+                            onClick={navigateByLink(item.link)}>
+                        </MenuItem>)
                     }
                 </MenuList>
                 <MenuMap>
-                    КартОчка
                 </MenuMap>
+                <CompanyInfo>
+                    <Caption>color@department.com</Caption>
+                    <Caption>2 514 889-18-53</Caption>
+                </CompanyInfo>
             </MenuBody>
             <MenuFooter>
                 {
                     footerItems.map((item) =>
-                        <MenuFooterItem onClick={navigateByLink(item.link)}>
+                        <MenuFooterItem key={item.title} onClick={navigateByLink(item.link)}>
                             <Caption color={'white'} >{item.title}</Caption>
                         </MenuFooterItem>)
                 }

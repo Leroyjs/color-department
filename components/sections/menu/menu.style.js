@@ -23,6 +23,7 @@ export const MenuBody = styled.nav`
 `
 export const MenuMap = styled.div`
 width: 50%;
+background-image: url('./tmp-map.jpg');
 `
 export const MenuList = styled.ul`
     width: 50%;
@@ -30,12 +31,16 @@ export const MenuList = styled.ul`
     flex-direction: column;
     justify-content: center;
 `
-export const MenuListItem = styled.li`
-    text-transform: uppercase;
-    text-align: center;
-
+export const CompanyInfo = styled.div`
+    position: absolute;
+    left:0;
+    bottom:0;
+    padding:0 0 40px 40px;
+    span {
+        display:block;
+        color: ${colors.white};
+    }
 `
-
 export const MenuFooter = styled.div`
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -51,11 +56,13 @@ export const MenuFooterItem = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    background-color: ${colors.black};
     &:hover{
         ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)};    
-        span {
+        & span {
             color: ${colors.black};
-        }
+            transition : color 0.5s;    
+        } 
     }
+    transition : background-color 0.5s;
 `

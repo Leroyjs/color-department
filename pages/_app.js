@@ -3,8 +3,6 @@ import Script from "next/script";
 import { ThemeProvider, Grid } from "components";
 
 function App({ Component, pageProps }) {
-  //google карта
-  //        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyfYnJ4UClpzA9ywXK01nW0FzebwUwDNI&v=weekly"></script>
 
   return (
     <>

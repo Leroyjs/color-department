@@ -1,10 +1,4 @@
-import { css } from "@emotion/css";
-
-const { default: styled } = require("@emotion/styled");
-
-export const FoxPawDynamic = ({ isHover, isCliked }) => css`
-    transform: ${true ? " translateX(0px)" : ""};
-`
+import styled from "@emotion/styled";
 
 export const FoxPawWrapper = styled.div`
     position:absolute;

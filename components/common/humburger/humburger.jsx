@@ -1,7 +1,7 @@
 import { HumburgerWrapper, HumburgerLine } from './humburger.style'
 
 export const Hamburger = ({ ...props }) => (
-    <HumburgerWrapper>
+    <HumburgerWrapper {...props}>
         <HumburgerLine />
         <HumburgerLine />
         <HumburgerLine />

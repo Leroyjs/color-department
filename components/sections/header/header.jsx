@@ -19,6 +19,7 @@ export const Header = ({ transparentToComponent, onChange, ...props }) => {
 
   //Обработка скрола, для изменения прозрачности
   useEffect(() => {
+    Freezer()
     if (transparentToComponent) {
       const observedComponent = transparentToComponent.current;
       const height = observedComponent.offsetHeight - headerRef.current.offsetHeight;
@@ -42,7 +43,7 @@ export const Header = ({ transparentToComponent, onChange, ...props }) => {
     <>
       <HeaderWrapper ref={headerRef} transparency={transparentBg} isMenuOpen={toggleMenu}>
         <HeaderItem onClick={onHumburgerClick}>
-          <Hamburger />
+          <Hamburger isActive={toggleMenu} />
         </HeaderItem>
         <HeaderItem onClick={() => theme.setNextThemeName()}>
           <Blob />

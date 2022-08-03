@@ -1,3 +1,4 @@
 import { renderStatic } from "./renderer";
+import { Freezer } from "./Freezer";
 
-export { renderStatic };
+export { renderStatic, Freezer };
