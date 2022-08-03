@@ -7,10 +7,12 @@ import { H2 } from "./ui/h2";
 import { H3 } from "./ui/h3";
 import { Input } from "./ui/input";
 import { Header } from "./sections/header";
+import { FooterNavigation } from "./common/footer-nav-bar";
 import { Menu } from "./sections/menu";
 import { Text } from "./ui/text";
 import { ThemeProvider } from "./common/theme-provider";
 import { FoxPaw } from "./common/fox-paw";
+import { CompanyInfo } from "./common/company-info";
 export {
   ThemeProvider,
   Input,
@@ -24,5 +26,7 @@ export {
   Grid,
   Menu,
   Header,
-  FoxPaw
+  FoxPaw,
+  FooterNavigation,
+  CompanyInfo,
 };

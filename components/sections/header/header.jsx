@@ -4,7 +4,7 @@ import theme from '../../../__data__/theme';
 import { Blob, Hamburger } from "../../common";
 import { HeaderItem, HeaderWrapper, Title } from "./header.style";
 
-export const Header = ({ transparentToComponent, onChange, ...props }) => {
+export const Header = ({ transparentToComponent }) => {
 
   const headerRef = useRef(null);
   //Прозрачность фона
@@ -19,7 +19,6 @@ export const Header = ({ transparentToComponent, onChange, ...props }) => {
 
   //Обработка скрола, для изменения прозрачности
   useEffect(() => {
-    Freezer()
     if (transparentToComponent) {
       const observedComponent = transparentToComponent.current;
       const height = observedComponent.offsetHeight - headerRef.current.offsetHeight;
@@ -48,16 +47,15 @@ export const Header = ({ transparentToComponent, onChange, ...props }) => {
         <HeaderItem onClick={() => theme.setNextThemeName()}>
           <Blob />
         </HeaderItem>
-        <HeaderItem l={true}>
+        <HeaderItem>
           <Title>
             <H3 color={'white'}>color department</H3>
             <H3 color={'white'}>los angeles</H3>
           </Title>
         </HeaderItem>
-        <HeaderItem m={true} hover={true} {...props}>
+        <HeaderItem>
           <Caption color={'white'}>Lets talk</Caption>
         </HeaderItem>
-
       </HeaderWrapper>
       <Menu isOpen={toggleMenu}></Menu>
     </>

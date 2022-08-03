@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/css";
+import { colors } from "styles";
 
 const sideLineAnimation = (top, rotate, reverse) => {
   return keyframes`
@@ -59,5 +60,5 @@ export const HumburgerLine = styled.div`
   width: 24px;
   height: 2px;
   position: relative;
-  background-color: white;
+  background-color: ${colors.white};
 `

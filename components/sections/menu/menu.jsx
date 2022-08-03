@@ -1,15 +1,6 @@
-import { Caption } from "components";
+import { CompanyInfo, FooterNavigation } from "components";
 import { MenuItem } from './menu-item/menu-item';
-import { CompanyInfo, MenuBody, MenuFooter, MenuFooterItem, MenuList, MenuMap, MenuWrapper } from "./menu.style";
-import { Freezer } from "utils";
-
-
-const footerItems = [
-    { title: 'vimeo', link: 'ref)' },
-    { title: 'instagram', link: 'ref->' },
-    { title: 'linkedin', link: '<-ref' },
-    { title: 'facebook', link: '<<ref' }
-];
+import { MenuBody, MenuFooter, MenuList, MenuMap, MenuWrapper } from "./menu.style";
 
 const menuItems = [
     { title: 'projects', link: '<<' },
@@ -25,32 +16,25 @@ export const Menu = ({ isOpen, props }) => {
     }
 
     return (
-        <MenuWrapper {...props}>
+        <MenuWrapper isOpen={isOpen} {...props}>
             <MenuBody>
                 <MenuList>
                     {
-                        menuItems.map((item) => <MenuItem
-                            key={item.title}
-                            title={item.title}
-                            onClick={navigateByLink(item.link)}>
-                        </MenuItem>)
+                        menuItems.map((item) =>
+                            <MenuItem
+                                key={item.title}
+                                title={item.title}
+                                onClick={navigateByLink(item.link)}
+                            ></MenuItem>)
                     }
                 </MenuList>
                 <MenuMap>
                 </MenuMap>
-                <CompanyInfo>
-                    <Caption>color@department.com</Caption>
-                    <Caption>2 514 889-18-53</Caption>
-                </CompanyInfo>
+                <CompanyInfo />
             </MenuBody>
             <MenuFooter>
-                {
-                    footerItems.map((item) =>
-                        <MenuFooterItem key={item.title} onClick={navigateByLink(item.link)}>
-                            <Caption color={'white'} >{item.title}</Caption>
-                        </MenuFooterItem>)
-                }
+                <FooterNavigation></FooterNavigation>
             </MenuFooter>
         </MenuWrapper>
     );
-} 
+}

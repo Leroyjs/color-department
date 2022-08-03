@@ -1,12 +1,9 @@
-import {
-  colors, getCurrentBackgroundColorStyles, hexToRGBA
-} from "styles";
-
+import { colors, getCurrentBackgroundColorStyles, hexToRGBA } from "styles";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 //Задает прозрачность хедеру
-export const HeaderDynamicStyle = props => css`
+export const HeaderDynamicStyle = ({ transparency }) => css`
   &:before {
     position: absolute;
     width: 100%;
@@ -14,14 +11,16 @@ export const HeaderDynamicStyle = props => css`
     bottom: 0;
     content:"";
     z-index: -1;
-    background-color: ${hexToRGBA(colors.black, 1)};
-    opacity: ${props.transparency};
+    background-color: ${colors.black};
+    opacity: ${transparency};
     transition: opacity ease-out 0.25s;
   }
 `
 
 export const HeaderWrapper = styled.div`
   ${HeaderDynamicStyle};
+  display : grid;
+  grid-template-columns: repeat(2,1fr) 4fr 2fr;
   z-index: 100;
   position: fixed;  
   left: 0;
@@ -29,27 +28,13 @@ export const HeaderWrapper = styled.div`
   max-width: 1600px;
   margin: 0 auto;
   height: 100px;
-  display: flex;
-  color: white;
+  color: ${colors.white};
 `
 
 export const Title = styled.div`
   text-transform: uppercase;
-
-  span {
-    display: block;
-    text-align: center;
-    line-height: 112%;
-  }
+  text-align: center;
 `
-
-//TODO на гриды
-const HeaderItemWidth = props => {
-  let size = 200;
-  if (props.m) { size = 400 }
-  else if (props.l) { size = 800 }
-  return `max-width: ${size}px`;
-}
 
 export const HeaderItem = styled.div`
   flex: 1 0 auto;
@@ -71,7 +56,5 @@ export const HeaderItem = styled.div`
 
     ${({ theme }) => getCurrentBackgroundColorStyles('primary', theme)};
   }
-
   transition : background-color 0.5s;
-  ${HeaderItemWidth}
 `

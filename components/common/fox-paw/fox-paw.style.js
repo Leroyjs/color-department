@@ -5,7 +5,4 @@ export const FoxPawWrapper = styled.div`
     right:-200px;
     transform: ${({ isHover }) => isHover ? "translateX(-200px)" : "translateX(0px)"};
     transition: transform 0.5s;
-
-    
-
 `

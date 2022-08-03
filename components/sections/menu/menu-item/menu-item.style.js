@@ -11,6 +11,7 @@ export const MenuItemWrapper = styled.li`
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    //TODO: Вынести в общие
     &:hover {
         ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)};
         span {
