@@ -1,9 +1,9 @@
 
 import { Header } from "components";
 import { useRef, useState } from "react";
-import "styles/global.style";
 import { DropDown } from "../components/ui/dropDown";
 import { TextArea } from "../components/ui/textArea";
+import "styles/global.style";
 
 const options = [
     {
@@ -26,6 +26,7 @@ const Home = () => {
     const [isOpenMenu, setOpenMenu] = useState(false);
 
     const [value, setValue] = useState(null);
+    const [message, setMessage] = useState(null);
     return (
         <>
             <Header isListenScroll={isOpenMenu} transparentToComponent={videoContant}></Header>
@@ -33,9 +34,9 @@ const Home = () => {
             <main style={{ height: '100vh', overflow: "visible" }}>
                 <DropDown title="Service" onChange={(option) => setValue(option)} options={options} value={value} />
 
-                <TextArea title="About your work" onChange={(val) => {
-                    console.log(val)
-                }} />
+                <TextArea title="About your work" value={message} onChange={(val) => {
+                    setMessage(val)
+                }}/>
             </main>
         </>
     );
