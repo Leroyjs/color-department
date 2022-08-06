@@ -11,22 +11,9 @@ export const GratitudeWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  height: 100%;
-  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
-  h2 {
-    span {
-      color: ${({ theme }) => getCurrentColor("primary", theme)};
-      ${getCurrentMarginStyle("bottom", "md")}
-    }
-  }
+  height: 100vh;
+  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
+
 `;
 
-// export const GratitudeWrapper = styled.div`
-//   width: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: flex-start;
-//   text-align: center;
-  
-// `;
 

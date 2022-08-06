@@ -133,6 +133,6 @@ export const Error = styled.div`
 
 export const InputWrapper = styled.div`
   position: relative;
-  ${applyMargins};
+  ${applyMargins};  
   ${applyPaddings}
 `;
