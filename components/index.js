@@ -8,6 +8,8 @@ import { H3 } from "./ui/h3";
 import { Input } from "./ui/input";
 import { Text } from "./ui/text";
 import { ThemeProvider } from "./common/theme-provider";
+import { ShopItem } from "./common/shop-item";
+import { ButtonShop } from "./ui/button-shop";
 
 export {
   ThemeProvider,
@@ -20,4 +22,6 @@ export {
   ButtonEllipse,
   ButtonRectangle,
   Grid,
+  ShopItem,
+  ButtonShop,
 };
