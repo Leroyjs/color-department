@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors } from "styles";
+import { colors, zindex } from "styles";
 
 export const MenuWrapper = styled.div`
     margin: 0 auto ;
@@ -7,7 +7,7 @@ export const MenuWrapper = styled.div`
     right: 0;
     max-width: 1600px;
     position: fixed;
-    z-index: 100;
+    z-index: ${zindex.modal};
     top: 101px;
     overflow: hidden;
     height : ${({ isOpen }) => isOpen ? "calc(100vh - 100px)" : "0"};

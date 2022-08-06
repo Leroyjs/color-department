@@ -89,3 +89,10 @@ export const fontSizes = {
     caption: "14px",
   },
 };
+
+export const zindex = {
+  modal:1000,
+  header: 100,
+  frontItem: 10,
+  backItem: -1
+}

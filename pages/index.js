@@ -33,9 +33,7 @@ const Home = () => {
             <main style={{ height: '100vh', overflow: "visible" }}>
                 <DropDown title="Service" onChange={(option) => setValue(option)} options={options} value={value} />
 
-                <TextArea title="About your work" onChange={(val) => {
-                    console.log(val)
-                }} />
+                <TextArea title="About your work" onChange={(val) => {}} />
             </main>
         </>
     );

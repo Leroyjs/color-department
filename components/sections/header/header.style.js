@@ -1,4 +1,4 @@
-import { colors, getCurrentBackgroundColorStyles, hexToRGBA } from "styles";
+import { zindex, colors, getCurrentBackgroundColorStyles } from "styles";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
@@ -10,7 +10,7 @@ export const HeaderDynamicStyle = ({ transparency }) => css`
     top: 0;
     bottom: 0;
     content:"";
-    z-index: -1;
+    z-index: ${zindex.backItem};
     background-color: ${colors.black};
     opacity: ${transparency};
     transition: opacity ease-out 0.25s;
@@ -21,7 +21,7 @@ export const HeaderWrapper = styled.div`
   ${HeaderDynamicStyle};
   display : grid;
   grid-template-columns: repeat(2,1fr) 4fr 2fr;
-  z-index: 100;
+  z-index: ${zindex.header};
   position: fixed;  
   left: 0;
   right: 0;

@@ -10,16 +10,15 @@ const footerItems = [
 
 export const FooterNavigation = () => {
 
-    const navigateByLink = (link) => (_) => {
-        console.log(link)
-    }
+    //TODO: Навигация
+    const navigateByLink = (link) => (_) => { }
 
     return (
         <FooterNavBar>
             {
                 footerItems.map((item) =>
                     <FooterNavBarItem key={item.title} onClick={navigateByLink(item.link)}>
-                        <Caption color={'white'} >{item.title}</Caption>
+                        <Caption color='white' >{item.title}</Caption>
                     </FooterNavBarItem>)
             }
         </FooterNavBar>
