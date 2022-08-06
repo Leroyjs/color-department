@@ -10,6 +10,8 @@ import { Text } from "./ui/text";
 import { DropDown } from "./ui/drop-down";
 import { TextArea } from "./ui/text-area";
 import { ThemeProvider } from "./common/theme-provider";
+import { ShopItem } from "./common/shop-item";
+import { ButtonShop } from "./ui/button-shop";
 import { Modal } from "./common/modal";
 import { Portal } from "./common/portal";
 import { VideoBackground } from "./common/video-background";
@@ -25,6 +27,8 @@ export {
   ButtonEllipse,
   ButtonRectangle,
   Grid,
+  ShopItem,
+  ButtonShop,
   DropDown,
   TextArea,
   Modal,

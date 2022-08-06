@@ -79,4 +79,3 @@ export const Title = styled.h3`
   color: ${({isError}) => isError ? colors.red : colors.white};
   margin-bottom: 8px;
 `;
-
