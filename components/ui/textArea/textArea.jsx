@@ -1,5 +1,5 @@
 import {PropTypes} from "prop-types";
-import {Error, InputWrapper, TextAreaWrapper, Title} from "./textArea.style";
+import {Error, InputWrapper, TextAreaInput, TextAreaWrapper, Title} from "./textArea.style";
 
 export const TextArea = ({title, error, value = "", onChange, defaultValue, maxLength = 420, ...props}) => {
     function resizeHeight(e) {
@@ -17,8 +17,10 @@ export const TextArea = ({title, error, value = "", onChange, defaultValue, maxL
     return (
         <InputWrapper>
             {title && <Title isError={error}>{title}</Title>}
-            <TextAreaWrapper isError={error} onChange={handleKeyUp} defaultValue={defaultValue}
-                             maxLength={maxLength} {...props}/>
+            <TextAreaWrapper isActive={!!value}>
+                <TextAreaInput isError={error} onChange={handleKeyUp} defaultValue={defaultValue}
+                               maxLength={maxLength} value={value} {...props}/>
+            </TextAreaWrapper>
             {error && <Error>{error}</Error>}
         </InputWrapper>
     )
