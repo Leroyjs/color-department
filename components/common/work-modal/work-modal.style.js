@@ -1,8 +1,5 @@
 import styled from "@emotion/styled";
 import { H2 } from "components";
-import { Text } from "components";
-import { getCurrentColor } from "styles";
-import { getCurrentMarginStyle } from "styles";
 import { getCurrentBackgroundColorStyles } from "styles";
 
 export const GratitudeWrapper = styled.div`
@@ -11,9 +8,11 @@ export const GratitudeWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  height: 100%;
-  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
+  height: 100vh;
+  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
 
 `;
 
-
+export const StyledH2 = styled(H2)`
+text-align: center;
+`;
