@@ -11,7 +11,7 @@ export const GratitudeWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
 
 `;
