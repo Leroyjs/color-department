@@ -1,8 +1,9 @@
 import {
-    colors,
-    fontFamilies, fontSizes,
-    getCurrentFontSizeStyle,
-    hexToRGBA,
+  applyMargins, applyPaddings,
+  colors,
+  fontFamilies, fontSizes,
+  getCurrentFontSizeStyle,
+  hexToRGBA,
 } from "styles";
 
 import styled from "@emotion/styled";
@@ -132,4 +133,6 @@ export const Error = styled.div`
 
 export const InputWrapper = styled.div`
   position: relative;
+  ${applyMargins};
+  ${applyPaddings}
 `;
