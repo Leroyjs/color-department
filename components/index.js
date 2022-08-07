@@ -8,6 +8,7 @@ import { H3 } from "./ui/h3";
 import { Input } from "./ui/input";
 import { Text } from "./ui/text";
 import { ThemeProvider } from "./common/theme-provider";
+import { RunningLine } from './common/running-line';
 
 export {
   ThemeProvider,
@@ -20,4 +21,5 @@ export {
   ButtonEllipse,
   ButtonRectangle,
   Grid,
+  RunningLine
 };
