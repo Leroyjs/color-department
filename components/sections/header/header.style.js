@@ -1,4 +1,4 @@
-import { zindex, colors, getCurrentBackgroundColorStyles } from "styles";
+import { zindex, sizes, colors, getCurrentBackgroundColorStyles, getCurrentGridTemplateColumsStyle, hexToRGBA } from "styles";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
@@ -18,17 +18,24 @@ export const HeaderDynamicStyle = ({ transparency }) => css`
 `
 
 export const HeaderWrapper = styled.div`
+  ${getCurrentGridTemplateColumsStyle()};
   ${HeaderDynamicStyle};
   display : grid;
-  grid-template-columns: repeat(2,1fr) 4fr 2fr;
   z-index: ${zindex.header};
   position: fixed;  
   left: 0;
   right: 0;
-  max-width: 1600px;
   margin: 0 auto;
-  height: 100px;
+  height: ${sizes['desktopLG'].half};
   color: ${colors.white};
+  
+  border-bottom: 1px solid ${hexToRGBA(colors.white, 0.2)};
+  & > *:nth-child(1n){
+    border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
+  }
+  & > *:nth-child(1){
+    border-left: 1px solid ${hexToRGBA(colors.white, 0.2)};
+  }
 `
 
 export const Title = styled.div`
@@ -42,7 +49,7 @@ export const HeaderItem = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
+  
   &:hover {
     & span {
       color: ${colors.black};
@@ -57,4 +64,17 @@ export const HeaderItem = styled.div`
     ${({ theme }) => getCurrentBackgroundColorStyles('primary', theme)};
   }
   transition : background-color 0.5s;
+`
+
+export const HeaderItemHumburger = styled(HeaderItem)`
+  grid-column: 1/2;
+`
+export const HeaderItemBlob = styled(HeaderItem)`
+  grid-column: 2/3;
+`
+export const HeaderItemTitle = styled(HeaderItem)`
+  grid-column: 3/7;  
+`
+export const HeaderItemLetsGo = styled(HeaderItem)`
+  grid-column: 7/9;
 `

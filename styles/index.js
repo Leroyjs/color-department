@@ -6,7 +6,8 @@ export {
   breakpointsWidth,
   offsets,
   typesOfoffset,
-  zindex
+  zindex,
+  sizes
 } from "./constants";
 
 // Mixins, которые нужно подключать в стили, чтобы можно было менять стили компонента из пропсов

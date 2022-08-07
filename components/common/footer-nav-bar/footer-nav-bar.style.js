@@ -1,16 +1,31 @@
 import styled from "@emotion/styled"
-import { colors, getCurrentBackgroundColorStyles } from "styles"
+import { colors, getCurrentBackgroundColorStyles, getCurrentGridTemplateColumsStyle, hexToRGBA, sizes } from "styles"
 
 export const FooterNavBar = styled.div`
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    ${getCurrentGridTemplateColumsStyle()}
     width:100%;
-    height: 100px;    
+    height: ${sizes['desktopLG'].half};
+    & > *:nth-child(1n){
+        border: 1px solid ${hexToRGBA(colors.white, 0.2)};
+        border-left: none;
+    }
+    & > *:nth-child(1){
+        border-left: 1px solid ${hexToRGBA(colors.white, 0.2)};
+    }
+
+    & *:nth-of-type(1){grid-column: 1/3;}
+    & *:nth-of-type(2){grid-column: 3/5;}
+    & *:nth-of-type(3){grid-column: 5/7;}
+    & *:nth-of-type(4){grid-column: 7/9;}
 `
+
+
 
 export const FooterNavBarItem = styled.div`
     height: 100%;
     cursor: pointer;
+    flex: 1 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;

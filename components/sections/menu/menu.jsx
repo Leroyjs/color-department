@@ -31,7 +31,7 @@ export const Menu = ({ isOpen, props }) => {
                 </MenuMap>
                 <CompanyInfo />
             </MenuBody>
-            <MenuFooter>
+            <MenuFooter isOpen={isOpen}>
                 <FooterNavigation></FooterNavigation>
             </MenuFooter>
         </MenuWrapper>
