@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {PropTypes} from "prop-types";
+import {propTypesMargin, propTypesPadding} from "../../types";
 import {
     CurrentLabel,
     DropDownItem,
@@ -10,7 +11,6 @@ import {
     Underline,
     UnderlineInner
 } from "./dropDown.style";
-import {propTypesMargin, propTypesPadding} from "../../types";
 
 export const DropDown = ({title, error, value, options, onChange, propsInput, ...props}) => {
     const [isOpen, setOpen] = useState(false);

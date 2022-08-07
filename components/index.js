@@ -7,7 +7,12 @@ import { H2 } from "./ui/h2";
 import { H3 } from "./ui/h3";
 import { Input } from "./ui/input";
 import { Text } from "./ui/text";
+import { DropDown } from "./ui/drop-down";
+import { TextArea } from "./ui/text-area";
 import { ThemeProvider } from "./common/theme-provider";
+import { Modal } from "./common/modal";
+import { Portal } from "./common/portal";
+import { VideoBackground } from "./common/video-background";
 
 export {
   ThemeProvider,
@@ -20,4 +25,9 @@ export {
   ButtonEllipse,
   ButtonRectangle,
   Grid,
+  DropDown,
+  TextArea,
+  Modal,
+  Portal,
+  VideoBackground
 };
