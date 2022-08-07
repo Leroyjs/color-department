@@ -1,4 +1,6 @@
 import {
+  applyMargins,
+  applyPaddings,
   colors,
   fontFamilies,
   getCurrentFontSizeStyle,
@@ -73,4 +75,6 @@ export const Title = styled.div`
 
 export const InputWrapper = styled.div`
   position: relative;
+  ${applyMargins};
+  ${applyPaddings}
 `;

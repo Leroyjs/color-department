@@ -10,7 +10,7 @@ import {
 import { PropTypes } from "prop-types";
 
 export const Input = ({ title, error, value = "", onChange, ...props }) => (
-  <InputWrapper>
+  <InputWrapper {...props}>
     <Title isError={error}>{title}</Title>
     <InputStyled onChange={onChange} isError={error} type="text" {...props} />
     <Underline>

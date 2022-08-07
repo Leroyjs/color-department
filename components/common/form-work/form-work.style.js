@@ -19,7 +19,7 @@ export const FormSection = styled.div`
     span {
       color: ${({ theme }) => getCurrentColor("white", theme)};
       text-transform: uppercase;
-      ${getCurrentMarginStyle("top", "lg")};
+      ${getCurrentMarginStyle("vertical", "lg")};
     }
   }
 `;
@@ -57,3 +57,4 @@ export const FormColumnRight = styled.div`
   height: 100%;
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
 `;
+

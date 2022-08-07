@@ -13,12 +13,26 @@ import {
 } from "./form-work.style";
 
 export const FormWork = () => {
-    const [value, setValue] = useState(null);
-    const [message, setMessage] = useState(null);
+  const [value1, setValue1] = useState(null);
+  const [value2, setValue2] = useState(null);
+  const [value3, setValue3] = useState(null);
+  const [message, setMessage] = useState(null);
 
-    const ServiceOptions = ["color grading", "VFX-design", "Dailies"];
-    const TypeOptions = ["color grading", "VFX-design", "Dailies"];
-    const TitleOptions = ["color grading", "VFX-design", "Dailies"];
+  const ServiceOptions = [
+    { label: "color grading", value: "11" },
+    { label: "VFX-design", value: "12" },
+    { label: "Dailies", value: "13" },
+  ];
+  const TypeOptions = [
+    { label: "color grading", value: "11" },
+    { label: "VFX-design", value: "12" },
+    { label: "Dailies", value: "13" },
+  ];
+  const TitleOptions = [
+    { label: "color grading", value: "11" },
+    { label: "VFX-design", value: "12" },
+    { label: "Dailies", value: "13" },
+  ];
   return (
     <FormSection>
       <H2>let's talk</H2>
@@ -27,26 +41,26 @@ export const FormWork = () => {
           <DropDown
             mb="md"
             title="Service"
-            onChange={(option) => setValue(option)}
+            onChange={(option) => setValue1(option)}
             options={ServiceOptions}
-            value={value}
+            value={value1}
           />
           <DropDown
             mb="md"
             title="Type"
-            onChange={(option) => setValue(option)}
+            onChange={(option) => setValue2(option)}
             options={TypeOptions}
-            value={value}
+            value={value2}
           />
           <DropDown
             mb="md"
             title="Title"
-            onChange={(option) => setValue(option)}
+            onChange={(option) => setValue3(option)}
             options={TitleOptions}
-            value={value}
+            value={value3}
           />
-          <Input></Input>
-          <Input></Input>
+          <Input mb="md"  >NAME</Input>
+          <Input>PLEASE CONTACT ME AT*</Input>
         </FormColumnLeft>
         <FormColumnRight>
           <TextArea
@@ -56,7 +70,8 @@ export const FormWork = () => {
               setMessage(val);
             }}
           />
-          <ButtonRectangle>SEND</ButtonRectangle>
+          <ButtonRectangle
+          >SEND</ButtonRectangle>
         </FormColumnRight>
       </FormWrapper>
     </FormSection>

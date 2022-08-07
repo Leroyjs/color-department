@@ -64,6 +64,7 @@ export const offsets = {
     md1: 30,
     sm: 16,
     xsm: 12,
+    none: 0
   },
 };
 
