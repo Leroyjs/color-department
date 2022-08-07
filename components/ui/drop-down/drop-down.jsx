@@ -10,6 +10,7 @@ import {
     Underline,
     UnderlineInner
 } from "./dropDown.style";
+import {propTypesMargin, propTypesPadding} from "../../types";
 
 export const DropDown = ({title, error, value, options, onChange, propsInput, ...props}) => {
     const [isOpen, setOpen] = useState(false);
@@ -64,4 +65,6 @@ DropDown.propTypes = {
     onChange: PropTypes.func.isRequired,
     options: PropTypes.arrayOf(shapeOption).isRequired,
     error: PropTypes.string,
+    ...propTypesMargin,
+    ...propTypesPadding,
 };

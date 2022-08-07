@@ -1,5 +1,6 @@
 import {PropTypes} from "prop-types";
 import {Error, InputWrapper, TextAreaInput, TextAreaWrapper, Title} from "./text-area.style";
+import {propTypesMargin, propTypesPadding} from "../../types";
 
 export const TextArea = ({title, error, value = "", onChange, defaultValue, maxLength = 420, propsInput, ...props}) => {
     function resizeHeight(e) {
@@ -31,4 +32,6 @@ TextArea.propTypes = {
     error: PropTypes.string,
     title: PropTypes.string,
     onChange: PropTypes.func.isRequired,
+    ...propTypesMargin,
+    ...propTypesPadding,
 };
