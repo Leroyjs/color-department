@@ -1,8 +1,6 @@
 import {useState} from "react";
-import {DropDown} from "../components/ui/drop-down";
-import {TextArea} from "../components/ui/text-area";
+import {DropDown, TextArea} from "components";
 import "styles/global.style";
-import Modal from "../components/common/modal";
 
 const options = [
     {
