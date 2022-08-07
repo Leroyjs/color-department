@@ -14,6 +14,7 @@ import { ShopItem } from "./common/shop-item";
 import { ButtonShop } from "./ui/button-shop";
 import { Modal } from "./common/modal";
 import { Portal } from "./common/portal";
+import { ModalShop } from "./common/modal-shop";
 import { VideoBackground } from "./common/video-background";
 
 export {
@@ -33,5 +34,6 @@ export {
   TextArea,
   Modal,
   Portal,
-  VideoBackground
+  VideoBackground,
+  ModalShop
 };
