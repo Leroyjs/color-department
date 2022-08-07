@@ -7,9 +7,15 @@ import { H2 } from "./ui/h2";
 import { H3 } from "./ui/h3";
 import { Input } from "./ui/input";
 import { Text } from "./ui/text";
+import { DropDown } from "./ui/drop-down";
+import { TextArea } from "./ui/text-area";
 import { ThemeProvider } from "./common/theme-provider";
 import { ShopItem } from "./common/shop-item";
 import { ButtonShop } from "./ui/button-shop";
+import { Modal } from "./common/modal";
+import { Portal } from "./common/portal";
+import { ModalShop } from "./common/modal-shop";
+import { VideoBackground } from "./common/video-background";
 
 export {
   ThemeProvider,
@@ -24,4 +30,10 @@ export {
   Grid,
   ShopItem,
   ButtonShop,
+  DropDown,
+  TextArea,
+  Modal,
+  Portal,
+  VideoBackground,
+  ModalShop
 };
