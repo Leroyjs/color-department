@@ -1,6 +1,6 @@
 import {useState} from "react";
-import {DropDown} from "../components/ui/dropDown";
-import {TextArea} from "../components/ui/textArea";
+import {DropDown} from "../components/ui/drop-down";
+import {TextArea} from "../components/ui/text-area";
 import "styles/global.style";
 import Modal from "../components/common/modal";
 

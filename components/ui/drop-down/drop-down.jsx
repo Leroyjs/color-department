@@ -15,7 +15,7 @@ export const DropDown = ({title, error, value, options, onChange, propsInput, ..
     const [isOpen, setOpen] = useState(false);
     const isActive = Boolean(value);
 
-    function handleOpen(e) {
+    function handleOpen() {
         setOpen(prevState => !prevState)
     }
 
