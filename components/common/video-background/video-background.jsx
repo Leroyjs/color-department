@@ -3,7 +3,7 @@ import {VideoContainer} from "./video.style";
 import {PropTypes} from "prop-types";
 
 // eslint-disable-next-line react/display-name
-const VideoBackground = forwardRef(({poster, video, autoPlay = true, ...props}, ref) => {
+export const VideoBackground = forwardRef(({poster, video, autoPlay = true, ...props}, ref) => {
     return (
         <VideoContainer ref={ref} playsInline autoPlay={autoPlay} muted loop controls={false}
                         poster={poster} {...props}>
@@ -13,15 +13,13 @@ const VideoBackground = forwardRef(({poster, video, autoPlay = true, ...props}, 
     );
 });
 
-export default VideoBackground;
-
-const SourceType = PropTypes.oneOfType([PropTypes.string, PropTypes.object]);
+const SrcArgType = PropTypes.oneOfType([PropTypes.string, PropTypes.object]);
 
 VideoBackground.propTypes = {
-    poster: SourceType.isRequired,
+    poster: SrcArgType.isRequired,
     autoPlay: PropTypes.bool,
     video: PropTypes.shape({
-        webm: SourceType,
-        mp4: SourceType.isRequired,
+        webm: SrcArgType,
+        mp4: SrcArgType.isRequired,
     }).isRequired,
 }
