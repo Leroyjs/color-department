@@ -38,6 +38,8 @@ export const InputStyled = styled.input`
   padding-left: 50%;
   text-transform: uppercase;
   font-family: ${fontFamilies.mainFont};
+  padding-top: 4px;
+  padding-bottom: 5px;
 
   &:hover {
     & + ${Underline} ${UnderlineInner} {
@@ -77,4 +79,5 @@ export const InputWrapper = styled.div`
   position: relative;
   ${applyMargins};
   ${applyPaddings}
+  padding-right: 0px;
 `;
