@@ -8,17 +8,16 @@ import {
     hexToRGBA,
 } from "styles";
 
+const lineHeight = 90
 export const InputWrapper = styled.div`
   position: relative;
 `;
 
-const lineHeight = 90
 export const TextAreaInput = styled('textarea')(({isError}) => ({
 
-    paddingTop: 18 + 'px',
-
+    paddingTop: '18px',
+    marginBottom: '-18px',
     width: '100%',
-    minHeight: lineHeight * 4 + 'px',
     overflow: 'hidden',
     textTransform: 'uppercase',
 
@@ -77,7 +76,7 @@ export const Title = styled.h3`
   text-transform: uppercase;
   font-size: ${fontSizes.desktopLG.h3};
   font-family: ${fontFamilies.mainFont};
-  color: ${({ isError }) => (isError ? colors.red : colors.white)};
+  color: ${({isError}) => (isError ? colors.red : colors.white)};
   margin-bottom: 10px;
 
   ${getCurrentPaddingStyle("top", "xxsm")};
