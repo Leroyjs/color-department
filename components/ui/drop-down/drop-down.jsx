@@ -10,7 +10,7 @@ import {
     InputWrapper,
     Underline,
     UnderlineInner
-} from "./dropDown.style";
+} from "./drop-down.style";
 
 export const DropDown = ({title, error, value, options, onChange, propsInput, ...props}) => {
     const [isOpen, setOpen] = useState(false);
