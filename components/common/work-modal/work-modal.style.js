@@ -10,7 +10,6 @@ export const GratitudeWrapper = styled.div`
   width: 100%;
   height: 100vh;
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
-
 `;
 
 export const StyledH2 = styled(H2)`

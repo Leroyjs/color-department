@@ -9,14 +9,10 @@ export const WorkModal = () => {
     <Modal isOpen={true}>
       <GratitudeWrapper>
         <StyledH2 color="white">Thank you for your application,</StyledH2>
-        <StyledH2 color="primary" mb="md">
-          we will contact you shortly
-        </StyledH2><Link href="/">
-        <ButtonEllipse>
-          
-            <a>OK</a>
-          
-        </ButtonEllipse></Link>
+        <StyledH2 color="primary" mb="md">we will contact you shortly</StyledH2>
+        <Link href="/">
+          <ButtonEllipse><a>OK</a></ButtonEllipse>
+        </Link>
       </GratitudeWrapper>
     </Modal>
   );
