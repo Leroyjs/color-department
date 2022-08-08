@@ -6,11 +6,11 @@ export const FooterNavBar = styled.div`
     ${getCurrentGridTemplateColumsStyle()}
     width:100%;
     height: ${sizes['desktopLG'].half};
-    & > *:nth-child(1n){
+    & > *:nth-of-type(1n){
         border: 1px solid ${hexToRGBA(colors.white, 0.2)};
         border-left: none;
     }
-    & > *:nth-child(1){
+    & > *:nth-of-type(1){
         border-left: 1px solid ${hexToRGBA(colors.white, 0.2)};
     }
 

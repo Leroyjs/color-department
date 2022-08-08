@@ -30,10 +30,10 @@ export const HeaderWrapper = styled.div`
   color: ${colors.white};
   
   border-bottom: 1px solid ${hexToRGBA(colors.white, 0.2)};
-  & > *:nth-child(1n){
+  & > *:nth-of-type(1n){
     border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
   }
-  & > *:nth-child(1){
+  & > *:nth-of-type(1){
     border-left: 1px solid ${hexToRGBA(colors.white, 0.2)};
   }
 `
