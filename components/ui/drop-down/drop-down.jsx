@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {PropTypes} from "prop-types";
+import {propTypesMargin, propTypesPadding} from "../../types";
 import {
     CurrentLabel,
     DropDownItem,
@@ -15,7 +16,7 @@ export const DropDown = ({title, error, value, options, onChange, propsInput, ..
     const [isOpen, setOpen] = useState(false);
     const isActive = Boolean(value);
 
-    function handleOpen(e) {
+    function handleOpen() {
         setOpen(prevState => !prevState)
     }
 
@@ -64,4 +65,6 @@ DropDown.propTypes = {
     onChange: PropTypes.func.isRequired,
     options: PropTypes.arrayOf(shapeOption).isRequired,
     error: PropTypes.string,
+    ...propTypesMargin,
+    ...propTypesPadding,
 };
