@@ -6,6 +6,7 @@ export {
   breakpointsWidth,
   offsets,
   typesOfoffset,
+  zindex,
   sizes
 } from "./constants";
 
@@ -48,3 +49,5 @@ export {
   hexToRGBA,
   getArrayOfIndex,
 } from "./utils";
+
+export { mapStyle } from './map';
