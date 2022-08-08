@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
-import { H2 } from "components";
-import { Text } from "components";
-import { getCurrentColor } from "styles";
-import { getCurrentMarginStyle } from "styles";
-import { getCurrentPaddingStyle } from "styles";
-import { getCurrentBackgroundColorStyles } from "styles";
+import {
+  getCurrentMarginStyle,
+  getCurrentPaddingStyle,
+  getCurrentBackgroundColorStyles,
+  getCurrentColor,
+} from "styles";
 
 export const FormSection = styled.div`
   display: flex;
@@ -57,4 +57,3 @@ export const FormColumnRight = styled.div`
   height: 100%;
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
 `;
-

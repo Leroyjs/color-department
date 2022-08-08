@@ -4,6 +4,7 @@ import {
     fontFamilies,
     fontSizes,
     getCurrentFontSizeStyle,
+    getCurrentPaddingStyle,
     hexToRGBA,
 } from "styles";
 
@@ -13,6 +14,8 @@ export const InputWrapper = styled.div`
 
 const lineHeight = 90
 export const TextAreaInput = styled('textarea')(({isError}) => ({
+
+    paddingTop: 18 + 'px',
 
     width: '100%',
     minHeight: lineHeight * 4 + 'px',
@@ -74,8 +77,9 @@ export const Title = styled.h3`
   text-transform: uppercase;
   font-size: ${fontSizes.desktopLG.h3};
   font-family: ${fontFamilies.mainFont};
-  color: ${({isError}) => isError ? colors.red : colors.white};
-  padding-top: 8px;
+  color: ${({ isError }) => (isError ? colors.red : colors.white)};
   margin-bottom: 10px;
+
+  ${getCurrentPaddingStyle("top", "xxsm")};
 `;
 

@@ -1,10 +1,5 @@
-import { ButtonRectangle } from "components";
-import { Input } from "components";
-import { H3 } from "components";
+import { ButtonRectangle, Input, H2, DropDown, TextArea } from "components";
 import { useState } from "react";
-import { DropDown } from "components/ui/drop-down";
-import { TextArea } from "components/ui/text-area";
-import { H2 } from "components/ui/h2";
 import {
   FormSection,
   FormWrapper,
@@ -13,9 +8,9 @@ import {
 } from "./form-work.style";
 
 export const FormWork = () => {
-  const [value1, setValue1] = useState(null);
-  const [value2, setValue2] = useState(null);
-  const [value3, setValue3] = useState(null);
+  const [value1, setValueService] = useState();
+  const [value2, setValueType] = useState();
+  const [value3, setValueTitle] = useState();
   const [message, setMessage] = useState(null);
 
   const ServiceOptions = [
@@ -27,11 +22,13 @@ export const FormWork = () => {
     { label: "color grading", value: "11" },
     { label: "VFX-design", value: "12" },
     { label: "Dailies", value: "13" },
+    // Заглушка
   ];
   const TitleOptions = [
     { label: "color grading", value: "11" },
     { label: "VFX-design", value: "12" },
     { label: "Dailies", value: "13" },
+    // Заглушка
   ];
   return (
     <FormSection>
@@ -41,25 +38,25 @@ export const FormWork = () => {
           <DropDown
             mb="md"
             title="Service"
-            onChange={(option) => setValue1(option)}
+            onChange={(option) => setValueService(option)}
             options={ServiceOptions}
             value={value1}
           />
           <DropDown
             mb="md"
             title="Type"
-            onChange={(option) => setValue2(option)}
+            onChange={(option) => setValueType(option)}
             options={TypeOptions}
             value={value2}
           />
           <DropDown
             mb="md"
             title="Title"
-            onChange={(option) => setValue3(option)}
+            onChange={(option) => setValueOption(option)}
             options={TitleOptions}
             value={value3}
           />
-          <Input mb="md"></Input>
+          <Input title="NAME*" mb="md"></Input>
           <Input title="PLEASE CONTACT ME AT*"></Input>
         </FormColumnLeft>
         <FormColumnRight>

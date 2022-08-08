@@ -4,6 +4,7 @@ import {
   fontFamilies, fontSizes,
   getCurrentFontSizeStyle,
   getCurrentMarginStyle,
+  getCurrentPaddingStyle,
   hexToRGBA,
 } from "styles";
 
@@ -93,12 +94,10 @@ export const InputStyled = styled.div`
   color: ${({ theme }) => theme.primary};
   text-transform: uppercase;
   font-family: ${fontFamilies.mainFont};
-  padding-bottom: 8px;
-  padding-top: 8px;
+  ${getCurrentPaddingStyle("vertical", "xxsm")};
   font-family: ${fontFamilies.mainFont};
   text-align: left;
   transition: color 0.3s;
-
 
   ${({ isOpen, isActive, isError }) => {
     if (isOpen) {
