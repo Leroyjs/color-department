@@ -37,11 +37,7 @@ const Home = () => {
             console.log(val);
           }}
         />
-        <ShopItem
-          cost={"12,34"}
-          text={"The Graham Greene Film Reader Applause Books"}
-        />
-        <ModalShop />
+        
       </main>
     </>
   );

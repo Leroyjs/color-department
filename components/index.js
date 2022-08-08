@@ -16,6 +16,7 @@ import { Modal } from "./common/modal";
 import { Portal } from "./common/portal";
 import { ModalShop } from "./common/modal-shop";
 import { VideoBackground } from "./common/video-background";
+import { ShopSection } from "./sections/shop-section";
 
 export {
   ThemeProvider,
@@ -35,5 +36,6 @@ export {
   Modal,
   Portal,
   VideoBackground,
-  ModalShop
+  ModalShop,
+  ShopSection,
 };

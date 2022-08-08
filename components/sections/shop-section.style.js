@@ -7,5 +7,4 @@ width:100%;
   display: grid;
   ${getCurrentGridTemplateColumsStyle()};
   align-items: start ;
-  /* grid-template-columns: 2fr 2fr 2fr 2fr ; */  
 `;
