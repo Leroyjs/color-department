@@ -1,6 +1,6 @@
 import { keyframes } from "@emotion/css"
 import styled from "@emotion/styled"
-import { colors, getCurrentColor, sizes } from "styles"
+import { colors, getCurrentColor, getCurrentMarginStyle, sizes } from "styles"
 
 const scrollAnimation = keyframes`
     from { transform: translateX(0);}
@@ -54,10 +54,11 @@ export const RunningLineSeparator = styled.div`
     border-color:${({ theme }) => getCurrentColor("primary", theme)};
     height: ${sizes['desktopLG'].half};
     min-width: 240px;
-    margin: 0 16px;
+    
     display:flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    ${getCurrentMarginStyle('horizontal', 'sm')}
     ${SeparatorDinamicStyle};
 `
