@@ -1,4 +1,6 @@
+import {useState} from "react";
 import {PropTypes} from "prop-types";
+import {propTypesMargin, propTypesPadding} from "../../types";
 import {
     CurrentLabel,
     DropDownItem,
@@ -8,13 +10,13 @@ import {
     InputWrapper,
     Underline,
     UnderlineInner
-} from "./dropDown.style";
-import {useState} from "react";
+} from "./drop-down.style";
 
-export const DropDown = ({title, error, value, options, onChange, ...props}) => {
+export const DropDown = ({title, error, value, options, onChange, propsInput, ...props}) => {
     const [isOpen, setOpen] = useState(false);
+    const isActive = Boolean(value);
 
-    function handleOpen(e) {
+    function handleOpen() {
         setOpen(prevState => !prevState)
     }
 
@@ -24,18 +26,18 @@ export const DropDown = ({title, error, value, options, onChange, ...props}) => 
     }
 
     return (
-        <InputWrapper>
-            <InputStyled isActive={!!value} isOpen={isOpen} onChange={onChange} onClick={handleOpen}
-                         isError={error} type="text" {...props}>
+        <InputWrapper {...props}>
+            <InputStyled isActive={isActive} isOpen={isOpen} onChange={onChange} onClick={handleOpen}
+                         isError={error} type="text" {...propsInput}>
                 <CurrentLabel>
                     {value?.label || title}
                 </CurrentLabel>
-                <IconPlus isError={error} isActive={!!value} isOpen={isOpen} viewBox="0 0 26 26" fill="none">
+                <IconPlus isError={error} isActive={isActive} isOpen={isOpen} viewBox="0 0 26 26" fill="none">
                     <path d="M0 13H26M13 26L13 0" strokeWidth="2"/>
                 </IconPlus>
             </InputStyled>
             <Underline>
-                <UnderlineInner isActive={!!value} isError={error}/>
+                <UnderlineInner isActive={isActive} isError={error}/>
             </Underline>
             <DropDownList isOpen={isOpen}>
                 {options.map((option) => (
@@ -63,4 +65,6 @@ DropDown.propTypes = {
     onChange: PropTypes.func.isRequired,
     options: PropTypes.arrayOf(shapeOption).isRequired,
     error: PropTypes.string,
+    ...propTypesMargin,
+    ...propTypesPadding,
 };

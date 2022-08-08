@@ -10,9 +10,15 @@ import { Header } from "./sections/header";
 import { FooterNavigation } from "./common/footer-nav-bar";
 import { Menu } from "./sections/menu";
 import { Text } from "./ui/text";
+import { DropDown } from "./ui/drop-down";
+import { TextArea } from "./ui/text-area";
 import { ThemeProvider } from "./common/theme-provider";
 import { FoxPaw } from "./common/fox-paw";
 import { CompanyInfo } from "./common/company-info";
+import { Modal } from "./common/modal";
+import { Portal } from "./common/portal";
+import { VideoBackground } from "./common/video-background";
+
 export {
   ThemeProvider,
   Input,
@@ -29,4 +35,9 @@ export {
   FoxPaw,
   FooterNavigation,
   CompanyInfo,
+  DropDown,
+  TextArea,
+  Modal,
+  Portal,
+  VideoBackground
 };
