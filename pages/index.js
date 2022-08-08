@@ -1,8 +1,5 @@
-
-import { Header } from "components";
 import { useRef, useState } from "react";
-import { DropDown } from "../components/ui/dropDown";
-import { TextArea } from "../components/ui/textArea";
+import { Header, DropDown, TextArea } from "components";
 import "styles/global.style";
 
 const options = [

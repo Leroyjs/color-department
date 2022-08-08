@@ -1,8 +1,9 @@
 import {
-    colors,
-    fontFamilies, fontSizes,
-    getCurrentFontSizeStyle,
-    hexToRGBA,
+  applyMargins, applyPaddings,
+  colors,
+  fontFamilies, fontSizes,
+  getCurrentFontSizeStyle,
+  hexToRGBA,
 } from "styles";
 
 import styled from "@emotion/styled";
@@ -45,10 +46,7 @@ export const DropDownList = styled.ul`
 `;
 
 export const IconPlus = styled.svg`
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  display: inline-block;
   width: 26px;
   height: 26px;
   transition: stroke .3s;
@@ -86,6 +84,7 @@ export const CurrentLabel = styled.span`
 export const InputStyled = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   cursor: pointer;
   width: 100%;
   color: ${({theme}) => theme.primary};
@@ -132,4 +131,6 @@ export const Error = styled.div`
 
 export const InputWrapper = styled.div`
   position: relative;
+  ${applyMargins};  
+  ${applyPaddings}
 `;
