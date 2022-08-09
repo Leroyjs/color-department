@@ -19,6 +19,7 @@ import { CompanyInfo } from "./common/company-info";
 import { Modal } from "./common/modal";
 import { Portal } from "./common/portal";
 import { VideoBackground } from "./common/video-background";
+import { Awards } from "./ui/awards";
 
 export {
   ThemeProvider,
@@ -41,5 +42,6 @@ export {
   TextArea,
   Modal,
   Portal,
-  VideoBackground
+  VideoBackground,
+  Awards
 };
