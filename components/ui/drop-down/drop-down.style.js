@@ -3,6 +3,8 @@ import {
   colors,
   fontFamilies, fontSizes,
   getCurrentFontSizeStyle,
+  getCurrentMarginStyle,
+  getCurrentPaddingStyle,
   hexToRGBA,
 } from "styles";
 
@@ -87,27 +89,26 @@ export const InputStyled = styled.div`
   justify-content: space-between;
   cursor: pointer;
   width: 100%;
-  color: ${({theme}) => theme.primary};
+  color: ${({ theme }) => theme.primary};
   text-transform: uppercase;
   font-family: ${fontFamilies.mainFont};
-  padding-bottom: 8px;
+  ${getCurrentPaddingStyle("vertical", "xxsm")};
   font-family: ${fontFamilies.mainFont};
   text-align: left;
-  transition: color .3s;
+  transition: color 0.3s;
 
-  ${({isOpen, isActive, isError}) => {
+  ${({ isOpen, isActive, isError }) => {
     if (isOpen) {
-      return {color: colors.white}
+      return { color: colors.white };
     } else if (isActive) {
-      return {color: colors.yellow}
+      return { color: colors.yellow };
     } else if (isError) {
-      return {color: colors.red}
+      return { color: colors.red };
     } else {
-      return {color: hexToRGBA(colors.white, 0.2)}
+      return { color: hexToRGBA(colors.white, 0.2) };
     }
   }}
 
-  
   ${getCurrentFontSizeStyle("h3")};
 
   &:hover {
