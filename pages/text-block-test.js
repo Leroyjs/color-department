@@ -1,5 +1,4 @@
-import { IntroMainTextBlock } from "components/sections/intro-main-text-block";
-import React from "react";
+import { IntroMainTextBlock } from "components";
 
 const TextBlocks = () => {
   return (

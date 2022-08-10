@@ -1,22 +1,18 @@
 import {
-  sizes,
-  colors,
-  getCurrentFontSizeStyle,
-  getCurrentPaddingStyles,
+  getCurrentPaddingStyle,
   getCurrentBackgroundColorStyles,
 } from "styles";
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { H2 } from "components";
+import { getCurrentColor } from "styles";
 
-//Задает прозрачность хедеру
 export const TextSectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
-  ${getCurrentPaddingStyles("top", "xlg")};
-  ${getCurrentPaddingStyles("bottom", "md")};
+  ${getCurrentPaddingStyle("top", "xlg")};
+  ${getCurrentPaddingStyle("bottom", "md")};
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
 `;
 
@@ -35,3 +31,7 @@ export const TextSectionWrapper = styled.div`
     justify-content: center;
     align-items: flex-start;
     `;
+
+export const StyledWhiteH2 = styled(H2)`
+  color:${getCurrentColor("white")};
+`;
