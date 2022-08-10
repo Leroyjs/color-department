@@ -4,18 +4,20 @@ import {
     fontFamilies,
     fontSizes,
     getCurrentFontSizeStyle,
+    getCurrentPaddingStyle,
     hexToRGBA,
 } from "styles";
 
+const lineHeight = 90
 export const InputWrapper = styled.div`
   position: relative;
 `;
 
-const lineHeight = 90
 export const TextAreaInput = styled('textarea')(({isError}) => ({
 
+    paddingTop: '18px',
+    marginBottom: '-18px',
     width: '100%',
-    minHeight: lineHeight * 4 + 'px',
     overflow: 'hidden',
     textTransform: 'uppercase',
 
@@ -27,7 +29,6 @@ export const TextAreaInput = styled('textarea')(({isError}) => ({
     lineHeight: lineHeight + 'px',
     backgroundImage: `linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${isError ? colors.red : hexToRGBA(colors.white, 0.2)} 0px)`,
     backgroundSize: `100% ${lineHeight}px`,
-    backgroundPositionY: `${-0.2 * lineHeight}px`,
 }));
 
 export const TextAreaWrapper = styled.div`
@@ -50,7 +51,6 @@ export const TextAreaWrapper = styled.div`
     line-height: ${lineHeight + 'px'};
     background-image: ${`linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${colors.white} 0px)`};
     background-size: ${`100% ${lineHeight}px`};
-    background-position-y: ${`${-0.2 * lineHeight}px`};
     transition: transform 0.5s;
     transform: scaleX(${({isActive}) => (isActive ? 1 : 0)});
     transform-origin: left;
@@ -76,7 +76,9 @@ export const Title = styled.h3`
   text-transform: uppercase;
   font-size: ${fontSizes.desktopLG.h3};
   font-family: ${fontFamilies.mainFont};
-  color: ${({isError}) => isError ? colors.red : colors.white};
-  margin-bottom: 8px;
+  color: ${({isError}) => (isError ? colors.red : colors.white)};
+  margin-bottom: 10px;
+
+  ${getCurrentPaddingStyle("top", "xxsm")};
 `;
 

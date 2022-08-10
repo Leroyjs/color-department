@@ -1,7 +1,10 @@
 import {
+  applyMargins,
+  applyPaddings,
   colors,
   fontFamilies,
   getCurrentFontSizeStyle,
+  getCurrentPaddingStyle,
   hexToRGBA,
 } from "styles";
 
@@ -36,6 +39,8 @@ export const InputStyled = styled.input`
   padding-left: 50%;
   text-transform: uppercase;
   font-family: ${fontFamilies.mainFont};
+  padding-top: 5px;
+  padding-bottom: 5px;
 
   &:hover {
     & + ${Underline} ${UnderlineInner} {
@@ -73,4 +78,7 @@ export const Title = styled.div`
 
 export const InputWrapper = styled.div`
   position: relative;
+  ${applyMargins};
+  ${applyPaddings}
+  ${getCurrentPaddingStyle("right", "none")};
 `;
