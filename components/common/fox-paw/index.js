@@ -1,0 +1,1 @@
+export { FoxPaw } from './fox-paw';

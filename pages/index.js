@@ -1,5 +1,5 @@
-import {useState} from "react";
-import {DropDown, TextArea} from "components";
+import { useRef, useState } from "react";
+import { Header, DropDown, TextArea, RunningLine } from "components";
 import "styles/global.style";
 
 const options = [
@@ -18,19 +18,27 @@ const options = [
 ]
 
 const Home = () => {
+
+    const videoContant = useRef(null);
     const [value, setValue] = useState(null);
-    const [message, setMessage] = useState(null);
+    const [message, setMessage] = useState("");
+    
     return (
         <>
-            <main style={{height: '100vh', overflow: "visible"}}>
-                <DropDown title="Service" onChange={(option) => setValue(option)} options={options} value={value}/>
+            <Header transparentToComponent={videoContant}></Header>
 
-                <TextArea title="About your work" value={message} onChange={(val) => {
-                    setMessage(val)
-                }}/>
+            <div className="TODO: Play ground" style={{ 'position': 'relative', 'overflow': 'hidden' }}>
+                <div ref={videoContant} style={{ 'height': '100vh', 'filter': 'brightness(0.5)', 'background-image': 'url(./Yp2.gif)', 'background-size': 'cover' }}></div>
+                <RunningLine style={{ 'position': 'absolute', 'bottom': '0' }}></RunningLine>
+            </div>
+
+            <main style={{ height: '100vh', overflow: "visible" }}>
+                <DropDown title="Service" onChange={(option) => setValue(option)} options={options} value={value} />
+                <TextArea title="About your work" value={message} onChange={(val) => {setMessage(val)}} />
             </main>
         </>
     );
+
 };
 
 export default Home;
