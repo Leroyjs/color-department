@@ -15,6 +15,19 @@ export function debounce(func, wait) {
     };
 }
 
+export const throttling = (callback, delay, ...args) => {
+    let timer;
+
+    return () => {
+        if (timer) return;
+        timer = setTimeout(() => {
+            callback(...args);
+            clearTimeout(timer);
+            timer = null;
+        }, delay);
+    };
+};
+
 export function clamp(num, min, max){
     return Math.min(Math.max(num, min), max)
 }

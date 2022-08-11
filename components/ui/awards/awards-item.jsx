@@ -1,9 +1,8 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef} from 'react';
+import {debounce, clamp} from "utils";
 import {Item, LabelEnd, LabelStart, PopOver} from "./awards-list.style";
-import {debounce, clamp} from "../../../utils";
-import {loadGetInitialProps} from "next/dist/shared/lib/utils";
 
-const AwardsItem = ({href, startLabel, endLabel, img}) => {
+export const AwardsItem = ({href, startLabel, endLabel, img, ...props}) => {
     const popOverRef = useRef();
 
     function handleEnter() {
@@ -14,6 +13,7 @@ const AwardsItem = ({href, startLabel, endLabel, img}) => {
 
     function handleLeave() {
         const optionContainerEl = popOverRef.current;
+
         if (optionContainerEl?.classList.contains('isShow')) {
             optionContainerEl.classList.remove('isShow');
         }
@@ -22,6 +22,7 @@ const AwardsItem = ({href, startLabel, endLabel, img}) => {
     const handleMove = debounce((e) => {
         const target = e.target;
         const popOver = popOverRef.current;
+
         if (!popOver || !target) return;
 
         const rectTarget = target.getBoundingClientRect();
@@ -37,7 +38,7 @@ const AwardsItem = ({href, startLabel, endLabel, img}) => {
     }, 10)
 
     return (
-        <Item href={href} onMouseEnter={handleEnter} onMouseMove={handleMove} onMouseLeave={handleLeave}>
+        <Item href={href} onMouseEnter={handleEnter} onMouseMove={handleMove} onMouseLeave={handleLeave} {...props}>
             <LabelStart>
                 {startLabel}
             </LabelStart>
@@ -48,5 +49,3 @@ const AwardsItem = ({href, startLabel, endLabel, img}) => {
         </Item>
     );
 };
-
-export default AwardsItem;

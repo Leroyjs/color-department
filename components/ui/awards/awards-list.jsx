@@ -1,20 +1,18 @@
 import React from 'react';
-import {PropTypes} from "prop-types";
-import AwardsItem from "./awards-item";
-import {ListStyled} from "./awards-list.style";
+import { PropTypes } from "prop-types";
+import { AwardsItem } from "./awards-item";
+import {AwardsItemProps} from "./types";
+import { ListStyled } from "./awards-list.style";
 
-export const AwardsList = ({options}) => {
-
+export const AwardsList = ({options, ...props}) => {
     return (
-        <ListStyled>
+        <ListStyled {...props}>
             {options.map((option, index) => (
                 <AwardsItem key={index} {...option}/>
             ))}
         </ListStyled>
     );
 };
-
-const AwardsItemProps = PropTypes.shape({});
 
 AwardsList.propTypes = {
     options: PropTypes.arrayOf(AwardsItemProps),

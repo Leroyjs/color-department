@@ -1,10 +1,12 @@
 import React from 'react';
 import {AwardsList} from "./awards-list";
 import {AwardsContainer, AwardsTitle} from "./awards-list.style";
+import {PropTypes} from "prop-types";
+import {AwardsItemProps} from "./types";
 
-export const Awards = ({options, title}) => {
+export const Awards = ({options, title, ...props}) => {
     return (
-        <AwardsContainer>
+        <AwardsContainer {...props}>
             <AwardsTitle mb="md">
                 {title}
             </AwardsTitle>
@@ -12,3 +14,8 @@ export const Awards = ({options, title}) => {
         </AwardsContainer>
     );
 };
+
+Awards.propTypes = {
+    title: PropTypes.string,
+    options: PropTypes.arrayOf(AwardsItemProps),
+}
