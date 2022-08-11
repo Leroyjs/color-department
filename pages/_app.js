@@ -14,7 +14,7 @@ function App({ Component, pageProps }) {
       <ThemeProvider>
         <Component {...pageProps} />
       </ThemeProvider>
-      <Grid/>
+
     </>
   );
 }
