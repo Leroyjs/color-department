@@ -1,9 +1,11 @@
 import { IntroMainTextBlock } from "components";
+import { AwardMainTextBlock } from "components";
 
 const TextBlocks = () => {
   return (
     <>
-      <IntroMainTextBlock></IntroMainTextBlock>
+      <IntroMainTextBlock />
+      <AwardMainTextBlock />
     </>
   );
 };

@@ -20,7 +20,7 @@ import { Modal } from "./common/modal";
 import { Portal } from "./common/portal";
 import { VideoBackground } from "./common/video-background";
 import { IntroMainTextBlock } from "./sections/intro-main-text-block";
-
+import { AwardMainTextBlock } from "./sections/award-main-text-block";
 
 export {
   ThemeProvider,
@@ -45,4 +45,5 @@ export {
   Portal,
   VideoBackground,
   IntroMainTextBlock,
+  AwardMainTextBlock,
 };

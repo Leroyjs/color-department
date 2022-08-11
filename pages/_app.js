@@ -3,7 +3,6 @@ import Script from "next/script";
 import { ThemeProvider, Grid } from "components";
 
 function App({ Component, pageProps }) {
-
   return (
     <>
       <Head>
@@ -14,7 +13,6 @@ function App({ Component, pageProps }) {
       <ThemeProvider>
         <Component {...pageProps} />
       </ThemeProvider>
-      <Grid/>
     </>
   );
 }
