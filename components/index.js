@@ -18,8 +18,12 @@ import { FoxPaw } from "./common/fox-paw";
 import { CompanyInfo } from "./common/company-info";
 import { Modal } from "./common/modal";
 import { Portal } from "./common/portal";
+import { Works } from "./ui/works";
 import { VideoBackground } from "./common/video-background";
 import { Awards } from "./ui/awards";
+import { SelectedWorks } from "./ui/selected-works";
+import { Wolf } from "./ui/wolf";
+import { Avatar } from "./ui/avatar";
 
 export {
   ThemeProvider,
@@ -43,5 +47,9 @@ export {
   Modal,
   Portal,
   VideoBackground,
-  Awards
+  Works,
+  SelectedWorks,
+  Awards,
+  Wolf,
+  Avatar,
 };
