@@ -11,7 +11,7 @@ export const FooterWrapper = styled.div`
 export const FooterInfoWrapper = styled.div`
     grid-column: 1/-1;
     position: relative;
-    margin-bottom: calc(${sizes['desktopLG'].half} * 2);
+    margin-bottom: ${sizes['desktopLG'].x1};
 `
 
 export const FooterLogo = styled.div`
@@ -36,7 +36,7 @@ export const FooterMapWrapper = styled.div`
 `
 
 export const FooterModalWrapper = styled.div`
-    height: ${`calc(${sizes['desktopLG'].half} * 2)`};
+    height: ${sizes['desktopLG'].x1};
     position: absolute;
     grid-column: 1/-1;
     bottom: 0;
