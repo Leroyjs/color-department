@@ -15,8 +15,18 @@ import {VideoBackground} from "components";
 
 const DEMO_VIDEO = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4';
 const DEMO_POSTER = 'https://www.meme-arsenal.com/memes/71fcdc62722bd4ae986ecec1694d2535.jpg'
-const VideoPage = () => {
+const VideoPage = ({video, poster}) => {
     const videoRef = useRef();
+
+    function handleEnter(event) {
+      const { target } = event;
+      if (target.currentTime > 0.001) target.play();
+    }
+
+    function handleLeave(event) {
+      const { target } = event;
+      target.pause();
+    }
 
     function handlePlay() {
         const videoEl = videoRef.current;
@@ -25,9 +35,16 @@ const VideoPage = () => {
     }
 
     return (
+
+
+
+
+
+
+
         <VideoBackground
-            poster={DEMO_POSTER}
-            video={{mp4: DEMO_VIDEO}}
+            // poster={poster}
+            video={{mp4: video}}
             autoPlay={false}
             ref={videoRef}
             onClick={handlePlay}
@@ -37,14 +54,3 @@ const VideoPage = () => {
 };
 
 export default VideoPage;
-
-function handleEnter(event) {
-    const {target} = event;
-    if (target.currentTime > 0.001)
-        target.play();
-}
-
-function handleLeave(event) {
-    const {target} = event;
-    target.pause();
-}

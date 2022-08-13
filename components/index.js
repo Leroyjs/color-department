@@ -19,6 +19,8 @@ import { CompanyInfo } from "./common/company-info";
 import { Modal } from "./common/modal";
 import { Portal } from "./common/portal";
 import { VideoBackground } from "./common/video-background";
+import { VideoGrid } from "./sections/video-grid";
+import { VideoGridItem } from "./sections/video-grid/video-grid-item"
 
 export {
   ThemeProvider,
@@ -41,5 +43,7 @@ export {
   TextArea,
   Modal,
   Portal,
-  VideoBackground
+  VideoBackground,
+  VideoGrid,
+  VideoGridItem,
 };

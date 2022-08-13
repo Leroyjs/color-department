@@ -62,12 +62,12 @@ export const getCurrentPaddingStyle = (direction, type) =>
 
 export const getCurrentGridTemplateColumsStyle = () =>
   getResponsiveStyle("gridTemplateColumns")([
-    "repeat(8, 12.5vw)",
-    "repeat(8, 12.5vw)",
-    "repeat(8, 12.5vw)",
-    "repeat(8, 12.5vw)",
-    "repeat(8, 12.5vw)",
-    "repeat(6, 16.666667vw)",
-    "repeat(6, 16.666667vw)",
-    "repeat(2, 50vw)",
+    // "repeat(8, 12.5vw)",
+    // "repeat(8, 12.5vw)",
+    // "repeat(8, 12.5vw)",
+    // "repeat(8, 12.5vw)",
+    // "repeat(8, 12.5vw)",
+    // "repeat(6, 16.666667vw)",
+    // "repeat(6, 16.666667vw)",
+    "repeat(2, 50%)",
   ]);
