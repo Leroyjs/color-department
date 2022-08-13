@@ -35,21 +35,15 @@ const VideoPage = ({video, poster}) => {
     }
 
     return (
-
-
-
-
-
-
-
-        <VideoBackground
-            // poster={poster}
-            video={{mp4: video}}
-            autoPlay={false}
-            ref={videoRef}
-            onClick={handlePlay}
-            onMouseEnter={handleEnter}
-            onMouseLeave={handleLeave}/>
+      <VideoBackground
+        // poster={DEMO_POSTER}
+        // video={{ mp4: DEMO_VIDEO }}
+        autoPlay={false}
+        ref={videoRef}
+        onClick={handlePlay}
+        onMouseEnter={handleEnter}
+        onMouseLeave={handleLeave}
+      />
     );
 };
 

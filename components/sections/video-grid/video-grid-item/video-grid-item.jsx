@@ -8,7 +8,7 @@ export const VideoGridItem = (item) => {
 
 		<VideoGridItemWrapper>
 
-			<VideoBackground video={item.video} poster={item.poster} key={item.id} />
+			<VideoBackground poster={item.poster} video={item.video} key={item.id} />
 
 		</VideoGridItemWrapper>
 	);
