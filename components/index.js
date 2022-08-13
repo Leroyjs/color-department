@@ -21,6 +21,7 @@ import { Portal } from "./common/portal";
 import { VideoBackground } from "./common/video-background";
 import { IntroMainTextBlock } from "./sections/intro-main-text-block";
 import { AwardMainTextBlock } from "./sections/award-main-text-block";
+import { IntroAboutTextBlock } from "./sections/intro-about-text-block";
 
 export {
   ThemeProvider,
@@ -46,4 +47,5 @@ export {
   VideoBackground,
   IntroMainTextBlock,
   AwardMainTextBlock,
+  IntroAboutTextBlock,
 };
