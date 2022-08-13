@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Header, DropDown, TextArea, RunningLine } from "components";
+import { Header, DropDown, TextArea, RunningLine, Footer } from "components";
 import "styles/global.style";
 
 const options = [
@@ -36,6 +36,8 @@ const Home = () => {
                 <DropDown title="Service" onChange={(option) => setValue(option)} options={options} value={value} />
                 <TextArea title="About your work" value={message} onChange={(val) => {setMessage(val)}} />
             </main>
+
+            <Footer></Footer>
         </>
     );
 

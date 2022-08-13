@@ -6,7 +6,7 @@ import { H1 } from "./ui/h1";
 import { H2 } from "./ui/h2";
 import { H3 } from "./ui/h3";
 import { Input } from "./ui/input";
-import { Header } from "./sections";
+import { Header, Footer } from "./sections";
 import { FooterNavigation } from "./common/footer-nav-bar";
 import { Menu } from "./sections/menu";
 import { Text } from "./ui/text";
@@ -20,6 +20,7 @@ import { Modal } from "./common/modal";
 import { Portal } from "./common/portal";
 
 import { VideoBackground } from "./common/video-background";
+import { FoxLogo, FullSizeButton } from "./common";
 import { Awards } from "./ui/awards";
 import { Wolf } from "./ui/wolf";
 import { Avatar } from "./ui/avatar";
@@ -41,9 +42,12 @@ export {
   RunningLine,
   Menu,
   Header,
+  Footer,
   FoxPaw,
   FooterNavigation,
   CompanyInfo,
+  FoxLogo,
+  FullSizeButton,
   DropDown,
   TextArea,
   Modal,
