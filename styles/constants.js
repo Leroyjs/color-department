@@ -64,6 +64,8 @@ export const offsets = {
     md1: 30,
     sm: 16,
     xsm: 12,
+    xxsm: 8,
+    none: 0
   },
 };
 
@@ -89,3 +91,10 @@ export const fontSizes = {
     caption: "14px",
   },
 };
+
+export const zindex = {
+  modal:100,
+  header: 1000,
+  frontItem: 10,
+  backItem: -1
+}

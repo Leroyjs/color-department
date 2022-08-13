@@ -6,6 +6,7 @@ import {
   Caption,
   ButtonEllipse,
   ButtonRectangle,
+  RunningLine
 } from "components";
 import "styles/global.style";
 
@@ -21,6 +22,7 @@ const UI = () => {
         <Caption>caption</Caption>
         <ButtonEllipse>12312</ButtonEllipse>
         <ButtonRectangle>SEND</ButtonRectangle>
+        <RunningLine></RunningLine>
       </main>
     </>
   );

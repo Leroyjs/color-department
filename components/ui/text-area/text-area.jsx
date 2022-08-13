@@ -2,7 +2,18 @@ import {PropTypes} from "prop-types";
 import {Error, InputWrapper, TextAreaInput, TextAreaWrapper, Title} from "./text-area.style";
 import {propTypesMargin, propTypesPadding} from "../../types";
 
-export const TextArea = ({title, error, value = "", onChange, defaultValue, maxLength = 420, propsInput, ...props}) => {
+export const TextArea = ({
+                             title,
+                             error,
+                             value = "",
+                             onChange,
+                             defaultValue,
+                             rows = 4,
+                             maxLength = 420,
+                             propsInput,
+                             isResizable = true,
+                             ...props
+                         }) => {
     function resizeHeight(e) {
         e.target.style.height = "auto";
         const scrollHeight = e.target.scrollHeight;
@@ -10,16 +21,18 @@ export const TextArea = ({title, error, value = "", onChange, defaultValue, maxL
     }
 
     function handleKeyUp(e) {
-        resizeHeight(e)
-        onChange?.(e.target.value);
+        isResizable && resizeHeight(e);
+        const value = e.target.value;
+        if (value.length > maxLength) return;
+        onChange?.(value);
     }
 
     return (
         <InputWrapper {...props}>
             {title && <Title isError={error}>{title}</Title>}
-            <TextAreaWrapper isActive={!!value}>
+            <TextAreaWrapper isActive={!!value} maxRows={rows}>
                 <TextAreaInput isError={error} onChange={handleKeyUp} defaultValue={defaultValue}
-                               maxLength={maxLength} value={value} {...propsInput}/>
+                               maxLength={maxLength} value={value} rows={rows} {...propsInput}/>
             </TextAreaWrapper>
             {error && <Error>{error}</Error>}
         </InputWrapper>
@@ -27,7 +40,9 @@ export const TextArea = ({title, error, value = "", onChange, defaultValue, maxL
 };
 
 TextArea.propTypes = {
+    isResizable: PropTypes.bool,
     maxLength: PropTypes.number,
+    rows: PropTypes.number,
     defaultValue: PropTypes.string,
     error: PropTypes.string,
     title: PropTypes.string,
