@@ -1,5 +1,6 @@
 import {
   fontSizes,
+  namesOfBreakpoints,
   offsets,
   sizes,
   subsequenceOfBreakpoints,
@@ -60,14 +61,23 @@ export const getCurrentMarginStyle = (direction, type) =>
 export const getCurrentPaddingStyle = (direction, type) =>
   getCurrentStylesByDirection("padding")(direction, type);
 
+const { count: countDesktopLG, x1: x1DesktopLG } =
+  sizes[namesOfBreakpoints.desktopLG];
+
 export const getCurrentGridTemplateColumsStyle = () =>
   getResponsiveStyle("gridTemplateColumns")([
-    "repeat(8, 12.5vw)",
-    "repeat(8, 12.5vw)",
-    "repeat(8, 12.5vw)",
-    "repeat(8, 12.5vw)",
-    "repeat(8, 12.5vw)",
+    `repeat(${countDesktopLG}, ${x1DesktopLG})`,
+    `repeat(${countDesktopLG}, ${x1DesktopLG})`,
+    `repeat(${countDesktopLG}, ${x1DesktopLG})`,
+    `repeat(${countDesktopLG}, ${x1DesktopLG})`,
+    `repeat(${countDesktopLG}, ${x1DesktopLG})`,
     "repeat(6, 16.666667vw)",
     "repeat(6, 16.666667vw)",
     "repeat(2, 50vw)",
   ]);
+
+export const getCurrentSizeStyle = getCurrentStyleByDictionary(sizes);
+
+export const getCurrentWidthSizeStyle = getCurrentSizeStyle("width");
+
+export const getCurrentHeightSizeStyle = getCurrentSizeStyle("height");

@@ -6,6 +6,7 @@ import { H1 } from "./ui/h1";
 import { H2 } from "./ui/h2";
 import { H3 } from "./ui/h3";
 import { Input } from "./ui/input";
+import { Preloader } from "./sections/preloader";
 import { Text } from "./ui/text";
 import { ThemeProvider } from "./common/theme-provider";
 
@@ -20,4 +21,5 @@ export {
   ButtonEllipse,
   ButtonRectangle,
   Grid,
+  Preloader,
 };

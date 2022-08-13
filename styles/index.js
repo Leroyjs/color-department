@@ -5,6 +5,7 @@ export {
   colors,
   breakpointsWidth,
   offsets,
+  sizes,
   typesOfoffset,
 } from "./constants";
 
@@ -21,6 +22,9 @@ export {
   getCurrentColorStyles,
   getCurrentGridTemplateColumsStyle,
   getCurrentBackgroundColorStyles,
+  getCurrentSizeStyle,
+  getCurrentWidthSizeStyle,
+  getCurrentHeightSizeStyle,
 } from "./get-styles-utils";
 
 // Функции, которые возвращают значение стиля

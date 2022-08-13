@@ -77,6 +77,7 @@ export const sizes = {
     x2: "25vw",
     x1: "12.5vw",
     half: "6.25vw",
+    count: 8,
   },
 };
 
