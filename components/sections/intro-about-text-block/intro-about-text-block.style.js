@@ -7,6 +7,7 @@ import {
 } from "styles";
 import styled from "@emotion/styled";
 import { H2 } from "components";
+import { TextDecorationUnderline } from "components/common";
 
 export const TextSectionWrapper = styled.div`
   display: flex;
@@ -48,6 +49,7 @@ export const RoundedNumber = styled.div`
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
   border: 1px solid ${getCurrentColor("white")};
   margin: 0;
+  ${getCurrentMarginStyle("right", "xxsm")};
   span {
     color: ${getCurrentColor("white")};
     align-self: center;
@@ -59,9 +61,18 @@ export const TextDecorationWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  position: relative;
 `;
 
 export const StyledWhiteH2 = styled(H2)`
   color: ${getCurrentColor("white")};
 `;
 
+export const StyledUnderline = styled(TextDecorationUnderline)`
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  right: 0;
+  transform: translateX(-50%);
+  width: calc(100% + 6px);
+`;

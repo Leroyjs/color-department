@@ -1,1 +1,1 @@
-export { RightBracket } from "./right-brackets";
+export { RightBracket } from "./right-bracket";

@@ -24,6 +24,10 @@ import { Awards } from "./ui/awards";
 import { IntroMainTextBlock } from "./sections/intro-main-text-block";
 import { AwardMainTextBlock } from "./sections/award-main-text-block";
 import { IntroAboutTextBlock } from "./sections/intro-about-text-block";
+import { TextDecorationUnderline } from "./common/text-decoration-underline";
+import { LeftBracket } from "./common/left-bracket";
+import { RightBracket } from "./common/right-bracket";
+import { Planet } from "./common/planet/";
 
 export {
   ThemeProvider,
@@ -49,10 +53,13 @@ export {
   TextArea,
   Modal,
   Portal,
-  VideoBackground,
   Awards,
   VideoBackground,
   IntroMainTextBlock,
   AwardMainTextBlock,
   IntroAboutTextBlock,
+  TextDecorationUnderline,
+  LeftBracket,
+  RightBracket,
+  Planet,
 };
