@@ -1,8 +1,6 @@
-import Modal from "../modal";
-import { ButtonEllipse } from "components";
-import { H2 } from "components";
-import { GratitudeWrapper, StyledH2 } from "./work-modal.style";
 import Link from "next/link";
+import {ButtonEllipse, Modal} from "components";
+import { GratitudeWrapper, StyledH2 } from "./work-modal.style";
 
 export const WorkModal = () => {
   return (

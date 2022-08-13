@@ -12,15 +12,21 @@ import { Menu } from "./sections/menu";
 import { Text } from "./ui/text";
 import { DropDown } from "./ui/drop-down";
 import { TextArea } from "./ui/text-area";
-import { ThemeProvider } from "./common/theme-provider";
+import { ThemeProvider } from "./common";
 import { RunningLine } from './common/running-line';
 import { FoxPaw } from "./common/fox-paw";
 import { CompanyInfo } from "./common/company-info";
 import { Modal } from "./common/modal";
 import { Portal } from "./common/portal";
+
 import { VideoBackground } from "./common/video-background";
 import { FoxLogo, FullSizeButton } from "./common";
 import { Awards } from "./ui/awards";
+import { Wolf } from "./ui/wolf";
+import { Avatar } from "./ui/avatar";
+import { CloseButton } from "./ui/close-button";
+import { WorksCard } from "./ui/works-card";
+import { DetailCardModal } from "./modal";
 
 export {
   ThemeProvider,
@@ -47,5 +53,10 @@ export {
   Modal,
   Portal,
   VideoBackground,
-  Awards
+  Awards,
+  Wolf,
+  Avatar,
+  CloseButton,
+  WorksCard,
+  DetailCardModal
 };

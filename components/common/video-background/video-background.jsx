@@ -1,6 +1,7 @@
 import React, {forwardRef} from 'react';
 import {PropTypes} from "prop-types";
 import {VideoContainer} from "./video.style";
+import {propTypesVideoBg, propTypesWorksCard} from "../../types";
 
 // eslint-disable-next-line react/display-name
 export const VideoBackground = forwardRef(({poster, video, autoPlay = true, ...props}, ref) => {
@@ -13,13 +14,6 @@ export const VideoBackground = forwardRef(({poster, video, autoPlay = true, ...p
     );
 });
 
-const SrcArgType = PropTypes.oneOfType([PropTypes.string, PropTypes.object]);
-
 VideoBackground.propTypes = {
-    poster: SrcArgType.isRequired,
-    autoPlay: PropTypes.bool,
-    video: PropTypes.shape({
-        webm: SrcArgType,
-        mp4: SrcArgType.isRequired,
-    }).isRequired,
+    ...propTypesVideoBg
 }
