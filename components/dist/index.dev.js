@@ -171,6 +171,24 @@ Object.defineProperty(exports, "ShopSection", {
     return _shopSection.ShopSection;
   }
 });
+Object.defineProperty(exports, "Counter", {
+  enumerable: true,
+  get: function get() {
+    return _counter.Counter;
+  }
+});
+Object.defineProperty(exports, "Plus", {
+  enumerable: true,
+  get: function get() {
+    return _plus.Plus;
+  }
+});
+Object.defineProperty(exports, "Minus", {
+  enumerable: true,
+  get: function get() {
+    return _minus.Minus;
+  }
+});
 
 var _buttonEllipse = require("./ui/button-ellipse");
 
@@ -225,3 +243,9 @@ var _common = require("./common");
 var _awards = require("./ui/awards");
 
 var _shopSection = require("./sections/shop-section");
+
+var _counter = require("./ui/counter");
+
+var _plus = require("./ui/plus");
+
+var _minus = require("./ui/minus");

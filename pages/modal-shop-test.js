@@ -4,7 +4,7 @@ import React from 'react';
 const modalShopTest = () => {
 	return (
 		<div>
-			<ModalShop isOpen={false} />
+			<ModalShop isOpen={true} />
 		</div>
 	);
 };

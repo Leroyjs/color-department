@@ -25,6 +25,10 @@ import { VideoBackground } from "./common/video-background";
 import { FoxLogo, FullSizeButton } from "./common";
 import { Awards } from "./ui/awards";
 import { ShopSection } from "./sections/shop-section";
+import { Counter } from "./ui/counter";
+import { Plus } from "./ui/plus";
+import { Minus} from "./ui/minus";
+
 
 export {
   ThemeProvider,
@@ -55,4 +59,7 @@ export {
   FullSizeButton,
   ModalShop,
   ShopSection,
+  Counter,
+  Plus,
+  Minus,
 };
