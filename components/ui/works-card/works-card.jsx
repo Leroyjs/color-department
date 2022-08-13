@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {VideoBackground} from "components";
+import {VideoBackground} from "components/index";
 import {CardCaption, CardFooter, CardTitle, CardTitleWrapper, CardWrapper} from "./works-card.style";
 
 const DEMO_VIDEO = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4';
@@ -16,7 +16,8 @@ export const WorksCard = () => {
                 autoPlay={false}
                 ref={videoRef}
             />
-            <CardTitle color="white" wrapperProps={{className: CardTitleWrapper}}>
+            <CardTitle color="white" wrapperProps={{className: CardTitleWrapper}}
+                       data-default="El corte ingles" data-hover="HOVER EFFECT">
                 El corte ingles
             </CardTitle>
             <CardFooter>

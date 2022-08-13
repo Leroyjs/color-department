@@ -1,3 +1,5 @@
+import {useEffect} from "react";
+
 export function debounce(func, wait) {
     let currentTimer = null;
     let lastArgs = null;
@@ -28,6 +30,22 @@ export const throttling = (callback, delay, ...args) => {
     };
 };
 
-export function clamp(num, min, max){
+export function clamp(num, min, max) {
     return Math.min(Math.max(num, min), max)
+}
+
+function handleEsc(event) {
+    if (event.key === "Escape" || event.keyCode === 27) {
+        this?.();
+    }
+}
+
+export const useEscHandler = (callback) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+        if (!callback) return;
+        const handleEscWithCallback = handleEsc.bind(callback)
+        document.addEventListener("keydown", handleEscWithCallback);
+        return () => document.removeEventListener("keydown", handleEscWithCallback);
+    }, [callback])
 }

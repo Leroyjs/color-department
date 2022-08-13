@@ -1,0 +1,65 @@
+import React from 'react';
+import {PropTypes} from "prop-types";
+import {Caption, H2} from "components/index";
+import {WorksCards} from "./works-cards";
+import {
+    Wrapper,
+    User,
+    UserAvatar,
+    UserAbout,
+    Description,
+    TextCol,
+    CloseBtn,
+    Container,
+    TextRow, ProfileLinks, CaptionLink, ModalWrapper
+} from "./detail-card-modal.style";
+
+export const DetailCardModal = ({isOpen, setOpen}) => (
+    <ModalWrapper isOpen={isOpen} setOpen={setOpen}>
+        <Wrapper>
+            <CloseBtn onClick={() => setOpen(false)}/>
+            <Container>
+                <User>
+                    <UserAvatar img="https://placebeard.it/640x360"/>
+                    <UserAbout>
+                        <H2 pb="sm">Miranda Bell</H2>
+                        <Caption color="white">Creative producer</Caption>
+                    </UserAbout>
+                </User>
+                <Description>
+                    <TextRow>
+                        <TextCol color="white">
+                            Miranda Bell is a highly versatile senior colourist working broadly across advertising,
+                            narrative,
+                            music and fashion. Nike, Louis Vuitton, Mercedes, Virgin Media, ASOS, Sainsbury’s,
+                            Balenciaga
+                            and
+                            Calvin Klein all feature in his varied commercial portfolio. Throughout every grade, he
+                            prioritises
+                            enhancing the message and emotion of the work.
+                        </TextCol>
+                        <TextCol color="white">
+                            As well as appearing on streaming sites such as Netflix, Amazon and Mubi, Jack’s
+                            narrative
+                            work
+                            is
+                            regularly awarded at global film festivals, including European Short Film Festival, BFI,
+                            Iris,
+                            London Short Film Festival, and more
+                        </TextCol>
+                    </TextRow>
+                    <ProfileLinks>
+                        <Caption color="white">Instagram</Caption>
+                        <CaptionLink>@MirandaBell</CaptionLink>
+                    </ProfileLinks>
+                </Description>
+            </Container>
+        </Wrapper>
+        <WorksCards/>
+    </ModalWrapper>
+);
+
+DetailCardModal.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    setOpen: PropTypes.func.isRequired
+}

@@ -29,3 +29,10 @@ export const propTypesTextTag = {
 export const propTypesColors = {
   color: PropTypes.oneOf([...Object.keys(colors), "primary"]),
 };
+
+export const propTypesChildren = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired
+};

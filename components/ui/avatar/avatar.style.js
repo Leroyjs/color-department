@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import {applyMargins, applyPaddings, colors, hexToRGBA} from "styles";
+import {applyMargins, applyPaddings, colors, getCurrentColor, hexToRGBA} from "styles";
 import {Wolf} from "../wolf";
 
 export const Wrapper = styled.div`
@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   width: 200px;
   height: 200px;
   overflow: hidden;
-  border: 1px solid ${hexToRGBA(colors.white, 0.2)};
+  ${({isBorder}) => isBorder && `border: 1px solid ${hexToRGBA(colors.white, 0.2)}`};
   ${applyMargins};
   ${applyPaddings}
 `;
@@ -17,11 +17,20 @@ export const PlaceholderImg = styled(Wolf)`
   height: 100%;
   object-fit: contain;
   object-position: center;
+  padding: 12px;
+
+  .leftEye {
+    fill: ${({theme}) => getCurrentColor("blue", theme)};
+  }
+
+  .rightEye {
+    fill: ${({theme}) => getCurrentColor("yellow", theme)};
+  }
 `;
 
-export const Img = styled(Image)`
+export const Img = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 `;

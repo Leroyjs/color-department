@@ -1,8 +1,8 @@
 import React from 'react';
-import {GridWrapper, WorksTitle, WorksTitleWrapper, WorksWrapper} from "./works-card.style";
-import {WorksCard} from "./works-card";
+import {WorksCard} from "../../../ui/works-card";
+import {GridWrapper, WorksTitle, WorksTitleWrapper, WorksWrapper} from "./works-cards.style";
 
-export const Works = () => {
+export const WorksCards = () => {
     return (
         <WorksWrapper>
             <WorksTitle mb="md" wrapperProps={{className: WorksTitleWrapper}}>
