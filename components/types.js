@@ -1,6 +1,6 @@
 import { PropTypes } from "prop-types";
-import { colors } from "../styles/constants";
-import { typesOfoffset } from "../styles/constants";
+import { colors } from "../styles";
+import { typesOfoffset } from "../styles";
 
 export const propTypesMargin = {
   my: PropTypes.oneOf(typesOfoffset),
@@ -36,3 +36,22 @@ export const propTypesChildren = {
     PropTypes.node
   ]).isRequired
 };
+
+export const propTypesSource = PropTypes.oneOfType([PropTypes.string, PropTypes.object]);
+
+export const propTypesVideoBg = {
+  poster: propTypesSource.isRequired,
+  autoPlay: PropTypes.bool,
+  video: PropTypes.shape({
+    webm: propTypesSource,
+    mp4: propTypesSource.isRequired,
+  }).isRequired,
+}
+
+export const propTypesWorksCard = {
+  ...propTypesVideoBg,
+  firstTitle: PropTypes.string.isRequired,
+  secondTitle: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  year: PropTypes.string.isRequired,
+}

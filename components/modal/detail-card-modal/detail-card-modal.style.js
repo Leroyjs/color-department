@@ -6,7 +6,7 @@ import {
     getCurrentMarginStyle, getCurrentPaddingStyle, hexToRGBA
 } from "styles";
 import {Avatar} from "../../ui/avatar";
-import {Caption, Modal, Text} from "components/index";
+import {Caption, Modal, Text} from "components";
 import {CloseButton} from "../../ui/close-button";
 
 export const CloseBtn = styled(CloseButton)`

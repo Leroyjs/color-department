@@ -12,9 +12,9 @@ export const ButtonStyle = styled.svg`
     stroke: ${({theme}) => getCurrentColor("black", theme)};
     transition: stroke 0.3s;
   }
-  
+
   &:hover {
-    fill: ${({theme}) => getCurrentColor("yellow", theme)};
+    fill: ${({theme}) => getCurrentColor("primary", theme)};
 
     .cross {
       stroke: ${({theme}) => getCurrentColor("white", theme)};

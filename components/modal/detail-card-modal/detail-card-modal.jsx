@@ -1,7 +1,7 @@
 import React from 'react';
 import {PropTypes} from "prop-types";
-import {Caption, H2} from "components/index";
-import {WorksCards} from "./works-cards";
+import {Caption, H2} from "components";
+import {WorksCards} from "../../ui/works-cards";
 import {
     Wrapper,
     User,
@@ -13,6 +13,45 @@ import {
     Container,
     TextRow, ProfileLinks, CaptionLink, ModalWrapper
 } from "./detail-card-modal.style";
+
+const DEMO_VIDEO = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4';
+const DEMO_POSTER = 'https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d?mw=1500&mh=844&q=70'
+
+
+const demoCards = [
+    {
+        firstTitle: "Lil pump",
+        secondTitle: "Zolla",
+        author: "Archangel Studios",
+        year: "2021",
+        poster: DEMO_POSTER,
+        video: {"mp4": DEMO_VIDEO}
+    },
+    {
+        firstTitle: "Lil pump",
+        secondTitle: "Zolla",
+        author: "Archangel Studios",
+        year: "2021",
+        poster: DEMO_POSTER,
+        video: {"mp4": DEMO_VIDEO}
+    },
+    {
+        firstTitle: "Lil pump",
+        secondTitle: "Zolla",
+        author: "Archangel Studios",
+        year: "2021",
+        poster: DEMO_POSTER,
+        video: {"mp4": DEMO_VIDEO}
+    },
+    {
+        firstTitle: "Lil pump",
+        secondTitle: "Zolla",
+        author: "Archangel Studios",
+        year: "2021",
+        poster: DEMO_POSTER,
+        video: {"mp4": DEMO_VIDEO}
+    },
+]
 
 export const DetailCardModal = ({isOpen, setOpen}) => (
     <ModalWrapper isOpen={isOpen} setOpen={setOpen}>
@@ -55,7 +94,7 @@ export const DetailCardModal = ({isOpen, setOpen}) => (
                 </Description>
             </Container>
         </Wrapper>
-        <WorksCards/>
+        <WorksCards title="Miranda Bell’s cases" cards={demoCards}/>
     </ModalWrapper>
 );
 

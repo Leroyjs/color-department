@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {Header, RunningLine, DetailCardModal} from "components";
+import {Header, RunningLine, DetailCardModal, ButtonRectangle} from "components";
 
 const WorksPage = () => {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -19,7 +19,9 @@ const WorksPage = () => {
                 <RunningLine style={{'position': 'absolute', 'bottom': '0'}}></RunningLine>
             </div>
 
-            <button style={{color: 'yellow'}} onClick={() => setModalOpen(true)}>OpenModal</button>
+            <ButtonRectangle onClick={() => setModalOpen(true)}>
+                Open modal
+            </ButtonRectangle>
             <DetailCardModal isOpen={isModalOpen} setOpen={setModalOpen}/>
         </div>
     );

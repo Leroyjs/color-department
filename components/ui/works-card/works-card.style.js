@@ -1,10 +1,12 @@
+
 import styled from "@emotion/styled";
 import {css} from "@emotion/css";
 import {applyMargins, applyPaddings, colors, getCurrentColorStyles, hexToRGBA} from "styles";
-import {Caption, H2} from "components/index";
+import {H2} from "../h2";
+import {Caption} from "components";
 
 export const CardTitle = styled(H2)`
-  transition: color 0.5s;
+  transition: color 0.35s;
   position: relative;
   text-align: center;
   overflow: hidden;
@@ -21,19 +23,19 @@ export const CardTitle = styled(H2)`
     white-space: nowrap;
     content: attr(data-default);
     transform: translateZ(0);
-    transition: transform 0.5s;
+    transition: transform 0.35s;
     ${({theme}) => getCurrentColorStyles("white", theme)}
   }
 
   &:after {
     transform: translateY(100%) translateZ(0);
     content: attr(data-hover);
-    ${({theme}) => getCurrentColorStyles("yellow", theme)}
+    ${({theme}) => getCurrentColorStyles("primary", theme)}
   }
 `;
 
 export const CardCaption = styled(Caption)`
-  transition: color 0.5s;
+  transition: color 0.35s;
   ${({theme}) => getCurrentColorStyles("white", theme)}
 `;
 
@@ -61,7 +63,7 @@ export const CardWrapper = styled.div`
     }
 
     ${CardCaption} {
-      ${({theme}) => getCurrentColorStyles("yellow", theme)}
+      ${({theme}) => getCurrentColorStyles("primary", theme)}
     }
   }
 `;

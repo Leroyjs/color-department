@@ -1,28 +1,30 @@
 import React, {useRef} from 'react';
-import {VideoBackground} from "components/index";
+import {propTypesVideoBg} from "../../types";
+import {VideoBackground} from "components";
+import {PropTypes} from "prop-types";
 import {CardCaption, CardFooter, CardTitle, CardTitleWrapper, CardWrapper} from "./works-card.style";
 
-const DEMO_VIDEO = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4';
-const DEMO_POSTER = 'https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d?mw=1500&mh=844&q=70'
-
-export const WorksCard = () => {
+export const WorksCard = ({poster, video, firstTitle, secondTitle = "", author, year}) => {
     const videoRef = useRef();
 
     return (
         <CardWrapper p="md" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
             <VideoBackground
-                poster={DEMO_POSTER}
-                video={{mp4: DEMO_VIDEO}}
+                poster={poster}
+                video={video}
                 autoPlay={false}
                 ref={videoRef}
-            />
-            <CardTitle color="white" wrapperProps={{className: CardTitleWrapper}}
-                       data-default="El corte ingles" data-hover="HOVER EFFECT">
-                El corte ingles
+             />
+
+            <CardTitle wrapperProps={{className: CardTitleWrapper}}
+                       data-default={firstTitle}
+                       data-hover={secondTitle || firstTitle}>
+                {firstTitle}
             </CardTitle>
+
             <CardFooter>
-                <CardCaption color="white">Archangel Studios</CardCaption>
-                <CardCaption color="white">2016</CardCaption>
+                <CardCaption color="white">{author}</CardCaption>
+                <CardCaption color="white">{year}</CardCaption>
             </CardFooter>
         </CardWrapper>
     );
@@ -36,5 +38,13 @@ function handleEnter(event) {
 function handleLeave(event) {
     const {target} = event;
     target.firstChild.pause?.();
+}
+
+WorksCard.propTypes = {
+    ...propTypesVideoBg,
+    firstTitle: PropTypes.string.isRequired,
+    secondTitle: PropTypes.string,
+    author: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
 }
 

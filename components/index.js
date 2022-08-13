@@ -6,13 +6,13 @@ import { H1 } from "./ui/h1";
 import { H2 } from "./ui/h2";
 import { H3 } from "./ui/h3";
 import { Input } from "./ui/input";
-import { Header } from "./sections/header";
+import { Header } from "./sections";
 import { FooterNavigation } from "./common/footer-nav-bar";
 import { Menu } from "./sections/menu";
 import { Text } from "./ui/text";
 import { DropDown } from "./ui/drop-down";
 import { TextArea } from "./ui/text-area";
-import { ThemeProvider } from "./common/theme-provider";
+import { ThemeProvider } from "./common";
 import { RunningLine } from './common/running-line';
 import { FoxPaw } from "./common/fox-paw";
 import { CompanyInfo } from "./common/company-info";
@@ -25,7 +25,7 @@ import { Wolf } from "./ui/wolf";
 import { Avatar } from "./ui/avatar";
 import { CloseButton } from "./ui/close-button";
 import { WorksCard } from "./ui/works-card";
-import { DetailCardModal } from "./modal/detail-card-modal";
+import { DetailCardModal } from "./modal";
 
 export {
   ThemeProvider,
