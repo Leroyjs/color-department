@@ -22,7 +22,6 @@ export const MenuBody = styled.nav`
 export const MenuMap = styled.div`
     border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
     grid-column: 5/9;
-    //background-image: url('./tmp-map.jpg');
 `
 export const MenuList = styled.ul`
     display: flex;
