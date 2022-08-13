@@ -14,6 +14,7 @@ export const Text = styled.span`
   font-weight: 800;
   display: inline-block;
   line-height: 112%;
+  text-transform: uppercase;
 
   ${applyMargins};
   ${applyPaddings}

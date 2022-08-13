@@ -7,6 +7,8 @@ export {
   offsets,
   sizes,
   typesOfoffset,
+  zindex,
+  sizes
 } from "./constants";
 
 // Mixins, которые нужно подключать в стили, чтобы можно было менять стили компонента из пропсов
@@ -51,3 +53,5 @@ export {
   hexToRGBA,
   getArrayOfIndex,
 } from "./utils";
+
+export { mapStyle } from './map';

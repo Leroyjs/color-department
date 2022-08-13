@@ -1,12 +1,14 @@
 import {useCallback, useEffect, useState} from 'react';
 
+//TODO: Техдолг. Реализация так себе, но работает как часы. Переписать нормально, когда будет время
+
 const VARIABLE_NAME = '--fsvh';
 
 const getActualVh = () => Number((window.innerHeight * 0.01).toFixed(2));
 
 let count = 0;
 
-const useVH = () => {
+export const useVH = () => {
     const [vh, setVh] = useState(0);
     const updateVh = useCallback(() => {
         const newVh = getActualVh();
@@ -36,5 +38,3 @@ const useVH = () => {
 
     return vh;
 };
-
-export default useVH;
