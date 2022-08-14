@@ -1,13 +1,22 @@
+import { Footer, Header } from "./sections";
+import { FoxLogo, FullSizeButton } from "./common";
+
+import { Avatar } from "./ui/avatar";
+import { Awards } from "./ui/awards";
 import { ButtonEllipse } from "./ui/button-ellipse";
 import { ButtonRectangle } from "./ui/button-rectangle";
 import { Caption } from "./ui/caption";
+import { CloseButton } from "./ui/close-button";
+import { CompanyInfo } from "./common/company-info";
+import { DetailCardModal } from "./modal";
+import { DropDown } from "./ui/drop-down";
+import { FooterNavigation } from "./common/footer-nav-bar";
+import { FoxPaw } from "./common/fox-paw";
 import { Grid } from "./common/grid";
 import { H1 } from "./ui/h1";
 import { H2 } from "./ui/h2";
 import { H3 } from "./ui/h3";
 import { Input } from "./ui/input";
-import { Header, Footer } from "./sections";
-import { FooterNavigation } from "./common/footer-nav-bar";
 import { Menu } from "./sections/menu";
 import { Text } from "./ui/text";
 import { DropDown } from "./ui/drop-down";
@@ -28,8 +37,8 @@ import { ShopSection } from "./sections/shop-section";
 import { Counter } from "./ui/counter";
 import { Plus } from "./ui/plus";
 import { Minus } from "./ui/minus";
-import { ButtonExit } from "./ui/button-exit";
-
+import { Wolf } from "./ui/wolf";
+import { WorksCard } from "./ui/works-card";
 
 export {
   ThemeProvider,
@@ -42,13 +51,6 @@ export {
   ButtonEllipse,
   ButtonRectangle,
   Grid,
-  DropDown,
-  TextArea,
-  Modal,
-  Portal,
-  VideoBackground,
-  ShopItem,
-  ButtonShop,
   RunningLine,
   Menu,
   Header,
@@ -58,6 +60,19 @@ export {
   CompanyInfo,
   FoxLogo,
   FullSizeButton,
+  DropDown,
+  TextArea,
+  Modal,
+  Portal,
+  VideoBackground,
+  Awards,
+  Preloader,
+  Awards,
+  Wolf,
+  Avatar,
+  CloseButton,
+  WorksCard,
+  DetailCardModal,
   ShopModal,
   ShopSection,
   Counter,

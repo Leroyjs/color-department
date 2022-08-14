@@ -1,12 +1,11 @@
+import React from "react";
+import {PropTypes} from "prop-types";
 import {
   propTypesColors,
   propTypesMargin,
   propTypesPadding,
   propTypesTextTag,
 } from "../../types";
-
-import { PropTypes } from "prop-types";
-import React from "react";
 import { Text } from "./h2.styles";
 
 export const H2 = ({ tag = "h2", children, wrapperProps, ...props }) => {
