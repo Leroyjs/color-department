@@ -98,3 +98,10 @@ export const zindex = {
   frontItem: 10,
   backItem: -1
 }
+
+export const gridDimensions = {
+  8columns: "repeat(8, 12.5vw)",
+  4columns: "repeat(4, 25vw)",
+  2columns: "repeat(2, 50vw)",
+  1columns: "repeat(1, 100vw)",
+}
