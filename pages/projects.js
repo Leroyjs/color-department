@@ -9,7 +9,7 @@ const Projects = () => {
 
   return (
     <>
-      <Header transparentToComponent={videoContant}></Header>
+      <Header/>
       <main style={{ height: "100vh", overflow: "visible" }}>
         {/* ЗДЕСЬ ДОЛЖЕН БЫТЬ БЛОК С СЕТКОЙ И ИЗОБРАЖЕНИЯМИ */}
         <RunningLine></RunningLine>

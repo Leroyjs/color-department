@@ -9,7 +9,7 @@ const Projects = () => {
 
   return (
     <>
-      <Header transparentToComponent={videoContant}></Header>
+      <Header/>
       <main style={{ height: "100vh", overflow: "visible" }}>
         {/* ЗДЕСЬ ДОЛЖна БЫТЬ СЕКЦИЯ С ТОВАРАМИ */}
         <RunningLine outline="true"></RunningLine>
