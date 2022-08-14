@@ -16,8 +16,6 @@ export const TextSectionWrapper = styled.div`
   justify-content: center;
   text-align: center;
   ${getCurrentPaddingStyle("vertical", "xlg")};
-  padding-left: 185px;
-  padding-right: 185px;
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
   width: 100%;
 

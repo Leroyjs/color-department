@@ -15,7 +15,6 @@ export const IntroAboutTextBlock = () => {
   return (
     <TextSectionWrapper>
       <H2>a color grading studio Based in </H2>
-      <> </>
       <Link href="/">
         <StyledWhiteH2>&nbsp;Los Angeles, CALIFORNIA.</StyledWhiteH2>
       </Link>
