@@ -6,7 +6,7 @@ import { H1 } from "./ui/h1";
 import { H2 } from "./ui/h2";
 import { H3 } from "./ui/h3";
 import { Input } from "./ui/input";
-import { Header, Footer } from "./sections";
+import { Header, Footer, StartScreen } from "./sections";
 import { FooterNavigation } from "./common/footer-nav-bar";
 import { Menu } from "./sections/menu";
 import { Text } from "./ui/text";
@@ -58,5 +58,6 @@ export {
   Avatar,
   CloseButton,
   WorksCard,
-  DetailCardModal
+  DetailCardModal,
+  StartScreen
 };

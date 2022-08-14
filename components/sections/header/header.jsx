@@ -39,6 +39,5 @@ export const Header = ({ transparentToComponent }) => {
       </HeaderWrapper>
       <Menu isOpen={isOpenMenu}></Menu>
     </>
-
   );
 }

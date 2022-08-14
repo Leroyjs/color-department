@@ -8,7 +8,6 @@ const scrollAnimation = keyframes`
 `
 
 export const RunningLineWrapper = styled.div`
-    position:relative;
     overflow: hidden;
     display: flex;
     ${({ link }) => link ? "cursor: pointer" : ""};
