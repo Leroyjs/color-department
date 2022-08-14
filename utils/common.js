@@ -17,14 +17,21 @@ export function debounce(func, wait) {
     };
 }
 
-export const throttling = (callback, delay, ...args) => {
-    let timer;
+export function throttling (func, delay) {
+    let timer = null;
+    let lastArgs = null;
+    let lastThis = null;
 
-    return () => {
+    return (...args) => {
         if (timer) return;
+        lastArgs = args;
+        lastThis = this;
+
         timer = setTimeout(() => {
-            callback(...args);
+            func.apply(lastThis, lastArgs)
             clearTimeout(timer);
+            lastArgs = null;
+            lastThis - null
             timer = null;
         }, delay);
     };
