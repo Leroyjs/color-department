@@ -1,6 +1,6 @@
+import { H3 } from "../h3";
+import { css } from "@emotion/css";
 import styled from "@emotion/styled";
-import {css} from "@emotion/css";
-import {H3} from "components";
 
 export const GridWrapper = styled.div`
   display: grid;
