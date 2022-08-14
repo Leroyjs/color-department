@@ -2,20 +2,22 @@ import { useRef, useState } from "react";
 import { Header, DropDown, TextArea, StartScreen, Footer } from "components";
 import "styles/global.style";
 
+import { Preloader } from "components";
+
 const options = [
-    {
-        label: 'color grading',
-        value: 1
-    },
-    {
-        label: 'VFX-design',
-        value: 2
-    },
-    {
-        label: 'Dailies',
-        value: 3
-    }
-]
+  {
+    label: "color grading",
+    value: 1,
+  },
+  {
+    label: "VFX-design",
+    value: 2,
+  },
+  {
+    label: "Dailies",
+    value: 3,
+  },
+];
 
 const Home = () => {
 

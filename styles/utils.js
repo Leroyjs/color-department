@@ -23,3 +23,5 @@ export const getArrayOfIndex = (countOfItems) => {
 
   return array;
 };
+
+export const stubFunction = () => {};
