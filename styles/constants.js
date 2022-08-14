@@ -65,7 +65,7 @@ export const offsets = {
     sm: 16,
     xsm: 12,
     xxsm: 8,
-    none: 0
+    none: 0,
   },
 };
 
@@ -79,12 +79,13 @@ export const sizes = {
     x2: "25vw",
     x1: "12.5vw",
     half: "6.25vw",
+    count: 8,
   },
 };
 
 export const fontSizes = {
   [desktopLG]: {
-    h1: "194px",
+    h1: "12.125vw",
     h2: "72px",
     h3: "32px",
     text: "16px",

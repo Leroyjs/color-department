@@ -1,13 +1,19 @@
-import styled from "@emotion/styled";
 import {
-    applyMargins,
-    applyPaddings, colors,
-    getCurrentBackgroundColorStyles,
-    getCurrentMarginStyle, getCurrentPaddingStyle, hexToRGBA
+  applyMargins,
+  applyPaddings,
+  colors,
+  getCurrentBackgroundColorStyles,
+  getCurrentMarginStyle,
+  getCurrentPaddingStyle,
+  hexToRGBA,
 } from "styles";
-import {Avatar} from "../../ui/avatar";
-import {Caption, Modal, Text} from "components";
-import {CloseButton} from "../../ui/close-button";
+
+import { Avatar } from "../../ui/avatar";
+import { Caption } from "../../ui/caption";
+import { CloseButton } from "../../ui/close-button";
+import { Modal } from "../../common/modal";
+import { Text } from "../../ui/text";
+import styled from "@emotion/styled";
 
 export const CloseBtn = styled(CloseButton)`
   width: 40px;
@@ -20,7 +26,7 @@ export const Wrapper = styled.div`
   width: 100%;
   ${applyMargins};
   ${applyPaddings};
-  ${({theme}) => getCurrentBackgroundColorStyles("black", theme)};
+  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
   ${getCurrentMarginStyle("top", "md")};
   ${getCurrentPaddingStyle("horizontal", "md")};
   ${getCurrentMarginStyle("bottom", "xlg")};
@@ -59,7 +65,7 @@ export const ProfileLinks = styled.div`
 
   &:after {
     position: absolute;
-    content: '';
+    content: "";
     bottom: 0;
     top: 0;
     right: 0;
@@ -74,12 +80,12 @@ export const TextCol = styled(Text)`
 `;
 
 export const ModalWrapper = styled(Modal)`
-  ${({theme}) => getCurrentBackgroundColorStyles("black", theme)};
+  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
   overflow-y: scroll;
 `;
 
 export const CaptionLink = styled(Caption)`
-  color: ${hexToRGBA(colors.white, 0.4)};;
+  color: ${hexToRGBA(colors.white, 0.4)}; ;
 `;
 
 export const UserAvatar = styled(Avatar)``;
