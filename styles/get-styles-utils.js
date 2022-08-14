@@ -9,15 +9,16 @@ import {
 import { getCurrentColor } from "./get-value-utils";
 import { getResponsiveStyle } from "./media-query-utils";
 
-const getCurrentDictionaryValue = (dictionary, breakpointName, type) =>
+export const getCurrentDictionaryValue = (dictionary, breakpointName, type) =>
   dictionary?.[breakpointName]?.[type];
 
-const getCurrentStyleByDictionary = (dictionary) => (propertyName) => (type) =>
-  getResponsiveStyle(propertyName)(
-    subsequenceOfBreakpoints.map((breakpointName) =>
-      getCurrentDictionaryValue(dictionary, breakpointName, type)
-    )
-  );
+export const getCurrentStyleByDictionary =
+  (dictionary) => (propertyName) => (type) =>
+    getResponsiveStyle(propertyName)(
+      subsequenceOfBreakpoints.map((breakpointName) =>
+        getCurrentDictionaryValue(dictionary, breakpointName, type)
+      )
+    );
 
 const getCurrentOffsetStyle = getCurrentStyleByDictionary(offsets);
 

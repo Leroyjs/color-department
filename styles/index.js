@@ -8,7 +8,7 @@ export {
   sizes,
   typesOfoffset,
   zindex,
-  sizes
+  namesOfBreakpoints,
 } from "./constants";
 
 // Mixins, которые нужно подключать в стили, чтобы можно было менять стили компонента из пропсов
@@ -27,6 +27,7 @@ export {
   getCurrentSizeStyle,
   getCurrentWidthSizeStyle,
   getCurrentHeightSizeStyle,
+  getCurrentStyleByDictionary,
 } from "./get-styles-utils";
 
 // Функции, которые возвращают значение стиля
@@ -52,6 +53,7 @@ export {
   // Пример использования: hexToRGBA('#FFFFFF', 0.2) => rgba(255, 255, 255, 0.2)
   hexToRGBA,
   getArrayOfIndex,
+  stubFunction,
 } from "./utils";
 
-export { mapStyle } from './map';
+export { mapStyle } from "./map";

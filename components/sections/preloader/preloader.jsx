@@ -6,37 +6,24 @@ import {
   NumberInner,
   PreloaderHeader,
   PreloaderWrapper,
+  RunningLineWrapper,
 } from "./preloader.style";
 import { useEffect, useState } from "react";
 
 import { FoxBox } from "./fox-box";
+import { RunningLine } from "components";
+import { initStepCounter } from "./utils";
+import { steps } from "./constants";
+import { stubFunction } from "styles";
 
-const steps = ["00", "34", "56", "93", "100"];
-
-export const Preloader = ({}) => {
+export const Preloader = ({ onDone = stubFunction }) => {
   const [stepIndex, setStepIndex] = useState(0);
+  const [isHidden, setHidden] = useState(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setStepIndex((prevIndex) => {
-        if (steps.length <= prevIndex + 1) {
-          // clearInterval(interval)
-          return 0;
-        }
-
-        return prevIndex + 1;
-      });
-    }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
-  const percent = steps[stepIndex];
+  useEffect(() => initStepCounter(setStepIndex, setHidden, onDone), []);
 
   return (
-    <PreloaderWrapper>
+    <PreloaderWrapper isHidden={isHidden}>
       <PreloaderHeader>
         <Number>
           <NumberInner step={stepIndex}>
@@ -45,12 +32,15 @@ export const Preloader = ({}) => {
             ))}
           </NumberInner>
         </Number>
-        <HeaderLine percent={percent} />
+        <HeaderLine stepIndex={stepIndex} />
       </PreloaderHeader>
       <GridWrapper>
         <GridStyled />
-        <FoxBox stepIndex={stepIndex} />
+        <FoxBox stepIndex={stepIndex} isHidden={isHidden} />
       </GridWrapper>
+      <RunningLineWrapper stepIndex={stepIndex}>
+        <RunningLine />
+      </RunningLineWrapper>
     </PreloaderWrapper>
   );
 };

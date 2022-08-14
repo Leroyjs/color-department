@@ -65,7 +65,7 @@ export const offsets = {
     sm: 16,
     xsm: 12,
     xxsm: 8,
-    none: 0
+    none: 0,
   },
 };
 
@@ -85,7 +85,7 @@ export const sizes = {
 
 export const fontSizes = {
   [desktopLG]: {
-    h1: "194px",
+    h1: "12.125vw",
     h2: "72px",
     h3: "32px",
     text: "16px",
@@ -94,8 +94,8 @@ export const fontSizes = {
 };
 
 export const zindex = {
-  modal:100,
+  modal: 100,
   header: 1000,
   frontItem: 10,
-  backItem: -1
-}
+  backItem: -1,
+};

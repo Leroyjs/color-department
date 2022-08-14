@@ -1,46 +1,22 @@
-import { FoxBoxWrapper, ImageStyled, ImageWrapper } from "./preloader.style";
-import {
-  fox11,
-  fox12,
-  fox13,
-  fox14,
-  fox21,
-  fox22,
-  fox23,
-  fox24,
-  fox33,
-} from "assets/icons";
+import { FoxBoxInner, FoxBoxWrapper, ImageWrapper } from "./preloader.style";
 
 import Image from "next/image";
+import { foxPieces } from "./constants";
 
-export const FoxBox = ({ stepIndex }) => (
+export const FoxBox = ({ stepIndex, isHidden }) => (
   <FoxBoxWrapper>
-    <ImageWrapper step={stepIndex} gridArea="1/1">
-      <Image src={fox11} alt="" />
-    </ImageWrapper>
-    <ImageWrapper step={stepIndex} gridArea="1/2">
-      <Image src={fox12} alt="" />
-    </ImageWrapper>
-    <ImageWrapper step={stepIndex} gridArea="1/3">
-      <Image src={fox13} alt="" />
-    </ImageWrapper>
-    <ImageWrapper step={stepIndex} gridArea="1/4">
-      <Image src={fox14} alt="" />
-    </ImageWrapper>
-    <ImageWrapper step={stepIndex} gridArea="2/1">
-      <Image src={fox21} alt="" />
-    </ImageWrapper>
-    <ImageWrapper step={stepIndex} gridArea="2/2">
-      <Image src={fox22} alt="" />
-    </ImageWrapper>
-    <ImageWrapper step={stepIndex} gridArea="2/3">
-      <Image src={fox23} alt="" />
-    </ImageWrapper>
-    <ImageWrapper step={stepIndex} gridArea="2/4">
-      <Image src={fox24} alt="" />
-    </ImageWrapper>
-    <ImageWrapper step={stepIndex} gridArea="3/3">
-      <Image src={fox33} alt="" />
-    </ImageWrapper>
+    <FoxBoxInner>
+      {foxPieces.map(({ img, opasityTransition, gridArea }) => (
+        <ImageWrapper
+          key={gridArea}
+          step={stepIndex}
+          isHidden={isHidden}
+          gridArea={gridArea}
+          opasityTransition={opasityTransition}
+        >
+          <Image src={img} alt="" />
+        </ImageWrapper>
+      ))}
+    </FoxBoxInner>
   </FoxBoxWrapper>
 );
