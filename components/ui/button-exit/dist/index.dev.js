@@ -3,11 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "Minus", {
+Object.defineProperty(exports, "ButtonExit", {
   enumerable: true,
   get: function get() {
-    return _minus.Minus;
+    return _buttonExit.ButtonExit;
   }
 });
 
-var _minus = require("./minus");
+var _buttonExit = require("./button-exit");

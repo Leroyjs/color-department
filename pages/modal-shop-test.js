@@ -1,10 +1,10 @@
-import { ModalShop } from 'components';
+import { ShopModal } from 'components';
 import React from 'react';
 
 const modalShopTest = () => {
 	return (
 		<div>
-			<ModalShop isOpen={true} />
+			<ShopModal isOpen={true} />
 		</div>
 	);
 };

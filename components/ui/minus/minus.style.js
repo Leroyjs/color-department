@@ -4,11 +4,12 @@ export const IconMinus = styled.svg`
   display: inline-block;
   width: 26px;
   height: 26px;
-  transition: stroke 0.3s;
+  transition: 0.3s;
   stroke: #ffffff;
   position: absolute;
   top: 10px;
-  cursor:pointer;
+  cursor: pointer;
+  opacity: 0.2;
   right: calc(50% - 26px);
   ${({ isOpen, isActive, isError }) => {
     if (isOpen) {
@@ -21,4 +22,8 @@ export const IconMinus = styled.svg`
       return { stroke: colors.white };
     }
   }}
+  :hover {
+    opacity: 1;
+    transition: 0.3s;
+  }
 `;

@@ -20,14 +20,15 @@ import { ShopItem } from "./common/shop-item";
 import { ButtonShop } from "./ui/button-shop";
 import { Modal } from "./common/modal";
 import { Portal } from "./common/portal";
-import { ModalShop } from "./common/modal-shop";
+import { ShopModal } from "./common/shop-modal";
 import { VideoBackground } from "./common/video-background";
 import { FoxLogo, FullSizeButton } from "./common";
 import { Awards } from "./ui/awards";
 import { ShopSection } from "./sections/shop-section";
 import { Counter } from "./ui/counter";
 import { Plus } from "./ui/plus";
-import { Minus} from "./ui/minus";
+import { Minus } from "./ui/minus";
+import { ButtonExit } from "./ui/button-exit";
 
 
 export {
@@ -57,9 +58,10 @@ export {
   CompanyInfo,
   FoxLogo,
   FullSizeButton,
-  ModalShop,
+  ShopModal,
   ShopSection,
   Counter,
   Plus,
   Minus,
+  ButtonExit,
 };

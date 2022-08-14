@@ -2,13 +2,14 @@ import { Text } from "components";
 import { ButtonRectangle } from "components";
 import { DropDown } from "components";
 import { Input } from "components";
+import { ButtonExit } from "components";
 import { Counter } from "components";
 import { Modal } from "components";
 import { H3 } from "components";
 import { observer } from "mobx-react-lite";
 import { useState } from "react";
 import {
-  ModalShopInner,
+  ShopModalInner,
   FormWrapper,
   ProductImage,
   ProductName,
@@ -17,12 +18,14 @@ import {
   TextStyled,
   InformationColumn,
   ProductDiscription,
-} from "./modal-shop.style";
+} from "./shop-modal.style";
 
-export const ModalShop = observer(
+export const ShopModal = observer(
   ({ cost, img, title, discription, isOpen }) => {
     const [valueSize, setValueSize] = useState(null);
-    const [valueQuantity, setValueQuantity] = useState(null);
+    const [counterValue, setCounterValue] = useState(1);
+    const [InputNameValue, setInputName] = useState("");
+     const [InputNumberValue, setInputNumber] = useState("");
 
     const SelectSizeOptions = [
       { label: "XS", value: "11" },
@@ -32,15 +35,13 @@ export const ModalShop = observer(
       { label: "XL", value: "15" },
       { label: "XXL", value: "16" },
     ];
-    const QuantityOptions = [
-      { label: "1", value: "11" },
-      { label: "2", value: "12" },
-      { label: "3", value: "13" },
-    ];
+
+
+
 
     return (
       <Modal isOpen={isOpen}>
-        <ModalShopInner>
+        <ShopModalInner>
           <ProductImage>{img}</ProductImage>
           <InformationColumn>
             <TextContainer>
@@ -62,19 +63,28 @@ export const ModalShop = observer(
                 onChange={(option) => setValueSize(option)}
                 options={SelectSizeOptions}
                 value={valueSize}></DropDown>
-              <Counter mt="md" title="Quantity"></Counter>
+              <Counter
+                value={counterValue}
+                onChange={(value) => setCounterValue(value)}
+                mt="md"
+                title="Quantity"></Counter>
               <Input
+                value={InputNameValue}
+                onChange={(value) => setInputName(String(value))}
                 propsInput={{ placeholder: "My name is" }}
                 mt="md"
                 title="Name *"></Input>
               <Input
+                value={InputNumberValue}
+                onChange={(value) => setInputNumber(String(value))}
                 propsInput={{ placeholder: "2 000 000-00-00" }}
                 mt="md"
                 title="Contact me by number *"></Input>
               <ButtonRectangle mt="md">SEND</ButtonRectangle>
             </FormWrapper>
           </InformationColumn>
-        </ModalShopInner>
+          <ButtonExit onClick={isOpen=false}></ButtonExit>
+        </ShopModalInner>
       </Modal>
     );
   }

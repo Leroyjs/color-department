@@ -1,11 +1,11 @@
 import { IconMinus } from "./minus.style";
 
 
-export const Minus = ({ ...props }) => {
+export const Minus = ({ onClick, ...props }) => {
   return (
-    <IconMinus>
+    <IconMinus onClick={onClick}>
       <svg fill="none" viewBox="0 0 26 2">
-        <path stroke="#fff" strokeWidth="2" d="M0 1h26" opacity=".2" />
+        <path  strokeWidth="2" d="M0 1h26"  />
       </svg>
       ;
     </IconMinus>

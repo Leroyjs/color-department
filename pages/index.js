@@ -1,8 +1,6 @@
 import { useRef, useState } from "react";
 import { Header, DropDown, TextArea, RunningLine, Footer } from "components";
 import "styles/global.style";
-import { ShopItem } from "components";
-import { ModalShop } from "components";
 
 const options = [
   {

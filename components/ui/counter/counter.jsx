@@ -14,30 +14,46 @@ import { Minus } from "components";
 export const Counter = ({
   title,
   error,
-  value = "",
+  value,
   onChange,
   propsInput,
   ...props
 }) => {
-  const [count, setCount] = useState(1);
   const isActive = Boolean(value);
+
+  function decrement() {
+    if (value <= 0) return;
+    const newValueDec = --value;
+    onChange?.(newValueDec);
+
+  }
+  function increment() {
+    if (value >= 999) return;
+    const newValueInc = ++value;
+    onChange?.(newValueInc);
+  }
+
+  function handelTyping(e) {
+    const { target } = e;
+    const value = target?.value;
+    if (isNaN(value) || value >= 1000) return
+    onChange?.(Number(value));
+
+  };
 
   return (
     <InputWrapper {...props}>
       <Title isError={error}>{title}</Title>
       <InputStyled
         isActive={isActive}
-        onChange={count}
+        onChange={handelTyping}
         isError={error}
-			  type="text"
-		  value={count}
-        {...propsInput}>
-
-
-
-		  </InputStyled>
-		  <Minus onClick={() => setCount(count - 1)}></Minus>
-        <Plus onClick={() => setCount(count + 1)}></Plus>
+        type="text"
+        value={value}
+        {...propsInput}
+      ></InputStyled>
+      <Minus onClick={() => decrement()}></Minus>
+      <Plus onClick={() => increment()}></Plus>
       <Underline>
         <UnderlineInner isActive={isActive} isError={error} />
       </Underline>
@@ -45,9 +61,9 @@ export const Counter = ({
   );
 };
 
-// Counter.propTypes = {
-//   title: PropTypes.string,
-//   error: PropTypes.string,
-//   value: PropTypes.string.isRequired,
-//   onChange: PropTypes.func.isRequired,
-// };
+Counter.propTypes = {
+  title: PropTypes.string,
+  error: PropTypes.string,
+  value: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
+};

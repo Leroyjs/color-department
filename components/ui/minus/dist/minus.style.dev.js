@@ -12,7 +12,7 @@ var _styles = require("styles");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  width: 26px;\n  height: 26px;\n  transition: stroke 0.3s;\n  stroke: #ffffff;\n  position: absolute;\n  top: 10px;\n  cursor:pointer;\n  right: calc(50% - 26px);\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  width: 26px;\n  height: 26px;\n  transition: 0.3s;\n  stroke: #ffffff;\n  position: absolute;\n  top: 10px;\n  cursor: pointer;\n  opacity: 0.2;\n  right: calc(50% - 26px);\n  ", "\n  :hover {\n    opacity: 1;\n    transition: 0.3s;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;

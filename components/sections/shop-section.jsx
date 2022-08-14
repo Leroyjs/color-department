@@ -1,7 +1,6 @@
 import { ShopSectionWrapper } from "./shop-section.style";
 import { ShopItem } from "components";
 import "styles/global.style";
-import { ModalShop } from "components";
 
 export const ShopSection = (props) => {
   const arrShopTest = [
@@ -24,31 +23,29 @@ export const ShopSection = (props) => {
       title: "Thавпавакпквуп",
       cost: "1333333333",
       id: 4,
-    }, 
-     {
+    },
+    {
       title: "ne Film Reader Applaus",
       cost: "666666",
       id: 5,
-
     },
-     {
+    {
       title: "The Graham Greene Fil",
       cost: "11222222",
       id: 6,
-
     },
-
-
   ];
 
   let shopList = arrShopTest.map((item) => (
-    <ShopItem title={item.title} key={item.id} cost={item.cost} img={item.img} />
+    <ShopItem
+      title={item.title}
+      key={item.id}
+      cost={item.cost}
+      img={item.img}
+      
+    />
   ));
-  return ( <>
-	  <ShopSectionWrapper>
-		    {shopList}
-    </ShopSectionWrapper>
-
-</>
+  return (
+      <ShopSectionWrapper>{shopList}</ShopSectionWrapper>
   );
 };

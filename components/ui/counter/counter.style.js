@@ -58,12 +58,12 @@ export const IconPlus = styled.svg`
 export const InputStyled = styled.input`
   width: 100%;
   color: ${({ theme }) => theme.primary};
-  padding-left: 75%;
+  padding-left: 50%;
   text-transform: uppercase;
   font-family: ${fontFamilies.mainFont};
   padding-top: 5px;
   padding-bottom: 5px;
-
+  text-align:center;
   &:hover {
     & + ${Underline} ${UnderlineInner} {
       transform: scaleX(1);

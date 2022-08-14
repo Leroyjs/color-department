@@ -141,10 +141,10 @@ Object.defineProperty(exports, "Portal", {
     return _portal.Portal;
   }
 });
-Object.defineProperty(exports, "ModalShop", {
+Object.defineProperty(exports, "ShopModal", {
   enumerable: true,
   get: function get() {
-    return _modalShop.ModalShop;
+    return _shopModal.ShopModal;
   }
 });
 Object.defineProperty(exports, "VideoBackground", {
@@ -187,6 +187,12 @@ Object.defineProperty(exports, "Minus", {
   enumerable: true,
   get: function get() {
     return _minus.Minus;
+  }
+});
+Object.defineProperty(exports, "ButtonExit", {
+  enumerable: true,
+  get: function get() {
+    return _buttonExit.ButtonExit;
   }
 });
 
@@ -234,7 +240,7 @@ var _modal = require("./common/modal");
 
 var _portal = require("./common/portal");
 
-var _modalShop = require("./common/modal-shop");
+var _shopModal = require("./common/shop-modal");
 
 var _videoBackground = require("./common/video-background");
 
@@ -249,3 +255,5 @@ var _counter = require("./ui/counter");
 var _plus = require("./ui/plus");
 
 var _minus = require("./ui/minus");
+
+var _buttonExit = require("./ui/button-exit");

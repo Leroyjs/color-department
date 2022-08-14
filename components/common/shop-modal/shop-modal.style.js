@@ -9,10 +9,10 @@ import { getCurrentBackgroundColorStyles } from "styles";
 import { applyColor } from "styles";
 import { colors } from "styles";
 
-export const ModalShopInner = styled.div`
-width:100%;
-display:flex;
-height:100vh;
+export const ShopModalInner = styled.div`
+  width: 100%;
+  display: flex;
+  height: 100vh;
 `;
 
 export const ProductImage = styled.div`
@@ -50,8 +50,3 @@ export const FormWrapper = styled.div`
   background-color: #000;
 `;
 
-
-
-// export const ModalShopWrapper = styled.div``;
-// export const ModalShopWrapper = styled.div``;
-// export const ModalShopWrapper = styled.div``;
