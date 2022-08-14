@@ -21,11 +21,13 @@ import {
 } from "./shop-modal.style";
 
 export const ShopModal = observer(
-  ({ cost, img, title, discription, isOpen }) => {
+  ({ cost, img, title, discription, isOpen, setOpen }) => {
     const [valueSize, setValueSize] = useState(null);
     const [counterValue, setCounterValue] = useState(1);
     const [InputNameValue, setInputName] = useState("");
-     const [InputNumberValue, setInputNumber] = useState("");
+    const [InputNumberValue, setInputNumber] = useState("");
+
+
 
     const SelectSizeOptions = [
       { label: "XS", value: "11" },
@@ -40,7 +42,7 @@ export const ShopModal = observer(
 
 
     return (
-      <Modal isOpen={isOpen}>
+      <Modal setOpen={setOpen} isOpen={isOpen}>
         <ShopModalInner>
           <ProductImage>{img}</ProductImage>
           <InformationColumn>
@@ -83,7 +85,7 @@ export const ShopModal = observer(
               <ButtonRectangle mt="md">SEND</ButtonRectangle>
             </FormWrapper>
           </InformationColumn>
-          <ButtonExit onClick={isOpen=false}></ButtonExit>
+          <ButtonExit onClick={(e) => { setOpen(false); console.log(e);} }></ButtonExit>
         </ShopModalInner>
       </Modal>
     );

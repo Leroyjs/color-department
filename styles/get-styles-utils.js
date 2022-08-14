@@ -74,7 +74,7 @@ export const getCurrentGridTemplateColumsStyle = () =>
     // `repeat(${countDesktopLG}, ${x1DesktopLG})`,
     // `repeat(${countDesktopLG}, ${x1DesktopLG})`,
     // `repeat(${countDesktopLG}, ${x1DesktopLG})`,
-    // `repeat(${countDesktopLG}, ${x1DesktopLG})`,
+    `repeat(${countDesktopLG}, ${x1DesktopLG})`,
     // "repeat(6, 16.666667vw)",
     // "repeat(6, 16.666667vw)",
     // "repeat(2, 50vw)",

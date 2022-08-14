@@ -15,8 +15,11 @@ export const ShopItemWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   color: ${colors.red};
-  width: 400px;
-  height: 400px;
+  grid-auto-rows: 100px, auto  ;
+  cursor: pointer;
+  transition: 0.3s;
+  width:100%;
+  height:100%;
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
   ${applyColor}
   /* padding: 32px 40px; */
@@ -29,11 +32,15 @@ export const ShopItemWrapper = styled.div`
   }
   &:hover {
     ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)};
+    transition:0.3s;
     button {
       ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)};
+      transition:0.3s;
       &:hover {
+        transition:0.3s;
         ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)};
-        border: 2px solid ${({ theme }) => getCurrentColor("yellow", theme)};
+        border: 2px solid ${({ theme }) => getCurrentColor("white", theme)};
+
       }
       div {
         ${({ theme }) => getCurrentBackgroundColorStyles("yellow", theme)};
@@ -71,7 +78,7 @@ export const TextContainer = styled.div`
   justify-content: space-between;
 `;
 export const ProductImage = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 59%;
+  height: 59%;
   ${getCurrentBackgroundColorStyles("white")};
 `;

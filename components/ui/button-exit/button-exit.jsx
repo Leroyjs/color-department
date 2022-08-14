@@ -1,8 +1,8 @@
 
 import { ButtonWrapper, Exit} from "./button-exit.style";
 
-export const ButtonExit = () => (
-  <ButtonWrapper>
+export const ButtonExit = ({ onClick, ...props }) => (
+  <ButtonWrapper onClick={onClick} {...props}>
     <Exit>
       <svg fill="none" viewBox="0 0 14 14">
         <path

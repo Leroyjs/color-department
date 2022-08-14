@@ -19,26 +19,23 @@ import { H3 } from "./ui/h3";
 import { Input } from "./ui/input";
 import { Menu } from "./sections/menu";
 import { Text } from "./ui/text";
-import { DropDown } from "./ui/drop-down";
 import { TextArea } from "./ui/text-area";
 import { ThemeProvider } from "./common/theme-provider";
 import { RunningLine } from "./common/running-line";
-import { FoxPaw } from "./common/fox-paw";
-import { CompanyInfo } from "./common/company-info";
 import { ShopItem } from "./common/shop-item";
 import { ButtonShop } from "./ui/button-shop";
 import { Modal } from "./common/modal";
 import { Portal } from "./common/portal";
 import { ShopModal } from "./common/shop-modal";
 import { VideoBackground } from "./common/video-background";
-import { FoxLogo, FullSizeButton } from "./common";
-import { Awards } from "./ui/awards";
 import { ShopSection } from "./sections/shop-section";
 import { Counter } from "./ui/counter";
 import { Plus } from "./ui/plus";
 import { Minus } from "./ui/minus";
 import { Wolf } from "./ui/wolf";
 import { WorksCard } from "./ui/works-card";
+import { Preloader } from "./sections/preloader";
+import { ButtonExit } from "./ui/button-exit"
 
 export {
   ThemeProvider,
@@ -67,7 +64,6 @@ export {
   VideoBackground,
   Awards,
   Preloader,
-  Awards,
   Wolf,
   Avatar,
   CloseButton,
@@ -75,8 +71,10 @@ export {
   DetailCardModal,
   ShopModal,
   ShopSection,
+  ShopItem,
   Counter,
   Plus,
   Minus,
   ButtonExit,
+  ButtonShop,
 };
