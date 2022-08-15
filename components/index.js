@@ -1,4 +1,4 @@
-import { Footer, Header } from "./sections";
+import { Footer, Header } from "./sections/shop";
 import { FoxLogo, FullSizeButton } from "./common";
 
 import { Avatar } from "./ui/avatar";
@@ -28,7 +28,7 @@ import { Modal } from "./common/modal";
 import { Portal } from "./common/portal";
 import { ShopModal } from "./common/shop-modal";
 import { VideoBackground } from "./common/video-background";
-import { ShopSection } from "./sections/shop-section";
+import { ShopSection } from "./sections/shop/shop-section";
 import { Counter } from "./ui/counter";
 import { Plus } from "./ui/plus";
 import { Minus } from "./ui/minus";

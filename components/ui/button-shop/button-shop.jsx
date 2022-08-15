@@ -6,13 +6,17 @@ import {
 
 import { PropTypes } from "prop-types";
 import React from "react";
-import { Button, PlusLineHorizontal, PlusLineVertical } from "./button-shop.style";
+import {
+  Button,
+  PlusLineHorizontal,
+  PlusLineVertical,
+} from "./button-shop.style";
 
 export const ButtonShop = ({ children, ...props }) => (
   <Button {...props}>
     <PlusLineHorizontal />
-		<PlusLineVertical />
-	</Button>
+    <PlusLineVertical />
+  </Button>
 );
 
 ButtonShop.propTypes = {

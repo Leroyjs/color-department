@@ -1,13 +1,10 @@
 import styled from "@emotion/styled";
-import { H3 } from "components";
-import { Text } from "components";
-import { getCurrentColorStyles } from "styles";
-import { getCurrentColor } from "styles";
-import { getCurrentPaddingStyle } from "styles";
-import { getCurrentMarginStyle } from "styles";
-import { getCurrentBackgroundColorStyles } from "styles";
-import { applyColor } from "styles";
-import { colors } from "styles";
+import { H3, Text } from "components";
+import {
+  getCurrentColorStyles,
+  getCurrentPaddingStyle,
+  getCurrentBackgroundColorStyles,
+} from "styles";
 
 export const ShopModalInner = styled.div`
   width: 100%;
@@ -16,11 +13,9 @@ export const ShopModalInner = styled.div`
 `;
 
 export const ProductImage = styled.div`
-width:50%;
+  width: 50%;
   ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)};
 `;
-
-
 
 export const InformationColumn = styled.div`
   width: 50%;
@@ -28,11 +23,10 @@ export const InformationColumn = styled.div`
   ${getCurrentPaddingStyle("bottom", "md")}
   ${getCurrentPaddingStyle("top", "lg")}
   background-color:#000;
-  /* ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}; */
 `;
 export const TextContainer = styled.div`
-display:flex;
-justify-content:space-between;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const ProductName = styled(H3)``;
@@ -49,4 +43,3 @@ export const ProductDiscription = styled(Text)`
 export const FormWrapper = styled.div`
   background-color: #000;
 `;
-

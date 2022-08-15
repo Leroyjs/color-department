@@ -1,14 +1,10 @@
-
 import styled from "@emotion/styled";
 import { getCurrentMarginStyle } from "styles";
-import { colors } from "styles";
 
 export const Exit = styled.div`
   width: 14px;
   height: 14px;
 `;
-
-
 
 export const ButtonWrapper = styled.button`
   width: 40px;
@@ -20,5 +16,5 @@ export const ButtonWrapper = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  ${getCurrentMarginStyle('',"lg")}
+  ${getCurrentMarginStyle("", "lg")}
 `;

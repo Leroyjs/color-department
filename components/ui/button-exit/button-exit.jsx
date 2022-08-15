@@ -1,5 +1,4 @@
-
-import { ButtonWrapper, Exit} from "./button-exit.style";
+import { ButtonWrapper, Exit } from "./button-exit.style";
 
 export const ButtonExit = ({ onClick, ...props }) => (
   <ButtonWrapper onClick={onClick} {...props}>

@@ -42,10 +42,7 @@ export const ShopSection = (props) => {
       key={item.id}
       cost={item.cost}
       img={item.img}
-      
     />
   ));
-  return (
-      <ShopSectionWrapper>{shopList}</ShopSectionWrapper>
-  );
+  return <ShopSectionWrapper>{shopList}</ShopSectionWrapper>;
 };
