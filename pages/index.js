@@ -21,27 +21,29 @@ const options = [
 
 const Home = () => {
 
-    const videoContant = useRef(null);
-    const [value, setValue] = useState(null);
-    const [message, setMessage] = useState("");
+  const videoContant = useRef(null);
+  const [value, setValue] = useState(null);
+  const [message, setMessage] = useState("");
 
-    // <div className="TODO: Play ground" style={{ 'position': 'relative', 'overflow': 'hidden' }}>
-    //     <div ref={videoContant} style={{ 'height': '100vh', 'filter': 'brightness(0.5)', 'background-image': 'url(./Yp2.gif)', 'background-size': 'cover' }}></div>
-    //     <RunningLine style={{ 'position': 'absolute', 'bottom': '0' }}></RunningLine>
-    // </div>
+  // <div className="TODO: Play ground" style={{ 'position': 'relative', 'overflow': 'hidden' }}>
+  //     <div ref={videoContant} style={{ 'height': '100vh', 'filter': 'brightness(0.5)', 'background-image': 'url(./Yp2.gif)', 'background-size': 'cover' }}></div>
+  //     <RunningLine style={{ 'position': 'absolute', 'bottom': '0' }}></RunningLine>
+  // </div>
 
-    return (
-        <>
-            <Header></Header>
-            <main >
-                <StartScreen></StartScreen>
-                <DropDown title="Service" onChange={(option) => setValue(option)} options={options} value={value} />
-                <TextArea title="About your work" value={message} onChange={(val) => { setMessage(val) }} />
-            </main>
+  return (
+    <>
+      <Header transparentToComponent={videoContant}></Header>
+      <main>
+        <div ref={videoContant}>
+          <StartScreen></StartScreen>
+        </div>
+        <DropDown title="Service" onChange={(option) => setValue(option)} options={options} value={value} />
+        <TextArea title="About your work" value={message} onChange={(val) => { setMessage(val) }} />
+      </main>
 
-            <Footer></Footer>
-        </>
-    );
+      <Footer></Footer>
+    </>
+  );
 
 };
 
