@@ -1,6 +1,7 @@
 import { CompanyInfo, FooterNavigation } from "components";
 import { MenuItem } from './menu-item/menu-item';
 import { MenuBody, MenuFooter, MenuList, MenuMap, MenuWrapper } from "./menu.style";
+import {MapWrapper} from "./menu-map/map-wrapper";
 
 const menuItems = [
     { title: 'projects', link: '' },
@@ -28,6 +29,7 @@ export const Menu = ({ isOpen, props }) => {
                     }
                 </MenuList>
                 <MenuMap>
+                    <MapWrapper />
                 </MenuMap>
                 <CompanyInfo />
             </MenuBody>
