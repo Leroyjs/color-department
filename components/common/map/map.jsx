@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
-import {useCDMapIcon} from "./map-utils";
+import { rewriteMapIcon } from "./utils";
 
 export const Map = ({ source, coordinates, zoom = 16 }) => {
-  useCDMapIcon();
+  useEffect(rewriteMapIcon);
   return (
     <MapContainer attributionControl={false} zoomControl={false} center={coordinates} zoom={zoom} style={{minHeight: '100%'}}>
       <TileLayer
