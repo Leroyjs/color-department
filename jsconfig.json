@@ -8,7 +8,7 @@
       "components": ["components/*"],
       "data": ["__data__/*"],
       "pages": ["pages/*"],
-      "public": ["public/*"],
+      "public": ["public/*"]
     }
   }
 }

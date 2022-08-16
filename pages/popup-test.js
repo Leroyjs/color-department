@@ -1,8 +1,8 @@
-import { WorkModal } from "components/common/work-modal";
+import { DetailCardModal } from "components/common/work-modal";
 import "styles/global.style";
 
 const PopupTest = () => {
-  return <WorkModal></WorkModal>;
+  return <DetailCardModal></DetailCardModal>;
 };
 
 export default PopupTest;
