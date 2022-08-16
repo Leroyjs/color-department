@@ -1,6 +1,8 @@
-import { IntroMainTextBlock } from "components";
-import { AwardMainTextBlock } from "components";
-import { IntroAboutTextBlock } from "components";
+import {
+  IntroMainTextBlock,
+  AwardMainTextBlock,
+  IntroAboutTextBlock,
+} from "components";
 
 
 const TextBlocks = () => {

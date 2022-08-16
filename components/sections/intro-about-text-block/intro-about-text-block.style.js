@@ -1,13 +1,11 @@
   import {
-  applyMargins,
   getCurrentColor,
   getCurrentPaddingStyle,
   getCurrentMarginStyle,
   getCurrentBackgroundColorStyles,
 } from "styles";
 import styled from "@emotion/styled";
-import { H2 } from "components";
-import { TextDecorationUnderline } from "components/common";
+import { H2, TextDecorationUnderline } from "components";
 
 export const TextSectionWrapper = styled.div`
   display: flex;
@@ -49,6 +47,7 @@ export const RoundedNumber = styled.div`
   border: 1px solid ${getCurrentColor("white")};
   margin: 0;
   ${getCurrentMarginStyle("right", "xxsm")};
+  
   span {
     color: ${getCurrentColor("white")};
     align-self: center;

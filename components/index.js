@@ -12,7 +12,6 @@ import { Menu } from "./sections/menu";
 import { Modal } from "./common/modal";
 import { Portal } from "./common/portal";
 import { Preloader } from "./sections/preloader";
-// import { RunningLine } from "./common/running-line";
 import { Text } from "./ui/text";
 import { DropDown } from "./ui/drop-down";
 import { TextArea } from "./ui/text-area";
@@ -20,8 +19,6 @@ import { ThemeProvider } from "./common/theme-provider";
 import { RunningLine } from './common/running-line';
 import { FoxPaw } from "./common/fox-paw";
 import { CompanyInfo } from "./common/company-info";
-// import { Modal } from "./common/modal";
-// import { Portal } from "./common/portal";
 import { VideoBackground } from "./common/video-background";
 import { Wolf } from "./ui/wolf";
 import { WorksCard } from "./ui/works-card";
@@ -30,10 +27,13 @@ import { Awards } from "./ui/awards";
 import { IntroMainTextBlock } from "./sections/intro-main-text-block";
 import { AwardMainTextBlock } from "./sections/award-main-text-block";
 import { IntroAboutTextBlock } from "./sections/intro-about-text-block";
-import { TextDecorationUnderline } from "./common/text-decoration-underline";
+import { TextDecorationUnderline } from "./common";
 import { LeftBracket } from "./common/left-bracket";
 import { RightBracket } from "./common/right-bracket";
 import { Planet } from "./common/planet/";
+import { DetailCardModal } from "components/modal/detail-card-modal";
+import { Avatar } from "components/ui/avatar";
+import { CloseButton } from "components/ui/close-button";
 
 export {
   ThemeProvider,
@@ -63,10 +63,10 @@ export {
   Awards,
   VideoBackground,
   Wolf,
-  // Avatar,
-  // CloseButton,
+  Avatar,
+  CloseButton,
   WorksCard,
-  // DetailCardModal,
+  DetailCardModal,
   IntroMainTextBlock,
   AwardMainTextBlock,
   IntroAboutTextBlock,

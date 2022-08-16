@@ -1,7 +1,6 @@
-import { Caption, H2 } from "components";
+import { Caption, H2, Planet } from "components";
 import {
   TextSectionWrapper,
-  MapLink,
   RoundedNumber,
   TextDecorationWrapper,
   StyledWhiteH2,
@@ -9,7 +8,6 @@ import {
   StyledUnderline,
 } from "./intro-about-text-block.style";
 import Link from "next/link";
-import { Planet } from "components";
 
 export const IntroAboutTextBlock = () => {
   return (

@@ -34,6 +34,7 @@ export const TextSectionWrapper = styled.div`
     justify-content: center;
     align-items: center;
     height: auto;
+
     span {
       align-self: center;
       color: ${getCurrentColor("white")};
@@ -48,6 +49,7 @@ export const TextSectionWrapper = styled.div`
    color:${getCurrentColor("white")};
    width: auto;
    ${getCurrentMarginStyle("bottom", "sxlg")}
+   
    span {
      color: ${getCurrentColor("white")};
    }
@@ -58,6 +60,7 @@ export const TextSectionWrapper = styled.div`
    align-items: flex-end;
    justify-self: flex-end;
    width: 100%;
+   
    span {
      text-align: end;
      color: ${getCurrentColor("white")};
