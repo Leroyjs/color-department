@@ -47,8 +47,7 @@ export const TextSectionWrapper = styled.div`
    ${getCurrentMarginStyle("top", "lg")}
    color:${getCurrentColor("white")};
    width: auto;
-   margin-bottom: 72px;
-   /* секция с текстом и логтипами выстотой в 832px. Из-за нестандартной высоты сделал такой остступ*/
+   ${getCurrentMarginStyle("bottom", "sxlg")}
    span {
      color: ${getCurrentColor("white")};
    }

@@ -37,7 +37,8 @@ export const IntroAboutTextBlock = () => {
         </RoundedNumber>
         <StyledWhiteH2>We make it fun for us and our clients.</StyledWhiteH2>
       </PointWrapper>
-      <H2>That said, we take deadlines and&nbsp;</H2>
+      <H2>That said, we take</H2>
+      <H2>deadlines and&nbsp;</H2>
       <Link href="/">
         <TextDecorationWrapper>
           <StyledWhiteH2>agreements very seriously.</StyledWhiteH2>

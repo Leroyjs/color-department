@@ -1,4 +1,4 @@
-import {
+  import {
   applyMargins,
   getCurrentColor,
   getCurrentPaddingStyle,
@@ -15,6 +15,7 @@ export const TextSectionWrapper = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  ${getCurrentPaddingStyle("horizontal", "xlg")};
   ${getCurrentPaddingStyle("vertical", "xlg")};
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
   width: 100%;

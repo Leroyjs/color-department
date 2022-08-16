@@ -12,7 +12,7 @@ import { Menu } from "./sections/menu";
 import { Modal } from "./common/modal";
 import { Portal } from "./common/portal";
 import { Preloader } from "./sections/preloader";
-import { RunningLine } from "./common/running-line";
+// import { RunningLine } from "./common/running-line";
 import { Text } from "./ui/text";
 import { DropDown } from "./ui/drop-down";
 import { TextArea } from "./ui/text-area";
@@ -20,8 +20,8 @@ import { ThemeProvider } from "./common/theme-provider";
 import { RunningLine } from './common/running-line';
 import { FoxPaw } from "./common/fox-paw";
 import { CompanyInfo } from "./common/company-info";
-import { Modal } from "./common/modal";
-import { Portal } from "./common/portal";
+// import { Modal } from "./common/modal";
+// import { Portal } from "./common/portal";
 import { VideoBackground } from "./common/video-background";
 import { Wolf } from "./ui/wolf";
 import { WorksCard } from "./ui/works-card";
@@ -62,12 +62,11 @@ export {
   Portal,
   Awards,
   VideoBackground,
-  Awards,
   Wolf,
-  Avatar,
-  CloseButton,
+  // Avatar,
+  // CloseButton,
   WorksCard,
-  DetailCardModal,
+  // DetailCardModal,
   IntroMainTextBlock,
   AwardMainTextBlock,
   IntroAboutTextBlock,

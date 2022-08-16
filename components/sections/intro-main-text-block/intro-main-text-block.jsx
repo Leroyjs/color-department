@@ -1,4 +1,4 @@
-import { Caption, H2, Text, LeftBracket, RightBracket } from "components";
+import { Caption, H2, Text, LeftBracket, RightBracket, Planet } from "components";
 import {
   TextSectionWrapper,
   FirstLineWrapper,
@@ -15,8 +15,12 @@ export const IntroMainTextBlock = () => {
       <FirstLineWrapper>
         <StyledWhiteH2>We are Color Department</StyledWhiteH2>&nbsp;
         <H2>a color grading studio&nbsp;</H2>
-        <StyledWhiteH2>Based in Los Angeles.</StyledWhiteH2>
+        <StyledWhiteH2>
+          Based in Los Angeles.
+          <Planet />
+        </StyledWhiteH2>
         <H2>We hunt for the best Solutions. We always find the right</H2>
+        <br />
         <H2>path to cinematic&nbsp;</H2>
         <StyledWhiteH2>Impactful images.&nbsp;</StyledWhiteH2>
         <Link href="/">

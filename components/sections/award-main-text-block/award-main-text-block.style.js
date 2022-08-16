@@ -2,7 +2,6 @@ import {
   applyMargins,
   getCurrentColor,
   getCurrentPaddingStyle,
-  getCurrentMarginStyle,
   getCurrentBackgroundColorStyles,
 } from "styles";
 import styled from "@emotion/styled";
