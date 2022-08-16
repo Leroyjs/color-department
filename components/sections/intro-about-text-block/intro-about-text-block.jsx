@@ -27,13 +27,13 @@ export const IntroAboutTextBlock = () => {
       </PointWrapper>
       <PointWrapper>
         <RoundedNumber>
-          <Caption>01</Caption>
+          <Caption>02</Caption>
         </RoundedNumber>
         <StyledWhiteH2>We love What we do.</StyledWhiteH2>
       </PointWrapper>
       <PointWrapper>
         <RoundedNumber>
-          <Caption>01</Caption>
+          <Caption>03</Caption>
         </RoundedNumber>
         <StyledWhiteH2>We make it fun for us and our clients.</StyledWhiteH2>
       </PointWrapper>
