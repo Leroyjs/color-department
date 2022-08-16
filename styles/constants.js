@@ -59,6 +59,7 @@ export const breakpointsWidth = {
 export const offsets = {
   [desktopLG]: {
     xlg: 160,
+    sxlg: 72,
     lg: 60,
     md: 40,
     md1: 30,
