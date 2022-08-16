@@ -7,7 +7,7 @@ export const SlideWrapper = styled.li`
   position: absolute;
   right: 0;
   transform: scale(1.04);
-  transition: .6s transform cubic-bezier(0.25, 0.1, 0.25, 1), 0s width cubic-bezier(0.25, 0.1, 0.25, 1) .7s;
+  transition: 0.7s transform cubic-bezier(0.25, 0.1, 0.25, 1), 0s width cubic-bezier(0.25, 0.1, 0.25, 1) 0.7s;
   cursor: grab;
 
   &.glide__slide--active {

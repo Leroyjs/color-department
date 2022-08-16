@@ -1,8 +1,9 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Glide from "@glidejs/glide";
 import {useVH} from "utils";
 import {SliderItem} from "./slider-item";
-import {Caption, H2, H3, Text} from "components";
+import {Caption, H3} from "components";
+import {Tape} from "./tape";
 import {
     ContentMain,
     ContentFooter,
@@ -16,24 +17,28 @@ import {
 const DEMO_VIDEO = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4';
 const demoSlides = [
     {
+        title: 'El corte ingles',
         poster: "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
         video: {
             mp4: DEMO_VIDEO
         }
     },
     {
+        title: 'Lil pump',
         poster: "https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d",
         video: {
             mp4: DEMO_VIDEO
         }
     },
     {
+        title: 'Balkan line',
         poster: "https://i.vimeocdn.com/video/969956438-651eaae49450178bd03a0a1a7a19d5daf29ee7e56c410f9507e95e04117952ff-d",
         video: {
             mp4: DEMO_VIDEO
         }
     },
     {
+        title: 'Paranormal drive',
         poster: "https://i.vimeocdn.com/video/1104167332-6b4e20f12306d88f5a65f940acd631da3d03163d57f77fd2052b4ae260f09cb5-d",
         video: {
             mp4: DEMO_VIDEO
@@ -41,30 +46,35 @@ const demoSlides = [
     },
 
     {
+        title: 'Zolla',
         poster: "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
         video: {
             mp4: DEMO_VIDEO
         }
     },
     {
+        title: 'In the hood',
         poster: "https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d",
         video: {
             mp4: DEMO_VIDEO
         }
     },
     {
+        title: 'projects',
         poster: "https://i.vimeocdn.com/video/969956438-651eaae49450178bd03a0a1a7a19d5daf29ee7e56c410f9507e95e04117952ff-d",
         video: {
             mp4: DEMO_VIDEO
         }
     },
     {
+        title: 'All categories',
         poster: "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
         video: {
             mp4: DEMO_VIDEO
         }
     },
     {
+        title: 'All genres',
         poster: "https://i.vimeocdn.com/video/1104167332-6b4e20f12306d88f5a65f940acd631da3d03163d57f77fd2052b4ae260f09cb5-d",
         video: {
             mp4: DEMO_VIDEO
@@ -72,6 +82,7 @@ const demoSlides = [
     },
 
     {
+        title: 'Select corourist',
         poster: "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
         video: {
             mp4: DEMO_VIDEO
@@ -80,7 +91,7 @@ const demoSlides = [
 ]
 
 export const Slider = () => {
-    useGlide();
+    const currentSlide = useGlide(demoSlides);
     useVH();
 
     return (
@@ -93,12 +104,11 @@ export const Slider = () => {
                 </SliderSlides>
                 <SliderContent>
                     <ContentMain>
-                        <H2 color="white" mb="md">
-                            El corte ingles
-                        </H2>
+                        <Tape color="white" mb="md" currentIndex={currentSlide} titles={demoSlides}/>
                         <NavBullets className="glide__bullets" data-glide-el="controls[nav]">
                             {demoSlides.map((_, index) => (
-                                <NavBullet key={index} className="glide__bullet" data-glide-dir={`=${index}`}>
+                                <NavBullet key={`glide__bullet_${index}`} className="glide__bullet"
+                                           data-glide-dir={`=${index}`}>
                                     {(index + 1).toString().padStart(2, '0')}
                                 </NavBullet>
                             ))}
@@ -129,6 +139,8 @@ export const Slider = () => {
 };
 
 function useGlide() {
+    const [currentSlide, setCurrentSlide] = useState(0);
+
     useEffect(() => {
         const glide = new Glide('.glide', {
             type: 'carousel',
@@ -138,26 +150,30 @@ function useGlide() {
                     active: "active"
                 }
             }
-        }).mutate([Mutator]).mount();
+        }).mutate([SlideComponent]).mount();
 
+        glide.on('run.after', () => {
+            setCurrentSlide(glide.index);
+        })
     }, [])
+
+    return currentSlide;
 }
 
 function getClassName(symbol) {
     return symbol.toString().replace('.', '');
 }
 
-function Mutator(Glide, Components, Events) {
+function SlideComponent(Glide, Components, Events) {
     const sliderSlidesClass = `${getClassName(SliderSlides)}--reverse`;
     let previousIndex = 0;
-    // glide__bullet
+
     return {
         modify(translate) {
             if (!Glide) return 0;
 
             const i = Glide.index;
             const prevI = previousIndex;
-            console.log(Glide)
 
             previousIndex = i;
 
