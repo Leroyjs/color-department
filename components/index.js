@@ -16,7 +16,7 @@ import { H1 } from "./ui/h1";
 import { H2 } from "./ui/h2";
 import { H3 } from "./ui/h3";
 import { Input } from "./ui/input";
-import { Header, Footer, StartScreen } from "./sections";
+import { Header, Footer, StartScreen, PhotoStartScreen } from "./sections";
 import { Menu } from "./sections/menu";
 import { Modal } from "./common/modal";
 import { Portal } from "./common/portal";
@@ -61,5 +61,6 @@ export {
   CloseButton,
   WorksCard,
   DetailCardModal,
-  StartScreen
+  StartScreen,
+  PhotoStartScreen
 };

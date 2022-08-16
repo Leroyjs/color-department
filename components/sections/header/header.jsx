@@ -9,7 +9,7 @@ import { setTransperentByScroll } from "./utils";
 export const Header = ({ transparentToComponent }) => {
   const headerRef = useRef(null);
   //Прозрачность фона
-  const [transparentBg, setTransparentBg] = useState(0);
+  const [transparentBg, setTransparentBg] = useState(1);
   //Открытие меню
   const [isOpenMenu, setMenuState] = useState(false);
 
