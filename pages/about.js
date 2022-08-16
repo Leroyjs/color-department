@@ -1,5 +1,11 @@
 // import { useRef, useState } from "react";
-import { Header, RunningLine, Footer } from "components";
+import {
+  Header,
+  RunningLine,
+  Footer,
+  IntroAboutTextBlock,
+  Awards,
+} from "components";
 import "styles/global.style";
 
 const About = () => {
@@ -11,11 +17,11 @@ const About = () => {
     <>
       <Header/>
       <main style={{ height: "100vh", overflow: "visible" }}>
-        {/* ЗДЕСЬ ДОЛЖЕН БЫТЬ БЛОК С СЕТКОЙ И ИЗОБРАЖЕНИЯМИ */}
+        {/* TODO: ЗДЕСЬ ДОЛЖЕН БЫТЬ БЛОК С СЕТКОЙ И ИЗОБРАЖЕНИЯМИ */}
         <RunningLine></RunningLine>
-        {/* ЗДЕСЬ ДОЛЖЕН БЫТЬ БЛОК С ТЕКСТОМ КОТОРЫЙ СЕЙЧАС НА ПРОВЕРКЕ */}
-        {/* ЗДЕСЬ ДОЛЖЕН БЫТЬ БЛОК С НАГРАДАМИ */}
-        {/* ЗДЕСЬ ДОЛЖЕН БЫТЬ БЛОК СО СЛАЙДЕРОМ */}
+        <IntroAboutTextBlock/>
+        {/* TODO: СЕКЦИЯ С СОТРУДНИКАМИ */}
+        {/* TODO: ЗДЕСЬ ДОЛЖЕН БЫТЬ БЛОК СО СЛАЙДЕРОМ */}
         <RunningLine outline="true"></RunningLine>
       </main>
 

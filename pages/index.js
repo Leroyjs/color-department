@@ -2,6 +2,14 @@ import "styles/global.style";
 
 import { Preloader } from "components";
 import { useState } from "react";
+import {
+  Header,
+  Footer,
+  IntroMainTextBlock,
+  AwardMainTextBlock,
+  Awards,
+} from "components";
+
 
 const options = [
   {
@@ -24,7 +32,15 @@ const Home = () => {
   return (
     <>
       <Preloader />
-      <main style={{ height: "100vh", overflow: "visible" }}></main>
+      <Header />
+      <main style={{ height: "100vh", overflow: "visible" }}>
+        <IntroMainTextBlock />
+        {/* TODO: СЕКЦИЯ С ЛОГОТИПАМИ */}
+        {/* TODO: СЕКЦИЯ СО СЛАЙДЕРОМ */}
+        <AwardMainTextBlock />
+        <Awards />
+      </main>
+      <Footer />
     </>
   );
 };
