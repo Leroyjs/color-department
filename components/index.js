@@ -34,6 +34,8 @@ import { Planet } from "./common/planet/";
 import { DetailCardModal } from "components/modal/detail-card-modal";
 import { Avatar } from "components/ui/avatar";
 import { CloseButton } from "components/ui/close-button";
+import { FormWork } from "./common";
+import { WorkModal } from "./common";
 
 export {
   ThemeProvider,
@@ -74,4 +76,6 @@ export {
   LeftBracket,
   RightBracket,
   Planet,
+  FormWork,
+  WorkModal,
 };

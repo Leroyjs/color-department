@@ -13,7 +13,6 @@ const About = () => {
       <main style={{ height: "100vh", overflow: "visible" }}>
         <FormWork/>
         <WorkModal/>
-        {/* ЗДЕСЬ ДОЛЖЕН БЫТЬ БЛОК СО СЛАЙДЕРОМ */}
       </main>
       <Footer></Footer>
     </>
