@@ -11,11 +11,12 @@ import {
   PlusLineHorizontal,
   PlusLineVertical,
 } from "./button-shop.style";
+import { Plus } from "components";
 
 export const ButtonShop = ({ children, ...props }) => (
   <Button {...props}>
-    <PlusLineHorizontal />
-    <PlusLineVertical />
+    
+    <Plus/>
   </Button>
 );
 

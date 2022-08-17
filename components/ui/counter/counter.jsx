@@ -1,6 +1,9 @@
 import {
   InputStyled,
   InputWrapper,
+  MinusWrapper,
+  PlusWrapper,
+  SignWrapper,
   Title,
   Underline,
   UnderlineInner,
@@ -50,10 +53,13 @@ export const Counter = ({
         isError={error}
         type="text"
         value={value}
-        {...propsInput}
-      ></InputStyled>
-      <Minus onClick={() => decrement()}></Minus>
-      <Plus onClick={() => increment()}></Plus>
+        {...propsInput}></InputStyled>
+      <MinusWrapper>
+        <Minus onClick={() => decrement()}></Minus>
+      </MinusWrapper>
+      <PlusWrapper>
+        <Plus onClick={() => increment()}></Plus>
+      </PlusWrapper>
       <Underline>
         <UnderlineInner isActive={isActive} isError={error} />
       </Underline>

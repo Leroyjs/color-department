@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { getCurrentColorStrokeStyles } from "styles";
 import {
   colors,
   applyColor,
@@ -15,10 +16,11 @@ export const ShopItemWrapper = styled.div`
   color: ${colors.red};
   grid-auto-rows: 100px, auto;
   cursor: pointer;
-  transition: 0.3s;
-  width: 100%;
+  width: 25vw;
   height: 100%;
-  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
+  /* width: 100%;
+  height: 100%; */
+  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
   ${applyColor}
   ${getCurrentPaddingStyle("horizontal", "md1")}
   ${getCurrentPaddingStyle("vertical", "md")}
@@ -37,6 +39,9 @@ export const ShopItemWrapper = styled.div`
         transition: 0.3s;
         ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)};
         border: 2px solid ${({ theme }) => getCurrentColor("white", theme)};
+      }
+      svg {
+        stroke: ${({ theme }) => getCurrentColor("primary", theme)};
       }
       div {
         ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)};
@@ -57,13 +62,15 @@ export const ShopItemWrapper = styled.div`
     }
   }
 `;
+
 export const TextContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
 `;
+
 export const ProductImage = styled.div`
-  width: 59%;
-  height: 59%;
+  width: 12.5vw;
+  height: 12.5vw;
   ${getCurrentBackgroundColorStyles("white")};
 `;

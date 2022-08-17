@@ -9,8 +9,8 @@ import {
   getCurrentPaddingStyle,
   hexToRGBA,
 } from "styles";
-
 import styled from "@emotion/styled";
+
 const errorConditionColor = ({ isError }) =>
   isError ? `color:${colors.red};` : "";
 const errorConditionBackgroundColor = ({ isError }) =>
@@ -33,7 +33,6 @@ export const Underline = styled.div`
   background-color: ${hexToRGBA(colors.white, 0.2)};
 `;
 
-
 export const IconPlus = styled.svg`
   display: inline-block;
   width: 26px;
@@ -52,9 +51,6 @@ export const IconPlus = styled.svg`
   }}
 `;
 
-
-
-
 export const InputStyled = styled.input`
   width: 100%;
   color: ${({ theme }) => theme.primary};
@@ -63,13 +59,12 @@ export const InputStyled = styled.input`
   font-family: ${fontFamilies.mainFont};
   padding-top: 5px;
   padding-bottom: 5px;
-  text-align:center;
+  text-align: center;
   &:hover {
     & + ${Underline} ${UnderlineInner} {
       transform: scaleX(1);
     }
   }
-
   ${errorConditionColor}
   ${getCurrentFontSizeStyle("h3")};
 `;
@@ -90,6 +85,7 @@ export const InputWrapper = styled.div`
   ${applyMargins};
   ${applyPaddings}
 `;
+
 export const Title = styled.div`
   position: absolute;
   color: ${colors.white};
@@ -101,4 +97,31 @@ export const Title = styled.div`
 
   ${errorConditionColor}
   ${getCurrentFontSizeStyle("h3")};
+`;
+
+export const PlusWrapper = styled.div`
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  opacity: 0.2;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+    transition: 0.3s;
+  }
+`;
+
+export const MinusWrapper = styled.div`
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 10px;
+  right: calc(50% - 26px);
+  opacity: 0.2;
+  cursor: pointer ;
+  &:hover{
+    opacity: 1;
+    transition: 0.3s ;
 `;

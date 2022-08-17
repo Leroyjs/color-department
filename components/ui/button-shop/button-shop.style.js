@@ -8,11 +8,14 @@ import {
 import styled from "@emotion/styled";
 
 export const Button = styled.button`
-  width: l;
-  height: 40px;
+  width: 2.5vw;
+  height: 2.5vw;
   border-radius: 50%;
   cursor: pointer;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
   border: 2px solid ${({ theme }) => getCurrentColor("white", theme)};
 

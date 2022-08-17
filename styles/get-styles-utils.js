@@ -49,9 +49,9 @@ const getCurrentStylesByDirection = (styleName) => (direction, type) => {
 
 export const getCurrentColorStyles = (color, theme) =>
   `color: ${getCurrentColor(color, theme)};`;
+
 export const getCurrentColorStrokeStyles = (color, theme) =>
     `stroke: ${getCurrentColorStroke(color, theme)};`;
-
 
 export const getCurrentBackgroundColorStyles = (color, theme) =>
   `background-color: ${getCurrentColor(color, theme)};`;

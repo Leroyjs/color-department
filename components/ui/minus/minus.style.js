@@ -2,14 +2,9 @@ import styled from "@emotion/styled";
 import { colors } from "styles";
 export const IconMinus = styled.svg`
   display: inline-block;
-  width: 26px;
-  height: 26px;
-  transition: 0.3s;
+  width: 100%;
+  height: 100%;
   stroke: #ffffff;
-  position: absolute;
-  top: 10px;
-  cursor: pointer;
-  opacity: 0.2;
   right: calc(50% - 26px);
   ${({ isOpen, isActive, isError }) => {
     if (isOpen) {
