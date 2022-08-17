@@ -4,7 +4,6 @@ import {
   getCurrentBackgroundColorStyles,
   getCurrentColor,
 } from "styles";
-
 import styled from "@emotion/styled";
 
 export const Button = styled.button`
@@ -22,10 +21,10 @@ export const Button = styled.button`
   &:hover {
     ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
   }
-
   ${applyMargins}
   ${applyPaddings}
 `;
+
 export const PlusLineHorizontal = styled.div`
   width: 24px;
   height: 2px;
@@ -33,6 +32,7 @@ export const PlusLineHorizontal = styled.div`
   position: absolute;
   top: 50%;
 `;
+
 export const PlusLineVertical = styled(PlusLineHorizontal)`
   transform: rotate(90deg);
 `;

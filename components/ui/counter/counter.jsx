@@ -3,16 +3,12 @@ import {
   InputWrapper,
   MinusWrapper,
   PlusWrapper,
-  SignWrapper,
   Title,
   Underline,
   UnderlineInner,
 } from "./counter.style";
-
 import { PropTypes } from "prop-types";
-import { Plus } from "components";
-import { useState } from "react";
-import { Minus } from "components";
+import { Minus, Plus } from "components";
 
 export const Counter = ({
   title,
@@ -26,23 +22,22 @@ export const Counter = ({
 
   function decrement() {
     if (value <= 0) return;
-    const newValueDec = --value;
+    const newValueDec = value - 1;
     onChange?.(newValueDec);
-
   }
+
   function increment() {
     if (value >= 999) return;
-    const newValueInc = ++value;
+    const newValueInc = value + 1;
     onChange?.(newValueInc);
   }
 
   function handelTyping(e) {
     const { target } = e;
     const value = target?.value;
-    if (isNaN(value) || value >= 1000) return
+    if (isNaN(value) || value >= 1000) return;
     onChange?.(Number(value));
-
-  };
+  }
 
   return (
     <InputWrapper {...props}>
@@ -53,12 +48,13 @@ export const Counter = ({
         isError={error}
         type="text"
         value={value}
-        {...propsInput}></InputStyled>
+        {...propsInput}
+      />
       <MinusWrapper>
-        <Minus onClick={() => decrement()}></Minus>
+        <Minus onClick={decrement} />
       </MinusWrapper>
       <PlusWrapper>
-        <Plus onClick={() => increment()}></Plus>
+        <Plus onClick={increment} />
       </PlusWrapper>
       <Underline>
         <UnderlineInner isActive={isActive} isError={error} />

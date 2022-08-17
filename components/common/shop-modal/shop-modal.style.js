@@ -22,7 +22,7 @@ export const InformationColumn = styled.div`
   ${getCurrentPaddingStyle("horizontal", "md")}
   ${getCurrentPaddingStyle("bottom", "md")}
   ${getCurrentPaddingStyle("top", "lg")}
-  background-color:#000;
+  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
 `;
 
 export const TextContainer = styled.div`
@@ -42,5 +42,5 @@ export const ProductDiscription = styled(Text)`
 `;
 
 export const FormWrapper = styled.div`
-  background-color: #000;
+  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
 `;

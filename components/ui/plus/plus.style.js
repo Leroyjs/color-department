@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 import { colors } from "styles";
+
 export const IconPlus = styled.svg`
   display: inline-block;
   width: 100%;
   height: 100%;
-
   cursor: pointer;
   ${({ isOpen, isActive, isError }) => {
     if (isOpen) {
@@ -17,7 +17,8 @@ export const IconPlus = styled.svg`
       return { stroke: colors.white };
     }
   }}
-  :hover {
+
+  &:hover {
     transition: 0.3s;
     opacity: 1;
   }

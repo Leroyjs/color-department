@@ -1,5 +1,4 @@
 import { ButtonShop, Text, ShopModal, Caption, H3 } from "components";
-import { observer } from "mobx-react-lite";
 import { useState } from "react";
 import {
   ShopItemWrapper,
@@ -7,7 +6,7 @@ import {
   TextContainer,
 } from "./shop-item.style";
 
-export const ShopItem = observer(({ cost, img, title, isOpen }) => {
+export const ShopItem = ({ cost, img, title, isOpen }) => {
   const [open, setOpen] = useState(false);
   function handlerClose(value) {
     setOpen(value);
@@ -18,8 +17,7 @@ export const ShopItem = observer(({ cost, img, title, isOpen }) => {
       <ShopItemWrapper
         onClick={() => {
           setOpen(true);
-        }}
-      >
+        }}>
         <TextContainer>
           <Caption>{title}</Caption>
           <H3>{cost}$</H3>
@@ -33,7 +31,7 @@ export const ShopItem = observer(({ cost, img, title, isOpen }) => {
         img={img}
         setOpen={handlerClose}
         isOpen={open}
-      ></ShopModal>
+      />
     </>
   );
-});
+};
