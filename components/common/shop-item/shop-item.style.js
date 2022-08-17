@@ -1,11 +1,10 @@
 import styled from "@emotion/styled";
-import { getCurrentColorStrokeStyles } from "styles";
 import {
-  colors,
   applyColor,
   getCurrentBackgroundColorStyles,
   getCurrentPaddingStyle,
   getCurrentColor,
+  getCurrentColorStyles,
 } from "styles";
 
 export const ShopItemWrapper = styled.div`
@@ -13,51 +12,60 @@ export const ShopItemWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  color: ${colors.red};
   grid-auto-rows: 100px, auto;
   cursor: pointer;
   width: 25vw;
   height: 100%;
-  /* width: 100%;
-  height: 100%; */
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
   ${applyColor}
   ${getCurrentPaddingStyle("horizontal", "md1")}
   ${getCurrentPaddingStyle("vertical", "md")}
+
   span {
     span {
-      color: ${({ theme }) => getCurrentColor("white", theme)};
+      ${({ theme }) => getCurrentColorStyles("white", theme)};
     }
   }
+
   &:hover {
     ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)};
     transition: 0.3s;
+
     button {
       ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)};
       transition: 0.3s;
+
       &:hover {
-        transition: 0.3s;
         ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)};
         border: 2px solid ${({ theme }) => getCurrentColor("white", theme)};
       }
+
       svg {
         stroke: ${({ theme }) => getCurrentColor("primary", theme)};
+        transition: 0.3s;
       }
+
       div {
         ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)};
       }
+
       h3 {
-        color: ${({ theme }) => getCurrentColor("white", theme)};
+        ${({ theme }) => getCurrentColorStyles("white", theme)};
+        transition: 0.3s;
       }
+
     }
     span {
       span {
-        color: ${({ theme }) => getCurrentColor("black", theme)};
+        ${({ theme }) => getCurrentColorStyles("black", theme)};
+        transition: 0.3s;
       }
     }
+
     h3 {
       span {
-        color: ${({ theme }) => getCurrentColor("white", theme)};
+        ${({ theme }) => getCurrentColorStyles("white", theme)};
+        transition: 0.3s;
       }
     }
   }

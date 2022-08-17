@@ -6,7 +6,6 @@ import {
   Counter,
   Modal,
 } from "components";
-import { observer } from "mobx-react-lite";
 import { useState } from "react";
 import {
   ShopModalInner,
@@ -84,9 +83,8 @@ export const ShopModal = observer(
             </FormWrapper>
           </InformationColumn>
           <ButtonExit
-            onClick={(e) => {
+            onClick={() => {
               setOpen(false);
-              console.log(e);
             }}
           />
         </ShopModalInner>
