@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
-import { Header, DropDown, TextArea, StartScreen, Footer } from "components";
+import { Header, DropDown, TextArea, StartScreen, Footer, IntroMainTextBlock, AwardMainTextBlock } from "components";
+import AwardsPage from "./awards";
 import "styles/global.style";
 
 import { Preloader } from "components";
@@ -33,15 +34,13 @@ const Home = () => {
   return (
     <>
       <Header transparentToComponent={videoContant}></Header>
-      <main>
-        <div ref={videoContant}>
-          <StartScreen></StartScreen>
-        </div>
-        <DropDown title="Service" onChange={(option) => setValue(option)} options={options} value={value} />
-        <TextArea title="About your work" value={message} onChange={(val) => { setMessage(val) }} />
+      <StartScreen></StartScreen>
+      <main ref={videoContant} style={{'backgroundColor':'black'}}>
+        <IntroMainTextBlock />
+        <AwardMainTextBlock/>
+        <AwardsPage/>
+        <Footer></Footer>
       </main>
-
-      <Footer></Footer>
     </>
   );
 

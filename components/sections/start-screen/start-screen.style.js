@@ -2,20 +2,19 @@ import { css } from "@emotion/css";
 import { sizes } from "styles";
 import styled from "@emotion/styled";
 
-export const lolTemplate = styled.div`
-    height: 100vh;
-    position: relative;
-    background-color: red;
-  
-`
-
 export const StartScreenWrapper = styled.div`
   height: 100vh;
 `
 
-export const TestWrapper = styled.div`
+export const FlexLayerWrapper = styled.div`
     position: fixed;
     z-index: -1;
+`
+
+export const ContentWrapper = styled.div`
+    position: relative;
+    padding-top: ${sizes["desktopLG"].half};
+    height: 100vh;
 `
 
 export const RunningLineStyle = css`

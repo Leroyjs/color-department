@@ -9,7 +9,8 @@ const onScrollAction = (height, setTransparentBg, observedComponent) => {
 
     return () => {
         tmpPosition = observedComponent.getBoundingClientRect();
-        tmpTransparent = Number(Math.abs(tmpPosition.y / height).toFixed(2));
+        tmpTransparent = 1 - Number((tmpPosition.y / height).toFixed(2));
+        console.log(tmpTransparent, tmpPosition.y, height, tmpPosition)
         /**если проскролим за наблюдаемый элемент, то tmpTransparent будет > 1
          * чтобы не дергать setTransparentBg используем предыдущее значение
          * если предюзначение === 1, то ничего не делаем
@@ -31,9 +32,10 @@ const onScrollAction = (height, setTransparentBg, observedComponent) => {
  */
 export const setTransperentByScroll = (transparentToComponent, setTransparentBg, componentRef, window) => {
     if (!transparentToComponent) return;
-    const height = transparentToComponent.current.offsetHeight - componentRef.current.offsetHeight;
+    setTransparentBg(0);
+    const height = transparentToComponent.current.getBoundingClientRect().y// - componentRef.current.offsetHeight;
     const onScrollCallback = throttling(onScrollAction(height, setTransparentBg, transparentToComponent.current), 200);
-
+    console.log(height);
     window.addEventListener('scroll', onScrollCallback)
     return () => { window.removeEventListener('scroll', onScrollCallback) }
 }

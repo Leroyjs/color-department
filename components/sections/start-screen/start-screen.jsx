@@ -4,9 +4,9 @@ import {
     GridVisibleZone,
     GridWrapperVisibleZone,
     GridWrapperZone,
-    VisibleWrapper,
+    ContentWrapper,
     RunningLineStyle,
-    TestWrapper,
+    FlexLayerWrapper,
     StartScreenWrapper,
 
 } from "./start-screen.style";
@@ -29,8 +29,8 @@ export const StartScreen = () => {
     return (
         <>
             <StartScreenWrapper>
-                <TestWrapper>
-                    <div style={{'position': 'relative'}}>
+                <FlexLayerWrapper>
+                    <ContentWrapper>
                         <VideoBackground
                             video={video}
                             poster={poster}
@@ -38,8 +38,8 @@ export const StartScreen = () => {
                         ></VideoBackground>
                         <Grid></Grid>
                         <RunningLine className={RunningLineStyle}></RunningLine>
-                    </div>
-                </TestWrapper>
+                    </ContentWrapper>
+                </FlexLayerWrapper>
             </StartScreenWrapper>
         </>
 
