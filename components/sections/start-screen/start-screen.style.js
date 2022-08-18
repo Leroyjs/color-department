@@ -2,11 +2,21 @@ import { css } from "@emotion/css";
 import { sizes } from "styles";
 import styled from "@emotion/styled";
 
+export const lolTemplate = styled.div`
+    height: 100vh;
+    position: relative;
+    background-color: red;
+  
+`
+
 export const StartScreenWrapper = styled.div`
   height: 100vh;
-  position: relative;
-  overflow: hidden;
-`;
+`
+
+export const TestWrapper = styled.div`
+    position: fixed;
+    z-index: -1;
+`
 
 export const RunningLineStyle = css`
   max-width: 100vw;
