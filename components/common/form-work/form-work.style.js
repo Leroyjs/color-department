@@ -16,7 +16,6 @@ export const FormSection = styled.div`
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
   ${getCurrentPaddingStyle("bottom", "xlg")};
   ${getCurrentPaddingStyle("top", "xlg")};
-  /* TODO: СДЕЛАТЬ КАЛЬКУЛЯЦИЮ ВЫСОТЫ С УЧЁТОМ ВЫСОТЫ ХЭДЭРА */
 
   h2 {
     span {
