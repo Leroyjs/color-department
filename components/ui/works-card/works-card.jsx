@@ -12,7 +12,6 @@ export const WorksCard = ({poster, video, firstTitle, secondTitle = "", author, 
             <VideoBackground
                 poster={poster}
                 video={video}
-                autoPlay={false}
                 ref={videoRef}
              />
 

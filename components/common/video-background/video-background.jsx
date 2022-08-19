@@ -4,7 +4,7 @@ import {VideoContainer} from "./video.style";
 import {propTypesVideoBg, propTypesWorksCard} from "../../types";
 
 // eslint-disable-next-line react/display-name
-export const VideoBackground = forwardRef(({poster, video, autoPlay = true, ...props}, ref) => {
+export const VideoBackground = forwardRef(({poster, video, autoPlay = false, ...props}, ref) => {
     return (
         <VideoContainer ref={ref} playsInline autoPlay={autoPlay} muted loop controls={false}
                         poster={poster} {...props}>
