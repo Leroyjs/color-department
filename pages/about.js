@@ -89,8 +89,7 @@ const Assistants = [
         {/* TODO: ЗДЕСЬ ДОЛЖЕН БЫТЬ БЛОК СО СЛАЙДЕРОМ */}
         <RunningLine outline="true"></RunningLine>
       </main>
-
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </>
   );
 };

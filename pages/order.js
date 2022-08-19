@@ -1,22 +1,21 @@
 // import { useRef, useState } from "react";
-import { Header, Footer, WorkModal, FormWork,} from "components";
+import { Header, Footer, Modal, WorkModal, FormWork,} from "components";
 import "styles/global.style";
 
-const About = () => {
-  //   const videoContant = useRef(null);
+const Order = () => {
   //   const [value, setValue] = useState(null);
   //   const [message, setMessage] = useState("");
 
   return (
     <>
       <Header />
-      <main style={{ height: "100vh", overflow: "visible" }}>
-        <FormWork/>
-        <WorkModal/>
+      <main>
+        <FormWork />
+        <WorkModal />
       </main>
       <Footer></Footer>
     </>
   );
 };
 
-export default About;
+export default Order;

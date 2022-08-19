@@ -1,11 +1,13 @@
 import { ButtonRectangle, Input, H2, DropDown, TextArea } from "components";
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   FormSection,
   FormWrapper,
   FormColumnLeft,
   FormColumnRight,
 } from "./form-work.style";
+
+// const [isModalOpen, setModalOpen] = useState(false);
 
 export const FormWork = () => {
   const [value1, setValueService] = useState();
@@ -52,7 +54,7 @@ export const FormWork = () => {
           <DropDown
             mb="md"
             title="Title"
-            onChange={(option) => setValueOption(option)}
+            onChange={(option) => setValueTitle(option)}
             options={TitleOptions}
             value={value3}
           />
@@ -67,7 +69,9 @@ export const FormWork = () => {
               setMessage(val);
             }}
           />
-          <ButtonRectangle mt="md">SEND</ButtonRectangle>
+          <ButtonRectangle mt="md" onClick={() => setModalOpen(true)}>
+            SEND
+          </ButtonRectangle>
         </FormColumnRight>
       </FormWrapper>
     </FormSection>
