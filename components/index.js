@@ -36,6 +36,8 @@ import { Avatar } from "components/ui/avatar";
 import { CloseButton } from "components/ui/close-button";
 import { FormWork } from "./common";
 import { WorkModal } from "./common";
+import { VideoGridItem } from "./sections/video-grid/video-grid-item";
+import { VideoGrid } from "./sections/video-grid";
 
 export {
   ThemeProvider,
@@ -64,7 +66,6 @@ export {
   Portal,
   Awards,
   VideoBackground,
-  Awards,
   Wolf,
   Avatar,
   CloseButton,
@@ -79,4 +80,6 @@ export {
   Planet,
   FormWork,
   WorkModal,
+  VideoGrid,
+  VideoGridItem,
 };
