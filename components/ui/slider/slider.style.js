@@ -9,6 +9,7 @@ import {
     getCurrentFontSizeStyle, getCurrentMarginStyle, getCurrentPaddingStyle,
     hexToRGBA
 } from "styles";
+import {css} from "@emotion/css";
 
 export const SliderWrapper = styled.div`
   height: calc(100vh);
@@ -122,4 +123,16 @@ export const RightCol = styled.div`
   align-items: flex-start;
   ${getCurrentMarginStyle("left", "md")};
 `;
+
+export const cursorSliderStyle = css`
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  border: 5px solid ${colors.white};
+  z-index: 100;
+  pointer-events: none;
+`
 

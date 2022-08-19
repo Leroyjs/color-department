@@ -1,6 +1,6 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Glide from "@glidejs/glide";
-import {useVH} from "utils";
+import {useCursor, useVH} from "utils";
 import {SliderItem} from "./slider-item";
 import {Caption, H3} from "components";
 import {Tape} from "./tape";
@@ -11,7 +11,8 @@ import {
     SliderSlides,
     SliderTrack,
     SliderWrapper,
-    NavBullets, NavBullet, RightCol, LeftCol
+    NavBullets, NavBullet, RightCol, LeftCol,
+    cursorSliderStyle
 } from "./slider.style";
 
 const DEMO_VIDEO = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4';
@@ -93,6 +94,7 @@ const demoSlides = [
 export const Slider = () => {
     const currentSlide = useGlide(demoSlides);
     useVH();
+    useCursor({className: cursorSliderStyle});
 
     return (
         <SliderWrapper className="glide">
@@ -107,8 +109,8 @@ export const Slider = () => {
                         <Tape color="white" mb="md" currentIndex={currentSlide} titles={demoSlides}/>
                         <NavBullets className="glide__bullets" data-glide-el="controls[nav]">
                             {demoSlides.map((_, index) => (
-                                <NavBullet key={`glide__bullet_${index}`} className="glide__bullet"
-                                           data-glide-dir={`=${index}`}>
+                                <NavBullet key={`glide__bullet_${index}`} className="glide__bullet js-num"
+                                           data-glide-dir={`=${index}`} data-cursor-sticky>
                                     {(index + 1).toString().padStart(2, '0')}
                                 </NavBullet>
                             ))}
@@ -120,7 +122,9 @@ export const Slider = () => {
                                 Client
                             </Caption>
                             <H3 color="white">
-                                Archangel Studios
+                                {demoSlides.map((slide) => (
+                                    <SliderItem key={slide.poster} {...slide}/>
+                                ))}
                             </H3>
                         </LeftCol>
                         <RightCol>
