@@ -22,6 +22,8 @@ import { CompanyInfo } from "./common/company-info";
 import { VideoBackground } from "./common/video-background";
 import { Wolf } from "./ui/wolf";
 import { WorksCard } from "./ui/works-card";
+import { DetailCardModal } from "./modal";
+import { Slider } from "./ui/slider";
 import { FoxLogo, FullSizeButton } from "./common";
 import { Awards } from "./ui/awards";
 import { IntroMainTextBlock } from "./sections/intro-main-text-block";
@@ -31,7 +33,6 @@ import { TextDecorationUnderline } from "./common";
 import { LeftBracket } from "./common/left-bracket";
 import { RightBracket } from "./common/right-bracket";
 import { Planet } from "./common/planet/";
-import { DetailCardModal } from "components/modal/detail-card-modal";
 import { Avatar } from "components/ui/avatar";
 import { CloseButton } from "components/ui/close-button";
 import { FormWork } from "./common";
@@ -69,6 +70,7 @@ export {
   CloseButton,
   WorksCard,
   DetailCardModal,
+  Slider
   IntroMainTextBlock,
   AwardMainTextBlock,
   IntroAboutTextBlock,
