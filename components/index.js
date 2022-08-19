@@ -27,6 +27,7 @@ import { Avatar } from "./ui/avatar";
 import { CloseButton } from "./ui/close-button";
 import { WorksCard } from "./ui/works-card";
 import { DetailCardModal } from "./modal";
+import { Slider } from "./ui/slider";
 
 export {
   ThemeProvider,
@@ -58,5 +59,6 @@ export {
   Avatar,
   CloseButton,
   WorksCard,
-  DetailCardModal
+  DetailCardModal,
+  Slider
 };

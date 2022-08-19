@@ -61,23 +61,16 @@ class Cursor {
     mouseEnter(e) {
         this.state.stuck = true
 
-        this.span = e.target
-        this.item = this.span.getBoundingClientRect()
+        this.button = e.target
+        this.item = this.button.getBoundingClientRect()
 
-        this.y = this.item.width / 4
-        this.x = this.item.height / 4
-        this.s = ('1.' + this.item.width) * 1.25
+        this.y = this.item.width / 2
+        this.x = this.item.height / 2
 
-        // TweenLite.to(this.cursorEl, 0.25, {
-        //     x: this.item.left + this.y,
-        //     y: this.item.top + this.x,
-        //     scale: this.s
-        // })
-
-        this.cursorEl.style.transform = `translate3d(${this.item.left}px, ${this.item.top}px, 0)`
+        this.cursorEl.style.transform = `translate3d(${Math.floor(this.item.left)}px, ${Math.floor(this.item.top)}px, 0)`
 
         this.cursorEl.style.width = `${this.item.width}px`
-        this.cursorEl.style.height = `${this.item.height}px`
+        this.cursorEl.style.height = `${this.item.width}px`
     }
 
     mouseLeave() {
@@ -85,11 +78,6 @@ class Cursor {
 
         this.cursorEl.style.width = `${this.outer.width}px`
         this.cursorEl.style.height = `${this.outer.height}px`
-
-        // TweenLite.to(this.cursorEl, 0.25, {
-        //     width: this.outer.width,
-        //     height: this.outer.height,
-        // })
     }
 
     run() {

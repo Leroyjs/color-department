@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
-import "@glidejs/glide/dist/css/glide.core.css";
-
+import {css} from "@emotion/css";
 import {
     applyMargins,
     applyPaddings,
@@ -9,7 +8,7 @@ import {
     getCurrentFontSizeStyle, getCurrentMarginStyle, getCurrentPaddingStyle,
     hexToRGBA
 } from "styles";
-import {css} from "@emotion/css";
+import "@glidejs/glide/dist/css/glide.core.css";
 
 export const SliderWrapper = styled.div`
   height: calc(100vh);
@@ -65,7 +64,7 @@ export const NavBullets = styled.ul`
   pointer-events: auto;
   display: grid;
   grid-auto-flow: column;
-  gap: 60px;
+  gap: 40px;
 `;
 
 export const NavBullet = styled.button`
@@ -78,6 +77,8 @@ export const NavBullet = styled.button`
   ${getCurrentFontSizeStyle("text")};
   position: relative;
   transition: color 0.3s;
+  width: 60px;
+  height: 60px;
 
   &:after {
     content: '';
@@ -126,12 +127,12 @@ export const RightCol = styled.div`
 
 export const cursorSliderStyle = css`
   position: absolute;
-  width: 72px;
-  height: 72px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   top: 0;
   left: 0;
-  border: 5px solid ${colors.white};
+  border: 1px solid ${hexToRGBA(colors.white, 0.4)};
   z-index: 100;
   pointer-events: none;
 `
