@@ -1,15 +1,17 @@
-import styled from "@emotion/styled";
-import {H2} from "components";
 import {
-    applyMargins,
-    applyPaddings,
-    colors,
-    fontFamilies,
-    getCurrentBackgroundColorStyles,
-    getCurrentColorStyles,
-    getCurrentFontSizeStyle,
-    hexToRGBA,
+  applyMargins,
+  applyPaddings,
+  colors,
+  fontFamilies,
+  getCurrentBackgroundColorStyles,
+  getCurrentColorStyles,
+  getCurrentFontSizeStyle,
+  hexToRGBA,
 } from "styles";
+
+// import { H2 } from "../h2";
+import styled from "@emotion/styled";
+import { H2, Caption } from "components";
 
 export const AwardsContainer = styled.div`
   display: block;
@@ -31,6 +33,15 @@ export const AwardsTitle = styled(H2)`
   ${applyPaddings}
 `;
 
+export const AwardsSubTitle = styled(Caption)`
+  display: inline-block;
+  text-transform: uppercase;
+  text-align: left;
+
+  /* ${applyMargins}
+  ${applyPaddings} */
+`;
+
 export const ListStyled = styled.ul`
   display: block;
   width: 100%;
@@ -40,7 +51,7 @@ export const ListStyled = styled.ul`
 `;
 
 export const LabelStart = styled.span`
-  ${({theme}) => getCurrentColorStyles("white", theme)}
+  ${({ theme }) => getCurrentColorStyles("white", theme)}
 
   pointer-events: none;
   font-family: ${fontFamilies.mainFont};
@@ -87,7 +98,7 @@ export const PopOver = styled.img`
     height: 400px;
   }
 
-  ${({theme}) => getCurrentBackgroundColorStyles("white", theme)}
+  ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)}
 `;
 
 export const Item = styled.li`
@@ -103,17 +114,17 @@ export const Item = styled.li`
 
   border-top: 1px solid ${hexToRGBA(colors.white, 0.2)};
 
-  ${({theme}) => getCurrentBackgroundColorStyles("black", theme)}
+  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
   &:hover {
-    ${({theme}) => getCurrentBackgroundColorStyles("primary", theme)}
+    ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)}
     border-top-color: ${colors.yellow};
 
     span:first-of-type {
-      ${({theme}) => getCurrentColorStyles("black", theme)}
+      ${({ theme }) => getCurrentColorStyles("black", theme)}
     }
 
     span:last-of-type {
-      ${({theme}) => getCurrentColorStyles("white", theme)}
+      ${({ theme }) => getCurrentColorStyles("white", theme)}
     }
   }
 

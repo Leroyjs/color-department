@@ -9,25 +9,34 @@ import { Input } from "./ui/input";
 import { Header, Footer } from "./sections";
 import { FooterNavigation } from "./common/footer-nav-bar";
 import { Menu } from "./sections/menu";
+import { Modal } from "./common/modal";
+import { Portal } from "./common/portal";
+import { Preloader } from "./sections/preloader";
 import { Text } from "./ui/text";
 import { DropDown } from "./ui/drop-down";
 import { TextArea } from "./ui/text-area";
-import { ThemeProvider } from "./common";
+import { ThemeProvider } from "./common/theme-provider";
 import { RunningLine } from './common/running-line';
 import { FoxPaw } from "./common/fox-paw";
 import { CompanyInfo } from "./common/company-info";
-import { Modal } from "./common/modal";
-import { Portal } from "./common/portal";
-
 import { VideoBackground } from "./common/video-background";
-import { FoxLogo, FullSizeButton } from "./common";
-import { Awards } from "./ui/awards";
 import { Wolf } from "./ui/wolf";
-import { Avatar } from "./ui/avatar";
-import { CloseButton } from "./ui/close-button";
 import { WorksCard } from "./ui/works-card";
 import { DetailCardModal } from "./modal";
 import { Slider } from "./ui/slider";
+import { FoxLogo, FullSizeButton } from "./common";
+import { Awards } from "./ui/awards";
+import { IntroMainTextBlock } from "./sections/intro-main-text-block";
+import { AwardMainTextBlock } from "./sections/award-main-text-block";
+import { IntroAboutTextBlock } from "./sections/intro-about-text-block";
+import { TextDecorationUnderline } from "./common";
+import { LeftBracket } from "./common/left-bracket";
+import { RightBracket } from "./common/right-bracket";
+import { Planet } from "./common/planet/";
+import { Avatar } from "components/ui/avatar";
+import { CloseButton } from "components/ui/close-button";
+import { FormWork } from "./common";
+import { WorkModal } from "./common";
 
 export {
   ThemeProvider,
@@ -40,6 +49,7 @@ export {
   ButtonEllipse,
   ButtonRectangle,
   Grid,
+  Preloader,
   RunningLine,
   Menu,
   Header,
@@ -53,12 +63,21 @@ export {
   TextArea,
   Modal,
   Portal,
-  VideoBackground,
   Awards,
+  VideoBackground,
   Wolf,
   Avatar,
   CloseButton,
   WorksCard,
   DetailCardModal,
   Slider
+  IntroMainTextBlock,
+  AwardMainTextBlock,
+  IntroAboutTextBlock,
+  TextDecorationUnderline,
+  LeftBracket,
+  RightBracket,
+  Planet,
+  FormWork,
+  WorkModal,
 };
