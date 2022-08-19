@@ -81,4 +81,3 @@ export const Title = styled.h3`
 
   ${getCurrentPaddingStyle("top", "xxsm")};
 `;
-

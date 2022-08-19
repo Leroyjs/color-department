@@ -1,6 +1,5 @@
-// import { useRef, useState } from "react";
-import { Header, RunningLine, Footer } from "components";
-import "styles/global.style";
+import { useRef, useState } from "react";
+import { Header, RunningLine, Footer, ShopSection } from "components";
 
 const Projects = () => {
   //   const videoContant = useRef(null);
@@ -11,7 +10,7 @@ const Projects = () => {
     <>
       <Header/>
       <main style={{ height: "100vh", overflow: "visible" }}>
-        {/* ЗДЕСЬ ДОЛЖна БЫТЬ СЕКЦИЯ С ТОВАРАМИ */}
+        <ShopSection/>
         <RunningLine outline="true"></RunningLine>
         {/* ЗДЕСЬ ДОЛЖна БЫТЬ СЕКЦИЯ С ПРОЕКТАМИ */}
         {/* ЗДЕСЬ ДОЛЖЕН БЫТЬ БЛОК СО СЛАЙДЕРОМ */}
