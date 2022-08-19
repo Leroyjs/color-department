@@ -1,11 +1,7 @@
-// import { useRef, useState } from "react";
 import { Header, RunningLine, Footer } from "components";
 import "styles/global.style";
 
 const Projects = () => {
-  //   const videoContant = useRef(null);
-  //   const [value, setValue] = useState(null);
-  //   const [message, setMessage] = useState("");
 
   return (
     <>
@@ -18,8 +14,7 @@ const Projects = () => {
         <RunningLine outline="true"></RunningLine>
         {/* TODO: ЗДЕСЬ ДОЛЖНА БЫТЬ ДЕТАЛЬНАЯ СТРАНИЦА ПРОЕКТА */}
       </main>
-
-      <Footer></Footer>
+      <Footer/>
     </>
   );
 };

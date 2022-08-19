@@ -1,4 +1,11 @@
-import { ButtonRectangle, Input, H2, DropDown, TextArea } from "components";
+import {
+  ButtonRectangle,
+  Input,
+  H2,
+  DropDown,
+  TextArea,
+  WorkModal,
+} from "components";
 import React, { useState } from "react";
 import {
   FormSection,
@@ -7,13 +14,12 @@ import {
   FormColumnRight,
 } from "./form-work.style";
 
-// const [isModalOpen, setModalOpen] = useState(false);
-
 export const FormWork = () => {
   const [value1, setValueService] = useState();
   const [value2, setValueType] = useState();
   const [value3, setValueTitle] = useState();
   const [message, setMessage] = useState(null);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const ServiceOptions = [
     { label: "color grading", value: "11" },
@@ -74,6 +80,7 @@ export const FormWork = () => {
           </ButtonRectangle>
         </FormColumnRight>
       </FormWrapper>
+      <WorkModal isOpen={isModalOpen} setOpen={setModalOpen} />
     </FormSection>
   );
 };

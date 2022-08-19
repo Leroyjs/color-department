@@ -10,7 +10,6 @@ import {
   Awards,
 } from "components";
 
-
 const options = [
   {
     label: "color grading",

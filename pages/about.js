@@ -1,4 +1,3 @@
-// import { useRef, useState } from "react";
 import {
   Header,
   RunningLine,
@@ -9,9 +8,6 @@ import {
 import "styles/global.style";
 
 const About = () => {
-//   const videoContant = useRef(null);
-//   const [value, setValue] = useState(null);
-//   const [message, setMessage] = useState("");
 
 const SeniorColourists = [
   {

@@ -15,14 +15,14 @@ export const FormSection = styled.div`
   height: 100%;
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
   ${getCurrentPaddingStyle("bottom", "xlg")};
-  ${getCurrentPaddingStyle("top", "lg")};
+  ${getCurrentPaddingStyle("top", "xlg")};
   /* TODO: СДЕЛАТЬ КАЛЬКУЛЯЦИЮ ВЫСОТЫ С УЧЁТОМ ВЫСОТЫ ХЭДЭРА */
 
   h2 {
     span {
       color: ${({ theme }) => getCurrentColor("white", theme)};
       text-transform: uppercase;
-      ${getCurrentMarginStyle("vertical", "lg")};
+      ${getCurrentMarginStyle("bottom", "lg")};
     }
   }
 `;
