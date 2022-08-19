@@ -12,10 +12,10 @@ export const ShopItemWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  grid-auto-rows: 100px, auto;
+  transition: background-color 3s;
   cursor: pointer;
-  width: 25vw;
-  height: 100%;
+  width: 100%;
+  height: calc(100vw / 4);
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
   ${applyColor}
   ${getCurrentPaddingStyle("horizontal", "md1")}
@@ -24,16 +24,30 @@ export const ShopItemWrapper = styled.div`
   span {
     span {
       ${({ theme }) => getCurrentColorStyles("white", theme)};
+      transition: color 3s;
+    }
+  }
+
+  h3 {
+    span {
+      transition: color 3s;
+    }
+  }
+
+  button {
+    transition: background-color 3s;
+    svg {
+      transition: stroke 3s;
     }
   }
 
   &:hover {
     ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)};
-    transition: 0.3s;
+    transition: color 3s, background-color 3s;
 
     button {
       ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)};
-      transition: 0.3s;
+      transition: background-color 3s;
 
       &:hover {
         ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)};
@@ -42,30 +56,24 @@ export const ShopItemWrapper = styled.div`
 
       svg {
         stroke: ${({ theme }) => getCurrentColor("primary", theme)};
-        transition: 0.3s;
+        transition: stroke 3s;
       }
 
       div {
         ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)};
       }
-
-      h3 {
-        ${({ theme }) => getCurrentColorStyles("white", theme)};
-        transition: 0.3s;
-      }
-
     }
     span {
       span {
         ${({ theme }) => getCurrentColorStyles("black", theme)};
-        transition: 0.3s;
+        transition: color 3s;
       }
     }
 
     h3 {
       span {
         ${({ theme }) => getCurrentColorStyles("white", theme)};
-        transition: 0.3s;
+        transition: color 3s;
       }
     }
   }
@@ -78,6 +86,7 @@ export const TextContainer = styled.div`
 `;
 
 export const ProductImage = styled.div`
+  flex: 0 0 auto;
   width: 12.5vw;
   height: 12.5vw;
   ${getCurrentBackgroundColorStyles("white")};

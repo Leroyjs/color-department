@@ -38,15 +38,10 @@ export const ShopModal = ({
         <ProductImage>{img}</ProductImage>
         <InformationColumn>
           <TextContainer>
-            <H3>Official merch Sweatshirt Color Department</H3>
-            <ProductPrice>6,16$</ProductPrice>
+            <H3>{title}</H3>
+            <ProductPrice>{cost}$</ProductPrice>
           </TextContainer>
-          <ProductDiscription>
-            The bulk of the work was concentrated around ‘the wall’, the
-            US/Mexico border, one of the main locations in the series. However,
-            the real wall is a highly secured area and it was difficult for the
-            production crew to get access to it.{" "}
-          </ProductDiscription>
+          <ProductDiscription>{discription}</ProductDiscription>
           <FormWrapper>
             <DropDown
               mt="md"

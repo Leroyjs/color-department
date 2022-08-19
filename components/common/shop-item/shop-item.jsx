@@ -6,7 +6,7 @@ import {
   TextContainer,
 } from "./shop-item.style";
 
-export const ShopItem = ({ cost, img, title, isOpen }) => {
+export const ShopItem = ({ cost, img, title, isOpen, discription }) => {
   const [open, setOpen] = useState(false);
   function handlerClose(value) {
     setOpen(value);
@@ -31,6 +31,7 @@ export const ShopItem = ({ cost, img, title, isOpen }) => {
         img={img}
         setOpen={handlerClose}
         isOpen={open}
+        discription={discription}
       />
     </>
   );
