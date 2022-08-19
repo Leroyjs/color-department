@@ -12,7 +12,7 @@ export const ShopItemWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  transition: background-color 3s;
+  transition: background-color 0.3s;
   cursor: pointer;
   width: 100%;
   height: calc(100vw / 4);
@@ -24,30 +24,30 @@ export const ShopItemWrapper = styled.div`
   span {
     span {
       ${({ theme }) => getCurrentColorStyles("white", theme)};
-      transition: color 3s;
+      transition: color 0.3s;
     }
   }
 
   h3 {
     span {
-      transition: color 3s;
+      transition: color 0.3s;
     }
   }
 
   button {
-    transition: background-color 3s;
+    transition: background-color 0.3s;
     svg {
-      transition: stroke 3s;
+      transition: stroke 0.3s;
     }
   }
 
   &:hover {
     ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)};
-    transition: color 3s, background-color 3s;
+    transition: color 0.3s, background-color 0.3s;
 
     button {
       ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)};
-      transition: background-color 3s;
+      transition: background-color 0.3s;
 
       &:hover {
         ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)};
@@ -56,7 +56,7 @@ export const ShopItemWrapper = styled.div`
 
       svg {
         stroke: ${({ theme }) => getCurrentColor("primary", theme)};
-        transition: stroke 3s;
+        transition: stroke 0.3s;
       }
 
       div {
@@ -66,14 +66,14 @@ export const ShopItemWrapper = styled.div`
     span {
       span {
         ${({ theme }) => getCurrentColorStyles("black", theme)};
-        transition: color 3s;
+        transition: color 0.3s;
       }
     }
 
     h3 {
       span {
         ${({ theme }) => getCurrentColorStyles("white", theme)};
-        transition: color 3s;
+        transition: color 0.3s;
       }
     }
   }
