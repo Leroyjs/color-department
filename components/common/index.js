@@ -7,3 +7,5 @@ export * from './text-decoration-underline';
 export * from './left-bracket';
 export * from './right-bracket';
 export * from './planet';
+export * from './form-work';
+export * from './work-modal';
