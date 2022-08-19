@@ -1,5 +1,6 @@
 import {
   fontSizes,
+  namesOfBreakpoints,
   offsets,
   sizes,
   subsequenceOfBreakpoints,
@@ -8,15 +9,16 @@ import {
 import { getCurrentColor } from "./get-value-utils";
 import { getResponsiveStyle } from "./media-query-utils";
 
-const getCurrentDictionaryValue = (dictionary, breakpointName, type) =>
+export const getCurrentDictionaryValue = (dictionary, breakpointName, type) =>
   dictionary?.[breakpointName]?.[type];
 
-const getCurrentStyleByDictionary = (dictionary) => (propertyName) => (type) =>
-  getResponsiveStyle(propertyName)(
-    subsequenceOfBreakpoints.map((breakpointName) =>
-      getCurrentDictionaryValue(dictionary, breakpointName, type)
-    )
-  );
+export const getCurrentStyleByDictionary =
+  (dictionary) => (propertyName) => (type) =>
+    getResponsiveStyle(propertyName)(
+      subsequenceOfBreakpoints.map((breakpointName) =>
+        getCurrentDictionaryValue(dictionary, breakpointName, type)
+      )
+    );
 
 const getCurrentOffsetStyle = getCurrentStyleByDictionary(offsets);
 
@@ -60,6 +62,9 @@ export const getCurrentMarginStyle = (direction, type) =>
 export const getCurrentPaddingStyle = (direction, type) =>
   getCurrentStylesByDirection("padding")(direction, type);
 
+const { count: countDesktopLG, x1: x1DesktopLG } =
+  sizes[namesOfBreakpoints.desktopLG];
+
 export const getCurrentGridTemplateColumsStyle = () =>
   getResponsiveStyle("gridTemplateColumns")([
     // "repeat(8, 12.5vw)",
@@ -71,3 +76,9 @@ export const getCurrentGridTemplateColumsStyle = () =>
     // "repeat(6, 16.666667vw)",
     "repeat(2, 50%)",
   ]);
+
+export const getCurrentSizeStyle = getCurrentStyleByDictionary(sizes);
+
+export const getCurrentWidthSizeStyle = getCurrentSizeStyle("width");
+
+export const getCurrentHeightSizeStyle = getCurrentSizeStyle("height");

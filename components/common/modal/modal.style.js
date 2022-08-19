@@ -1,6 +1,4 @@
 import styled from "@emotion/styled";
-import {colors} from "styles";
-import {hexToRGBA} from "styles";
 
 export const ModalWrapper = styled.div`
   position: fixed;
@@ -9,12 +7,9 @@ export const ModalWrapper = styled.div`
   bottom: 0;
   right: 0;
   width: 100%;
-  min-height: 100vh;
-  min-height: calc(var(--fsvh, 1vh) * 100);
-`;
-
-export const ModalInner = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: ${colors.yellow};
+  transition: height 0.7s, visibility 0.7s;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  ${({isOpen}) => isOpen && "height: calc(100vh);height: calc(var(--fsvh, 1vh) * 100);visibility:visible;"}
 `;

@@ -1,0 +1,1 @@
+export { AwardMainTextBlock } from "./award-main-text-block";
