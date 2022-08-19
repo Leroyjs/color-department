@@ -1,13 +1,10 @@
-import { ShopSection, RunningLine } from "components";
+import {ShopSection} from "components";
 import "styles/global.style";
 
-const Shop = (props) => {
-  return (
-    <>
-      <ShopSection></ShopSection>
-      <RunningLine></RunningLine>
-    </>
-  );
+const Shop = () => {
+    return (
+        <ShopSection/>
+    );
 };
 
 export default Shop;

@@ -1,38 +1,19 @@
-import { ButtonShop, Text, ShopModal, Caption, H3 } from "components";
-import { useState } from "react";
+import {ButtonShop} from "components";
 import {
-  ShopItemWrapper,
-  ProductImage,
-  TextContainer,
+    ShopItemWrapper,
+    ProductImage,
+    TextContainer, Title, Cost,
 } from "./shop-item.style";
 
-export const ShopItem = ({ cost, img, title, isOpen, discription }) => {
-  const [open, setOpen] = useState(false);
-  function handlerClose(value) {
-    setOpen(value);
-  }
-
-  return (
-    <>
-      <ShopItemWrapper
-        onClick={() => {
-          setOpen(true);
-        }}>
-        <TextContainer>
-          <Caption>{title}</Caption>
-          <H3>{cost}$</H3>
-        </TextContainer>
-        <ProductImage>{img}</ProductImage>
-        <ButtonShop />
-      </ShopItemWrapper>
-      <ShopModal
-        title={title}
-        cost={cost}
-        img={img}
-        setOpen={handlerClose}
-        isOpen={open}
-        discription={discription}
-      />
-    </>
-  );
+export const ShopItem = ({cost, img, title, ...props}) => {
+    return (
+        <ShopItemWrapper {...props}>
+            <TextContainer>
+                <Title>{title}</Title>
+                <Cost>{cost}$</Cost>
+            </TextContainer>
+            <ProductImage>{img}</ProductImage>
+            <ButtonShop/>
+        </ShopItemWrapper>
+    );
 };
