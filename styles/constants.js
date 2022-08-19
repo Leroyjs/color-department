@@ -72,7 +72,6 @@ export const offsets = {
 
 export const typesOfoffset = Object.keys(offsets[desktopLG]);
 
-//TODO
 export const sizes = {
   [desktopLG]: {
     x4: "50vw",
