@@ -1,8 +1,11 @@
 import { useRef, useState } from "react";
-import { Header, DropDown, Awards, StartScreen, Footer, IntroMainTextBlock, AwardMainTextBlock } from "components";
+import { Header, DropDown, Slider, StartScreen, Footer, IntroMainTextBlock, AwardMainTextBlock } from "components";
+import  AwardsPage  from './awards';
+import SliderPage from "./slider";
 import "styles/global.style";
 
 import { Preloader } from "components";
+import { colors } from "styles";
 
 const options = [
   {
@@ -34,12 +37,13 @@ const Home = () => {
     <>
       <Header transparentToComponent={videoContant}></Header>
       <StartScreen></StartScreen>
-      <main ref={videoContant} style={{'backgroundColor':'black'}}>
+      <main ref={videoContant} style={{backgroundColor: colors.black}}>
         <IntroMainTextBlock />
-        <AwardMainTextBlock/>
-        <Awards/>
-        <Footer></Footer>
+        <SliderPage/>
+        <AwardMainTextBlock />
+        <AwardsPage/>
       </main>
+      <Footer></Footer>
     </>
   );
 

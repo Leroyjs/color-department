@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
+import { colors } from 'styles';
 import { getCurrentGridTemplateColumsStyle, getCurrentPaddingStyle, sizes } from 'styles';
 
 export const FooterWrapper = styled.div`
+    background-color: ${colors.black};
     display: grid;
     flex-direction: column;
     position: relative;

@@ -49,7 +49,7 @@ export const HeaderItem = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  
+
   &:hover {
     & span {
       color: ${colors.black};

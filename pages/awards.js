@@ -1,5 +1,6 @@
 import React from 'react';
 import {Awards} from "components";
+import { colors } from 'styles';
 
 const awardsItems = [
     {href: '/', startLabel: 'D&AD', endLabel: 'Balkan line', img: 'https://www.fillmurray.com/400/400'},
