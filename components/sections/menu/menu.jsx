@@ -1,7 +1,6 @@
-import { CompanyInfo, FooterNavigation } from "components";
+import { CompanyInfo, FooterNavigation, MapWrapper } from "components";
 import { MenuItem } from './menu-item/menu-item';
 import { MenuBody, MenuFooter, MenuList, MenuMap, MenuWrapper } from "./menu.style";
-import { MapWrapper } from "../../common/map/map-wrapper";
 
 const menuItems = [
     { title: 'projects', link: '' },
@@ -13,7 +12,7 @@ const menuItems = [
 export const Menu = ({ isOpen, props }) => {
 
     //TODO: Навигация
-    const navigateByLink = (link) => (_) => {}
+    const navigateByLink = (link) => (_) => { }
 
     return (
         <MenuWrapper isOpen={isOpen} {...props}>
@@ -30,8 +29,8 @@ export const Menu = ({ isOpen, props }) => {
                 </MenuList>
                 <MenuMap>
                     <MapWrapper
-                      coordinates={[34.0706079, -118.2884803]}
-                      source={"https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"}
+                        coordinates={[34.0706079, -118.2884803]}
+                        source={"https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"}
                     />
                 </MenuMap>
                 <CompanyInfo />

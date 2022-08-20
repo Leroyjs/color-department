@@ -307,6 +307,10 @@ export const resetStyles = css`
     color: #222;
   }
 
+  html::-webkit-scrollbar{
+    display: none;
+  }
+
   ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;

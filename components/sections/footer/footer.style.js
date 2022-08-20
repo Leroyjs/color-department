@@ -37,6 +37,12 @@ export const FooterMapWrapper = styled.div`
     height: 100%;
 `
 
+export const DynamicHeightForMap = styled.div`
+    height: ${sizes['desktopLG'].half};
+    ${({ isOpen }) => isOpen ? `height: calc(100vh - ${sizes['desktopLG'].x1})` : ""};
+    transition: height 0.7s;
+`
+
 export const FooterModalWrapper = styled.div`
     height: ${sizes['desktopLG'].x1};
     position: absolute;

@@ -100,7 +100,6 @@ export const PhotoStartScreen = () => {
 
     useEffect(() => {
         const pictureFieldRect = pictureField.current.getBoundingClientRect();
-        console.log(pictureFieldRect);
         /**Высота и ширина сетки в пикселях*/
         const pictureBoxSize = pictureFieldRect.width * TEMPLATE_ROWS_VW / 100;
         /**Количество строк */
@@ -126,22 +125,11 @@ export const PhotoStartScreen = () => {
             
             newDisplaydArray.forEach((card,indx)=>{card.src = shufflePicture[indx]})
             setDisplayedCards(newDisplaydArray);
-            console.log(newDisplaydArray)
         }, 2000)
-        //document.querySelector('').appendChild()
-        //pictureField.current.append(divArr[0])
-        console.log(pictureFieldRect)
 
-        /*Позиция лисицы - левый нижний угол, в этой ячейке не будем отображать фотографии*/
-        //const foxIndex = (amountLine - 1) * amoutCellsInLine;
-        console.log('---------------------------')
-        console.log(amountLine, amountColumn);
-        console.log('---------------------------')
 
         return () => { clearInterval(interval) }
-        //setFoxIndexCell(foxIndex);
-        //setActiveLine(amountLine);
-        //setCellAmount(amountLine * amoutCellsInLine);
+
     }, []);
 
     return (
@@ -163,64 +151,3 @@ export const PhotoStartScreen = () => {
         </PhotoStartScreenWrapper>
     )
 }
-
-
-
-// useEffect(() => {
-//     const interval = setInterval(() => {
-//         const rnd = getRandomInt(pictureArray.length)
-//         const mustChange = Math.round(Math.random());
-//         if (!isVisible && mustChange && !pictureArray[rnd].busy) {
-//             pictureArray[rnd].busy = true;
-//             pictureArray[selectedImageIndex].busy = false;
-//             setImageIndex(rnd);
-//         }
-//         if (mustChange) { setVisible(prev => !prev); }
-//     }, frequency);
-//     return () => { clearInterval(interval) }
-// })
-
-
-// const BlinkPicture = ({
-//     frequency = 1000,
-//     durationAnimationSec = 0.25,
-//     getPicture = () => { },
-//     onComplete = () => { },
-//     children,
-//     displayDuration = undefined }) => {
-
-//     const [imgSrc, setImgSrc] = useState();
-//     const [isVisible, setVisible] = useState(false);
-//     const [selectedIndex, setIndex] = useState(undefined);
-
-//     useEffect(() => {
-//         const interval = setInterval(() => {
-//             onComplete(selectedIndex);
-//             setVisible(false);
-//             setIndex(undefined);
-//             if (!isVisible) {
-//                 const picture = getPicture();
-//                 //console.log('getPicture', picture)
-//                 if (picture?.href) {
-//                     setImgSrc(picture.href)
-//                     setIndex(picture.index);
-//                 }
-//             }
-//         }, frequency);
-//         return () => { clearInterval(interval) }
-//     }, [])
-
-//     useEffect(() => {
-//         setVisible(true)
-//     }, [imgSrc])
-
-//     return (
-//         <BlinkPictureWrapper BlinkPictureWrapper
-//             isVisible={isVisible}
-//             animationDuration={durationAnimationSec} >
-//             {
-//                 children ? children : <img src={imgSrc}></img>
-//             }
-//         </BlinkPictureWrapper>
-//     )
-// }
