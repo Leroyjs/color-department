@@ -1,7 +1,7 @@
-import { Caption, H1 } from 'components';
 import React from 'react';
-import { RunningLineScrollContent, RunningLineSeparator, RunningLineWrapper } from './running-line.style';
 import PropTypes from 'prop-types';
+import { Caption, H1 } from 'components';
+import { RunningLineScrollContent, RunningLineSeparator, RunningLineWrapper } from './running-line.style';
 
 const SeparatorText = () => (
     <div>

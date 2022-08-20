@@ -1,4 +1,5 @@
 import { Caption, H2, Planet } from "components";
+import Link from "next/link";
 import {
   TextSectionWrapper,
   RoundedNumber,
@@ -7,7 +8,6 @@ import {
   PointWrapper,
   StyledUnderline,
 } from "./intro-about-text-block.style";
-import Link from "next/link";
 
 export const IntroAboutTextBlock = () => {
   return (

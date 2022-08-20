@@ -53,7 +53,7 @@ const demoCards = [
     },
 ]
 
-export const DetailCardModal = ({isOpen, setOpen}) => (
+export const DetailCardModal = ({isOpen, setOpen, modalId}) => (
     <ModalWrapper isOpen={isOpen} setOpen={setOpen}>
         <Wrapper>
             <CloseBtn onClick={() => setOpen(false)}/>

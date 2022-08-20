@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import {debounce, clamp} from "utils";
 import {Item, LabelEnd, LabelStart, PopOver} from "./awards-list.style";
 
-export const AwardsItem = ({href, startLabel, endLabel, img, ...props}) => {
+export const AwardsItem = ({modalId, startLabel, endLabel, img, onClick, ...props}) => {
     const popOverRef = useRef();
 
     function handleEnter() {
@@ -38,14 +38,14 @@ export const AwardsItem = ({href, startLabel, endLabel, img, ...props}) => {
     }, 10)
 
     return (
-        <Item href={href} onMouseEnter={handleEnter} onMouseMove={handleMove} onMouseLeave={handleLeave} {...props}>
+        <Item onMouseEnter={handleEnter} onMouseMove={handleMove} onMouseLeave={handleLeave} onClick={() => onClick?.(modalId)} {...props}>
             <LabelStart>
                 {startLabel}
             </LabelStart>
             <LabelEnd>
                 {endLabel}
             </LabelEnd>
-            <PopOver src={img} ref={popOverRef}/>
+            <PopOver src={img} ref={popOverRef} />
         </Item>
     );
 };

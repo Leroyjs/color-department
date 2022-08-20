@@ -1,6 +1,6 @@
 import { keyframes } from "@emotion/css"
 import styled from "@emotion/styled"
-import { colors, getCurrentColor, getCurrentMarginStyle, sizes } from "styles"
+import {applyMargins, applyPaddings, colors, getCurrentColor, getCurrentMarginStyle, sizes} from "styles"
 
 const scrollAnimation = keyframes`
     from { transform: translateX(0);}
@@ -14,6 +14,8 @@ export const RunningLineWrapper = styled.div`
     &>*:nth-of-type(1n){
         animation: ${scrollAnimation} 20s linear infinite;
     }
+    ${applyMargins};
+    ${applyPaddings}
 `
 
 const ScrollContentDinamicStyle = ({ outline }) => {

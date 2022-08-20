@@ -7,11 +7,11 @@ import {GridWrapper, WorksTitle, WorksTitleWrapper, WorksWrapper} from "./works-
 export const WorksCards = ({title, cards}) => {
     return (
         <WorksWrapper>
-            title && (
-            <WorksTitle mb="md" wrapperProps={{className: WorksTitleWrapper}}>
-                {title}
-            </WorksTitle>
-            )
+            {title && (
+                <WorksTitle mb="md" wrapperProps={{className: WorksTitleWrapper}}>
+                    {title}
+                </WorksTitle>
+            )}
             <GridWrapper>
                 {cards.map(card => (
                     <WorksCard firstTitle={card.firstTitle}

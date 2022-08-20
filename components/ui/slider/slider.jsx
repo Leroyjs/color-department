@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {useCursor, useVH} from "utils";
 import {useGlide} from "./utils";
 import {PropTypes} from "prop-types";
@@ -17,12 +17,13 @@ import {
 } from "./slider.style";
 
 export const Slider = ({slides}) => {
+    const mountRef = useRef();
     const currentSlide = useGlide();
     useVH();
-    useCursor({className: cursorSliderStyle});
+    useCursor({className: cursorSliderStyle, mountRef});
 
     return (
-        <SliderWrapper className="glide">
+        <SliderWrapper className="glide" ref={mountRef}>
             <SliderTrack className="glide__track" data-glide-el="track">
                 <SliderSlides className="glide__slides">
                     {slides.map((slide) => (

@@ -1,7 +1,5 @@
 import {useEffect, useRef} from "react";
 import {css} from '@emotion/css'
-import {propTypesChildren} from "../components/types";
-import {PropTypes} from "prop-types";
 import {createPortal} from "react-dom";
 
 class Cursor {
@@ -145,7 +143,7 @@ export function useCursor({mountRef = null, className, children = null} = {}) {
 
         cursorRef.current = new Cursor(cursorEl, mountEl)
         createPortal(children, cursorEl)
-        return () => document.body.removeChild(cursorEl);
+        return () => mountEl.removeChild(cursorEl);
     }, [])
 
     return cursorRef.current;
