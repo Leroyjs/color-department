@@ -1,6 +1,6 @@
 import { DropDownsWrapper, VideoGridWrapper } from "./video-grid.style";
 import { VideoBackground } from "components";
-import { useRef, useState } from "react";
+import { useRef, useState, useState } from "react";
 import { VideoGridItem } from "components";
 import { DropDown } from "components";
 import { WorksCards } from "components";
@@ -127,20 +127,20 @@ export const VideoGrid = () => {
 
   const videoRef = useRef();
 
-  function handleEnter(event) {
-    const { target } = event;
-    if (target.currentTime > 0.001) target.play();
-  }
+   function handleEnter(event) {
+     const { target } = event;
+     if (target.currentTime > 0.001) target.play();
+   }
 
-  function handleLeave(event) {
-    const { target } = event;
-    target.pause();
-  }
+   function handleLeave(event) {
+     const { target } = event;
+     target.pause();
+   }
 
-  function handlePlay() {
-    const videoEl = videoRef.current;
-    if (!videoEl) return;
-    videoEl.play();
+   function handlePlay() {
+     const videoEl = videoRef.current;
+     if (!videoEl) return;
+     videoEl.play();
   }
 
   const categoryFilter = [];
