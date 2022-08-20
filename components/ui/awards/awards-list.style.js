@@ -78,7 +78,7 @@ export const LabelEnd = styled.span`
   transition: color 0.3s;
 `;
 
-export const PopOver = styled.img`
+export const PopOver = styled.div`
   pointer-events: none;
   position: absolute;
   top: 0;
@@ -92,13 +92,24 @@ export const PopOver = styled.img`
   border: none;
   box-shadow: none;
 
-  transition: height 0.3s;
+  transition: height 0.35s;
 
   &.isShow {
     height: 400px;
   }
 
   ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)}
+`
+
+export const PopOverImg = styled.img`
+  pointer-events: none;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  border: none;
+  box-shadow: none;
 `;
 
 export const Item = styled.li`

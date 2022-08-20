@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import {debounce, clamp} from "utils";
-import {Item, LabelEnd, LabelStart, PopOver} from "./awards-list.style";
+import {Item, LabelEnd, LabelStart, PopOver, PopOverImg} from "./awards-list.style";
 
 export const AwardsItem = ({modalId, startLabel, endLabel, img, onClick, ...props}) => {
     const popOverRef = useRef();
@@ -38,14 +38,17 @@ export const AwardsItem = ({modalId, startLabel, endLabel, img, onClick, ...prop
     }, 10)
 
     return (
-        <Item onMouseEnter={handleEnter} onMouseMove={handleMove} onMouseLeave={handleLeave} onClick={() => onClick?.(modalId)} {...props}>
+        <Item onMouseEnter={handleEnter} onMouseMove={handleMove} onMouseLeave={handleLeave}
+              onClick={() => onClick?.(modalId)} {...props}>
             <LabelStart>
                 {startLabel}
             </LabelStart>
             <LabelEnd>
                 {endLabel}
             </LabelEnd>
-            <PopOver src={img} ref={popOverRef} />
+            <PopOver ref={popOverRef}>
+                <PopOverImg src={img}/>
+            </PopOver>
         </Item>
     );
 };

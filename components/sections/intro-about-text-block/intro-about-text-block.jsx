@@ -9,9 +9,9 @@ import {
   StyledUnderline,
 } from "./intro-about-text-block.style";
 
-export const IntroAboutTextBlock = () => {
+export const IntroAboutTextBlock = ({...props}) => {
   return (
-    <TextSectionWrapper>
+    <TextSectionWrapper {...props}>
       <H2>a color grading studio Based in </H2>
       <Link href="/">
         <StyledWhiteH2>&nbsp;Los Angeles, CALIFORNIA.</StyledWhiteH2>
