@@ -11,6 +11,7 @@ import {
 const lineHeight = 90
 export const InputWrapper = styled.div`
   position: relative;
+  ${({ isFullWidth }) => isFullWidth && "width: 100%;"}
 `;
 
 export const TextAreaInput = styled('textarea')(({isError}) => ({

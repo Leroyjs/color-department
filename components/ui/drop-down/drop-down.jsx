@@ -12,7 +12,7 @@ import {
     UnderlineInner
 } from "./drop-down.style";
 
-export const DropDown = ({title, error, value, options, onChange, propsInput, ...props}) => {
+export const DropDown = ({title, error, value, options, onChange, propsInput, isFullWidth = false, ...props}) => {
     const [isOpen, setOpen] = useState(false);
     const isActive = Boolean(value);
 
@@ -26,7 +26,7 @@ export const DropDown = ({title, error, value, options, onChange, propsInput, ..
     }
 
     return (
-        <InputWrapper {...props}>
+        <InputWrapper isFullWidth={isFullWidth} {...props}>
             <InputStyled isActive={isActive} isOpen={isOpen} onChange={onChange} onClick={handleOpen}
                          isError={error} type="text" {...propsInput}>
                 <CurrentLabel>
@@ -58,6 +58,7 @@ const shapeOption = PropTypes.shape({
 
 DropDown.propTypes = {
     title: PropTypes.string.isRequired,
+    isFullWidth: PropTypes.bool,
     value: PropTypes.oneOfType([
         shapeOption,
         PropTypes.oneOf([null])

@@ -2,7 +2,7 @@
   getCurrentColor,
   getCurrentPaddingStyle,
   getCurrentMarginStyle,
-  getCurrentBackgroundColorStyles,
+  getCurrentBackgroundColorStyles, applyMargins, applyPaddings,
 } from "styles";
 import styled from "@emotion/styled";
 import { H2, TextDecorationUnderline } from "components";
@@ -14,9 +14,10 @@ export const TextSectionWrapper = styled.div`
   justify-content: center;
   text-align: center;
   ${getCurrentPaddingStyle("horizontal", "xlg")};
-  ${getCurrentPaddingStyle("vertical", "xlg")};
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
   width: 100%;
+  ${applyMargins}
+  ${applyPaddings}
 
   h2 {
     display: inline-block;

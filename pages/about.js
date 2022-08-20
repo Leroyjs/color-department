@@ -144,7 +144,7 @@ const About = () => {
     return (
         <>
             {/* TODO: ЗДЕСЬ ДОЛЖЕН БЫТЬ БЛОК С СЕТКОЙ И ИЗОБРАЖЕНИЯМИ (Андрей) */}
-            <IntroAboutTextBlock/>
+            <IntroAboutTextBlock mt="xlg"/>
             <Awards
                 options={SeniorColourists}
                 subtitle="Senior colourists"

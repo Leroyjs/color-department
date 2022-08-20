@@ -132,6 +132,7 @@ export const Error = styled.div`
 
 export const InputWrapper = styled.div`
   position: relative;
+  ${({ isFullWidth }) => isFullWidth && "width: 100%;"}
   ${applyMargins};  
   ${applyPaddings}
 `;

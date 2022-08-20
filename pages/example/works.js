@@ -1,16 +1,13 @@
-import React, {useRef, useState} from 'react';
-import {Header, RunningLine, DetailCardModal, ButtonRectangle, PhotoStartScreen} from "components";
+import React, {useState} from 'react';
+import {Header, DetailCardModal, ButtonRectangle, PhotoStartScreen} from "components";
 
 const WorksPage = () => {
     const [isModalOpen, setModalOpen] = useState(false);
-    const videoContant = useRef(null);
 
     return (
         <div>
-            <Header></Header>
-
-            <PhotoStartScreen></PhotoStartScreen>
-
+            <Header/>
+            <PhotoStartScreen/>
             <ButtonRectangle onClick={() => setModalOpen(true)}>
                 Open modal
             </ButtonRectangle>

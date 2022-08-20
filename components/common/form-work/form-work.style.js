@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 import {
-  getCurrentMarginStyle,
-  getCurrentPaddingStyle,
-  getCurrentBackgroundColorStyles,
-  getCurrentColor,
+    getCurrentMarginStyle,
+    getCurrentPaddingStyle,
+    getCurrentBackgroundColorStyles,
+    getCurrentColor, applyMargins, applyPaddings,
 } from "styles";
 
 export const FormSection = styled.div`
@@ -13,30 +13,16 @@ export const FormSection = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
-  ${getCurrentPaddingStyle("bottom", "xlg")};
-  ${getCurrentPaddingStyle("top", "xlg")};
-
-  h2 {
-    span {
-      color: ${({ theme }) => getCurrentColor("white", theme)};
-      text-transform: uppercase;
-      ${getCurrentMarginStyle("bottom", "lg")};
-    }
-  }
+  ${({theme}) => getCurrentBackgroundColorStyles("black", theme)};
+  ${applyMargins};
+  ${applyPaddings}
 `;
 
 export const FormWrapper = styled.div`
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   width: 100%;
-  height: 100%;
-  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
+  ${({theme}) => getCurrentBackgroundColorStyles("black", theme)};
   ${getCurrentPaddingStyle("horizontal", "md")};
-  div {
-    width: 100%;
-  }
 `;
 
 export const FormColumnLeft = styled.div`
@@ -46,7 +32,7 @@ export const FormColumnLeft = styled.div`
   align-items: flex-start;
   width: 100%;
   height: 100%;
-  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
+  ${({theme}) => getCurrentBackgroundColorStyles("black", theme)};
   ${getCurrentMarginStyle("right", "md")};
 `;
 
@@ -56,6 +42,5 @@ export const FormColumnRight = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  height: 100%;
-  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
+  ${({theme}) => getCurrentBackgroundColorStyles("black", theme)};
 `;
