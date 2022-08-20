@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import {Caption, H3} from "components";
 import {
     applyColor,
     getCurrentBackgroundColorStyles,
@@ -7,6 +6,8 @@ import {
     getCurrentColor,
     getCurrentColorStyles,
 } from "styles";
+import {Caption} from "../../ui/caption";
+import {H3} from "../../ui/h3";
 
 export const Title = styled(Caption)`
   ${({theme}) => getCurrentColorStyles("white", theme)};

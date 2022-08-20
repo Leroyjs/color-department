@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import { H2 } from "components";
 import { getCurrentBackgroundColorStyles } from "styles";
+import {H2} from "../../ui/h2";
 
 export const GratitudeWrapper = styled.div`
   display: flex;

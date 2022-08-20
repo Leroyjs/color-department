@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
-import { H3, Text } from "components";
 import {
   getCurrentColorStyles,
   getCurrentPaddingStyle,
   getCurrentBackgroundColorStyles,
 } from "styles";
+import {H3} from "../../ui/h3";
+import {Text} from "../../ui/text";
 
 export const ShopModalInner = styled.div`
   width: 100%;
