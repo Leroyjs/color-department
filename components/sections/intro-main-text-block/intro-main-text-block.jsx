@@ -42,7 +42,7 @@ export const IntroMainTextBlock = () => {
         </Caption>
       </CaptionWrapper>
       <TextWrapper>
-        <Text>
+        <Text style={{ opacity: 0.4 }}>
           With skills that go beyond
           <br />
           color grading, we have worked with

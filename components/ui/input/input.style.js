@@ -71,6 +71,7 @@ export const Title = styled.div`
   left: 0;
   transform: translateY(-50%);
   font-family: ${fontFamilies.mainFont};
+  pointer-events: none;
 
   ${errorConditionColor}
   ${getCurrentFontSizeStyle("h3")};
