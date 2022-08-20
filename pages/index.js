@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { Header, DropDown, Slider, StartScreen, Footer, IntroMainTextBlock, AwardMainTextBlock } from "components";
-import  AwardsPage  from './awards';
-import SliderPage from "./slider";
+import  AwardsPage  from './example/awards';
+import SliderPage from "./example/slider";
 import "styles/global.style";
 
 import { Preloader } from "components";

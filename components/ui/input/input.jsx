@@ -15,9 +15,10 @@ export const Input = ({
   value = "",
   onChange,
   propsInput,
+  isFullWidth = false,
   ...props
 }) => (
-  <InputWrapper {...props }>
+  <InputWrapper isFullWidth={isFullWidth} {...props }>
     <Title isError={error}>{title}</Title>
     <InputStyled
       onChange={onChange}
@@ -34,6 +35,7 @@ export const Input = ({
 
 Input.propTypes = {
   title: PropTypes.string,
+  isFullWidth: PropTypes.bool,
   error: PropTypes.string,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,

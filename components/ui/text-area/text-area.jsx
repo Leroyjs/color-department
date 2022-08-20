@@ -11,6 +11,7 @@ export const TextArea = ({
                              rows = 4,
                              maxLength = 420,
                              propsInput,
+                             isFullWidth = false,
                              isResizable = true,
                              ...props
                          }) => {
@@ -28,7 +29,7 @@ export const TextArea = ({
     }
 
     return (
-        <InputWrapper {...props}>
+        <InputWrapper isFullWidth={isFullWidth} {...props}>
             {title && <Title isError={error}>{title}</Title>}
             <TextAreaWrapper isActive={!!value} maxRows={rows}>
                 <TextAreaInput isError={error} onChange={handleKeyUp} defaultValue={defaultValue}
@@ -41,6 +42,7 @@ export const TextArea = ({
 
 TextArea.propTypes = {
     isResizable: PropTypes.bool,
+    isFullWidth: PropTypes.bool,
     maxLength: PropTypes.number,
     rows: PropTypes.number,
     defaultValue: PropTypes.string,

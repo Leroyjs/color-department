@@ -81,4 +81,5 @@ export const InputWrapper = styled.div`
   ${applyMargins};
   ${applyPaddings}
   ${getCurrentPaddingStyle("right", "none")};
+  ${({ isFullWidth }) => isFullWidth && "width: 100%;"}
 `;

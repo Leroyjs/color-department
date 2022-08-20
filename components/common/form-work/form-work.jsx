@@ -1,86 +1,96 @@
+import React, {useState} from "react";
 import {
-  ButtonRectangle,
-  Input,
-  H2,
-  DropDown,
-  TextArea,
-  WorkModal,
+    ButtonRectangle,
+    Input,
+    H2,
+    DropDown,
+    TextArea,
+    WorkModal,
 } from "components";
-import React, { useState } from "react";
 import {
-  FormSection,
-  FormWrapper,
-  FormColumnLeft,
-  FormColumnRight,
+    FormSection,
+    FormWrapper,
+    FormColumnLeft,
+    FormColumnRight,
 } from "./form-work.style";
 
-export const FormWork = () => {
-  const [value1, setValueService] = useState();
-  const [value2, setValueType] = useState();
-  const [value3, setValueTitle] = useState();
-  const [message, setMessage] = useState(null);
-  const [isModalOpen, setModalOpen] = useState(false);
+const ServiceOptions = [
+    {label: "color grading", value: "11"},
+    {label: "VFX-design", value: "12"},
+    {label: "Dailies", value: "13"},
+];
+const TypeOptions = [
+    {label: "color grading", value: "11"},
+    {label: "VFX-design", value: "12"},
+    {label: "Dailies", value: "13"},
+    // Заглушка
+];
+const TitleOptions = [
+    {label: "color grading", value: "11"},
+    {label: "VFX-design", value: "12"},
+    {label: "Dailies", value: "13"},
+    // Заглушка
+];
 
-  const ServiceOptions = [
-    { label: "color grading", value: "11" },
-    { label: "VFX-design", value: "12" },
-    { label: "Dailies", value: "13" },
-  ];
-  const TypeOptions = [
-    { label: "color grading", value: "11" },
-    { label: "VFX-design", value: "12" },
-    { label: "Dailies", value: "13" },
-    // Заглушка
-  ];
-  const TitleOptions = [
-    { label: "color grading", value: "11" },
-    { label: "VFX-design", value: "12" },
-    { label: "Dailies", value: "13" },
-    // Заглушка
-  ];
-  return (
-    <FormSection>
-      <H2>let's talk</H2>
-      <FormWrapper>
-        <FormColumnLeft>
-          <DropDown
-            mb="md"
-            title="Service"
-            onChange={(option) => setValueService(option)}
-            options={ServiceOptions}
-            value={value1}
-          />
-          <DropDown
-            mb="md"
-            title="Type"
-            onChange={(option) => setValueType(option)}
-            options={TypeOptions}
-            value={value2}
-          />
-          <DropDown
-            mb="md"
-            title="Title"
-            onChange={(option) => setValueTitle(option)}
-            options={TitleOptions}
-            value={value3}
-          />
-          <Input title="NAME*" mb="md"></Input>
-          <Input title="PLEASE CONTACT ME AT*"></Input>
-        </FormColumnLeft>
-        <FormColumnRight>
-          <TextArea
-            title="About your work"
-            value={message}
-            onChange={(val) => {
-              setMessage(val);
-            }}
-          />
-          <ButtonRectangle mt="md" onClick={() => setModalOpen(true)}>
-            SEND
-          </ButtonRectangle>
-        </FormColumnRight>
-      </FormWrapper>
-      <WorkModal isOpen={isModalOpen} setOpen={setModalOpen} />
-    </FormSection>
-  );
+export const FormWork = ({...props}) => {
+    const [service, setService] = useState();
+    const [type, setType] = useState();
+    const [title, setTitle] = useState();
+    const [name, setName] = useState();
+    const [phone, setPhone] = useState();
+    const [message, setMessage] = useState(null);
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    return (
+        <FormSection mt="md" {...props}>
+            <H2 color="white" mb="md">
+                {/* eslint-disable-next-line react/no-unescaped-entities */}
+                let's talk
+            </H2>
+            <FormWrapper>
+                <FormColumnLeft>
+                    <DropDown
+                        mb="md"
+                        title="Service"
+                        onChange={(option) => setService(option)}
+                        options={ServiceOptions}
+                        value={service}
+                        isFullWidth
+                    />
+                    <DropDown
+                        mb="md"
+                        title="Type"
+                        onChange={(option) => setType(option)}
+                        options={TypeOptions}
+                        value={type}
+                        isFullWidth
+                    />
+                    <DropDown
+                        mb="md"
+                        title="Title"
+                        onChange={(option) => setTitle(option)}
+                        options={TitleOptions}
+                        value={title}
+                        isFullWidth
+                    />
+                    <Input isFullWidth title="NAME*" mb="md" value={name} onChange={(val) => setName(val)}/>
+                    <Input isFullWidth title="PLEASE CONTACT ME AT*" value={phone} onChange={(val) => setPhone(val)}/>
+                </FormColumnLeft>
+                <FormColumnRight>
+                    <TextArea
+                        isFullWidth
+                        title="About your work"
+                        value={message}
+                        onChange={(val) => {
+                            setMessage(val);
+                        }}
+                    />
+                    <ButtonRectangle mt="md" onClick={() => setModalOpen(true)}>
+                        SEND
+                    </ButtonRectangle>
+                </FormColumnRight>
+            </FormWrapper>
+            <WorkModal isOpen={isModalOpen} setOpen={setModalOpen}/>
+        </FormSection>
+    );
 };
