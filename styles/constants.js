@@ -59,17 +59,19 @@ export const breakpointsWidth = {
 export const offsets = {
   [desktopLG]: {
     xlg: 160,
+    sxlg: 72,
     lg: 60,
     md: 40,
     md1: 30,
     sm: 16,
     xsm: 12,
+    xxsm: 8,
+    none: 0,
   },
 };
 
 export const typesOfoffset = Object.keys(offsets[desktopLG]);
 
-//TODO
 export const sizes = {
   [desktopLG]: {
     x4: "50vw",
@@ -77,12 +79,13 @@ export const sizes = {
     x2: "25vw",
     x1: "12.5vw",
     half: "6.25vw",
+    count: 8,
   },
 };
 
 export const fontSizes = {
   [desktopLG]: {
-    h1: "194px",
+    h1: "12.125vw",
     h2: "72px",
     h3: "32px",
     text: "16px",
@@ -96,3 +99,10 @@ export const zindex = {
   frontItem: 10,
   backItem: -1
 }
+
+// export const gridDimensions = {
+//   8columns: "repeat(8, 12.5vw)",
+//   4columns: "repeat(4, 25vw)",
+//   2columns: "repeat(2, 50vw)",
+//   1columns: "repeat(1, 100vw)",
+// }

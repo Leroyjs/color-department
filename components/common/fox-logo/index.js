@@ -1,0 +1,1 @@
+export { FoxLogo } from './fox-logo';
