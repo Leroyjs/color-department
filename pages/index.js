@@ -1,14 +1,11 @@
+import { useRef, useState } from "react";
+import { Header, DropDown, Slider, StartScreen, Footer, IntroMainTextBlock, AwardMainTextBlock } from "components";
+import  AwardsPage  from './awards';
+import SliderPage from "./slider";
 import "styles/global.style";
 
 import { Preloader } from "components";
-import { useState } from "react";
-import {
-  Header,
-  Footer,
-  IntroMainTextBlock,
-  AwardMainTextBlock,
-  Awards,
-} from "components";
+import { colors } from "styles";
 
 const options = [
   {
@@ -26,22 +23,23 @@ const options = [
 ];
 
 const Home = () => {
-  const [value, setValue] = useState(null);
-  const [message, setMessage] = useState(null);
+
+  const videoContant = useRef(null);
+
   return (
     <>
-      <Preloader />
-      <Header />
-      <main style={{ height: "100vh", overflow: "visible" }}>
+      <Header transparentToComponent={videoContant}></Header>
+      <StartScreen></StartScreen>
+      <main ref={videoContant} style={{backgroundColor: colors.black}}>
         <IntroMainTextBlock />
-        {/* TODO: СЕКЦИЯ С ЛОГОТИПАМИ */}
-        {/* TODO: СЕКЦИЯ СО СЛАЙДЕРОМ */}
+        <SliderPage/>
         <AwardMainTextBlock />
-        <Awards options={options}/>
+        <AwardsPage/>
       </main>
-      <Footer />
+      <Footer></Footer>
     </>
   );
+
 };
 
 export default Home;

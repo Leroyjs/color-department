@@ -71,7 +71,6 @@ const { count: countDesktopLG, x1: x1DesktopLG } =
 export const getCurrentGridTemplateColumsStyle = () =>
   getResponsiveStyle("gridTemplateColumns")([
     `repeat(${countDesktopLG}, ${x1DesktopLG})`,
-    "repeat(4, 25vw)",
   ]);
 
 export const getCurrentSizeStyle = getCurrentStyleByDictionary(sizes);

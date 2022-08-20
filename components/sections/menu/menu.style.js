@@ -17,11 +17,14 @@ export const MenuBody = styled.nav`
     position: absolute;
     display: grid;
     ${getCurrentGridTemplateColumsStyle()}
-    height: calc(100vh - 2*${sizes['desktopLG'].half});
+    height: calc(100vh - ${sizes['desktopLG'].x1});
 `
 export const MenuMap = styled.div`
     border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
     grid-column: 5/9;
+    .leaflet-map-pane {
+        z-index: 0; 
+    }
 `
 export const MenuList = styled.ul`
     display: flex;

@@ -32,6 +32,7 @@ import { Text } from "./ui/text";
 import { DropDown } from "./ui/drop-down";
 import { TextArea } from "./ui/text-area";
 import { ButtonShop } from "./ui/button-shop";
+import { MapWrapper } from "./common/map/map-wrapper"
 import { Counter } from "./ui/counter";
 import { Plus } from "./ui/plus";
 import { Minus } from "./ui/minus";
@@ -45,6 +46,8 @@ import { CloseButton } from "./ui/close-button";
 /*    Импорты секций    */
 import { Header } from "./sections/header";
 import { Footer } from "./sections/footer";
+import { StartScreen } from "./sections/start-screen"
+import { PhotoStartScreen } from "./sections/photo-start-screen"
 import { Menu } from "./sections/menu";
 import { Preloader } from "./sections/preloader";
 import { ShopSection } from "./sections/shop/shop-section";
@@ -86,6 +89,8 @@ export {
   CloseButton,
   WorksCard,
   DetailCardModal,
+  StartScreen,
+  PhotoStartScreen,
   ShopModal,
   ShopSection,
   ShopItem,
@@ -104,4 +109,5 @@ export {
   Planet,
   FormWork,
   WorkModal,
+  MapWrapper,
 };

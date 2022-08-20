@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
+import { colors } from 'styles';
 import { getCurrentGridTemplateColumsStyle, getCurrentPaddingStyle, sizes } from 'styles';
 
 export const FooterWrapper = styled.div`
+    background-color: ${colors.black};
     display: grid;
     flex-direction: column;
     position: relative;
@@ -33,6 +35,12 @@ export const FooterMapWrapper = styled.div`
     background-color: black;
     background-image: url('./footer-map.png');
     height: 100%;
+`
+
+export const DynamicHeightForMap = styled.div`
+    height: ${sizes['desktopLG'].half};
+    ${({ isOpen }) => isOpen ? `height: calc(100vh - ${sizes['desktopLG'].x1})` : ""};
+    transition: height 0.7s;
 `
 
 export const FooterModalWrapper = styled.div`

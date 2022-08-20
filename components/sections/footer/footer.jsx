@@ -1,5 +1,5 @@
-import { FooterWrapper, FooterMapWrapper, FooterInfoWrapper, FooterLogo, FoxWrapper, FooterModalWrapper } from './footer.style';
-import { FooterNavigation, CompanyInfo, FoxLogo, H3, Caption, FullSizeButton } from 'components';
+import { FooterWrapper, FooterMapWrapper, FooterInfoWrapper, FooterLogo, FoxWrapper, DynamicHeightForMap, FooterModalWrapper } from './footer.style';
+import { FooterNavigation, CompanyInfo, FoxLogo, H3, Caption, FullSizeButton, MapWrapper } from 'components';
 import { useState } from 'react';
 
 export const Footer = () => {
@@ -20,9 +20,15 @@ export const Footer = () => {
                 <CompanyInfo></CompanyInfo>
             </FooterInfoWrapper>
             <FooterModalWrapper isOpen={isOpenMap}>
-                <FooterNavigation></FooterNavigation>
-                <FooterMapWrapper >
-                    <FullSizeButton onClick={toggleMapState}></FullSizeButton>
+                <FooterNavigation style={{ 'position': 'relative' }}></FooterNavigation>
+                <FooterMapWrapper style={{ 'position': 'relative' }}>
+                    <FullSizeButton onClick={toggleMapState} style={{ zIndex: 1000 }} />
+                    <DynamicHeightForMap isOpen={isOpenMap}>
+                        <MapWrapper
+                            coordinates={[34.0706079, -118.2884803]}
+                            source={"https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"}
+                        />
+                    </DynamicHeightForMap>
                 </FooterMapWrapper>
             </FooterModalWrapper>
         </FooterWrapper>
