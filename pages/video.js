@@ -36,8 +36,8 @@ const VideoPage = ({video, poster}) => {
 
     return (
       <VideoBackground
-        // poster={DEMO_POSTER}
-        // video={{ mp4: DEMO_VIDEO }}
+        poster={DEMO_POSTER}
+        video={{ mp4: DEMO_VIDEO }}
         autoPlay={false}
         ref={videoRef}
         onClick={handlePlay}

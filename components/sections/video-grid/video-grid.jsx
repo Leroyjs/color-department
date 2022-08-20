@@ -1,8 +1,9 @@
-import { VideoGridWrapper } from "./video-grid.style";
+import { DropDownsWrapper, VideoGridWrapper } from "./video-grid.style";
 import { VideoBackground } from "components";
 import { useRef, useState } from "react";
 import { VideoGridItem } from "components";
 import { DropDown } from "components";
+import { WorksCards } from "components";
 
 export const VideoGrid = () => {
   const [category, setCategory] = useState("");
@@ -19,6 +20,9 @@ export const VideoGrid = () => {
       colourist: "100% height",
       genre: "drama",
       category: "movie",
+      firstTitle: "lol",
+      secondTitle: "kek",
+      year: "1488",
     },
     {
       video:
@@ -29,6 +33,9 @@ export const VideoGrid = () => {
       colourist: "100% height",
       genre: "horror",
       category: "clip",
+      firstTitle: "lol",
+      secondTitle: "kek",
+      year: "1488",
     },
     {
       video:
@@ -38,6 +45,9 @@ export const VideoGrid = () => {
       colourist: "SEGA MEGA DRIVE",
       genre: "comedy",
       category: "movie",
+      firstTitle: "lol",
+      secondTitle: "kek",
+      year: "1488",
     },
     {
       video:
@@ -48,6 +58,9 @@ export const VideoGrid = () => {
       colourist: "100% height",
       genre: "drama",
       category: "film",
+      firstTitle: "lol",
+      secondTitle: "kek",
+      year: "1488",
     },
     {
       video:
@@ -58,6 +71,9 @@ export const VideoGrid = () => {
       colourist: "Dmitrix",
       genre: "comedy",
       category: "film",
+      firstTitle: "lol",
+      secondTitle: "kek",
+      year: "1488",
     },
     {
       video:
@@ -67,6 +83,9 @@ export const VideoGrid = () => {
       colourist: "SEGA MEGA DRIVE",
       genre: "drama",
       category: "movie",
+      firstTitle: "lol",
+      secondTitle: "kek",
+      year: "1488",
     },
     {
       video:
@@ -76,6 +95,9 @@ export const VideoGrid = () => {
       colourist: "Dmitrix",
       genre: "horror",
       category: "film",
+      firstTitle: "lol",
+      secondTitle: "kek",
+      year: "1488",
     },
     {
       video:
@@ -85,6 +107,9 @@ export const VideoGrid = () => {
       colourist: "SEGA MEGA DRIVE",
       genre: "comedy",
       category: "clip",
+      firstTitle: "lol",
+      secondTitle: "kek",
+      year: "1488",
     },
     {
       video:
@@ -94,6 +119,9 @@ export const VideoGrid = () => {
       colourist: "Dmitrix",
       genre: "horror",
       category: "clip",
+      firstTitle: "lol",
+      secondTitle: "kek",
+      year: "1488",
     },
   ];
 
@@ -124,13 +152,13 @@ export const VideoGrid = () => {
       categoryFilter.push(card.category),
       genreFilter.push(card.genre),
       colouristFilter.push(card.colourist),
-      (<VideoGridItem WorksCards cards={card} />)
+      (<WorksCards cards={card} />)
     )
   );
 
-  console.log(new Set(categoryFilter));
-  console.log(new Set(genreFilter));
-  console.log(new Set(colouristFilter));
+  // console.log(new Set(categoryFilter));
+  // console.log(new Set(genreFilter));
+  // console.log(new Set(colouristFilter));
   const genreOptions = [];
   const categoryOptions = [];
   const colouristOptions = [];
@@ -138,19 +166,19 @@ export const VideoGrid = () => {
   const uniqueGenreFilter = [...new Set(genreFilter)];
   const uniqueColouristFilter = [...new Set(colouristFilter)];
 
-uniqueGenreFilter.map((option) =>
+  uniqueGenreFilter.map((option) =>
     genreOptions.push({
       label: option,
       value: option,
     })
   );
-uniqueCategoryFilter.map((option) =>
+  uniqueCategoryFilter.map((option) =>
     categoryOptions.push({
       label: option,
       value: option,
     })
   );
-uniqueColouristFilter.map((option) =>
+  uniqueColouristFilter.map((option) =>
     colouristOptions.push({
       label: option,
       value: option,
@@ -159,26 +187,28 @@ uniqueColouristFilter.map((option) =>
 
   return (
     <>
-      <DropDown
-        mb="md"
-        title="All category"
-        onChange={(option) => setCategory(option)}
-        options={categoryOptions}
-      />
-      <DropDown
-        mb="md"
-        title="All genres"
-        onChange={(option) => setGenre(option)}
-        options={genreOptions}
-        value={genre}
-      />
-      <DropDown
-        mb="md"
-        title="|All colourist"
-        onChange={(option) => setColourist(option)}
-        options={colouristOptions}
-        value={colourist}
-      />
+      <DropDownsWrapper>
+        <DropDown
+          mb="md"
+          title="All category"
+          onChange={(option) => setCategory(option)}
+          options={categoryOptions}
+        />
+        <DropDown
+          mb="md"
+          title="All genres"
+          onChange={(option) => setGenre(option)}
+          options={genreOptions}
+          value={genre}
+        />
+        <DropDown
+          mb="md"
+          title="All colourist"
+          onChange={(option) => setColourist(option)}
+          options={colouristOptions}
+          value={colourist}
+        />
+      </DropDownsWrapper>
     </>
   );
 };

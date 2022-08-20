@@ -7,8 +7,9 @@ import { H1 } from "./ui/h1";
 import { H2 } from "./ui/h2";
 import { H3 } from "./ui/h3";
 import { Input } from "./ui/input";
-import { Header, Footer } from "./sections";
+import { Header } from "./sections/header";
 import { FooterNavigation } from "./common/footer-nav-bar";
+import { Footer } from "./sections/footer";;
 import { Menu } from "./sections/menu";
 import { Preloader } from "./sections/preloader";
 import { Text } from "./ui/text";
@@ -89,7 +90,7 @@ export {
   Minus,
   ButtonExit,
   ButtonShop,
-  Slider
+  Slider,
   IntroMainTextBlock,
   AwardMainTextBlock,
   IntroAboutTextBlock,
