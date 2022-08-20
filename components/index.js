@@ -55,6 +55,7 @@ import { ShopSection } from "./sections/shop/shop-section";
 import { IntroMainTextBlock } from "./sections/intro-main-text-block";
 import { AwardMainTextBlock } from "./sections/award-main-text-block";
 import { IntroAboutTextBlock } from "./sections/intro-about-text-block";
+import { AboutEndTextBlock } from "./sections/about-end-text-block";
 import { ProjectCards } from "./sections/project-cards";
 /*    Импорты модальных окон    */
 import { DetailCardModal } from "./modal";
@@ -105,6 +106,7 @@ export {
   IntroMainTextBlock,
   AwardMainTextBlock,
   IntroAboutTextBlock,
+  AboutEndTextBlock,
   TextDecorationUnderline,
   LeftBracket,
   RightBracket,

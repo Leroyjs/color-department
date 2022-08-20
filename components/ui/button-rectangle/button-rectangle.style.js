@@ -12,14 +12,22 @@ import { hexToRGBA } from "styles";
 const isActiveStyles = ({ theme }) => `
   ${getCurrentBackgroundColorStyles("primary", theme)};
   cursor: pointer;
+  border: 1px solid ${getCurrentColor("primary", theme)};
+  transition: background-color 0.3s;
 
   span {
     ${getCurrentColorStyles("black", theme)};
+    transition: color 0.3s;
   }
 
   &:hover {
-    ${getCurrentBackgroundColorStyles("white", theme)};
-    border: 2px solid ${getCurrentColor("primary", theme)};
+    ${getCurrentBackgroundColorStyles("black", theme)};
+    transition: background-color 0.3s;
+
+    span {
+    ${getCurrentColorStyles("primary", theme)};
+    transition: color 0.3s;
+    }
   }
 `;
 

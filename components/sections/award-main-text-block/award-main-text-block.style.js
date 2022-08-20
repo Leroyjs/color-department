@@ -1,5 +1,6 @@
 import {
   applyMargins,
+  applyPaddings,
   getCurrentColor,
   getCurrentPaddingStyle,
   getCurrentBackgroundColorStyles,
@@ -10,10 +11,10 @@ import { H2 } from "components";
 export const AwardTextWrapper = styled.div`
   display: inline-block;
   text-align: center;
-  ${getCurrentPaddingStyle("vertical", "xlg")};
-  ${getCurrentPaddingStyle("horizontal", "md")};
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
   width: 100vw;
+  ${applyPaddings};
+  ${applyMargins};
 
   h2 {
     display: inline-block;
