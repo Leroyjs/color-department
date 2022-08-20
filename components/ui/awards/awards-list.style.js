@@ -9,8 +9,9 @@ import {
   hexToRGBA,
 } from "styles";
 
-import { H2 } from "../h2";
+// import { H2 } from "../h2";
 import styled from "@emotion/styled";
+import { H2, Caption } from "components";
 
 export const AwardsContainer = styled.div`
   display: block;
@@ -30,6 +31,15 @@ export const AwardsTitle = styled(H2)`
 
   ${applyMargins}
   ${applyPaddings}
+`;
+
+export const AwardsSubTitle = styled(Caption)`
+  display: inline-block;
+  text-transform: uppercase;
+  text-align: left;
+
+  /* ${applyMargins}
+  ${applyPaddings} */
 `;
 
 export const ListStyled = styled.ul`

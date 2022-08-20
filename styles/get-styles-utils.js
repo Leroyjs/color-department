@@ -50,6 +50,9 @@ const getCurrentStylesByDirection = (styleName) => (direction, type) => {
 export const getCurrentColorStyles = (color, theme) =>
   `color: ${getCurrentColor(color, theme)};`;
 
+export const getCurrentColorStrokeStyles = (color, theme) =>
+  `stroke: ${getCurrentColorStroke(color, theme)};`;
+
 export const getCurrentBackgroundColorStyles = (color, theme) =>
   `background-color: ${getCurrentColor(color, theme)};`;
 
@@ -68,13 +71,7 @@ const { count: countDesktopLG, x1: x1DesktopLG } =
 export const getCurrentGridTemplateColumsStyle = () =>
   getResponsiveStyle("gridTemplateColumns")([
     `repeat(${countDesktopLG}, ${x1DesktopLG})`,
-    `repeat(${countDesktopLG}, ${x1DesktopLG})`,
-    `repeat(${countDesktopLG}, ${x1DesktopLG})`,
-    `repeat(${countDesktopLG}, ${x1DesktopLG})`,
-    `repeat(${countDesktopLG}, ${x1DesktopLG})`,
-    "repeat(6, 16.666667vw)",
-    "repeat(6, 16.666667vw)",
-    "repeat(2, 50vw)",
+    "repeat(4, 25vw)",
   ]);
 
 export const getCurrentSizeStyle = getCurrentStyleByDictionary(sizes);

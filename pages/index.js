@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
-import { Header, DropDown, TextArea, StartScreen, Footer, IntroMainTextBlock, AwardMainTextBlock } from "components";
-import AwardsPage from "./awards";
+import { Header, DropDown, Awards, StartScreen, Footer, IntroMainTextBlock, AwardMainTextBlock } from "components";
 import "styles/global.style";
 
 import { Preloader } from "components";
@@ -38,7 +37,7 @@ const Home = () => {
       <main ref={videoContant} style={{'backgroundColor':'black'}}>
         <IntroMainTextBlock />
         <AwardMainTextBlock/>
-        <AwardsPage/>
+        <Awards/>
         <Footer></Footer>
       </main>
     </>

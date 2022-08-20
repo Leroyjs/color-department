@@ -14,12 +14,14 @@ export const FormSection = styled.div`
   width: 100%;
   height: 100%;
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
-  ${getCurrentPaddingStyle("bottom", "md")};
+  ${getCurrentPaddingStyle("bottom", "xlg")};
+  ${getCurrentPaddingStyle("top", "xlg")};
+
   h2 {
     span {
       color: ${({ theme }) => getCurrentColor("white", theme)};
       text-transform: uppercase;
-      ${getCurrentMarginStyle("vertical", "lg")};
+      ${getCurrentMarginStyle("bottom", "lg")};
     }
   }
 `;
