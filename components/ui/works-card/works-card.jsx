@@ -4,11 +4,11 @@ import {VideoBackground} from "components";
 import {PropTypes} from "prop-types";
 import {CardCaption, CardFooter, CardTitle, CardTitleWrapper, CardWrapper} from "./works-card.style";
 
-export const WorksCard = ({poster, video, firstTitle, secondTitle = "", author, year}) => {
+export const WorksCard = ({poster, video, href = "/", firstTitle, secondTitle = "", author, year}) => {
     const videoRef = useRef();
 
     return (
-        <CardWrapper p="md" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+        <CardWrapper href={href} p="md" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
             <VideoBackground
                 poster={poster}
                 video={video}
@@ -41,6 +41,7 @@ function handleLeave(event) {
 
 WorksCard.propTypes = {
     ...propTypesVideoBg,
+    href: PropTypes.string.isRequired,
     firstTitle: PropTypes.string.isRequired,
     secondTitle: PropTypes.string,
     author: PropTypes.string.isRequired,

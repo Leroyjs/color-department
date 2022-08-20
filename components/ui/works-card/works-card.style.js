@@ -1,4 +1,3 @@
-
 import styled from "@emotion/styled";
 import {css} from "@emotion/css";
 import {applyMargins, applyPaddings, colors, getCurrentColorStyles, hexToRGBA} from "styles";
@@ -39,7 +38,7 @@ export const CardCaption = styled(Caption)`
   ${({theme}) => getCurrentColorStyles("white", theme)}
 `;
 
-export const CardWrapper = styled.div`
+export const CardWrapper = styled.a`
   cursor: pointer;
   position: relative;
   display: flex;
@@ -72,6 +71,7 @@ export const CardTitleWrapper = css`
   align-self: center;
   margin-top: auto;
   margin-bottom: auto;
+  width: 100%;
 `;
 
 export const CardFooter = styled.div`

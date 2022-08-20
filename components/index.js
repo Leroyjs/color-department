@@ -43,6 +43,7 @@ import { Slider } from "./ui/slider";
 import { Awards } from "./ui/awards";
 import { Avatar } from "./ui/avatar";
 import { CloseButton } from "./ui/close-button";
+import { WorksCards } from "./ui/works-cards";
 /*    Импорты секций    */
 import { Header } from "./sections/header";
 import { Footer } from "./sections/footer";
@@ -54,6 +55,7 @@ import { ShopSection } from "./sections/shop/shop-section";
 import { IntroMainTextBlock } from "./sections/intro-main-text-block";
 import { AwardMainTextBlock } from "./sections/award-main-text-block";
 import { IntroAboutTextBlock } from "./sections/intro-about-text-block";
+import { ProjectCards } from "./sections/project-cards";
 /*    Импорты модальных окон    */
 import { DetailCardModal } from "./modal";
 
@@ -110,4 +112,6 @@ export {
   FormWork,
   WorkModal,
   MapWrapper,
+  WorksCards,
+  ProjectCards,
 };

@@ -21,7 +21,7 @@ export const WorksCards = ({title, cards}) => {
                                poster={card.poster}
                                video={card.video}
                                key={card.firstTitle}
-                    />
+                               href={card.firstTitle}/>
                 ))}
             </GridWrapper>
         </WorksWrapper>
@@ -29,6 +29,6 @@ export const WorksCards = ({title, cards}) => {
 };
 
 WorksCards.propTypes = {
-    title: PropTypes.string.isRequired,
-    cards: PropTypes.arrayOf(PropTypes.shape(propTypesWorksCard))
+    title: PropTypes.string,
+    cards: PropTypes.arrayOf(PropTypes.shape(propTypesWorksCard)).isRequired
 }
