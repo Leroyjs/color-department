@@ -37,7 +37,6 @@ const Home = () => {
         {/* TODO: СЕКЦИЯ С ЛОГОТИПАМИ */}
         {/* TODO: СЕКЦИЯ СО СЛАЙДЕРОМ */}
         <AwardMainTextBlock />
-        <Awards />
       </main>
       <Footer />
     </>
