@@ -44,7 +44,7 @@ import { Awards } from "./ui/awards";
 import { Avatar } from "./ui/avatar";
 import { CloseButton } from "./ui/close-button";
 import { WorksCards } from "./ui/works-cards";
-import { InputField, TextAreaField, DropDownField } from "./ui/fields";
+import { InputField, TextAreaField, DropDownField, CounterField } from "./ui/fields";
 /*    Импорты секций    */
 import { Header } from "./sections/header";
 import { Footer } from "./sections/footer";
@@ -120,4 +120,5 @@ export {
   InputField,
   TextAreaField,
   DropDownField,
+  CounterField,
 };
