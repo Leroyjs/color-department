@@ -42,6 +42,6 @@ export const ProductDiscription = styled(Text)`
   ${getCurrentPaddingStyle("top", "md")};
 `;
 
-export const FormWrapper = styled.div`
+export const FormWrapper = styled.form`
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
 `;

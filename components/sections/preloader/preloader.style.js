@@ -1,4 +1,3 @@
-import { Grid, H3 } from "components";
 import {
   colors,
   getCurrentBackgroundColorStyles,
@@ -10,6 +9,8 @@ import {
 import { applyCurrentAnimation } from "./utils";
 import { steps } from "./constants";
 import styled from "@emotion/styled";
+import {H3} from "../../ui/h3";
+import {Grid} from "../../common";
 
 export const PreloaderWrapper = styled.div`
   ${getCurrentGridTemplateColumsStyle()}
