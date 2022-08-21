@@ -68,6 +68,29 @@ export const offsets = {
     xxsm: 8,
     none: 0,
   },
+  [tabletLG]: {
+    xlg: 140,
+    sxlg: 72,
+    lg: 48,
+    md: 24,
+    md1: 30,
+    sm: 12,
+    xsm: 12,
+    xxsm: 8,
+    none: 0,
+  },
+  [phone]: {
+    xlg: 80,
+    sxlg: 72,
+    lg: 32,
+    md: 16,
+    md1: 30,
+    sm: 12,
+    xsm: 12,
+    xxsm: 8,
+    none: 0,
+  },
+  // TODO: XSM XXSM MD1 SXLG менять по месту
 };
 
 export const typesOfoffset = Object.keys(offsets[desktopLG]);
@@ -90,6 +113,41 @@ export const fontSizes = {
     h3: "32px",
     text: "16px",
     caption: "14px",
+  },
+  [desktopMD]: {
+    h1: "12.125vw",
+    h2: "64px",
+    h3: "32px",
+    text: "16px",
+    caption: "14px",
+  },
+  [desktopSM]: {
+    h1: "12.125vw",
+    h2: "60px",
+    h3: "32px",
+    text: "16px",
+    caption: "14px",
+  },
+  [tabletLG]: {
+    h1: "20.83vw",
+    h2: "58px",
+    h3: "24px",
+    text: "14px",
+    caption: "12px",
+  },
+  [tabletSM]: {
+    h1: "20.83vw",
+    h2: "36px",
+    h3: "24px",
+    text: "14px",
+    caption: "12px",
+  },
+  [phone]: {
+    h1: "22.22vw",
+    h2: "28px",
+    h3: "18px",
+    text: "12px",
+    caption: "12px",
   },
 };
 

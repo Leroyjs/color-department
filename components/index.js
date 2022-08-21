@@ -44,6 +44,7 @@ import { Awards } from "./ui/awards";
 import { Avatar } from "./ui/avatar";
 import { CloseButton } from "./ui/close-button";
 import { WorksCards } from "./ui/works-cards";
+import { BR } from "./ui/br";
 import { InputField, TextAreaField, DropDownField, CounterField } from "./ui/fields";
 /*    Импорты секций    */
 import { Header } from "./sections/header";
@@ -117,6 +118,7 @@ export {
   MapWrapper,
   WorksCards,
   ProjectCards,
+  BR,
   InputField,
   TextAreaField,
   DropDownField,
