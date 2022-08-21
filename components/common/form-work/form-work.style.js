@@ -6,7 +6,7 @@ import {
     getCurrentColor, applyMargins, applyPaddings,
 } from "styles";
 
-export const FormSection = styled.div`
+export const FormSection = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
