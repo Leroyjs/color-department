@@ -18,7 +18,7 @@ import {
     RightBracket,
     Planet,
     LeftBracket,
-    Grid
+    Grid,
 } from "./common";
 /*    Импорты UI-ых компонентов    */
 import { ButtonEllipse } from "./ui/button-ellipse";

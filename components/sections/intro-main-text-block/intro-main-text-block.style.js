@@ -9,7 +9,7 @@ import {
 } from "styles";
 import styled from "@emotion/styled";
 import { H2,  } from "components";
-import { LeftBracket, RightBracket, Planet } from "../../common";
+import { LeftBracket, RightBracket, Planet } from "../../common"
 
 export const TextSectionWrapper = styled.div`
   display: flex;
@@ -54,7 +54,7 @@ export const TextSectionWrapper = styled.div`
    color:${getCurrentColor("white")};
    width: auto;
    ${getCurrentMarginStyle("bottom", "sxlg")}
-   
+
    span {
      color: ${getCurrentColor("white")};
    }
@@ -66,7 +66,7 @@ export const TextSectionWrapper = styled.div`
    align-items: flex-end;
    justify-self: flex-end;
    width: 100%;
-   
+
    span {
      text-align: end;
      color: ${getCurrentColor("white")};
@@ -186,10 +186,9 @@ export const StyledPlanet = styled(Planet)`
     width: 26px;
     height: 26px;
   }
-  
+
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     width: 24px;
     height: 24px;
   }
 `;
-

@@ -5,6 +5,8 @@ export const IconPlus = styled.svg`
   display: inline-block;
   width: 100%;
   height: 100%;
+  min-width: 12px;
+  min-height: 12px;
   cursor: pointer;
   ${({ isOpen, isActive, isError }) => {
     if (isOpen) {
@@ -22,4 +24,6 @@ export const IconPlus = styled.svg`
     transition: 0.3s;
     opacity: 1;
   }
+
+ 
 `;

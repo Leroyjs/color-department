@@ -33,8 +33,9 @@ export const ShopModal = ({
                     {img}
                 </ProductImage>
                 <ShopForm {...props}/>
-                <ButtonExit onClick={() => setOpen(false)}/>
+
             </ShopModalInner>
+            <ButtonExit onClick={() => setOpen(false)} />
         </Modal>
     );
 };
