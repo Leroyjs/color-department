@@ -6,6 +6,8 @@ const slides = [
     {
         title: 'El corte ingles',
         poster: "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
+        client: "Archangel Studios",
+        colourist: "Archangel Studios",
         video: {
             mp4: DEMO_VIDEO
         }
@@ -13,6 +15,8 @@ const slides = [
     {
         title: 'Lil pump',
         poster: "https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d",
+        client: "JACK MCGINITY",
+        colourist: "JACK MCGINITY",
         video: {
             mp4: DEMO_VIDEO
         }
@@ -20,6 +24,8 @@ const slides = [
     {
         title: 'Balkan line',
         poster: "https://i.vimeocdn.com/video/969956438-651eaae49450178bd03a0a1a7a19d5daf29ee7e56c410f9507e95e04117952ff-d",
+        client: "ANDRIC WATSON",
+        colourist: "ANDRIC WATSON",
         video: {
             mp4: DEMO_VIDEO
         }
@@ -27,6 +33,8 @@ const slides = [
     {
         title: 'Paranormal drive',
         poster: "https://i.vimeocdn.com/video/1104167332-6b4e20f12306d88f5a65f940acd631da3d03163d57f77fd2052b4ae260f09cb5-d",
+        client: "Find out more",
+        colourist: "Find out more",
         video: {
             mp4: DEMO_VIDEO
         }
@@ -35,6 +43,8 @@ const slides = [
     {
         title: 'Zolla',
         poster: "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
+        client: "vimeocdn",
+        colourist: "vimeocdn",
         video: {
             mp4: DEMO_VIDEO
         }
@@ -42,6 +52,8 @@ const slides = [
     {
         title: 'In the hood',
         poster: "https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d",
+        client: "El corte ingles",
+        colourist: "El corte ingles",
         video: {
             mp4: DEMO_VIDEO
         }
@@ -49,6 +61,8 @@ const slides = [
     {
         title: 'projects',
         poster: "https://i.vimeocdn.com/video/969956438-651eaae49450178bd03a0a1a7a19d5daf29ee7e56c410f9507e95e04117952ff-d",
+        client: "Studios",
+        colourist: "Studios",
         video: {
             mp4: DEMO_VIDEO
         }
@@ -56,6 +70,8 @@ const slides = [
     {
         title: 'All categories',
         poster: "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
+        client: "Archangel",
+        colourist: "Archangel",
         video: {
             mp4: DEMO_VIDEO
         }
@@ -63,6 +79,8 @@ const slides = [
     {
         title: 'All genres',
         poster: "https://i.vimeocdn.com/video/1104167332-6b4e20f12306d88f5a65f940acd631da3d03163d57f77fd2052b4ae260f09cb5-d",
+        client: "Balkan line",
+        colourist: "Balkan line",
         video: {
             mp4: DEMO_VIDEO
         }
@@ -71,6 +89,8 @@ const slides = [
     {
         title: 'Select corourist',
         poster: "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
+        client: "JACK MCGINITY",
+        colourist: "JACK MCGINITY",
         video: {
             mp4: DEMO_VIDEO
         }
@@ -78,7 +98,7 @@ const slides = [
 ]
 const SliderPage = () => {
     return (
-        <Slider slides={slides}/>
+        <Slider slides={slides} title={<span>Our work worthy of your <br/> attention</span>}/>
     );
 };
 

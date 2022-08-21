@@ -13,10 +13,10 @@ import {
     SliderTrack,
     SliderWrapper,
     NavBullets, NavBullet, RightCol, LeftCol,
-    cursorSliderStyle
+    cursorSliderStyle, CopyrightList, CopyrightItem
 } from "./slider.style";
 
-export const Slider = ({slides}) => {
+export const Slider = ({slides, title}) => {
     const mountRef = useRef();
     const currentSlide = useGlide();
     useVH();
@@ -30,7 +30,8 @@ export const Slider = ({slides}) => {
                         <SliderItem key={slide.poster} {...slide}/>
                     ))}
                 </SliderSlides>
-                <SliderContent>
+                <SliderContent p="md">
+                    {title && <H3>{title}</H3>}
                     <ContentMain>
                         <Tape color="white" mb="md" currentIndex={currentSlide} titles={slides}/>
                         <NavBullets className="glide__bullets" data-glide-el="controls[nav]">
@@ -47,17 +48,25 @@ export const Slider = ({slides}) => {
                             <Caption color="white" mb="xxsm">
                                 Client
                             </Caption>
-                            <H3 color="white">
-                                Archangel Studios
-                            </H3>
+                            <CopyrightList>
+                                {slides.map(({client}, index) => (
+                                    <CopyrightItem isRight key={client} isActive={currentSlide === index}>
+                                        {client}
+                                    </CopyrightItem>
+                                ))}
+                            </CopyrightList>
                         </LeftCol>
                         <RightCol>
                             <Caption color="white" mb="xxsm">
                                 Colourist
                             </Caption>
-                            <H3 color="white">
-                                JACK MCGINITY
-                            </H3>
+                            <CopyrightList>
+                                {slides.map(({colourist}, index) => (
+                                    <CopyrightItem isLeft key={colourist} isActive={currentSlide === index}>
+                                        {colourist}
+                                    </CopyrightItem>
+                                ))}
+                            </CopyrightList>
                         </RightCol>
                     </ContentFooter>
                 </SliderContent>

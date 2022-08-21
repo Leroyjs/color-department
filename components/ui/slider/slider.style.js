@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
 import {css} from "@emotion/css";
 import {
+    applyColor,
     applyMargins,
     applyPaddings,
     colors,
-    fontFamilies,
+    fontFamilies, getCurrentColorStyles,
     getCurrentFontSizeStyle, getCurrentMarginStyle, getCurrentPaddingStyle,
     hexToRGBA
 } from "styles";
@@ -49,6 +50,8 @@ export const SliderContent = styled.div`
   flex-direction: column;
   background-color: ${hexToRGBA(colors.black, 0.6)};
   pointer-events: none;
+  ${applyMargins};
+  ${applyPaddings}
 `;
 
 export const ContentMain = styled.div`
@@ -107,22 +110,73 @@ export const NavBullet = styled.button`
 `;
 
 export const ContentFooter = styled.div`
-  display: flex;
-  justify-content: center;
-  ${getCurrentPaddingStyle("bottom", "md")};
+  position: relative;
+  width: 100%;
 `;
 
 export const LeftCol = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(calc(-100% - 20px));
+  
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 `;
 
 export const RightCol = styled.div`
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  ${getCurrentMarginStyle("left", "md")};
+  bottom: 0;
+  right: 50%;
+  transform: translateX(calc(100% + 20px));
+`;
+
+export const CopyrightList = styled.ul`
+  position: relative;
+
+  font-family: ${fontFamilies.mainFont};
+  font-style: normal;
+  font-weight: 800;
+  display: inline-block;
+  line-height: 112%;
+  text-transform: uppercase;
+  height: 1em;
+
+  ${applyMargins};
+  ${applyPaddings}
+  ${applyColor};
+  ${getCurrentFontSizeStyle("h3")};
+  ${({theme}) => getCurrentColorStyles("white", theme)};
+`;
+
+export const CopyrightItem = styled.li`
+  height: 1em;
+  top: 0;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.6s, visibility 0.6s;
+
+  ${({isRight}) => isRight && `
+    left: auto;
+    right: 0;
+  `}
+
+  ${({isLeft}) => isLeft && `
+    right: auto;
+    left: 0;
+  `}
+
+  ${({isActive}) => isActive && `
+      visibility: visible;
+      opacity: 1;
+      transition-delay: 0.3s;
+  `}
 `;
 
 export const cursorSliderStyle = css`
