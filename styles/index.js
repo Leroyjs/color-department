@@ -28,6 +28,7 @@ export {
   getCurrentWidthSizeStyle,
   getCurrentHeightSizeStyle,
   getCurrentStyleByDictionary,
+  getGridCount,
 } from "./get-styles-utils";
 
 // Функции, которые возвращают значение стиля
