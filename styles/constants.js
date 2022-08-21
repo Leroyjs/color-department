@@ -59,10 +59,10 @@ export const breakpointsWidth = {
 export const offsets = {
   [desktopLG]: {
     xlg: 160,
-    sxlg: 72,
+    sxlg: 76,
     lg: 60,
     md: 40,
-    md1: 30,
+    md1: 32,
     sm: 16,
     xsm: 12,
     xxsm: 8,
@@ -70,10 +70,10 @@ export const offsets = {
   },
   [tabletLG]: {
     xlg: 140,
-    sxlg: 72,
+    sxlg: 76,
     lg: 48,
     md: 24,
-    md1: 30,
+    md1: 24,
     sm: 12,
     xsm: 12,
     xxsm: 8,
@@ -81,16 +81,15 @@ export const offsets = {
   },
   [phone]: {
     xlg: 80,
-    sxlg: 72,
+    sxlg: 48,
     lg: 32,
     md: 16,
-    md1: 30,
+    md1: 12,
     sm: 12,
     xsm: 12,
     xxsm: 8,
     none: 0,
   },
-  // TODO: XSM XXSM MD1 SXLG менять по месту
 };
 
 export const typesOfoffset = Object.keys(offsets[desktopLG]);

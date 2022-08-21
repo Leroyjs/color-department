@@ -8,7 +8,8 @@ import {
   breakpointsWidth,
 } from "styles";
 import styled from "@emotion/styled";
-import { H2, LeftBracket, RightBracket, Planet, } from "components";
+import { H2,  } from "components";
+import { LeftBracket, RightBracket, Planet } from "../../common";
 
 export const TextSectionWrapper = styled.div`
   display: flex;
