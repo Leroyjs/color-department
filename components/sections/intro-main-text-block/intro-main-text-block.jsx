@@ -1,4 +1,4 @@
-import { Caption, H2, Text, LeftBracket, RightBracket, Planet } from "components";
+import { Caption, H2, Text, } from "components";
 import {
   TextSectionWrapper,
   FirstLineWrapper,
@@ -6,6 +6,12 @@ import {
   TextWrapper,
   CaptionWrapper,
   CaptionLink,
+  StyledPlanet,
+  StyledLeftBracket,
+  StyledRightBracket,
+  StyledDesktopBR,
+  StyledDesktopSM,
+  StyledTabletBR,
 } from "./intro-main-text-block.style";
 import Link from "next/link";
 
@@ -14,20 +20,33 @@ export const IntroMainTextBlock = () => {
     <TextSectionWrapper>
       <FirstLineWrapper>
         <StyledWhiteH2>We are Color Department</StyledWhiteH2>&nbsp;
-        <H2>a color grading studio&nbsp;</H2>
+        <H2>a color</H2>&nbsp;
+        <StyledDesktopSM />
+        <H2> grading studio&nbsp;</H2>
         <StyledWhiteH2>
           Based in Los Angeles.
-          <Planet />
+          <StyledPlanet />
         </StyledWhiteH2>
-        <H2>We hunt for the best Solutions. We always find the right</H2>
-        <br />
+        &nbsp;
+        <StyledDesktopSM />
+        <H2>We hunt for the best Solutions.</H2>
+        &nbsp;
+        <H2>We always</H2>
+        &nbsp;
+        <StyledDesktopSM />
+        <H2> find the right</H2>&nbsp;
+        <StyledDesktopBR />
         <H2>path to cinematic&nbsp;</H2>
-        <StyledWhiteH2>Impactful images.&nbsp;</StyledWhiteH2>
+        <StyledWhiteH2>Impactful </StyledWhiteH2>
+        &nbsp;
+        <StyledDesktopSM />
+        <StyledWhiteH2>images.</StyledWhiteH2>
+        &nbsp;
         <Link href="/">
           <CaptionLink>
-            <LeftBracket />
+            <StyledLeftBracket />
             <Caption>&nbsp;projects&nbsp;</Caption>
-            <RightBracket />
+            <StyledRightBracket />
           </CaptionLink>
         </Link>
         &nbsp;
@@ -44,7 +63,7 @@ export const IntroMainTextBlock = () => {
       <TextWrapper>
         <Text style={{ opacity: 0.4 }}>
           With skills that go beyond
-          <br />
+          <br/>
           color grading, we have worked with
         </Text>
       </TextWrapper>
