@@ -31,8 +31,8 @@ export const ShopItemWrapper = styled.div`
 
   ${({theme}) => getCurrentBackgroundColorStyles("black", theme)}
   ${applyColor}
-  ${getCurrentPaddingStyle("horizontal", "md1")}
-  ${getCurrentPaddingStyle("vertical", "md")}
+  ${getCurrentPaddingStyle("horizontal", "md")}
+  ${getCurrentPaddingStyle("vertical", "md1")}
   h3 {
     span {
       transition: color 0.3s;
