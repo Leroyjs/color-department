@@ -8,7 +8,7 @@ import {
   breakpointsWidth,
 } from "styles";
 import styled from "@emotion/styled";
-import { H2, LeftBracket, RightBracket, Planet, BR } from "components";
+import { H2, LeftBracket, RightBracket, Planet, } from "components";
 
 export const TextSectionWrapper = styled.div`
   display: flex;
@@ -72,22 +72,25 @@ export const TextSectionWrapper = styled.div`
    }
  `;
 
-export const StyledDesktopBR = styled(BR)`
+export const StyledDesktopBR = styled.br`
   display: block;
+
   @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
     display: none;
   }
 `;
 
-export const StyledDesktopSM = styled(BR)`
+export const StyledDesktopSM = styled.br`
   display: none;
+
   @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
     display: block;
   }
 `;
 
-export const StyledTabletBR = styled(BR)`
+export const StyledTabletBR = styled.br`
   display: none;
+
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     display: block;
   }
@@ -102,22 +105,27 @@ export const StyledWhiteH2 = styled(H2)`
 export const StyledLeftBracket = styled(LeftBracket)`
   width: 10px;
   height: 62px;
+
   @media screen and (max-width: ${breakpointsWidth.desktopMD}) {
     width: 10px;
     height: 52px;
   }
+
   @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
     width: 10px;
     height: 48px;
   }
+
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     width: 6px;
     height: 32px;
   }
+
   @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
     width: 6px;
     height: 26px;
   }
+
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     width: 4px;
     height: 24px;
@@ -127,22 +135,27 @@ export const StyledLeftBracket = styled(LeftBracket)`
 export const StyledRightBracket = styled(RightBracket)`
   width: 10px;
   height: 62px;
+
   @media screen and (max-width: ${breakpointsWidth.desktopMD}) {
     width: 10px;
     height: 52px;
   }
+
   @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
     width: 10px;
     height: 48px;
   }
+
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     width: 6px;
     height: 32px;
   }
+
   @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
     width: 6px;
     height: 26px;
   }
+
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     width: 4px;
     height: 24px;
@@ -152,22 +165,27 @@ export const StyledRightBracket = styled(RightBracket)`
 export const StyledPlanet = styled(Planet)`
   width: 60px;
   height: 60px;
+
   @media screen and (max-width: ${breakpointsWidth.desktopMD}) {
     width: 52px;
     height: 52px;
   }
+
   @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
     width: 48px;
     height: 48px;
   }
+
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     width: 32px;
     height: 32px;
   }
+
   @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
     width: 26px;
     height: 26px;
   }
+  
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     width: 24px;
     height: 24px;
