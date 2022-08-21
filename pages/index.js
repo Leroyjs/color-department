@@ -1,11 +1,10 @@
-import { useRef, useState } from "react";
-import { Header, DropDown, Slider, StartScreen, Footer, IntroMainTextBlock, AwardMainTextBlock } from "components";
-import SliderPage from "./example/slider";
+import { AwardMainTextBlock, Footer, Header, IntroMainTextBlock, PartnersLine, StartScreen } from "components";
+import { useRef } from "react";
 import "styles/global.style";
+import SliderPage from "./example/slider";
 
-import { Preloader } from "components";
-import { colors } from "styles";
 import { Awards } from "components";
+import { colors } from "styles";
 
 const options = [
   {
@@ -59,6 +58,7 @@ const Home = () => {
       <StartScreen></StartScreen>
       <main ref={videoContant} style={{ backgroundColor: colors.black }}>
         <IntroMainTextBlock />
+        <PartnersLine/>
         <SliderPage />
         <AwardMainTextBlock mt="xlg" px="md" />
         <Awards options={awardsItems} title="Our Awards" pb="xlg"/>

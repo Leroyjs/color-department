@@ -18,7 +18,9 @@ import {
     RightBracket,
     Planet,
     LeftBracket,
-    Grid
+    Grid,
+    PartnersLine
+    
 } from "./common";
 /*    Импорты UI-ых компонентов    */
 import { ButtonEllipse } from "./ui/button-ellipse";
@@ -121,4 +123,5 @@ export {
   TextAreaField,
   DropDownField,
   CounterField,
+  PartnersLine,
 };
