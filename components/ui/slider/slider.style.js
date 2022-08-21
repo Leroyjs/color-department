@@ -1,14 +1,18 @@
-import styled from "@emotion/styled";
-import {css} from "@emotion/css";
-import {
-    applyMargins,
-    applyPaddings,
-    colors,
-    fontFamilies,
-    getCurrentFontSizeStyle, getCurrentMarginStyle, getCurrentPaddingStyle,
-    hexToRGBA
-} from "styles";
 import "@glidejs/glide/dist/css/glide.core.css";
+
+import {
+  applyMargins,
+  applyPaddings,
+  colors,
+  fontFamilies,
+  getCurrentFontSizeStyle,
+  getCurrentMarginStyle,
+  getCurrentPaddingStyle,
+  hexToRGBA,
+} from "styles";
+
+import { css } from "@emotion/css";
+import styled from "@emotion/styled";
 
 export const SliderWrapper = styled.div`
   height: calc(100vh);
@@ -30,7 +34,8 @@ export const SliderSlides = styled.ul`
   transition: none !important;
 
   &--reverse .glide__slide {
-    &, &__img {
+    &,
+    &__img {
       right: initial;
       left: 0;
     }
@@ -81,7 +86,7 @@ export const NavBullet = styled.button`
   height: 60px;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -124,16 +129,3 @@ export const RightCol = styled.div`
   align-items: flex-start;
   ${getCurrentMarginStyle("left", "md")};
 `;
-
-export const cursorSliderStyle = css`
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  top: 0;
-  left: 0;
-  border: 1px solid ${hexToRGBA(colors.white, 0.4)};
-  z-index: 100;
-  pointer-events: none;
-`
-
