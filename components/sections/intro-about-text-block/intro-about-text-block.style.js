@@ -5,7 +5,8 @@
   getCurrentBackgroundColorStyles, applyMargins, applyPaddings,
 } from "styles";
 import styled from "@emotion/styled";
-import { H2, TextDecorationUnderline } from "components";
+  import {TextDecorationUnderline} from "../../common";
+  import {H2} from "../../ui/h2";
 
 export const TextSectionWrapper = styled.div`
   display: flex;

@@ -2,6 +2,8 @@ import { Caption, H3 } from "components";
 import {
   ContentFooter,
   ContentMain,
+  CopyrightItem,
+  CopyrightList,
   LeftCol,
   NavBullet,
   NavBullets,
@@ -21,7 +23,7 @@ import { useGlide } from "./utils";
 import { useVH } from "utils";
 import { withCursor } from "utils";
 
-const SliderWithoutCursor = ({ slides }) => {
+const SliderWithoutCursor = ({ slides, title }) => {
   const { currentSlide, next, prev } = useGlide();
   const [cursorText, setText] = useState("");
 
@@ -57,7 +59,8 @@ const SliderWithoutCursor = ({ slides }) => {
           onMouseLeave={handleCursorLeave}
           onMouseMove={handleMove("next")}
         />
-        <SliderContent>
+        <SliderContent p="md">
+          {title && <H3>{title}</H3>}
           <ContentMain>
             <Tape
               color="white"
@@ -86,13 +89,33 @@ const SliderWithoutCursor = ({ slides }) => {
               <Caption color="white" mb="xxsm">
                 Client
               </Caption>
-              <H3 color="white">Archangel Studios</H3>
+              <CopyrightList>
+                {slides.map(({ client }, index) => (
+                  <CopyrightItem
+                    isRight
+                    key={client}
+                    isActive={currentSlide === index}
+                  >
+                    {client}
+                  </CopyrightItem>
+                ))}
+              </CopyrightList>
             </LeftCol>
             <RightCol>
               <Caption color="white" mb="xxsm">
                 Colourist
               </Caption>
-              <H3 color="white">JACK MCGINITY</H3>
+              <CopyrightList>
+                {slides.map(({ colourist }, index) => (
+                  <CopyrightItem
+                    isLeft
+                    key={colourist}
+                    isActive={currentSlide === index}
+                  >
+                    {colourist}
+                  </CopyrightItem>
+                ))}
+              </CopyrightList>
             </RightCol>
           </ContentFooter>
           <Cursor ref={cursor}>

@@ -1,12 +1,14 @@
 import React, {useState} from "react";
+import {useFormContext} from "react-hook-form";
 import {
     ButtonRectangle,
-    Input,
     H2,
-    DropDown,
-    TextArea,
     WorkModal,
+    InputField,
+    TextAreaField,
+    DropDownField
 } from "components";
+import {formatPhoneNumber, withFormProvider} from "utils";
 import {
     FormSection,
     FormWrapper,
@@ -32,60 +34,51 @@ const TitleOptions = [
     // Заглушка
 ];
 
-export const FormWork = ({...props}) => {
-    const [service, setService] = useState();
-    const [type, setType] = useState();
-    const [title, setTitle] = useState();
-    const [name, setName] = useState();
-    const [phone, setPhone] = useState();
-    const [message, setMessage] = useState(null);
+export const FormWork = withFormProvider(({...props}) => {
+    const {handleSubmit} = useFormContext();
+    const onSubmit = data => console.log(data);
     const [isModalOpen, setModalOpen] = useState(false);
 
     return (
-        <FormSection mt="md" {...props}>
+        <FormSection onSubmit={handleSubmit(onSubmit)} mt="md" {...props}>
             <H2 color="white" mb="md">
                 {/* eslint-disable-next-line react/no-unescaped-entities */}
                 let's talk
             </H2>
             <FormWrapper>
                 <FormColumnLeft>
-                    <DropDown
+                    <DropDownField
                         mb="md"
+                        name="service"
                         title="Service"
-                        onChange={(option) => setService(option)}
                         options={ServiceOptions}
-                        value={service}
                         isFullWidth
                     />
-                    <DropDown
+                    <DropDownField
                         mb="md"
+                        name="type"
                         title="Type"
-                        onChange={(option) => setType(option)}
                         options={TypeOptions}
-                        value={type}
                         isFullWidth
                     />
-                    <DropDown
+                    <DropDownField
                         mb="md"
+                        name="title"
                         title="Title"
-                        onChange={(option) => setTitle(option)}
                         options={TitleOptions}
-                        value={title}
                         isFullWidth
                     />
-                    <Input isFullWidth title="NAME*" mb="md" value={name} onChange={(val) => setName(val)}/>
-                    <Input isFullWidth title="PLEASE CONTACT ME AT*" value={phone} onChange={(val) => setPhone(val)}/>
+
+                    <InputField name="name" isFullWidth title="NAME*" mb="md"/>
+                    <InputField name="phone" normalizer={formatPhoneNumber} isFullWidth
+                                title="PLEASE CONTACT ME AT*"/>
                 </FormColumnLeft>
                 <FormColumnRight>
-                    <TextArea
+                    <TextAreaField
+                        name="message"
                         isFullWidth
-                        title="About your work"
-                        value={message}
-                        onChange={(val) => {
-                            setMessage(val);
-                        }}
-                    />
-                    <ButtonRectangle mt="md" onClick={() => setModalOpen(true)}>
+                        title="About your work"/>
+                    <ButtonRectangle mt="md">
                         SEND
                     </ButtonRectangle>
                 </FormColumnRight>
@@ -93,4 +86,4 @@ export const FormWork = ({...props}) => {
             <WorkModal isOpen={isModalOpen} setOpen={setModalOpen}/>
         </FormSection>
     );
-};
+});

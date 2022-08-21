@@ -1,4 +1,12 @@
-import { clamp, debounce, throttling, useEscHandler } from "./common";
+import {
+  clamp,
+  debounce,
+  formatPhoneNumber,
+  handleEsc,
+  throttling,
+  useEscHandler,
+  withFormProvider,
+} from "./common";
 
 import { Freezer } from "./Freezer";
 import { renderStatic } from "./renderer";
@@ -14,4 +22,7 @@ export {
   throttling,
   useEscHandler,
   withCursor,
+  handleEsc,
+  formatPhoneNumber,
+  withFormProvider,
 };
