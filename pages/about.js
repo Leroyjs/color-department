@@ -8,7 +8,7 @@ import {
   Slider,
 } from "components";
 
-import { PreTitleSlider } from "../components/ui/PreTitleSlider";
+import { PreTitleSlider } from "../components/ui/pre-title-slider";
 
 const DEMO_VIDEO = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4';
 const slides = [

@@ -28,13 +28,14 @@ export const AwardsItem = ({modalId, startLabel, endLabel, img, onClick, ...prop
         const rectTarget = target.getBoundingClientRect();
         const rectPopOver = popOver.getBoundingClientRect();
 
-        const startX = rectPopOver.width / 2;
-        const endX = rectTarget.width - rectPopOver.width / 2;
-
-        const x = clamp(e.clientX - rectTarget.left, startX, endX);
+        const startX = 0;
+        const endX = rectTarget.width - (rectPopOver.width + 80);
+        // e.clientX - rectPopOver.width
+        // const x =  clamp(e.clientX - rectTarget.left, startX, endX);
+        const x = (e.clientX - rectTarget.left) >= endX ? e.clientX - (rectTarget.left + rectPopOver.width) -40 : (e.clientX - rectTarget.left) + 40;
         const y = e.clientY - rectTarget.top;
 
-        popOver?.setAttribute('style', `transform: translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`);
+        popOver?.setAttribute('style', `transform: translate(${x}px, calc(-100% + ${y - 40}px))`);
     }, 10)
 
     return (
