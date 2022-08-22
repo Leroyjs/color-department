@@ -1,0 +1,1 @@
+export { PartnersLine } from './partners-line';

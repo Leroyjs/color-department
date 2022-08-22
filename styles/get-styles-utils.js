@@ -78,3 +78,9 @@ export const getCurrentSizeStyle = getCurrentStyleByDictionary(sizes);
 export const getCurrentWidthSizeStyle = getCurrentSizeStyle("width");
 
 export const getCurrentHeightSizeStyle = getCurrentSizeStyle("height");
+
+/*Количество клеток в одной строке */
+export const getGridCount = ()=>{
+  if(window.matchMedia("(min-width: 768px)").matches) return 8;
+  else return 4;
+}
