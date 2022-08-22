@@ -3,7 +3,7 @@ import { Blob, Hamburger } from "components/common";
 import { useEffect, useRef, useState } from "react";
 //TODO: Кривой импорт
 import theme from '../../../__data__/theme';
-import { HeaderItemBlob, HeaderItemHumburger, HeaderItemLetsGo, HeaderItemTitle, HeaderWrapper, Title } from "./header.style";
+import { HeaderItemBlob, HeaderItemHumburger, HeaderItemLetsGo, HeaderItemTitle, HeaderWrapper, Title, TitleContent } from "./header.style";
 import { setTransperentByScroll } from "./utils";
 
 export const Header = ({ transparentToComponent }) => {
