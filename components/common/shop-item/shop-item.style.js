@@ -1,28 +1,49 @@
 import styled from "@emotion/styled";
+import { getCurrentFontSizeStyle } from "styles";
+import { breakpointsWidth } from "styles";
 import {
-    applyColor,
-    getCurrentBackgroundColorStyles,
-    getCurrentPaddingStyle,
-    getCurrentColor,
-    getCurrentColorStyles,
+  applyColor,
+  getCurrentBackgroundColorStyles,
+  getCurrentPaddingStyle,
+  getCurrentColor,
+  getCurrentColorStyles,
 } from "styles";
-import {Caption} from "../../ui/caption";
-import {H3} from "../../ui/h3";
+import { Caption } from "../../ui/caption";
+import { H3 } from "../../ui/h3";
 
 export const Title = styled(Caption)`
   ${({ theme }) => getCurrentColorStyles("white", theme)};
   transition: color 0.3s;
 
-  @media (max-width: 360px) {
-    text-align:center;
+  @media (max-width: ${breakpointsWidth.desktopLG}) {
+    ${getCurrentFontSizeStyle("vw")};
+  }
+
+  @media (max-width: 900px) {
+    ${getCurrentFontSizeStyle("vw2")};
+  }
+
+  @media (max-width: 500px) {
+    ${getCurrentFontSizeStyle("h3")};
+  }
+
+  @media (max-width: 400px) {
+    text-align: center;
   }
 `;
 
 export const Cost = styled(H3)`
+  ${getCurrentPaddingStyle("left", "xxsm")}
   ${({ theme }) => getCurrentColorStyles("primary", theme)};
   transition: color 0.3s;
 
-  @media (max-width: 360px) {
+  @media (max-width: 500px) {
+    ${getCurrentFontSizeStyle("h2")};
+    ${getCurrentPaddingStyle("left", "xxsm")}
+  }
+
+  @media (max-width: 400px) {
+    ${getCurrentPaddingStyle("left", "xxsm  ")}
     display: none;
   }
 `;
@@ -31,8 +52,9 @@ export const CostPhone = styled(H3)`
   ${({ theme }) => getCurrentColorStyles("primary", theme)};
   transition: color 0.3s;
 
-  @media (max-width: 360px) {
+  @media (max-width: 400px) {
     display: block;
+    ${getCurrentFontSizeStyle("h2")};
   }
 `;
 
@@ -45,7 +67,6 @@ export const ShopItemWrapper = styled.div`
   cursor: pointer;
   width: 100%;
   height: calc(100vw / 4);
-
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
   ${applyColor}
   ${getCurrentPaddingStyle("horizontal", "md")}
@@ -100,9 +121,16 @@ export const ShopItemWrapper = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     height: calc(100vw / 2);
-    ${getCurrentPaddingStyle("top", "md")}
+    ${getCurrentPaddingStyle("vertical", "lg")}
+    ${getCurrentPaddingStyle("horizontal", "lg")}
+  }
+
+  @media (max-width: 500px) {
+    height: 100vw;
+    ${getCurrentPaddingStyle("horizontal", "lg")}
+    ${getCurrentPaddingStyle("vertical", "lg")}
   }
 `;
 
@@ -110,6 +138,14 @@ export const TextContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 900px) {
+    ${getCurrentPaddingStyle("bottom", "sm")}
+  }
+
+  @media (max-width: 400px) {
+    ${getCurrentPaddingStyle("bottom", "none")}
+  }
 `;
 
 export const ProductImage = styled.div`
@@ -117,9 +153,16 @@ export const ProductImage = styled.div`
   width: 12.5vw;
   height: 12.5vw;
   ${getCurrentBackgroundColorStyles("white")};
-  @media (max-width: 768px) {
+
+  @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
     width: 25vw;
     height: 25vw;
+  }
+
+  @media (max-width: 500px) {
+    grid-template-columns: repeat(1, 1fr);
+    width: 50vw;
+    height: 50vw;
   }
 `;

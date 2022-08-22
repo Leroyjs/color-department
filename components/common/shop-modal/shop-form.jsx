@@ -1,4 +1,4 @@
-import React from "react";
+    import React from "react";
 import { useFormContext } from "react-hook-form";
 import { formatPhoneNumber, withFormProvider } from "utils";
 import {
@@ -14,6 +14,7 @@ import {
   InformationColumn,
   InformationItem,
   ProductDiscription,
+  ProductDiscriptionWrapper,
   ProductPrice,
   TextContainer,
 } from "./shop-modal.style";
@@ -29,7 +30,10 @@ export const ShopForm = withFormProvider(({ cost, discription, title }) => {
         <ProductPrice>{cost}$</ProductPrice>
       </TextContainer>
       <InformationItem>
-        <ProductDiscription>{discription}</ProductDiscription>
+        <ProductDiscription
+          wrapperProps={{ className: ProductDiscriptionWrapper }}>
+          {discription}
+        </ProductDiscription>
 
         <FormWrapper onSubmit={handleSubmit(onSubmit)}>
           <DropDownField
