@@ -80,7 +80,13 @@ export const getCurrentWidthSizeStyle = getCurrentSizeStyle("width");
 export const getCurrentHeightSizeStyle = getCurrentSizeStyle("height");
 
 /*Количество клеток в одной строке */
-export const getGridCount = ()=>{
-  if(window.matchMedia("(min-width: 768px)").matches) return 8;
+export const getGridCount = () => {
+  if (window.matchMedia("(min-width: 768px)").matches) return 8;
   else return 4;
+}
+
+export const getPlatform = () => {
+  if (window.matchMedia("(max-width: 360px)").matches) return 'mobile';
+  if (window.matchMedia("(max-width: 768px)").matches) return 'adaptive';
+  return 'desktop';  
 }
