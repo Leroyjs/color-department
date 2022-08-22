@@ -1,6 +1,5 @@
 import styled from "@emotion/styled"
-import { colors } from "styles"
-import { getCurrentBackgroundColorStyles, getCurrentPaddingStyle, sizes } from "styles"
+import { colors, getCurrentBackgroundColorStyles, sizes } from "styles"
 
 export const MenuItemWrapper = styled.li`
     text-transform: uppercase;
@@ -12,8 +11,8 @@ export const MenuItemWrapper = styled.li`
     overflow: hidden;
     cursor: pointer;
     height: ${sizes['desktopLG'].half};
-
-    //TODO: Вынести в общие
+    opacity: ${({clickAnimation})=> clickAnimation? '0.5' : '1'};
+    transition: opacity 0.1s;
     &:hover {
         ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)};
         span {
