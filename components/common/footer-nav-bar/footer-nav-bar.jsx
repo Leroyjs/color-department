@@ -24,12 +24,10 @@ export const FooterNavigation = ({ footerItems = mockData, ...props }) => {
     const getFooterItems = () => {
         return footerItems.map((item) =>
             <FooterNavBarItem key={item.title} onClick={navigateByLink(item.link)}>
-                {
-                    isMobile ?
-                    <img src={item.icon}></img>
-                    :
+                <>
+                    <img src={item.icon} alt='' />
                     <Caption color='white' >{item.title}</Caption>
-                }
+                </>
             </FooterNavBarItem>)
     }
 

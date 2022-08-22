@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { Caption } from "components"
 import { colors, getCurrentBackgroundColorStyles, getCurrentGridTemplateColumsStyle, hexToRGBA, sizes } from "styles"
 
 export const FooterNavBar = styled.div`
@@ -20,8 +21,6 @@ export const FooterNavBar = styled.div`
     & *:nth-of-type(4){grid-column: 7/9;}
 `
 
-
-
 export const FooterNavBarItem = styled.div`
     height: 100%;
     cursor: pointer;
@@ -38,4 +37,15 @@ export const FooterNavBarItem = styled.div`
         } 
     }
     transition : background-color 0.5s;
+`
+
+export const socialIcon = styled.img`
+    object-fit: contain;
+    object-position: center;
+    width: 16px;
+    height: 16px;
+`
+
+export const socialLabel = styled(Caption)`
+
 `
