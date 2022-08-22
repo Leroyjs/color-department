@@ -19,7 +19,7 @@ export const PartnersLine = ({ imagePaths = mockImagePaths }) => {
     const getPartners = () => {
         return pictureArray.map((path, indx) =>
             <PartnersItem key={indx}>
-                <Img src={path}></Img>
+                <img src={path} alt=''></img>
             </PartnersItem>)
     }
     return (

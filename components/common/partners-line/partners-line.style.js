@@ -21,5 +21,3 @@ export const PartnersItem = styled.div`
     justify-content: center;
     align-items: center;
 `
-
-export const Img = styled.img``
