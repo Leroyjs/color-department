@@ -2,9 +2,12 @@ import React, { useEffect } from 'react';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import { colors } from 'styles';
 import { rewriteMapIcon } from "./utils";
+import { mapMarker } from '../../../assets/icons/index'
 
 export const Map = ({ source, coordinates, zoom = 16 }) => {
-  useEffect(rewriteMapIcon);
+  useEffect(() => {
+      rewriteMapIcon(mapMarker)
+  });
   return (
     <MapContainer
       attributionControl={false}
