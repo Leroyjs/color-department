@@ -1,4 +1,4 @@
-import { Caption, H2, Text, } from "components";
+import { Caption, H2, Text } from "components";
 import {
   TextSectionWrapper,
   FirstLineWrapper,
@@ -63,7 +63,7 @@ export const IntroMainTextBlock = () => {
       <TextWrapper>
         <Text style={{ opacity: 0.4 }}>
           With skills that go beyond
-          <br/>
+          <br />
           color grading, we have worked with
         </Text>
       </TextWrapper>

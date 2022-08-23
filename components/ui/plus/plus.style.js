@@ -24,6 +24,4 @@ export const IconPlus = styled.svg`
     transition: 0.3s;
     opacity: 1;
   }
-
- 
 `;
