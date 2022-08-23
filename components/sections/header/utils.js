@@ -1,20 +1,21 @@
 import { throttling } from 'utils';
 
-const onScrollAction = (height, setTransparentBg, observedComponent) => {
+const onScrollAction = (setTransparentBg, observedComponent) => {
     /**Координаты компонента, при скроле которого изменяется прозрачность header*/
     let tmpPosition = undefined;
     /**Вычеселнное значение прозрачности */
     let tmpTransparent = undefined;
     let prevTransparent = undefined;
-
+    let height = undefined;
     return () => {
         tmpPosition = observedComponent.getBoundingClientRect();
         tmpTransparent = 1 - Number((tmpPosition.y / height).toFixed(2));
+        height = tmpPosition.y;
         /**если проскролим за наблюдаемый элемент, то tmpTransparent будет > 1
          * чтобы не дергать setTransparentBg используем предыдущее значение
          * если предюзначение === 1, то ничего не делаем
          */
-        if (tmpTransparent < 1) {
+        if (tmpTransparent < 1 && tmpPosition.top > 0) {
             prevTransparent = tmpTransparent;
             setTransparentBg(tmpTransparent);
         } else if (prevTransparent != 1) { setTransparentBg(1) }
@@ -34,8 +35,8 @@ export const setTransperentByScroll = (transparentToComponent, setTransparentBg,
     setTransparentBg(0);
     
     //TODO: чтобы хедер был темным к началу блока Х - componentRef.current.offsetHeight;
-    const height = transparentToComponent.current.getBoundingClientRect().y;
-    const onScrollCallback = throttling(onScrollAction(height, setTransparentBg, transparentToComponent.current), 200);
+    
+    const onScrollCallback = throttling(onScrollAction(setTransparentBg, transparentToComponent.current), 200);
     window.addEventListener('scroll', onScrollCallback)
     return () => { window.removeEventListener('scroll', onScrollCallback) }
 }
