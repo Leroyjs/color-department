@@ -76,17 +76,18 @@ export const TextSectionWrapper = styled.div`
 export const StyledDesktopBR = styled.br`
   display: block;
 
-  @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
+  @media screen and (max-width: 1512px) {
     display: none;
   }
 `;
 
-export const StyledDesktopSM = styled.br`
+export const StyledDesktopLGBR = styled.br`
   display: none;
 
-  @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
+  @media screen and (max-width: 1512px) {
     display: block;
   }
+
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     display: none;
   }
@@ -106,8 +107,8 @@ export const StyledTabletBR = styled.br`
 export const StyledCaptionBR = styled.br`
   display: block;
 
-  @media screen and (max-width: 600px) {
-    display: block;
+  @media screen and (max-width: 608px) {
+    display: none;
   }
 `;
 
@@ -126,7 +127,6 @@ export const StyledPhoneSMBR = styled.br`
     display: block;
   }
 `;
-// TODO: СДЕЛАТЬ ПЛАВНЙ ВИЗУАЛЬНЫЙ ПЕРЕХОД ДЛЯ ДЛЯ ТЕКСТА
 
 export const StyledWhiteH2 = styled(H2)`
   color: ${getCurrentColor("white")};
@@ -148,13 +148,13 @@ export const StyledLeftBracket = styled(LeftBracket)`
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    width: 6px;
-    height: 32px;
+    width: 10px;
+    height: 48px;
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
     width: 6px;
-    height: 26px;
+    height: 30px;
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
@@ -178,13 +178,13 @@ export const StyledRightBracket = styled(RightBracket)`
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    width: 6px;
-    height: 32px;
+    width: 10px;
+    height: 48px;
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
     width: 6px;
-    height: 26px;
+    height: 28px;
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
@@ -208,15 +208,15 @@ export const StyledPlanet = styled(Planet)`
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
-    width: 26px;
-    height: 26px;
+    width: 30px;
+    height: 30px;
   }
-  
+
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     width: 24px;
     height: 24px;

@@ -32,7 +32,19 @@ export const StyledWhiteH2 = styled(H2)`
 export const StyledDesktopBR = styled.br`
   display: block;
 
-  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+  @media screen and (max-width: 1030px) {
+    display: none;
+  }
+`;
+
+export const StyledDesktopSMBR = styled.br`
+  display: none;
+
+  @media screen and (max-width: 1030px) {
+    display: block;
+  }
+
+  @media screen and (max-width: 830px) {
     display: none;
   }
 `;
@@ -40,7 +52,7 @@ export const StyledDesktopBR = styled.br`
 export const StyledTabletBR = styled.br`
   display: none;
 
-  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+  @media screen and (max-width: 830px) {
     display: block;
   }
 `;

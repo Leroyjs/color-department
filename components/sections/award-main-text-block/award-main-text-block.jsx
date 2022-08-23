@@ -3,7 +3,7 @@ import {
   propTypesPadding,
 } from "../../types";
 import { H2 } from "components";
-import { AwardTextWrapper, StyledWhiteH2, StyledDesktopBR, StyledTabletBR } from "./award-main-text-block.style";
+import { AwardTextWrapper, StyledWhiteH2, StyledDesktopBR, StyledTabletBR, StyledDesktopSMBR } from "./award-main-text-block.style";
 
 export const AwardMainTextBlock = ({ ...props }) => {
   return (
@@ -12,6 +12,7 @@ export const AwardMainTextBlock = ({ ...props }) => {
       <StyledTabletBR />
       <H2>We do&nbsp;</H2>
       <StyledWhiteH2>beautiful work&nbsp;</StyledWhiteH2>
+      <StyledDesktopSMBR />
       <H2>without&nbsp;</H2>
       <StyledDesktopBR />
       <H2>Wasting&nbsp;</H2>

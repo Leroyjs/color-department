@@ -1,13 +1,15 @@
-  import {
+import {
   getCurrentColor,
   getCurrentPaddingStyle,
   getCurrentMarginStyle,
-  getCurrentBackgroundColorStyles, applyMargins, applyPaddings,
-  breakpointsWidth
+  getCurrentBackgroundColorStyles,
+  applyMargins,
+  applyPaddings,
+  breakpointsWidth,
 } from "styles";
 import styled from "@emotion/styled";
-  import {TextDecorationUnderline, Planet} from "../../common";
-  import {H2} from "../../ui/h2";
+import { TextDecorationUnderline, Planet } from "../../common";
+import { H2 } from "../../ui/h2";
 
 export const TextSectionWrapper = styled.div`
   display: block;
@@ -57,13 +59,13 @@ export const RoundedNumber = styled.div`
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
-    width: 26px;
-    height: 26px;
+    width: 30px;
+    height: 30px;
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
@@ -108,13 +110,13 @@ export const StyledPlanet = styled(Planet)`
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
-    width: 26px;
-    height: 26px;
+    width: 30px;
+    height: 30px;
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
@@ -125,6 +127,7 @@ export const StyledPlanet = styled(Planet)`
 
 export const StyledDesktopBR = styled.br`
   display: block;
+  
   @media screen and (max-width: 1080px) {
     display: none;
   }
@@ -132,18 +135,20 @@ export const StyledDesktopBR = styled.br`
 
 export const StyledDesktopSMBR = styled.br`
   display: none;
+
   @media screen and (max-width: 1080px) {
     display: block;
   }
 
-  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     display: none;
   }
 `;
 
 export const StyledTabletBR = styled.br`
   display: none;
-  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     display: block;
   }
 `;
