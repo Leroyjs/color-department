@@ -32,7 +32,15 @@ export const StyledWhiteH2 = styled(H2)`
 export const StyledDesktopBR = styled.br`
   display: block;
 
-  @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
     display: none;
+  }
+`;
+
+export const StyledTabletBR = styled.br`
+  display: none;
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    display: block;
   }
 `;

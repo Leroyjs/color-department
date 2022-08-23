@@ -3,18 +3,15 @@
   getCurrentPaddingStyle,
   getCurrentMarginStyle,
   getCurrentBackgroundColorStyles, applyMargins, applyPaddings,
+  breakpointsWidth
 } from "styles";
 import styled from "@emotion/styled";
-  import {TextDecorationUnderline} from "../../common";
+  import {TextDecorationUnderline, Planet} from "../../common";
   import {H2} from "../../ui/h2";
 
 export const TextSectionWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  display: block;
   text-align: center;
-  ${getCurrentPaddingStyle("horizontal", "xlg")};
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
   width: 100%;
   ${applyMargins}
@@ -30,29 +27,48 @@ export const MapLink = styled.div`
   display: inline-block;
 `;
 
-export const PointWrapper = styled.div`
-  display: inline-flex;
-  justify-content: flex-start;
-  align-items: center;
-`;
-
 export const RoundedNumber = styled.div`
   width: 58px;
   height: 58px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: flex-start;
+  display: inline-block;
   overflow: hidden;
-  flex: 0 0 auto;
   border-radius: 50%;
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
   border: 1px solid ${getCurrentColor("white")};
   margin: 0;
-  ${getCurrentMarginStyle("right", "xxsm")};
-  
+  position: relative;
+
   span {
     color: ${getCurrentColor("white")};
-    align-self: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.desktopMD}) {
+    width: 52px;
+    height: 52px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
+    width: 48px;
+    height: 48px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    width: 32px;
+    height: 32px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    width: 24px;
+    height: 24px;
   }
 `;
 
@@ -75,4 +91,59 @@ export const StyledUnderline = styled(TextDecorationUnderline)`
   right: 0;
   transform: translateX(-50%);
   width: calc(100% + 6px);
+`;
+
+export const StyledPlanet = styled(Planet)`
+  width: 60px;
+  height: 60px;
+
+  @media screen and (max-width: ${breakpointsWidth.desktopMD}) {
+    width: 52px;
+    height: 52px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
+    width: 48px;
+    height: 48px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    width: 32px;
+    height: 32px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    width: 24px;
+    height: 24px;
+  }
+`;
+
+export const StyledDesktopBR = styled.br`
+  display: block;
+  @media screen and (max-width: 1080px) {
+    display: none;
+  }
+`;
+
+export const StyledDesktopSMBR = styled.br`
+  display: none;
+  @media screen and (max-width: 1080px) {
+    display: block;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    display: none;
+  }
+`;
+
+export const StyledTabletBR = styled.br`
+  display: none;
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    display: block;
+  }
 `;

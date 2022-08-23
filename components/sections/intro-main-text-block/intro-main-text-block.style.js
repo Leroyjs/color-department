@@ -87,12 +87,42 @@ export const StyledDesktopSM = styled.br`
   @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
     display: block;
   }
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    display: none;
+  }
 `;
 
 export const StyledTabletBR = styled.br`
   display: none;
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    display: block;
+  }
+  @media screen and (max-width: 365px) {
+    display: none;
+  }
+`;
+
+export const StyledCaptionBR = styled.br`
+  display: block;
+
+  @media screen and (max-width: 600px) {
+    display: block;
+  }
+`;
+
+export const StyledCaptionPhoneBR = styled.br`
+  display: none;
+
+  @media screen and (max-width: 600px) {
+    display: block;
+  }
+`;
+
+export const StyledPhoneSMBR = styled.br`
+  display: none;
+
+  @media screen and (max-width: 365px) {
     display: block;
   }
 `;
