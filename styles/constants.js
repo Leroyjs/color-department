@@ -1,4 +1,4 @@
-  export const colors = {
+export const colors = {
   white: "#FFFFFF",
   black: "#101010",
   yellow: "#FFD246",
@@ -80,8 +80,16 @@ export const offsets = {
     none: 0,
   },
   [tabletSM]: {
+    xlg: 140,
+    sxlg: 76,
+    lg: 48,
     md: 24,
-  },  
+    md1: 24,
+    sm: 12,
+    xsm: 12,
+    xxsm: 8,
+    none: 0,
+  },
   [phone]: {
     xlg: 80,
     sxlg: 48,
@@ -167,7 +175,7 @@ export const fontSizes = {
 };
 
 export const zindex = {
-  modal:100,
+  modal: 100,
   header: 1000,
   frontItem: 10,
   backItem: -1

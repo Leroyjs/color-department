@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
-import { getCurrentFontSizeStyle } from "styles";
-import { breakpointsWidth } from "styles";
 import {
   applyColor,
   getCurrentBackgroundColorStyles,
   getCurrentPaddingStyle,
   getCurrentColor,
   getCurrentColorStyles,
+  breakpointsWidth,
+  getCurrentFontSizeStyle,
 } from "styles";
 import { Caption } from "../../ui/caption";
 import { H3 } from "../../ui/h3";
