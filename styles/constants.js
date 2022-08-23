@@ -17,6 +17,7 @@ export const fontFamilies = {
 };
 
 export const namesOfBreakpoints = {
+  desktopXXLG: "desktopXXLG",
   desktopXLG: "desktopXLG",
   desktopLG: "desktopLG",
   desktopMD: "desktopMD",
@@ -27,6 +28,7 @@ export const namesOfBreakpoints = {
 };
 
 const {
+  desktopXXLG,
   desktopXLG,
   desktopLG,
   desktopMD,
@@ -37,6 +39,7 @@ const {
 } = namesOfBreakpoints;
 
 export const subsequenceOfBreakpoints = [
+  desktopXXLG, // больше чем 1920px
   desktopXLG,
   desktopLG,
   desktopMD,
@@ -57,8 +60,33 @@ export const breakpointsWidth = {
 };
 
 export const offsets = {
+  [desktopXXLG]: {
+    xlg: 180,
+  },
+  [desktopXLG]: {
+    xlg: 170,
+    sxlg: 76,
+    lg: 60,
+    md: 40,
+    md1: 32,
+    sm: 16,
+    xsm: 12,
+    xxsm: 8,
+    none: 0,
+  },
   [desktopLG]: {
     xlg: 160,
+    sxlg: 76,
+    lg: 60,
+    md: 40,
+    md1: 32,
+    sm: 16,
+    xsm: 12,
+    xxsm: 8,
+    none: 0,
+  },
+  [desktopMD]: {
+    xlg: 150,
     sxlg: 76,
     lg: 60,
     md: 40,
@@ -151,11 +179,11 @@ export const fontSizes = {
 };
 
 export const zindex = {
-  modal:100,
+  modal: 100,
   header: 1000,
   frontItem: 10,
-  backItem: -1
-}
+  backItem: -1,
+};
 
 // export const gridDimensions = {
 //   8columns: "repeat(8, 12.5vw)",
