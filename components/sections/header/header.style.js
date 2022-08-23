@@ -1,4 +1,4 @@
-import { zindex, sizes, colors, getCurrentBackgroundColorStyles, getCurrentGridTemplateColumsStyle, hexToRGBA } from "styles";
+import { zindex, getCurrentMarginStyle, fontSizes, sizes, colors, getCurrentBackgroundColorStyles, breakpointsWidth, getCurrentGridTemplateColumsStyle, hexToRGBA } from "styles";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
@@ -14,27 +14,6 @@ export const HeaderDynamicStyle = ({ transparency }) => css`
     background-color: ${colors.black};
     opacity: ${transparency};
     transition: opacity ease-out 0.25s;
-  }
-`
-
-export const HeaderWrapper = styled.div`
-  ${getCurrentGridTemplateColumsStyle()};
-  ${HeaderDynamicStyle};
-  display : grid;
-  z-index: ${zindex.header};
-  position: fixed;  
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  height: ${sizes['desktopLG'].half};
-  color: ${colors.white};
-  
-  border-bottom: 1px solid ${hexToRGBA(colors.white, 0.2)};
-  & > *:nth-of-type(1n){
-    border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
-  }
-  & > *:nth-of-type(1){
-    border-left: 1px solid ${hexToRGBA(colors.white, 0.2)};
   }
 `
 
@@ -61,6 +40,13 @@ export const HeaderItem = styled.div`
       transition: fill 0.5s;
     }
 
+    .humburger {
+      & *:nth-of-type(1n){
+      background-color: ${colors.black};
+      transition: background-color 0.5s;
+      }
+    }
+
     ${({ theme }) => getCurrentBackgroundColorStyles('primary', theme)};
   }
   transition : background-color 0.5s;
@@ -77,4 +63,51 @@ export const HeaderItemTitle = styled(HeaderItem)`
 `
 export const HeaderItemLetsGo = styled(HeaderItem)`
   grid-column: 7/9;
+`
+
+export const HeaderWrapper = styled.div`
+  ${getCurrentGridTemplateColumsStyle()};
+  ${HeaderDynamicStyle};
+  display : grid;
+  z-index: ${zindex.header};
+  position: fixed;  
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: ${sizes['desktopLG'].half};
+  color: ${colors.white};
+  
+  border-bottom: 1px solid ${hexToRGBA(colors.white, 0.2)};
+  & > *:nth-of-type(1n){
+    border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
+  }
+  & > *:nth-of-type(1){
+    border-left: 1px solid ${hexToRGBA(colors.white, 0.2)};
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    border-color: red;
+    grid-template-rows: repeat(2, ${sizes.desktopLG.half});
+    height: ${sizes['desktopLG'].x1};
+    ${HeaderItemTitle} {
+      grid-row: 1/2;
+      grid-column: 1/-1;
+    }
+    ${HeaderItemHumburger} {
+      grid-column: 1/2;
+    }
+    ${HeaderItemBlob} {
+      grid-column: 2/3;
+      svg {
+        transform: scale(0.785);
+      }
+    } 
+    ${HeaderItemLetsGo} {
+      grid-column: 3/5;
+    }
+    h3 {
+      display: inline;
+      margin: 0 0.1rem;
+    }
+  }
 `
