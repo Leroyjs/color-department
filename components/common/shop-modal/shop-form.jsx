@@ -1,4 +1,4 @@
-    import React from "react";
+import React from "react";
 import { useFormContext } from "react-hook-form";
 import { formatPhoneNumber, withFormProvider } from "utils";
 import {
@@ -31,7 +31,8 @@ export const ShopForm = withFormProvider(({ cost, discription, title }) => {
       </TextContainer>
       <InformationItem>
         <ProductDiscription
-          wrapperProps={{ className: ProductDiscriptionWrapper }}>
+          wrapperProps={{ className: ProductDiscriptionWrapper }}
+        >
           {discription}
         </ProductDiscription>
 

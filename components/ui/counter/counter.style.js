@@ -5,9 +5,9 @@ import {
   fontFamilies,
   getCurrentFontSizeStyle,
   hexToRGBA,
+  breakpointsWidth,
 } from "styles";
 import styled from "@emotion/styled";
-import { breakpointsWidth } from "styles";
 
 const errorConditionColor = ({ isError }) =>
   isError ? `color:${colors.red};` : "";

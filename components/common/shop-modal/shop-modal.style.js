@@ -28,6 +28,7 @@ export const ProductImage = styled.div`
     height: 100%;
   }
 `;
+
 export const InformationItem = styled.div`
   @media (max-width: ${breakpointsWidth.tabletSM}) {
     width: 100%;
@@ -35,7 +36,7 @@ export const InformationItem = styled.div`
     display: flex;
   }
 
-  @media (max-width: 360px) {
+  @media (max-width: 500px) {
     flex-direction: column;
   } ;
 `;
@@ -52,7 +53,7 @@ export const InformationColumn = styled.div`
     width: 100%;
     flex-direction: column;
     height: 100%;
-    ${getCurrentPaddingStyle("top", "md")}
+    padding: 24px;
   }
 `;
 
@@ -86,5 +87,11 @@ export const FormWrapper = styled.form`
 
   @media (max-width: ${breakpointsWidth.tabletSM}) {
     width: 100%;
+  }
+`;
+
+export const PaddingMediaPhone = styled.div`
+  @media (max-width: ${breakpointsWidth.tabletSM}) {
+    margin-top: 24px;
   }
 `;
