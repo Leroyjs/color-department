@@ -6,6 +6,7 @@ import {
     getCurrentFontSizeStyle,
     getCurrentPaddingStyle,
     hexToRGBA,
+    breakpointsWidth,
 } from "styles";
 
 const lineHeight = 90
@@ -77,8 +78,14 @@ export const Title = styled.h3`
   text-transform: uppercase;
   font-size: ${fontSizes.desktopLG.h3};
   font-family: ${fontFamilies.mainFont};
-  color: ${({isError}) => (isError ? colors.red : colors.white)};
+  color: ${({ isError }) => (isError ? colors.red : colors.white)};
   margin-bottom: 10px;
 
   ${getCurrentPaddingStyle("top", "xxsm")};
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    color: ${({ isError }) => (isError ? colors.red : colors.white)};
+    opacity: 0.2;
+    font-size: 24px;
+  }
 `;

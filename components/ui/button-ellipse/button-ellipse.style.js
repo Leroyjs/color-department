@@ -4,6 +4,7 @@ import {
   getCurrentBackgroundColorStyles,
   getCurrentColorStyles,
   getCurrentColor,
+  breakpointsWidth
 } from "styles";
 
 import styled from "@emotion/styled";
@@ -34,4 +35,24 @@ export const Button = styled.button`
 
   ${applyMargins}
   ${applyPaddings}
+
+  @media screen and (max-width: ${breakpointsWidth.desktopXXLG}) {
+    width: 9.375vw;
+    height: 9.375vw;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.desktopXLG}) {
+    width: 180px;
+    height: 180px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    width: 140px;
+    height: 140px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    width: 80px;
+    height: 80px;
+  }
 `;
