@@ -61,7 +61,15 @@ export const breakpointsWidth = {
 
 export const offsets = {
   [desktopXXLG]: {
-    xlg: 180,
+    xlg: "11.25vw",
+    sxlg: "10vw",
+    lg: "3.75vw",
+    md: "2.5vw",
+    md1: "2vw",
+    sm: "1vw",
+    xsm: "0.75vw",
+    xxsm: "0.5vw",
+    none: 0,
   },
   [desktopXLG]: {
     xlg: 170,
@@ -134,6 +142,20 @@ export const sizes = {
 };
 
 export const fontSizes = {
+  [desktopXXLG]: {
+    h1: "12.125vw",
+    h2: "72px",
+    h3: "32px",
+    text: "16px",
+    caption: "14px",
+  },
+  [desktopXLG]: {
+    h1: "12.125vw",
+    h2: "72px",
+    h3: "32px",
+    text: "16px",
+    caption: "14px",
+  },
   [desktopLG]: {
     h1: "12.125vw",
     h2: "72px",
