@@ -1,5 +1,6 @@
 import { Caption, H3, Menu } from 'components';
 import { Blob, Hamburger } from "components/common";
+import Link from 'next/link';
 import { useEffect, useRef, useState } from "react";
 //TODO: Кривой импорт
 import theme from '../../../__data__/theme';
@@ -27,15 +28,19 @@ export const Header = ({ transparentToComponent }) => {
         <HeaderItemBlob onClick={() => theme.setNextThemeName()}>
           <Blob />
         </HeaderItemBlob>
-        <HeaderItemTitle>
-          <Title>
-            <H3 color='white'>color department</H3>
-            <H3 color='white'>los angeles</H3>
-          </Title>
-        </HeaderItemTitle>
-        <HeaderItemLetsGo>
-          <Caption color='white'>Lets talk</Caption>
-        </HeaderItemLetsGo>
+        <Link href={'/'}>
+          <HeaderItemTitle>
+            <Title>
+              <H3 color='white'>color department</H3>
+              <H3 color='white'>los angeles</H3>
+            </Title>
+          </HeaderItemTitle>
+        </Link>
+        <Link href={'/order'}>
+          <HeaderItemLetsGo>
+            <Caption color='white'>Lets talk</Caption>
+          </HeaderItemLetsGo>
+        </Link>
       </HeaderWrapper>
       <Menu isOpen={isOpenMenu}></Menu>
     </>

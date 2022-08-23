@@ -1,7 +1,28 @@
-import { renderStatic } from "./renderer";
-import { Freezer } from "./Freezer";
-import { debounce, clamp, throttling, useEscHandler, handleEsc, formatPhoneNumber, withFormProvider } from "./common";
-import { useVH } from "./useVH";
-import { useCursor } from "./useCursor";
+import {
+  clamp,
+  debounce,
+  formatPhoneNumber,
+  handleEsc,
+  throttling,
+  useEscHandler,
+  withFormProvider,
+} from "./common";
 
-export { renderStatic, Freezer, useVH, debounce, clamp, throttling, useEscHandler, useCursor, handleEsc, formatPhoneNumber, withFormProvider };
+import { Freezer } from "./Freezer";
+import { renderStatic } from "./renderer";
+import { useVH } from "./useVH";
+import { withCursor } from "./hoc/with-cursor";
+
+export {
+  renderStatic,
+  Freezer,
+  useVH,
+  debounce,
+  clamp,
+  throttling,
+  useEscHandler,
+  withCursor,
+  handleEsc,
+  formatPhoneNumber,
+  withFormProvider,
+};
