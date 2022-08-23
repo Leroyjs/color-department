@@ -4,6 +4,8 @@ import {
   getCurrentColor,
   getCurrentPaddingStyle,
   getCurrentBackgroundColorStyles,
+  namesOfBreakpoints,
+  breakpointsWidth,
 } from "styles";
 import styled from "@emotion/styled";
 import { H2 } from "components";
@@ -25,4 +27,12 @@ export const AwardTextWrapper = styled.div`
 export const StyledWhiteH2 = styled(H2)`
   color: ${getCurrentColor("white")};
   ${applyMargins};
+`;
+
+export const StyledDesktopBR = styled.br`
+  display: block;
+
+  @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
+    display: none;
+  }
 `;

@@ -3,7 +3,11 @@ import {
   propTypesPadding,
 } from "../../types";
 import { H2 } from "components";
-import { AwardTextWrapper, StyledWhiteH2 } from "./award-main-text-block.style";
+import {
+  AwardTextWrapper,
+  StyledWhiteH2,
+  StyledDesktopBR,
+} from "./award-main-text-block.style";
 
 export const AwardMainTextBlock = ({ ...props }) => {
   return (
