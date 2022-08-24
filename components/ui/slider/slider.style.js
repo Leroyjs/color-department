@@ -1,15 +1,17 @@
-import styled from "@emotion/styled";
-import {css} from "@emotion/css";
-import {
-    applyColor,
-    applyMargins,
-    applyPaddings,
-    colors,
-    fontFamilies, getCurrentColorStyles,
-    getCurrentFontSizeStyle, getCurrentMarginStyle, getCurrentPaddingStyle,
-    hexToRGBA
-} from "styles";
 import "@glidejs/glide/dist/css/glide.core.css";
+
+import {
+  applyColor,
+  applyMargins,
+  applyPaddings,
+  colors,
+  fontFamilies,
+  getCurrentColorStyles,
+  getCurrentFontSizeStyle,
+  hexToRGBA,
+} from "styles";
+
+import styled from "@emotion/styled";
 
 export const SliderWrapper = styled.div`
   height: calc(100vh);
@@ -31,7 +33,8 @@ export const SliderSlides = styled.ul`
   transition: none !important;
 
   &--reverse .glide__slide {
-    &, &__img {
+    &,
+    &__img {
       right: initial;
       left: 0;
     }
@@ -84,7 +87,7 @@ export const NavBullet = styled.button`
   height: 60px;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -100,6 +103,7 @@ export const NavBullet = styled.button`
 
   &.active {
     color: ${colors.white};
+    cursor: default;
 
     &:after {
       transform: translate(-50%, -50%) scale(1);
@@ -119,7 +123,7 @@ export const LeftCol = styled.div`
   bottom: 0;
   left: 50%;
   transform: translateX(calc(-100% - 20px));
-  
+
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -150,7 +154,7 @@ export const CopyrightList = styled.ul`
   ${applyPaddings}
   ${applyColor};
   ${getCurrentFontSizeStyle("h3")};
-  ${({theme}) => getCurrentColorStyles("white", theme)};
+  ${({ theme }) => getCurrentColorStyles("white", theme)};
 `;
 
 export const CopyrightItem = styled.li`
@@ -162,32 +166,25 @@ export const CopyrightItem = styled.li`
   position: absolute;
   transition: opacity 0.6s, visibility 0.6s;
 
-  ${({isRight}) => isRight && `
+  ${({ isRight }) =>
+    isRight &&
+    `
     left: auto;
     right: 0;
   `}
 
-  ${({isLeft}) => isLeft && `
+  ${({ isLeft }) =>
+    isLeft &&
+    `
     right: auto;
     left: 0;
   `}
 
-  ${({isActive}) => isActive && `
+  ${({ isActive }) =>
+    isActive &&
+    `
       visibility: visible;
       opacity: 1;
       transition-delay: 0.3s;
   `}
 `;
-
-export const cursorSliderStyle = css`
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  top: 0;
-  left: 0;
-  border: 1px solid ${hexToRGBA(colors.white, 0.4)};
-  z-index: 100;
-  pointer-events: none;
-`
-

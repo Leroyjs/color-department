@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, TextWrapper} from "./PreTitleSlider.style";
+import {Text, TextWrapper} from "./pre-title-slider.style";
 
 export const PreTitleSlider = ({children, ...props}) => {
     return (

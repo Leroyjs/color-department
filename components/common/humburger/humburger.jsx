@@ -1,7 +1,7 @@
 import { HumburgerWrapper, HumburgerLine } from './humburger.style'
 
 export const Hamburger = ({ isActive }) => (
-    <HumburgerWrapper isActive={isActive}>
+    <HumburgerWrapper className='humburger' isActive={isActive}>
         <HumburgerLine />
         <HumburgerLine />
         <HumburgerLine />

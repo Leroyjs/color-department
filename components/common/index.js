@@ -19,3 +19,4 @@ export * from './shop-item';
 export * from './running-line';
 export * from './footer-nav-bar';
 export * from './grid';
+export * from './partners-line';

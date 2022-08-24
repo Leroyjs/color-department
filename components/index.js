@@ -1,24 +1,26 @@
 /*    Импорты общих компонентов    */
 import {
-    ThemeProvider,
-    FooterNavigation,
-    FoxPaw,
-    ShopModal,
-    Portal,
-    Modal,
-    RunningLine,
-    ShopItem,
-    CompanyInfo,
-    VideoBackground,
-    FoxLogo,
-    FullSizeButton,
-    FormWork,
-    WorkModal,
-    TextDecorationUnderline,
-    RightBracket,
-    Planet,
-    LeftBracket,
-    Grid,
+  ThemeProvider,
+  FooterNavigation,
+  FoxPaw,
+  ShopModal,
+  Portal,
+  Modal,
+  RunningLine,
+  ShopItem,
+  CompanyInfo,
+  VideoBackground,
+  FoxLogo,
+  FullSizeButton,
+  FormWork,
+  WorkModal,
+  TextDecorationUnderline,
+  RightBracket,
+  Planet,
+  LeftBracket,
+  Grid,
+  PartnersLine
+
 } from "./common";
 /*    Импорты UI-ых компонентов    */
 import { ButtonEllipse } from "./ui/button-ellipse";
@@ -121,4 +123,5 @@ export {
   TextAreaField,
   DropDownField,
   CounterField,
+  PartnersLine,
 };

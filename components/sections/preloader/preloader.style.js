@@ -93,7 +93,7 @@ export const RunningLineWrapper = styled.div`
   ${({ stepIndex }) =>
     stepIndex ? getCurrentHeightSizeStyle("x1") : "height: 0px;"}
   overflow: hidden;
-  transition: height 0.5s;
+transition: height 0.5s;
 `;
 
 export const ImageWrapper = styled.div`

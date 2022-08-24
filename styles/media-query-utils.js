@@ -9,9 +9,11 @@ const getMediaMaxWidth = getMedia("max-width");
 const getMediaMaxWidthWithValueInPx = (value) => getMediaMaxWidth(value);
 
 const mediaQuery = facepaint(
-  subsequenceOfBreakpoints.map((breakpointName) =>
-    getMediaMaxWidthWithValueInPx(breakpointsWidth[breakpointName])
-  )
+  subsequenceOfBreakpoints
+    .map((breakpointName) =>
+      getMediaMaxWidthWithValueInPx(breakpointsWidth[breakpointName])
+    )
+    .slice(1)
 );
 
 export const getResponsiveStyle = (styleName) => (values) =>
