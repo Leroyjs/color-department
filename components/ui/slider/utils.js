@@ -20,10 +20,10 @@ export function useGlide() {
       .mutate([SlideComponent])
       .mount();
 
-    glide.current.on("run.after", () => {
-      setCurrentSlide(glide.current.index);
-    });
-  }, []);
+        glide.current.on("run.after", () => {
+            setCurrentSlide(glide.current.index);
+        });
+    }, []);
 
   return {
     currentSlide,
@@ -40,9 +40,23 @@ function SlideComponent(Glide, Components, Events) {
   const sliderSlidesClass = `${getClassName(SliderSlides)}--reverse`;
   let previousIndex = 0;
 
-  return {
-    modify(translate) {
-      if (!Glide) return 0;
+    Glide?.on('run.before', (evt) => {
+        const slidesEls = Glide && Glide._c.Html.slides;
+        const dirClass = evt.direction === '>' && Glide.index < slidesEls.length ? 'right' : 'left';
+
+        slidesEls[Glide.index].classList.add(dirClass);
+    })
+
+    Glide?.on('run.after', (evt) => {
+        const slidesEls = Glide && Glide._c.Html.slides;
+        const dirClass = evt.direction === '>' ? 'right' : 'left';
+
+        slidesEls[Glide.index].classList.remove(dirClass);
+    })
+
+    return {
+        modify(translate) {
+            if (!Glide) return 0;
 
       const i = Glide.index;
       const prevI = previousIndex;
