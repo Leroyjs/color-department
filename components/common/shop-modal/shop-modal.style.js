@@ -53,7 +53,7 @@ export const InformationColumn = styled.div`
     width: 100%;
     flex-direction: column;
     height: 100%;
-    padding: 24px;
+    ${getCurrentPaddingStyle("", "md")}
   }
 `;
 
@@ -69,8 +69,7 @@ export const ProductPrice = styled(H3)`
 export const ProductDiscription = styled(Text)`
   width: 50%;
   ${({ theme }) => getCurrentColorStyles("white", theme)};
-  ${getCurrentPaddingStyle("bottom", "lg")};
-  ${getCurrentPaddingStyle("top", "md")};
+  ${getCurrentPaddingStyle("vertical", "md")};
 
   @media (max-width: ${breakpointsWidth.tabletSM}) {
     width: 100%;
@@ -90,8 +89,3 @@ export const FormWrapper = styled.form`
   }
 `;
 
-export const PaddingMediaPhone = styled.div`
-  @media (max-width: ${breakpointsWidth.tabletSM}) {
-    margin-top: 24px;
-  }
-`;
