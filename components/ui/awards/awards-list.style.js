@@ -115,13 +115,11 @@ export const PopOver = styled.div`
   }
 `;
 
-
-
 export const AboutPhoneImg = styled.img`
   display: none;
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    ${({ aboutImg }) => (aboutImg ? "display: block;" : "")};
+    ${({ isAboutImg }) => (isAboutImg ? "display: block;" : "")};
     width: 64px;
     min-width: 64px;
     height: 64px;
@@ -130,7 +128,7 @@ export const AboutPhoneImg = styled.img`
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
-    ${({ aboutImg }) => (aboutImg ? "display: block;" : "")};
+    ${({ isAboutImg }) => (isAboutImg ? "display: block;" : "")};
     width: 48px;
     min-width: 48px;
     height: 48px;
