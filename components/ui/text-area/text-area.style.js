@@ -31,6 +31,11 @@ export const TextAreaInput = styled('textarea')(({isError}) => ({
     lineHeight: lineHeight + 'px',
     backgroundImage: `linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${isError ? colors.red : hexToRGBA(colors.white, 0.2)} 0px)`,
     backgroundSize: `100% ${lineHeight}px`,
+
+    @MediaScreenAnd (maxWidth: ${breakpointsWidth.tabletLG}) {
+      lineHeight: `-48px`;
+      backgroundSize: `-48px`;
+    }
 }));
 
 export const TextAreaWrapper = styled.div`
@@ -38,7 +43,7 @@ export const TextAreaWrapper = styled.div`
   position: relative;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -50,18 +55,23 @@ export const TextAreaWrapper = styled.div`
 
     font-size: ${fontSizes.desktopLG.h3};
     font-family: ${fontFamilies.mainFont};
-    line-height: ${lineHeight + 'px'};
+    line-height: ${lineHeight + "px"};
     background-image: ${`linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${colors.white} 0px)`};
     background-size: ${`100% ${lineHeight}px`};
     transition: transform 0.5s;
-    transform: scaleX(${({isActive}) => (isActive ? 1 : 0)});
+    transform: scaleX(${({ isActive }) => (isActive ? 1 : 0)});
     transform-origin: left;
+
+    @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+      line-height: -48px;
+      background-size: -48px;
+    }
   }
 
   &:hover:after {
     transform: scaleX(1);
   }
-`
+`;
 
 export const Error = styled.div`
   width: 100%;
