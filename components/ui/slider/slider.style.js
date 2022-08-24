@@ -33,8 +33,7 @@ export const SliderSlides = styled.ul`
   transition: none !important;
 
   &--reverse .glide__slide {
-    &,
-    &__img {
+    & {
       right: initial;
       left: 0;
     }
