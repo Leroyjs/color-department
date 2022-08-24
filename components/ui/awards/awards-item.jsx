@@ -1,8 +1,8 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState,} from 'react';
 import {debounce, clamp} from "utils";
-import {Item, LabelEnd, LabelStart, PopOver, PopOverImg} from "./awards-list.style";
+import {Item, LabelEnd, LabelStart, PopOver, PopOverImg, AboutPhoneImg, FlexControl} from "./awards-list.style";
 
-export const AwardsItem = ({modalId, startLabel, endLabel, img, onClick, ...props}) => {
+export const AwardsItem = ({modalId, startLabel, endLabel, img, onClick, aboutImg=false, ...props}) => {
     const popOverRef = useRef();
 
     function handleEnter() {
@@ -37,19 +37,22 @@ export const AwardsItem = ({modalId, startLabel, endLabel, img, onClick, ...prop
 
         popOver?.setAttribute('style', `transform: translate(${x}px, calc(-100% + ${y - 40}px))`);
     }, 10)
-
     return (
-        <Item onMouseEnter={handleEnter} onMouseMove={handleMove} onMouseLeave={handleLeave}
-              onClick={() => onClick?.(modalId)} {...props}>
-            <LabelStart>
-                {startLabel}
-            </LabelStart>
-            <LabelEnd>
-                {endLabel}
-            </LabelEnd>
-            <PopOver ref={popOverRef}>
-                <PopOverImg src={img}/>
-            </PopOver>
-        </Item>
+      <Item
+        onMouseEnter={handleEnter}
+        onMouseMove={handleMove}
+        onMouseLeave={handleLeave}
+        onClick={() => onClick?.(modalId)}
+        {...props}
+      >
+        <AboutPhoneImg src={img} aboutImg={aboutImg} />
+        <FlexControl>
+          <LabelStart>{startLabel}</LabelStart>
+          <LabelEnd>{endLabel}</LabelEnd>
+        </FlexControl>
+        <PopOver ref={popOverRef}>
+          <PopOverImg src={img} />
+        </PopOver>
+      </Item>
     );
 };

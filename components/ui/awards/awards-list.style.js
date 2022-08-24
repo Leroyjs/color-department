@@ -7,6 +7,9 @@ import {
   getCurrentColorStyles,
   getCurrentFontSizeStyle,
   hexToRGBA,
+  breakpointsWidth,
+  getCurrentMarginStyle,
+  getCurrentPaddingStyle,
 } from "styles";
 
 // import { H2 } from "../h2";
@@ -64,6 +67,13 @@ export const LabelStart = styled.span`
   transition: color 0.3s;
 `;
 
+export const FlexControl = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+`;
+
 export const LabelEnd = styled.span`
   color: ${hexToRGBA(colors.white, 0.2)};
 
@@ -99,7 +109,33 @@ export const PopOver = styled.div`
   }
 
   ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)}
-`
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    display: none;
+  }
+`;
+
+
+
+export const AboutPhoneImg = styled.img`
+  display: none;
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    ${({ aboutImg }) => (aboutImg ? "display: block;" : "")};
+    width: 64px;
+    min-width: 64px;
+    height: 64px;
+    ${getCurrentMarginStyle("right", "md")};
+    border-radius: 50%;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    ${({ aboutImg }) => (aboutImg ? "display: block;" : "")};
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+  }
+`;
 
 export const PopOverImg = styled.img`
   pointer-events: none;
@@ -116,7 +152,8 @@ export const Item = styled.li`
   position: relative;
   width: 100%;
   height: 100px;
-  padding: 32px 40px;
+  ${getCurrentPaddingStyle("horizontal", "md")};
+  ${getCurrentPaddingStyle("vertical", "md1")};
   cursor: pointer;
   transition: background-color 0.3s, border-top-color 0.3s;
   display: flex;
@@ -141,5 +178,9 @@ export const Item = styled.li`
 
   &:last-child {
     border-bottom: 1px solid ${hexToRGBA(colors.white, 0.2)};
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    justify-content: flex-start;
   }
 `;

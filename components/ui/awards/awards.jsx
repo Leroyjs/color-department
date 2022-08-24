@@ -5,7 +5,7 @@ import {PropTypes} from "prop-types";
 import {AwardsItemProps} from "./types";
 import {DetailCardModal} from "../../modal";
 
-export const Awards = ({options, title, subtitle, ...props}) => {
+export const Awards = ({options, title, subtitle, aboutImg, ...props}) => {
     const [isOpen, setOpen] = useState(false);
     const [currentModalId, setCurrentModalId] = useState(-1);
     return (
@@ -20,7 +20,7 @@ export const Awards = ({options, title, subtitle, ...props}) => {
                     {subtitle}
                 </AwardsSubTitle>
             )}
-            <AwardsList options={options} onClick={(modalId) => {
+            <AwardsList aboutImg={aboutImg} options={options} onClick={(modalId) => {
                 setCurrentModalId(modalId);
                 setOpen(true);
             }}/>

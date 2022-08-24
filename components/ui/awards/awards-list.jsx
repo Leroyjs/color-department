@@ -4,11 +4,11 @@ import { AwardsItem } from "./awards-item";
 import {AwardsItemProps} from "./types";
 import { ListStyled } from "./awards-list.style";
 
-export const AwardsList = ({options, onClick, ...props}) => {
+export const AwardsList = ({options, onClick, aboutImg, ...props}) => {
     return (
         <ListStyled {...props}>
             {options.map((option, index) => (
-                <AwardsItem key={index} onClick={onClick} {...option}/>
+                <AwardsItem key={index} onClick={onClick} aboutImg={aboutImg} {...option}/>
             ))}
         </ListStyled>
     );

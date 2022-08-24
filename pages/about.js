@@ -1,5 +1,5 @@
 import "styles/global.style";
-
+import { useState } from "react";
 import {
   Awards,
   Caption,
@@ -9,6 +9,7 @@ import {
 } from "components";
 
 import { PreTitleSlider } from "../components/ui/pre-title-slider";
+
 
 const DEMO_VIDEO = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4';
 const slides = [
@@ -107,6 +108,7 @@ const slides = [
 ]
 
 const About = () => {
+  const [aboutImg, setAboutImg] = useState(true);
   const SeniorColourists = [
     {
       modalId: "/",
@@ -169,14 +171,25 @@ const About = () => {
       {/* TODO: ЗДЕСЬ ДОЛЖЕН БЫТЬ БЛОК С СЕТКОЙ И ИЗОБРАЖЕНИЯМИ (Андрей) */}
       <IntroAboutTextBlock mt="xlg" />
       <Awards
+        aboutImg={aboutImg}
         options={SeniorColourists}
         subtitle="Senior colourists"
         title="We are bold"
         mt="xlg"
         mb="lg"
       />
-      <Awards options={Colourists} subtitle="Colourists" mt="lg" />
-      <Awards options={Assistants} subtitle="Assistants" mt="lg" />
+      <Awards
+        options={Colourists}
+        subtitle="Colourists"
+        mt="lg"
+        aboutImg={aboutImg}
+      />
+      <Awards
+        options={Assistants}
+        subtitle="Assistants"
+        mt="lg"
+        aboutImg={aboutImg}
+      />
       <PreTitleSlider mt="xlg" mb="md">
         Look at our selected works <br />
         to evaluate our capabilities and skills

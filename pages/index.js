@@ -1,10 +1,11 @@
 import { AwardMainTextBlock, Footer, Header, IntroMainTextBlock, PartnersLine, StartScreen } from "components";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "styles/global.style";
 import SliderPage from "./example/slider";
 
 import { Awards } from "components";
 import { colors } from "styles";
+
 
 const options = [
   {
@@ -49,7 +50,7 @@ const awardsItems = [
 ];
 
 const Home = () => {
-
+  const [aboutImg, setAboutImg] = useState(false);
   const videoContant = useRef(null);
 
   return (
@@ -60,7 +61,7 @@ const Home = () => {
         <IntroMainTextBlock />
         <PartnersLine/>
         <AwardMainTextBlock mt="xlg" px="md" />
-        <Awards options={awardsItems} title="Our Awards" pb="xlg"/>
+        <Awards options={awardsItems} title="Our Awards" pb="xlg" aboutImg={false}/>
       </main>
       <Footer></Footer>
     </>
