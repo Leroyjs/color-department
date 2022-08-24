@@ -99,6 +99,7 @@ export const StyledTabletBR = styled.br`
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     display: block;
   }
+  
   @media screen and (max-width: 365px) {
     display: none;
   }
