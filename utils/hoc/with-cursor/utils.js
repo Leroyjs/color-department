@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const getCoordinatesOfTargetCenter = (target) => {
   const rect = target.getBoundingClientRect();
   const withoutScale = target.dataset.pointer !== "without-scale";
-  console.log(withoutScale, target.dataset.pointer);
   return {
     x: rect.x + rect.width * 0.5,
     y: rect.y + rect.height * 0.5,

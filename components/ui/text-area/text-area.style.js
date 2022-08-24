@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
 import {
+    breakpointsWidth,
     colors,
     fontFamilies,
-    fontSizes,
+    fontSizes, getCurrentColor,
     getCurrentFontSizeStyle,
     getCurrentPaddingStyle,
     hexToRGBA,
@@ -12,31 +13,27 @@ import {
 const lineHeight = 90
 export const InputWrapper = styled.div`
   position: relative;
-  ${({ isFullWidth }) => isFullWidth && "width: 100%;"}
+  ${({isFullWidth}) => isFullWidth && "width: 100%;"}
 `;
 
-export const TextAreaInput = styled('textarea')(({isError}) => ({
+export const TextAreaInput = styled('textarea')`
+  padding-top: 18px;
+  margin-bottom: -18px;
+  width: 100%;
+  overflow: hidden;
+  text-transform: uppercase;
+  resize: none;
+  font-size: ${fontSizes.desktopLG.h3};
+  font-family: ${fontFamilies.mainFont};
+  color: ${({isError, theme}) => isError ? colors.red : getCurrentColor("primary", theme)};;
+  line-height: ${`${lineHeight}px`};
+  background-image: ${({isError}) => `linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${isError ? colors.red : hexToRGBA(colors.white, 0.2)} 0px)`};
+  background-size: ${`100% ${lineHeight}px`};
 
-    paddingTop: '18px',
-    marginBottom: '-18px',
-    width: '100%',
-    overflow: 'hidden',
-    textTransform: 'uppercase',
-
-    resize: 'none',
-    fontSize: fontSizes.desktopLG.h3,
-    color: isError ? colors.red : colors.yellow,
-    fontFamily: fontFamilies.mainFont,
-
-    lineHeight: lineHeight + 'px',
-    backgroundImage: `linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${isError ? colors.red : hexToRGBA(colors.white, 0.2)} 0px)`,
-    backgroundSize: `100% ${lineHeight}px`,
-
-    @MediaScreenAnd (maxWidth: ${breakpointsWidth.tabletLG}) {
-      lineHeight: `-48px`;
-      backgroundSize: `-48px`;
-    }
-}));
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    
+  }
+`;
 
 export const TextAreaWrapper = styled.div`
   width: 100%;
