@@ -78,9 +78,9 @@ export const FormWork = withFormProvider(({...props}) => {
                         name="message"
                         isFullWidth
                         title="About your work"/>
-                    <ButtonRectangle mt="md">
+                    {/* <ButtonRectangle mt="md">
                         SEND
-                    </ButtonRectangle>
+                    </ButtonRectangle> */}
                 </FormColumnRight>
             </FormWrapper>
             <WorkModal isOpen={isModalOpen} setOpen={setModalOpen}/>
