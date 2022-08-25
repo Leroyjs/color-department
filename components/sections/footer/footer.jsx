@@ -1,6 +1,6 @@
-import {FoxStyle, FooterWrapper, FooterMapWrapper, FooterInfoWrapper, FooterLogo, FoxWrapper, DynamicHeightForMap, FooterModalWrapper } from './footer.style';
-import { FooterNavigation, CompanyInfo, FoxLogo, H3, Caption, FullSizeButton, MapWrapper } from 'components';
+import { CompanyInfo, FooterNavigation, FoxLogo, FullSizeButton, H3, MapWrapper } from 'components';
 import { useState } from 'react';
+import { DynamicHeightForMap, FooterCompanyInfoMobile, HideForMobile, FooterInfoWrapper, FooterLogo, FooterMapWrapper, FooterModalWrapper, FooterWrapper, FoxStyle, FoxTitleDA, FoxTitleMobile, FoxWrapper } from './footer.style';
 
 export const Footer = () => {
 
@@ -15,9 +15,12 @@ export const Footer = () => {
                     <FoxWrapper>
                         <FoxLogo className={FoxStyle}></FoxLogo>
                     </FoxWrapper>
-                    <Caption color="white">2022 color department</Caption>
+                    <FoxTitleDA color="white">2022 color department</FoxTitleDA>
+                    <FoxTitleMobile color="white">Color@department.com <br /> 2 514 889-18-51</FoxTitleMobile>
                 </FooterLogo>
-                <CompanyInfo></CompanyInfo>
+                <HideForMobile>
+                    <CompanyInfo></CompanyInfo>
+                </HideForMobile>
             </FooterInfoWrapper>
             <FooterModalWrapper isOpen={isOpenMap}>
                 <FooterNavigation style={{ 'position': 'relative' }}></FooterNavigation>
@@ -31,6 +34,9 @@ export const Footer = () => {
                     </DynamicHeightForMap>
                 </FooterMapWrapper>
             </FooterModalWrapper>
+            <FooterCompanyInfoMobile>
+                <CompanyInfo></CompanyInfo>
+            </FooterCompanyInfoMobile>
         </FooterWrapper>
     )
 }

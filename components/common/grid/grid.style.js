@@ -15,7 +15,7 @@ export const GridInner = styled.div`
   align-content: end;
   height: 100%;
   @media screen and (max-width: ${breakpointsWidth.tabletLG}){
-    grid-template-rows: repeat(10, 25vw);    
+    grid-template-rows: repeat(20, 25vw);    
   }
 `;
 

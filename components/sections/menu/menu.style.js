@@ -29,18 +29,21 @@ export const MenuList = styled.ul`
 `
 export const MenuBody = styled.nav`
     top: ${sizes['desktopLG'].half};
+    width:100%;
     position: absolute;
     display: grid;
     height: calc(100vh - ${sizes['desktopLG'].x1});
-    @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+        top: ${sizes['tabletLG'].x1};
+        height: calc(100vh - 1.5 * ${sizes['tabletLG'].x1});
+        ${MenuMap} { grid-column: 3/5; }
+        ${MenuList} { grid-column: 1/3; }
+    }
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
         top: ${sizes['desktopLG'].x1};
-        height: calc(100vh - 1.5 * ${sizes['desktopLG'].x1 });
-        ${MenuMap} {
-            grid-column: 3/5;
-        }
-        ${MenuList} {
-            grid-column: 1/3;
-        }
+        height: calc(100vh - 1.5 * ${sizes['tabletLG'].x1});
+        ${MenuMap} { display: none; }
+        ${MenuList} { grid-column: 1/-1; }
     }
     ${getCurrentGridTemplateColumsStyle()};
 `
