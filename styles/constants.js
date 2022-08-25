@@ -62,6 +62,14 @@ export const breakpointsWidth = {
 export const offsets = {
   [desktopXXLG]: {
     xlg: 180,
+    sxlg: 76,
+    lg: 60,
+    md: 40,
+    md1: 32,
+    sm: 16,
+    xsm: 12,
+    xxsm: 8,
+    none: 0,
   },
   [desktopXLG]: {
     xlg: 170,
@@ -96,7 +104,29 @@ export const offsets = {
     xxsm: 8,
     none: 0,
   },
+  [desktopSM]: {
+    xlg: 140,
+    sxlg: 76,
+    lg: 48,
+    md: 24,
+    md1: 24,
+    sm: 12,
+    xsm: 12,
+    xxsm: 8,
+    none: 0,
+  },
   [tabletLG]: {
+    xlg: 140,
+    sxlg: 76,
+    lg: 48,
+    md: 24,
+    md1: 24,
+    sm: 12,
+    xsm: 12,
+    xxsm: 8,
+    none: 0,
+  },
+  [tabletSM]: {
     xlg: 140,
     sxlg: 76,
     lg: 48,
@@ -140,6 +170,9 @@ export const fontSizes = {
     h3: "32px",
     text: "16px",
     caption: "14px",
+    vw: "1vw",
+    vw15: "1.5vw",
+    vw2: "2vw",
   },
   [desktopMD]: {
     h1: "12.125vw",
@@ -147,6 +180,8 @@ export const fontSizes = {
     h3: "32px",
     text: "16px",
     caption: "14px",
+    vw: "1vw",
+    vw2: "2vw",
   },
   [desktopSM]: {
     h1: "12.125vw",
@@ -154,6 +189,8 @@ export const fontSizes = {
     h3: "32px",
     text: "16px",
     caption: "14px",
+    vw: "1vw",
+    vw2: "2vw",
   },
   [tabletLG]: {
     h1: "20.83vw",
@@ -161,6 +198,8 @@ export const fontSizes = {
     h3: "24px",
     text: "14px",
     caption: "12px",
+    vw: "1vw",
+    vw2: "2vw",
   },
   [tabletSM]: {
     h1: "20.83vw",
@@ -168,6 +207,8 @@ export const fontSizes = {
     h3: "24px",
     text: "14px",
     caption: "12px",
+    vw: "1vw",
+    vw2: "2vw",
   },
   [phone]: {
     h1: "22.22vw",
@@ -175,6 +216,8 @@ export const fontSizes = {
     h3: "18px",
     text: "12px",
     caption: "12px",
+    vw: "1vw",
+    vw2: "2vw",
   },
 };
 
