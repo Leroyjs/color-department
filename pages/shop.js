@@ -1,3 +1,4 @@
+import { Preloader } from "components";
 import { RunningLine } from "components";
 import { ShopSection } from "components";
 

@@ -5,6 +5,7 @@ import {
   getCurrentColor,
 } from "styles";
 import styled from "@emotion/styled";
+import { breakpointsWidth } from "styles";
 
 export const Button = styled.button`
   width: 2.5vw;
@@ -24,17 +25,12 @@ export const Button = styled.button`
   ${applyMargins}
   ${applyPaddings}
 
-  @media (max-width: 900px) {
+  @media (max-width: ${breakpointsWidth.tabletLG}) {
     width: 5vw;
     height: 5vw;
   }
 
-  @media (max-width: 500px) {
-    width: 12.5vw;
-    height: 12.5vw;
-  }
-
-  @media (max-width: 400px) {
+  @media (max-width: ${breakpointsWidth.phone}) {
     display: none;
   }
 `;
