@@ -1,4 +1,4 @@
-import { FooterWrapper, FooterMapWrapper, FooterInfoWrapper, FooterLogo, FoxWrapper, DynamicHeightForMap, FooterModalWrapper } from './footer.style';
+import {FoxStyle, FooterWrapper, FooterMapWrapper, FooterInfoWrapper, FooterLogo, FoxWrapper, DynamicHeightForMap, FooterModalWrapper } from './footer.style';
 import { FooterNavigation, CompanyInfo, FoxLogo, H3, Caption, FullSizeButton, MapWrapper } from 'components';
 import { useState } from 'react';
 
@@ -13,7 +13,7 @@ export const Footer = () => {
                 <FooterLogo>
                     <H3>find out more. follow the fox.</H3>
                     <FoxWrapper>
-                        <FoxLogo></FoxLogo>
+                        <FoxLogo className={FoxStyle}></FoxLogo>
                     </FoxWrapper>
                     <Caption color="white">2022 color department</Caption>
                 </FooterLogo>

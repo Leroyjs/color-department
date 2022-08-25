@@ -70,7 +70,16 @@ const { count: countDesktopLG, x1: x1DesktopLG } =
 
 export const getCurrentGridTemplateColumsStyle = () =>
   getResponsiveStyle("gridTemplateColumns")([
-    `repeat(${countDesktopLG}, ${x1DesktopLG})`,
+    `repeat(${8}, 1fr)`,
+    `repeat(${8}, 1fr)`,
+    `repeat(${8}, 1fr)`,
+    `repeat(${8}, 1fr)`,
+    `repeat(${8}, 1fr)`,
+    `repeat(${4}, 1fr)`,
+    `repeat(${4}, 1fr)`,
+    `repeat(${4}, 1fr)`,
+    `repeat(${4}, 1fr)`,
+  
   ]);
 
 export const getCurrentSizeStyle = getCurrentStyleByDictionary(sizes);
@@ -81,6 +90,6 @@ export const getCurrentHeightSizeStyle = getCurrentSizeStyle("height");
 
 /*Количество клеток в одной строке */
 export const getGridCount = ()=>{
-  if(window.matchMedia("(min-width: 768px)").matches) return 8;
+  if(window.matchMedia("(min-width: 1024px)").matches) return 8;
   else return 4;
 }

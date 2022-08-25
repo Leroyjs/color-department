@@ -131,7 +131,7 @@ export const sizes = {
     half: "6.25vw",
     count: 8,
   },
-  [tabletSM]: {
+  [tabletLG]: {
     x2: "50vw",
     x1: "25vw",
     half: "12.5vw",
