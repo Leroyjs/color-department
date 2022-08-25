@@ -63,7 +63,24 @@ export const Cell = styled.div`
 `;
 
 
-const blinkAnimation = (top, rotate, reverse) => {
+const sideLineAnimation = (top, rotate, reverse) => {
+    return keyframes`
+    ${reverse ? 'to' : 'from'} {
+      top:0px;
+      transform:rotate(0);
+    }
+    50% {
+      top:${top}px;
+      transform:rotate(0);
+    }
+    ${reverse ? 'from' : 'to'} {
+      top:${top}px;
+      transform:rotate(${rotate}deg);
+    }
+    `
+}
+
+const blinkAnimation = () => {
     return keyframes`
     0%{
         opacity: 0;
@@ -75,14 +92,16 @@ const blinkAnimation = (top, rotate, reverse) => {
         opacity: 0;
     }
     `
-  }
+}
 
 
-const BlankPictureDynamic = ({ isVisible, animationDuration, coordX, coordY }) => css`
-    top: ${coordY+'px'};
-    left: ${coordX+'px'};
-    animation: ${blinkAnimation()} 2s infinite;
-    transition: opacity ease-in 0.1s;
+const BlankPictureDynamic = ({ startAnimationPercent, delay, isVisible, coordX, coordY }) => css`
+    top: ${coordY + 'px'};
+    left: ${coordX + 'px'};
+    animation: ${blinkAnimation()};
+    animation-delay: ${delay+'ms'};
+    animation-duration: 2s;
+    transition: opacity ease-in 0.2s;
 `
 
 export const BlinkPictureWrapper = styled.div`
