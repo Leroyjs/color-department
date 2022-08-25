@@ -34,7 +34,7 @@ export const TextAreaInput = styled("textarea")`
   background-size: ${`100% ${lineHeight}px`};
 
   &::placeholder {
-    display: none;
+    color: transparent;
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
@@ -46,12 +46,10 @@ export const TextAreaInput = styled("textarea")`
         isError ? colors.red : hexToRGBA(colors.white, 0.2)
       } 0px)`};
     background-size: ${`100% 56px`};
+  }
 
+  @media screen and (max-width: ${breakpointsWidth.phone}){
     &::placeholder {
-      display: block;
-      text-transform: uppercase;
-      ${getCurrentFontSizeStyle("h3")};
-      font-family: ${fontFamilies.mainFont};
       color: ${hexToRGBA(colors.white, 0.2)};
     }
   }
