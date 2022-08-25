@@ -1,6 +1,6 @@
-import { zindex, getCurrentMarginStyle, fontSizes, sizes, colors, getCurrentBackgroundColorStyles, breakpointsWidth, getCurrentGridTemplateColumsStyle, hexToRGBA } from "styles";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { breakpointsWidth, colors, getCurrentBackgroundColorStyles, getCurrentGridTemplateColumsStyle, hexToRGBA, sizes, zindex } from "styles";
 
 //Задает прозрачность хедеру
 export const HeaderDynamicStyle = ({ transparency }) => css`

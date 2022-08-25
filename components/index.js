@@ -1,26 +1,26 @@
 /*    Импорты общих компонентов    */
 import {
-    ThemeProvider,
-    FooterNavigation,
-    FoxPaw,
-    ShopModal,
-    Portal,
-    Modal,
-    RunningLine,
-    ShopItem,
-    CompanyInfo,
-    VideoBackground,
-    FoxLogo,
-    FullSizeButton,
-    FormWork,
-    WorkModal,
-    TextDecorationUnderline,
-    RightBracket,
-    Planet,
-    LeftBracket,
-    Grid,
-    PartnersLine
-    
+  ThemeProvider,
+  FooterNavigation,
+  FoxPaw,
+  ShopModal,
+  Portal,
+  Modal,
+  RunningLine,
+  ShopItem,
+  CompanyInfo,
+  VideoBackground,
+  FoxLogo,
+  FullSizeButton,
+  FormWork,
+  WorkModal,
+  TextDecorationUnderline,
+  RightBracket,
+  Planet,
+  LeftBracket,
+  Grid,
+  PartnersLine
+
 } from "./common";
 /*    Импорты UI-ых компонентов    */
 import { ButtonEllipse } from "./ui/button-ellipse";
@@ -46,6 +46,9 @@ import { Awards } from "./ui/awards";
 import { Avatar } from "./ui/avatar";
 import { CloseButton } from "./ui/close-button";
 import { WorksCards } from "./ui/works-cards";
+import { DetailTitle } from "./ui/detail-title";
+import { Stakeholders } from "./ui/stakeholders";
+import { VideoPlayer } from "./ui/video-player";
 import { InputField, TextAreaField, DropDownField, CounterField } from "./ui/fields";
 /*    Импорты секций    */
 import { Header } from "./sections/header";
@@ -124,4 +127,7 @@ export {
   DropDownField,
   CounterField,
   PartnersLine,
+  DetailTitle,
+  Stakeholders,
+  VideoPlayer,
 };

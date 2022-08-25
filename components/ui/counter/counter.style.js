@@ -5,6 +5,7 @@ import {
   fontFamilies,
   getCurrentFontSizeStyle,
   hexToRGBA,
+  breakpointsWidth,
 } from "styles";
 import styled from "@emotion/styled";
 
@@ -108,6 +109,10 @@ export const PlusWrapper = styled.div`
     opacity: 1;
     transition: 0.3s;
   }
+
+  @media (max-width: ${breakpointsWidth.tabletSM}) {
+    top: 0px;
+  }
 `;
 
 export const MinusWrapper = styled.div`
@@ -122,5 +127,9 @@ export const MinusWrapper = styled.div`
   &:hover {
     opacity: 1;
     transition: 0.3s;
+  }
+
+  @media (max-width: ${breakpointsWidth.tabletSM}) {
+    top: 0px;
   }
 `;

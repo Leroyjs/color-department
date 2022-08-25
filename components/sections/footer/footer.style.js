@@ -45,8 +45,6 @@ export const FoxStyle = css`
 
 //TODO:background-color - заглушка прозрачная, поэтому накинул черный цвет 
 export const FooterMapWrapper = styled.div`
-    background-color: black;
-    background-image: url('./footer-map.png');
     height: 100%;
 `
 

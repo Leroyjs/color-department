@@ -1,4 +1,4 @@
-import { Caption, H2, Text, } from "components";
+import { Caption, H2, Text } from "components";
 import {
   TextSectionWrapper,
   FirstLineWrapper,
@@ -10,8 +10,11 @@ import {
   StyledLeftBracket,
   StyledRightBracket,
   StyledDesktopBR,
-  StyledDesktopSM,
   StyledTabletBR,
+  StyledCaptionPhoneBR,
+  StyledCaptionBR,
+  StyledPhoneSMBR,
+  StyledDesktopLGBR,
 } from "./intro-main-text-block.style";
 import Link from "next/link";
 
@@ -19,29 +22,33 @@ export const IntroMainTextBlock = () => {
   return (
     <TextSectionWrapper>
       <FirstLineWrapper>
-        <StyledWhiteH2>We are Color Department</StyledWhiteH2>&nbsp;
-        <H2>a color</H2>&nbsp;
-        <StyledDesktopSM />
+        <StyledWhiteH2>We are Color Department&nbsp;</StyledWhiteH2>
+        <H2>a color&nbsp;</H2>
+        <StyledTabletBR />
         <H2> grading studio&nbsp;</H2>
+        <StyledDesktopLGBR />
         <StyledWhiteH2>
           Based in Los Angeles.
           <StyledPlanet />
         </StyledWhiteH2>
-        &nbsp;
-        <StyledDesktopSM />
-        <H2>We hunt for the best Solutions.</H2>
-        &nbsp;
-        <H2>We always</H2>
-        &nbsp;
-        <StyledDesktopSM />
+        <StyledTabletBR />
+        <StyledPhoneSMBR />
+        <H2>&nbsp;We hunt for&nbsp;</H2>
+        <H2>the best Solutions.&nbsp;</H2>
+        <StyledDesktopLGBR />
+        <StyledPhoneSMBR />
+        <H2>We always&nbsp;</H2>
+        <StyledTabletBR />
         <H2> find the right</H2>&nbsp;
         <StyledDesktopBR />
-        <H2>path to cinematic&nbsp;</H2>
-        <StyledWhiteH2>Impactful </StyledWhiteH2>
-        &nbsp;
-        <StyledDesktopSM />
-        <StyledWhiteH2>images.</StyledWhiteH2>
-        &nbsp;
+        <H2>path to&nbsp;</H2>
+        <StyledPhoneSMBR />
+        <H2>cinematic&nbsp;</H2>
+        <StyledDesktopLGBR />
+        <StyledWhiteH2>Impactful&nbsp;</StyledWhiteH2>
+        <StyledTabletBR />
+        <StyledWhiteH2>images.&nbsp;</StyledWhiteH2>
+        <StyledPhoneSMBR />
         <Link href="/">
           <CaptionLink>
             <StyledLeftBracket />
@@ -49,21 +56,23 @@ export const IntroMainTextBlock = () => {
             <StyledRightBracket />
           </CaptionLink>
         </Link>
-        &nbsp;
         <StyledWhiteH2>&nbsp;Whatever the task is.</StyledWhiteH2>
       </FirstLineWrapper>
       <CaptionWrapper>
         <Caption>
-          We have personality. We love what we do. We make it fun for us and our
+          We have personality. We love what&nbsp;
+          <StyledCaptionPhoneBR /> we do. We make it fun for us and our&nbsp;
+          <StyledCaptionPhoneBR />
           clients.
-          <br />
-          That said, we take deadlines and agreements very seriously.
+          <StyledCaptionBR />
+          That said, we take deadlines and&nbsp;
+          <StyledCaptionPhoneBR /> agreements very seriously.
         </Caption>
       </CaptionWrapper>
       <TextWrapper>
         <Text style={{ opacity: 0.4 }}>
           With skills that go beyond
-          <br/>
+          <br />
           color grading, we have worked with
         </Text>
       </TextWrapper>
