@@ -1,7 +1,7 @@
-import { FooterNavBar, FooterNavBarItem } from './footer-nav-bar.style';
+import { ClassNames } from '@emotion/react';
 import { Caption } from 'components';
-import { useEffect, useState } from 'react';
-import { getPlatform } from 'styles';
+import { FooterNavBar, FooterNavBarItem, socialIcon, socialLabel } from './footer-nav-bar.style';
+
 
 const mockData = [
     { title: 'vimeo', link: 'https://vimeo.com/', icon: '/social-vimeo.svg' },
@@ -11,12 +11,6 @@ const mockData = [
 ];
 
 export const FooterNavigation = ({ footerItems = mockData, ...props }) => {
-    const [isMobile, setMobileFlag] = useState(false);
-    useEffect(() => {
-        console.log(getPlatform())
-        if (getPlatform() === 'mobile') setMobileFlag(true);
-    }, []);
-
     const navigateByLink = (link) => (_) => {
         window.open(link, '_blank')
     }
@@ -25,8 +19,8 @@ export const FooterNavigation = ({ footerItems = mockData, ...props }) => {
         return footerItems.map((item) =>
             <FooterNavBarItem key={item.title} onClick={navigateByLink(item.link)}>
                 <>
-                    <img src={item.icon} alt='' />
-                    <Caption color='white' >{item.title}</Caption>
+                    <img className={socialIcon} src={item.icon} alt='' />
+                    <Caption wrapperProps={{className:socialLabel}} color={'white'}>{item.title}</Caption>
                 </>
             </FooterNavBarItem>)
     }

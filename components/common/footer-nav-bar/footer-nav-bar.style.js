@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
-import { Caption } from "components"
-import { colors, getCurrentBackgroundColorStyles, getCurrentGridTemplateColumsStyle, hexToRGBA, sizes } from "styles"
-
+import { Caption } from "../../ui/caption";
+import { colors, getCurrentBackgroundColorStyles, getCurrentColorStyles, getCurrentGridTemplateColumsStyle, hexToRGBA, breakpointsWidth, sizes } from "styles"
+import { css } from "@emotion/css";
 export const FooterNavBar = styled.div`
     display: grid;
     ${getCurrentGridTemplateColumsStyle()}
@@ -39,13 +39,19 @@ export const FooterNavBarItem = styled.div`
     transition : background-color 0.5s;
 `
 
-export const socialIcon = styled.img`
+export const socialIcon = css`
     object-fit: contain;
     object-position: center;
     width: 16px;
     height: 16px;
+    display: none;
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        display: inline-block;   
+    }
 `
 
-export const socialLabel = styled(Caption)`
-
+export const socialLabel = css`
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        display: none;   
+    }
 `
