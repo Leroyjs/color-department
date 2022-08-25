@@ -17,7 +17,7 @@ export const getRubberSizeAtDesktopXLG = getSizeInVw(
 export const getArrayOfIndex = (countOfItems) => {
   let array = [];
 
-  for (let i = 0; i < countOfItems; i++) {
+for (let i = 0; i < countOfItems; i++) {
     array.push(i);
   }
 

@@ -161,6 +161,12 @@ export const sizes = {
     half: "6.25vw",
     count: 8,
   },
+  [tabletLG]: {
+    x2: "50vw",
+    x1: "25vw",
+    half: "12.5vw",
+    count: 4,
+  },
 };
 
 export const fontSizes = {
