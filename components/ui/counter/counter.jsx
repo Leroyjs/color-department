@@ -14,7 +14,7 @@ import {Error} from "../input/input.style";
 export const Counter = ({
                             title,
                             error,
-                            value,
+                            value = 0,
                             onChange,
                             propsInput,
                             ...props

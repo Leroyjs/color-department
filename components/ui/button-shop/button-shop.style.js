@@ -23,6 +23,20 @@ export const Button = styled.button`
   }
   ${applyMargins}
   ${applyPaddings}
+
+  @media (max-width: 900px) {
+    width: 5vw;
+    height: 5vw;
+  }
+
+  @media (max-width: 500px) {
+    width: 12.5vw;
+    height: 12.5vw;
+  }
+
+  @media (max-width: 400px) {
+    display: none;
+  }
 `;
 
 export const PlusLineHorizontal = styled.div`
