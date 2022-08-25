@@ -46,6 +46,9 @@ import { Awards } from "./ui/awards";
 import { Avatar } from "./ui/avatar";
 import { CloseButton } from "./ui/close-button";
 import { WorksCards } from "./ui/works-cards";
+import { DetailTitle } from "./ui/detail-title";
+import { Stakeholders } from "./ui/stakeholders";
+import { VideoPlayer } from "./ui/video-player";
 import { InputField, TextAreaField, DropDownField, CounterField } from "./ui/fields";
 /*    Импорты секций    */
 import { Header } from "./sections/header";
@@ -124,4 +127,7 @@ export {
   DropDownField,
   CounterField,
   PartnersLine,
+  DetailTitle,
+  Stakeholders,
+  VideoPlayer,
 };

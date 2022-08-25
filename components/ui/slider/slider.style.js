@@ -1,14 +1,14 @@
 import "@glidejs/glide/dist/css/glide.core.css";
 
 import {
-  applyColor,
-  applyMargins,
-  applyPaddings,
-  colors,
-  fontFamilies,
-  getCurrentColorStyles,
-  getCurrentFontSizeStyle,
-  hexToRGBA,
+    applyColor,
+    applyMargins,
+    applyPaddings,
+    colors,
+    fontFamilies, getCurrentColor,
+    getCurrentColorStyles,
+    getCurrentFontSizeStyle,
+    hexToRGBA,
 } from "styles";
 
 import styled from "@emotion/styled";
@@ -67,9 +67,8 @@ export const ContentMain = styled.div`
 
 export const NavBullets = styled.ul`
   pointer-events: auto;
-  display: grid;
-  grid-auto-flow: column;
-  gap: 40px;
+  display: flex;
+  align-items: center;
 `;
 
 export const NavBullet = styled.button`
@@ -109,6 +108,43 @@ export const NavBullet = styled.button`
       visibility: visible;
       opacity: 1;
     }
+  }
+
+  & + & {
+    margin-left: 40px;
+  }
+`;
+
+export const NavPoints = styled.ul`
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+
+  align-self: center;
+  justify-self: self-end;
+  margin-top: auto;
+`;
+
+export const NavPoint = styled.button`
+  width: 6px;
+  height: 6px;
+  border: 1px solid ${colors.white};
+  background-color: transparent;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: 0 0 auto;
+  padding: 0;
+  margin: 0;
+
+  transition: border-color 0.3s, background-color 0.3s;
+
+  &.active {
+    border-color: ${({theme}) => getCurrentColor("primary", theme)};
+    background-color: ${({theme}) => getCurrentColor("primary", theme)};
+  }
+
+  & + & {
+    margin-left: 40px;
   }
 `;
 
@@ -153,7 +189,7 @@ export const CopyrightList = styled.ul`
   ${applyPaddings}
   ${applyColor};
   ${getCurrentFontSizeStyle("h3")};
-  ${({ theme }) => getCurrentColorStyles("white", theme)};
+  ${({theme}) => getCurrentColorStyles("white", theme)};
 `;
 
 export const CopyrightItem = styled.li`
@@ -165,23 +201,23 @@ export const CopyrightItem = styled.li`
   position: absolute;
   transition: opacity 0.6s, visibility 0.6s;
 
-  ${({ isRight }) =>
-    isRight &&
-    `
+  ${({isRight}) =>
+          isRight &&
+          `
     left: auto;
     right: 0;
   `}
 
-  ${({ isLeft }) =>
-    isLeft &&
-    `
+  ${({isLeft}) =>
+          isLeft &&
+          `
     right: auto;
     left: 0;
   `}
 
-  ${({ isActive }) =>
-    isActive &&
-    `
+  ${({isActive}) =>
+          isActive &&
+          `
       visibility: visible;
       opacity: 1;
       transition-delay: 0.3s;
