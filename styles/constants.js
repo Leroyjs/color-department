@@ -152,6 +152,17 @@ export const offsets = {
 
 export const typesOfoffset = Object.keys(offsets[desktopLG]);
 
+export const sizes = {
+  [desktopLG]: {
+    x4: "50vw",
+    x3: "37.5vw",
+    x2: "25vw",
+    x1: "12.5vw",
+    half: "6.25vw",
+    count: 8,
+  },
+};
+
 export const fontSizes = {
   [desktopXXLG]: {
     h1: "12.125vw",
