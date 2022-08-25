@@ -61,7 +61,15 @@ export const breakpointsWidth = {
 
 export const offsets = {
   [desktopXXLG]: {
-    xlg: 180,
+    xlg: "11.25vw",
+    sxlg: "10vw",
+    lg: "3.75vw",
+    md: "2.5vw",
+    md1: "2vw",
+    sm: "1vw",
+    xsm: "0.75vw",
+    xxsm: "0.5vw",
+    none: 0,
   },
   [desktopXLG]: {
     xlg: 170,
@@ -96,7 +104,29 @@ export const offsets = {
     xxsm: 8,
     none: 0,
   },
+  [desktopSM]: {
+    xlg: 140,
+    sxlg: 76,
+    lg: 48,
+    md: 24,
+    md1: 24,
+    sm: 12,
+    xsm: 12,
+    xxsm: 8,
+    none: 0,
+  },
   [tabletLG]: {
+    xlg: 140,
+    sxlg: 76,
+    lg: 48,
+    md: 24,
+    md1: 24,
+    sm: 12,
+    xsm: 12,
+    xxsm: 8,
+    none: 0,
+  },
+  [tabletSM]: {
     xlg: 140,
     sxlg: 76,
     lg: 48,
@@ -134,12 +164,29 @@ export const sizes = {
 };
 
 export const fontSizes = {
+  [desktopXXLG]: {
+    h1: "12.125vw",
+    h2: "72px",
+    h3: "32px",
+    text: "16px",
+    caption: "14px",
+  },
+  [desktopXLG]: {
+    h1: "12.125vw",
+    h2: "72px",
+    h3: "32px",
+    text: "16px",
+    caption: "14px",
+  },
   [desktopLG]: {
     h1: "12.125vw",
     h2: "72px",
     h3: "32px",
     text: "16px",
     caption: "14px",
+    vw: "1vw",
+    vw15: "1.5vw",
+    vw2: "2vw",
   },
   [desktopMD]: {
     h1: "12.125vw",
@@ -147,6 +194,8 @@ export const fontSizes = {
     h3: "32px",
     text: "16px",
     caption: "14px",
+    vw: "1vw",
+    vw2: "2vw",
   },
   [desktopSM]: {
     h1: "12.125vw",
@@ -154,6 +203,8 @@ export const fontSizes = {
     h3: "32px",
     text: "16px",
     caption: "14px",
+    vw: "1vw",
+    vw2: "2vw",
   },
   [tabletLG]: {
     h1: "20.83vw",
@@ -161,6 +212,8 @@ export const fontSizes = {
     h3: "24px",
     text: "14px",
     caption: "12px",
+    vw: "1vw",
+    vw2: "2vw",
   },
   [tabletSM]: {
     h1: "20.83vw",
@@ -168,6 +221,8 @@ export const fontSizes = {
     h3: "24px",
     text: "14px",
     caption: "12px",
+    vw: "1vw",
+    vw2: "2vw",
   },
   [phone]: {
     h1: "22.22vw",
@@ -175,6 +230,8 @@ export const fontSizes = {
     h3: "18px",
     text: "12px",
     caption: "12px",
+    vw: "1vw",
+    vw2: "2vw",
   },
 };
 
@@ -184,10 +241,3 @@ export const zindex = {
   frontItem: 10,
   backItem: -1,
 };
-
-// export const gridDimensions = {
-//   8columns: "repeat(8, 12.5vw)",
-//   4columns: "repeat(4, 25vw)",
-//   2columns: "repeat(2, 50vw)",
-//   1columns: "repeat(1, 100vw)",
-// }
