@@ -6,6 +6,7 @@ import {
     fontSizes, getCurrentColor,
     getCurrentFontSizeStyle,
     getCurrentPaddingStyle,
+    getCurrentMarginStyle,
     hexToRGBA,
 } from "styles";
 
@@ -23,6 +24,7 @@ export const TextAreaInput = styled("textarea")`
   text-transform: uppercase;
   resize: none;
   ${getCurrentFontSizeStyle("h3")};
+  ${getCurrentMarginStyle("bottom", "md")};
   font-family: ${fontFamilies.mainFont};
   color: ${({ isError, theme }) =>
     isError ? colors.red : getCurrentColor("primary", theme)};
@@ -34,10 +36,26 @@ export const TextAreaInput = styled("textarea")`
   background-size: ${`100% ${lineHeight}px`};
 
   &::placeholder {
-    color: transparent;
+    color: ${hexToRGBA(colors.white, 0)};
+
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+      color: ${hexToRGBA(colors.white, 0.2)};
+      padding-top: 2px;
+    }
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    padding-top: 0px;
+    margin-top: 0;
+    line-height: 68px;
+    background-image: ${({ isError }) =>
+      `linear-gradient(transparent, transparent calc(68px - 2px), ${
+        isError ? colors.red : hexToRGBA(colors.white, 0.2)
+      } 0px)`};
+    background-size: ${`100% 68px`};
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
     padding-top: 8px;
     margin-top: 0;
     line-height: 48px;
@@ -46,12 +64,6 @@ export const TextAreaInput = styled("textarea")`
         isError ? colors.red : hexToRGBA(colors.white, 0.2)
       } 0px)`};
     background-size: ${`100% 56px`};
-  }
-
-  @media screen and (max-width: ${breakpointsWidth.phone}){
-    &::placeholder {
-      color: ${hexToRGBA(colors.white, 0.2)};
-    }
   }
 `;
 
@@ -85,8 +97,16 @@ export const TextAreaWrapper = styled.div`
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    &:after {
+      line-height: 68px;
+      background-image: ${`linear-gradient(transparent, transparent calc(68px - 2px), ${colors.white} 0px)`};
+      background-size: ${`100% 68px`};
+    }
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
     height: 240px;
-    &:after { 
+    &:after {
       line-height: 48px;
       background-image: ${`linear-gradient(transparent, transparent calc(56px - 2px), ${colors.white} 0px)`};
       background-size: ${`100% 56px`};
@@ -115,6 +135,11 @@ export const Title = styled.h3`
   ${getCurrentPaddingStyle("top", "xxsm")};
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    ${getCurrentFontSizeStyle("h3")}
+    margin-bottom: 12px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
     display: none;
   }
 `;

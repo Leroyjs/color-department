@@ -6,6 +6,7 @@ import {
   getCurrentFontSizeStyle,
   getCurrentPaddingStyle,
   hexToRGBA,
+  breakpointsWidth,
 } from "styles";
 
 import styled from "@emotion/styled";
@@ -50,6 +51,10 @@ export const InputStyled = styled.input`
 
   ${errorConditionColor}
   ${getCurrentFontSizeStyle("h3")};
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    height: 42px;
+  }
 `;
 
 export const Error = styled.div`
@@ -75,6 +80,15 @@ export const Title = styled.div`
 
   ${errorConditionColor}
   ${getCurrentFontSizeStyle("h3")};
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    color: ${hexToRGBA(colors.white, 0.2)};
+    transform: translateY(-60%);
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    transform: translateY(-70%);
+  }
 `;
 
 export const InputWrapper = styled.div`

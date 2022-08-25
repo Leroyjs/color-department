@@ -6,6 +6,7 @@ import {
   getCurrentMarginStyle,
   getCurrentPaddingStyle,
   hexToRGBA,
+  breakpointsWidth,
 } from "styles";
 
 import styled from "@emotion/styled";
@@ -117,6 +118,10 @@ export const InputStyled = styled.div`
     }
   }
   ${getCurrentFontSizeStyle("h3")};
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    align-items: flex-end;
+  }
 `;
 
 export const Error = styled.div`
