@@ -34,56 +34,62 @@ const TitleOptions = [
     // Заглушка
 ];
 
-export const FormWork = withFormProvider(({...props}) => {
+export const FormWork = withFormProvider(({ ...props}) => {
     const {handleSubmit} = useFormContext();
     const onSubmit = data => console.log(data);
     const [isModalOpen, setModalOpen] = useState(false);
 
     return (
-        <FormSection onSubmit={handleSubmit(onSubmit)} mt="md" {...props}>
-            <H2 color="white" mb="md">
-                {/* eslint-disable-next-line react/no-unescaped-entities */}
-                let's talk
-            </H2>
-            <FormWrapper>
-                <FormColumnLeft>
-                    <DropDownField
-                        mb="md"
-                        name="service"
-                        title="Service"
-                        options={ServiceOptions}
-                        isFullWidth
-                    />
-                    <DropDownField
-                        mb="md"
-                        name="type"
-                        title="Type"
-                        options={TypeOptions}
-                        isFullWidth
-                    />
-                    <DropDownField
-                        mb="md"
-                        name="title"
-                        title="Title"
-                        options={TitleOptions}
-                        isFullWidth
-                    />
+      <FormSection onSubmit={handleSubmit(onSubmit)} mt="md" {...props}>
+        <H2 color="white" mb="md">
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          let's talk
+        </H2>
+        <FormWrapper>
+          <FormColumnLeft>
+            <DropDownField
+              mb="md2"
+              name="service"
+              title="Service"
+              options={ServiceOptions}
+              isFullWidth
+            />
+            <DropDownField
+              mb="md2"
+              name="type"
+              title="Type"
+              options={TypeOptions}
+              isFullWidth
+            />
+            <DropDownField
+              mb="md2"
+              name="title"
+              title="Title"
+              options={TitleOptions}
+              isFullWidth
+            />
 
-                    <InputField name="name" isFullWidth title="NAME*" mb="md"/>
-                    <InputField name="phone" normalizer={formatPhoneNumber} isFullWidth
-                                title="PLEASE CONTACT ME AT*"/>
-                </FormColumnLeft>
-                <FormColumnRight>
-                    <TextAreaField
-                        name="message"
-                        isFullWidth
-                        title="About your work"/>
-                    <ButtonRectangle>
-                        SEND
-                    </ButtonRectangle>
-                </FormColumnRight>
-            </FormWrapper>
-            <WorkModal isOpen={isModalOpen} setOpen={setModalOpen}/>
-        </FormSection>
+            <InputField
+              name="name"
+              isFullWidth
+              title="NAME*"
+              mb="md2"
+              propsInput={{ placeholder: "My name is" }}
+            />
+            <InputField
+              name="phone"
+              normalizer={formatPhoneNumber}
+              isFullWidth
+              title="PLEASE CONTACT ME AT*"
+              propsInput={{ placeholder: "My e-mail or number phone" }}
+            />
+          </FormColumnLeft>
+          <FormColumnRight>
+            <TextAreaField name="message" isFullWidth title="About your work" />
+            <ButtonRectangle>SEND</ButtonRectangle>
+          </FormColumnRight>
+        </FormWrapper>
+        <WorkModal isOpen={isModalOpen} setOpen={setModalOpen} />
+      </FormSection>
     );
 });

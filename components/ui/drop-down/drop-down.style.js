@@ -52,18 +52,48 @@ export const IconPlus = styled.svg`
   display: inline-block;
   width: 26px;
   height: 26px;
-  transition: stroke .3s;
-  ${({isOpen, isActive, isError}) => {
+  transition: stroke 0.3s;
+  ${({ isOpen, isActive, isError }) => {
     if (isOpen) {
-      return {stroke: colors.white}
+      return { stroke: colors.white };
     } else if (isActive) {
-      return {stroke: colors.yellow}
+      return { stroke: colors.yellow };
     } else if (isError) {
-      return {stroke: colors.red}
+      return { stroke: colors.red };
     } else {
-      return {stroke: colors.white}
+      return { stroke: colors.white };
     }
   }}
+
+  @media screen and (max-width: ${breakpointsWidth.desktopLG}) {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.desktopMD}) {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    width: 12px;
+    height: 12px;
+  }
 `;
 
 export const DropDownItem = styled.li`

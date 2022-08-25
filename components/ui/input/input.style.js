@@ -40,7 +40,7 @@ export const InputStyled = styled.input`
   padding-left: 50%;
   text-transform: uppercase;
   font-family: ${fontFamilies.mainFont};
-  padding-top: 5px;
+  padding-top: 4px;
   padding-bottom: 5px;
 
   &:hover {
@@ -49,11 +49,20 @@ export const InputStyled = styled.input`
     }
   }
 
+  &::placeholder {
+    font-family: ${fontFamilies.mainFont};
+    color: ${hexToRGBA(colors.white, 0.2)};
+    @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+      
+    }
+  }
+
   ${errorConditionColor}
   ${getCurrentFontSizeStyle("h3")};
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    height: 42px;
+    height: 40px;
+    padding-left: 0px;
   }
 `;
 
@@ -88,6 +97,10 @@ export const Title = styled.div`
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     transform: translateY(-70%);
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    display: none;
   }
 `;
 

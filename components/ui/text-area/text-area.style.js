@@ -47,12 +47,12 @@ export const TextAreaInput = styled("textarea")`
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     padding-top: 0px;
     margin-top: 0;
-    line-height: 68px;
+    line-height: 66px;
     background-image: ${({ isError }) =>
-      `linear-gradient(transparent, transparent calc(68px - 2px), ${
+      `linear-gradient(transparent, transparent calc(66px - 2px), ${
         isError ? colors.red : hexToRGBA(colors.white, 0.2)
       } 0px)`};
-    background-size: ${`100% 68px`};
+    background-size: ${`100% 66px`};
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
@@ -98,9 +98,9 @@ export const TextAreaWrapper = styled.div`
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     &:after {
-      line-height: 68px;
-      background-image: ${`linear-gradient(transparent, transparent calc(68px - 2px), ${colors.white} 0px)`};
-      background-size: ${`100% 68px`};
+      line-height: 66px;
+      background-image: ${`linear-gradient(transparent, transparent calc(66px - 2px), ${colors.white} 0px)`};
+      background-size: ${`100% 66px`};
     }
   }
 
@@ -136,7 +136,7 @@ export const Title = styled.h3`
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     ${getCurrentFontSizeStyle("h3")}
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
