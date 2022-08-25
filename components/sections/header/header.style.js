@@ -86,7 +86,6 @@ export const HeaderWrapper = styled.div`
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
-    border-color: red;
     grid-template-rows: repeat(2, ${sizes.desktopLG.half});
     height: ${sizes['desktopLG'].x1};
     ${HeaderItemTitle} {
