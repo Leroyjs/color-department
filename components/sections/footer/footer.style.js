@@ -30,10 +30,7 @@ export const FoxWrapper = styled.div`
     ${getCurrentPaddingStyle("vertical", 'md')};
 `
 
-//TODO:background-color - заглушка прозрачная, поэтому накинул черный цвет 
 export const FooterMapWrapper = styled.div`
-    background-color: black;
-    background-image: url('./footer-map.png');
     height: 100%;
 `
 
