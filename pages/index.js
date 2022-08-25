@@ -59,7 +59,6 @@ const Home = () => {
       <main ref={videoContant} style={{ backgroundColor: colors.black }}>
         <IntroMainTextBlock />
         <PartnersLine/>
-        <SliderPage />
         <AwardMainTextBlock mt="xlg" px="md" />
         <Awards options={awardsItems} title="Our Awards" pb="xlg"/>
       </main>

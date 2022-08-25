@@ -35,6 +35,13 @@ const runAnimation = (reverse, time = '0.5s', type = 'ease') => {
   `
 }
 
+export const HumburgerLine = styled.div`
+  width: 24px;
+  height: 2px;
+  position: relative;
+  background-color: ${colors.white};
+`
+
 /**TODO: эта крыса при запуске приложения сразу устанавливала для флага isActive = false
  * из-за чего сразу проигрывалась анимация закрытия крестика. Добавил флаг в замыкание, чтобы
  * можно было отследить состояние, когда крестик(бургер) никто не трогал 
@@ -48,6 +55,7 @@ export const HumburgerWrapper = (() => {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
   ${({ isActive }) => {
       if (skipDefaultFlag) {
         return isActive ? runAnimation() : runAnimation(true)
@@ -55,10 +63,3 @@ export const HumburgerWrapper = (() => {
     }}
   `
 })()
-
-export const HumburgerLine = styled.div`
-  width: 24px;
-  height: 2px;
-  position: relative;
-  background-color: ${colors.white};
-`

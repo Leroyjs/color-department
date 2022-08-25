@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors, zindex, hexToRGBA, sizes, getCurrentGridTemplateColumsStyle } from "styles";
+import { colors, zindex, hexToRGBA, sizes, getCurrentGridTemplateColumsStyle, breakpointsWidth } from "styles";
 
 export const MenuWrapper = styled.div`
     margin: 0 auto ;
@@ -11,13 +11,6 @@ export const MenuWrapper = styled.div`
     height : ${({ isOpen }) => isOpen ? `100vh` : "0"};
     background-color: ${colors.black};
     transition: height 0.7s;
-`
-export const MenuBody = styled.nav`
-    top: ${sizes['desktopLG'].half};
-    position: absolute;
-    display: grid;
-    ${getCurrentGridTemplateColumsStyle()}
-    height: calc(100vh - ${sizes['desktopLG'].x1});
 `
 export const MenuMap = styled.div`
     border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
@@ -34,10 +27,28 @@ export const MenuList = styled.ul`
     border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
     border-left: 1px solid ${hexToRGBA(colors.white, 0.2)};
 `
+export const MenuBody = styled.nav`
+    top: ${sizes['desktopLG'].half};
+    position: absolute;
+    display: grid;
+    height: calc(100vh - ${sizes['desktopLG'].x1});
+    @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+        top: ${sizes['desktopLG'].x1};
+        height: calc(100vh - 1.5 * ${sizes['desktopLG'].x1 });
+        ${MenuMap} {
+            grid-column: 3/5;
+        }
+        ${MenuList} {
+            grid-column: 1/3;
+        }
+    }
+    ${getCurrentGridTemplateColumsStyle()};
+`
+
 export const MenuFooter = styled.div`
     position: absolute;
     width:100%;
     bottom: 0;
-    opacity : ${({ isOpen }) => isOpen ?"1" : "0"};
+    opacity : ${({ isOpen }) => isOpen ? "1" : "0"};
     transition : opacity ease-in 0.2s;
 `
