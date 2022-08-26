@@ -1,6 +1,7 @@
+import { css } from '@emotion/css';
 import styled from '@emotion/styled';
 import { colors } from 'styles';
-import { getCurrentGridTemplateColumsStyle, getCurrentPaddingStyle, sizes } from 'styles';
+import { getCurrentGridTemplateColumsStyle, getCurrentPaddingStyle, sizes, breakpointsWidth } from 'styles';
 
 export const FooterWrapper = styled.div`
     background-color: ${colors.black};
@@ -30,6 +31,19 @@ export const FoxWrapper = styled.div`
     ${getCurrentPaddingStyle("vertical", 'md')};
 `
 
+export const FoxStyle = css`
+    @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+        width: 192px;
+        height: 192px;
+    }
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        width: 90px;
+        height: 90px;
+    }
+    
+`
+
+//TODO:background-color - заглушка прозрачная, поэтому накинул черный цвет 
 export const FooterMapWrapper = styled.div`
     height: 100%;
 `

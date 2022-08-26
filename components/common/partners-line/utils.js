@@ -8,7 +8,10 @@ export const initStepCounter = (setStepIndex, pathArray, setImageArray) => {
             additionPath.push(...pathArray)
         }
         setImageArray([...additionPath, ...additionPath])
+    } else {
+        setImageArray([...pathArray, ...pathArray])
     }
+
 
     const interval = setInterval(() => {
         setStepIndex((prevIndex) => {
