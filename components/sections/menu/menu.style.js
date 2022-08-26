@@ -1,3 +1,4 @@
+import { css } from "@emotion/css";
 import styled from "@emotion/styled";
 import { colors, zindex, hexToRGBA, sizes, getCurrentGridTemplateColumsStyle, breakpointsWidth } from "styles";
 
@@ -54,4 +55,17 @@ export const MenuFooter = styled.div`
     bottom: 0;
     opacity : ${({ isOpen }) => isOpen ? "1" : "0"};
     transition : opacity ease-in 0.2s;
+`
+
+export const HideForMobile = css`
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        display: none;
+    }
+`
+
+export const showForMobile = css`
+    display: none;
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        display: block;
+    }
 `

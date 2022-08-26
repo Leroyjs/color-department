@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { getCurrentPaddingStyle } from "styles";
+import { getCurrentPaddingStyle, breakpointsWidth} from "styles";
 
 export const FullSizeButtonWrapper = styled.div`
     position: absolute;
@@ -8,4 +8,10 @@ export const FullSizeButtonWrapper = styled.div`
     display: inline;
     ${getCurrentPaddingStyle("top","md1")}
     cursor: pointer;
+    @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+        svg {
+            width: 26px;
+            height: 26px;
+        }
+    }
 `

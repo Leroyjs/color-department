@@ -3,8 +3,7 @@ import { colors, getCurrentPaddingStyle, breakpointsWidth } from "styles";
 
 export const CompanyInfoWrapper = styled.div`
     position: absolute;
-    ${getCurrentPaddingStyle('horizontal', 'md')};
-    ${getCurrentPaddingStyle('bottom', 'md')};
+    ${getCurrentPaddingStyle('', 'md')};
     bottom: 0;
     width: 100%;
     display: flex;

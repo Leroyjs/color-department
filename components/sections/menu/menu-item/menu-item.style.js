@@ -19,11 +19,9 @@ export const MenuItemWrapper = styled.li`
             color: ${colors.black};
         }
     }
-    @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-        height: 80px;
-    }
-    @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-        height: 64px;
+
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        height:${sizes['tabletLG'].x1};
     }
 
 `

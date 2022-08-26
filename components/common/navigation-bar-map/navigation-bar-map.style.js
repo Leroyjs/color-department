@@ -1,8 +1,7 @@
 import { css } from '@emotion/css';
 import styled from '@emotion/styled';
-import { colors } from 'styles';
-import { getCurrentGridTemplateColumsStyle, getCurrentPaddingStyle, sizes, breakpointsWidth, hexToRGBA } from 'styles';
-import { Caption } from 'components';
+import { breakpointsWidth, colors, getCurrentGridTemplateColumsStyle, getCurrentPaddingStyle, hexToRGBA, sizes } from 'styles';
+
 export const FooterWrapper = styled.div`
     background-color: ${colors.black};
     display: grid;
@@ -10,25 +9,6 @@ export const FooterWrapper = styled.div`
     position: relative;
     ${getCurrentGridTemplateColumsStyle()}
 `
-
-export const FooterInfoWrapper = styled.div`
-    grid-column: 1/-1;
-    position: relative;
-    margin-bottom: ${sizes['desktopLG'].x1};
-    @media screen and (max-width: ${breakpointsWidth.phone}) {
-        margin-bottom: calc(${sizes['tabletLG'].x2});
-    }
-`
-
-export const FooterLogo = styled.div`
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    left:50%;
-    transform: translateX(-50%);
-    ${getCurrentPaddingStyle("bottom", 'md')};
-`;
 
 export const FoxWrapper = styled.div`
     ${getCurrentPaddingStyle("vertical", 'md')};
@@ -73,15 +53,14 @@ export const FooterModalWrapper = styled.div`
     ${({ isOpen }) => isOpen ? `height: calc(100vh - ${sizes['desktopLG'].half})` : ""};
     @media screen and (max-width: ${breakpointsWidth.phone}) {
         height: 25vw;
-        margin-bottom: 12.5vw;
-        ${({ isOpen }) => isOpen ? `height: calc(100vh - 37.5vw)` : ""};
+        margin-bottom: 25vw;
+        ${({ isOpen }) => isOpen ? `height: calc(100vh - 50vw)` : ""};
     }
 `
 
 export const FooterCompanyInfoMobile = styled.div`
     display: none;
     position: absolute;
-    z-index: 10000;
     width: 100vw;
     bottom: 0;
     @media screen and (max-width: ${breakpointsWidth.phone}) {
@@ -89,25 +68,4 @@ export const FooterCompanyInfoMobile = styled.div`
             background-color: ${colors.black};
         }
         display: inline-block;    }
-`
-
-export const HideForMobile = styled.div`
-    @media screen and (max-width: ${breakpointsWidth.phone}) {
-        display: none;
-    }
-`
-
-export const FoxTitleDA = styled(Caption)`
-    @media screen and (max-width: ${breakpointsWidth.phone}) {
-        display: none;
-    }
-`
-
-export const FoxTitleMobile = styled(Caption)`
-    text-align: center;
-    display: none;
-    @media screen and (max-width: ${breakpointsWidth.phone}) {
-        display: inline-block;
-    }
-    
 `
