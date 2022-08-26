@@ -1,5 +1,5 @@
 import { colors } from "styles";
-import { getCurrentGridTemplateColumsStyle } from "styles";
+import { getCurrentGridTemplateColumsStyle, size, breakpointsWidth } from "styles";
 import { hexToRGBA } from "styles";
 import styled from "@emotion/styled";
 
@@ -14,6 +14,9 @@ export const GridInner = styled.div`
   grid-template-rows: repeat(10, 12.5vw);
   align-content: end;
   height: 100%;
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}){
+    grid-template-rows: repeat(10, 25vw);    
+  }
 `;
 
 export const Cell = styled.div`

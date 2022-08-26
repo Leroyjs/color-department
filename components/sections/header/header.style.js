@@ -1,6 +1,6 @@
-import { zindex, getCurrentMarginStyle, fontSizes, sizes, colors, getCurrentBackgroundColorStyles, breakpointsWidth, getCurrentGridTemplateColumsStyle, hexToRGBA } from "styles";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { breakpointsWidth, colors, getCurrentBackgroundColorStyles, getCurrentGridTemplateColumsStyle, hexToRGBA, sizes, zindex } from "styles";
 
 //Задает прозрачность хедеру
 export const HeaderDynamicStyle = ({ transparency }) => css`
@@ -85,12 +85,13 @@ export const HeaderWrapper = styled.div`
     border-left: 1px solid ${hexToRGBA(colors.white, 0.2)};
   }
 
-  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
-    grid-template-rows: repeat(2, ${sizes.desktopLG.half});
-    height: ${sizes['desktopLG'].x1};
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    grid-template-rows: repeat(2, ${sizes.tabletLG.half});
+    height: ${sizes['tabletLG'].x1};
     ${HeaderItemTitle} {
       grid-row: 1/2;
       grid-column: 1/-1;
+      border-bottom: 1px solid ${hexToRGBA(colors.white, 0.2)};
     }
     ${HeaderItemHumburger} {
       grid-column: 1/2;

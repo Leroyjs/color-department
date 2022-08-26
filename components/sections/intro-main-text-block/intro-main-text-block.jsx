@@ -11,6 +11,7 @@ import {
   StyledRightBracket,
   StyledDesktopBR,
   StyledTabletBR,
+  StyledTabletSMBR,
   StyledCaptionPhoneBR,
   StyledCaptionBR,
   StyledPhoneSMBR,
@@ -23,6 +24,7 @@ export const IntroMainTextBlock = () => {
     <TextSectionWrapper>
       <FirstLineWrapper>
         <StyledWhiteH2>We are Color Department&nbsp;</StyledWhiteH2>
+        <StyledTabletSMBR />
         <H2>a color&nbsp;</H2>
         <StyledTabletBR />
         <H2> grading studio&nbsp;</H2>
@@ -32,16 +34,19 @@ export const IntroMainTextBlock = () => {
           <StyledPlanet />
         </StyledWhiteH2>
         <StyledTabletBR />
+        <StyledTabletSMBR />
         <StyledPhoneSMBR />
         <H2>&nbsp;We hunt for&nbsp;</H2>
         <H2>the best Solutions.&nbsp;</H2>
         <StyledDesktopLGBR />
+        <StyledTabletSMBR />
         <StyledPhoneSMBR />
         <H2>We always&nbsp;</H2>
         <StyledTabletBR />
         <H2> find the right</H2>&nbsp;
         <StyledDesktopBR />
         <H2>path to&nbsp;</H2>
+        <StyledTabletSMBR />
         <StyledPhoneSMBR />
         <H2>cinematic&nbsp;</H2>
         <StyledDesktopLGBR />
