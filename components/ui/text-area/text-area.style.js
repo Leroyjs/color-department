@@ -8,6 +8,7 @@ import {
     getCurrentPaddingStyle,
     getCurrentMarginStyle,
     hexToRGBA,
+    applyMargins,
 } from "styles";
 
 const lineHeight = 90
@@ -24,7 +25,6 @@ export const TextAreaInput = styled("textarea")`
   text-transform: uppercase;
   resize: none;
   ${getCurrentFontSizeStyle("h3")};
-  ${getCurrentMarginStyle("bottom", "md")};
   font-family: ${fontFamilies.mainFont};
   color: ${({ isError, theme }) =>
     isError ? colors.red : getCurrentColor("primary", theme)};
@@ -34,6 +34,7 @@ export const TextAreaInput = styled("textarea")`
       isError ? colors.red : hexToRGBA(colors.white, 0.2)
     } 0px)`};
   background-size: ${`100% ${lineHeight}px`};
+  ${applyMargins}
 
   &::placeholder {
     color: ${hexToRGBA(colors.white, 0)};
@@ -45,8 +46,8 @@ export const TextAreaInput = styled("textarea")`
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    padding-top: 0px;
-    margin-top: 0;
+    padding-top: 18px;
+    margin-bottom: -18px;
     line-height: 66px;
     background-image: ${({ isError }) =>
       `linear-gradient(transparent, transparent calc(66px - 2px), ${
@@ -56,8 +57,8 @@ export const TextAreaInput = styled("textarea")`
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
-    padding-top: 8px;
-    margin-top: 0;
+    padding-top: 18px;
+    margin-bottom: -18px;
     line-height: 48px;
     background-image: ${({ isError }) =>
       `linear-gradient(transparent, transparent calc(56px - 2px), ${
@@ -67,8 +68,8 @@ export const TextAreaInput = styled("textarea")`
   }
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
-    padding-top: 0.5vw;
-    margin-top: 0;
+    padding-top: 18px;
+    margin-bottom: -18px;
     line-height: 5.625vw;
     background-image: ${({ isError }) =>
       `linear-gradient(transparent, transparent calc(5.625vw - 2px), ${
@@ -78,11 +79,11 @@ export const TextAreaInput = styled("textarea")`
   }
 
   @media screen and (min-width: ${breakpointsWidth.desktopXLG}) {
-    padding-top: 0.5vw;
-    margin-top: 0;
+    padding-top: 2vw;
+    margin-bottom: -2vw;
     line-height: 5.57vw;
     background-image: ${({ isError }) =>
-      `linear-gradient(transparent, transparent calc(5.57vw - 3px), ${
+      `linear-gradient(transparent, transparent calc(5.57vw - 2px), ${
         isError ? colors.red : hexToRGBA(colors.white, 0.2)
       } 0px)`};
     background-size: ${`100% 5.57vw;`};
@@ -147,7 +148,7 @@ export const TextAreaWrapper = styled.div`
   @media screen and (min-width: ${breakpointsWidth.desktopXLG}) {
     &:after {
       line-height: 5.57vw;
-      background-image: ${`linear-gradient(transparent, transparent calc(5.57vw - 3px), ${colors.white} 0px)`};
+      background-image: ${`linear-gradient(transparent, transparent calc(5.57vw - 2px), ${colors.white} 0px)`};
       background-size: ${`100% 5.57vw`};
     }
   }

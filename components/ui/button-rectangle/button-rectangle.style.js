@@ -46,10 +46,12 @@ export const Button = styled.button`
   ${({ isDisabled }) => (isDisabled ? "" : isActiveStyles)};
   ${applyMargins}
   ${applyPaddings}
+
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     height: 48px;
   }
-  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    height: 48px;
+  
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    height: 3.75vw;
   }
 `;
