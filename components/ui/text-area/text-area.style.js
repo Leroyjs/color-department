@@ -65,7 +65,31 @@ export const TextAreaInput = styled("textarea")`
       } 0px)`};
     background-size: ${`100% 56px`};
   }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    padding-top: 0.5vw;
+    margin-top: 0;
+    line-height: 5.625vw;
+    background-image: ${({ isError }) =>
+      `linear-gradient(transparent, transparent calc(5.625vw - 2px), ${
+        isError ? colors.red : hexToRGBA(colors.white, 0.2)
+      } 0px)`};
+    background-size: ${`100% 5.625vw;`};
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopXLG}) {
+    padding-top: 0.5vw;
+    margin-top: 0;
+    line-height: 5.57vw;
+    background-image: ${({ isError }) =>
+      `linear-gradient(transparent, transparent calc(5.57vw - 3px), ${
+        isError ? colors.red : hexToRGBA(colors.white, 0.2)
+      } 0px)`};
+    background-size: ${`100% 5.57vw;`};
+  }
 `;
+
+
 
 export const TextAreaWrapper = styled.div`
   width: 100%;
@@ -112,6 +136,21 @@ export const TextAreaWrapper = styled.div`
       background-size: ${`100% 56px`};
     }
   }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    &:after {
+      line-height: 5.625vw;
+      background-image: ${`linear-gradient(transparent, transparent calc(5.625vw - 2px), ${colors.white} 0px)`};
+      background-size: ${`100% 5.625vw`};
+    }
+  }
+  @media screen and (min-width: ${breakpointsWidth.desktopXLG}) {
+    &:after {
+      line-height: 5.57vw;
+      background-image: ${`linear-gradient(transparent, transparent calc(5.57vw - 3px), ${colors.white} 0px)`};
+      background-size: ${`100% 5.57vw`};
+    }
+  }
 `;
 
 export const Error = styled.div`
@@ -141,5 +180,10 @@ export const Title = styled.h3`
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     display: none;
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    margin-bottom: calc(0.5vw + 2px);
+    ${getCurrentFontSizeStyle("h3")}
   }
 `;

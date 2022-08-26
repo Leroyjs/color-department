@@ -53,7 +53,6 @@ export const InputStyled = styled.input`
     font-family: ${fontFamilies.mainFont};
     color: ${hexToRGBA(colors.white, 0.2)};
     @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-      
     }
   }
 
@@ -63,6 +62,12 @@ export const InputStyled = styled.input`
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     height: 40px;
     padding-left: 0px;
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    height: 3vw;
+    padding-top: 0.25vw;
+    padding-bottom: 0.3125vw;
   }
 `;
 

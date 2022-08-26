@@ -94,6 +94,11 @@ export const IconPlus = styled.svg`
     width: 12px;
     height: 12px;
   }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    height: 1.625vw;
+    width: 1.625vw;
+  }
 `;
 
 export const DropDownItem = styled.li`
@@ -104,10 +109,15 @@ export const DropDownItem = styled.li`
   font-family: ${fontFamilies.mainFont};
   height: 50px;
   padding: 6px 6px 8px;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
 
   &:hover {
     background-color: ${colors.yellow};
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    height: 3.125vw;
+    padding: 0.375vw 0.375vw 0.5vw;
   }
 `;
 
