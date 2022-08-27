@@ -20,6 +20,7 @@ export const FooterNavBar = styled.div`
     & *:nth-of-type(4){grid-column: 7/9;}
 
     @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+        height: ${sizes['tabletLG'].thirdX1};
         & *:nth-of-type(1){grid-column: 1/2;}
         & *:nth-of-type(2){grid-column: 2/3;}
         & *:nth-of-type(3){grid-column: 3/4;}
@@ -28,7 +29,6 @@ export const FooterNavBar = styled.div`
     @media screen and (max-width: ${breakpointsWidth.phone}) {
         height: ${sizes['tabletLG'].half};
     }
-
 `
 
 export const FooterNavBarItem = styled.div`

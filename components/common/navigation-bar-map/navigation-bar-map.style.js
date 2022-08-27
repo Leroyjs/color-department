@@ -51,6 +51,11 @@ export const FooterModalWrapper = styled.div`
     bottom: 0;
     border-bottom: 1px solid ${hexToRGBA(colors.white, 0.2)};
     ${({ isOpen }) => isOpen ? `height: calc(100vh - ${sizes['desktopLG'].half})` : ""};
+    @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+        height: ${sizes['tabletLG'].thirdX2};
+        ${({ isOpen }) => isOpen ? `height: calc(100vh - ${sizes['tabletLG'].thirdX2})` : ""};
+
+    }
     @media screen and (max-width: ${breakpointsWidth.phone}) {
         height: 25vw;
         margin-bottom: 84px;

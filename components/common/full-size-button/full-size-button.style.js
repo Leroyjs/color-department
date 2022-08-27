@@ -15,6 +15,10 @@ export const FullSizeButtonWrapper = styled.div`
             height: 26px;
         }
     }
+    @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+        height: ${sizes['tabletLG'].thirdX1};
+
+    }
     @media screen and (max-width: ${breakpointsWidth.phone}) {
         height: ${sizes['tabletLG'].half};
     }
