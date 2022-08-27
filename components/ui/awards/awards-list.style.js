@@ -1,20 +1,18 @@
-import {
-  applyMargins,
-  applyPaddings,
-  colors,
-  fontFamilies,
-  getCurrentBackgroundColorStyles,
-  getCurrentColorStyles,
-  getCurrentFontSizeStyle,
-  hexToRGBA,
-  breakpointsWidth,
-  getCurrentMarginStyle,
-  getCurrentPaddingStyle,
-} from "styles";
-
-// import { H2 } from "../h2";
 import styled from "@emotion/styled";
 import { H2, Caption } from "components";
+import {
+    applyMargins,
+    applyPaddings,
+    colors,
+    fontFamilies,
+    getCurrentBackgroundColorStyles,
+    getCurrentColorStyles,
+    getCurrentFontSizeStyle,
+    hexToRGBA,
+    breakpointsWidth,
+    getCurrentMarginStyle,
+    getCurrentPaddingStyle, getCurrentColor,
+} from "styles";
 
 export const AwardsContainer = styled.div`
   display: block;
@@ -108,7 +106,7 @@ export const PopOver = styled.div`
     height: 400px;
   }
 
-  ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)}
+  ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)};
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     display: none;
@@ -117,6 +115,8 @@ export const PopOver = styled.div`
 
 export const AboutPhoneImg = styled.img`
   display: none;
+  object-fit: cover;
+  object-position: center top;
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     ${({ isAboutImg }) => (isAboutImg ? "display: block;" : "")};
@@ -163,7 +163,7 @@ export const Item = styled.li`
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
   &:hover {
     ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)}
-    border-top-color: ${colors.yellow};
+    border-top-color: ${({ theme }) => getCurrentColor("primary", theme)};
 
     span:first-of-type {
       ${({ theme }) => getCurrentColorStyles("black", theme)}

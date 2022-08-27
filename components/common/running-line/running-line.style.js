@@ -53,7 +53,7 @@ const SeparatorDinamicStyle = ({ outline }) => {
 export const RunningLineSeparator = styled.div`
     border: 1px solid;
     border-radius: 50%;
-    border-color:${({ theme }) => getCurrentColor("primary", theme)};
+    border-color: ${({ theme }) => getCurrentColor("primary", theme)};
     height: ${sizes['desktopLG'].half};
     min-width: 240px;
     display:flex;

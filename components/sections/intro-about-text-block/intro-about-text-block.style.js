@@ -63,14 +63,14 @@ export const RoundedNumber = styled.div`
     height: 48px;
   }
 
-  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
-    width: 30px;
-    height: 30px;
-  }
-
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     width: 24px;
     height: 24px;
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    width: 3.625vw;
+    height: 3.625vw;
   }
 `;
 
@@ -114,14 +114,14 @@ export const StyledPlanet = styled(Planet)`
     height: 48px;
   }
 
-  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
-    width: 30px;
-    height: 30px;
-  }
-
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     width: 24px;
     height: 24px;
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    width: 3.75vw;
+    height: 3.75vw;
   }
 `;
 
@@ -149,6 +149,54 @@ export const StyledTabletBR = styled.br`
   display: none;
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    display: block;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    display: none;
+  }
+`;
+
+export const StyledTabletSMBR = styled.br`
+  display: none;
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    display: block;
+  }
+
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
+`;
+
+export const StyledTabletXSMBR = styled.br`
+  display: none;
+
+  @media screen and (max-width: 700px) {
+    display: block;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    display: none;
+  }
+`;
+
+export const StyledPhoneLGBR = styled.br`
+  display: none;
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    display: block;
+  }
+
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;
+
+export const StyledPhoneSMBR = styled.br`
+  display: none;
+
+  @media screen and (max-width: 500px) {
     display: block;
   }
 `;

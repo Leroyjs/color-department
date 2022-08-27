@@ -12,17 +12,46 @@ import {
     UnderlineInner
 } from "./drop-down.style";
 
-export const DropDown = ({title, error, value, options, onChange, propsInput, isFullWidth = false, ...props}) => {
+export const DropDown = ({
+                             title,
+                             error,
+                             value,
+                             options,
+                             onChange,
+                             isMultiply = false,
+                             propsInput,
+                             isFullWidth = false,
+                             ...props
+                         }) => {
     const [isOpen, setOpen] = useState(false);
-    const isActive = Boolean(value);
+    const [selected, setSelected] = useState([]);
+    const isActive = Boolean(selected.length);
 
     function handleOpen() {
         setOpen(prevState => !prevState)
     }
 
+
     function handleOption(option) {
+        if (isMultiply) {
+            setSelected(prevOptions => {
+                const isInclude = prevOptions.some(({value}) => value === option.value);
+                if (isInclude) {
+                    const newOptions = prevOptions.filter(({value}) => value !== option.value);
+                    onChange?.(newOptions)
+                    return newOptions;
+                } else {
+                    const newOptions = [...prevOptions, option];
+                    onChange?.(newOptions)
+                    return newOptions;
+                }
+            })
+        } else {
+            setSelected([option]);
+            onChange?.(option)
+        }
+
         setOpen(false);
-        onChange?.(option)
     }
 
     return (
@@ -30,7 +59,10 @@ export const DropDown = ({title, error, value, options, onChange, propsInput, is
             <InputStyled isActive={isActive} isOpen={isOpen} onChange={onChange} onClick={handleOpen}
                          isError={error} type="text" {...propsInput}>
                 <CurrentLabel>
-                    {value?.label || title}
+                    {isMultiply ?
+                        Boolean(selected.length) ?
+                            selected.map(({label}) => label).join(', ') : title
+                        : value?.label || title}
                 </CurrentLabel>
                 <IconPlus isError={error} isActive={isActive} isOpen={isOpen} viewBox="0 0 26 26" fill="none">
                     <path d="M0 13H26M13 26L13 0" strokeWidth="2"/>
@@ -41,7 +73,8 @@ export const DropDown = ({title, error, value, options, onChange, propsInput, is
             </Underline>
             <DropDownList isOpen={isOpen}>
                 {options.map((option) => (
-                    <DropDownItem key={option.value} onClick={() => handleOption(option)}>
+                    <DropDownItem key={option.value} isActive={selected.some(({value}) => value === option.value)}
+                                  onClick={() => handleOption(option)}>
                         {option.label}
                     </DropDownItem>
                 ))}
@@ -59,6 +92,7 @@ const shapeOption = PropTypes.shape({
 DropDown.propTypes = {
     title: PropTypes.string.isRequired,
     isFullWidth: PropTypes.bool,
+    isMultiply: PropTypes.bool,
     value: PropTypes.oneOfType([
         shapeOption,
         PropTypes.oneOf([null])

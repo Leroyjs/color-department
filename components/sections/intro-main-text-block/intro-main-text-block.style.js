@@ -99,8 +99,20 @@ export const StyledTabletBR = styled.br`
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     display: block;
   }
-  
-  @media screen and (max-width: 365px) {
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    display: none;
+  }
+`;
+
+export const StyledTabletSMBR = styled.br`
+  display: none;
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    display: block;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
     display: none;
   }
 `;
@@ -153,14 +165,14 @@ export const StyledLeftBracket = styled(LeftBracket)`
     height: 48px;
   }
 
-  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
-    width: 6px;
-    height: 30px;
-  }
-
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     width: 4px;
     height: 24px;
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    width: 0.625vw;
+    height: 3.875vw;
   }
 `;
 
@@ -183,14 +195,14 @@ export const StyledRightBracket = styled(RightBracket)`
     height: 48px;
   }
 
-  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
-    width: 6px;
-    height: 28px;
-  }
-
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     width: 4px;
     height: 24px;
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopXLG}) {
+    width: 0.625vw;
+    height: 3.875vw;
   }
 `;
 
@@ -213,13 +225,13 @@ export const StyledPlanet = styled(Planet)`
     height: 48px;
   }
 
-  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
-    width: 30px;
-    height: 30px;
-  }
-
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     width: 24px;
     height: 24px;
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    width: 3.75vw;
+    height: 3.75vw;
   }
 `;
