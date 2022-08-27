@@ -15,10 +15,6 @@ import { H3 } from "../../ui/h3";
 export const Title = styled(Caption)`
   ${({ theme }) => getCurrentColorStyles("white", theme)};
   transition: color 0.3s;
-
-  /* @media (max-width: 600px) {
-    ${getCurrentFontSizeStyle("h3")};
-  } */
 `;
 
 export const Cost = styled(H3)`
@@ -116,12 +112,12 @@ export const TextContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
 
   @media (max-width: ${breakpointsWidth.phone}) {
     text-align: center;
+    justify-content: center;
   }
-
 `;
 
 export const ProductImage = styled.div`

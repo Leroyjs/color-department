@@ -12,7 +12,7 @@ import { Text } from "../../ui/text";
 export const ShopModalInner = styled.div`
   width: 100%;
   display: flex;
-  height: 100vh;
+  height: 100%;
 
   @media (max-width: ${breakpointsWidth.tabletLG}) {
     flex-direction: column;
@@ -25,7 +25,7 @@ export const ProductImage = styled.div`
 
   @media (max-width: ${breakpointsWidth.tabletLG}) {
     width: 100%;
-    /* height: 100%; */
+    height: 100%;
   }
 `;
 
@@ -78,14 +78,14 @@ export const ProductDiscription = styled(Text)`
 
 export const ProductDiscriptionWrapper = css`
   width: 100%;
-  ${getCurrentPaddingStyle("right", "lg")};
+  ${getCurrentPaddingStyle("right", "md")};
   @media (max-width: ${breakpointsWidth.phone}) {
     ${getCurrentPaddingStyle("right", "none")}
   }
 `;
 
 export const FormWrapper = styled.form`
-  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
+  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
 
   @media (max-width: ${breakpointsWidth.tabletLG}) {
     width: 100%;
