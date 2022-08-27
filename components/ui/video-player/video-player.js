@@ -10,7 +10,7 @@ export const VideoPlayer = () => {
         const player = new Player('myVideo', {
             id: 385587409,
             byline: false,
-            controls: false,
+            controls: true,
             dnt: true,
             keyboard: true,
             responsive: true,
