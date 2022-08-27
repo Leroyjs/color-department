@@ -3,7 +3,7 @@ import {
     getCurrentMarginStyle,
     getCurrentPaddingStyle,
     getCurrentBackgroundColorStyles,
-    getCurrentColor, applyMargins, applyPaddings,
+    getCurrentColor, applyMargins, applyPaddings, breakpointsWidth,
 } from "styles";
 
 export const FormSection = styled.form`
@@ -15,14 +15,18 @@ export const FormSection = styled.form`
   height: 100%;
   ${({theme}) => getCurrentBackgroundColorStyles("black", theme)};
   ${applyMargins};
-  ${applyPaddings}
+  ${applyPaddings};
 `;
 
 export const FormWrapper = styled.div`
   display: flex;
   width: 100%;
-  ${({theme}) => getCurrentBackgroundColorStyles("black", theme)};
+  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
   ${getCurrentPaddingStyle("horizontal", "md")};
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    flex-direction: column;
+  }
 `;
 
 export const FormColumnLeft = styled.div`
@@ -42,5 +46,9 @@ export const FormColumnRight = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  ${({theme}) => getCurrentBackgroundColorStyles("black", theme)};
+  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    justify-content: flex-start;
+  }
 `;

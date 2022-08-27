@@ -1,10 +1,11 @@
 import {
-    applyMargins, applyPaddings, breakpointsWidth,
-    colors,
-    fontFamilies, fontSizes, getCurrentColor,
-    getCurrentFontSizeStyle,
-    getCurrentPaddingStyle,
-    hexToRGBA,
+  applyMargins, applyPaddings,
+  colors,
+  fontFamilies, fontSizes, getCurrentColor,
+  getCurrentFontSizeStyle,
+  getCurrentPaddingStyle,
+  hexToRGBA,
+  breakpointsWidth,
 } from "styles";
 
 import styled from "@emotion/styled";
@@ -116,15 +117,50 @@ export const IconPlus = styled.svg`
   transition: stroke .3s;
   ${({isOpen, isActive, isError, theme}) => {
     if (isOpen) {
-      return {stroke: colors.white}
+      return { stroke: colors.white };
     } else if (isActive) {
       return {stroke: getCurrentColor("primary", theme)}
     } else if (isError) {
-      return {stroke: colors.red}
+      return { stroke: colors.red };
     } else {
-      return {stroke: colors.white}
+      return { stroke: colors.white };
     }
   }}
+
+  @media screen and (max-width: ${breakpointsWidth.desktopLG}) {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.desktopMD}) {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    width: 12px;
+    height: 12px;
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    height: 1.625vw;
+    width: 1.625vw;
+  }
 `;
 
 export const DropDownItem = styled.li`
@@ -135,13 +171,19 @@ export const DropDownItem = styled.li`
   font-family: ${fontFamilies.mainFont};
   height: 50px;
   padding: 6px 6px 8px;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
 
   &:hover {
     background-color: ${({theme}) => getCurrentColor("primary", theme)};
   }
 
-  ${({isActive, theme}) => isActive && `background-color: ${getCurrentColor("primary", theme)};`}
+  ${({ isActive, theme }) =>
+    isActive && `background-color: ${getCurrentColor("primary", theme)};`}
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    height: 3.125vw;
+    padding: 0.375vw 0.375vw 0.5vw;
+  }
 `;
 
 export const CurrentLabel = styled.span`
@@ -182,6 +224,10 @@ export const InputStyled = styled.div`
   }
 
   ${getCurrentFontSizeStyle("h3")};
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    align-items: flex-end;
+  }
 `;
 
 export const Error = styled.div`
