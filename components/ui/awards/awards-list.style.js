@@ -106,7 +106,7 @@ export const PopOver = styled.div`
     height: 400px;
   }
 
-  ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)}
+  ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)};
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     display: none;
@@ -115,6 +115,8 @@ export const PopOver = styled.div`
 
 export const AboutPhoneImg = styled.img`
   display: none;
+  object-fit: cover;
+  object-position: center top;
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     ${({ isAboutImg }) => (isAboutImg ? "display: block;" : "")};
