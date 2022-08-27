@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
-import { colors } from "styles";
+import { colors, getCurrentPaddingStyle, breakpointsWidth } from "styles";
 
 export const CompanyInfoWrapper = styled.div`
     position: absolute;
-    padding: 0 40px 40px;
+    ${getCurrentPaddingStyle('', 'md')};
     bottom: 0;
     width: 100%;
     display: flex;
@@ -15,7 +15,11 @@ export const CompanyInfoWrapper = styled.div`
     }
 `
 
-export const ContactInfo = styled.div``
+export const ContactInfo = styled.div`
+ @media screen and (max-width: ${breakpointsWidth.phone}) {
+        display: none;
+    }
+`
 
 export const AdditionInfo = styled.div`
     text-align: right;
@@ -26,4 +30,13 @@ export const MadeBy = styled.div`
     & span {
         color: ${colors.grey}
     }
+`
+
+
+export const YearInfoMobile = styled.div`
+    display: none;
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        display: inline-block;
+    }
+    
 `

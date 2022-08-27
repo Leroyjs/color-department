@@ -7,6 +7,6 @@ import fox22 from "./fox/fox-2-2.svg";
 import fox23 from "./fox/fox-2-3.svg";
 import fox24 from "./fox/fox-2-4.svg";
 import fox33 from "./fox/fox-3-3.svg";
-import mapMarker from "./map-marker.svg";
 
-export { fox11, fox12, fox13, fox14, fox21, fox22, fox23, fox24, fox33, mapMarker };
+
+export { fox11, fox12, fox13, fox14, fox21, fox22, fox23, fox24, fox33 };

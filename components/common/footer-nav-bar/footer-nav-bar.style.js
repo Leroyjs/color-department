@@ -1,7 +1,6 @@
-import styled from "@emotion/styled"
-import { Caption } from "../../ui/caption";
-import { colors, getCurrentBackgroundColorStyles, getCurrentColorStyles, getCurrentGridTemplateColumsStyle, hexToRGBA, breakpointsWidth, sizes } from "styles"
 import { css } from "@emotion/css";
+import styled from "@emotion/styled";
+import { breakpointsWidth, colors, getCurrentBackgroundColorStyles, getCurrentGridTemplateColumsStyle, hexToRGBA, sizes } from "styles";
 export const FooterNavBar = styled.div`
     display: grid;
     ${getCurrentGridTemplateColumsStyle()}
@@ -19,6 +18,17 @@ export const FooterNavBar = styled.div`
     & *:nth-of-type(2){grid-column: 3/5;}
     & *:nth-of-type(3){grid-column: 5/7;}
     & *:nth-of-type(4){grid-column: 7/9;}
+
+    @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+        & *:nth-of-type(1){grid-column: 1/2;}
+        & *:nth-of-type(2){grid-column: 2/3;}
+        & *:nth-of-type(3){grid-column: 3/4;}
+        & *:nth-of-type(4){grid-column: 4/5;}
+    }
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        height: ${sizes['tabletLG'].half};
+    }
+
 `
 
 export const FooterNavBarItem = styled.div`

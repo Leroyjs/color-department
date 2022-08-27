@@ -2,7 +2,7 @@ import { css } from '@emotion/css';
 import styled from '@emotion/styled';
 import { colors } from 'styles';
 import { getCurrentGridTemplateColumsStyle, getCurrentPaddingStyle, sizes, breakpointsWidth } from 'styles';
-
+import { Caption } from 'components';
 export const FooterWrapper = styled.div`
     background-color: ${colors.black};
     display: grid;
@@ -15,6 +15,9 @@ export const FooterInfoWrapper = styled.div`
     grid-column: 1/-1;
     position: relative;
     margin-bottom: ${sizes['desktopLG'].x1};
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        margin-bottom: calc(${sizes['tabletLG'].x2});
+    }
 `
 
 export const FooterLogo = styled.div`
@@ -43,24 +46,23 @@ export const FoxStyle = css`
     
 `
 
-//TODO:background-color - заглушка прозрачная, поэтому накинул черный цвет 
-export const FooterMapWrapper = styled.div`
-    height: 100%;
+export const HideForMobile = styled.div`
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        display: none;
+    }
 `
 
-export const DynamicHeightForMap = styled.div`
-    height: ${sizes['desktopLG'].half};
-    ${({ isOpen }) => isOpen ? `height: calc(100vh - ${sizes['desktopLG'].x1})` : ""};
-    transition: height 0.7s;
+export const FoxTitleDA = styled(Caption)`
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        display: none;
+    }
 `
 
-export const FooterModalWrapper = styled.div`
-    height: ${sizes['desktopLG'].x1};
-    position: absolute;
-    grid-column: 1/-1;
-    bottom: 0;
-    transition: height 0.7s;
-    overflow: hidden;
-    max-width: 100vw;
-    ${({ isOpen }) => isOpen ? `height: calc(100vh - ${sizes['desktopLG'].half})` : ""};
+export const FoxTitleMobile = styled(Caption)`
+    text-align: center;
+    display: none;
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        display: inline-block;
+    }
+    
 `

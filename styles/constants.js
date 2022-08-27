@@ -250,8 +250,9 @@ export const fontSizes = {
 };
 
 export const zindex = {
-  modal: 100,
   header: 1000,
+  modal: 900,
+  footer: 500,
   frontItem: 10,
   backItem: -1,
 };

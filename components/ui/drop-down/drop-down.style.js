@@ -30,6 +30,31 @@ export const Underline = styled.div`
   background-color: ${hexToRGBA(colors.white, 0.2)};
 `;
 
+export const DropDownOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1;
+  transition: background-color 0.3s;
+
+  ${({isOpen}) => (isOpen && {
+    visibility: "visible",
+    pointerEvents: "auto"
+  })};
+
+  @media (max-width: ${breakpointsWidth.tabletSM}) {
+    ${({isOpen}) => (isOpen && {
+      backgroundColor: hexToRGBA(colors.black, 0.6)
+    })};
+  }
+`;
+
 export const DropDownList = styled.ul`
   position: absolute;
   left: 0;
@@ -37,13 +62,14 @@ export const DropDownList = styled.ul`
   width: 100%;
   background-color: ${colors.white};
   visibility: hidden;
-  transform: scaleY(0);
+  max-height: 0;
   transform-origin: top;
-  transition: transform .3s;
+  transition: max-height 0.35s, visibility 0.35s;
+  overflow: hidden;
   z-index: 5;
   ${({isOpen}) => (isOpen && {
     visibility: "visible",
-    transform: "scaleY(1)",
+    maxHeight: "var(--height-drop-down, 40vh)",
   })};
 
   @media (max-width: ${breakpointsWidth.tabletSM}) {
@@ -53,6 +79,7 @@ export const DropDownList = styled.ul`
     bottom: 0;
     top: auto;
     text-align: center;
+    overflow: visible;
 
     &:after {
       content: 'select the desired item';
@@ -67,10 +94,16 @@ export const DropDownList = styled.ul`
       bottom: calc(100% + 24px);
       left: 50%;
       transform: translateX(-50%);
+      transition: opacity 0.4s;
+      opacity: 0;
+
+      ${({isOpen}) => (isOpen && {
+        opacity: 1
+      })};
     }
   }
 
-  @media (max-width: ${breakpointsWidth.phone}){
+  @media (max-width: ${breakpointsWidth.phone}) {
     &:after {
       bottom: calc(100% + 12px);
     }
@@ -141,7 +174,7 @@ export const DropDownItem = styled.li`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: ${({ theme }) => getCurrentColor("primary", theme)};
+    background-color: ${({theme}) => getCurrentColor("primary", theme)};
   }
 
   ${({ isActive, theme }) =>
@@ -169,7 +202,7 @@ export const InputStyled = styled.div`
   font-family: ${fontFamilies.mainFont};
   text-align: left;
   transition: color 0.3s;
-  
+
   ${({isOpen, isActive, isError, theme}) => {
     if (isOpen) {
       return {color: colors.white};

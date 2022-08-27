@@ -19,8 +19,8 @@ import {
   Planet,
   LeftBracket,
   Grid,
-  PartnersLine
-
+  PartnersLine,
+  NavigationBarMap
 } from "./common";
 /*    Импорты UI-ых компонентов    */
 import { ButtonEllipse } from "./ui/button-ellipse";
@@ -130,4 +130,5 @@ export {
   DetailTitle,
   Stakeholders,
   VideoPlayer,
+  NavigationBarMap,
 };

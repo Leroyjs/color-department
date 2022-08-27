@@ -1,6 +1,6 @@
-import { CompanyInfo, FooterNavigation, MapWrapper } from "components";
+import { NavigationBarMap, CompanyInfo, FooterNavigation, MapWrapper } from "components";
 import { MenuItem } from './menu-item/menu-item';
-import { MenuBody, MenuFooter, MenuList, MenuMap, MenuWrapper } from "./menu.style";
+import { MenuBody, MenuFooter, MenuList, MenuMap, MenuWrapper, HideForMobile, showForMobile } from "./menu.style";
 
 const menuItems = [
     { title: 'projects', link: '/projects' },
@@ -34,10 +34,17 @@ export const Menu = ({ isOpen, props }) => {
                         source={"https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"}
                     />
                 </MenuMap>
-                <CompanyInfo />
+                <HideForMobile>
+                    <CompanyInfo />
+                </HideForMobile>
             </MenuBody>
             <MenuFooter isOpen={isOpen}>
-                <FooterNavigation></FooterNavigation>
+                <HideForMobile>
+                    <FooterNavigation></FooterNavigation>
+                </HideForMobile>
+                <showForMobile>
+                    <NavigationBarMap isParentOpen={isOpen} />
+                </showForMobile>
             </MenuFooter>
         </MenuWrapper>
     );
