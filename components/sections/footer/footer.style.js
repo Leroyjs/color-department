@@ -3,12 +3,16 @@ import styled from '@emotion/styled';
 import { colors } from 'styles';
 import { getCurrentGridTemplateColumsStyle, getCurrentPaddingStyle, sizes, breakpointsWidth } from 'styles';
 import { Caption } from 'components';
+import { applyPaddings } from 'styles';
+import { applyMargins } from 'styles';
 export const FooterWrapper = styled.div`
     background-color: ${colors.black};
     display: grid;
     flex-direction: column;
     position: relative;
-    ${getCurrentGridTemplateColumsStyle()}
+    ${getCurrentGridTemplateColumsStyle()};
+    ${applyPaddings};
+    ${applyMargins};
 `
 
 export const FooterInfoWrapper = styled.div`
@@ -19,7 +23,7 @@ export const FooterInfoWrapper = styled.div`
         margin-bottom: ${sizes['tabletLG'].thirdX2};
     }
     @media screen and (max-width: ${breakpointsWidth.phone}) {
-        margin-bottom: calc(${sizes['tabletLG'].x2});
+        margin-bottom: calc(${sizes['tabletLG'].x1} + 86px);
     }
 `
 

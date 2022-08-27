@@ -5,6 +5,8 @@ import {
     IntroAboutTextBlock,
     RunningLine,
     Slider,
+    Header,
+    Footer
 } from "components";
 
 const DEMO_VIDEO =
@@ -175,34 +177,37 @@ const About = () => {
 
     return (
         <>
-            {/* TODO: ЗДЕСЬ ДОЛЖЕН БЫТЬ БЛОК С СЕТКОЙ И ИЗОБРАЖЕНИЯМИ (Андрей) */}
-            <IntroAboutTextBlock mt="xlg"/>
-            <Awards
-                isAboutImg={isAboutImg}
-                options={SeniorColourists}
-                subtitle="Senior colourists"
-                title="We are bold"
-                mt="xlg"
-                mb="lg"
-            />
-            <Awards
-                options={Colourists}
-                subtitle="Colourists"
-                mt="lg"
-                isAboutImg={isAboutImg}
-            />
-            <Awards
-                options={Assistants}
-                subtitle="Assistants"
-                mt="lg"
-                isAboutImg={isAboutImg}
-            />
-            <PreTitleSlider mt="xlg" mb="md">
-                Look at our selected works <br/>
-                to evaluate our capabilities and skills
-            </PreTitleSlider>
-            <Slider slides={slides}/>
-            <RunningLine mt="md" outline="true"/>
+            <Header></Header>
+            <main>
+                <IntroAboutTextBlock pt="xlg" />
+                <Awards
+                    isAboutImg={isAboutImg}
+                    options={SeniorColourists}
+                    subtitle="Senior colourists"
+                    title="We are bold"
+                    mt="xlg"
+                    mb="lg"
+                />150px
+                <Awards
+                    options={Colourists}
+                    subtitle="Colourists"
+                    mt="lg"
+                    isAboutImg={isAboutImg}
+                />
+                <Awards
+                    options={Assistants}
+                    subtitle="Assistants"
+                    mt="lg"
+                    isAboutImg={isAboutImg}
+                />
+                <PreTitleSlider mt="xlg" mb="md">
+                    Look at our selected works <br />
+                    to evaluate our capabilities and skills
+                </PreTitleSlider>
+                <Slider slides={slides} />
+                <RunningLine mt="md" outline="true" />
+            </main>
+            <Footer></Footer>
         </>
     );
 };

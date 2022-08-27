@@ -1,5 +1,5 @@
 import React from 'react';
-import {DetailTitle, Slider, Stakeholders, VideoPlayer} from "components";
+import { DetailTitle, Slider, Footer, Stakeholders, VideoPlayer, Header } from "components";
 
 const DEMO_VIDEO =
     "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4";
@@ -111,14 +111,19 @@ const slides = [
 const DetailCardPage = () => {
     return (
         <>
-            <DetailTitle title="Balkan line" year="2021" my="lg"/>
-            <Slider slides={slides} isSimpleMode/>
-            <Stakeholders mt="md" mb="xlg" client="Archangel Studios" colourist="JACK MCGINITY"
-                          director="OZZIE PULLIN"
-                          dop="ANDRIC WATSON"/>
-            <VideoPlayer/>
+            <Header></Header>
+            <main>
+                <DetailTitle title="Balkan line" year="2021" my="lg" />
+                <Slider slides={slides} isSimpleMode />
+                <Stakeholders mt="md" mb="xlg" client="Archangel Studios" colourist="JACK MCGINITY"
+                    director="OZZIE PULLIN"
+                    dop="ANDRIC WATSON" />
+                <VideoPlayer />
+            </main>
+            <Footer pt="xlg"></Footer>
         </>
     );
 };
 
 export default DetailCardPage;
+apply

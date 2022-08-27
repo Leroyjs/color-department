@@ -1,9 +1,9 @@
 import { CompanyInfo, FoxLogo, H3, NavigationBarMap } from 'components';
 import { FooterInfoWrapper, FooterLogo, FooterWrapper, FoxStyle, FoxTitleDA, FoxTitleMobile, FoxWrapper, HideForMobile } from './footer.style';
 
-export const Footer = () => {
+export const Footer = (props) => {
     return (
-        <FooterWrapper >
+        <FooterWrapper {...props}>
             <FooterInfoWrapper>
                 <FooterLogo>
                     <H3>find out more. follow the fox.</H3>
