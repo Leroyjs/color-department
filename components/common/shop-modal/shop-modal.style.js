@@ -16,7 +16,7 @@ export const ShopModalInner = styled.div`
 
   display: flex;
 
-  @media (max-width: ${breakpointsWidth.tabletSM}) {
+  @media (max-width: ${breakpointsWidth.tabletLG}) {
     flex-direction: column;
   }
 `;
@@ -41,19 +41,19 @@ export const ProductImage = styled.img`
 
   ${({theme}) => getCurrentBackgroundColorStyles("primary", theme)};
 
-  @media (max-width: ${breakpointsWidth.tabletSM}) {
+  @media (max-width: ${breakpointsWidth.tabletLG}) {
     width: 100%;
   }
 `;
 
 export const InformationItem = styled.div`
-  @media (max-width: ${breakpointsWidth.tabletSM}) {
+  @media (max-width: ${breakpointsWidth.tabletLG}) {
     width: 100%;
     flex-direction: row;
     display: flex;
-  }
+  };
 
-  @media (max-width: 500px) {
+  @media (max-width: ${breakpointsWidth.phone}) {
     flex-direction: column;
   };
 `;
@@ -65,7 +65,7 @@ export const InformationColumn = styled.div`
   ${getCurrentPaddingStyle("top", "lg")}
   ${({theme}) => getCurrentBackgroundColorStyles("black", theme)};
 
-  @media (max-width: ${breakpointsWidth.tabletSM}) {
+  @media (max-width: ${breakpointsWidth.tabletLG}) {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -87,21 +87,29 @@ export const ProductDiscription = styled(Text)`
   ${({theme}) => getCurrentColorStyles("white", theme)};
   ${getCurrentPaddingStyle("vertical", "md")};
 
-  @media (max-width: ${breakpointsWidth.tabletSM}) {
+  @media (max-width: ${breakpointsWidth.tabletLG}) {
     width: 100%;
   }
 `;
 
 export const ProductDiscriptionWrapper = css`
   width: 100%;
-  ${getCurrentPaddingStyle("right", "lg")};
+  ${getCurrentPaddingStyle("right", "md")};
+  @media (max-width: ${breakpointsWidth.phone}) {
+    ${getCurrentPaddingStyle("right", "none")}
+  }
 `;
 
 export const FormWrapper = styled.form`
-  ${({theme}) => getCurrentBackgroundColorStyles("black", theme)};
+  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
 
-  @media (max-width: ${breakpointsWidth.tabletSM}) {
+  @media (max-width: ${breakpointsWidth.tabletLG}) {
     width: 100%;
   }
 `;
 
+export const PaddingMediaPhone = styled.div`
+  @media (max-width: ${breakpointsWidth.tabletLG}) {
+    margin-top: 24px;
+  }
+`;
