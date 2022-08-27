@@ -1,5 +1,5 @@
 import {
-  applyMargins, applyPaddings, breakpointsWidth,
+  applyMargins, applyPaddings,
   colors,
   fontFamilies, fontSizes, getCurrentColor,
   getCurrentFontSizeStyle,
@@ -81,21 +81,12 @@ export const IconPlus = styled.svg`
   display: inline-block;
   width: 26px;
   height: 26px;
-<<<<<<< HEAD
-  transition: stroke 0.3s;
-  ${({ isOpen, isActive, isError }) => {
-=======
   transition: stroke .3s;
   ${({isOpen, isActive, isError, theme}) => {
->>>>>>> 5ca11d9e5df3843a7fb0a1c1b0ad6ba1e1b0c31b
     if (isOpen) {
       return { stroke: colors.white };
     } else if (isActive) {
-<<<<<<< HEAD
-      return { stroke: colors.yellow };
-=======
       return {stroke: getCurrentColor("primary", theme)}
->>>>>>> 5ca11d9e5df3843a7fb0a1c1b0ad6ba1e1b0c31b
     } else if (isError) {
       return { stroke: colors.red };
     } else {
@@ -152,16 +143,14 @@ export const DropDownItem = styled.li`
   &:hover {
     background-color: ${({ theme }) => getCurrentColor("primary", theme)};
   }
-<<<<<<< HEAD
+
+  ${({ isActive, theme }) =>
+    isActive && `background-color: ${getCurrentColor("primary", theme)};`}
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     height: 3.125vw;
     padding: 0.375vw 0.375vw 0.5vw;
   }
-=======
-  
-  ${({isActive, theme}) => isActive && `background-color: ${getCurrentColor("primary", theme)};`}
->>>>>>> 5ca11d9e5df3843a7fb0a1c1b0ad6ba1e1b0c31b
 `;
 
 export const CurrentLabel = styled.span`
