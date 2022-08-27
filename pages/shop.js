@@ -1,12 +1,14 @@
-import { Preloader } from "components";
-import { RunningLine } from "components";
-import { ShopSection } from "components";
+import { ShopSection, RunningLine, Footer, Header } from "components";
 
 const Projects = () => {
   return (
     <>
-      <ShopSection />
-      <RunningLine outline />
+      <Header></Header>
+      <main>
+        <ShopSection />
+        <RunningLine outline />
+      </main>
+      <Footer pt="xlg"></Footer>
     </>
   );
 };
