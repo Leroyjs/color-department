@@ -1,9 +1,8 @@
 import {
-  applyMargins, applyPaddings,
+  applyMargins, applyPaddings, breakpointsWidth,
   colors,
-  fontFamilies, fontSizes,
+  fontFamilies, fontSizes, getCurrentColor,
   getCurrentFontSizeStyle,
-  getCurrentMarginStyle,
   getCurrentPaddingStyle,
   hexToRGBA,
 } from "styles";
@@ -44,7 +43,37 @@ export const DropDownList = styled.ul`
   ${({isOpen}) => (isOpen && {
     visibility: "visible",
     transform: "scaleY(1)",
-  })}
+  })};
+
+  @media (max-width: ${breakpointsWidth.tabletSM}) {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    text-align: center;
+
+    &:after {
+      content: 'select the desired item';
+      font-family: ${fontFamilies.subFont};
+      font-style: normal;
+      font-weight: 700;
+      display: inline-block;
+      text-transform: uppercase;
+      ${getCurrentFontSizeStyle("caption")};
+      color: ${colors.white};
+      position: absolute;
+      bottom: calc(100% + 24px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: ${breakpointsWidth.phone}){
+    &:after {
+      bottom: calc(100% + 12px);
+    }
+  }
 `;
 
 export const IconPlus = styled.svg`
@@ -52,11 +81,11 @@ export const IconPlus = styled.svg`
   width: 26px;
   height: 26px;
   transition: stroke .3s;
-  ${({isOpen, isActive, isError}) => {
+  ${({isOpen, isActive, isError, theme}) => {
     if (isOpen) {
       return {stroke: colors.white}
     } else if (isActive) {
-      return {stroke: colors.yellow}
+      return {stroke: getCurrentColor("primary", theme)}
     } else if (isError) {
       return {stroke: colors.red}
     } else {
@@ -76,8 +105,10 @@ export const DropDownItem = styled.li`
   transition: background-color .3s;
 
   &:hover {
-    background-color: ${colors.yellow};
+    background-color: ${({ theme }) => getCurrentColor("primary", theme)};
   }
+  
+  ${({isActive, theme}) => isActive && `background-color: ${getCurrentColor("primary", theme)};`}
 `;
 
 export const CurrentLabel = styled.span`
@@ -89,23 +120,23 @@ export const InputStyled = styled.div`
   justify-content: space-between;
   cursor: pointer;
   width: 100%;
-  color: ${({ theme }) => theme.primary};
+  color: ${({theme}) => theme.primary};
   text-transform: uppercase;
   font-family: ${fontFamilies.mainFont};
   ${getCurrentPaddingStyle("vertical", "xxsm")};
   font-family: ${fontFamilies.mainFont};
   text-align: left;
   transition: color 0.3s;
-
-  ${({ isOpen, isActive, isError }) => {
+  
+  ${({isOpen, isActive, isError, theme}) => {
     if (isOpen) {
-      return { color: colors.white };
+      return {color: colors.white};
     } else if (isActive) {
-      return { color: colors.yellow };
+      return {color: getCurrentColor("primary", theme)};
     } else if (isError) {
-      return { color: colors.red };
+      return {color: colors.red};
     } else {
-      return { color: hexToRGBA(colors.white, 0.2) };
+      return {color: hexToRGBA(colors.white, 0.2)};
     }
   }}
 
@@ -116,6 +147,7 @@ export const InputStyled = styled.div`
       transform: scaleX(1);
     }
   }
+
   ${getCurrentFontSizeStyle("h3")};
 `;
 
@@ -132,7 +164,7 @@ export const Error = styled.div`
 
 export const InputWrapper = styled.div`
   position: relative;
-  ${({ isFullWidth }) => isFullWidth && "width: 100%;"}
-  ${applyMargins};  
+  ${({isFullWidth}) => isFullWidth && "width: 100%;"}
+  ${applyMargins};
   ${applyPaddings}
 `;

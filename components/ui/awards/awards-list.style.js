@@ -1,20 +1,18 @@
-import {
-  applyMargins,
-  applyPaddings,
-  colors,
-  fontFamilies,
-  getCurrentBackgroundColorStyles,
-  getCurrentColorStyles,
-  getCurrentFontSizeStyle,
-  hexToRGBA,
-  breakpointsWidth,
-  getCurrentMarginStyle,
-  getCurrentPaddingStyle,
-} from "styles";
-
-// import { H2 } from "../h2";
 import styled from "@emotion/styled";
 import { H2, Caption } from "components";
+import {
+    applyMargins,
+    applyPaddings,
+    colors,
+    fontFamilies,
+    getCurrentBackgroundColorStyles,
+    getCurrentColorStyles,
+    getCurrentFontSizeStyle,
+    hexToRGBA,
+    breakpointsWidth,
+    getCurrentMarginStyle,
+    getCurrentPaddingStyle, getCurrentColor,
+} from "styles";
 
 export const AwardsContainer = styled.div`
   display: block;
@@ -163,7 +161,7 @@ export const Item = styled.li`
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
   &:hover {
     ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)}
-    border-top-color: ${colors.yellow};
+    border-top-color: ${({ theme }) => getCurrentColor("primary", theme)};
 
     span:first-of-type {
       ${({ theme }) => getCurrentColorStyles("black", theme)}
