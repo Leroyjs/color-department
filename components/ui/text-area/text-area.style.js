@@ -19,7 +19,7 @@ export const InputWrapper = styled.div`
 
 export const TextAreaInput = styled("textarea")`
   padding-top: 18px;
-  margin-bottom: -18px;
+  margin-bottom: -20px;
   width: 100%;
   overflow: hidden;
   text-transform: uppercase;
@@ -46,8 +46,8 @@ export const TextAreaInput = styled("textarea")`
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    padding-top: 18px;
-    margin-bottom: -18px;
+    padding-top: 10px;
+    margin-bottom: -10px;
     line-height: 66px;
     background-image: ${({ isError }) =>
       `linear-gradient(transparent, transparent calc(66px - 2px), ${
@@ -57,7 +57,7 @@ export const TextAreaInput = styled("textarea")`
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
-    padding-top: 18px;
+    padding-top: 11px;
     margin-bottom: -18px;
     line-height: 48px;
     background-image: ${({ isError }) =>

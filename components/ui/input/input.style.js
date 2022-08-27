@@ -69,6 +69,11 @@ export const InputStyled = styled.input`
     padding-top: 0.25vw;
     padding-bottom: 0.3125vw;
   }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    padding-top: 7px;
+    padding-bottom: 1px;
+  }
 `;
 
 export const Error = styled.div`
