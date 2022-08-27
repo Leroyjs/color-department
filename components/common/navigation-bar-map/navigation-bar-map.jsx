@@ -18,7 +18,7 @@ export const NavigationBarMap = ({ isParentOpen, ...props }) => {
             <FooterModalWrapper isOpen={isOpenMap} {...props}>
                 <FooterNavigation></FooterNavigation>
                 <FooterMapWrapper style={{ 'position': 'relative' }}>
-                    <FullSizeButton onClick={toggleMapState} style={{ zIndex: zindex }} />
+                    <FullSizeButton onClick={toggleMapState} style={{ zIndex: zindex.footer }} />
                     <DynamicHeightForMap isOpen={isOpenMap}>
                         <MapWrapper
                             coordinates={[34.0706079, -118.2884803]}
