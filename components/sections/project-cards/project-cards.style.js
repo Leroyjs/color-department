@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import {applyMargins, applyPaddings, getCurrentPaddingStyle} from "styles";
-
+import { breakpointsWidth } from "styles";
+import { applyMargins, applyPaddings, getCurrentPaddingStyle } from "styles";
 
 export const DropDownsWrapper = styled.div`
   display: grid;
@@ -8,12 +8,23 @@ export const DropDownsWrapper = styled.div`
   grid-column-gap: 40px;
   justify-content: space-between;
   ${getCurrentPaddingStyle("horizontal", "md")}
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
 `;
 
 export const ColouristFilter = styled.div`
   display: grid;
   grid-column-start: 4;
   grid-column-end: 4;
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 1;
+  }
 `;
 
 export const MoreWrapper = styled.div`
@@ -24,5 +35,3 @@ export const MoreWrapper = styled.div`
   ${applyMargins};
   ${applyPaddings}
 `;
-
-
