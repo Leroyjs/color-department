@@ -6,6 +6,7 @@ import {
   getCurrentFontSizeStyle,
   getCurrentPaddingStyle,
   hexToRGBA,
+  breakpointsWidth,
 } from "styles";
 
 import styled from "@emotion/styled";
@@ -39,7 +40,7 @@ export const InputStyled = styled.input`
   padding-left: 50%;
   text-transform: uppercase;
   font-family: ${fontFamilies.mainFont};
-  padding-top: 5px;
+  padding-top: 4px;
   padding-bottom: 5px;
 
   &:hover {
@@ -48,8 +49,31 @@ export const InputStyled = styled.input`
     }
   }
 
+  &::placeholder {
+    font-family: ${fontFamilies.mainFont};
+    color: ${hexToRGBA(colors.white, 0.2)};
+    @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    }
+  }
+
   ${errorConditionColor}
   ${getCurrentFontSizeStyle("h3")};
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    height: 40px;
+    padding-left: 0px;
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    height: 3vw;
+    padding-top: 0.25vw;
+    padding-bottom: 0.3125vw;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    padding-top: 7px;
+    padding-bottom: 1px;
+  }
 `;
 
 export const Error = styled.div`
@@ -75,6 +99,19 @@ export const Title = styled.div`
 
   ${errorConditionColor}
   ${getCurrentFontSizeStyle("h3")};
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    color: ${hexToRGBA(colors.white, 0.2)};
+    transform: translateY(-60%);
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    transform: translateY(-70%);
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    display: none;
+  }
 `;
 
 export const InputWrapper = styled.div`

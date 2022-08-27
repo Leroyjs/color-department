@@ -20,3 +20,4 @@ export * from './running-line';
 export * from './footer-nav-bar';
 export * from './grid';
 export * from './partners-line';
+export * from './navigation-bar-map';

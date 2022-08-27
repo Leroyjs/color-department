@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { colors, getCurrentBackgroundColorStyles, sizes } from "styles"
+import { colors, getCurrentBackgroundColorStyles,breakpointsWidth, sizes } from "styles"
 
 export const MenuItemWrapper = styled.li`
     text-transform: uppercase;
@@ -19,4 +19,9 @@ export const MenuItemWrapper = styled.li`
             color: ${colors.black};
         }
     }
+
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        height:${sizes['tabletLG'].x1};
+    }
+
 `

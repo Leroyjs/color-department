@@ -6,40 +6,98 @@ import {
     fontSizes, getCurrentColor,
     getCurrentFontSizeStyle,
     getCurrentPaddingStyle,
+    getCurrentMarginStyle,
     hexToRGBA,
+    applyMargins,
 } from "styles";
 
 const lineHeight = 90
 export const InputWrapper = styled.div`
   position: relative;
-  ${({isFullWidth}) => isFullWidth && "width: 100%;"}
+  ${({ isFullWidth }) => isFullWidth && "width: 100%;"}
 `;
 
-export const TextAreaInput = styled('textarea')`
+export const TextAreaInput = styled("textarea")`
   padding-top: 18px;
-  margin-bottom: -18px;
+  margin-bottom: -20px;
   width: 100%;
   overflow: hidden;
   text-transform: uppercase;
   resize: none;
-  font-size: ${fontSizes.desktopLG.h3};
+  ${getCurrentFontSizeStyle("h3")};
   font-family: ${fontFamilies.mainFont};
-  color: ${({isError, theme}) => isError ? colors.red : getCurrentColor("primary", theme)};;
+  color: ${({ isError, theme }) =>
+    isError ? colors.red : getCurrentColor("primary", theme)};
   line-height: ${`${lineHeight}px`};
-  background-image: ${({isError}) => `linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${isError ? colors.red : hexToRGBA(colors.white, 0.2)} 0px)`};
+  background-image: ${({ isError }) =>
+    `linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${
+      isError ? colors.red : hexToRGBA(colors.white, 0.2)
+    } 0px)`};
   background-size: ${`100% ${lineHeight}px`};
+  ${applyMargins}
+
+  &::placeholder {
+    color: ${hexToRGBA(colors.white, 0)};
+
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+      color: ${hexToRGBA(colors.white, 0.2)};
+      padding-top: 2px;
+    }
+  }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    
+    padding-top: 10px;
+    margin-bottom: -10px;
+    line-height: 66px;
+    background-image: ${({ isError }) =>
+      `linear-gradient(transparent, transparent calc(66px - 2px), ${
+        isError ? colors.red : hexToRGBA(colors.white, 0.2)
+      } 0px)`};
+    background-size: ${`100% 66px`};
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    padding-top: 11px;
+    margin-bottom: -18px;
+    line-height: 48px;
+    background-image: ${({ isError }) =>
+      `linear-gradient(transparent, transparent calc(56px - 2px), ${
+        isError ? colors.red : hexToRGBA(colors.white, 0.2)
+      } 0px)`};
+    background-size: ${`100% 56px`};
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    padding-top: 18px;
+    margin-bottom: -18px;
+    line-height: 5.625vw;
+    background-image: ${({ isError }) =>
+      `linear-gradient(transparent, transparent calc(5.625vw - 2px), ${
+        isError ? colors.red : hexToRGBA(colors.white, 0.2)
+      } 0px)`};
+    background-size: ${`100% 5.625vw;`};
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopXLG}) {
+    padding-top: 2vw;
+    margin-bottom: -2vw;
+    line-height: 5.57vw;
+    background-image: ${({ isError }) =>
+      `linear-gradient(transparent, transparent calc(5.57vw - 2px), ${
+        isError ? colors.red : hexToRGBA(colors.white, 0.2)
+      } 0px)`};
+    background-size: ${`100% 5.57vw;`};
   }
 `;
+
+
 
 export const TextAreaWrapper = styled.div`
   width: 100%;
   position: relative;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -51,18 +109,50 @@ export const TextAreaWrapper = styled.div`
 
     font-size: ${fontSizes.desktopLG.h3};
     font-family: ${fontFamilies.mainFont};
-    line-height: ${lineHeight + 'px'};
+    line-height: ${lineHeight + "px"};
     background-image: ${`linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${colors.white} 0px)`};
     background-size: ${`100% ${lineHeight}px`};
     transition: transform 0.5s;
-    transform: scaleX(${({isActive}) => (isActive ? 1 : 0)});
+    transform: scaleX(${({ isActive }) => (isActive ? 1 : 0)});
     transform-origin: left;
   }
 
   &:hover:after {
     transform: scaleX(1);
   }
-`
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    &:after {
+      line-height: 66px;
+      background-image: ${`linear-gradient(transparent, transparent calc(66px - 2px), ${colors.white} 0px)`};
+      background-size: ${`100% 66px`};
+    }
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    height: 240px;
+    &:after {
+      line-height: 48px;
+      background-image: ${`linear-gradient(transparent, transparent calc(56px - 2px), ${colors.white} 0px)`};
+      background-size: ${`100% 56px`};
+    }
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    &:after {
+      line-height: 5.625vw;
+      background-image: ${`linear-gradient(transparent, transparent calc(5.625vw - 2px), ${colors.white} 0px)`};
+      background-size: ${`100% 5.625vw`};
+    }
+  }
+  @media screen and (min-width: ${breakpointsWidth.desktopXLG}) {
+    &:after {
+      line-height: 5.57vw;
+      background-image: ${`linear-gradient(transparent, transparent calc(5.57vw - 2px), ${colors.white} 0px)`};
+      background-size: ${`100% 5.57vw`};
+    }
+  }
+`;
 
 export const Error = styled.div`
   width: 100%;
@@ -79,8 +169,22 @@ export const Title = styled.h3`
   text-transform: uppercase;
   font-size: ${fontSizes.desktopLG.h3};
   font-family: ${fontFamilies.mainFont};
-  color: ${({isError}) => (isError ? colors.red : colors.white)};
+  color: ${({ isError }) => (isError ? colors.red : colors.white)};
   margin-bottom: 10px;
 
   ${getCurrentPaddingStyle("top", "xxsm")};
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    ${getCurrentFontSizeStyle("h3")}
+    margin-bottom: 10px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    display: none;
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    margin-bottom: calc(0.5vw + 2px);
+    ${getCurrentFontSizeStyle("h3")}
+  }
 `;

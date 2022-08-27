@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import {FormProvider, useForm} from "react-hook-form";
+import {noScroll} from "../styles/reset.style";
 
 export function debounce(func, wait) {
     let currentTimer = null;
@@ -46,6 +47,16 @@ export function handleEsc(event) {
     if (event.key === "Escape" || event.keyCode === 27) {
         this?.();
     }
+}
+
+export function useNoScroll(isOpen) {
+    useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add(noScroll);
+        } else if (document.body.classList.contains(noScroll)) {
+            document.body.classList.remove(noScroll);
+        }
+    }, [isOpen])
 }
 
 export const useEscHandler = (callback) => {

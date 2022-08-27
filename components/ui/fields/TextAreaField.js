@@ -2,6 +2,7 @@ import React from 'react';
 import {PropTypes} from "prop-types";
 import {Controller, useFormContext} from "react-hook-form";
 import {TextArea} from "../text-area";
+import { applyMargins } from 'styles';
 
 export const TextAreaField = ({name, rules = null, ...props}) => {
     const {control, formState: {errors}} = useFormContext();
@@ -21,4 +22,5 @@ export const TextAreaField = ({name, rules = null, ...props}) => {
 TextAreaField.propTypes = {
     name: PropTypes.string.isRequired,
     rules: PropTypes.object,
+    applyMargins,
 }

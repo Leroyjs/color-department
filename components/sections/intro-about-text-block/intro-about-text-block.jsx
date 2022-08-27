@@ -10,7 +10,11 @@ import {
   StyledPlanet,
   StyledDesktopSMBR,
   StyledTabletBR,
+  StyledTabletSMBR,
+  StyledTabletXSMBR,
   StyledDesktopBR,
+  StyledPhoneLGBR,
+  StyledPhoneSMBR,
 } from "./intro-about-text-block.style";
 
 export const IntroAboutTextBlock = ({...props}) => {
@@ -18,6 +22,8 @@ export const IntroAboutTextBlock = ({...props}) => {
     <TextSectionWrapper {...props}>
       <H2>a color grading studio&nbsp;</H2>
       <StyledTabletBR />
+      <StyledTabletSMBR />
+      <StyledPhoneSMBR />
       <H2>Based in&nbsp;</H2>
       <Link href="/">
         <StyledWhiteH2>Los Angeles, CALIFORNIA.&nbsp;</StyledWhiteH2>
@@ -26,30 +32,45 @@ export const IntroAboutTextBlock = ({...props}) => {
       <StyledDesktopBR />
       <StyledDesktopSMBR />
       <StyledTabletBR />
+      <StyledTabletSMBR />
+      <StyledTabletXSMBR />
+      <StyledPhoneLGBR />
+      <StyledPhoneSMBR />
       <RoundedNumber>
         <Caption>01</Caption>
       </RoundedNumber>
       <StyledWhiteH2>&nbsp;We have personality.&nbsp;</StyledWhiteH2>
+      <StyledTabletXSMBR />
       <RoundedNumber>
         <Caption>02</Caption>
       </RoundedNumber>
       <StyledWhiteH2>&nbsp;We love&nbsp;</StyledWhiteH2>
       <StyledTabletBR />
-      <StyledWhiteH2>What we do.</StyledWhiteH2>
+      <StyledTabletSMBR />
+      <StyledPhoneSMBR />
+      <StyledWhiteH2>What we do.&nbsp;</StyledWhiteH2>
       <StyledDesktopBR />
       <StyledDesktopSMBR />
+      <StyledTabletXSMBR />
+      <StyledPhoneLGBR />
       <RoundedNumber>
         <Caption>03</Caption>
       </RoundedNumber>
       <StyledWhiteH2>&nbsp;We make it fun for us and&nbsp;</StyledWhiteH2>
       <StyledTabletBR />
-      <StyledWhiteH2> our clients.</StyledWhiteH2>
+      <StyledTabletXSMBR />
+      <StyledPhoneSMBR />
+      <StyledWhiteH2> our clients.&nbsp;</StyledWhiteH2>
       <H2>That said,&nbsp;</H2>
       <StyledDesktopSMBR />
+      <StyledTabletXSMBR />
       <H2>we take&nbsp;</H2>
       <StyledDesktopBR />
+      <StyledPhoneLGBR />
       <H2>deadlines&nbsp;</H2>
       <StyledTabletBR />
+      <StyledTabletSMBR />
+      <StyledPhoneSMBR />
       <H2> and&nbsp;</H2>
       <Link href="/">
         <TextDecorationWrapper>

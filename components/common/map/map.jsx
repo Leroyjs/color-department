@@ -1,15 +1,11 @@
-import React, { useEffect } from 'react';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import { colors } from 'styles';
-import { rewriteMapIcon } from "./utils";
-import { mapMarker } from '../../../assets/icons/index'
+import { svgIcon, title } from "./utils";
 
 export const Map = ({ source, coordinates, zoom = 16 }) => {
-  useEffect(() => {
-      rewriteMapIcon(mapMarker)
-  });
   return (
     <MapContainer
+      id='leaflet-map'
       attributionControl={false}
       zoomControl={false}
       center={coordinates}
@@ -18,7 +14,14 @@ export const Map = ({ source, coordinates, zoom = 16 }) => {
       <TileLayer
         url={source}
       />
-      <Marker position={coordinates} >
+      <Marker 
+      icon={title}
+      position={coordinates}
+      >
+      <Marker 
+      icon={svgIcon}
+      position={coordinates}
+      ></Marker>
       </Marker>
     </MapContainer>
   );

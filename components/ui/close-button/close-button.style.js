@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import {getCurrentColor} from "styles";
+import {applyMargins, applyPaddings, getCurrentColor} from "styles";
 
 export const ButtonStyle = styled.svg`
   width: 40px;
@@ -7,6 +7,8 @@ export const ButtonStyle = styled.svg`
   cursor: pointer;
   fill: ${({theme}) => getCurrentColor("white", theme)};
   transition: fill 0.3s, tranform 0.3s;
+  ${applyMargins};
+  ${applyPaddings}
 
   .cross {
     stroke: ${({theme}) => getCurrentColor("black", theme)};
