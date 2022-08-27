@@ -1,16 +1,17 @@
-import {useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {PropTypes} from "prop-types";
 import {propTypesMargin, propTypesPadding} from "../../types";
 import {
     CurrentLabel,
     DropDownItem,
-    DropDownList,
+    DropDownList, DropDownOverlay,
     Error, IconPlus,
     InputStyled,
     InputWrapper,
     Underline,
     UnderlineInner
 } from "./drop-down.style";
+import {useEscHandler} from "../../../utils";
 
 export const DropDown = ({
                              title,
@@ -25,12 +26,22 @@ export const DropDown = ({
                          }) => {
     const [isOpen, setOpen] = useState(false);
     const [selected, setSelected] = useState([]);
+    const listRef = useRef();
     const isActive = Boolean(selected.length);
+    useEscHandler(isOpen ? () => setOpen(false) : null);
+
+    useEffect(() => {
+        const scrollHeight = listRef.current.scrollHeight;
+        listRef.current.setAttribute('style', `--height-drop-down: ${scrollHeight}px`)
+    }, [options.length])
 
     function handleOpen() {
         setOpen(prevState => !prevState)
     }
 
+    function handleOverlay() {
+        setOpen(false);
+    }
 
     function handleOption(option) {
         if (isMultiply) {
@@ -71,7 +82,7 @@ export const DropDown = ({
             <Underline>
                 <UnderlineInner isActive={isActive} isError={error}/>
             </Underline>
-            <DropDownList isOpen={isOpen}>
+            <DropDownList isOpen={isOpen} ref={listRef}>
                 {options.map((option) => (
                     <DropDownItem key={option.value} isActive={selected.some(({value}) => value === option.value)}
                                   onClick={() => handleOption(option)}>
@@ -79,6 +90,7 @@ export const DropDown = ({
                     </DropDownItem>
                 ))}
             </DropDownList>
+            <DropDownOverlay onClick={handleOverlay} isOpen={isOpen}/>
             {error && <Error>{error}</Error>}
         </InputWrapper>
     )
