@@ -7,7 +7,6 @@ import { breakpointsWidth } from "styles";
 
 export const ShopWrapper = styled.div`
   width: 100%;
-  ${getCurrentPaddingStyle("top", "xlg")};
 `;
 
 export const ShopList = styled.div`

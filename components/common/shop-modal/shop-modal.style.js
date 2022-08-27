@@ -5,6 +5,7 @@ import {
     getCurrentPaddingStyle,
     getCurrentBackgroundColorStyles,
     breakpointsWidth,
+    colors
 } from "styles";
 import {H3} from "../../ui/h3";
 import {Text} from "../../ui/text";
@@ -15,7 +16,7 @@ export const ShopModalInner = styled.div`
   min-height: 100%;
 
   display: flex;
-
+  background-color: ${colors.black};
   @media (max-width: ${breakpointsWidth.tabletLG}) {
     flex-direction: column;
   }
