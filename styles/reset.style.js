@@ -342,3 +342,7 @@ export const resetStyles = css`
     padding: 0.2em 0;
   }
 `;
+
+export const noScroll = css`
+  overflow: hidden;
+`

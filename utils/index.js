@@ -6,6 +6,7 @@ import {
   throttling,
   useEscHandler,
   withFormProvider,
+  useNoScroll
 } from "./common";
 
 import { Freezer } from "./Freezer";
@@ -25,4 +26,5 @@ export {
   handleEsc,
   formatPhoneNumber,
   withFormProvider,
+  useNoScroll
 };
