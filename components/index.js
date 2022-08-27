@@ -48,6 +48,7 @@ import { WorksCards } from "./ui/works-cards";
 import { DetailTitle } from "./ui/detail-title";
 import { Stakeholders } from "./ui/stakeholders";
 import { VideoPlayer } from "./ui/video-player";
+import { PreTitleSlider } from "./ui/pre-title-slider";
 import { InputField, TextAreaField, DropDownField, CounterField } from "./ui/fields";
 /*    Импорты секций    */
 import { Header } from "./sections/header";
@@ -129,4 +130,5 @@ export {
   Stakeholders,
   VideoPlayer,
   NavigationBarMap,
+  PreTitleSlider,
 };
