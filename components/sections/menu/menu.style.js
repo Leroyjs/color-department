@@ -34,9 +34,10 @@ export const MenuBody = styled.nav`
     position: absolute;
     display: grid;
     height: calc(100vh - ${sizes['desktopLG'].x1});
+
     @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-        top: ${sizes['tabletLG'].x1};
-        height: calc(100vh - 1.5 * ${sizes['tabletLG'].x1});
+        top: ${sizes['tabletLG'].thirdX2};
+        height: calc(100vh - ${sizes['tabletLG'].thirdX2} - ${sizes['tabletLG'].thirdX1});
         ${MenuMap} { grid-column: 3/5; }
         ${MenuList} { grid-column: 1/3; }
     }
@@ -46,7 +47,7 @@ export const MenuBody = styled.nav`
         ${MenuMap} { display: none; }
         ${MenuList} { 
             grid-column: 1/-1;
-            justify-content : space-around;
+            justify-content : center;
         }
     }
     ${getCurrentGridTemplateColumsStyle()};
@@ -61,12 +62,15 @@ export const MenuFooter = styled.div`
 `
 
 export const HideForMobile = styled.span`
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     @media screen and (max-width: ${breakpointsWidth.phone}) {
         display: none;
     }
 `
 
-export const showForMobile = styled.span`
+export const ShowForMobile = styled.span`
     display: none;
     @media screen and (max-width: ${breakpointsWidth.phone}) {
         display: block;

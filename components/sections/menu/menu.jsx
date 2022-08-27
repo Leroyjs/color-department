@@ -1,6 +1,6 @@
 import { NavigationBarMap, CompanyInfo, FooterNavigation, MapWrapper } from "components";
 import { MenuItem } from './menu-item/menu-item';
-import { MenuBody, MenuFooter, MenuList, MenuMap, MenuWrapper, HideForMobile, showForMobile } from "./menu.style";
+import { MenuBody, MenuFooter, MenuList, MenuMap, MenuWrapper, HideForMobile, ShowForMobile } from "./menu.style";
 
 const menuItems = [
     { title: 'projects', link: '/projects' },
@@ -42,9 +42,9 @@ export const Menu = ({ isOpen, props }) => {
                 <HideForMobile>
                     <FooterNavigation></FooterNavigation>
                 </HideForMobile>
-                <showForMobile>
+                <ShowForMobile>
                     <NavigationBarMap isParentOpen={isOpen} />
-                </showForMobile>
+                </ShowForMobile>
             </MenuFooter>
         </MenuWrapper>
     );

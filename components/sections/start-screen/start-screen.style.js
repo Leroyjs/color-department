@@ -16,6 +16,9 @@ export const ContentWrapper = styled.div`
     position: relative;
     padding-top: ${sizes["desktopLG"].half};
     @media screen and (max-width: ${breakpointsWidth.tabletLG}){
+      padding-top: ${sizes["tabletLG"].thirdX2};
+    }
+    @media screen and (max-width: ${breakpointsWidth.phone}){
       padding-top: ${sizes["tabletLG"].x1};
     }
     height: 100vh;

@@ -173,6 +173,8 @@ export const sizes = {
     x2: "50vw",
     x1: "25vw",
     half: "12.5vw",
+    thirdX2: "17vw",
+    thirdX1: "8.5vw",
     count: 4,
   },
 };
