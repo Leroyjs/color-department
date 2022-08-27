@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import { colors } from 'styles';
-import { rewriteMapIcon, svgIcon, title } from "./utils";
+import { svgIcon, title } from "./utils";
 
 export const Map = ({ source, coordinates, zoom = 16 }) => {
   return (

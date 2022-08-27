@@ -34,11 +34,17 @@ export const Menu = ({ isOpen, props }) => {
                         source={"https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"}
                     />
                 </MenuMap>
-                <CompanyInfo />
+                <HideForMobile>
+                    <CompanyInfo />
+                </HideForMobile>
             </MenuBody>
             <MenuFooter isOpen={isOpen}>
-                <FooterNavigation className={HideForMobile}></FooterNavigation>
-                <NavigationBarMap className={showForMobile} isOpenMap={isOpen}/>
+                <HideForMobile>
+                    <FooterNavigation></FooterNavigation>
+                </HideForMobile>
+                <showForMobile>
+                    <NavigationBarMap isParentOpen={isOpen} />
+                </showForMobile>
             </MenuFooter>
         </MenuWrapper>
     );

@@ -12,16 +12,20 @@ export const initGlobalStyles = injectGlobal`
 
   //Ширину я бы не трогал
   .map-icon-wrapper {
-    width: 300px;
-    text-align: center;
+    div {
+      width: 250px;
+      text-align: center;
+    }
+
     & p {
       color: ${colors.white};
       font-size: 16px;
-      width: 500;
       @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+        font-weight: 500;
         font-size: 14px;
       }
       @media screen and (max-width: ${breakpointsWidth.photo}) {
+        font-weight: 700
         font-size: 12px;
       }
     }

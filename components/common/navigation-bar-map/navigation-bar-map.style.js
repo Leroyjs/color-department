@@ -53,8 +53,8 @@ export const FooterModalWrapper = styled.div`
     ${({ isOpen }) => isOpen ? `height: calc(100vh - ${sizes['desktopLG'].half})` : ""};
     @media screen and (max-width: ${breakpointsWidth.phone}) {
         height: 25vw;
-        margin-bottom: 25vw;
-        ${({ isOpen }) => isOpen ? `height: calc(100vh - 50vw)` : ""};
+        margin-bottom: 84px;
+        ${({ isOpen }) => isOpen ? `height: calc(100vh - 25vw - 82px)` : ""};
     }
 `
 

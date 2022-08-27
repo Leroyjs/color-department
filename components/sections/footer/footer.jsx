@@ -1,12 +1,7 @@
-import { CompanyInfo,NavigationBarMap, FooterNavigation, CompanyInfoBG, FoxLogo, FullSizeButton, H3, MapWrapper } from 'components';
-import { useState } from 'react';
-import { DynamicHeightForMap, FooterCompanyInfoMobile, HideForMobile, FooterInfoWrapper, FooterLogo, FooterMapWrapper, FooterModalWrapper, FooterWrapper, FoxStyle, FoxTitleDA, FoxTitleMobile, FoxWrapper } from './footer.style';
+import { CompanyInfo, FoxLogo, H3, NavigationBarMap } from 'components';
+import { FooterInfoWrapper, FooterLogo, FooterWrapper, FoxStyle, FoxTitleDA, FoxTitleMobile, FoxWrapper, HideForMobile } from './footer.style';
 
 export const Footer = () => {
-
-    const [isOpenMap, setMapState] = useState(false);
-    const toggleMapState = () => { setMapState(prevState => !prevState) };
-
     return (
         <FooterWrapper >
             <FooterInfoWrapper>
