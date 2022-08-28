@@ -7,6 +7,7 @@ import {
 import { useCursor } from "./utils";
 import { useRef } from "react";
 
+// eslint-disable-next-line react/display-name
 export const withCursor = (Component) => (props) => {
   const cursorWrapperRef = useRef();
   const cursorScaleWrapperRef = useRef();
