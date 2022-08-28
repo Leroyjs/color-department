@@ -110,6 +110,10 @@ export const PlusWrapper = styled.div`
     transition: 0.3s;
   }
 
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    top: 5px;
+  }
+
   @media screen and (max-width: ${breakpointsWidth.desktopLG}) {
     width: 26px;
     height: 26px;
@@ -133,10 +137,6 @@ export const PlusWrapper = styled.div`
   @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
     width: 18px;
     height: 18px;
-  }
-
-  @media screen and (max-width: ${breakpointsWidth.phone}) {
-    top: 5px;
   }
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
@@ -159,6 +159,9 @@ export const MinusWrapper = styled.div`
     transition: 0.3s;
   }
 
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    top: 5px;
+  }
   @media screen and (max-width: ${breakpointsWidth.desktopLG}) {
     width: 26px;
     height: 26px;
@@ -184,12 +187,8 @@ export const MinusWrapper = styled.div`
     height: 18px;
   }
 
-  @media screen and (max-width: ${breakpointsWidth.phone}) {
-    top: 5px;
-  }
-
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     height: 1.625vw;
     width: 1.625vw;
-  }
+  } 
 `;
