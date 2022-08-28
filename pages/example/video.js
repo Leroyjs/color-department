@@ -1,5 +1,4 @@
 import {useRef} from "react";
-import "styles/global.style";
 import {VideoBackground} from "components";
 
 /**

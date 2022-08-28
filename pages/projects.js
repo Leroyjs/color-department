@@ -1,11 +1,10 @@
-import "styles/global.style";
 import { ProjectCards, RunningLine, Header, Footer } from "components";
 
 const Projects = () => {
 
     return (
         <>
-            <Header></Header>
+            <Header/>
             <main>
                 <ProjectCards />
                 <RunningLine outline mt="xlg" />

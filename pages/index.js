@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import {
   AwardMainTextBlock,
   Footer,
@@ -6,27 +7,9 @@ import {
   PartnersLine,
   StartScreen,
 } from "components";
-import { useRef, useState } from "react";
-import "styles/global.style";
-import SliderPage from "./example/slider";
 
 import { Awards } from "components";
 import { colors } from "styles";
-
-const options = [
-  {
-    label: "color grading",
-    value: 1,
-  },
-  {
-    label: "VFX-design",
-    value: 2,
-  },
-  {
-    label: "Dailies",
-    value: 3,
-  },
-];
 
 const awardsItems = [
   {
@@ -54,9 +37,38 @@ const awardsItems = [
     img: "https://www.stevensegallery.com/400/400",
   },
 ];
+const mockPartners = [
+  {
+    logo: '/20-century.png',
+    label: 'century'
+  },
+  {
+    logo: '/apple.png',
+    label: 'apple'
+  },
+  {
+    logo: '/dream-works.png',
+    label: 'dream-works'
+  },
+  {
+    logo: '/netflix.png',
+    label: 'netflix'
+  },
+  {
+    logo: '/pizza-hunt.png',
+    label: 'pizza-hunt'
+  },
+  {
+    logo: '/uniqlo.png',
+    label: 'uniqlo'
+  },
+  {
+    logo: '/zara.png',
+    label: 'zara'
+  }
+];
 
 const Home = () => {
-  const [isAboutImg, setisAboutImg] = useState(false);
   const videoContant = useRef(null);
 
   return (
@@ -65,7 +77,7 @@ const Home = () => {
       <StartScreen></StartScreen>
       <main ref={videoContant} style={{ backgroundColor: colors.black }}>
         <IntroMainTextBlock />
-        <PartnersLine />
+        <PartnersLine  partners={mockPartners}/>
         <AwardMainTextBlock mt="xlg" px="md" />
         <Awards
           options={awardsItems}
