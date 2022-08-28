@@ -1,19 +1,20 @@
 import {
-  applyMargins,
-  applyPaddings,
-  colors,
-  getCurrentBackgroundColorStyles,
-  getCurrentMarginStyle,
-  getCurrentPaddingStyle,
-  hexToRGBA,
+    applyMargins,
+    applyPaddings, breakpointsWidth,
+    colors,
+    getCurrentBackgroundColorStyles,
+    getCurrentMarginStyle,
+    getCurrentPaddingStyle,
+    hexToRGBA,
 } from "styles";
 
-import { Avatar } from "../../ui/avatar";
-import { Caption } from "../../ui/caption";
-import { CloseButton } from "../../ui/close-button";
-import { Modal } from "../../common/modal";
-import { Text } from "../../ui/text";
+import {Avatar} from "../../ui/avatar";
+import {Caption} from "../../ui/caption";
+import {CloseButton} from "../../ui/close-button";
+import {Modal} from "../../common/modal";
+import {Text} from "../../ui/text";
 import styled from "@emotion/styled";
+import {H2} from "../../ui/h2";
 
 export const CloseBtn = styled(CloseButton)`
   width: 40px;
@@ -26,7 +27,7 @@ export const Wrapper = styled.div`
   width: 100%;
   ${applyMargins};
   ${applyPaddings};
-  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
+  ${({theme}) => getCurrentBackgroundColorStyles("black", theme)};
   ${getCurrentMarginStyle("top", "md")};
   ${getCurrentPaddingStyle("horizontal", "md")};
   ${getCurrentMarginStyle("bottom", "xlg")};
@@ -37,12 +38,36 @@ export const Container = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    grid-template-columns: auto;
+    gap: 32px;
+  }
+`;
+
+export const UserName = styled(H2)`
+  ${getCurrentPaddingStyle("bottom", "sm")};
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    ${getCurrentPaddingStyle("bottom", "xxsm")};
+  }
 `;
 
 export const User = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    grid-template-columns: auto;
+    gap: 24px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    justify-content: center;
+    justify-items: center;
+    gap: 16px;
+  }
 `;
 
 export const Description = styled.div`
@@ -53,6 +78,11 @@ export const TextRow = styled.div`
   display: grid;
   gap: 40px;
   grid-template-columns: repeat(2, 1fr);
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    grid-template-columns: auto;
+    gap: 24px;
+  }
 `;
 
 export const ProfileLinks = styled.div`
@@ -73,6 +103,15 @@ export const ProfileLinks = styled.div`
     height: 2px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='2' fill='none'%3E%3Cpath stroke='%23fff' stroke-dasharray='2 10' stroke-width='2' d='M0 1h760' opacity='.2'/%3E%3C/svg%3E");
   }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    grid-template-columns: auto;
+    margin-top: 48px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    margin-top: 32px;
+  }
 `;
 
 export const TextCol = styled(Text)`
@@ -80,17 +119,26 @@ export const TextCol = styled(Text)`
 `;
 
 export const ModalWrapper = styled(Modal)`
-  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
+  ${({theme}) => getCurrentBackgroundColorStyles("black", theme)};
   overflow-y: scroll;
 `;
 
 export const CaptionLink = styled(Caption)`
-  color: ${hexToRGBA(colors.white, 0.4)}; ;
+  color: ${hexToRGBA(colors.white, 0.4)};;
 `;
 
 export const UserAvatar = styled(Avatar)``;
 
 export const UserAbout = styled.div`
+  order: -1;
   display: block;
   ${getCurrentMarginStyle("left", "md")};
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    margin: 0;
+  };
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    text-align: center;
+  };
 `;

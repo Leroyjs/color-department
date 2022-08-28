@@ -1,7 +1,7 @@
 import { H3 } from "../h3";
 import { css } from "@emotion/css";
 import styled from "@emotion/styled";
-import { breakpointsWidth } from "styles";
+import {breakpointsWidth, getCurrentMarginStyle} from "styles";
 
 export const GridWrapper = styled.div`
   display: grid;
@@ -27,6 +27,16 @@ export const WorksTitleWrapper = css`
 
 export const WorksTitle = styled(H3)`
   text-transform: uppercase;
+  
+  ${getCurrentMarginStyle("bottom", "md")};
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    margin-bottom: 48px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    margin-bottom: 16px;
+  }
 `;
 
 export const WorksWrapper = styled.div`

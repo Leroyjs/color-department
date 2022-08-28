@@ -11,7 +11,7 @@ import {
     TextCol,
     CloseBtn,
     Container,
-    TextRow, ProfileLinks, CaptionLink, ModalWrapper
+    TextRow, ProfileLinks, CaptionLink, ModalWrapper, UserName
 } from "./detail-card-modal.style";
 
 const DEMO_VIDEO = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4';
@@ -61,7 +61,7 @@ export const DetailCardModal = ({isOpen, setOpen, modalId}) => (
                 <User>
                     <UserAvatar img="https://placebeard.it/640x360"/>
                     <UserAbout>
-                        <H2 pb="sm">Miranda Bell</H2>
+                        <UserName>Miranda Bell</UserName>
                         <Caption color="white">Creative producer</Caption>
                     </UserAbout>
                 </User>
