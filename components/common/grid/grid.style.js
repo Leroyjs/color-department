@@ -23,8 +23,19 @@ export const Cell = styled.div`
   width: 100%;
   height: 100%;
   border-top: 1px solid ${hexToRGBA(colors.white, 0.2)};
+  padding: 20px;
 
   &:not(:nth-of-type(8n)) {
     border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
   }
+`;
+
+export const CellImage = styled.div`
+  width: 100%;
+  height: 100%;
+  background-image: url("${({ image }) => image}");
+  background-position: center;
+  background-size: cover;
+  transition: opacity 0.3s ${({ step }) => step * 0.2}s;
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
 `;
