@@ -28,9 +28,10 @@ const getNumdersOfAvaleblePositions = () => {
 const isValidPositionFn = (numdersOfPositions) => (indexOfPosition) =>
   numdersOfPositions.indexOf(indexOfPosition) !== -1;
 
-export const Grid = (props) => {
+export const Grid = ({props, arrayOfImages}) => {
   const [indexOfPattern, setIndexOfPattern] = useState(0);
   const pattern = patternsDesctop[indexOfPattern];
+  const [isPlayAnimation, setPlayAnimation] = useState(false);
   const isValidPositionForImage = isValidPositionFn(
     getNumdersOfAvaleblePositions()
   );
@@ -39,6 +40,9 @@ export const Grid = (props) => {
   const getStep = getStepFn(pattern);
 
   useEffect(() => {
+    if(!arrayOfImages) return;
+    setPlayAnimation(true);
+    
     const interval = setInterval(() => {
       setApearence((prevApearenceState) => {
         if (!prevApearenceState) {
@@ -62,7 +66,7 @@ export const Grid = (props) => {
       <GridInner>
         {getArrayOfIndex(80).map((item) => (
           <Cell key={item}>
-            {isValidPositionForImage(item) && (
+            {isPlayAnimation && isValidPositionForImage(item) && (
               <CellImage
                 step={getStep(item)}
                 isVisible={isApearence && isVisible(item)}

@@ -56,7 +56,6 @@ const awardsItems = [
 ];
 
 const Home = () => {
-  const [isAboutImg, setisAboutImg] = useState(false);
   const videoContant = useRef(null);
 
   return (

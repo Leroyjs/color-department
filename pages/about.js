@@ -6,8 +6,10 @@ import {
     RunningLine,
     Slider,
     Header,
-    Footer
+    Footer,
+    PhotoStartScreen
 } from "components";
+import { colors } from 'styles';
 
 const DEMO_VIDEO =
     "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4";
@@ -178,7 +180,8 @@ const About = () => {
     return (
         <>
             <Header></Header>
-            <main>
+            <PhotoStartScreen arrayOfImages={[]}/>
+            <main style={{ backgroundColor: colors.black }}>
                 <IntroAboutTextBlock pt="xlg" />
                 <Awards
                     isAboutImg={isAboutImg}
@@ -207,7 +210,7 @@ const About = () => {
                 <Slider slides={slides} />
                 <RunningLine mt="md" outline="true" />
             </main>
-            <Footer></Footer>
+            <Footer pt="xlg"></Footer>
         </>
     );
 };

@@ -1,12 +1,14 @@
 import "styles/global.style";
-import { ProjectCards, RunningLine, Header, Footer } from "components";
+import { ProjectCards, PhotoStartScreen, RunningLine, Header, Footer } from "components";
+import { colors } from "styles";
 
 const Projects = () => {
 
     return (
         <>
             <Header></Header>
-            <main>
+            <PhotoStartScreen arrayOfImages={[]}/>
+            <main style={{ backgroundColor: colors.black }}>
                 <ProjectCards />
                 <RunningLine outline mt="xlg" />
             </main>
