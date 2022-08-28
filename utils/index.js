@@ -6,6 +6,7 @@ import {
   throttling,
   useEscHandler,
   withFormProvider,
+  withLink,
   useNoScroll
 } from "./common";
 
@@ -26,5 +27,6 @@ export {
   handleEsc,
   formatPhoneNumber,
   withFormProvider,
-  useNoScroll
+  useNoScroll,
+  withLink
 };

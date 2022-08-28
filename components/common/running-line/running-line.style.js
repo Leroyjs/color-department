@@ -55,6 +55,7 @@ export const RunningLineSeparator = styled.div`
     border-radius: 50%;
     border-color: ${({ theme }) => getCurrentColor("primary", theme)};
     height: ${sizes['desktopLG'].half};
+    min-height: 100;
     min-width: 240px;
     display:flex;
     justify-content: center;
@@ -62,7 +63,10 @@ export const RunningLineSeparator = styled.div`
     text-align: center;
     @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
         height: ${sizes['tabletLG'].half};
-        min-width: 240px;
+        min-width: 200px;
+    }
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        height: 72px;
     }
     ${getCurrentMarginStyle('horizontal', 'sm')}
     ${SeparatorDinamicStyle};

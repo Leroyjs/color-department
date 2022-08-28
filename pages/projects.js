@@ -3,10 +3,10 @@ import {
   Footer,
   Header,
   PhotoStartScreen,
+  RunningLineLink,
   ProjectCards,
   RunningLine,
 } from "components";
-
 import { colors } from "styles";
 
 const arrayOfImages = [
@@ -25,7 +25,7 @@ const Projects = () => {
       <PhotoStartScreen arrayOfImages={arrayOfImages} />
       <main style={{ backgroundColor: colors.black }}>
         <ProjectCards />
-        <RunningLine outline mt="xlg" />
+        <RunningLineLink mt="md" outline={'true'} target={'_blank'} link={'https://cs9.pikabu.ru/post_img/big/2017/01/29/1/1485643541171113411.jpg'}/>
       </main>
       <Footer pt="xlg"/>
     </>
