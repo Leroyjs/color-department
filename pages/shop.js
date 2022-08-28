@@ -1,16 +1,14 @@
 import { ShopSection, RunningLine, Footer, Header } from "components";
 
 const Projects = () => {
-  return (
-    <>
-      <Header></Header>
-      <main>
-        <ShopSection />
-        <RunningLine outline />
-      </main>
-      <Footer pt="xlg"></Footer>
-    </>
-  );
+    return (
+        <>
+            <Header/>
+            <ShopSection/>
+            <RunningLine outline/>
+            <Footer pt="xlg"/>
+        </>
+    );
 };
 
 export default Projects;
