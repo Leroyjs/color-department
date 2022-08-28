@@ -190,7 +190,7 @@ const About = () => {
                     title="We are bold"
                     mt="xlg"
                     mb="lg"
-                />150px
+                />
                 <Awards
                     options={Colourists}
                     subtitle="Colourists"
