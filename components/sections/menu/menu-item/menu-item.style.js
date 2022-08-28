@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
-import { colors, getCurrentBackgroundColorStyles, sizes } from "styles"
+import { getCurrentPaddingStyle } from "styles"
+import { colors, getCurrentBackgroundColorStyles,breakpointsWidth, sizes } from "styles"
 
 export const MenuItemWrapper = styled.li`
     text-transform: uppercase;
@@ -10,7 +11,9 @@ export const MenuItemWrapper = styled.li`
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    height: ${sizes['desktopLG'].half};
+    ${getCurrentPaddingStyle('top','xsm')}
+    ${getCurrentPaddingStyle('bottom','sm')}
+    padding: 8px 0 14px;
     opacity: ${({clickAnimation})=> clickAnimation? '0.5' : '1'};
     transition: opacity 0.1s;
     &:hover {
@@ -19,4 +22,9 @@ export const MenuItemWrapper = styled.li`
             color: ${colors.black};
         }
     }
+
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        ${getCurrentPaddingStyle('vertical','md')}
+    }
+
 `

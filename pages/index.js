@@ -70,11 +70,11 @@ const Home = () => {
         <Awards
           options={awardsItems}
           title="Our Awards"
-          pb="xlg"
+          
           isAboutImg={false}
         />
       </main>
-      <Footer></Footer>
+      <Footer pt="xlg"></Footer>
     </>
   );
 };

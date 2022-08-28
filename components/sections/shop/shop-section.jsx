@@ -9,7 +9,7 @@ export const ShopSection = () => {
 
     return (
         <ShopWrapper>
-            <ShopTitle>
+            <ShopTitle color="white">
                 Shop
             </ShopTitle>
             <ShopList>

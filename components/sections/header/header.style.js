@@ -86,8 +86,8 @@ export const HeaderWrapper = styled.div`
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    grid-template-rows: repeat(2, ${sizes.tabletLG.half});
-    height: ${sizes['tabletLG'].x1};
+    grid-template-rows: repeat(2, ${sizes['tabletLG'].thirdX1});
+    height: ${sizes['tabletLG'].thirdX2};
     ${HeaderItemTitle} {
       grid-row: 1/2;
       grid-column: 1/-1;
@@ -109,5 +109,10 @@ export const HeaderWrapper = styled.div`
       display: inline;
       margin: 0 0.1rem;
     }
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    grid-template-rows: repeat(2, ${sizes['tabletLG'].half});
+    height: ${sizes['tabletLG'].x1};
   }
 `

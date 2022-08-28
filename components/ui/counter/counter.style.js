@@ -110,8 +110,38 @@ export const PlusWrapper = styled.div`
     transition: 0.3s;
   }
 
-  @media (max-width: ${breakpointsWidth.tabletSM}) {
-    top: 0px;
+  @media screen and (max-width: ${breakpointsWidth.desktopLG}) {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.desktopMD}) {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    top: 5px;
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    height: 1.625vw;
+    width: 1.625vw;
   }
 `;
 
@@ -129,7 +159,37 @@ export const MinusWrapper = styled.div`
     transition: 0.3s;
   }
 
-  @media (max-width: ${breakpointsWidth.tabletSM}) {
-    top: 0px;
+  @media screen and (max-width: ${breakpointsWidth.desktopLG}) {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.desktopMD}) {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    top: 5px;
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    height: 1.625vw;
+    width: 1.625vw;
   }
 `;

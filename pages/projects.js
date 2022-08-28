@@ -1,12 +1,16 @@
 import "styles/global.style";
-import {ProjectCards, RunningLine} from "components";
+import { ProjectCards, RunningLine, Header, Footer } from "components";
 
 const Projects = () => {
 
     return (
         <>
-            <ProjectCards/>
-            <RunningLine outline mt="xlg"/>
+            <Header></Header>
+            <main>
+                <ProjectCards />
+                <RunningLine outline mt="xlg" />
+            </main>
+            <Footer pt="xlg"></Footer>
         </>
     );
 };

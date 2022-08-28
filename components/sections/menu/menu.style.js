@@ -1,3 +1,4 @@
+import { css } from "@emotion/css";
 import styled from "@emotion/styled";
 import { colors, zindex, hexToRGBA, sizes, getCurrentGridTemplateColumsStyle, breakpointsWidth } from "styles";
 
@@ -29,17 +30,24 @@ export const MenuList = styled.ul`
 `
 export const MenuBody = styled.nav`
     top: ${sizes['desktopLG'].half};
+    width:100%;
     position: absolute;
     display: grid;
     height: calc(100vh - ${sizes['desktopLG'].x1});
-    @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
-        top: ${sizes['desktopLG'].x1};
-        height: calc(100vh - 1.5 * ${sizes['desktopLG'].x1 });
-        ${MenuMap} {
-            grid-column: 3/5;
-        }
-        ${MenuList} {
-            grid-column: 1/3;
+
+    @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+        top: ${sizes['tabletLG'].thirdX2};
+        height: calc(100vh - ${sizes['tabletLG'].thirdX2} - ${sizes['tabletLG'].thirdX1});
+        ${MenuMap} { grid-column: 3/5; }
+        ${MenuList} { grid-column: 1/3; }
+    }
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        top: ${sizes['desktopLG'].x2};
+        height: calc(100vh - ${sizes['tabletLG'].x2} - 83px);
+        ${MenuMap} { display: none; }
+        ${MenuList} { 
+            grid-column: 1/-1;
+            justify-content : center;
         }
     }
     ${getCurrentGridTemplateColumsStyle()};
@@ -51,4 +59,20 @@ export const MenuFooter = styled.div`
     bottom: 0;
     opacity : ${({ isOpen }) => isOpen ? "1" : "0"};
     transition : opacity ease-in 0.2s;
+`
+
+export const HideForMobile = styled.span`
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        display: none;
+    }
+`
+
+export const ShowForMobile = styled.span`
+    display: none;
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        display: block;
+    }
 `

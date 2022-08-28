@@ -1,12 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {PropTypes} from "prop-types";
-import {useEscHandler, useVH} from "utils";
+import {useEscHandler, useVH, useNoScroll} from "utils";
 import {Portal} from "components";
 import {ModalWrapper} from "./modal.style";
 import {propTypesChildren} from "../../types";
 
 export const Modal = ({children, isOpen, setOpen, ...props}) => {
     useEscHandler(isOpen ? () => setOpen(false) : null);
+    useNoScroll(isOpen);
     useVH();
 
     return (

@@ -3,10 +3,10 @@ import { getCurrentMarginStyle } from "styles";
 import { H2 } from "components";
 import { getCurrentPaddingStyle } from "styles";
 import { getCurrentGridTemplateColumsStyle } from "styles";
+import { breakpointsWidth } from "styles";
 
 export const ShopWrapper = styled.div`
   width: 100%;
-  ${getCurrentPaddingStyle("top", "xlg")};
 `;
 
 export const ShopList = styled.div`
@@ -14,11 +14,11 @@ export const ShopList = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 
-  @media (max-width: 900px) {
+  @media (max-width: ${breakpointsWidth.tabletLG}) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 360px) {
     grid-template-columns: repeat(1, 1fr);
   }
 `;

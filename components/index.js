@@ -19,8 +19,8 @@ import {
   Planet,
   LeftBracket,
   Grid,
-  PartnersLine
-
+  PartnersLine,
+  NavigationBarMap
 } from "./common";
 /*    Импорты UI-ых компонентов    */
 import { ButtonEllipse } from "./ui/button-ellipse";
@@ -40,7 +40,6 @@ import { Plus } from "./ui/plus";
 import { Minus } from "./ui/minus";
 import { Wolf } from "./ui/wolf";
 import { WorksCard } from "./ui/works-card";
-import { ButtonExit } from "./ui/button-exit"
 import { Slider } from "./ui/slider";
 import { Awards } from "./ui/awards";
 import { Avatar } from "./ui/avatar";
@@ -49,6 +48,7 @@ import { WorksCards } from "./ui/works-cards";
 import { DetailTitle } from "./ui/detail-title";
 import { Stakeholders } from "./ui/stakeholders";
 import { VideoPlayer } from "./ui/video-player";
+import { PreTitleSlider } from "./ui/pre-title-slider";
 import { InputField, TextAreaField, DropDownField, CounterField } from "./ui/fields";
 /*    Импорты секций    */
 import { Header } from "./sections/header";
@@ -106,7 +106,6 @@ export {
   Counter,
   Plus,
   Minus,
-  ButtonExit,
   ButtonShop,
   Slider,
   IntroMainTextBlock,
@@ -130,4 +129,6 @@ export {
   DetailTitle,
   Stakeholders,
   VideoPlayer,
+  NavigationBarMap,
+  PreTitleSlider,
 };

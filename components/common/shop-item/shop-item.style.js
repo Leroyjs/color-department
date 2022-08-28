@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { getCurrentMarginStyle } from "styles";
 import {
   applyColor,
   getCurrentBackgroundColorStyles,
@@ -7,7 +8,6 @@ import {
   getCurrentColorStyles,
   breakpointsWidth,
   getCurrentFontSizeStyle,
-  getCurrentMarginStyle,
 } from "styles";
 import { Caption } from "../../ui/caption";
 import { H3 } from "../../ui/h3";
@@ -15,22 +15,6 @@ import { H3 } from "../../ui/h3";
 export const Title = styled(Caption)`
   ${({ theme }) => getCurrentColorStyles("white", theme)};
   transition: color 0.3s;
-
-  @media (max-width: ${breakpointsWidth.desktopLG}) {
-    ${getCurrentFontSizeStyle("vw")};
-  }
-
-  @media (max-width: 900px) {
-    /* ${getCurrentFontSizeStyle("vw2")}; */
-  }
-
-  @media (max-width: 500px) {
-    /* ${getCurrentFontSizeStyle("h3")}; */
-  }
-
-  @media (max-width: 400px) {
-    text-align: center;
-  }
 `;
 
 export const Cost = styled(H3)`
@@ -38,12 +22,7 @@ export const Cost = styled(H3)`
   ${({ theme }) => getCurrentColorStyles("primary", theme)};
   transition: color 0.3s;
 
-  @media (max-width: 500px) {
-    ${getCurrentFontSizeStyle("h2")};
-    ${getCurrentPaddingStyle("left", "xxsm")}
-  }
-
-  @media (max-width: 400px) {
+  @media (max-width: ${breakpointsWidth.phone}) {
     display: none;
   }
 `;
@@ -52,9 +31,8 @@ export const CostPhone = styled(H3)`
   ${({ theme }) => getCurrentColorStyles("primary", theme)};
   transition: color 0.3s;
 
-  @media (max-width: 400px) {
+  @media (max-width: ${breakpointsWidth.phone}) {
     display: block;
-    ${getCurrentFontSizeStyle("h2")};
   }
 `;
 
@@ -121,12 +99,13 @@ export const ShopItemWrapper = styled.div`
     }
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${breakpointsWidth.tabletLG}) {
     height: calc(100vw / 2);
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 360px) {
     height: 100vw;
+  }
 `;
 
 export const TextContainer = styled.div`
@@ -134,6 +113,11 @@ export const TextContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: ${breakpointsWidth.phone}) {
+    text-align: center;
+    justify-content: center;
+  }
 `;
 
 export const ProductImage = styled.div`
@@ -141,15 +125,15 @@ export const ProductImage = styled.div`
   width: 12.5vw;
   height: 12.5vw;
   ${getCurrentBackgroundColorStyles("white")};
-  ${getCurrentMarginStyle("", "md")};
+  ${getCurrentMarginStyle("", "md")}
 
-  @media (max-width: 900px) {
+  @media (max-width: ${breakpointsWidth.tabletLG}) {
     grid-template-columns: repeat(2, 1fr);
     width: 25vw;
     height: 25vw;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 360px) {
     grid-template-columns: repeat(1, 1fr);
     width: 50vw;
     height: 50vw;

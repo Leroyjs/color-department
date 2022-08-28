@@ -45,8 +45,8 @@ const SliderWithoutCursor = ({slides, title, isSimpleMode = false}) => {
         <SliderWrapper className="glide">
             <SliderTrack className="glide__track" data-glide-el="track">
                 <SliderSlides className="glide__slides">
-                    {slides.map((slide) => (
-                        <SliderItem key={slide.poster} {...slide} />
+                    {slides.map((slide, index) => (
+                        <SliderItem key={slide.poster} {...slide} isPlayed={currentSlide === index}/>
                     ))}
                 </SliderSlides>
                 <Prev
