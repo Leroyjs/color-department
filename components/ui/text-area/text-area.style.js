@@ -64,6 +64,7 @@ export const TextAreaInput = styled("textarea")`
         hexToRGBA(colors.white, 0.2)
       } 0px)`};
     background-size: ${`100% 56px`};
+    height: 230px;
   }
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
@@ -129,7 +130,7 @@ export const TextAreaWrapper = styled.div`
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
-    height: 240px;
+    height: 236px;
     &:after {
       line-height: 48px;
       background-image: ${`linear-gradient(transparent, transparent calc(56px - 2px), ${colors.white} 0px)`};
