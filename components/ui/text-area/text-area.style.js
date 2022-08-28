@@ -26,12 +26,11 @@ export const TextAreaInput = styled("textarea")`
   resize: none;
   ${getCurrentFontSizeStyle("h3")};
   font-family: ${fontFamilies.mainFont};
-  color: ${({ isError, theme }) =>
-    isError ? colors.red : getCurrentColor("primary", theme)};
+  color: ${({ theme }) => getCurrentColor("primary", theme)};
   line-height: ${`${lineHeight}px`};
-  background-image: ${({ isError }) =>
+  background-image: ${
     `linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${
-      isError ? colors.red : hexToRGBA(colors.white, 0.2)
+      hexToRGBA(colors.white, 0.2)
     } 0px)`};
   background-size: ${`100% ${lineHeight}px`};
   ${applyMargins}
@@ -49,9 +48,9 @@ export const TextAreaInput = styled("textarea")`
     padding-top: 10px;
     margin-bottom: -10px;
     line-height: 66px;
-    background-image: ${({ isError }) =>
+    background-image: ${
       `linear-gradient(transparent, transparent calc(66px - 2px), ${
-        isError ? colors.red : hexToRGBA(colors.white, 0.2)
+        hexToRGBA(colors.white, 0.2)
       } 0px)`};
     background-size: ${`100% 66px`};
   }
@@ -60,9 +59,9 @@ export const TextAreaInput = styled("textarea")`
     padding-top: 11px;
     margin-bottom: -18px;
     line-height: 48px;
-    background-image: ${({ isError }) =>
+    background-image: ${
       `linear-gradient(transparent, transparent calc(56px - 2px), ${
-        isError ? colors.red : hexToRGBA(colors.white, 0.2)
+        hexToRGBA(colors.white, 0.2)
       } 0px)`};
     background-size: ${`100% 56px`};
   }
@@ -71,9 +70,9 @@ export const TextAreaInput = styled("textarea")`
     padding-top: 18px;
     margin-bottom: -18px;
     line-height: 5.625vw;
-    background-image: ${({ isError }) =>
+    background-image: ${
       `linear-gradient(transparent, transparent calc(5.625vw - 2px), ${
-        isError ? colors.red : hexToRGBA(colors.white, 0.2)
+        hexToRGBA(colors.white, 0.2)
       } 0px)`};
     background-size: ${`100% 5.625vw;`};
   }
@@ -82,9 +81,9 @@ export const TextAreaInput = styled("textarea")`
     padding-top: 2vw;
     margin-bottom: -2vw;
     line-height: 5.57vw;
-    background-image: ${({ isError }) =>
+    background-image: ${
       `linear-gradient(transparent, transparent calc(5.57vw - 2px), ${
-        isError ? colors.red : hexToRGBA(colors.white, 0.2)
+        hexToRGBA(colors.white, 0.2)
       } 0px)`};
     background-size: ${`100% 5.57vw;`};
   }
@@ -169,7 +168,7 @@ export const Title = styled.h3`
   text-transform: uppercase;
   font-size: ${fontSizes.desktopLG.h3};
   font-family: ${fontFamilies.mainFont};
-  color: ${({ isError }) => (isError ? colors.red : colors.white)};
+  color: ${(colors.white)};
   margin-bottom: 10px;
 
   ${getCurrentPaddingStyle("top", "xxsm")};
