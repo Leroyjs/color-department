@@ -66,14 +66,26 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-const BlinkPicture = ({coordX,coordY,srcImg, ...props}) => {
+const BlinkPicture = ({coordX,coordY,srcImg, delay, isVisible, ...props}) => {
+    const [visible, setVisibility] = useState(isVisible);
+    const elementRef = useRef();
+    useEffect(()=>{
+        elementRef.current.addEventListener('animationend',()=>{
+            setVisibility(false);
+        });
+    },[])
+
+    console.log(visible);
+
     return (
         <BlinkPictureWrapper
+            ref={elementRef}
             {...props}
             coordX={coordX}
             coordY={coordY}
-            isVisible={true}
-            animationDuration={0.5} >
+            isVisible={visible}
+            delay={delay}
+            >
                 <img src={srcImg} />
         </BlinkPictureWrapper>
     )
@@ -82,6 +94,8 @@ const BlinkPicture = ({coordX,coordY,srcImg, ...props}) => {
 export const PhotoStartScreen = () => {
     const [displayedCards, setDisplayedCards] = useState([]);
     const [foxIndexCell, setFoxIndexCell] = useState();
+    const [animationDuration, setAnimationDuration] = useState();
+
     const pictureField = useRef(null)
 
     const getNewPicture = () => {
@@ -106,7 +120,8 @@ export const PhotoStartScreen = () => {
         const amountLine = Math.floor(pictureFieldRect.height / pictureBoxSize);
         /**Количество колонок */
         const amountColumn = Math.ceil(pictureFieldRect.width / pictureBoxSize);
-
+        /**количество картинок при учете, что на 5-ть квадратов одна картинка */
+        const amountPicture = Math.ceil(amountLine*amountColumn/5); 
         /**Создаем удобную структуру для работы с координатами */
         const coordsArray = []
         for (let Y = amountLine; Y !== 0; Y--) {
@@ -119,13 +134,13 @@ export const PhotoStartScreen = () => {
         }
 
         const interval = setInterval(() => {
-            const indexes = getRandomIndexes(coordsArray.length - 1, pictures.length)
+            const indexes = getRandomIndexes(coordsArray.length - 1, amountPicture)
             const newDisplaydArray = shuffleArray(coordsArray).filter((coordData, indexCoord) => indexes.includes(indexCoord))
             const shufflePicture = shuffleArray(pictures)
             
             newDisplaydArray.forEach((card,indx)=>{card.src = shufflePicture[indx]})
             setDisplayedCards(newDisplaydArray);
-        }, 2000)
+        }, 3000)
 
 
         return () => { clearInterval(interval) }
@@ -139,6 +154,8 @@ export const PhotoStartScreen = () => {
                     displayedCards.map((card, indx) =>
                         <BlinkPicture 
                             key={indx}
+                            delay={indx*300}
+                            isVisible={true}
                             srcImg={card.src}
                             coordX={card.x} 
                             coordY={card.y}>
