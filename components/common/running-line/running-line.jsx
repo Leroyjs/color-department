@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Caption, H1 } from 'components';
 import { RunningLineScrollContent, RunningLineSeparator, RunningLineWrapper } from './running-line.style';
+import { withLink } from 'utils';
+import Link from 'next/link';
 
 const SeparatorText = () => (
     <div>
@@ -25,20 +27,16 @@ export const RunningLine = React.memo(({ titles = ['WANT', 'TO', 'SLEEP', 'AND',
         :
         <H1 key={index}>{title}</H1>)
 
-    const redirectByLink = () => {
-        if (link) {
-            //TODO: реализовать навигацию по ссылкам
-        }
-    }
-
     return (
-        <RunningLineWrapper onClick={redirectByLink} link={link} {...props}>
+        <RunningLineWrapper link={link} {...props}>
             <RunningLineScrollContent outline={outline}>
                 {data}
             </RunningLineScrollContent>
         </RunningLineWrapper>
     )
 })
+
+export const RunningLineLink = withLink(RunningLine);
 
 RunningLine.displayName = 'RunningLine';
 RunningLine.propTypes = {

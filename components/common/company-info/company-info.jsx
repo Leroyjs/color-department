@@ -1,11 +1,16 @@
 import { Caption } from 'components'
 import { AdditionInfo, CompanyInfoWrapper, YearInfoMobile, ContactInfo, MadeBy } from './company-info.style'
+import Link from 'next/link'
 export const CompanyInfo = (props) => {
     return (
         <CompanyInfoWrapper {...props}>
             <ContactInfo>
-                <Caption>color@department.com</Caption>
-                <Caption>2 514 889-18-53</Caption>
+                <Link href={'mailto:color@department.com'}>
+                    <Caption style={{cursor:'pointer'}}>color@department.com</Caption>
+                </Link>
+                <Link href={''}>
+                    <Caption style={{cursor:'pointer'}}>2 514 889-18-53</Caption>
+                </Link>
             </ContactInfo>
             <YearInfoMobile>
                 <Caption>2022 color department</Caption>
@@ -15,7 +20,9 @@ export const CompanyInfo = (props) => {
                     <Caption>made by</Caption>
                     <Caption>design department</Caption>
                 </MadeBy>
-                <Caption>privacy policy</Caption>
+                <Link href={''}>
+                    <Caption style={{cursor:'pointer'}}>privacy policy</Caption>
+                </Link>
             </AdditionInfo>
         </CompanyInfoWrapper>
     )

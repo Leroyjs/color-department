@@ -1,6 +1,7 @@
-import React, {useEffect} from "react";
-import {FormProvider, useForm} from "react-hook-form";
-import {noScroll} from "../styles/reset.style";
+import Link from "next/link";
+import React, { useEffect } from "react";
+import { FormProvider, useForm } from "react-hook-form";
+import { noScroll } from "../styles/reset.style";
 
 export function debounce(func, wait) {
     let currentTimer = null;
@@ -19,7 +20,7 @@ export function debounce(func, wait) {
     };
 }
 
-export function throttling (func, delay) {
+export function throttling(func, delay) {
     let timer = null;
     let lastArgs = null;
     let lastThis = null;
@@ -76,13 +77,26 @@ export function formatPhoneNumber(value) {
 
 export function withFormProvider(Component, options) {
     // eslint-disable-next-line react/display-name
-    return ({...props}) => {
+    return ({ ...props }) => {
         const methods = useForm(options);
 
         return (
             <FormProvider {...methods}>
-                <Component {...props}/>
+                <Component {...props} />
             </FormProvider>
         );
+    }
+}
+
+export function withLink(Component) {
+    // eslint-disable-next-line react/display-name
+    return ({ link, target, ...props }) => {
+        return (
+            <Link href={link}>
+                <a target={target}>
+                    <Component {...props} />
+                </a>
+            </Link>
+        )
     }
 }

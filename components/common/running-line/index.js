@@ -1,1 +1,1 @@
-export { RunningLine } from './running-line';
+export { RunningLine, RunningLineLink } from './running-line';
