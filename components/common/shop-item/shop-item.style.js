@@ -125,7 +125,7 @@ export const ProductImage = styled.div`
   width: 12.5vw;
   height: 12.5vw;
   ${getCurrentBackgroundColorStyles("white")};
-  ${getCurrentMarginStyle("", "md")}
+  ${getCurrentMarginStyle("", "shop")};
 
   @media (max-width: ${breakpointsWidth.tabletLG}) {
     grid-template-columns: repeat(2, 1fr);
