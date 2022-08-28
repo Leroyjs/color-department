@@ -1,5 +1,4 @@
-import { Blob, Hamburger } from "components/common";
-import { Caption, H3, Menu } from "components";
+import { Caption, H3, Menu, Blob, Hamburger } from 'components';
 import {
   HeaderItemBlob,
   HeaderItemHumburger,
@@ -62,7 +61,7 @@ export const Header = ({ transparentToComponent }) => {
           </HeaderItemLetsGo>
         </Link>
       </HeaderWrapper>
-      <Menu isOpen={isOpenMenu}></Menu>
+      <Menu isOpen={isOpenMenu}/>
     </>
   );
-};
+}
