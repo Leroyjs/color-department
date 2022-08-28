@@ -105,9 +105,29 @@ export const HeaderWrapper = styled.div`
     ${HeaderItemLetsGo} {
       grid-column: 3/5;
     }
-    h3 {
-      display: inline;
-      margin: 0 0.1rem;
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopXLG}) {
+    ${Title}{
+      max-width: 10vw;
+    }
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.desktopXLG}) {
+    ${Title}{
+      max-width: 200px;
+    }
+  }
+
+  @media screen and (max-width: 1700px) {
+    ${Title}{
+      max-width: 180px;
+    }
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.desktopSM}) {
+    ${Title}{
+      max-width:none;
     }
   }
 
@@ -115,4 +135,5 @@ export const HeaderWrapper = styled.div`
     grid-template-rows: repeat(2, ${sizes['tabletLG'].half});
     height: ${sizes['tabletLG'].x1};
   }
+
 `
