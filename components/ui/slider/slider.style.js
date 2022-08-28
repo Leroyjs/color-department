@@ -9,11 +9,12 @@ import {
     getCurrentColorStyles,
     getCurrentFontSizeStyle,
     hexToRGBA,
-    getVW, breakpointsWidth
+    getVW, breakpointsWidth, getCurrentPaddingStyle
 } from "styles";
 
 import styled from "@emotion/styled";
 import {Caption} from "../caption";
+import {H3} from "../h3";
 
 export const SliderWrapper = styled.div`
   height: calc(100vh);
@@ -68,6 +69,26 @@ export const SliderContent = styled.div`
   pointer-events: none;
   ${applyMargins};
   ${applyPaddings}
+`;
+
+export const ContentTitle = styled(H3)`
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    display: none;
+  }
+`;
+
+export const ContentTitlePhone = styled(H3)`
+  display: none;
+  ${getCurrentPaddingStyle("left", "md")};
+  ${getCurrentPaddingStyle("bottom", "md")};
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 80px;
+  }
 `;
 
 export const ContentMain = styled.div`

@@ -4,7 +4,7 @@ import {
     AllSlides,
     CaptionCopyright,
     ContentFooter, ContentFooterPhone,
-    ContentMain,
+    ContentMain, ContentTitle, ContentTitlePhone,
     CopyrightItem,
     CopyrightList, CurrentSlide,
     LeftCol,
@@ -45,6 +45,7 @@ const SliderWithoutCursor = ({slides, title, isSimpleMode = false}) => {
 
     return (
         <>
+            {title && <ContentTitlePhone>{title}</ContentTitlePhone>}
             <SliderWrapper className="glide">
                 <SliderTrack className="glide__track" data-glide-el="track">
                     <SliderSlides className="glide__slides">
@@ -78,7 +79,7 @@ const SliderWithoutCursor = ({slides, title, isSimpleMode = false}) => {
                             </NavPoints>
                         ) : (
                             <>
-                                {title && <H3>{title}</H3>}
+                                {title && <ContentTitle>{title}</ContentTitle>}
                                 <ContentMain>
                                     <Tape
                                         color="white"
