@@ -153,8 +153,8 @@ export const IconPlus = styled.svg`
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
-    width: 12px;
-    height: 12px;
+    width: 18px;
+    height: 18px;
   }
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
