@@ -1,5 +1,4 @@
 import "styles/global.style";
-
 import {
   Footer,
   Header,
@@ -28,7 +27,7 @@ const Projects = () => {
         <ProjectCards />
         <RunningLine outline mt="xlg" />
       </main>
-      <Footer pt="xlg"></Footer>
+      <Footer pt="xlg"/>
     </>
   );
 };
