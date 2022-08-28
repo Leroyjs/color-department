@@ -30,8 +30,12 @@ export const AwardsTitle = styled(H2)`
   margin-left: auto;
   margin-right: auto;
 
-  ${applyMargins}
-  ${applyPaddings}
+  ${applyMargins};
+  ${applyPaddings};
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    margin-bottom: 32px;
+  }
 `;
 
 export const AwardsSubTitle = styled(Caption)`
@@ -179,6 +183,11 @@ export const Item = styled.li`
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    height: 80px;
     justify-content: flex-start;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    height: 64px;
   }
 `;

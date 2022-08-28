@@ -11,7 +11,7 @@ const Projects = () => {
                 <ProjectCards />
                 <RunningLine outline mt="xlg" />
             </main>
-            <Footer pt="xlg"></Footer>
+            <Footer pt="xlg"/>
         </>
     );
 };

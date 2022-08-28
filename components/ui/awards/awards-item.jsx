@@ -43,11 +43,7 @@ export const AwardsItem = ({
 
     const rectTarget = target.getBoundingClientRect();
     const rectPopOver = popOver.getBoundingClientRect();
-
-    const startX = 0;
     const endX = rectTarget.width - (rectPopOver.width + 80);
-    // e.clientX - rectPopOver.width
-    // const x =  clamp(e.clientX - rectTarget.left, startX, endX);
     const x =
       e.clientX - rectTarget.left >= endX
         ? e.clientX - (rectTarget.left + rectPopOver.width) - 40
