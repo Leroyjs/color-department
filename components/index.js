@@ -21,7 +21,9 @@ import {
   LeftBracket,
   Grid,
   PartnersLine,
-  NavigationBarMap
+  NavigationBarMap,
+  Hamburger,
+  Blob,
 } from "./common";
 /*    Импорты UI-ых компонентов    */
 import { ButtonEllipse } from "./ui/button-ellipse";
@@ -133,4 +135,6 @@ export {
   VideoPlayer,
   NavigationBarMap,
   PreTitleSlider,
+  Hamburger,
+  Blob,
 };

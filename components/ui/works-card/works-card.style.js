@@ -1,6 +1,14 @@
 import styled from "@emotion/styled";
 import {css} from "@emotion/css";
-import {applyMargins, applyPaddings, colors, getCurrentColorStyles, hexToRGBA} from "styles";
+import {
+    applyMargins,
+    applyPaddings,
+    breakpointsWidth,
+    colors,
+    getCurrentColorStyles,
+    getCurrentFontSizeStyle,
+    hexToRGBA
+} from "styles";
 import {H2} from "../h2";
 import {Caption} from "components";
 
@@ -31,6 +39,11 @@ export const CardTitle = styled(H2)`
     content: attr(data-hover);
     ${({theme}) => getCurrentColorStyles("primary", theme)}
   }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    text-align: left;
+    ${getCurrentFontSizeStyle("h3")};
+  }
 `;
 
 export const CardCaption = styled(Caption)`
@@ -47,9 +60,8 @@ export const CardWrapper = styled.a`
   width: 100%;
   background-color: ${hexToRGBA(colors.black, 0.6)};
   ${applyMargins};
+  ${applyPaddings};
 
-
-  ${applyPaddings}
   &:hover {
     ${CardTitle} {
       &:after {
@@ -72,6 +84,14 @@ export const CardTitleWrapper = css`
   margin-top: auto;
   margin-bottom: auto;
   width: 100%;
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    margin: 0;
+    margin-bottom: auto;
+    align-self: flex-start;
+    width: auto;
+    text-align: left;
+  }
 `;
 
 export const CardFooter = styled.div`

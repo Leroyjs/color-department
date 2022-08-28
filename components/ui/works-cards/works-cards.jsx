@@ -8,7 +8,7 @@ export const WorksCards = ({title, cards}) => {
     return (
         <WorksWrapper>
             {title && (
-                <WorksTitle mb="md" wrapperProps={{className: WorksTitleWrapper}}>
+                <WorksTitle wrapperProps={{className: WorksTitleWrapper}}>
                     {title}
                 </WorksTitle>
             )}
