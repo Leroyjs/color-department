@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import {applyMargins, applyPaddings, colors, hexToRGBA} from "styles";
+import {applyMargins, applyPaddings, breakpointsWidth, colors, getVW, hexToRGBA} from "styles";
 
 export const PlayButton = styled.div`
   position: absolute;
@@ -24,6 +24,13 @@ export const PlayButton = styled.div`
     object-fit: cover;
     width: 12.5%;
     height: 12.5%;
+  }
+  
+  
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    width: ${getVW(160)};
+    height: ${getVW(160)};
+    border-width: ${getVW(1)};
   }
 `;
 
