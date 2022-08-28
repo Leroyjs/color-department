@@ -1,11 +1,19 @@
-import { Caption, H3, Menu } from 'components';
 import { Blob, Hamburger } from "components/common";
-import Link from 'next/link';
+import { Caption, H3, Menu } from "components";
+import {
+  HeaderItemBlob,
+  HeaderItemHumburger,
+  HeaderItemLetsGo,
+  HeaderItemTitle,
+  HeaderWrapper,
+  Title,
+} from "./header.style";
 import { useEffect, useRef, useState } from "react";
-//TODO: Кривой импорт
-import theme from '../../../__data__/theme';
-import { HeaderItemBlob, HeaderItemHumburger, HeaderItemLetsGo, HeaderItemTitle, HeaderWrapper, Title, TitleContent } from "./header.style";
+
+import Link from "next/link";
 import { setTransperentByScroll } from "./utils";
+//TODO: Кривой импорт
+import theme from "../../../__data__/theme";
 
 export const Header = ({ transparentToComponent }) => {
   const headerRef = useRef(null);
@@ -16,32 +24,45 @@ export const Header = ({ transparentToComponent }) => {
 
   //Обработка скрола, для изменения прозрачности
   useEffect(() => {
-    return setTransperentByScroll(transparentToComponent, setTransparentBg, headerRef, window)
-  }, [])
+    return setTransperentByScroll(
+      transparentToComponent,
+      setTransparentBg,
+      headerRef,
+      window
+    );
+  }, []);
 
   return (
     <>
-      <HeaderWrapper ref={headerRef} transparency={transparentBg} isMenuOpen={isOpenMenu}>
-        <HeaderItemHumburger onClick={() => setMenuState(prevState => !prevState)}>
+      <HeaderWrapper
+        ref={headerRef}
+        transparency={transparentBg}
+        isMenuOpen={isOpenMenu}
+        className="header-main"
+      >
+        <HeaderItemHumburger
+          onClick={() => setMenuState((prevState) => !prevState)}
+        >
           <Hamburger isActive={isOpenMenu} />
         </HeaderItemHumburger>
         <HeaderItemBlob onClick={() => theme.setNextThemeName()}>
           <Blob />
         </HeaderItemBlob>
-        <Link href={'/'}>
+        <Link href={"/"}>
           <HeaderItemTitle>
             <Title>
-              <H3 color='white'>color department los angeles</H3>
+              <H3 color="white">color department</H3>
+              <H3 color="white">los angeles</H3>
             </Title>
           </HeaderItemTitle>
         </Link>
-        <Link href={'/order'}>
+        <Link href={"/order"}>
           <HeaderItemLetsGo>
-            <Caption color='white'>Lets talk</Caption>
+            <Caption color="white">Lets talk</Caption>
           </HeaderItemLetsGo>
         </Link>
       </HeaderWrapper>
       <Menu isOpen={isOpenMenu}></Menu>
     </>
   );
-}
+};
