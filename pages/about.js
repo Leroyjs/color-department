@@ -121,60 +121,60 @@ const slides = [
 const About = () => {
     const [isAboutImg, setAboutImg] = useState(true);
     const SeniorColourists = [
-        {
-            modalId: "/",
-            startLabel: "Сraig Saunders",
-            endLabel: "Senior colourist",
-            img: "https://bigpicture.ru/wp-content/uploads/2018/11/sins00.jpg",
-        },
-        {
-            modalId: "/",
-            startLabel: "Ellen Kennedy",
-            endLabel: "VFX-designer",
-            img: "https://bigpicture.ru/wp-content/uploads/2018/11/sins1.jpg",
-        },
-        {
-            modalId: "/",
-            startLabel: "Miranda Bell",
-            endLabel: "Creative director",
-            img: "https://bigpicture.ru/wp-content/uploads/2018/11/sins2.jpg",
-        },
+      {
+        modalId: "/",
+        startLabel: "Сraig Saunders",
+        endLabel: "Senior colourist",
+        img: "https://images.unsplash.com/photo-1660598353451-9c5a0a0ff901?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE2fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      },
+      {
+        modalId: "/",
+        startLabel: "Ellen Kennedy",
+        endLabel: "VFX-designer",
+        img: "https://images.unsplash.com/photo-1514993805013-c428d7f63ad4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      },
+      {
+        modalId: "/",
+        startLabel: "Miranda Bell",
+        endLabel: "Creative director",
+        img: "https://images.unsplash.com/photo-1660032109345-f513b154cc2f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMyfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      },
     ];
 
     const Colourists = [
-        {
-            modalId: "/",
-            startLabel: "Herman Payne",
-            endLabel: "CEO-founder",
-            img: "https://bigpicture.ru/wp-content/uploads/2018/11/sins3.jpg",
-        },
-        {
-            modalId: "/",
-            startLabel: "Jeff Washington",
-            endLabel: "Sales manager",
-            img: "https://bigpicture.ru/wp-content/uploads/2018/11/sins4.jpg",
-        },
+      {
+        modalId: "/",
+        startLabel: "Herman Payne",
+        endLabel: "CEO-founder",
+        img: "https://images.unsplash.com/photo-1548536082-6959567349c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE3fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      },
+      {
+        modalId: "/",
+        startLabel: "Jeff Washington",
+        endLabel: "Sales manager",
+        img: "https://images.unsplash.com/photo-1660054031395-3c01627e8842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI4fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      },
     ];
 
     const Assistants = [
-        {
-            modalId: "/",
-            startLabel: "Milton Hogan",
-            endLabel: "Account",
-            img: "https://bigpicture.ru/wp-content/uploads/2018/11/sins8-800x422.jpg",
-        },
-        {
-            modalId: "/",
-            startLabel: "Dexter Swanson",
-            endLabel: "Account",
-            img: "https://bigpicture.ru/wp-content/uploads/2018/11/sins7.jpg",
-        },
-        {
-            modalId: "/",
-            startLabel: "Carla Garcia",
-            endLabel: "Manager",
-            img: "https://bigpicture.ru/wp-content/uploads/2018/11/sins70-800x600.jpg",
-        },
+      {
+        modalId: "/",
+        startLabel: "Milton Hogan",
+        endLabel: "Account",
+        img: "https://images.unsplash.com/photo-1659492061718-f3708aae95d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDY2fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      },
+      {
+        modalId: "/",
+        startLabel: "Dexter Swanson",
+        endLabel: "Account",
+        img: "https://images.unsplash.com/photo-1659273145320-4a9750783c25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg0fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      },
+      {
+        modalId: "/",
+        startLabel: "Carla Garcia",
+        endLabel: "Manager",
+        img: "https://images.unsplash.com/photo-1502323703385-c3ea9ace787d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg3fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      },
     ];
 
     return (

@@ -1,32 +1,32 @@
-import { useEffect, useState } from 'react';
-import { Img, PartnersItem, PartnersLineSlider, PartnersLineWrapper } from './partners-line.style';
+import {useEffect, useState} from 'react';
+import {PropTypes} from "prop-types";
 import { initStepCounter } from './utils';
+import { PartnersItem, PartnersLineSlider, PartnersLineWrapper } from './partners-line.style';
 
-const mockImagePaths = [
-    '/20-century.png',
-    '/apple.png',
-    '/dream-works.png',
-    '/netflix.png',
-    '/pizza-hunt.png',
-    '/uniqlo.png',
-    '/zara.png',
-];
-
-export const PartnersLine = ({ imagePaths = mockImagePaths }) => {
+export const PartnersLine = ({ partners = [] }) => {
     const [step, setStep] = useState(0);
     const [pictureArray, setPictureArray] = useState([]);
-    useEffect(() => initStepCounter(setStep, imagePaths, setPictureArray), []);
-    const getPartners = () => {
-        return pictureArray.map((path, indx) =>
-            <PartnersItem key={indx}>
-                <img src={path} alt=''></img>
-            </PartnersItem>)
-    }
+
+    useEffect(() => initStepCounter(setStep, partners, setPictureArray), []);
+
     return (
         <PartnersLineWrapper>
             <PartnersLineSlider step={step}>
-                {getPartners()}
+                {
+                    pictureArray.map(({logo, label}) => (
+                        <PartnersItem key={label}>
+                            <img src={logo} alt={label}/>
+                        </PartnersItem>)
+                    )
+                }
             </PartnersLineSlider>
         </PartnersLineWrapper>
     );
+}
+
+PartnersLine.propTypes = {
+    partners: PropTypes.arrayOf(PropTypes.shape({
+        logo: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+    })).isRequired
 }

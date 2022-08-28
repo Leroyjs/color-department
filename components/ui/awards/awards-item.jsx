@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import { debounce, clamp } from "utils";
+import React, { useRef } from "react";
+import { debounce } from "utils";
 import {
   Item,
   LabelEnd,

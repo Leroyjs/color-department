@@ -9,16 +9,30 @@ import {
     getCurrentColorStyles,
     getCurrentFontSizeStyle,
     hexToRGBA,
+    getVW, breakpointsWidth
 } from "styles";
 
 import styled from "@emotion/styled";
+import {Caption} from "../caption";
 
 export const SliderWrapper = styled.div`
   height: calc(100vh);
   height: calc(var(--fsvh, 1vh) * 100);
   width: 100%;
   ${applyMargins};
-  ${applyPaddings}
+  ${applyPaddings};
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    height: clamp(460px, 0.5vw, 0.4vh);
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    height: clamp(460px, 0.5vw, 0.5vh);
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    height: clamp(220px, 0.6vw, 0.5vh);
+  }
 `;
 
 export const SliderTrack = styled.div`
@@ -69,6 +83,7 @@ export const NavBullets = styled.ul`
   pointer-events: auto;
   display: flex;
   align-items: center;
+  max-width: 100%;
 `;
 
 export const NavBullet = styled.button`
@@ -113,6 +128,39 @@ export const NavBullet = styled.button`
   & + & {
     margin-left: 40px;
   }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    width: ${getVW(60)};
+    height: ${getVW(60)};
+
+    &:after {
+      border-width: ${getVW(1)};
+      width: ${getVW(60)};
+      height: ${getVW(60)};
+    }
+
+    & + & {
+      margin-left: ${getVW(40)};
+    }
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    width: 48px;
+    height: 48px;
+
+    &:after {
+      width: 48px;
+      height: 48px;
+    }
+
+    & + & {
+      margin-left: 16px;
+    }
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    display: none;
+  }
 `;
 
 export const NavPoints = styled.ul`
@@ -123,6 +171,10 @@ export const NavPoints = styled.ul`
   align-self: center;
   justify-self: self-end;
   margin-top: auto;
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    display: none;
+  }
 `;
 
 export const NavPoint = styled.button`
@@ -146,11 +198,59 @@ export const NavPoint = styled.button`
   & + & {
     margin-left: 40px;
   }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    width: ${getVW(6)};
+    height: ${getVW(6)};
+    border-width: ${getVW(1)};
+
+    & + & {
+      margin-left: ${getVW(40)};
+    }
+  }
 `;
 
 export const ContentFooter = styled.div`
   position: relative;
   width: 100%;
+`;
+
+export const NavFooterPhone = styled.div`
+  display: none;
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+export const CurrentSlide = styled(Caption)`
+  color: ${colors.white};
+  margin-right: 8px;
+`;
+
+export const AllSlides = styled(Caption)`
+  color: ${hexToRGBA(colors.white, 0.4)};
+  margin-left: 8px;
+`;
+
+export const ContentFooterPhone = styled.div`
+  display: none;
+  width: 100%;
+  ${applyMargins};
+  ${applyPaddings};
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
 `;
 
 export const LeftCol = styled.div`
@@ -162,6 +262,24 @@ export const LeftCol = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    transform: translateX(calc(-100% - ${getVW(20)}));
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    transform: translateX(calc(-100% - 12px));
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    &.desktop {
+      display: none;
+    }
+
+    position: static;
+    transform: none;
+    left: auto;
+  }
 `;
 
 export const RightCol = styled.div`
@@ -172,6 +290,33 @@ export const RightCol = styled.div`
   bottom: 0;
   right: 50%;
   transform: translateX(calc(100% + 20px));
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    transform: translateX(calc(100% + ${getVW(20)}));
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    transform: translateX(calc(100% + 12px));
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    &.desktop {
+      display: none;
+    }
+
+    position: static;
+    transform: none;
+    right: auto;
+  }
+`;
+
+export const CaptionCopyright = styled(Caption)`
+  color: ${colors.white};
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    font-size: 10px;
+    color: ${hexToRGBA(colors.white, 0.4)};
+  }
 `;
 
 export const CopyrightList = styled.ul`
@@ -190,6 +335,10 @@ export const CopyrightList = styled.ul`
   ${applyColor};
   ${getCurrentFontSizeStyle("h3")};
   ${({theme}) => getCurrentColorStyles("white", theme)};
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    width: 100%;
+  }
 `;
 
 export const CopyrightItem = styled.li`
@@ -206,14 +355,24 @@ export const CopyrightItem = styled.li`
           `
     left: auto;
     right: 0;
-  `}
+    
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        left: 0;
+        right: auto;
+    }
+  `};
 
   ${({isLeft}) =>
           isLeft &&
           `
     right: auto;
     left: 0;
-  `}
+    
+     @media screen and (max-width: ${breakpointsWidth.phone}) {
+        right: 0;
+        left: auto;
+    }
+  `};
 
   ${({isActive}) =>
           isActive &&

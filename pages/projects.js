@@ -3,10 +3,9 @@ import { ProjectCards, PhotoStartScreen, RunningLine, Header, Footer } from "com
 import { colors } from "styles";
 
 const Projects = () => {
-
     return (
         <>
-            <Header></Header>
+            <Header/>
             <PhotoStartScreen arrayOfImages={[]}/>
             <main style={{ backgroundColor: colors.black }}>
                 <ProjectCards />
