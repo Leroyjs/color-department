@@ -102,9 +102,14 @@ export const StyledUnderline = styled(TextDecorationUnderline)`
   transform: translateX(-50%);
   width: calc(100% + 6px);
 
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    bottom: -12px;
+  }
+
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     width: 33.625vw;
     height: 1vw;
+    bottom: -1vw;
   }
 `;
 
