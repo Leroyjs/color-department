@@ -17,8 +17,7 @@ import {Caption} from "../caption";
 import {H3} from "../h3";
 
 export const SliderWrapper = styled.div`
-  height: calc(100vh);
-  height: calc(var(--fsvh, 1vh) * 100);
+  height: calc(100vh - 100px);
   width: 100%;
   ${applyMargins};
   ${applyPaddings};

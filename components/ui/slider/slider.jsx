@@ -1,5 +1,5 @@
 import React, {useRef, useState} from "react";
-import {Caption, H3} from "components";
+import {Caption} from "components";
 import {
     AllSlides,
     CaptionCopyright,
@@ -25,8 +25,8 @@ import {useGlide} from "./utils";
 import {useVH} from "utils";
 import {withCursor} from "utils";
 
-const SliderWithoutCursor = ({slides, title, isSimpleMode = false}) => {
-    const {currentSlide, next, prev} = useGlide();
+const SliderWithoutCursor = ({slides, title, isSimpleMode = false, autoplay = 6000, hoverpause = false}) => {
+    const {currentSlide, next, prev} = useGlide(autoplay, hoverpause);
     const [cursorText, setText] = useState("");
 
     const cursor = useRef(null);
@@ -194,5 +194,7 @@ export const Slider = withCursor(SliderWithoutCursor);
 
 Slider.propTypes = {
     slides: PropTypes.object.isRequired,
+    autoplay: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+    hoverpause: PropTypes.bool,
     isSimpleMode: PropTypes.bool,
 };

@@ -3,14 +3,14 @@ import { useEffect, useRef, useState } from "react";
 import Glide from "@glidejs/glide";
 import { SliderSlides } from "./slider.style";
 
-export function useGlide() {
+export function useGlide(autoplay, hoverpause) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const glide = useRef();
 
   useEffect(() => {
     glide.current = new Glide(".glide", {
       type: "carousel",
-      gap: 0,
+      gap: 0, autoplay, hoverpause,
       classes: {
         nav: {
           active: "active",
