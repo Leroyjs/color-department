@@ -29,7 +29,7 @@ export const ProjectCards = () => {
             const isGenre = currentGenre?.value === genre || !currentGenre?.value;
             const isCategory = currentCategory?.value === category || !currentCategory?.value;
             return isColorist && isGenre && isCategory;
-        })
+        });
 
         setCards(filteredCards);
     }, [data, currentCategory, currentGenre, currentColourist])
@@ -80,8 +80,9 @@ function useGetData() {
     useEffect(() => {
         const data = [
             {
-                video:
-                    "https://user-images.githubusercontent.com/70715305/174163866-72e76540-1982-4e8a-bb40-383cf3ca2491.mp4",
+                video: {
+                    mp4: "https://user-images.githubusercontent.com/70715305/174163866-72e76540-1982-4e8a-bb40-383cf3ca2491.mp4"
+                },
                 poster:
                     "https://phonoteka.org/uploads/posts/2021-05/1622021938_9-phonoteka_org-p-pop-arti-krasivo-11.jpg",
                 id: 1,
@@ -93,8 +94,9 @@ function useGetData() {
                 year: "1488",
             },
             {
-                video:
-                    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4	",
+                video: {
+                    mp4: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+                },
                 poster:
                     "https://static.tildacdn.com/tild6363-6630-4436-a132-633033393666/Pop-Art-sochny-j.jpg",
                 id: 9,
@@ -106,8 +108,9 @@ function useGetData() {
                 year: "1488",
             },
             {
-                video:
-                    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+                video: {
+                    mp4: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4"
+                },
                 poster: "https://i.ytimg.com/vi/kYRUg7Vfits/maxresdefault.jpg",
                 id: 2,
                 colourist: "SEGA MEGA DRIVE",
@@ -118,8 +121,9 @@ function useGetData() {
                 year: "1488",
             },
             {
-                video:
-                    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+                video: {
+                    mp4: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4"
+                },
                 poster:
                     "https://proprikol.ru/wp-content/uploads/2021/02/sychi-krasivye-kartinki-5.jpg",
                 id: 3,
@@ -131,8 +135,9 @@ function useGetData() {
                 year: "1488",
             },
             {
-                video:
-                    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+                video: {
+                    mp4: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                },
                 poster:
                     "https://phonoteka.org/uploads/posts/2021-05/1622021938_9-phonoteka_org-p-pop-arti-krasivo-11.jpg",
                 id: 4,

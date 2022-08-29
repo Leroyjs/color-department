@@ -252,6 +252,7 @@ export const fontSizes = {
 };
 
 export const zindex = {
+  popOver: 1100,
   header: 1000,
   modal: 900,
   footer: 500,

@@ -42,7 +42,6 @@ export const RunningLineScrollContent = styled.div`
 
 const SeparatorDinamicStyle = ({ outline }) => {
     if (outline) {
-        getCurrentColor
         return `
             & span { color: ${colors.white};}
             border-color: ${colors.white};
@@ -55,7 +54,7 @@ export const RunningLineSeparator = styled.div`
     border-radius: 50%;
     border-color: ${({ theme }) => getCurrentColor("primary", theme)};
     height: ${sizes['desktopLG'].half};
-    min-height: 100;
+    min-height: 100px;
     min-width: 240px;
     display:flex;
     justify-content: center;

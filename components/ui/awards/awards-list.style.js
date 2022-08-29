@@ -11,7 +11,7 @@ import {
     hexToRGBA,
     breakpointsWidth,
     getCurrentMarginStyle,
-    getCurrentPaddingStyle, getCurrentColor,
+    getCurrentPaddingStyle, getCurrentColor, getVW, zindex,
 } from "styles";
 
 export const AwardsContainer = styled.div`
@@ -74,6 +74,7 @@ export const FlexControl = styled.span`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  pointer-events: none;
 `;
 
 export const LabelEnd = styled.span`
@@ -95,7 +96,7 @@ export const PopOver = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: ${zindex.popOver};
   width: 400px;
   height: 0px;
   object-fit: cover;
@@ -103,14 +104,22 @@ export const PopOver = styled.div`
   overflow: hidden;
   border: none;
   box-shadow: none;
-
+  will-change: transform;
   transition: height 0.35s;
 
   &.isShow {
     height: 400px;
   }
-
+  
   ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)};
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}){
+    width: ${getVW(400)};
+
+    &.isShow {
+      height: ${getVW(400)};
+    }
+  }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     display: none;
@@ -137,17 +146,6 @@ export const AboutPhoneImg = styled.img`
     min-width: 48px;
     height: 48px;
   }
-`;
-
-export const PopOverImg = styled.img`
-  pointer-events: none;
-  width: 400px;
-  height: 400px;
-  object-fit: cover;
-  object-position: center;
-  overflow: hidden;
-  border: none;
-  box-shadow: none;
 `;
 
 export const Item = styled.li`
@@ -182,6 +180,15 @@ export const Item = styled.li`
     border-bottom: 1px solid ${hexToRGBA(colors.white, 0.2)};
   }
 
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}){
+    height: ${getVW(100)};
+    border-width: ${getVW(1)};
+
+    &:last-child{
+      border-width: ${getVW(1)};
+    }
+  }
+
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     height: 80px;
     justify-content: flex-start;
@@ -189,5 +196,21 @@ export const Item = styled.li`
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     height: 64px;
+  }
+`;
+
+export const PopOverImg = styled.img`
+  pointer-events: none;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  border: none;
+  box-shadow: none;
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}){
+    width: ${getVW(400)};
+    height: ${getVW(400)};
   }
 `;

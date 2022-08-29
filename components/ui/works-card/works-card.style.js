@@ -40,7 +40,7 @@ export const CardTitle = styled(H2)`
     ${({theme}) => getCurrentColorStyles("primary", theme)}
   }
 
-  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
     text-align: left;
     ${getCurrentFontSizeStyle("h3")};
   }
@@ -85,11 +85,10 @@ export const CardTitleWrapper = css`
   margin-bottom: auto;
   width: 100%;
 
-  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
     margin: 0;
     margin-bottom: auto;
     align-self: flex-start;
-    width: auto;
     text-align: left;
   }
 `;

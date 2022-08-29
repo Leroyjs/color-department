@@ -7,7 +7,8 @@ export const DropDownsWrapper = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 40px;
   justify-content: space-between;
-  ${getCurrentPaddingStyle("horizontal", "md")}
+  ${getCurrentPaddingStyle("horizontal", "md")};
+  ${getCurrentPaddingStyle("top", "md")};
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     grid-template-columns: repeat(1, 1fr);

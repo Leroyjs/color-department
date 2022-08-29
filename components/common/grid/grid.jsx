@@ -1,97 +1,13 @@
-import { Cell, CellImage, GridInner, GridWrapper } from "./grid.style";
 import { useEffect, useRef, useState } from "react";
-
 import { getArrayOfIndex } from "styles";
-
-const patternsDesctop = [
-  [57, 52, 61, 63, 67],
-  [59, 49, 69, 62, 71],
-  [57, 52, 61, 63, 67],
-  [59, 49, 69, 62, 71],
-];
-
-const patternsTablet = [
-  [57, 52, 61, 63, 67],
-  [59, 49, 69, 62, 71],
-  [57, 52, 61, 63, 67],
-  [59, 49, 69, 62, 71],
-];
-
-const getCurrentPattern = (index) => {
-  const currentDictionary = window.matchMedia("(min-width: 1024px)").matches
-    ? patternsDesctop
-    : patternsTablet;
-
-  return currentDictionary[index];
-};
-
-const getStepFn = (pattern) => (indexOfPosition) =>
-  pattern.indexOf(indexOfPosition) !== -1
-    ? pattern.indexOf(indexOfPosition)
-    : 0;
-
-const getNumdersOfAvaleblePositions = () => {
-  const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight;
-  const countOfColums = window.matchMedia("(min-width: 1024px)").matches
-    ? 8
-    : 4;
-  const sizeOfCell = windowWidth / countOfColums;
-  const headerHeight = document
-    .querySelector(".header-main")
-    .getBoundingClientRect().height;
-
-  const countOfFreeRows = Math.floor(
-    (windowHeight - headerHeight) / sizeOfCell - 1
-  );
-
-  const maxNumberOfCell = 79 - countOfColums;
-  const minNumberOfCell = maxNumberOfCell - countOfFreeRows * countOfColums + 1;
-
-  const numdersOfAvaleblePositions = [];
-
-  for (let index = minNumberOfCell; index <= maxNumberOfCell; index++) {
-    numdersOfAvaleblePositions.push(index);
-  }
-
-  return numdersOfAvaleblePositions;
-};
-
-let lastIndexOfImage = 0;
-
-const getArrayOfImagesOnThisStep = (
-  countOfImagesOnThisPattern,
-  arrayOfImages = []
-) => {
-  const arrayOfImagesOnThisStep = [];
-
-  const getCurrentIndex = (index) => index % arrayOfImages.length;
-
-  for (
-    let index = lastIndexOfImage;
-    index < countOfImagesOnThisPattern + lastIndexOfImage;
-    index++
-  ) {
-    arrayOfImagesOnThisStep.push(arrayOfImages[getCurrentIndex(index)]);
-  }
-
-  console.log(
-    "dfvd",
-    lastIndexOfImage,
-    countOfImagesOnThisPattern,
-    arrayOfImages.length,
-    getCurrentIndex(lastIndexOfImage + countOfImagesOnThisPattern)
-  );
-
-  lastIndexOfImage = getCurrentIndex(
-    lastIndexOfImage + countOfImagesOnThisPattern
-  );
-
-  return arrayOfImagesOnThisStep;
-};
-
-const isValidPositionFn = (numdersOfPositions) => (indexOfPosition) =>
-  numdersOfPositions.indexOf(indexOfPosition) !== -1;
+import {
+  getArrayOfImagesOnThisStep,
+  getCurrentPattern,
+  getNumdersOfAvaleblePositions,
+  getStepFn,
+  isValidPositionFn
+} from "./grid-utils";
+import { Cell, CellImage, GridInner, GridWrapper } from "./grid.style";
 
 export const Grid = ({ props, arrayOfImages }) => {
   const [indexOfPattern, setIndexOfPattern] = useState(0);
@@ -118,7 +34,7 @@ export const Grid = ({ props, arrayOfImages }) => {
     );
   }, [indexOfPattern, arrayOfImages]);
 
-  const [isApearence, setApearence] = useState(false);
+  const [isAppearance, setAppearance] = useState(false);
   const isVisible = isValidPositionFn(pattern);
   const getStep = getStepFn(pattern);
 
@@ -146,7 +62,7 @@ export const Grid = ({ props, arrayOfImages }) => {
     setPlayAnimation(true);
 
     const interval = setInterval(() => {
-      setApearence((prevApearenceState) => {
+      setAppearance((prevApearenceState) => {
         if (prevApearenceState) {
           setIndexOfPattern((prevIndexOfPatternState) => {
             if (prevIndexOfPatternState < pattern.length - 2) {
@@ -171,7 +87,7 @@ export const Grid = ({ props, arrayOfImages }) => {
             {isPlayAnimation && isValidPositionForImage(item) && (
               <CellImage
                 step={getStep(item)}
-                isVisible={isApearence && isVisible(item)}
+                isVisible={isAppearance && isVisible(item)}
                 image={arrayOfImagesOnThisStep.current[getStep(item)]}
               />
             )}

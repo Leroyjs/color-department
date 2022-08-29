@@ -1,7 +1,6 @@
-import React, {forwardRef} from 'react';
-import {PropTypes} from "prop-types";
-import {VideoContainer} from "./video.style";
-import {propTypesVideoBg, propTypesWorksCard} from "../../types";
+import React, { forwardRef } from 'react';
+import { propTypesVideoBg } from "../../types";
+import { VideoContainer } from "./video.style";
 
 // eslint-disable-next-line react/display-name
 export const VideoBackground = forwardRef(({poster, video, autoPlay = false, ...props}, ref) => {

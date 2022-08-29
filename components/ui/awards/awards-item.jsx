@@ -21,9 +21,10 @@ export const AwardsItem = ({
 }) => {
   const popOverRef = useRef();
 
-  function handleEnter() {
+  function handleEnter(e) {
     const optionContainerEl = popOverRef.current;
     if (!optionContainerEl) return;
+    calcPosition(e);
     optionContainerEl.classList.add("isShow");
   }
 
@@ -32,10 +33,13 @@ export const AwardsItem = ({
 
     if (optionContainerEl?.classList.contains("isShow")) {
       optionContainerEl.classList.remove("isShow");
+      setTimeout(()=> {
+        optionContainerEl.removeAttribute('style');
+      }, 350);
     }
   }
 
-  const handleMove = debounce((e) => {
+  function calcPosition(e) {
     const target = e.target;
     const popOver = popOverRef.current;
 
@@ -45,20 +49,21 @@ export const AwardsItem = ({
     const rectPopOver = popOver.getBoundingClientRect();
     const endX = rectTarget.width - (rectPopOver.width + 80);
     const x =
-      e.clientX - rectTarget.left >= endX
-        ? e.clientX - (rectTarget.left + rectPopOver.width) - 40
-        : e.clientX - rectTarget.left + 40;
+        e.clientX - rectTarget.left >= endX
+            ? e.clientX - (rectTarget.left + rectPopOver.width) - 40
+            : e.clientX - rectTarget.left + 40;
     const y = e.clientY - rectTarget.top;
 
     popOver?.setAttribute(
-      "style",
-      `transform: translate(${x}px, calc(-100% + ${y - 40}px))`
+        "style",
+        `transform: translate(${x}px, calc(-100% + ${y - 40}px))`
     );
-  }, 10);
+  }
+
   return (
     <Item
       onMouseEnter={handleEnter}
-      onMouseMove={handleMove}
+      onMouseMove={debounce(calcPosition, 10)}
       onMouseLeave={handleLeave}
       onClick={() => onClick?.(modalId)}
       {...props}
