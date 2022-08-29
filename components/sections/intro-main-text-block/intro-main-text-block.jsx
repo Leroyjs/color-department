@@ -1,4 +1,4 @@
-import { Caption, H2, Text } from "components";
+import { Caption, H2, Text, } from "components";
 import {
   TextSectionWrapper,
   FirstLineWrapper,
@@ -29,10 +29,12 @@ export const IntroMainTextBlock = () => {
         <StyledTabletBR />
         <H2> grading studio&nbsp;</H2>
         <StyledDesktopLGBR />
-        <StyledWhiteH2>
-          Based in Los Angeles.
-          <StyledPlanet />
-        </StyledWhiteH2>
+        <Link href="#maplink">
+          <StyledWhiteH2 style={{ cursor: "pointer" }}>
+            Based in Los Angeles.
+          </StyledWhiteH2>
+        </Link>
+        <StyledPlanet />
         <StyledTabletBR />
         <StyledTabletSMBR />
         <StyledPhoneSMBR />
