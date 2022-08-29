@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { getCurrentPaddingStyle,sizes, breakpointsWidth} from "styles";
+import { getCurrentPaddingStyle,sizes, getVW, breakpointsWidth} from "styles";
 
 export const FullSizeButtonWrapper = styled.div`
     position: absolute;
@@ -9,6 +9,12 @@ export const FullSizeButtonWrapper = styled.div`
     align-items: center;
     height: ${sizes['desktopLG'].half};
     cursor: pointer;
+    @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+        svg {
+            width: ${getVW(26)};
+            height: ${getVW(26)};
+        }
+    }
     @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
         svg {
             width: 26px;

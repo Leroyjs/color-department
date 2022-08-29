@@ -1,5 +1,6 @@
 import { css } from '@emotion/css';
 import styled from '@emotion/styled';
+import { H2 } from 'components';
 import { sizes, breakpointsWidth } from 'styles';
 
 export const PhotoStartScreenWrapper = styled.div`
@@ -23,6 +24,14 @@ export const ContentWrapper = styled.div`
       padding-top: ${sizes["tabletLG"].x1};
     }
     height: 100vh;
+`
+
+export const Title = styled.div`
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
 `
 
 export const RunningLineStyle = css`

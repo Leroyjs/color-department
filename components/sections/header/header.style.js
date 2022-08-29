@@ -107,9 +107,6 @@ export const HeaderWrapper = styled.header`
     }
     ${HeaderItemBlob} {
       grid-column: 2/3;
-      svg {
-        transform: scale(0.785);
-      }
     } 
     ${HeaderItemLetsGo} {
       grid-column: 3/5;

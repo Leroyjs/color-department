@@ -1,12 +1,16 @@
 import styled from "@emotion/styled";
-import { getCurrentMarginStyle } from "styles";
 import { H2 } from "components";
-import { getCurrentPaddingStyle } from "styles";
-import { getCurrentGridTemplateColumsStyle } from "styles";
-import { breakpointsWidth } from "styles";
+import { breakpointsWidth, getCurrentMarginStyle, sizes } from "styles";
 
 export const ShopWrapper = styled.div`
   width: 100%;
+  padding-top: ${sizes["desktopLG"].half};
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}){
+    padding-top: ${sizes["tabletLG"].thirdX2};
+  }
+  @media screen and (max-width: ${breakpointsWidth.phone}){
+    padding-top: ${sizes["tabletLG"].x1};
+  }
 `;
 
 export const ShopList = styled.div`

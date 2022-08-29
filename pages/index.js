@@ -40,31 +40,31 @@ const awardsItems = [
 ];
 const mockPartners = [
   {
-    logo: '/20-century.png',
+    logo: 'https://svgshare.com/i/mCU.svg',
     label: 'century'
   },
   {
-    logo: '/apple.png',
+    logo: 'https://svgshare.com/i/mBj.svg',
     label: 'apple'
   },
   {
-    logo: '/dream-works.png',
+    logo: 'https://svgshare.com/i/m9Y.svg',
     label: 'dream-works'
   },
   {
-    logo: '/netflix.png',
+    logo: 'https://svgshare.com/i/mCJ.svg',
     label: 'netflix'
   },
   {
-    logo: '/pizza-hunt.png',
+    logo: 'https://svgshare.com/i/mCw.svg',
     label: 'pizza-hunt'
   },
   {
-    logo: '/uniqlo.png',
+    logo: 'https://svgshare.com/i/m9Y.svg',
     label: 'uniqlo'
   },
   {
-    logo: '/zara.png',
+    logo: 'https://svgshare.com/i/mC4.svg',
     label: 'zara'
   }
 ];

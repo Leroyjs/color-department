@@ -1,22 +1,12 @@
 import { keyframes } from "@emotion/css"
 import styled from "@emotion/styled"
+import { getVW } from "styles"
 import { breakpointsWidth } from "styles"
-import {applyMargins, applyPaddings, colors, getCurrentColor, getCurrentMarginStyle, sizes} from "styles"
+import { applyMargins, applyPaddings, colors, getCurrentColor, getCurrentMarginStyle, sizes } from "styles"
 
 const scrollAnimation = keyframes`
     from { transform: translateX(0);}
     to { transform: translateX(-50%); }
-`
-
-export const RunningLineWrapper = styled.div`
-    overflow: hidden;
-    display: flex;
-    ${({ link }) => link ? "cursor: pointer" : ""};
-    &>*:nth-of-type(1n){
-        animation: ${scrollAnimation} 20s linear infinite;
-    }
-    ${applyMargins};
-    ${applyPaddings}
 `
 
 const ScrollContentDinamicStyle = ({ outline }) => {
@@ -29,6 +19,7 @@ const ScrollContentDinamicStyle = ({ outline }) => {
                     1.5px -1.5px 0 ${colors.white}, 
                     -1.5px 1.5px 0 ${colors.white}, 
                     1.5px 1.5px 0 ${colors.white};
+                transition: color 0.3s, text-shadow 0.3s;
             }
         `
     }
@@ -43,8 +34,12 @@ export const RunningLineScrollContent = styled.div`
 const SeparatorDinamicStyle = ({ outline }) => {
     if (outline) {
         return `
-            & span { color: ${colors.white};}
+            & span { 
+                color: ${colors.white};
+                transition: color 0.3s;
+            }
             border-color: ${colors.white};
+            transition: border-color 0.3s;
         `
     }
 }
@@ -53,20 +48,54 @@ export const RunningLineSeparator = styled.div`
     border: 1px solid;
     border-radius: 50%;
     border-color: ${({ theme }) => getCurrentColor("primary", theme)};
-    height: ${sizes['desktopLG'].half};
-    min-height: 100px;
-    min-width: 240px;
     display:flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+        height: ${getVW(100)};
+        min-width: ${getVW(240)};
+    }
+    @media screen and (max-width: ${breakpointsWidth.desktopLG}) {
+        height: ${sizes['desktopLG'].half};
+        min-height: 100px;
+        min-width: 240px;
+    }
     @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
         height: ${sizes['tabletLG'].half};
         min-width: 200px;
     }
     @media screen and (max-width: ${breakpointsWidth.phone}) {
-        height: 72px;
+        min-height: 65px;
     }
     ${getCurrentMarginStyle('horizontal', 'sm')}
     ${SeparatorDinamicStyle};
+`
+export const RunningLineWrapper = styled.div`
+    overflow: hidden;
+    display: flex;
+    ${({ link }) => link ? "cursor: pointer" : ""};
+    &>*:nth-of-type(1n){
+        animation: ${scrollAnimation} 20s linear infinite;
+    }
+    :hover {
+        h1 span {
+            color: ${({ theme }) => getCurrentColor("primary", theme)};
+            text-shadow: 
+                    -1.5px -1.5px 0 ${({ theme }) => getCurrentColor("primary", theme)}, 
+                    1.5px -1.5px 0 ${({ theme }) => getCurrentColor("primary", theme)}, 
+                    -1.5px 1.5px 0 ${({ theme }) => getCurrentColor("primary", theme)}, 
+                    1.5px 1.5px 0 ${({ theme }) => getCurrentColor("primary", theme)};
+        }
+
+        ${RunningLineSeparator}{
+            border-color: ${({ theme }) => getCurrentColor("primary", theme)};
+            & span {
+                color: ${({ theme }) => getCurrentColor("primary", theme)};
+            }
+        }
+    
+    }
+    ${applyMargins};
+    ${applyPaddings}
 `

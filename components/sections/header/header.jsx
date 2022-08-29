@@ -50,8 +50,7 @@ export const Header = ({ transparentToComponent }) => {
         <Link href={"/"}>
           <HeaderItemTitle>
             <Title>
-              <H3 color="white">color department</H3>
-              <H3 color="white">los angeles</H3>
+              <H3 color="white">color department los angeles</H3>
             </Title>
           </HeaderItemTitle>
         </Link>

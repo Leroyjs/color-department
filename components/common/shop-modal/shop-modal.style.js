@@ -1,15 +1,16 @@
 import styled from "@emotion/styled";
-import {css} from "@emotion/css";
+import { css } from "@emotion/css";
 import {
-    getCurrentColorStyles,
-    getCurrentPaddingStyle,
-    getCurrentBackgroundColorStyles,
-    breakpointsWidth,
-    colors
+  getCurrentColorStyles,
+  getCurrentPaddingStyle,
+  getCurrentBackgroundColorStyles,
+  breakpointsWidth,
+  colors,
+  sizes
 } from "styles";
-import {H3} from "../../ui/h3";
-import {Text} from "../../ui/text";
-import {CloseButton} from "../../ui/close-button";
+import { H3 } from "../../ui/h3";
+import { Text } from "../../ui/text";
+import { CloseButton } from "../../ui/close-button";
 
 export const ShopModalInner = styled.div`
   width: 100%;
@@ -26,6 +27,14 @@ export const CloseBtn = styled(CloseButton)`
   position: fixed;
   top: 0;
   left: 0;
+  
+  top: ${sizes["desktopLG"].half};
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}){
+      top: ${sizes["tabletLG"].thirdX2};
+    }
+  @media screen and (max-width: ${breakpointsWidth.phone}){
+      top: ${sizes["tabletLG"].x1};
+    }
 
   @media (max-width: ${breakpointsWidth.phone}) {
     width: 32px;
@@ -40,7 +49,7 @@ export const ProductImage = styled.img`
   object-position: center top;
   object-fit: cover;
 
-  ${({theme}) => getCurrentBackgroundColorStyles("primary", theme)};
+  ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)};
 
   @media (max-width: ${breakpointsWidth.tabletLG}) {
     width: 100%;
@@ -64,7 +73,7 @@ export const InformationColumn = styled.div`
   ${getCurrentPaddingStyle("horizontal", "md")}
   ${getCurrentPaddingStyle("bottom", "md")}
   ${getCurrentPaddingStyle("top", "lg")}
-  ${({theme}) => getCurrentBackgroundColorStyles("black", theme)};
+  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
 
   @media (max-width: ${breakpointsWidth.tabletLG}) {
     display: flex;
@@ -80,12 +89,12 @@ export const TextContainer = styled.div`
 `;
 
 export const ProductPrice = styled(H3)`
-  ${({theme}) => getCurrentColorStyles("white", theme)};
+  ${({ theme }) => getCurrentColorStyles("white", theme)};
 `;
 
 export const ProductDiscription = styled(Text)`
   width: 50%;
-  ${({theme}) => getCurrentColorStyles("white", theme)};
+  ${({ theme }) => getCurrentColorStyles("white", theme)};
   ${getCurrentPaddingStyle("vertical", "md")};
 
   @media (max-width: ${breakpointsWidth.tabletLG}) {
