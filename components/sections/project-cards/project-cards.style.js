@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { sizes } from "styles";
 import { breakpointsWidth } from "styles";
 import { applyMargins, applyPaddings, getCurrentPaddingStyle } from "styles";
 
@@ -7,7 +8,8 @@ export const DropDownsWrapper = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 40px;
   justify-content: space-between;
-  ${getCurrentPaddingStyle("horizontal", "md")}
+  ${getCurrentPaddingStyle("horizontal", "md")};
+  ${getCurrentPaddingStyle("top", "md")};
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     grid-template-columns: repeat(1, 1fr);
@@ -34,4 +36,16 @@ export const MoreWrapper = styled.div`
   width: 100%;
   ${applyMargins};
   ${applyPaddings}
+`;
+
+export const ProjectPage = styled.div`
+  padding-top: calc(${sizes["desktopLG"].half});
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    padding-top: ${sizes["tabletLG"].x1};
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    padding-top: ${sizes["tabletLG"].thirdX2};
+  }
 `;

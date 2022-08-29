@@ -120,7 +120,7 @@ export const TextContainer = styled.div`
   }
 `;
 
-export const ProductImage = styled.div`
+export const ProductImage = styled.img`
   flex: 0 0 auto;
   width: 12.5vw;
   height: 12.5vw;

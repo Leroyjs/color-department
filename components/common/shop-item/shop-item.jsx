@@ -15,7 +15,7 @@ export const ShopItem = ({ cost, img, title, ...props }) => {
         <Title>{title}</Title>
         <Cost>{cost}$</Cost>
       </TextContainer>
-      <ProductImage>{img}</ProductImage>
+      <ProductImage src={img}></ProductImage>
       <CostPhone>{cost}$</CostPhone>
       <ButtonShop />
     </ShopItemWrapper>
