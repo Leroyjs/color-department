@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { ThemeProvider } from "components";
+import "styles/global.style";
 
 function App({ Component, pageProps }) {
   return (

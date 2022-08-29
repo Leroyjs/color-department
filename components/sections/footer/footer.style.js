@@ -10,6 +10,7 @@ export const FooterWrapper = styled.div`
     display: grid;
     flex-direction: column;
     position: relative;
+    z-index: 0;
     ${getCurrentGridTemplateColumsStyle()};
     ${applyPaddings};
     ${applyMargins};

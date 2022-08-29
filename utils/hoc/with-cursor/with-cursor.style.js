@@ -1,6 +1,6 @@
-import { colors } from "styles";
-import { css } from "@emotion/react";
-import { hexToRGBA } from "styles";
+import {breakpointsWidth, colors, getVW} from "styles";
+import {css} from "@emotion/react";
+import {hexToRGBA} from "styles";
 import styled from "@emotion/styled";
 
 export const SliderCursorWrapper = styled.div`
@@ -16,6 +16,11 @@ export const SliderCursorWrapper = styled.div`
   justify-content: center;
   pointer-events: none;
   transition: opacity 0.3s;
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    width: ${getVW(1)};
+    height ${getVW(1)};
+  }
 `;
 
 export const SliderCursorScaleWrapper = styled.div`
@@ -31,4 +36,8 @@ export const SliderCursor = styled.div`
   height: 160px;
   border-radius: 50%;
   border: 1px solid ${hexToRGBA(colors.white, 0.4)};
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    border-width: ${getVW(1)};
+  }
 `;

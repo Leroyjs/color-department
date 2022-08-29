@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import { debounce, clamp } from "utils";
+import React, { useRef } from "react";
+import { debounce } from "utils";
 import {
   Item,
   LabelEnd,
@@ -21,9 +21,10 @@ export const AwardsItem = ({
 }) => {
   const popOverRef = useRef();
 
-  function handleEnter() {
+  function handleEnter(e) {
     const optionContainerEl = popOverRef.current;
     if (!optionContainerEl) return;
+    calcPosition(e);
     optionContainerEl.classList.add("isShow");
   }
 
@@ -32,10 +33,13 @@ export const AwardsItem = ({
 
     if (optionContainerEl?.classList.contains("isShow")) {
       optionContainerEl.classList.remove("isShow");
+      setTimeout(()=> {
+        optionContainerEl.removeAttribute('style');
+      }, 350);
     }
   }
 
-  const handleMove = debounce((e) => {
+  function calcPosition(e) {
     const target = e.target;
     const popOver = popOverRef.current;
 
@@ -43,26 +47,23 @@ export const AwardsItem = ({
 
     const rectTarget = target.getBoundingClientRect();
     const rectPopOver = popOver.getBoundingClientRect();
-
-    const startX = 0;
     const endX = rectTarget.width - (rectPopOver.width + 80);
-    // e.clientX - rectPopOver.width
-    // const x =  clamp(e.clientX - rectTarget.left, startX, endX);
     const x =
-      e.clientX - rectTarget.left >= endX
-        ? e.clientX - (rectTarget.left + rectPopOver.width) - 40
-        : e.clientX - rectTarget.left + 40;
+        e.clientX - rectTarget.left >= endX
+            ? e.clientX - (rectTarget.left + rectPopOver.width) - 40
+            : e.clientX - rectTarget.left + 40;
     const y = e.clientY - rectTarget.top;
 
     popOver?.setAttribute(
-      "style",
-      `transform: translate(${x}px, calc(-100% + ${y - 40}px))`
+        "style",
+        `transform: translate(${x}px, calc(-100% + ${y - 40}px))`
     );
-  }, 10);
+  }
+
   return (
     <Item
       onMouseEnter={handleEnter}
-      onMouseMove={handleMove}
+      onMouseMove={debounce(calcPosition, 10)}
       onMouseLeave={handleLeave}
       onClick={() => onClick?.(modalId)}
       {...props}

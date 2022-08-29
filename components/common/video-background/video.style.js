@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import {getCurrentColor} from "../../../styles";
+import {getCurrentColor} from "styles";
 
 export const VideoContainer = styled.video`
   display: block;
@@ -12,7 +12,8 @@ export const VideoContainer = styled.video`
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-color: ${({theme}) => getCurrentColor("primary", theme)};
+  background-color: ${({theme}) => getCurrentColor("black", theme)};
+  border: none;
 
   source {
     background-size: cover;

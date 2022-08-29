@@ -10,7 +10,6 @@ import { propTypesMargin, propTypesPadding } from "../../types";
 
 export const TextArea = ({
   title,
-  error,
   value = "",
   onChange,
   defaultValue,
@@ -36,11 +35,10 @@ export const TextArea = ({
 
   return (
     <InputWrapper isFullWidth={isFullWidth} {...props}>
-      {title && <Title isError={error}>{title}</Title>}
+      {title && <Title>{title}</Title>}
       <TextAreaWrapper isActive={!!value} maxRows={rows}>
         <TextAreaInput
           placeholder="About your work"
-          isError={error}
           onChange={handleKeyUp}
           defaultValue={defaultValue}
           maxLength={maxLength}
@@ -49,7 +47,6 @@ export const TextArea = ({
           {...propsInput}
         />
       </TextAreaWrapper>
-      {error && <Error>{error}</Error>}
     </InputWrapper>
   );
 };
@@ -60,7 +57,6 @@ TextArea.propTypes = {
   maxLength: PropTypes.number,
   rows: PropTypes.number,
   defaultValue: PropTypes.string,
-  error: PropTypes.string,
   title: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   ...propTypesMargin,

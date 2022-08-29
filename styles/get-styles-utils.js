@@ -65,6 +65,9 @@ export const getCurrentMarginStyle = (direction, type) =>
 export const getCurrentPaddingStyle = (direction, type) =>
   getCurrentStylesByDirection("padding")(direction, type);
 
+export const getVW = (px, baseWidth = 1600) =>
+    `${px / baseWidth * 100}vw`
+
 const { count: countDesktopLG, x1: x1DesktopLG } =
   sizes[namesOfBreakpoints.desktopLG];
 
@@ -79,7 +82,7 @@ export const getCurrentGridTemplateColumsStyle = () =>
     `repeat(${4}, 1fr)`,
     `repeat(${4}, 1fr)`,
     `repeat(${4}, 1fr)`,
-  
+
   ]);
 
 export const getCurrentSizeStyle = getCurrentStyleByDictionary(sizes);

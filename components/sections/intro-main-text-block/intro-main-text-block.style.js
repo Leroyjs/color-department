@@ -1,6 +1,7 @@
 import {
   applyMargins,
   getCurrentColor,
+  getCurrentColorStyles,
   getCurrentPaddingStyle,
   getCurrentMarginStyle,
   getCurrentBackgroundColorStyles,
@@ -38,10 +39,30 @@ export const TextSectionWrapper = styled.div`
     justify-content: center;
     align-items: flex-end;
     height: auto;
+    cursor: pointer;
+
+    svg {
+      stroke: ${getCurrentColor("white")};
+      transition: stroke 0.5s;
+    }
 
     span {
       align-self: center;
-      color: ${getCurrentColor("white")};
+      ${({ theme }) => getCurrentColorStyles("white", theme)};
+      transition: color 0.5s;
+    }
+
+    &:hover {
+      transition: 0.5s;
+      svg {
+        stroke: ${getCurrentColor("yellow")};
+        transition: stroke 0.5s;
+      }
+
+      span {
+        ${({ theme }) => getCurrentColorStyles("primary", theme)};
+        transition: color 0.5s;
+      }
     }
   `;
 

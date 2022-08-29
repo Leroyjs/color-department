@@ -111,7 +111,7 @@ const slides = [
 const DetailCardPage = () => {
     return (
         <>
-            <Header></Header>
+            <Header/>
             <main>
                 <DetailTitle title="Balkan line" year="2021" my="lg" />
                 <Slider slides={slides} isSimpleMode />
@@ -120,10 +120,9 @@ const DetailCardPage = () => {
                     dop="ANDRIC WATSON" />
                 <VideoPlayer />
             </main>
-            <Footer pt="xlg"></Footer>
+            <Footer pt="xlg"/>
         </>
     );
 };
 
 export default DetailCardPage;
-apply

@@ -5,7 +5,7 @@ import {
   getCurrentFontSizeStyle,
   getCurrentPaddingStyle,
   hexToRGBA,
-  breakpointsWidth,
+  breakpointsWidth, getVW,
 } from "styles";
 
 import styled from "@emotion/styled";
@@ -28,6 +28,10 @@ export const Underline = styled.div`
   width: 100%;
   height: 2px;
   background-color: ${hexToRGBA(colors.white, 0.2)};
+  
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    height: ${getVW(2)};
+  }
 `;
 
 export const DropDownOverlay = styled.div`
@@ -67,10 +71,20 @@ export const DropDownList = styled.ul`
   transition: max-height 0.35s, visibility 0.35s;
   overflow: hidden;
   z-index: 5;
+  
   ${({isOpen}) => (isOpen && {
     visibility: "visible",
     maxHeight: "var(--height-drop-down, 40vh)",
   })};
+
+  
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    top: calc(100% - ${getVW(2)});
+
+    ${({isOpen}) => (isOpen && {
+      maxHeight: "calc(var(--height-drop-down, 40vh) / 1600 * 100vw)",
+    })};
+  }
 
   @media (max-width: ${breakpointsWidth.tabletSM}) {
     position: fixed;
@@ -125,7 +139,12 @@ export const IconPlus = styled.svg`
     } else {
       return { stroke: colors.white };
     }
-  }}
+  }};
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    width: ${getVW(26)};
+    height: ${getVW(26)};
+  }
 
   @media screen and (max-width: ${breakpointsWidth.desktopLG}) {
     width: 26px;
@@ -153,8 +172,8 @@ export const IconPlus = styled.svg`
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
-    width: 12px;
-    height: 12px;
+    width: 18px;
+    height: 18px;
   }
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
@@ -167,8 +186,8 @@ export const DropDownItem = styled.li`
   width: 100%;
   cursor: pointer;
   text-transform: uppercase;
-  font-size: ${fontSizes.desktopLG.h3};
   font-family: ${fontFamilies.mainFont};
+  ${getCurrentFontSizeStyle("h3")};
   height: 50px;
   padding: 6px 6px 8px;
   transition: background-color 0.3s;
@@ -178,7 +197,12 @@ export const DropDownItem = styled.li`
   }
 
   ${({ isActive, theme }) =>
-    isActive && `background-color: ${getCurrentColor("primary", theme)};`}
+    isActive && `background-color: ${getCurrentColor("primary", theme)};`};
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    padding: ${getVW(6)} ${getVW(6)} ${getVW(8)};
+    height: ${getVW(50)};
+  }
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     height: 3.125vw;
@@ -215,8 +239,6 @@ export const InputStyled = styled.div`
     }
   }}
 
-  ${getCurrentFontSizeStyle("h3")};
-
   &:hover {
     & + ${Underline} ${UnderlineInner} {
       transform: scaleX(1);
@@ -239,6 +261,10 @@ export const Error = styled.div`
   font-family: ${fontFamilies.subFont};
 
   ${getCurrentFontSizeStyle("caption")};
+  
+    @media screen and (min-width: ${breakpointsWidth.desktopLG}) {  
+      top: calc(100% + ${getVW(4)});
+  }
 `;
 
 export const InputWrapper = styled.div`

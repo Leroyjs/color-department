@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { hexToRGBA } from "styles";
 import { colors, getCurrentPaddingStyle, breakpointsWidth } from "styles";
 
 export const CompanyInfoWrapper = styled.div`
@@ -28,7 +29,7 @@ export const AdditionInfo = styled.div`
 export const MadeBy = styled.div`
     padding-bottom: 16px;
     & span {
-        color: ${colors.grey}
+        color: ${hexToRGBA(colors.white,0.2)}
     }
 `
 

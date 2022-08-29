@@ -42,7 +42,6 @@ export const RunningLineScrollContent = styled.div`
 
 const SeparatorDinamicStyle = ({ outline }) => {
     if (outline) {
-        getCurrentColor
         return `
             & span { color: ${colors.white};}
             border-color: ${colors.white};
@@ -55,6 +54,7 @@ export const RunningLineSeparator = styled.div`
     border-radius: 50%;
     border-color: ${({ theme }) => getCurrentColor("primary", theme)};
     height: ${sizes['desktopLG'].half};
+    min-height: 100px;
     min-width: 240px;
     display:flex;
     justify-content: center;
@@ -62,7 +62,10 @@ export const RunningLineSeparator = styled.div`
     text-align: center;
     @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
         height: ${sizes['tabletLG'].half};
-        min-width: 240px;
+        min-width: 200px;
+    }
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        height: 72px;
     }
     ${getCurrentMarginStyle('horizontal', 'sm')}
     ${SeparatorDinamicStyle};

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import {breakpointsWidth, getVW} from "styles";
 
 export const SlideWrapper = styled.li`
   overflow: hidden;
@@ -58,4 +59,9 @@ export const Cursor = styled.div`
   justify-content: center;
   pointer-events: none;
   transition: opacity 0.3s;
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}){
+    width: ${getVW(1)};
+    height: ${getVW(1)};
+  }
 `;
