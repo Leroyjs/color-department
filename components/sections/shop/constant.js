@@ -5,7 +5,7 @@ export const arrShopTest = [
     id: 1,
     discription:
       "T/Mexico border, one of the main locations in the series. However,he bulk of the work was concentrated around ‘the wall’, the US the real wall is a highly secured area and it was difficult for the production crew to get access to it. ",
-    img: "https://drive.google.com/uc?id=1EUReR0i2SHvQ-FJmfWbHDCCa7xOdn3cN",
+    img: "https://drive.google.com/uc?id=1Vq6GTcXDT4h1l6j67APj3JPcbSf_RWw4",
   },
   {
     title: "СHarmes Color Department",
@@ -13,7 +13,7 @@ export const arrShopTest = [
     id: 2,
     discription:
       "he real wall is a highly secured area and it was difficult for the production crew to get arated around ‘the wall’, the US/Mexico border, one of the main locations in the series. However, t ",
-    img: "https://drive.google.com/uc?id=108FVT9MIrugqiOuj3YI4ezDkUFstgkCZ",
+    img: "https://drive.google.com/uc?id=1Xiw7XuQ-I2gzcaHVob8KMHSsuH6tQBTl",
   },
   {
     title: "The Graham Greene Film Reader Applause Books",
@@ -21,7 +21,7 @@ export const arrShopTest = [
     id: 3,
     discription:
       "The bulk of the work w. However,as concentrated around ‘the wall’, the US/Mexico border, one of the main locations in the series the real wall is a highly secured area and it was difficult for the production crew to get access to it. ",
-    img: "https://drive.google.com/uc?id=1RbuF7F3yFG-1KGhq2kWwAi6ElXjZi9KQ",
+    img: "https://drive.google.com/uc?id=1jUyZvLqlWi0la0cEeGrzLCZWS_msCJt9",
   },
   {
     title: "Bierdeckel Color Department",
@@ -29,7 +29,7 @@ export const arrShopTest = [
     id: 4,
     discription:
       "ain locations in the series. However, the real wall is a highly secured area and it was difficult for the production crew to get access to it. ",
-    img: "https://drive.google.com/uc?id=1bWTukbGKICx0lyjQd10KSHEVOCdHXBOU",
+    img: "https://drive.google.com/uc?id=183fwBVEFZc4bevsyuoqm3xBt2T-9qOq0",
   },
   {
     title: "Official merch Sweatshirt Color Department",
@@ -37,7 +37,7 @@ export const arrShopTest = [
     id: 5,
     discription:
       "The bulk of the work was concentrated around ‘the wall’, the US/Mexico border, one of the main locations in the series. However, the real wall is a highly secured area and it was difficult for the production crew to get access to it. ",
-    img: "https://drive.google.com/uc?id=1FOykA7Won2iGYmfHga0zhGYvXoKggAjp",
+    img: "https://drive.google.com/uc?id=1KLi1n20RK74RHXAbY6Srh6CEEkphqQou",
   },
   {
     title: "Official mug Color Department",
@@ -45,7 +45,7 @@ export const arrShopTest = [
     id: 6,
     discription:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia debitis iusto minima tenetur excepturi labore id, iste, sunt explicabo eligendi nulla quo suscipit odio accusamus obcaecati reprehenderit porro aperiam? Modi laudantium dolorem, illo cupiditate praesentium reprehenderit quis magnam libero perferendis qui maiores saepe tempora ad esse sapiente recusandae exercitationem.",
-    img: "https://drive.google.com/uc?id=1pIygSlMZ-7u9e7UWE-5KuIEjvg6YVClo",
+    img: "https://drive.google.com/uc?id=1OMNLcE8cllz-Gd7BaUuT3OjNoERdPpRG",
   },
   {
     title: "Notebook Color Department",
@@ -53,6 +53,6 @@ export const arrShopTest = [
     id: 7,
     discription:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia debitis iusto minima tenetur excepturi labore id, iste, sunt explicabo eligendi nulla quo suscipit odio accusamus obcaecati reprehenderit porro aperiam? Modi laudantium dolorem, illo cupiditate praesentium reprehenderit quis magnam libero perferendis qui maiores saepe tempora ad esse sapiente recusandae exercitationem.",
-    img: "https://drive.google.com/uc?id=1kcyRxirZnsfXlCUUKae47Pqh6u3YYrhK",
+    img: "https://drive.google.com/uc?id=1ziar4UJuRx2u0QlYYLKv_qU7xLMUtPsb",
   },
 ];

@@ -174,6 +174,7 @@ function useGetData() {
         year: "2021",
         author: "Archangel Studios",
       },
+      
     ];
     const categories = getUniqValuesByKey(data, "category");
     const genres = getUniqValuesByKey(data, "genre");
