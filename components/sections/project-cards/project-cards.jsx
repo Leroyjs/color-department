@@ -139,7 +139,7 @@ function useGetData() {
         colourist: "Aleks Ver",
         genre: "comedy",
         category: "ads",
-        firstTitle: "El corte ingles",
+        firstTitle: "El corte ingles ",
         secondTitle: "show more",
         year: "2016",
         author: "Archangel Studios",
@@ -154,7 +154,7 @@ function useGetData() {
         colourist: "Aleks Ver",
         genre: "horror",
         category: "film",
-        firstTitle: "Paranormal drive",
+        firstTitle: "Paranormal drive ",
         secondTitle: "show more",
         year: "2016",
         author: "Archangel Studios",
@@ -169,12 +169,11 @@ function useGetData() {
         colourist: "Aleks Ver",
         genre: "adventure",
         category: "ads",
-        firstTitle: "Zolla",
+        firstTitle: "Zolla ",
         secondTitle: "show more",
         year: "2021",
         author: "Archangel Studios",
       },
-      
     ];
     const categories = getUniqValuesByKey(data, "category");
     const genres = getUniqValuesByKey(data, "genre");
