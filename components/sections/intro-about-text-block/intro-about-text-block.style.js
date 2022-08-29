@@ -101,6 +101,11 @@ export const StyledUnderline = styled(TextDecorationUnderline)`
   right: 0;
   transform: translateX(-50%);
   width: calc(100% + 6px);
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    width: 33.625vw;
+    height: 1vw;
+  }
 `;
 
 export const StyledPlanet = styled(Planet)`

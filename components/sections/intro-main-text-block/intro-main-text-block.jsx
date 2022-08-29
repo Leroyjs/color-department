@@ -54,7 +54,7 @@ export const IntroMainTextBlock = () => {
         <StyledTabletBR />
         <StyledWhiteH2>images.&nbsp;</StyledWhiteH2>
         <StyledPhoneSMBR />
-        <Link href="/">
+        <Link href="/projects">
           <CaptionLink>
             <StyledLeftBracket />
             <Caption>&nbsp;projects&nbsp;</Caption>
