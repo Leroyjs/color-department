@@ -25,8 +25,10 @@ export const IntroAboutTextBlock = ({...props}) => {
       <StyledTabletSMBR />
       <StyledPhoneSMBR />
       <H2>Based in&nbsp;</H2>
-      <Link href="/">
-        <StyledWhiteH2>Los Angeles, CALIFORNIA.&nbsp;</StyledWhiteH2>
+      <Link href="#maplink">
+        <StyledWhiteH2 style={{ cursor: "pointer" }}>
+          Los Angeles, CALIFORNIA.&nbsp;
+        </StyledWhiteH2>
       </Link>
       <StyledPlanet />
       <StyledDesktopBR />
