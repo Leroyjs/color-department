@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
+  ButtonMore,
   ColouristFilter,
   DropDownsWrapper,
   MoreWrapper,
@@ -27,6 +28,19 @@ export const ProjectCards = () => {
   const [currentGenre, setCurrentGenre] = useState();
   const [currentColourist, setCurrentColourist] = useState();
   const [cards, setCards] = useState(data);
+  const [count, setCount] = useState(1)
+  const [isView, setIsView] = useState(true);
+
+
+
+  function getArrRange(array, range, part) {
+      const start = range * (part - 1);
+      const end = range * part;
+      return array.slice(start, end);
+  }
+      const handleClick = () => {
+        setCount((prev) => prev + 1);
+      };
 
   useEffect(() => {
     const filteredCards = data.filter(({ colourist, genre, category }) => {
@@ -35,12 +49,28 @@ export const ProjectCards = () => {
       const isGenre = currentGenre?.value === genre || !currentGenre?.value;
       const isCategory =
         currentCategory?.value === category || !currentCategory?.value;
+
       return isColorist && isGenre && isCategory;
     });
 
-    setCards(filteredCards);
-  }, [data, currentCategory, currentGenre, currentColourist]);
 
+
+
+    const pagitationCards = data.map((item))
+
+
+    setCards(filteredCards)
+  }, [data, currentCategory, currentGenre, currentColourist, count, setCount]);
+
+
+    setCards((prev) => prev.concat(getArrRange(data, 6, count)));
+    if (data.length / (count * 6) <= 1) {
+      setIsView(true);
+    } else {
+      setIsView(false);
+    }
+
+  console.log(count);
   return (
     <ProjectPage>
       <DropDownsWrapper>
@@ -69,8 +99,8 @@ export const ProjectCards = () => {
         </ColouristFilter>
       </DropDownsWrapper>
       <WorksCards cards={cards} />
-      <MoreWrapper mt="md">
-        <ButtonEllipse>More</ButtonEllipse>
+      <MoreWrapper isView={isView} mt="md">
+      <ButtonEllipse onClick={() => handleClick()}>More</ButtonEllipse>
       </MoreWrapper>
     </ProjectPage>
   );

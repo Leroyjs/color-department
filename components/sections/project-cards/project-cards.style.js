@@ -1,7 +1,9 @@
-import styled from "@emotion/styled";
+import styled from "@emotion/styled"; 
 import { sizes } from "styles";
 import { breakpointsWidth } from "styles";
 import { applyMargins, applyPaddings, getCurrentPaddingStyle } from "styles";
+
+const hideButtonMore = ({ isView }) => (isView ? `display: none;` : "");
 
 export const DropDownsWrapper = styled.div`
   display: grid;
@@ -36,6 +38,7 @@ export const MoreWrapper = styled.div`
   width: 100%;
   ${applyMargins};
   ${applyPaddings}
+  ${hideButtonMore}
 `;
 
 export const ProjectPage = styled.div`
