@@ -13,9 +13,9 @@ export const PartnersItem = styled.div`
     justify-content: center;
     align-items: center;
     img {
-        object-fit: scale-down;
-        max-height: 34%;
-        max-width: 68%;
+        object-fit: contain;
+        height: 34%;
+        width: 68%;
     }
 `
 

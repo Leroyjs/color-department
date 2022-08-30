@@ -8,6 +8,7 @@ export const initGlobalStyles = injectGlobal`
 
   body {
     background-color: ${colors.black};
+    scroll-behavior: smooth;
   }
 
   //Ширину я бы не трогал
@@ -25,7 +26,7 @@ export const initGlobalStyles = injectGlobal`
         font-size: 14px;
       }
       @media screen and (max-width: ${breakpointsWidth.photo}) {
-        font-weight: 700
+        font-weight: 700;
         font-size: 12px;
       }
     }

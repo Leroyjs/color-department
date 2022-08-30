@@ -1,5 +1,7 @@
 import React from 'react';
 import { DetailTitle, Slider, Footer, Stakeholders, VideoPlayer, Header } from "components";
+import styled from '@emotion/styled';
+import { sizes, breakpointsWidth } from 'styles';
 
 const DEMO_VIDEO =
     "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4";
@@ -108,19 +110,29 @@ const slides = [
     },
 ];
 
+const MainComponent = styled.main`
+    padding-top: ${sizes["desktopLG"].half};
+    @media screen and (max-width: ${breakpointsWidth.tabletLG}){
+      padding-top: ${sizes["tabletLG"].thirdX2};
+    }
+    @media screen and (max-width: ${breakpointsWidth.phone}){
+      padding-top: ${sizes["tabletLG"].x1};
+    }
+`
+
 const DetailCardPage = () => {
     return (
         <>
-            <Header/>
-            <main>
-                <DetailTitle title="Balkan line" year="2021" my="lg" />
+            <Header />
+            <MainComponent>
+                <DetailTitle title="Balkan line" year="2021" py="lg" />
                 <Slider slides={slides} isSimpleMode />
                 <Stakeholders mt="md" mb="xlg" client="Archangel Studios" colourist="JACK MCGINITY"
                     director="OZZIE PULLIN"
                     dop="ANDRIC WATSON" />
                 <VideoPlayer />
-            </main>
-            <Footer pt="xlg"/>
+            </MainComponent>
+            <Footer pt="xlg" />
         </>
     );
 };

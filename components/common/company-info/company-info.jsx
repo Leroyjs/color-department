@@ -18,7 +18,7 @@ export const CompanyInfo = (props) => {
             <AdditionInfo>
                 <MadeBy>
                     <Caption>made by</Caption>
-                    <Caption>design department</Caption>
+                    <Caption style={{whiteSpace:'nowrap'}}>design department</Caption>
                 </MadeBy>
                 <Link href={''}>
                     <Caption style={{cursor:'pointer'}}>privacy policy</Caption>
