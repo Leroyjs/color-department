@@ -1,7 +1,5 @@
 import {
   getCurrentColor,
-  getCurrentPaddingStyle,
-  getCurrentMarginStyle,
   getCurrentBackgroundColorStyles,
   applyMargins,
   applyPaddings,

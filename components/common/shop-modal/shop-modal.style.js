@@ -11,21 +11,15 @@ import {
 import { H3 } from "../../ui/h3";
 import { Text } from "../../ui/text";
 import { CloseButton } from "../../ui/close-button";
-import { sizes } from "styles";
 
 export const ShopModalInner = styled.div`
   width: 100%;
   min-height: 100%;
   display: flex;
   background-color: ${colors.black};
-  padding-top: ${sizes["desktopLG"].half};
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     flex-direction: column;
-    padding-top: ${sizes["tabletLG"].thirdX2};
-  }
-  @media screen and (max-width: ${breakpointsWidth.phone}) {
-    padding-top: ${sizes["tabletLG"].x1};
   }
 `;
 
@@ -36,11 +30,11 @@ export const CloseBtn = styled(CloseButton)`
   margin-top: calc(${sizes["desktopLG"].half} + 140px);
   
   @media screen and (max-width: ${breakpointsWidth.tabletLG}){
-      top: ${sizes["tabletLG"].thirdX2};
+    margin-top: ${sizes["tabletLG"].thirdX2};
   }
   
   @media screen and (max-width: ${breakpointsWidth.phone}){
-      top: ${sizes["tabletLG"].x1};
+    margin-top: ${sizes["tabletLG"].x1};
   }
 
   @media screen and (max-width: ${breakpointsWidth.desktopLG}) {
