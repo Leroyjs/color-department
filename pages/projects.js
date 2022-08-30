@@ -25,7 +25,7 @@ const Projects = () => {
       <PhotoStartScreen arrayOfImages={arrayOfImages} />
       <main style={{ backgroundColor: colors.black }}>
         <ProjectCards />
-        <RunningLineLink mt="md" outline={'true'} target={'_blank'} link={'https://vimeo.com/showcase/7646686'}/>
+        <RunningLineLink mt="xlg" outline={'true'} target={'_blank'} link={'https://vimeo.com/showcase/7646686'}/>
       </main>
       <Footer pt="xlg"/>
     </>
