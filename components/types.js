@@ -40,7 +40,7 @@ export const propTypesChildren = {
 export const propTypesSource = PropTypes.oneOfType([PropTypes.string, PropTypes.object]);
 
 export const propTypesVideoBg = {
-  poster: propTypesSource.isRequired,
+  poster: propTypesSource,
   autoPlay: PropTypes.bool,
   video: PropTypes.shape({
     webm: propTypesSource,

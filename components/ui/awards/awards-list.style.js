@@ -104,7 +104,6 @@ export const PopOver = styled.div`
   overflow: hidden;
   border: none;
   box-shadow: none;
-  will-change: transform;
   transition: height 0.35s;
 
   &.isShow {
