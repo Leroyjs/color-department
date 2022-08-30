@@ -7,7 +7,7 @@ export const ShopModal = ({ img, isOpen, setOpen, ...props }) => {
     return (
         <Modal setOpen={setOpen} isOpen={isOpen}>
             <ShopModalInner>
-                <ProductImage src={demoImg}>{img}</ProductImage>
+                <ProductImage src={img}></ProductImage>
                 <ShopForm {...props} />
             </ShopModalInner>
             <CloseBtn mt="md" ml="md" onClick={() => setOpen(false)} />

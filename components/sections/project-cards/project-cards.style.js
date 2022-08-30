@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { sizes } from "styles";
 import { breakpointsWidth } from "styles";
 import { applyMargins, applyPaddings, getCurrentPaddingStyle } from "styles";
 
@@ -35,4 +36,16 @@ export const MoreWrapper = styled.div`
   width: 100%;
   ${applyMargins};
   ${applyPaddings}
+`;
+
+export const ProjectPage = styled.div`
+  padding-top: calc(${sizes["desktopLG"].half});
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    padding-top: ${sizes["tabletLG"].x1};
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    padding-top: ${sizes["tabletLG"].thirdX2};
+  }
 `;

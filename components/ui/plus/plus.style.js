@@ -38,13 +38,13 @@ export const IconPlus = styled.svg`
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
   }
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {

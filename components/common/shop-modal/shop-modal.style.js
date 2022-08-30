@@ -11,15 +11,21 @@ import {
 import { H3 } from "../../ui/h3";
 import { Text } from "../../ui/text";
 import { CloseButton } from "../../ui/close-button";
+import { sizes } from "styles";
 
 export const ShopModalInner = styled.div`
   width: 100%;
   min-height: 100%;
-
   display: flex;
   background-color: ${colors.black};
-  @media (max-width: ${breakpointsWidth.tabletLG}) {
+  padding-top: ${sizes["desktopLG"].half};
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     flex-direction: column;
+    padding-top: ${sizes["tabletLG"].thirdX2};
+  }
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    padding-top: ${sizes["tabletLG"].x1};
   }
 `;
 
@@ -27,18 +33,32 @@ export const CloseBtn = styled(CloseButton)`
   position: fixed;
   top: 0;
   left: 0;
+  margin-top: calc(${sizes["desktopLG"].half} + 140px);
   
-  top: ${sizes["desktopLG"].half};
   @media screen and (max-width: ${breakpointsWidth.tabletLG}){
       top: ${sizes["tabletLG"].thirdX2};
-    }
+  }
+  
   @media screen and (max-width: ${breakpointsWidth.phone}){
       top: ${sizes["tabletLG"].x1};
-    }
+  }
 
-  @media (max-width: ${breakpointsWidth.phone}) {
+  @media screen and (max-width: ${breakpointsWidth.desktopLG}) {
+    margin-top: calc(${sizes["desktopLG"].half} + 40px);
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    margin-top: calc(${sizes["tabletLG"].thirdX2} + 40px);
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
     width: 32px;
     height: 32px;
+    margin-top: calc(${sizes["tabletLG"].x1} + 40px);
+  }
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    margin-top: calc(${sizes["desktopLG"].half} + 40px);
   }
 `;
 

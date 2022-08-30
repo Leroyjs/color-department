@@ -1,7 +1,7 @@
 import { H3 } from "../h3";
 import { css } from "@emotion/css";
 import styled from "@emotion/styled";
-import {breakpointsWidth, getCurrentMarginStyle} from "styles";
+import { breakpointsWidth, getCurrentMarginStyle } from "styles";
 
 export const GridWrapper = styled.div`
   display: grid;
@@ -15,7 +15,7 @@ export const GridWrapper = styled.div`
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     grid-template-columns: repeat(1, 1fr);
-    grid-auto-rows: calc(100vw * 220/360);
+    grid-auto-rows: calc(100vw * 220 / 360);
   }
 `;
 
@@ -27,7 +27,7 @@ export const WorksTitleWrapper = css`
 
 export const WorksTitle = styled(H3)`
   text-transform: uppercase;
-  
+
   ${getCurrentMarginStyle("bottom", "md")};
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
@@ -41,4 +41,6 @@ export const WorksTitle = styled(H3)`
 
 export const WorksWrapper = styled.div`
   width: 100%;
+  position: relative;
+  z-index: 1;
 `;

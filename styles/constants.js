@@ -71,6 +71,7 @@ export const offsets = {
     xsm: "0.75vw",
     xxsm: "0.5vw",
     none: 0,
+    shop: "1.5vw",
   },
   [desktopXLG]: {
     xlg: "10vw",
@@ -83,6 +84,7 @@ export const offsets = {
     xsm: "0.75vw",
     xxsm: "0.5vw",
     none: 0,
+    shop: "1.5vw",
   },
   [desktopLG]: {
     xlg: 160,
@@ -95,6 +97,7 @@ export const offsets = {
     xsm: 12,
     xxsm: 8,
     none: 0,
+    shop: 24,
   },
   [desktopMD]: {
     xlg: 150,
@@ -107,6 +110,7 @@ export const offsets = {
     xsm: 12,
     xxsm: 8,
     none: 0,
+    shop: 22,
   },
   [desktopSM]: {
     xlg: 140,
@@ -119,6 +123,7 @@ export const offsets = {
     xsm: 12,
     xxsm: 8,
     none: 0,
+    shop: 22,
   },
   [tabletLG]: {
     xlg: 140,
@@ -131,6 +136,7 @@ export const offsets = {
     xsm: 12,
     xxsm: 8,
     none: 0,
+    shop: 22,
   },
   [tabletSM]: {
     xlg: 140,
@@ -143,6 +149,7 @@ export const offsets = {
     xsm: 12,
     xxsm: 8,
     none: 0,
+    shop: 22 ,
   },
   [phone]: {
     xlg: 80,
@@ -155,6 +162,7 @@ export const offsets = {
     xsm: 12,
     xxsm: 8,
     none: 0,
+    shop: 12,
   },
 };
 
