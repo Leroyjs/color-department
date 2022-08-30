@@ -5,8 +5,8 @@ import {
 
 const DEMO_VIDEO_MP4 = "./BG_reel_temp.mp4";
 const DEMO_VIDEO_WEBM = "./BG_reel_temp.webm";
-//TODO: это убрать нужно. Тут фотка жопы
-const poster = "https://i1.sndcdn.com/avatars-000343516318-241lzu-t240x240.jpg";
+//TODO: это убрать нужно. Тут фотка жопы (теперь котика)
+const poster = "https://happypik.ru/wp-content/uploads/2019/09/njashnye-kotiki5.jpg";
 const video = {
     mp4: DEMO_VIDEO_MP4,
     webm: DEMO_VIDEO_WEBM
