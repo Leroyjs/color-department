@@ -42,7 +42,7 @@ export const FormWork = withFormProvider(({ ...props}) => {
     return (
       <FormSection onSubmit={handleSubmit(onSubmit)} mt="md" {...props}>
         <H2 color="white" mb="md" mt="xlg">
-          let's talk
+          let&apos;s talk
         </H2>
         <FormWrapper>
           <FormColumnLeft>
