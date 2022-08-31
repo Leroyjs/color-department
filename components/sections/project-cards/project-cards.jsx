@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import {
-  ButtonMore,
   ColouristFilter,
   DropDownsWrapper,
   MoreWrapper,
+  NotFound,
   ProjectPage,
 } from "./project-cards.style";
 import { ButtonEllipse, DropDown, WorksCards } from "components";
@@ -28,19 +28,12 @@ export const ProjectCards = () => {
   const [currentGenre, setCurrentGenre] = useState();
   const [currentColourist, setCurrentColourist] = useState();
   const [cards, setCards] = useState(data);
-  const [count, setCount] = useState(1)
-  const [isView, setIsView] = useState(true);
+  const [isSeeAll, setIsSeeAll] = useState(false);
+  const [isNotFound, setIsNotFound] = useState(false);
 
-
-
-  function getArrRange(array, range, part) {
-      const start = range * (part - 1);
-      const end = range * part;
-      return array.slice(start, end);
-  }
-      const handleClick = () => {
-        setCount((prev) => prev + 1);
-      };
+  const handleClick = () => {
+    setIsSeeAll(true);
+  };
 
   useEffect(() => {
     const filteredCards = data.filter(({ colourist, genre, category }) => {
@@ -53,24 +46,27 @@ export const ProjectCards = () => {
       return isColorist && isGenre && isCategory;
     });
 
+    if (isSeeAll == false) {
+      setCards(filteredCards.slice(0, 6));
 
-
-
-    const pagitationCards = data.map((item))
-
-
-    setCards(filteredCards)
-  }, [data, currentCategory, currentGenre, currentColourist, count, setCount]);
-
-
-    setCards((prev) => prev.concat(getArrRange(data, 6, count)));
-    if (data.length / (count * 6) <= 1) {
-      setIsView(true);
-    } else {
-      setIsView(false);
+      if (filteredCards.length == 6) {
+        setIsSeeAll(true);
+      }
+      if (filteredCards.length == 0) {
+        setIsNotFound(true);
+      }
+    } else if (isSeeAll == true) {
+      setCards(filteredCards);
     }
 
-  console.log(count);
+    if (filteredCards.length == 0) {
+      setIsNotFound(true);
+    } else if (filteredCards.length !== 0) {
+      setIsNotFound(false);
+    }
+
+  }, [data, currentCategory, currentGenre, currentColourist, isSeeAll]);
+
   return (
     <ProjectPage>
       <DropDownsWrapper>
@@ -99,9 +95,12 @@ export const ProjectCards = () => {
         </ColouristFilter>
       </DropDownsWrapper>
       <WorksCards cards={cards} />
-      <MoreWrapper isView={isView} mt="md">
-      <ButtonEllipse onClick={() => handleClick()}>More</ButtonEllipse>
+      <MoreWrapper isSeeAll={isSeeAll} mt="md">
+        <ButtonEllipse onClick={() => handleClick()}>More</ButtonEllipse>
       </MoreWrapper>
+      <NotFound mt="md" isNotFound={isNotFound}>
+        Not found
+      </NotFound>
     </ProjectPage>
   );
 };

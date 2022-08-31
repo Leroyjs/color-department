@@ -1,10 +1,12 @@
-import styled from "@emotion/styled"; 
+import styled from "@emotion/styled";
+import { H2 } from "components";
+import { H3 } from "components";
 import { sizes } from "styles";
 import { breakpointsWidth } from "styles";
 import { applyMargins, applyPaddings, getCurrentPaddingStyle } from "styles";
 
-const hideButtonMore = ({ isView }) => (isView ? `display: none;` : "");
-
+const hideButtonMore = ({ isSeeAll }) => (isSeeAll ? `display: none;` : "");
+const showNotfound = ({isNotFound}) => (isNotFound ? "" : `display: none;` )
 export const DropDownsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -51,4 +53,12 @@ export const ProjectPage = styled.div`
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     padding-top: ${sizes["tabletLG"].thirdX2};
   }
+`;
+
+export const NotFound = styled(H2)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  ${showNotfound}
 `;
