@@ -29,11 +29,9 @@ export const IntroMainTextBlock = () => {
         <StyledTabletBR />
         <H2> grading studio&nbsp;</H2>
         <StyledDesktopLGBR />
-        <Link href="#maplink">
-          <StyledWhiteH2 style={{ cursor: "pointer" }}>
+          <StyledWhiteH2>
             Based in Los Angeles.
           </StyledWhiteH2>
-        </Link>
         <StyledPlanet />
         <StyledTabletBR />
         <StyledTabletSMBR />
