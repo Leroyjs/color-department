@@ -3,7 +3,7 @@ import {
   getCurrentBackgroundColorStyles,
   applyMargins,
   applyPaddings,
-  breakpointsWidth,
+  breakpointsWidth, getCurrentColorStyles,
 } from "styles";
 import styled from "@emotion/styled";
 import { TextDecorationUnderline, Planet } from "../../common";

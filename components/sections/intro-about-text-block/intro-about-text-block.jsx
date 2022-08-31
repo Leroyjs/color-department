@@ -5,7 +5,6 @@ import {
   RoundedNumber,
   TextDecorationWrapper,
   StyledWhiteH2,
-  PointWrapper,
   StyledUnderline,
   StyledPlanet,
   StyledDesktopSMBR,

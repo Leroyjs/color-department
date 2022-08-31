@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { AwardsList } from "./awards-list";
+import { PropTypes } from "prop-types";
+import { AwardsItemProps } from "./types";
+import { DetailCardModal } from "../../modal";
 import {
   AwardsContainer,
   AwardsTitle,
   AwardsSubTitle,
 } from "./awards-list.style";
-import { PropTypes } from "prop-types";
-import { AwardsItemProps } from "./types";
-import { DetailCardModal } from "../../modal";
 
 export const Awards = ({ options, title, subtitle, isAboutImg, ...props }) => {
   const [isOpen, setOpen] = useState(false);
