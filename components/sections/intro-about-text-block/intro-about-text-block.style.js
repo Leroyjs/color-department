@@ -96,6 +96,20 @@ export const TextDecorationWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   position: relative;
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.5s;
+    svg {
+      stroke: ${getCurrentColor("yellow")};
+      transition: stroke 0.5s;
+    }
+
+    span {
+      ${({ theme }) => getCurrentColorStyles("primary", theme)};
+      transition: color 0.5s;
+    }
+  }
 `;
 
 export const StyledWhiteH2 = styled(H2)`

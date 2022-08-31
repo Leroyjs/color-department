@@ -28,10 +28,10 @@ export const TextAreaInput = styled("textarea")`
   font-family: ${fontFamilies.mainFont};
   color: ${({ theme }) => getCurrentColor("primary", theme)};
   line-height: ${`${lineHeight}px`};
-  background-image: ${
-    `linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${
-      hexToRGBA(colors.white, 0.2)
-    } 0px)`};
+  background-image: ${`linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${hexToRGBA(
+    colors.white,
+    0.2
+  )} 0px)`};
   background-size: ${`100% ${lineHeight}px`};
   ${applyMargins}
 
@@ -48,10 +48,10 @@ export const TextAreaInput = styled("textarea")`
     padding-top: 10px;
     margin-bottom: -10px;
     line-height: 66px;
-    background-image: ${
-      `linear-gradient(transparent, transparent calc(66px - 2px), ${
-        hexToRGBA(colors.white, 0.2)
-      } 0px)`};
+    background-image: ${`linear-gradient(transparent, transparent calc(66px - 2px), ${hexToRGBA(
+      colors.white,
+      0.2
+    )} 0px)`};
     background-size: ${`100% 66px`};
   }
 
@@ -59,33 +59,35 @@ export const TextAreaInput = styled("textarea")`
     padding-top: 11px;
     margin-bottom: -18px;
     line-height: 48px;
-    background-image: ${
-      `linear-gradient(transparent, transparent calc(56px - 2px), ${
-        hexToRGBA(colors.white, 0.2)
-      } 0px)`};
+    background-image: ${`linear-gradient(transparent, transparent calc(56px - 2px), ${hexToRGBA(
+      colors.white,
+      0.2
+    )} 0px)`};
     background-size: ${`100% 56px`};
     height: 230px;
   }
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
-    padding-top: 18px;
-    margin-bottom: -18px;
+    height: 22.5vw;
+    padding-top: 1vw;
+    margin-bottom: -2vw;
     line-height: 5.625vw;
-    background-image: ${
-      `linear-gradient(transparent, transparent calc(5.625vw - 2px), ${
-        hexToRGBA(colors.white, 0.2)
-      } 0px)`};
+    background-image: ${`linear-gradient(transparent, transparent calc(5.625vw - 2px), ${hexToRGBA(
+      colors.white,
+      0.2
+    )} 0px)`};
     background-size: ${`100% 5.625vw;`};
   }
 
   @media screen and (min-width: ${breakpointsWidth.desktopXLG}) {
-    padding-top: 2vw;
+    height: 22.5vw;
+    padding-top: 1vw;
     margin-bottom: -2vw;
     line-height: 5.57vw;
-    background-image: ${
-      `linear-gradient(transparent, transparent calc(5.57vw - 2px), ${
-        hexToRGBA(colors.white, 0.2)
-      } 0px)`};
+    background-image: ${`linear-gradient(transparent, transparent calc(5.57vw - 2px), ${hexToRGBA(
+      colors.white,
+      0.2
+    )} 0px)`};
     background-size: ${`100% 5.57vw;`};
   }
 `;
@@ -139,6 +141,7 @@ export const TextAreaWrapper = styled.div`
   }
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    height: 22.5vw;
     &:after {
       line-height: 5.625vw;
       background-image: ${`linear-gradient(transparent, transparent calc(5.625vw - 2px), ${colors.white} 0px)`};
@@ -146,6 +149,7 @@ export const TextAreaWrapper = styled.div`
     }
   }
   @media screen and (min-width: ${breakpointsWidth.desktopXLG}) {
+    height: 22.5vw;
     &:after {
       line-height: 5.57vw;
       background-image: ${`linear-gradient(transparent, transparent calc(5.57vw - 2px), ${colors.white} 0px)`};

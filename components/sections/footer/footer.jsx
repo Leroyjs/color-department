@@ -19,7 +19,7 @@ export const Footer = (props) => {
             <CompanyInfo></CompanyInfo>
           </HideForMobile>
         </FooterInfoWrapper>
-        <NavigationBarMap id="maplink" />
+        <NavigationBarMap/>
       </FooterWrapper>
     );
 }

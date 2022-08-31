@@ -41,8 +41,7 @@ export const FormWork = withFormProvider(({ ...props}) => {
 
     return (
       <FormSection onSubmit={handleSubmit(onSubmit)} mt="md" {...props}>
-        <H2 color="white" mb="md">
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
+        <H2 color="white" mb="md" mt="xlg">
           let's talk
         </H2>
         <FormWrapper>
@@ -86,7 +85,7 @@ export const FormWork = withFormProvider(({ ...props}) => {
           </FormColumnLeft>
           <FormColumnRight>
             <TextAreaField name="message" isFullWidth title="About your work" />
-            <ButtonRectangle mt="md">SEND</ButtonRectangle>
+            <ButtonRectangle mt="md" mb="xlg">SEND</ButtonRectangle>
           </FormColumnRight>
         </FormWrapper>
         <WorkModal isOpen={isModalOpen} setOpen={setModalOpen} />
