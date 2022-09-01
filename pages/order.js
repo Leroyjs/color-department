@@ -1,14 +1,15 @@
-import { Footer, Header, FormWork,  } from "components";
-
-
+import { Footer, Header, FormWork, } from "components";
+import { MainComponent } from "utils";
 const Order = () => {
-    return (
-      <>
-        <Header />
+  return (
+    <>
+      <Header />
+      <MainComponent>
         <FormWork />
-        <Footer />
-      </>
-    );
+      </MainComponent>
+      <Footer />
+    </>
+  );
 };
 
 export default Order;

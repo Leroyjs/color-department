@@ -31,7 +31,6 @@ export const Wrapper = styled.div`
   ${getCurrentMarginStyle("top", "md")};
   ${getCurrentPaddingStyle("horizontal", "md")};
   ${getCurrentMarginStyle("bottom", "xlg")};
-  padding-top: 100px;
 `;
 
 export const Container = styled.div`

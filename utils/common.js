@@ -2,6 +2,8 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { noScroll } from "../styles/reset.style";
+import { sizes, breakpointsWidth } from 'styles';
+import styled from "@emotion/styled";
 
 export function debounce(func, wait) {
     let currentTimer = null;
@@ -100,3 +102,13 @@ export function withLink(Component) {
         )
     }
 }
+
+export const MainComponent = styled.main`
+padding-top: ${sizes["desktopLG"].half};
+@media screen and (max-width: ${breakpointsWidth.tabletLG}){
+  padding-top: ${sizes["tabletLG"].thirdX2};
+}
+@media screen and (max-width: ${breakpointsWidth.phone}){
+  padding-top: ${sizes["tabletLG"].x1};
+}
+`

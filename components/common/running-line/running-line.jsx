@@ -12,7 +12,7 @@ const SeparatorText = () => (
         <Caption>in los angeles</Caption><br />
     </div>)
 
-export const RunningLine = React.memo(({ titles = ['WANT', 'TO', 'SLEEP', 'AND', 'MAC_PRO'], separator = SeparatorText, outline, link, ...props }) => {
+export const RunningLine = React.memo(({ titles = ['WE ARE BOLD', 'WE ARE HUNGRY',], separator = SeparatorText, outline, link, ...props }) => {
 
     const content = titles.reduce((acc, curr) => {
         acc.push(curr, separator);

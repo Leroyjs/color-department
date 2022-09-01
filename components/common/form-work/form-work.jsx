@@ -40,8 +40,8 @@ export const FormWork = withFormProvider(({ ...props}) => {
     const [isModalOpen, setModalOpen] = useState(false);
 
     return (
-      <FormSection onSubmit={handleSubmit(onSubmit)} mt="md" {...props}>
-        <H2 color="white" mb="md" mt="xlg">
+      <FormSection onSubmit={handleSubmit(onSubmit)} {...props}>
+        <H2 color="white" mb="md" mt="lg">
           let&apos;s talk
         </H2>
         <FormWrapper>
