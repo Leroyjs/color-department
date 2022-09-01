@@ -27,7 +27,7 @@ export const PreloaderWrapper = styled.div`
   height: 100vh;
   z-index: 99999;
   transition: opacity 0.5s;
-  ${({ isHidden }) => (isHidden ? "opacity: 0;" : "")}
+  ${({ isHidden }) => (isHidden ? "display:none" : "")}
 `;
 
 export const PreloaderHeader = styled.div`
