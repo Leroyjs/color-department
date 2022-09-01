@@ -17,7 +17,7 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
-  border: 2px solid ${({ theme }) => getCurrentColor("white", theme)};
+  border: 0.15vw solid ${({ theme }) => getCurrentColor("white", theme)};
 
   &:hover {
     ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}

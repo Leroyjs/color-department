@@ -3,6 +3,7 @@ import {
   ColouristFilter,
   DropDownsWrapper,
   MoreWrapper,
+  NotFound,
   ProjectPage,
 } from "./project-cards.style";
 import { ButtonEllipse, DropDown, WorksCards } from "components";
@@ -27,6 +28,12 @@ export const ProjectCards = () => {
   const [currentGenre, setCurrentGenre] = useState();
   const [currentColourist, setCurrentColourist] = useState();
   const [cards, setCards] = useState(data);
+  const [isSeeAll, setIsSeeAll] = useState(false);
+  const [isNotFound, setIsNotFound] = useState(false);
+
+  const handleClick = () => {
+    setIsSeeAll(true);
+  };
 
   useEffect(() => {
     const filteredCards = data.filter(({ colourist, genre, category }) => {
@@ -35,11 +42,30 @@ export const ProjectCards = () => {
       const isGenre = currentGenre?.value === genre || !currentGenre?.value;
       const isCategory =
         currentCategory?.value === category || !currentCategory?.value;
+
       return isColorist && isGenre && isCategory;
     });
 
-    setCards(filteredCards);
-  }, [data, currentCategory, currentGenre, currentColourist]);
+    if (isSeeAll == false) {
+      setCards(filteredCards.slice(0, 6));
+
+      if (filteredCards.length == 6) {
+        setIsSeeAll(true);
+      }
+      if (filteredCards.length == 0) {
+        setIsNotFound(true);
+      }
+    } else if (isSeeAll == true) {
+      setCards(filteredCards);
+    }
+
+    if (filteredCards.length == 0) {
+      setIsNotFound(true);
+    } else if (filteredCards.length !== 0) {
+      setIsNotFound(false);
+    }
+
+  }, [data, currentCategory, currentGenre, currentColourist, isSeeAll]);
 
   return (
     <ProjectPage>
@@ -69,9 +95,12 @@ export const ProjectCards = () => {
         </ColouristFilter>
       </DropDownsWrapper>
       <WorksCards cards={cards} />
-      <MoreWrapper mt="md">
-        <ButtonEllipse>More</ButtonEllipse>
+      <MoreWrapper isSeeAll={isSeeAll} mt="md">
+        <ButtonEllipse onClick={() => handleClick()}>More</ButtonEllipse>
       </MoreWrapper>
+      <NotFound mt="md" isNotFound={isNotFound}>
+        Not found
+      </NotFound>
     </ProjectPage>
   );
 };

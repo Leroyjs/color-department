@@ -36,7 +36,7 @@ export const Button = styled.button`
   ${applyMargins}
   ${applyPaddings}
 
-  @media screen and (max-width: ${breakpointsWidth.desktopXXLG}) {
+  @media screen and (min-width: ${breakpointsWidth.desktopXXLG}) {
     width: 9.375vw;
     height: 9.375vw;
   }
