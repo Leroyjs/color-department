@@ -43,7 +43,7 @@ export const TextSectionWrapper = styled.div`
     transition: 0.3s;
 
     svg {
-      stroke: ${({ theme }) => getCurrentColorStyles("white", theme)};
+      stroke: ${({ theme }) => getCurrentColor("white", theme)};
       transition: stroke 0.3s;
     }
 
@@ -54,15 +54,12 @@ export const TextSectionWrapper = styled.div`
     }
 
     &:hover {
-      transition: 0.3s;
       svg {
-        stroke: ${({ theme }) => getCurrentColorStyles("primary", theme)};
-        transition: stroke 0.3s;
+        stroke: ${({ theme }) => getCurrentColor("primary", theme)};
       }
 
       span {
         ${({ theme }) => getCurrentColorStyles("primary", theme)};
-        transition: color 0.3s;
       }
     }
   `;
