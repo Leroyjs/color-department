@@ -40,28 +40,29 @@ export const TextSectionWrapper = styled.div`
     align-items: flex-end;
     height: auto;
     cursor: pointer;
+    transition: 0.3s;
 
     svg {
-      stroke: ${getCurrentColor("white")};
-      transition: stroke 0.5s;
+      stroke: ${({ theme }) => getCurrentColorStyles("white", theme)};
+      transition: stroke 0.3s;
     }
 
     span {
       align-self: center;
       ${({ theme }) => getCurrentColorStyles("white", theme)};
-      transition: color 0.5s;
+      transition: color 0.3s;
     }
 
     &:hover {
-      transition: 0.5s;
+      transition: 0.3s;
       svg {
-        stroke: ${getCurrentColor("yellow")};
-        transition: stroke 0.5s;
+        stroke: ${({ theme }) => getCurrentColorStyles("primary", theme)};
+        transition: stroke 0.3s;
       }
 
       span {
         ${({ theme }) => getCurrentColorStyles("primary", theme)};
-        transition: color 0.5s;
+        transition: color 0.3s;
       }
     }
   `;
@@ -133,7 +134,7 @@ export const StyledTabletSMBR = styled.br`
     display: block;
   }
 
-  @media screen and (max-width: ${breakpointsWidth.phone}) {
+  @media screen and (max-width: 670px) {
     display: none;
   }
 `;
@@ -151,6 +152,30 @@ export const StyledCaptionPhoneBR = styled.br`
 
   @media screen and (max-width: 600px) {
     display: block;
+  }
+`;
+
+export const StyledPhoneBR = styled.br`
+  display: none;
+
+  @media screen and (max-width: 670px) {
+    display: block;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    display: none;
+  }
+`;
+
+export const StyledPhoneMDBR = styled.br`
+  display: none;
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    display: block;
+  }
+
+  @media screen and (max-width: 365px) {
+    display: none;
   }
 `;
 
