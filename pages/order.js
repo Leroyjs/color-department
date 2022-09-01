@@ -1,8 +1,13 @@
-import {FormWork} from "components";
+import { Footer, Header, FormWork,  } from "components";
+
 
 const Order = () => {
     return (
-        <FormWork/>
+      <>
+        <Header />
+        <FormWork />
+        <Footer />
+      </>
     );
 };
 

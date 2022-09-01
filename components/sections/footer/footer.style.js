@@ -5,6 +5,7 @@ import { getCurrentGridTemplateColumsStyle, getCurrentPaddingStyle, sizes, break
 import { Caption } from 'components';
 import { applyPaddings } from 'styles';
 import { applyMargins } from 'styles';
+import { getVW } from 'styles';
 export const FooterWrapper = styled.div`
     background-color: ${colors.black};
     display: grid;
@@ -43,6 +44,14 @@ export const FoxWrapper = styled.div`
 `
 
 export const FoxStyle = css`
+    @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+        width: ${getVW(200)};
+        height: ${getVW(200)};
+    }
+    @media screen and (max-width: ${breakpointsWidth.desktopLG}) {
+        width: 200px;
+        height: 200px;
+    }
     @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
         width: 192px;
         height: 192px;

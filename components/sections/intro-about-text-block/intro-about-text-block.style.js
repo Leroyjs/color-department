@@ -1,11 +1,9 @@
 import {
   getCurrentColor,
-  getCurrentPaddingStyle,
-  getCurrentMarginStyle,
   getCurrentBackgroundColorStyles,
   applyMargins,
   applyPaddings,
-  breakpointsWidth,
+  breakpointsWidth, getCurrentColorStyles,
 } from "styles";
 import styled from "@emotion/styled";
 import { TextDecorationUnderline, Planet } from "../../common";
@@ -68,11 +66,21 @@ export const RoundedNumber = styled.div`
     height: 24px;
 
     span {
-      padding-left: 50%;
-      padding-right: 50%;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+
+      font-family: "Helvetica Neue", serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 13px;
+      text-align: center;
+      letter-spacing: 0.03em;
     }
   }
 
@@ -88,6 +96,29 @@ export const TextDecorationWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   position: relative;
+  cursor: pointer;
+
+  svg {
+    stroke: ${({ theme }) => getCurrentColor("white", theme)};
+    transition: stroke 0.3s;
+  }
+
+  span {
+    ${({ theme }) => getCurrentColorStyles("white", theme)};
+    transition: color 0.3s;
+  }
+
+  &:hover {
+    svg {
+      stroke: ${({ theme }) => getCurrentColor("primary", theme)};
+      transition: stroke 0.3s;
+    }
+
+    span {
+      ${({ theme }) => getCurrentColorStyles("primary", theme)};
+      transition: color 0.3s;
+    }
+  }
 `;
 
 export const StyledWhiteH2 = styled(H2)`
@@ -102,9 +133,14 @@ export const StyledUnderline = styled(TextDecorationUnderline)`
   transform: translateX(-50%);
   width: calc(100% + 6px);
 
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    bottom: -12px;
+  }
+
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     width: 33.625vw;
     height: 1vw;
+    bottom: -1vw;
   }
 `;
 

@@ -5,7 +5,6 @@ import {
   RoundedNumber,
   TextDecorationWrapper,
   StyledWhiteH2,
-  PointWrapper,
   StyledUnderline,
   StyledPlanet,
   StyledDesktopSMBR,
@@ -25,9 +24,9 @@ export const IntroAboutTextBlock = ({...props}) => {
       <StyledTabletSMBR />
       <StyledPhoneSMBR />
       <H2>Based in&nbsp;</H2>
-      <Link href="/">
-        <StyledWhiteH2>Los Angeles, CALIFORNIA.&nbsp;</StyledWhiteH2>
-      </Link>
+        <StyledWhiteH2>
+          Los Angeles, CALIFORNIA.&nbsp;
+        </StyledWhiteH2>
       <StyledPlanet />
       <StyledDesktopBR />
       <StyledDesktopSMBR />
@@ -72,7 +71,7 @@ export const IntroAboutTextBlock = ({...props}) => {
       <StyledTabletSMBR />
       <StyledPhoneSMBR />
       <H2> and&nbsp;</H2>
-      <Link href="/">
+      <Link href="/order">
         <TextDecorationWrapper>
           <StyledWhiteH2>agreements very seriously.</StyledWhiteH2>
           <StyledUnderline />
