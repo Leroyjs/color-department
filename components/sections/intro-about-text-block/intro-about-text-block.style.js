@@ -97,29 +97,26 @@ export const TextDecorationWrapper = styled.div`
   align-items: center;
   position: relative;
   cursor: pointer;
-  transition: 0.5s;
 
   svg {
-    stroke: ${({ theme }) => getCurrentColorStyles("white", theme)};
-    transition: stroke 0.5s;
+    stroke: ${({ theme }) => getCurrentColor("white", theme)};
+    transition: stroke 0.3s;
   }
 
   span {
     ${({ theme }) => getCurrentColorStyles("white", theme)};
-    transition: color 0.5s;
+    transition: color 0.3s;
   }
 
   &:hover {
-    transition: 0.5s;
-
     svg {
-      stroke: ${({ theme }) => getCurrentColorStyles("primary", theme)};
-      transition: stroke 0.5s;
+      stroke: ${({ theme }) => getCurrentColor("primary", theme)};
+      transition: stroke 0.3s;
     }
 
     span {
       ${({ theme }) => getCurrentColorStyles("primary", theme)};
-      transition: color 0.5s;
+      transition: color 0.3s;
     }
   }
 `;
