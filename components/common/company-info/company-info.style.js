@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { hexToRGBA } from "styles";
-import { colors, getCurrentPaddingStyle, breakpointsWidth } from "styles";
+import { colors, getCurrentPaddingStyle, getCurrentColor, breakpointsWidth } from "styles";
+import { Caption } from '../../ui/caption/';
 
 export const CompanyInfoWrapper = styled.div`
     position: absolute;
@@ -12,10 +13,17 @@ export const CompanyInfoWrapper = styled.div`
     justify-content: space-between;
     & span {
         display: block;
-        color: ${colors.white}
     }
 `
 
+export const CaptionLink = styled(Caption)`
+    cursor: pointer;
+    color: ${colors.white};
+    &:hover{
+        color: ${({ theme }) => getCurrentColor("primary", theme)};
+    }
+    transition: color 0.3s;
+`
 export const ContactInfo = styled.div`
  @media screen and (max-width: ${breakpointsWidth.phone}) {
         display: none;
@@ -29,7 +37,7 @@ export const AdditionInfo = styled.div`
 export const MadeBy = styled.div`
     padding-bottom: 16px;
     & span {
-        color: ${hexToRGBA(colors.white,0.2)}
+        color: ${hexToRGBA(colors.white, 0.2)}
     }
 `
 

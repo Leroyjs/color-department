@@ -1,4 +1,4 @@
-import { FoxBoxInner, FoxBoxWrapper, ImageWrapper } from "./preloader.style";
+import { FoxBoxInner, FoxBoxWrapper, ImageWrapper, FoxImg } from "./preloader.style";
 
 import Image from "next/image";
 import { foxPieces } from "./constants";
@@ -14,7 +14,7 @@ export const FoxBox = ({ stepIndex, isHidden }) => (
           gridArea={gridArea}
           opasityTransition={opasityTransition}
         >
-          <Image src={img} alt="" />
+          <Image src={img} layout='responsive' alt="" />
         </ImageWrapper>
       ))}
     </FoxBoxInner>

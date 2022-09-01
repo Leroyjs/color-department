@@ -11,6 +11,13 @@ import {
 } from "components";
 import { colors } from 'styles';
 
+const ArrayImages = [
+    "https://i.postimg.cc/XpHKgYBn/img-01.jpg",
+    "https://i.postimg.cc/zVXSWgBd/img-02.jpg",
+    "https://i.postimg.cc/fkvfJKwt/img-03.jpg",
+    "https://i.postimg.cc/HjmtYKC1/img-04.jpg",
+]
+
 const DEMO_VIDEO =
     "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4";
 const slides = [
@@ -110,8 +117,8 @@ const slides = [
         title: "Select corourist",
         poster:
             "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
-        client: "JACK MCGINITY",
-        colourist: "JACK MCGINITY",
+        client: "JACK MCGINITY KEY ERR",
+        colourist: "JACK MCGINITY KEY ERR",
         video: {
             mp4: DEMO_VIDEO,
         },
@@ -121,66 +128,68 @@ const slides = [
 const About = () => {
     const [isAboutImg, setAboutImg] = useState(true);
     const SeniorColourists = [
-      {
-        modalId: "/",
-        startLabel: "Сraig Saunders",
-        endLabel: "Senior colourist",
-        img: "https://images.unsplash.com/photo-1660598353451-9c5a0a0ff901?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE2fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      },
-      {
-        modalId: "/",
-        startLabel: "Ellen Kennedy",
-        endLabel: "VFX-designer",
-        img: "https://images.unsplash.com/photo-1514993805013-c428d7f63ad4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      },
-      {
-        modalId: "/",
-        startLabel: "Miranda Bell",
-        endLabel: "Creative director",
-        img: "https://images.unsplash.com/photo-1660032109345-f513b154cc2f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMyfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      },
+        {
+            modalId: "/",
+            startLabel: "Сraig Saunders",
+            endLabel: "Senior colourist",
+            img: "https://images.unsplash.com/photo-1660598353451-9c5a0a0ff901?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE2fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        },
+        {
+            modalId: "/",
+            startLabel: "Ellen Kennedy",
+            endLabel: "VFX-designer",
+            img: "https://images.unsplash.com/photo-1514993805013-c428d7f63ad4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        },
+        {
+            modalId: "/",
+            startLabel: "Miranda Bell",
+            endLabel: "Creative director",
+            img: "https://images.unsplash.com/photo-1660032109345-f513b154cc2f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMyfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        },
     ];
 
     const Colourists = [
-      {
-        modalId: "/",
-        startLabel: "Herman Payne",
-        endLabel: "CEO-founder",
-        img: "https://images.unsplash.com/photo-1548536082-6959567349c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE3fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      },
-      {
-        modalId: "/",
-        startLabel: "Jeff Washington",
-        endLabel: "Sales manager",
-        img: "https://images.unsplash.com/photo-1660054031395-3c01627e8842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI4fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      },
+        {
+            modalId: "/",
+            startLabel: "Herman Payne",
+            endLabel: "CEO-founder",
+            img: "https://images.unsplash.com/photo-1548536082-6959567349c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE3fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        },
+        {
+            modalId: "/",
+            startLabel: "Jeff Washington",
+            endLabel: "Sales manager",
+            img: "https://images.unsplash.com/photo-1660054031395-3c01627e8842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI4fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        },
     ];
 
     const Assistants = [
-      {
-        modalId: "/",
-        startLabel: "Milton Hogan",
-        endLabel: "Account",
-        img: "https://images.unsplash.com/photo-1659492061718-f3708aae95d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDY2fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      },
-      {
-        modalId: "/",
-        startLabel: "Dexter Swanson",
-        endLabel: "Account",
-        img: "https://images.unsplash.com/photo-1659273145320-4a9750783c25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg0fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      },
-      {
-        modalId: "/",
-        startLabel: "Carla Garcia",
-        endLabel: "Manager",
-        img: "https://images.unsplash.com/photo-1502323703385-c3ea9ace787d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg3fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      },
+        {
+            modalId: "/",
+            startLabel: "Milton Hogan",
+            endLabel: "Account",
+            img: "https://images.unsplash.com/photo-1659492061718-f3708aae95d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDY2fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        },
+        {
+            modalId: "/",
+            startLabel: "Dexter Swanson",
+            endLabel: "Account",
+            img: "https://images.unsplash.com/photo-1659273145320-4a9750783c25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg0fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        },
+        {
+            modalId: "/",
+            startLabel: "Carla Garcia",
+            endLabel: "Manager",
+            img: "https://images.unsplash.com/photo-1502323703385-c3ea9ace787d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg3fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        },
     ];
-    
+
+
+
     return (
         <>
-            <Header/>
-            <PhotoStartScreen arrayOfImages={[]} title={['We are', 'color department']}/>
+            <Header />
+            <PhotoStartScreen arrayOfImages={ArrayImages} title={['We are', 'color department']} />
             <main style={{ backgroundColor: colors.black }}>
                 <IntroAboutTextBlock pt="xlg" />
                 <Awards
@@ -208,9 +217,9 @@ const About = () => {
                     to evaluate our capabilities and skills
                 </PreTitleSlider>
                 <Slider slides={slides} />
-                <RunningLineLink mt="lg" outline={'true'} target={'_blank'} link={'https://cs9.pikabu.ru/post_img/big/2017/01/29/1/1485643541171113411.jpg'}/>
+                <RunningLineLink mt="lg" outline={'true'} target={'_blank'} link={'https://cs9.pikabu.ru/post_img/big/2017/01/29/1/1485643541171113411.jpg'} />
             </main>
-            <Footer pt="xlg"/>
+            <Footer pt="xlg" />
         </>
     );
 };
