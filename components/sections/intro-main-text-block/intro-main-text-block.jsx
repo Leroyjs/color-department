@@ -14,6 +14,8 @@ import {
   StyledTabletSMBR,
   StyledCaptionPhoneBR,
   StyledCaptionBR,
+  StyledPhoneBR,
+  StyledPhoneMDBR,
   StyledPhoneSMBR,
   StyledDesktopLGBR,
 } from "./intro-main-text-block.style";
@@ -24,17 +26,20 @@ export const IntroMainTextBlock = () => {
     <TextSectionWrapper>
       <FirstLineWrapper>
         <StyledWhiteH2>We are Color Department&nbsp;</StyledWhiteH2>
-        <StyledTabletSMBR />
+        <StyledPhoneBR />
         <H2>a color&nbsp;</H2>
         <StyledTabletBR />
+        <StyledTabletSMBR />
+        <StyledPhoneMDBR />
         <H2> grading studio&nbsp;</H2>
         <StyledDesktopLGBR />
-          <StyledWhiteH2>
-            Based in Los Angeles.
-          </StyledWhiteH2>
+        <StyledPhoneBR />
+        <StyledWhiteH2>Based in Los Angeles.</StyledWhiteH2>
         <StyledPlanet />
         <StyledTabletBR />
         <StyledTabletSMBR />
+        <StyledPhoneBR />
+        <StyledPhoneMDBR />
         <StyledPhoneSMBR />
         <H2>&nbsp;We hunt for&nbsp;</H2>
         <H2>the best Solutions.&nbsp;</H2>
@@ -43,6 +48,7 @@ export const IntroMainTextBlock = () => {
         <StyledPhoneSMBR />
         <H2>We always&nbsp;</H2>
         <StyledTabletBR />
+        <StyledPhoneMDBR />
         <H2> find the right</H2>&nbsp;
         <StyledDesktopBR />
         <H2>path to&nbsp;</H2>
@@ -52,6 +58,7 @@ export const IntroMainTextBlock = () => {
         <StyledDesktopLGBR />
         <StyledWhiteH2>Impactful&nbsp;</StyledWhiteH2>
         <StyledTabletBR />
+        <StyledPhoneMDBR />
         <StyledWhiteH2>images.&nbsp;</StyledWhiteH2>
         <StyledPhoneSMBR />
         <Link href="/projects">

@@ -56,3 +56,15 @@ export const StyledTabletBR = styled.br`
     display: block;
   }
 `;
+
+export const StyledTabletSMBR = styled.br`
+  display: none;
+
+  @media screen and (max-width: 690px) {
+    display: block;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    display: none;
+  }
+`;
