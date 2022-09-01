@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { formatPhoneNumber, withFormProvider } from "utils";
 import {
@@ -7,6 +7,7 @@ import {
   DropDownField,
   InputField,
   CounterField,
+  WorkModal,
 } from "components";
 import { selectSizeOptions } from "./constants";
 import {
@@ -20,10 +21,11 @@ import {
 } from "./shop-modal.style";
 
 export const ShopForm = withFormProvider(({ cost, discription, title }) => {
+  const [isOpen, setOpen] = useState(false)
   const { handleSubmit } = useFormContext();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = () => setOpen(true);
 
-  return (
+  return (<>
     <InformationColumn>
       <TextContainer>
         <H3>{title}</H3>
@@ -61,5 +63,7 @@ export const ShopForm = withFormProvider(({ cost, discription, title }) => {
         </FormWrapper>
       </InformationItem>
     </InformationColumn>
+    <WorkModal isOpen={isOpen} setOpen={setOpen} />
+  </>
   );
 });

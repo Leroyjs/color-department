@@ -36,7 +36,7 @@ const TitleOptions = [
 
 export const FormWork = withFormProvider(({ ...props}) => {
     const {handleSubmit} = useFormContext();
-    const onSubmit = data => console.log(data);
+    const onSubmit = () => setModalOpen(true);
     const [isModalOpen, setModalOpen] = useState(false);
 
     return (
@@ -77,14 +77,13 @@ export const FormWork = withFormProvider(({ ...props}) => {
             />
             <InputField
               name="phone"
-              normalizer={formatPhoneNumber}
               isFullWidth
               title="PLEASE CONTACT ME AT*"
               propsInput={{ placeholder: "My e-mail or number phone" }}
             />
           </FormColumnLeft>
           <FormColumnRight>
-            <TextAreaField name="message" isFullWidth title="About your work" />
+            <TextAreaField name="message" rules={{}} isFullWidth title="About your work" />
             <ButtonRectangle mt="md" mb="xlg">SEND</ButtonRectangle>
           </FormColumnRight>
         </FormWrapper>

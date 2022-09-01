@@ -21,13 +21,14 @@ export const CloseBtn = styled(CloseButton)`
   height: 40px;
   cursor: pointer;
   ${getCurrentMarginStyle("bottom", "md")};
+  ${getCurrentMarginStyle("top", "lg")};
 `;
 
 export const Wrapper = styled.div`
   width: 100%;
   ${applyMargins};
   ${applyPaddings};
-  ${({theme}) => getCurrentBackgroundColorStyles("black", theme)};
+  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
   ${getCurrentMarginStyle("top", "md")};
   ${getCurrentPaddingStyle("horizontal", "md")};
   ${getCurrentMarginStyle("bottom", "xlg")};
@@ -99,8 +100,8 @@ export const ProfileLinks = styled.div`
     top: 0;
     right: 0;
     width: 100%;
-    height: 2px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='2' fill='none'%3E%3Cpath stroke='%23fff' stroke-dasharray='2 10' stroke-width='2' d='M0 1h760' opacity='.2'/%3E%3C/svg%3E");
+    height: 0.17vw;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='10' fill='none'%3E%3Cpath stroke='%23fff' stroke-dasharray='0.3vw 1.6vw' stroke-width='150vw' d='M0 1h2500w' opacity='.2'/%3E%3C/svg%3E");
   }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
@@ -129,15 +130,16 @@ export const CaptionLink = styled(Caption)`
 export const UserAvatar = styled(Avatar)``;
 
 export const UserAbout = styled.div`
-  order: -1;
+  order: 1;
   display: block;
   ${getCurrentMarginStyle("left", "md")};
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     margin: 0;
-  };
+    grid-column-start: 1;
+  }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     text-align: center;
-  };
+  } ;
 `;

@@ -47,4 +47,3 @@ WorksCard.propTypes = {
     author: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,
 }
-

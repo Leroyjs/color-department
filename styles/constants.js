@@ -50,6 +50,7 @@ export const subsequenceOfBreakpoints = [
 ];
 
 export const breakpointsWidth = {
+  [desktopXXLG]: "1920px",
   [desktopXLG]: "1920px",
   [desktopLG]: "1600px",
   [desktopMD]: "1440px",

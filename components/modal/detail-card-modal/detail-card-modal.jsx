@@ -13,6 +13,7 @@ import {
     Container,
     TextRow, ProfileLinks, CaptionLink, ModalWrapper, UserName
 } from "./detail-card-modal.style";
+import Link from 'next/link';
 
 const DEMO_VIDEO = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4';
 const DEMO_POSTER = 'https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d?mw=1500&mh=844&q=70'
@@ -53,49 +54,48 @@ const demoCards = [
     },
 ]
 
-export const DetailCardModal = ({isOpen, setOpen, modalId}) => (
-    <ModalWrapper isOpen={isOpen} setOpen={setOpen}>
-        <Wrapper>
-            <CloseBtn onClick={() => setOpen(false)}/>
-            <Container>
-                <User>
-                    <UserAvatar img="https://placebeard.it/640x360"/>
-                    <UserAbout>
-                        <UserName>Miranda Bell</UserName>
-                        <Caption color="white">Creative producer</Caption>
-                    </UserAbout>
-                </User>
-                <Description>
-                    <TextRow>
-                        <TextCol color="white">
-                            Miranda Bell is a highly versatile senior colourist working broadly across advertising,
-                            narrative,
-                            music and fashion. Nike, Louis Vuitton, Mercedes, Virgin Media, ASOS, Sainsbury’s,
-                            Balenciaga
-                            and
-                            Calvin Klein all feature in his varied commercial portfolio. Throughout every grade, he
-                            prioritises
-                            enhancing the message and emotion of the work.
-                        </TextCol>
-                        <TextCol color="white">
-                            As well as appearing on streaming sites such as Netflix, Amazon and Mubi, Jack’s
-                            narrative
-                            work
-                            is
-                            regularly awarded at global film festivals, including European Short Film Festival, BFI,
-                            Iris,
-                            London Short Film Festival, and more
-                        </TextCol>
-                    </TextRow>
-                    <ProfileLinks>
-                        <Caption color="white">Instagram</Caption>
-                        <CaptionLink>@MirandaBell</CaptionLink>
-                    </ProfileLinks>
-                </Description>
-            </Container>
-        </Wrapper>
-        <WorksCards title="Miranda Bell’s cases" cards={demoCards}/>
-    </ModalWrapper>
+export const DetailCardModal = ({ isOpen, setOpen, modalId }) => (
+  <ModalWrapper isOpen={isOpen} setOpen={setOpen}>
+    <Wrapper>
+      <CloseBtn onClick={() => setOpen(false)} />
+      <Container>
+        <User>
+          <UserAvatar img="https://placebeard.it/640x360" />
+          <UserAbout>
+            <UserName>Miranda Bell</UserName>
+            <Caption color="white">Creative producer</Caption>
+          </UserAbout>
+        </User>
+        <Description>
+          <TextRow>
+            <TextCol color="white">
+              Miranda Bell is a highly versatile senior colourist working
+              broadly across advertising, narrative, music and fashion. Nike,
+              Louis Vuitton, Mercedes, Virgin Media, ASOS, Sainsbury’s,
+              Balenciaga and Calvin Klein all feature in his varied commercial
+              portfolio. Throughout every grade, he prioritises enhancing the
+              message and emotion of the work.
+            </TextCol>
+            <TextCol color="white">
+              As well as appearing on streaming sites such as Netflix, Amazon
+              and Mubi, Jack’s narrative work is regularly awarded at global
+              film festivals, including European Short Film Festival, BFI, Iris,
+              London Short Film Festival, and more
+            </TextCol>
+          </TextRow>
+          <ProfileLinks>
+            <Link href={"https://www.instagram.com/"}>
+              <Caption color="white" style={{ cursor: "pointer" }}>
+                Instagram
+              </Caption>
+            </Link>
+            <CaptionLink>@MirandaBell</CaptionLink>
+          </ProfileLinks>
+        </Description>
+      </Container>
+    </Wrapper>
+    <WorksCards title="Miranda Bell’s cases" cards={demoCards} />
+  </ModalWrapper>
 );
 
 DetailCardModal.propTypes = {
