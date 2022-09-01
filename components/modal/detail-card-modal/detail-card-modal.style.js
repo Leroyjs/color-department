@@ -142,9 +142,10 @@ export const UserAbout = styled.div`
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     margin: 0;
-  };
+    grid-column-start: 1;
+  }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     text-align: center;
-  };
+  } ;
 `;
