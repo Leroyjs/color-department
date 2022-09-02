@@ -5,7 +5,7 @@ import {
   getCurrentHeightSizeStyle,
   sizes,
   breakpointsWidth,
-  hexToRGBA
+  hexToRGBA,
 } from "styles";
 
 import { applyCurrentAnimation } from "./utils";
@@ -27,7 +27,8 @@ export const PreloaderWrapper = styled.div`
   height: 100vh;
   z-index: 99999;
   transition: opacity 0.5s;
-  ${({ isHidden }) => (isHidden ? "display:none" : "")}
+
+  ${({ isHidden }) => (isHidden ? `opacity:0; pointer-events: none;` : "")}
 `;
 
 export const PreloaderHeader = styled.div`
@@ -36,13 +37,13 @@ export const PreloaderHeader = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
-  height: ${sizes['desktopLG'].half};
+  height: ${sizes["desktopLG"].half};
   border-bottom: 1px solid ${hexToRGBA(colors.white, 0.2)};
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    height: ${sizes['tabletLG'].thirdX2};
+    height: ${sizes["tabletLG"].thirdX2};
   }
   @media screen and (max-width: ${breakpointsWidth.phone}) {
-    height: ${sizes['tabletLG'].x1};
+    height: ${sizes["tabletLG"].x1};
   }
 `;
 
@@ -54,7 +55,7 @@ export const Number = styled(H3)`
 export const FoxImg = css`
   width: 100%;
   height: 100%;
-`
+`;
 
 export const NumberInner = styled.span`
   display: flex;
@@ -87,10 +88,10 @@ export const GridWrapper = styled.div`
   height: 100%;
   bottom: 0;
   padding-top: ${sizes["desktopLG"].half};
-  @media screen and (max-width: ${breakpointsWidth.tabletLG}){
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     padding-top: ${sizes["tabletLG"].thirdX2};
   }
-  @media screen and (max-width: ${breakpointsWidth.phone}){
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
     padding-top: ${sizes["tabletLG"].x1};
   }
 `;
@@ -100,14 +101,14 @@ export const FoxBoxWrapper = styled.div`
   height: calc(100% - ${sizes["desktopLG"].half});
   width: 100vw;
   position: absolute;
-  top:0;
+  top: 0;
   z-index: 1;
   margin-top: ${sizes["desktopLG"].half};
-  @media screen and (max-width: ${breakpointsWidth.tabletLG}){
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     height: calc(100% - ${sizes["tabletLG"].thirdX2});
     margin-top: ${sizes["tabletLG"].thirdX2};
   }
-  @media screen and (max-width: ${breakpointsWidth.phone}){
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
     height: calc(100% - ${sizes["desktopLG"].half});
     margin-top: ${sizes["desktopLG"].half};
   }
@@ -132,7 +133,7 @@ export const RunningLineWrapper = styled.div`
   top: calc(100vh + ${sizes.desktopLG.x1});
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     transform: translateY(-${sizes.tabletLG.x2});
-  top: calc(100vh + ${sizes.tabletLG.x1});
+    top: calc(100vh + ${sizes.tabletLG.x1});
   }
   ${({ stepIndex }) =>
     stepIndex ? getCurrentHeightSizeStyle("x1") : "height: 0px;"}
