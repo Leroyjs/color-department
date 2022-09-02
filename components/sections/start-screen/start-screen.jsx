@@ -1,4 +1,5 @@
-import { Grid, RunningLine, VideoBackground } from "components";
+import {useEffect, useRef} from "react";
+import {Grid, RunningLine, VideoBackground} from "components";
 import {
     ContentWrapper, FlexLayerWrapper, RunningLineStyle, StartScreenWrapper
 } from "./start-screen.style";
@@ -11,6 +12,7 @@ const video = {
 };
 
 export const StartScreen = () => {
+
     return (
         <StartScreenWrapper>
             <FlexLayerWrapper>
@@ -18,6 +20,8 @@ export const StartScreen = () => {
                     <VideoBackground
                         video={video}
                         autoPlay={true}
+                        muted
+                        playsinline
                     />
                     <Grid/>
                     <RunningLine className={RunningLineStyle}/>
