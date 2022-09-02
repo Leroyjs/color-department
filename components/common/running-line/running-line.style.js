@@ -75,9 +75,14 @@ export const RunningLineSeparator = styled.div`
 export const RunningLineWrapper = styled.div`
     overflow: hidden;
     display: flex;
+    width: 100%;
+    margin-left: -50%;
+    translateZ(0);
+    transform: translateX(50%);
+  
     ${({ link }) => link ? "cursor: pointer" : ""};
     &>*:nth-of-type(1n){
-        animation: ${scrollAnimation} 20s linear infinite;
+        animation: ${scrollAnimation} 15s linear infinite;
     }
     :hover {
         h1 span {
