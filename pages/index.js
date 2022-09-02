@@ -6,10 +6,12 @@ import {
   IntroMainTextBlock,
   PartnersLine, Slider,
   StartScreen,
+  Preloader
 } from "components";
 
 import { Awards } from "components";
 import { colors } from "styles";
+import styled from "@emotion/styled";
 
 const DEMO_VIDEO = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4';
 const awardsItems = [
@@ -155,34 +157,45 @@ const slides = [
   {
     title: 'Select corourist',
     poster: "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
-    client: "JACK MCGINITY",
-    colourist: "JACK MCGINITY",
+    client: "JACK MCGINITY  KEY ERR",
+    colourist: "JACK MCGINITY  KEY ERR",
     video: {
       mp4: DEMO_VIDEO
     }
   },
 ]
 
+const Prl = styled.div`
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left:0;
+  right: 0;
+  background-color: red;
+  z-index: 20000;
+`
+
 const Home = () => {
   const videoContant = useRef(null);
 
   return (
     <>
-      <Header transparentToComponent={videoContant}/>
-      <StartScreen/>
-      <main ref={videoContant} style={{ backgroundColor: colors.black }}>
-        <IntroMainTextBlock />
-        <PartnersLine  partners={mockPartners}/>
-        <Slider slides={slides} title={<span>Our work worthy of your <br/> attention</span>}/>
-        <AwardMainTextBlock mt="xlg" px="md" />
-        <Awards
-          options={awardsItems}
-          title="Our Awards"
+      <Preloader></Preloader>
+      <Header transparentToComponent={videoContant} />
+          <StartScreen />
+          <main ref={videoContant} style={{ backgroundColor: colors.black }}>
+            <IntroMainTextBlock />
+            <PartnersLine partners={mockPartners} />
+            <Slider slides={slides} title={<span>Our work worthy of your <br /> attention</span>} />
+            <AwardMainTextBlock mt="xlg" px="md" />
+            <Awards
+              options={awardsItems}
+              title="Our Awards"
 
-          isAboutImg={false}
-        />
-      </main>
-      <Footer pt="xlg"/>
+              isAboutImg={false}
+            />
+          </main>
+          <Footer pt="xlg" />
     </>
   );
 };

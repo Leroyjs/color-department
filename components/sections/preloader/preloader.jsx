@@ -21,7 +21,6 @@ export const Preloader = ({ onDone = stubFunction }) => {
   const [isHidden, setHidden] = useState(false);
 
   useEffect(() => initStepCounter(setStepIndex, setHidden, onDone), []);
-
   return (
     <PreloaderWrapper isHidden={isHidden}>
       <PreloaderHeader>

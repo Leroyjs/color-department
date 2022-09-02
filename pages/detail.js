@@ -102,8 +102,8 @@ const slides = [
         title: "Select corourist",
         poster:
             "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
-        client: "JACK MCGINITY",
-        colourist: "JACK MCGINITY",
+        client: "JACK MCGINITY  KEY ERR",
+        colourist: "JACK MCGINITY  KEY ERR",
         video: {
             mp4: DEMO_VIDEO,
         },

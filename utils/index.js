@@ -7,7 +7,8 @@ import {
   useEscHandler,
   withFormProvider,
   withLink,
-  useNoScroll
+  useNoScroll,
+  MainComponent
 } from "./common";
 
 import { Freezer } from "./Freezer";
@@ -28,5 +29,6 @@ export {
   formatPhoneNumber,
   withFormProvider,
   useNoScroll,
-  withLink
+  withLink,
+  MainComponent
 };

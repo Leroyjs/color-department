@@ -21,7 +21,7 @@ const DEMO_POSTER = 'https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0
 
 const demoCards = [
     {
-        firstTitle: "Lil pump",
+        firstTitle: "Lil pump 1",
         secondTitle: "Zolla",
         author: "Archangel Studios",
         year: "2021",
@@ -29,7 +29,7 @@ const demoCards = [
         video: {"mp4": DEMO_VIDEO}
     },
     {
-        firstTitle: "Lil pump",
+        firstTitle: "Lil pump 2",
         secondTitle: "Zolla",
         author: "Archangel Studios",
         year: "2021",
@@ -37,7 +37,7 @@ const demoCards = [
         video: {"mp4": DEMO_VIDEO}
     },
     {
-        firstTitle: "Lil pump",
+        firstTitle: "Lil pump 3",
         secondTitle: "Zolla",
         author: "Archangel Studios",
         year: "2021",
@@ -45,7 +45,7 @@ const demoCards = [
         video: {"mp4": DEMO_VIDEO}
     },
     {
-        firstTitle: "Lil pump",
+        firstTitle: "Lil pump 4",
         secondTitle: "Zolla",
         author: "Archangel Studios",
         year: "2021",

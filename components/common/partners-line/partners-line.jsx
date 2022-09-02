@@ -13,8 +13,8 @@ export const PartnersLine = ({ partners = [] }) => {
         <PartnersLineWrapper>
             <PartnersLineSlider step={step}>
                 {
-                    pictureArray.map(({logo, label}) => (
-                        <PartnersItem key={label}>
+                    pictureArray.map(({logo, label},indx) => (
+                        <PartnersItem key={label+indx}>
                             <img src={logo} alt={label}/>
                         </PartnersItem>)
                     )

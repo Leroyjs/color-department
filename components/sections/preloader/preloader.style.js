@@ -4,13 +4,16 @@ import {
   getCurrentGridTemplateColumsStyle,
   getCurrentHeightSizeStyle,
   sizes,
+  breakpointsWidth,
+  hexToRGBA
 } from "styles";
 
 import { applyCurrentAnimation } from "./utils";
 import { steps } from "./constants";
 import styled from "@emotion/styled";
-import {H3} from "../../ui/h3";
-import {Grid} from "../../common";
+import { H3 } from "../../ui/h3";
+import { Grid } from "../../common";
+import { css } from "@emotion/css";
 
 export const PreloaderWrapper = styled.div`
   ${getCurrentGridTemplateColumsStyle()}
@@ -22,9 +25,9 @@ export const PreloaderWrapper = styled.div`
   top: 0;
   width: 100%;
   height: 100vh;
-  z-index: 999;
+  z-index: 99999;
   transition: opacity 0.5s;
-  ${({ isHidden }) => (isHidden ? "opacity: 0;" : "")}
+  ${({ isHidden }) => (isHidden ? "display:none" : "")}
 `;
 
 export const PreloaderHeader = styled.div`
@@ -33,12 +36,25 @@ export const PreloaderHeader = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  height: ${sizes['desktopLG'].half};
+  border-bottom: 1px solid ${hexToRGBA(colors.white, 0.2)};
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    height: ${sizes['tabletLG'].thirdX2};
+  }
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    height: ${sizes['tabletLG'].x1};
+  }
 `;
 
 export const Number = styled(H3)`
   height: 1.12em;
   overflow: hidden;
 `;
+
+export const FoxImg = css`
+  width: 100%;
+  height: 100%;
+`
 
 export const NumberInner = styled.span`
   display: flex;
@@ -65,15 +81,36 @@ export const GridStyled = styled(Grid)`
 `;
 
 export const GridWrapper = styled.div`
+  width: 100vw;
   grid-column: 1/9;
-  position: relative;
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+  padding-top: ${sizes["desktopLG"].half};
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}){
+    padding-top: ${sizes["tabletLG"].thirdX2};
+  }
+  @media screen and (max-width: ${breakpointsWidth.phone}){
+    padding-top: ${sizes["tabletLG"].x1};
+  }
 `;
 
 export const FoxBoxWrapper = styled.div`
   overflow: hidden;
-  height: 100%;
-  position: relative;
+  height: calc(100% - ${sizes["desktopLG"].half});
+  width: 100vw;
+  position: absolute;
+  top:0;
   z-index: 1;
+  margin-top: ${sizes["desktopLG"].half};
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}){
+    height: calc(100% - ${sizes["tabletLG"].thirdX2});
+    margin-top: ${sizes["tabletLG"].thirdX2};
+  }
+  @media screen and (max-width: ${breakpointsWidth.phone}){
+    height: calc(100% - ${sizes["desktopLG"].half});
+    margin-top: ${sizes["desktopLG"].half};
+  }
 `;
 
 export const FoxBoxInner = styled.div`
@@ -82,18 +119,25 @@ export const FoxBoxInner = styled.div`
   grid-template-rows: repeat(3, ${sizes.desktopLG.x1});
   align-content: end;
   height: 100%;
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    grid-template-rows: repeat(3, ${sizes.tabletLG.x1});
+  }
 `;
 
 export const RunningLineWrapper = styled.div`
   position: absolute;
   width: 100%;
   left: 0;
-  transform: translateY(-${sizes.desktopLG.x1});
-  top: calc(100% - 0.625vw);
+  transform: translateY(-${sizes.desktopLG.x2});
+  top: calc(100vh + ${sizes.desktopLG.x1});
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    transform: translateY(-${sizes.tabletLG.x2});
+  top: calc(100vh + ${sizes.tabletLG.x1});
+  }
   ${({ stepIndex }) =>
     stepIndex ? getCurrentHeightSizeStyle("x1") : "height: 0px;"}
   overflow: hidden;
-transition: height 0.5s;
+  transition: height 0.5s;
 `;
 
 export const ImageWrapper = styled.div`

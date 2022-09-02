@@ -28,6 +28,7 @@ const ScrollContentDinamicStyle = ({ outline }) => {
 export const RunningLineScrollContent = styled.div`
     display: flex;
     align-items: center;
+    white-space: nowrap;
     ${ScrollContentDinamicStyle};
 `
 
