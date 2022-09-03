@@ -90,9 +90,6 @@ export const HeaderWrapper = styled.header`
   & > *:nth-of-type(1n) {
     border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
   }
-  & > *:nth-of-type(1) {
-    border-left: 1px solid ${hexToRGBA(colors.white, 0.2)};
-  }
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     grid-template-rows: repeat(2, ${sizes['tabletLG'].thirdX1});
@@ -101,6 +98,7 @@ export const HeaderWrapper = styled.header`
       grid-row: 1/2;
       grid-column: 1/-1;
       border-bottom: 1px solid ${hexToRGBA(colors.white, 0.2)};
+      border-right: none;
     }
     ${HeaderItemHumburger} {
       grid-column: 1/2;

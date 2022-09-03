@@ -10,8 +10,8 @@ export const FooterNavBar = styled.div`
         border: 1px solid ${hexToRGBA(colors.white, 0.2)};
         border-left: none;
     }
-    & > *:nth-of-type(1){
-        border-left: 1px solid ${hexToRGBA(colors.white, 0.2)};
+    & > *:nth-of-type(4){
+        border-right: none;
     }
 
     & *:nth-of-type(1){grid-column: 1/3;}
