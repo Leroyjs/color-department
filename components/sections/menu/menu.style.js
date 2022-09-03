@@ -9,10 +9,15 @@ export const MenuWrapper = styled.div`
     position: fixed;
     z-index: ${zindex.modal};
     overflow: hidden;
-    height : ${({ isOpen }) => isOpen ? `100vh` : "0"};
+    height : ${({ isOpen }) => isOpen ? `
+        height: 100vh;
+        height: calc(var(--fsvh, 1vh) * 100);
+    ` : "0"};
+    
     background-color: ${colors.black};
     transition: height 0.7s;
 `
+
 export const MenuMap = styled.div`
     border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
     grid-column: 5/9;
@@ -34,16 +39,21 @@ export const MenuBody = styled.nav`
     position: absolute;
     display: grid;
     height: calc(100vh - ${sizes['desktopLG'].x1});
+    height: calc(var(--fsvh, 1vh) * 100 - ${sizes['desktopLG'].x1});
 
     @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
         top: ${sizes['tabletLG'].thirdX2};
         height: calc(100vh - ${sizes['tabletLG'].thirdX2} - ${sizes['tabletLG'].thirdX1});
+        height: calc(var(--fsvh, 1vh) * 100 - ${sizes['tabletLG'].thirdX2} - ${sizes['tabletLG'].thirdX1});
+
         ${MenuMap} { grid-column: 3/5; }
         ${MenuList} { grid-column: 1/3; }
     }
     @media screen and (max-width: ${breakpointsWidth.phone}) {
         top: ${sizes['desktopLG'].x2};
         height: calc(100vh - ${sizes['tabletLG'].x2} - 83px);
+        height: calc(var(--fsvh, 1vh) * 100 - ${sizes['tabletLG'].x2} - 83px);
+
         ${MenuMap} { display: none; }
         ${MenuList} { 
             grid-column: 1/-1;
