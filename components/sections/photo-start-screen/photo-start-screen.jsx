@@ -1,13 +1,11 @@
+import { Grid, H2, RunningLine } from "components";
 import {
   ContentWrapper,
   FlexLayerWrapper,
   PhotoStartScreenWrapper,
   RunningLineStyle,
-  Title,
+  Title
 } from "./photo-start-screen.style";
-import { Grid, RunningLine } from "components";
-import { H2 } from "components";
-import {colors} from 'styles';
 
 export const PhotoStartScreen = ({ arrayOfImages, title }) => {
   return (
