@@ -5,6 +5,7 @@ import { sizes, breakpointsWidth } from 'styles';
 
 export const PhotoStartScreenWrapper = styled.div`
     height: 100vh;
+    height: calc(var(--fsvh, 1vh) * 100);
     position: relative;
     overflow: hidden;
 `
@@ -23,7 +24,8 @@ export const ContentWrapper = styled.div`
     @media screen and (max-width: ${breakpointsWidth.phone}){
       padding-top: ${sizes["tabletLG"].x1};
     }
-    height: 100vh;
+    height: calc(var(--fsvh, 1vh) * 100);
+
 `
 
 export const Title = styled.div`
@@ -40,12 +42,3 @@ export const RunningLineStyle = css`
   position: absolute;
   bottom: 0;
 `;
-
-
-export const BG = styled.div`
-    background-color: red;
-    position: sticky;
-    top: -100vh;
-    height: 100vh;
-    width: 100vh;
-`

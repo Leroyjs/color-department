@@ -1,8 +1,7 @@
 import { NavigationBarMap, CompanyInfo, FooterNavigation, MapWrapper } from "components";
 import { MenuItem } from './menu-item/menu-item';
 import { MenuBody, MenuFooter, MenuList, MenuMap, MenuWrapper, HideForMobile, ShowForMobile } from "./menu.style";
-import {useVH} from "utils";
-
+import {useVH, useNoScroll} from "utils";
 
 const menuItems = [
     { title: 'projects', link: '/projects' },
@@ -13,6 +12,7 @@ const menuItems = [
 
 export const Menu = ({ isOpen, props }) => {
     useVH();
+    useNoScroll(isOpen);
     //TODO: Навигация
     const navigateByLink = (link) => (_) => { }
 

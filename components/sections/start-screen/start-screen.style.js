@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 
 export const StartScreenWrapper = styled.div`
   height: 100vh;
+  height: calc(var(--fsvh, 1vh) * 100);
 `
 
 export const FlexLayerWrapper = styled.div`
@@ -22,6 +23,7 @@ export const ContentWrapper = styled.div`
       padding-top: ${sizes["tabletLG"].x1};
     }
     height: 100vh;
+    height: calc(var(--fsvh, 1vh) * 100);
 `
 
 export const RunningLineStyle = css`

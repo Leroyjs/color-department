@@ -1,8 +1,9 @@
-import {useEffect, useRef} from "react";
-import {Grid, RunningLine, VideoBackground} from "components";
+import { useEffect, useState } from "react";
+import { Grid, RunningLine, VideoBackground } from "components";
 import {
     ContentWrapper, FlexLayerWrapper, RunningLineStyle, StartScreenWrapper
 } from "./start-screen.style";
+import { useVH } from "utils";
 
 const DEMO_VIDEO_MP4 = "./BG_reel_temp.mp4";
 const DEMO_VIDEO_WEBM = "./BG_reel_temp.webm";
@@ -12,6 +13,7 @@ const video = {
 };
 
 export const StartScreen = () => {
+    useVH();
 
     return (
         <StartScreenWrapper>
@@ -23,8 +25,8 @@ export const StartScreen = () => {
                         muted
                         playsinline
                     />
-                    <Grid/>
-                    <RunningLine className={RunningLineStyle}/>
+                    <Grid />
+                    <RunningLine className={RunningLineStyle} />
                 </ContentWrapper>
             </FlexLayerWrapper>
         </StartScreenWrapper>
