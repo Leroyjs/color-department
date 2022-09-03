@@ -10,22 +10,37 @@ import {
 import { Cell, CellImage, GridInner, GridWrapper } from "./grid.style";
 
 export const Grid = ({ props, arrayOfImages }) => {
+  /**Индекс позиции патерна patExample = [[1,2,3],[5,6,7]] */
   const [indexOfPattern, setIndexOfPattern] = useState(0);
   const [isPlayAnimation, setPlayAnimation] = useState(false);
-  const [numdersOfAvaleblePositions, setNumdersOfAvaleblePositions] = useState(
-    []
-  );
+  /**Индексы всех ячеек, в которых можно отобразить изображения. Равен row*column */
+  const [numdersOfAvaleblePositions, setNumdersOfAvaleblePositions] = useState([]);
 
+  /**Функция проверки  видимости изображения в зависимости от индекса*/
   const isValidPositionForImage = isValidPositionFn(numdersOfAvaleblePositions);
-  const patternWithoutAdaptive = useRef([]);
+  /**Набор индексов, в которых можно отобразить картинку*/
+  const patternDisplayPicture = useRef([]);
+  /**Набор изображения на текущий шаг*/
   const arrayOfImagesOnThisStep = useRef([]);
+  /** */
+  const pattern = useRef([]);
 
   useEffect(() => {
-    patternWithoutAdaptive.current = getCurrentPattern(indexOfPattern);
+    patternDisplayPicture.current = getCurrentPattern(indexOfPattern);
+    const onResize = ()=>{
+      patternDisplayPicture.current = getCurrentPattern(indexOfPattern);      
+    };
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("resize", onResize)
+    }
   }, [indexOfPattern]);
-  const pattern = patternWithoutAdaptive.current.filter(
-    isValidPositionForImage
-  );
+
+  pattern.current = patternDisplayPicture.current?.filter(
+    (value)=>{
+      return isValidPositionForImage(value)
+    }
+  ) || [];
 
   useEffect(() => {
     arrayOfImagesOnThisStep.current = getArrayOfImagesOnThisStep(
@@ -35,8 +50,8 @@ export const Grid = ({ props, arrayOfImages }) => {
   }, [indexOfPattern, arrayOfImages]);
 
   const [isAppearance, setAppearance] = useState(false);
-  const isVisible = isValidPositionFn(pattern);
-  const getStep = getStepFn(pattern);
+  const isVisible = isValidPositionFn(pattern.current);
+  const getStep = getStepFn(pattern.current);
 
   useEffect(() => {
     const setNumdersOfAvaleblePositionsEventFunction = () =>
@@ -65,7 +80,7 @@ export const Grid = ({ props, arrayOfImages }) => {
       setAppearance((prevApearenceState) => {
         if (prevApearenceState) {
           setIndexOfPattern((prevIndexOfPatternState) => {
-            if (prevIndexOfPatternState < pattern.length - 2) {
+            if (prevIndexOfPatternState < pattern.current.length - 2) {
               return prevIndexOfPatternState + 1;
             } else {
               return 0;
@@ -82,7 +97,7 @@ export const Grid = ({ props, arrayOfImages }) => {
   return (
     <GridWrapper {...props}>
       <GridInner>
-        {getArrayOfIndex(80).map((item) => (
+        {getArrayOfIndex(80).map((item, index) => (
           <Cell key={item}>
             {isPlayAnimation && isValidPositionForImage(item) && (
               <CellImage
