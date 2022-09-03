@@ -19,7 +19,6 @@ export const MenuWrapper = styled.div`
 `
 
 export const MenuMap = styled.div`
-    border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
     grid-column: 5/9;
     .leaflet-map-pane {
         z-index: 0; 
@@ -31,7 +30,9 @@ export const MenuList = styled.ul`
     grid-column: 1/5;
     justify-content: center;
     border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
-    border-left: 1px solid ${hexToRGBA(colors.white, 0.2)};
+    @media screen and (max-width: ${breakpointsWidth.phone}) {
+        border-right: none;
+    }
 `
 export const MenuBody = styled.nav`
     top: ${sizes['desktopLG'].half};

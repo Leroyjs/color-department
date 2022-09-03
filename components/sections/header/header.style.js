@@ -108,6 +108,7 @@ export const HeaderWrapper = styled.header`
     } 
     ${HeaderItemLetsGo} {
       grid-column: 3/5;
+      border-right: none;
     }
   }
 
