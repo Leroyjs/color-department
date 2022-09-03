@@ -28,6 +28,11 @@ export const Cell = styled.div`
   &:not(:nth-of-type(8n)) {
     border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
   }
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}){
+    &:nth-of-type(4n) {
+      border-right: none;
+    }    
+  }
 `;
 
 export const CellImage = styled.div`
