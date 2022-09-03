@@ -40,7 +40,7 @@ export const Grid = ({ props, arrayOfImages }) => {
     (value)=>{
       return isValidPositionForImage(value)
     }
-  ) || [];
+  );
 
   useEffect(() => {
     arrayOfImagesOnThisStep.current = getArrayOfImagesOnThisStep(
@@ -52,7 +52,6 @@ export const Grid = ({ props, arrayOfImages }) => {
   const [isAppearance, setAppearance] = useState(false);
   const isVisible = isValidPositionFn(pattern.current);
   const getStep = getStepFn(pattern.current);
-
   useEffect(() => {
     const setNumdersOfAvaleblePositionsEventFunction = () =>
       setNumdersOfAvaleblePositions(getNumdersOfAvaleblePositions());

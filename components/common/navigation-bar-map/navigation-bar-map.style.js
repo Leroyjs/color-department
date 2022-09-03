@@ -45,17 +45,25 @@ export const DynamicHeightForMap = styled.div`
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     height: ${sizes["tabletLG"].thirdX2};
     ${({ isOpen }) =>
-      isOpen ? `height: calc(100vh - ${sizes["tabletLG"].thirdX3} - 1px)` : ""};
+      isOpen ? `
+      height: calc(100vh - ${sizes["tabletLG"].thirdX3} - 1px);
+      height: calc(var(--fsvh, 1vh) * 100 - ${sizes["tabletLG"].thirdX3} - 1px);
+      ` : ""};
     & > #leaflet-map {
       height: calc(100vh - ${sizes["tabletLG"].thirdX3} - 1px);
+      height: calc(var(--fsvh, 1vh) * 100 - ${sizes["tabletLG"].thirdX3} - 1px);
     }
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     height: ${sizes["tabletLG"].half};
-    ${({ isOpen }) => (isOpen ? `height: calc(100vh - 37.5vw - 84px)` : "")};
+    ${({ isOpen }) => (isOpen ? `
+      height: calc(100vh - 37.5vw - 84px);
+      height: calc(var(--fsvh, 1vh) * 100 - 37.5vw - 84px);
+      ` : "")};
     & > #leaflet-map {
       height: calc(100vh - 37.5vw - 84px);
+      height: calc(var(--fsvh, 1vh) * 100 - 37.5vw - 84px); 
     }
   }
 `;
@@ -69,16 +77,24 @@ export const FooterModalWrapper = styled.div`
   bottom: 0;
   border-bottom: 1px solid ${hexToRGBA(colors.white, 0.2)};
   ${({ isOpen }) =>
-    isOpen ? `height: calc(100vh - ${sizes["desktopLG"].half})` : ""};
+    isOpen ? `
+      height: calc(100vh - ${sizes["desktopLG"].half});` : ""};
+  
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     height: ${sizes["tabletLG"].thirdX2};
     ${({ isOpen }) =>
-      isOpen ? `height: calc(100vh - ${sizes["tabletLG"].thirdX2})` : ""};
+      isOpen ? `
+      height: calc(100vh - ${sizes["tabletLG"].thirdX2});
+      height: calc(var(--fsvh, 1vh) * 100 - ${sizes["tabletLG"].thirdX2})
+    ` : ""};
   }
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     height: 25vw;
     margin-bottom: 84px;
-    ${({ isOpen }) => (isOpen ? `height: calc(100vh - 25vw - 82px)` : "")};
+    ${({ isOpen }) => (isOpen ? `
+      height: calc(100vh - 25vw - 82px);
+      height: calc(var(--fsvh, 1vh) * 100 - 25vw - 82px);
+      ` : "")};
   }
 `;
 
