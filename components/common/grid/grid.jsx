@@ -27,8 +27,8 @@ export const Grid = ({ props, arrayOfImages }) => {
 
   useEffect(() => {
     patternDisplayPicture.current = getCurrentPattern(indexOfPattern);
-    const onResize = ()=>{
-      patternDisplayPicture.current = getCurrentPattern(indexOfPattern);      
+    const onResize = () => {
+      patternDisplayPicture.current = getCurrentPattern(indexOfPattern);
     };
     window.addEventListener("resize", onResize);
     return () => {
@@ -37,7 +37,7 @@ export const Grid = ({ props, arrayOfImages }) => {
   }, [indexOfPattern]);
 
   pattern.current = patternDisplayPicture.current?.filter(
-    (value)=>{
+    (value) => {
       return isValidPositionForImage(value)
     }
   );
@@ -102,7 +102,9 @@ export const Grid = ({ props, arrayOfImages }) => {
               <CellImage
                 step={getStep(item)}
                 isVisible={isAppearance && isVisible(item)}
-                image={arrayOfImagesOnThisStep.current[getStep(item)]}
+                image={() => {
+                  return arrayOfImagesOnThisStep.current[getStep(item)]
+                }}
               />
             )}
           </Cell>
