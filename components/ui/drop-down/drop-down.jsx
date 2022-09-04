@@ -19,7 +19,7 @@ export const DropDown = ({
                              value,
                              options,
                              onChange,
-                             isMultiply = false,
+                             multiple = false,
                              propsInput,
                              isFullWidth = false,
                              ...props
@@ -44,7 +44,7 @@ export const DropDown = ({
     }
 
     function handleOption(option) {
-        if (isMultiply) {
+        if (multiple) {
             setSelected(prevOptions => {
                 const isInclude = prevOptions.some(({value}) => value === option.value);
                 if (isInclude) {
@@ -70,7 +70,7 @@ export const DropDown = ({
             <InputStyled isActive={isActive} isOpen={isOpen} onChange={onChange} onClick={handleOpen}
                          isError={error} type="text" {...propsInput}>
                 <CurrentLabel>
-                    {isMultiply ?
+                    {multiple ?
                         Boolean(selected.length) ?
                             selected.map(({label}) => label).join(', ') : title
                         : value?.label || title}
@@ -104,10 +104,10 @@ const shapeOption = PropTypes.shape({
 DropDown.propTypes = {
     title: PropTypes.string.isRequired,
     isFullWidth: PropTypes.bool,
-    isMultiply: PropTypes.bool,
+    multiple: PropTypes.bool,
     value: PropTypes.oneOfType([
         shapeOption,
-        PropTypes.oneOf([null])
+        PropTypes.arrayOf(shapeOption)
     ]),
     onChange: PropTypes.func.isRequired,
     options: PropTypes.arrayOf(shapeOption).isRequired,

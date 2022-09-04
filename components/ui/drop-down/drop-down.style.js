@@ -197,7 +197,9 @@ export const DropDownItem = styled.li`
   }
 
   ${({ isActive, theme }) =>
-    isActive && `background-color: ${getCurrentColor("primary", theme)};`};
+    isActive && `
+    background-color: ${getCurrentColor("primary", theme)};
+    `};
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     padding: ${getVW(6)} ${getVW(6)} ${getVW(8)};

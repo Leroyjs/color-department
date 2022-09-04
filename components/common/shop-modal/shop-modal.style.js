@@ -1,16 +1,17 @@
-import styled from "@emotion/styled";
-import { css } from "@emotion/css";
 import {
-  getCurrentColorStyles,
-  getCurrentPaddingStyle,
-  getCurrentBackgroundColorStyles,
   breakpointsWidth,
   colors,
-  sizes
+  getCurrentBackgroundColorStyles,
+  getCurrentColorStyles,
+  getCurrentPaddingStyle,
+  sizes,
 } from "styles";
+
+import { CloseButton } from "../../ui/close-button";
 import { H3 } from "../../ui/h3";
 import { Text } from "../../ui/text";
-import { CloseButton } from "../../ui/close-button";
+import { css } from "@emotion/css";
+import styled from "@emotion/styled";
 
 export const ShopModalInner = styled.div`
   width: 100%;
@@ -28,12 +29,12 @@ export const CloseBtn = styled(CloseButton)`
   top: 0;
   left: 0;
   margin-top: calc(${sizes["desktopLG"].half} + 140px);
-  
-  @media screen and (max-width: ${breakpointsWidth.tabletLG}){
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     margin-top: ${sizes["tabletLG"].thirdX2};
   }
-  
-  @media screen and (max-width: ${breakpointsWidth.phone}){
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
     margin-top: ${sizes["tabletLG"].x1};
   }
 
@@ -60,13 +61,17 @@ export const ProductImage = styled.img`
   display: inline-block;
   width: 50%;
 
-  object-position: center top;
+  object-position: center;
   object-fit: cover;
 
   ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)};
 
   @media (max-width: ${breakpointsWidth.tabletLG}) {
     width: 100%;
+    height: 460px;
+  }
+  @media (max-width: ${breakpointsWidth.phone}) {
+    height: 220px;
   }
 `;
 
@@ -75,11 +80,11 @@ export const InformationItem = styled.div`
     width: 100%;
     flex-direction: row;
     display: flex;
-  };
+  }
 
   @media (max-width: ${breakpointsWidth.phone}) {
     flex-direction: column;
-  };
+  } ;
 `;
 
 export const InformationColumn = styled.div`
