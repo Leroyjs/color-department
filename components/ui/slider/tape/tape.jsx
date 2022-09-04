@@ -7,6 +7,7 @@ import {
 } from "../../../types";
 
 import { PropTypes } from "prop-types";
+import Link from "next/link";
 
 export const Tape = ({ titles = [], currentIndex = 0, ...props }) => {
   const translateY = useMemo(
@@ -17,10 +18,12 @@ export const Tape = ({ titles = [], currentIndex = 0, ...props }) => {
   return (
     <ViewWrapper {...props}>
       <TapeList translateY={translateY}>
-        {titles.map(({ title }) => (
-          <FrameTitle data-pointer="without-scale" key={title}>
-            {title}
-          </FrameTitle>
+        {titles.map(({ title, id }) => (
+          <Link href={`/detail/${id}` || '/detail'} key={title+id}>
+            <FrameTitle data-pointer="without-scale">
+              {title}
+            </FrameTitle>
+          </Link>
         ))}
       </TapeList>
     </ViewWrapper>
