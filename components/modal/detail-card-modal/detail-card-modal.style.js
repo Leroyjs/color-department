@@ -49,7 +49,7 @@ export const UserName = styled(H2)`
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     ${getCurrentPaddingStyle("bottom", "xxsm")};
-    order: -1;
+    order: 1;
   }
 `;
 
@@ -127,10 +127,13 @@ export const CaptionLink = styled(Caption)`
   color: ${hexToRGBA(colors.white, 0.4)};;
 `;
 
-export const UserAvatar = styled(Avatar)``;
+export const UserAvatar = styled(Avatar)`
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    order:2;
+  } ;
+`;
 
 export const UserAbout = styled.div`
-  order: 1;
   display: block;
   ${getCurrentMarginStyle("left", "md")};
 
@@ -140,7 +143,6 @@ export const UserAbout = styled.div`
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
-    order: 2;
     text-align: center;
   } ;
 `;
