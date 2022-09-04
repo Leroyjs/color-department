@@ -1,3 +1,4 @@
 import { theme } from "./theme";
+import { stateStorage } from './state-storage';
 
-export { theme };
+export { theme, stateStorage };

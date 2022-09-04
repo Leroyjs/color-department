@@ -1,5 +1,3 @@
-import "styles/global.style";
-
 import {
   Footer,
   Header,
@@ -10,6 +8,7 @@ import {
 } from "components";
 
 import { colors } from "styles";
+import stateStorage from '../__data__/state-storage';
 
 const arrayOfImages = [
   "https://i.postimg.cc/0rMRdbBC/img-01.jpg",
@@ -21,6 +20,7 @@ const arrayOfImages = [
 const Projects = () => {
   return (
     <>
+      {stateStorage.hasInteractionWithPreloader ? null : <Preloader></Preloader>}
       <Header />
       <PhotoStartScreen arrayOfImages={arrayOfImages} title={["projects"]} />
       <main style={{ backgroundColor: colors.black }}>

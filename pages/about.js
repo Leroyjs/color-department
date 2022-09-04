@@ -12,6 +12,7 @@ import {
 import { Preloader } from "components";
 import { colors } from "styles";
 import { useState } from "react";
+import stateStorage from '../__data__/state-storage';
 
 const ArrayImages = [
   "https://i.postimg.cc/XpHKgYBn/img-01.jpg",
@@ -188,7 +189,7 @@ const About = () => {
 
   return (
     <>
-      <Preloader></Preloader>
+      { stateStorage.hasInteractionWithPreloader ? null : <Preloader></Preloader> }
       <Header />
       <PhotoStartScreen
         arrayOfImages={ArrayImages}
