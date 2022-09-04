@@ -21,7 +21,6 @@ export const CloseBtn = styled(CloseButton)`
   height: 40px;
   cursor: pointer;
   ${getCurrentMarginStyle("bottom", "md")};
-  ${getCurrentMarginStyle("top", "lg")};
 `;
 
 export const Wrapper = styled.div`
@@ -50,6 +49,7 @@ export const UserName = styled(H2)`
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     ${getCurrentPaddingStyle("bottom", "xxsm")};
+    order: -1;
   }
 `;
 
@@ -140,6 +140,7 @@ export const UserAbout = styled.div`
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
+    order: 2;
     text-align: center;
   } ;
 `;
