@@ -29,7 +29,9 @@ export const initStepCounter = (setStepIndex, setHidden, onDone) => {
         clearInterval(interval);
         onDone();
         setHidden(true);
-        window.sessionStorage.setItem('preloader_complited', true);
+        setTimeout(() => {
+          window.sessionStorage.setItem('preloader_complited', true);
+        }, 1000)
       }
 
       return prevIndex + 1;
