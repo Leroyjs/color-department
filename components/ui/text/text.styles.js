@@ -14,6 +14,7 @@ export const TextInner = styled.span`
   font-weight: 500;
   display: inline-block;
   line-height: 140%;
+  transition: color 0.3s;
 
   ${applyMargins};
   ${applyPaddings}

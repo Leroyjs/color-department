@@ -15,6 +15,7 @@ export const Text = styled.span`
   display: inline-block;
   line-height: 112%;
   text-transform: uppercase;
+  transition: color 0.3s;
 
   ${applyMargins};
   ${applyPaddings}
