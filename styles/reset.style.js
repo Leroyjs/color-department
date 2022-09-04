@@ -344,5 +344,8 @@ export const resetStyles = css`
 `;
 
 export const noScroll = css`
+  height: 100vh;
+  height: calc(var(--fsvh, 1vh) * 100);
   overflow: hidden;
+  
 `
