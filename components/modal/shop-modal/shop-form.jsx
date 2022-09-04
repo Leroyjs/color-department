@@ -8,7 +8,7 @@ import {
   InputField,
   CounterField,
   WorkModal,
-} from "components";
+} from "components/index";
 import { selectSizeOptions } from "./constants";
 import {
   FormWrapper,

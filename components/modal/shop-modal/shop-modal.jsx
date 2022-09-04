@@ -1,7 +1,6 @@
-import { CloseBtn, ProductImage, ShopModalInner } from "./shop-modal.style";
-
 import { Modal } from "components";
 import { ShopForm } from "./shop-form";
+import { CloseBtn, ProductImage, ShopModalInner } from "./shop-modal.style";
 
 export const ShopModal = ({ img, isOpen, setOpen, ...props }) => {
   return (

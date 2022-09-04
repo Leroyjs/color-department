@@ -11,7 +11,7 @@ export * from './form-work';
 export * from './work-modal';
 export * from './video-background';
 export * from './company-info';
-export * from './shop-modal';
+export * from '../modal/shop-modal';
 export * from './fox-paw';
 export * from './portal';
 export * from './modal';

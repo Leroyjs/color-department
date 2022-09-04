@@ -3,7 +3,7 @@ import { Footer, Header, RunningLineLink, ShopSection } from "components";
 const Projects = () => {
   return (
     <>
-      <Header></Header>
+      <Header/>
       <main>
         <ShopSection />
         <RunningLineLink
@@ -13,7 +13,7 @@ const Projects = () => {
           titles={["LET’S TALK", "LET’S TALK", "LET’S TALK"]}
         />
       </main>
-      <Footer pt="xlg"></Footer>
+      <Footer pt="xlg"/>
     </>
   );
 };

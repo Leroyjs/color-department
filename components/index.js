@@ -3,7 +3,6 @@ import {
   ThemeProvider,
   FooterNavigation,
   FoxPaw,
-  ShopModal,
   Portal,
   Modal,
   RunningLine,
@@ -67,7 +66,7 @@ import { IntroAboutTextBlock } from "./sections/intro-about-text-block";
 import { AboutEndTextBlock } from "./sections/about-end-text-block";
 import { ProjectCards } from "./sections/project-cards";
 /*    Импорты модальных окон    */
-import { DetailCardModal } from "./modal";
+import { DetailCardModal, ShopModal } from "./modal";
 
 export {
   ThemeProvider,
