@@ -11,6 +11,7 @@ import {
 } from "components";
 import { colors } from 'styles';
 import { Preloader } from "components";
+import stateStorage from '../__data__/state-storage';
 
 const ArrayImages = [
     "https://i.postimg.cc/XpHKgYBn/img-01.jpg",
@@ -186,10 +187,9 @@ const About = () => {
     ];
 
 
-
     return (
         <>
-            <Preloader></Preloader>
+            { stateStorage.hasInteractionWithPreloader ? null : <Preloader></Preloader> }
             <Header />
             <PhotoStartScreen arrayOfImages={ArrayImages} title={['We are', 'color department']} />
             <main style={{ backgroundColor: colors.black }}>

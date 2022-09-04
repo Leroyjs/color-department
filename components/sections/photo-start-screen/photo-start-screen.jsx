@@ -1,4 +1,5 @@
 import { Grid, H2, RunningLine } from "components";
+import { useVH } from "utils";
 import {
   ContentWrapper,
   FlexLayerWrapper,
@@ -8,6 +9,8 @@ import {
 } from "./photo-start-screen.style";
 
 export const PhotoStartScreen = ({ arrayOfImages, title }) => {
+  useVH();
+  
   return (
     <PhotoStartScreenWrapper>
       <FlexLayerWrapper>

@@ -12,7 +12,7 @@ import {
 
 import { Awards } from "components";
 import { colors } from "styles";
-import styled from "@emotion/styled";
+import stateStorage  from '../__data__/state-storage'
 
 const DEMO_VIDEO =
   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4";
@@ -177,22 +177,12 @@ const slides = [
   },
 ];
 
-const Prl = styled.div`
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: red;
-  z-index: 20000;
-`;
-
 const Home = () => {
   const videoContant = useRef(null);
-
+  console.log();
   return (
     <>
-      <Preloader></Preloader>
+      { stateStorage.hasInteractionWithPreloader ? null : <Preloader></Preloader> }
       <Header transparentToComponent={videoContant} />
       <StartScreen />
       <main ref={videoContant} style={{ backgroundColor: colors.black }}>
