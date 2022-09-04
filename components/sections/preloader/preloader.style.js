@@ -25,6 +25,7 @@ export const PreloaderWrapper = styled.div`
   top: 0;
   width: 100%;
   height: 100vh;
+  height: calc(var(--fsvh, 1vh) * 100);
   z-index: 99999;
   transition: opacity 0.5s;
 
@@ -110,6 +111,7 @@ export const FoxBoxWrapper = styled.div`
   }
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     height: calc(100% - ${sizes["desktopLG"].half});
+    height: calc(var(--fsvh, 1vh) * 100 - ${sizes["desktopLG"].half});
     margin-top: ${sizes["desktopLG"].half};
   }
 `;

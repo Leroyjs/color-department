@@ -15,6 +15,8 @@ import { RunningLine } from "components";
 import { initStepCounter } from "./utils";
 import { steps } from "./constants";
 import { stubFunction } from "styles";
+import { useVH } from "utils";
+import { useNoScroll } from "utils";
 
 export const Preloader = ({ onDone = stubFunction }) => {
   const [stepIndex, setStepIndex] = useState(0);
@@ -26,7 +28,8 @@ export const Preloader = ({ onDone = stubFunction }) => {
     setShowPreloader(!hasInteraction)
   });
   useEffect(() => initStepCounter(setStepIndex, setHidden, onDone), []);
-
+  useVH();
+  useNoScroll();
   if (!showPreloader) return null;
 
   return (
