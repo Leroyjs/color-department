@@ -1,6 +1,7 @@
 import React from "react";
 import {ButtonEllipse, Modal} from "components";
 import { GratitudeWrapper, StyledH2 } from "./work-modal.style";
+import Link from "next/link";
 
 export const WorkModal = ({ isOpen, setOpen }) => {
   return (
@@ -10,9 +11,9 @@ export const WorkModal = ({ isOpen, setOpen }) => {
         <StyledH2 color="primary" mb="md">
           we will contact you shortly
         </StyledH2>
-        <ButtonEllipse onClick={() => setOpen(false)}>
-          <a>OK</a>
-        </ButtonEllipse>
+        <Link href={"/"}>
+          <ButtonEllipse onClick={() => setOpen(false)}>OK</ButtonEllipse>
+        </Link>
       </GratitudeWrapper>
     </Modal>
   );
