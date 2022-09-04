@@ -1,35 +1,39 @@
-import { keyframes } from '@emotion/css';
-import styled from '@emotion/styled';
-import { sizes, hexToRGBA, colors, breakpointsWidth } from 'styles';
+import { breakpointsWidth, colors, hexToRGBA, sizes } from "styles";
+
+import { keyframes } from "@emotion/css";
+import styled from "@emotion/styled";
 
 export const PartnersLineWrapper = styled.div`
-    overflow: hidden;
-`
+  overflow: hidden;
+`;
 
 export const PartnersItem = styled.div`
-    min-width: ${sizes['desktopLG'].x1};
-    border: 1px solid ${hexToRGBA(colors.white, 0.2)};
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-        object-fit: contain;
-        height: 34%;
-        width: 68%;
-    }
-`
+  min-width: ${sizes["desktopLG"].x1};
+  border: 1px solid ${hexToRGBA(colors.white, 0.2)};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    object-fit: contain;
+    height: 34%;
+    width: 68%;
+  }
+`;
 
 export const PartnersLineSlider = styled.div`
-    height: ${sizes['desktopLG'].x1};
-    display: flex;
-    transform: ${({ step }) => 'translateX(calc(' + (0 - step) + '*' + sizes['desktopLG'].x1 + '))'};
-    transition: transform ${({ step }) => step === 0 ? '0s' : '1s'};
-    transition-timing-function: cubic-bezier(0.58, 3, 0.15, 0.81);
-    @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-        transform: ${({ step }) => 'translateX(calc(' + (0 - step) + '*' + sizes['tabletLG'].x1 + '))'};
-        height: ${sizes['tabletLG'].x1};
-        ${PartnersItem}{
-            min-width: ${sizes['tabletLG'].x1};            
-        }        
+  height: ${sizes["desktopLG"].x1};
+  display: flex;
+  transform: ${({ step }) =>
+    "translateX(calc(" + (0 - step) + "*" + sizes["desktopLG"].x1 + "))"};
+  transition: transform ${({ step }) => (step === 0 ? "0s" : "0.3s")};
+  transition-timing-function: cubic-bezier(0.52, 1.29, 0.92, 0.97);
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    transform: ${({ step }) =>
+      "translateX(calc(" + (0 - step) + "*" + sizes["tabletLG"].x1 + "))"};
+    height: ${sizes["tabletLG"].x1};
+    ${PartnersItem} {
+      min-width: ${sizes["tabletLG"].x1};
     }
-`
+  }
+`;

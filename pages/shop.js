@@ -1,4 +1,4 @@
-import { ShopSection, RunningLineLink, Footer, Header } from "components";
+import { Footer, Header, RunningLineLink, ShopSection } from "components";
 
 const Projects = () => {
   return (
@@ -9,8 +9,8 @@ const Projects = () => {
         <RunningLineLink
           mt="md"
           outline={"true"}
-          target={"_blank"}
-          link={"https://vimeo.com/showcase/7646686"}
+          link={"/order"}
+          titles={["LET’S TALK", "LET’S TALK", "LET’S TALK"]}
         />
       </main>
       <Footer pt="xlg"></Footer>
