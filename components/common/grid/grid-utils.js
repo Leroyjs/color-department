@@ -141,15 +141,14 @@ export const getArrayOfImagesOnThisStep = (
     arrayOfImages = []
 ) => {
     const arrayOfImagesOnThisStep = [];
-
-    const getCurrentIndex = (index) => index % arrayOfImages.length;
-
+    const getCurrentIndex = (index) => index % arrayOfImages.length || 0;
     for (
         let index = lastIndexOfImage;
         index < countOfImagesOnThisPattern + lastIndexOfImage;
         index++
     ) {
-        arrayOfImagesOnThisStep.push(arrayOfImages[getCurrentIndex(index)]);
+        const item =arrayOfImages[getCurrentIndex(index)];
+        arrayOfImagesOnThisStep.push(item);
     }
 
     lastIndexOfImage = getCurrentIndex(
