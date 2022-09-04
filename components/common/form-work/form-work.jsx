@@ -87,7 +87,7 @@ export const FormWork = withFormProvider(({ ...props}) => {
           </FormColumnLeft>
           <FormColumnRight>
             <TextAreaField name="message" rules={{}} isFullWidth title="About your work" />
-            <ButtonRectangle mt="md" mb="xlg">SEND</ButtonRectangle>
+            <ButtonRectangle mt="md3" mb="xlg">SEND</ButtonRectangle>
           </FormColumnRight>
         </FormWrapper>
         <WorkModal isOpen={isModalOpen} setOpen={setModalOpen} />
