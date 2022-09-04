@@ -8,9 +8,9 @@ import {
   PopOverImg,
   AboutPhoneImg,
   FlexControl,
-} from "./awards-list.style";
+} from "./popover-list.style";
 
-export const AwardsItem = ({
+export const PopoverListItem = ({
   modalId,
   startLabel,
   endLabel,

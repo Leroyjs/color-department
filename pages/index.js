@@ -8,9 +8,8 @@ import {
   Slider,
   StartScreen,
   Preloader,
+  Popovers
 } from "components";
-
-import { Awards } from "components";
 import { colors } from "styles";
 import stateStorage  from '../__data__/state-storage'
 
@@ -179,10 +178,10 @@ const slides = [
 
 const Home = () => {
   const videoContant = useRef(null);
-  console.log();
+
   return (
     <>
-      { stateStorage.hasInteractionWithPreloader ? null : <Preloader></Preloader> }
+      { stateStorage.hasInteractionWithPreloader ? null : <Preloader/> }
       <Header transparentToComponent={videoContant} />
       <StartScreen />
       <main ref={videoContant} style={{ backgroundColor: colors.black }}>
@@ -197,7 +196,7 @@ const Home = () => {
           }
         />
         <AwardMainTextBlock mt="xlg" px="md" />
-        <Awards options={awardsItems} title="Our Awards" isAboutImg={false} />
+        <Popovers options={awardsItems} title="Our Awards" isAboutImg={false} />
       </main>
       <Footer pt="xlg" />
     </>

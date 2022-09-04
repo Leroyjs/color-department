@@ -6,7 +6,6 @@ import {
   ProjectCards,
   RunningLineLink,
 } from "components";
-
 import { colors } from "styles";
 import stateStorage from '../__data__/state-storage';
 
@@ -20,7 +19,7 @@ const arrayOfImages = [
 const Projects = () => {
   return (
     <>
-      {stateStorage.hasInteractionWithPreloader ? null : <Preloader></Preloader>}
+      {stateStorage.hasInteractionWithPreloader ? null : <Preloader/>}
       <Header />
       <PhotoStartScreen arrayOfImages={arrayOfImages} title={["projects"]} />
       <main style={{ backgroundColor: colors.black }}>

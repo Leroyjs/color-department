@@ -1,17 +1,14 @@
-import React, { useState } from "react";
-import { AwardsList } from "./awards-list";
+import React from "react";
 import { PropTypes } from "prop-types";
 import { AwardsItemProps } from "./types";
-import { DetailCardModal } from "../../modal";
+import { PopoverList } from "./popover-list";
 import {
   AwardsContainer,
   AwardsTitle,
   AwardsSubTitle,
-} from "./awards-list.style";
+} from "./popover-list.style";
 
-export const Awards = ({ options, title, subtitle, isAboutImg, ...props }) => {
-  const [isOpen, setOpen] = useState(false);
-  const [currentModalId, setCurrentModalId] = useState(-1);
+export const Popovers = ({ options, title, subtitle, isAboutImg, onClick, ...props }) => {
   return (
     <AwardsContainer {...props}>
       {title && (
@@ -24,25 +21,18 @@ export const Awards = ({ options, title, subtitle, isAboutImg, ...props }) => {
           {subtitle}
         </AwardsSubTitle>
       )}
-      <AwardsList
+      <PopoverList
         isAboutImg={isAboutImg}
         options={options}
-        onClick={(modalId) => {
-          setCurrentModalId(modalId);
-          setOpen(true);
-        }}
-      />
-      <DetailCardModal
-        isOpen={isOpen}
-        setOpen={setOpen}
-        modalId={currentModalId}
+        onClick={onClick}
       />
     </AwardsContainer>
   );
 };
 
-Awards.propTypes = {
+Popovers.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
+  onClick: PropTypes.func,
   options: PropTypes.arrayOf(AwardsItemProps),
 };

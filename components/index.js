@@ -44,7 +44,7 @@ import { Minus } from "./ui/minus";
 import { Wolf } from "./ui/wolf";
 import { WorksCard } from "./ui/works-card";
 import { Slider } from "./ui/slider";
-import { Awards } from "./ui/awards";
+import { Popovers } from "./ui/popovers";
 import { Avatar } from "./ui/avatar";
 import { CloseButton } from "./ui/close-button";
 import { WorksCards } from "./ui/works-cards";
@@ -94,7 +94,7 @@ export {
   TextArea,
   Modal,
   Portal,
-  Awards,
+  Popovers,
   Preloader,
   VideoBackground,
   Wolf,

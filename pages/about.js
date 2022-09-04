@@ -1,17 +1,17 @@
+import { useState } from "react";
 import {
-  Awards,
+  Popovers,
+  Preloader,
   Footer,
   Header,
   IntroAboutTextBlock,
   PhotoStartScreen,
   PreTitleSlider,
   RunningLineLink,
+  DetailCardModal,
   Slider,
 } from "components";
-
-import { Preloader } from "components";
 import { colors } from "styles";
-import { useState } from "react";
 import stateStorage from '../__data__/state-storage';
 
 const ArrayImages = [
@@ -129,6 +129,8 @@ const slides = [
 ];
 
 const About = () => {
+    const [isOpen, setOpen] = useState(false);
+    const [currentModalId, setCurrentModalId] = useState(-1);
   const [isAboutImg, setAboutImg] = useState(true);
   const SeniorColourists = [
     {
@@ -189,7 +191,7 @@ const About = () => {
 
   return (
     <>
-      { stateStorage.hasInteractionWithPreloader ? null : <Preloader></Preloader> }
+      { stateStorage.hasInteractionWithPreloader ? null : <Preloader/> }
       <Header />
       <PhotoStartScreen
         arrayOfImages={ArrayImages}
@@ -197,25 +199,37 @@ const About = () => {
       />
       <main style={{ backgroundColor: colors.black }}>
         <IntroAboutTextBlock pt="xlg" />
-        <Awards
+        <Popovers
           isAboutImg={isAboutImg}
           options={SeniorColourists}
           subtitle="Senior colourists"
           title="We are bold"
           mt="xlg"
           mb="lg"
+          onClick={(modalId) => {
+              setCurrentModalId(modalId);
+              setOpen(true);
+          }}
         />
-        <Awards
+        <Popovers
           options={Colourists}
           subtitle="Colourists"
           mt="lg"
           isAboutImg={isAboutImg}
+          onClick={(modalId) => {
+              setCurrentModalId(modalId);
+              setOpen(true);
+          }}
         />
-        <Awards
+        <Popovers
           options={Assistants}
           subtitle="Assistants"
           mt="lg"
           isAboutImg={isAboutImg}
+          onClick={(modalId) => {
+              setCurrentModalId(modalId);
+              setOpen(true);
+          }}
         />
         <PreTitleSlider mt="xlg" mb="md">
           Look at our selected works <br />
@@ -228,6 +242,11 @@ const About = () => {
           link={"/order"}
           titles={["LET’S TALK", "LET’S TALK", "LET’S TALK"]}
         />
+          <DetailCardModal
+              isOpen={isOpen}
+              setOpen={setOpen}
+              modalId={currentModalId}
+          />
       </main>
       <Footer pt="xlg" />
     </>
