@@ -5,8 +5,10 @@ import {
 } from "./start-screen.style";
 import { useVH } from "utils";
 
-const DEMO_VIDEO_MP4 = "./BG_reel_temp.mp4";
-const DEMO_VIDEO_WEBM = "./BG_reel_temp.webm";
+const DEMO_VIDEO_MP4 =
+  "https://drive.google.com/uc?id=1c5tNBRmdudEUmxRWSIy7WpgAARacIRlP";
+const DEMO_VIDEO_WEBM =
+  "https://drive.google.com/uc?id=1c5tNBRmdudEUmxRWSIy7WpgAARacIRlP";
 const video = {
     mp4: DEMO_VIDEO_MP4,
     webm: DEMO_VIDEO_WEBM
