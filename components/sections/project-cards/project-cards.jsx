@@ -26,7 +26,7 @@ export const ProjectCards = () => {
   const { data, categories, genres, colourists } = useGetData();
   const [currentCategory, setCurrentCategory] = useState();
   const [currentGenre, setCurrentGenre] = useState();
-  const [currentColourist, setCurrentColourist] = useState();
+  const [currentColourist, setCurrentColourist] = useState([]);
   const [cards, setCards] = useState(data);
   const [isSeeAll, setIsSeeAll] = useState(false);
   const [isNotFound, setIsNotFound] = useState(false);
@@ -37,11 +37,9 @@ export const ProjectCards = () => {
 
   useEffect(() => {
     const filteredCards = data.filter(({ colourist, genre, category }) => {
-      const isColorist =
-        currentColourist?.value === colourist || !currentColourist?.value;
-      const isGenre = currentGenre?.value === genre || !currentGenre?.value;
-      const isCategory =
-        currentCategory?.value === category || !currentCategory?.value;
+      const isColorist = currentColourist?.some(({value}) => (value === colourist))  || !currentColourist?.length;
+      const isGenre = currentGenre?.some(({value}) => (value === genre))  || !currentGenre?.length;
+      const isCategory = currentCategory?.some(({value}) => (value === category))  || !currentCategory?.length;
 
       return isColorist && isGenre && isCategory;
     });
@@ -75,6 +73,7 @@ export const ProjectCards = () => {
           title="All category"
           onChange={(option) => setCurrentCategory(option)}
           options={categories}
+          multiple={true}
           value={currentCategory}
         />
         <DropDown
@@ -82,12 +81,14 @@ export const ProjectCards = () => {
           title="All genres"
           onChange={(option) => setCurrentGenre(option)}
           options={genres}
+          multiple={true}
           value={currentGenre}
         />
         <ColouristFilter>
           <DropDown
             mb="md"
             title="All colourist"
+            multiple={true}
             onChange={(option) => setCurrentColourist(option)}
             options={colourists}
             value={currentColourist}

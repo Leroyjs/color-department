@@ -52,6 +52,7 @@ export const FormWork = withFormProvider(({ ...props}) => {
               title="Service"
               options={ServiceOptions}
               isFullWidth
+              multiple
             />
             <DropDownField
               mb="md2"
@@ -59,6 +60,7 @@ export const FormWork = withFormProvider(({ ...props}) => {
               title="Type"
               options={TypeOptions}
               isFullWidth
+              multiple
             />
             <DropDownField
               mb="md2"
@@ -66,6 +68,7 @@ export const FormWork = withFormProvider(({ ...props}) => {
               title="Title"
               options={TitleOptions}
               isFullWidth
+              multiple
             />
 
             <InputField
