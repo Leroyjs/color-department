@@ -166,7 +166,7 @@ export const offsets = {
     md: 16,
     md1: 12,
     md2: 16,
-    md2: 24,
+    md3: 24,
     sm: 12,
     xsm: 12,
     xxsm: 8,

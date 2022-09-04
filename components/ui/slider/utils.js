@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import Glide from "@glidejs/glide";
 import { SliderSlides } from "./slider.style";
+import {breakpointsWidth} from "../../../styles";
 
 export function useGlide(autoplay, hoverpause) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -26,9 +27,7 @@ export function useGlide(autoplay, hoverpause) {
     }, []);
 
   return {
-    currentSlide,
-    next: () => glide.current.go(">"),
-    prev: () => glide.current.go("<"),
+    currentSlide
   };
 }
 
@@ -40,16 +39,30 @@ function SlideComponent(Glide, Components, Events) {
   const sliderSlidesClass = `${getClassName(SliderSlides)}--reverse`;
   let previousIndex = 0;
 
+  const autoplay = Glide ? Glide._o.autoplay : 0;
+
     Glide?.on('run.before', (evt) => {
+        Glide.pause();
         const slidesEls = Glide && Glide._c.Html.slides;
-        const dirClass = evt.direction === '>' && Glide.index < slidesEls.length ? 'right' : 'left';
+        let dirClass = "";
+        if (window.matchMedia(`screen and (max-width: ${breakpointsWidth.tabletSM})`).matches){
+            dirClass = evt.direction === '>' && Glide.index < slidesEls.length ? 'left' : 'right';
+        } else{
+            dirClass = evt.direction === '>' && Glide.index < slidesEls.length ? 'right' : 'left';
+        }
 
         slidesEls[Glide.index].classList.add(dirClass);
     })
 
     Glide?.on('run.after', (evt) => {
+        Glide.play(autoplay);
         const slidesEls = Glide && Glide._c.Html.slides;
-        const dirClass = evt.direction === '>' ? 'right' : 'left';
+        let dirClass = "";
+        if (window.matchMedia(`screen and (max-width: ${breakpointsWidth.tabletSM})`).matches){
+            dirClass = evt.direction === '>' ? 'left' : 'right';
+        } else{
+            dirClass = evt.direction === '>' ? 'right' : 'left';
+        }
 
         slidesEls[Glide.index].classList.remove(dirClass);
     })

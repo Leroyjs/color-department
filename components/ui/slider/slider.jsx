@@ -26,7 +26,7 @@ import {useVH} from "utils";
 import {withCursor} from "utils";
 
 const SliderWithoutCursor = ({slides, title, isSimpleMode = false, autoplay = 6000, hoverpause = false}) => {
-    const {currentSlide, next, prev} = useGlide(autoplay, hoverpause);
+    const {currentSlide} = useGlide(autoplay, hoverpause);
     const [cursorText, setText] = useState("");
 
     const cursor = useRef(null);
@@ -53,18 +53,22 @@ const SliderWithoutCursor = ({slides, title, isSimpleMode = false, autoplay = 60
                             <SliderItem key={slide.poster + index} {...slide} isPlayed={currentSlide === index}/>
                         ))}
                     </SliderSlides>
-                    <Prev
-                        onClick={prev}
-                        onMouseLeave={handleCursorLeave}
-                        onMouseMove={handleMove("prev")}
-                    />
-                    <Next
-                        onClick={next}
-                        onMouseLeave={handleCursorLeave}
-                        onMouseMove={handleMove("next")}
-                    />
+                    <div className="glide__arrows" data-glide-el="controls">
+                        <Prev
+                            className="glide__arrow glide__arrow--left"
+                            data-glide-dir="<"
+                            onMouseLeave={handleCursorLeave}
+                            onMouseMove={handleMove("prev")}
+                        />
+                        <Next
+                            className="glide__arrow glide__arrow--right"
+                            data-glide-dir=">"
+                            onMouseLeave={handleCursorLeave}
+                            onMouseMove={handleMove("next")}
+                        />
+                    </div>
                     <SliderContent p="md">
-                        {isSimpleMode ? (
+                        {isSimpleMode ? (<>
                             <NavPoints
                                 className="glide__bullets"
                                 data-glide-el="controls[nav]">
@@ -74,10 +78,19 @@ const SliderWithoutCursor = ({slides, title, isSimpleMode = false, autoplay = 60
                                         className="glide__bullet js-num"
                                         data-glide-dir={`=${index}`}
                                         {...(currentSlide !== index ? {"data-pointer": true} : {})}
-                                    />
+                                    >
+                                        {(index + 1).toString().padStart(2, "0")}
+                                    </NavPoint>
                                 ))}
                             </NavPoints>
-                        ) : (
+                            <NavFooterPhone>
+                                <CurrentSlide>{(currentSlide + 1).toString().padStart(2, "0")}</CurrentSlide>
+                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                    <path d="M1 1L25 25" stroke="white"/>
+                                </svg>
+                                <AllSlides>{slides.length}</AllSlides>
+                            </NavFooterPhone>
+                            </>) : (
                             <>
                                 {title && <ContentTitle>{title}</ContentTitle>}
                                 <ContentMain>
@@ -152,7 +165,7 @@ const SliderWithoutCursor = ({slides, title, isSimpleMode = false, autoplay = 60
                     </SliderContent>
                 </SliderTrack>
             </SliderWrapper>
-            <ContentFooterPhone px="md">
+            {!isSimpleMode && <ContentFooterPhone px="md">
                 <LeftCol>
                     <CaptionCopyright color="white" mb="xxsm">
                         Client
@@ -185,7 +198,7 @@ const SliderWithoutCursor = ({slides, title, isSimpleMode = false, autoplay = 60
                         ))}
                     </CopyrightList>
                 </RightCol>
-            </ContentFooterPhone>
+            </ContentFooterPhone>}
         </>
     );
 };

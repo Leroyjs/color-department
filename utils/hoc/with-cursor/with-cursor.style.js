@@ -40,4 +40,12 @@ export const SliderCursor = styled.div`
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     border-width: ${getVW(1)};
   }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    display: none;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    display: none;
+  }
 `;

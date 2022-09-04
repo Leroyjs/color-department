@@ -32,6 +32,16 @@ export const PlayButton = styled.div`
     height: ${getVW(160)};
     border-width: ${getVW(1)};
   }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    width: 140px;
+    height: 140px;
+  };
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    width: 80px;
+    height: 80px;
+  };
 `;
 
 export const Wrapper = styled.div`

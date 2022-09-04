@@ -1,43 +1,42 @@
 import React from 'react';
 import {PropTypes} from "prop-types";
-import {Caption} from "../caption";
 import {H3} from "../h3";
-import {Item, Wrapper} from "./stakeholders.style";
+import {Item, Wrapper, CaptionStyled} from "./stakeholders.style";
 
 export const Stakeholders = ({client, colourist, director, dop, ...props}) => {
     return (
         <Wrapper {...props}>
             <Item>
-                <Caption color="white" mb="xxsm">
+                <CaptionStyled color="white" mb="xxsm">
                     Client
-                </Caption>
+                </CaptionStyled>
                 <H3 color="white">
                     {client}
                 </H3>
             </Item>
 
             <Item>
-                <Caption color="white" mb="xxsm">
+                <CaptionStyled color="white" mb="xxsm">
                     Colourist
-                </Caption>
+                </CaptionStyled>
                 <H3 color="white">
                     {colourist}
                 </H3>
             </Item>
 
             <Item>
-                <Caption color="white" mb="xxsm">
+                <CaptionStyled color="white" mb="xxsm">
                     Director
-                </Caption>
+                </CaptionStyled>
                 <H3 color="white">
                     {director}
                 </H3>
             </Item>
 
             <Item>
-                <Caption color="white" mb="xxsm">
-                    Dop
-                </Caption>
+                <CaptionStyled color="white" mb="xxsm">
+                    other
+                </CaptionStyled>
                 <H3 color="white">
                     {dop}
                 </H3>

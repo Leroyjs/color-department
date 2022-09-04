@@ -36,6 +36,10 @@ export const Prev = styled.div`
   height: 100%;
   top: 0;
   left: 0;
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    display: none;
+  }
 `;
 
 export const Next = styled.div`
@@ -44,6 +48,10 @@ export const Next = styled.div`
   height: 100%;
   top: 0;
   right: 0;
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    display: none;
+  }
 `;
 
 export const Cursor = styled.div`
@@ -63,5 +71,13 @@ export const Cursor = styled.div`
   @media screen and (min-width: ${breakpointsWidth.desktopLG}){
     width: ${getVW(1)};
     height: ${getVW(1)};
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    display: none;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    display: none;
   }
 `;

@@ -16,7 +16,7 @@ export const SliderItem = ({poster, video, isPlayed = false}) => {
     }, [isPlayed])
 
     return (
-        <SlideWrapper className="glide__slide">
+        <SlideWrapper className="glide__slide right">
             <VideoBackground
                 poster={poster}
                 video={video}

@@ -192,7 +192,7 @@ export const NavPoints = styled.ul`
   justify-self: self-end;
   margin-top: auto;
 
-  @media screen and (max-width: ${breakpointsWidth.phone}) {
+  @media screen and (max-width: ${breakpointsWidth.phone}) {  
     display: none;
   }
 `;
@@ -227,6 +227,10 @@ export const NavPoint = styled.button`
     & + & {
       margin-left: ${getVW(40)};
     }
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    
   }
 `;
 

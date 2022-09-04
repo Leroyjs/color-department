@@ -131,7 +131,9 @@ const DetailCardPage = () => {
             <MainComponent>
                 <DetailTitle title="Balkan line" year="2021" py="lg" />
                 <Slider slides={slides} isSimpleMode />
-                <Stakeholders mt="md" mb="xlg" client="Archangel Studios" colourist="JACK MCGINITY"
+                <Stakeholders mt="md" mb="xlg"
+                    client="Archangel Studios"
+                    colourist="JACK MCGINITY"
                     director="OZZIE PULLIN"
                     dop="ANDRIC WATSON" />
                 <VideoPlayer />
