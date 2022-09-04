@@ -5,7 +5,7 @@ import {
   RunningLineSeparator,
   RunningLineWrapper
 } from "./running-line.style";
-
+import { withLink } from "utils";
 
 const SeparatorText = () => (
   <div>
@@ -26,41 +26,41 @@ const SeparatorLink = () => (
   </div>
 );
 
-export const RunningLine =
-  ({
-    titles = ["WE ARE BOLD", "WE ARE HUNGRY", "WE ARE FAST"],
-    outline,
-    link,
-    ...props
-  }) => {
-    const separator = link ? SeparatorLink : SeparatorText;
-    const [data, setData] = useState(null);
+export const RunningLine = ({
+  titles = ["WE ARE BOLD", "WE ARE HUNGRY", "WE ARE FAST"],
+  outline,
+  link,
+  ...props
+}) => {
+  const separator = link ? SeparatorLink : SeparatorText;
+  const [data, setData] = useState(null);
 
-    useEffect(() => {
-      const content = titles.reduce((acc, curr) => {
-        acc.push(curr, separator);
-        return acc;
-      }, []);
-      //Добавляем в массив его копию, нужно для анимации
-      content.push(...content);
-      const data = content.map((title, index) =>
-        index % 2 ? (
-          <RunningLineSeparator key={index} outline={outline}>
-            {separator()}
-          </RunningLineSeparator>
-        ) : (
-          <H1 key={index}>{title}</H1>
-        )
-      );
-      setData(data);
+  useEffect(() => {
+    const content = titles.reduce((acc, curr) => {
+      acc.push(curr, separator);
+      return acc;
     }, []);
+    //Добавляем в массив его копию, нужно для анимации
+    content.push(...content);
+    const data = content.map((title, index) =>
+      index % 2 ? (
+        <RunningLineSeparator key={index} outline={outline}>
+          {separator()}
+        </RunningLineSeparator>
+      ) : (
+        <H1 key={index}>{title}</H1>
+      )
+    );
+    setData(data);
+  }, []);
 
-    return data ? (
-      <RunningLineWrapper link={link} {...props}>
-        <RunningLineScrollContent outline={outline}>
-          {data}
-        </RunningLineScrollContent>
-      </RunningLineWrapper>
-    ) : null;
-  }
+  return data ? (
+    <RunningLineWrapper link={link} {...props}>
+      <RunningLineScrollContent outline={outline}>
+        {data}
+      </RunningLineScrollContent>
+    </RunningLineWrapper>
+  ) : null;
+}
 
+export const RunningLineLink = withLink(RunningLine);
