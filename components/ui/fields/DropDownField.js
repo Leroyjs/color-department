@@ -4,7 +4,7 @@ import {Controller, useFormContext} from "react-hook-form";
 import {DropDown} from "../drop-down";
 
 
-export const DropDownField = ({name, rules = null, isMultiply = false, ...props}) => {
+export const DropDownField = ({name, rules = null, multiple = false, ...props}) => {
     const {control, formState: {errors}} = useFormContext();
     const [currentOption, setCurrentOption] = useState(null);
 
@@ -14,9 +14,9 @@ export const DropDownField = ({name, rules = null, isMultiply = false, ...props}
             name={name}
             rules={rules || {validate: (val) => !!val || 'the field is filled incorrectly'}}
             render={({field: {onChange, value, ...other}}) => (
-                <DropDown {...props} isMultiply={isMultiply} {...other} value={currentOption} error={errors?.[name]?.message}
+                <DropDown {...props} multiple={multiple} {...other} value={currentOption} error={errors?.[name]?.message}
                           onChange={(option) => {
-                              if (isMultiply) {
+                              if (multiple) {
                                   onChange(option.map(({value}) => value));
                               } else {
                                   onChange(option.value);
@@ -31,5 +31,5 @@ export const DropDownField = ({name, rules = null, isMultiply = false, ...props}
 DropDownField.propTypes = {
     name: PropTypes.string.isRequired,
     rules: PropTypes.object,
-    isMultiply: PropTypes.bool,
+    multiple: PropTypes.bool,
 }

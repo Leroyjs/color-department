@@ -21,7 +21,6 @@ const arrayOfImages = [
 const Projects = () => {
   return (
     <>
-      <Preloader></Preloader>
       <Header />
       <PhotoStartScreen arrayOfImages={arrayOfImages} title={["projects"]} />
       <main style={{ backgroundColor: colors.black }}>
