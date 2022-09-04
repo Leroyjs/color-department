@@ -1,3 +1,9 @@
+import { useEffect, useState } from "react";
+import { stubFunction } from "styles";
+import { RunningLine } from "components";
+import { initStepCounter } from "./utils";
+import { FoxBox } from "./fox-box";
+import { steps } from "./constants";
 import {
   GridStyled,
   GridWrapper,
@@ -8,34 +14,28 @@ import {
   PreloaderWrapper,
   RunningLineWrapper,
 } from "./preloader.style";
-import { useEffect, useState } from "react";
-
-import { FoxBox } from "./fox-box";
-import { RunningLine } from "components";
-import { initStepCounter } from "./utils";
-import { steps } from "./constants";
-import { stubFunction } from "styles";
-import { useVH } from "utils";
-import { useNoScroll } from "utils";
+import { useNoScroll, useVH } from "utils";
 
 export const Preloader = ({ onDone = stubFunction }) => {
   const [stepIndex, setStepIndex] = useState(0);
   const [isHidden, setHidden] = useState(false);
-  const [showPreloader, setShowPreloader] = useState(false);
+  const [showNumber, setShowNumber] = useState(false);
 
-  useEffect(()=>{
+  useEffect(() => {
+    initStepCounter(setStepIndex, setHidden, onDone);
     const hasInteraction = Boolean(window.sessionStorage.getItem('preloader_complited'))
-    setShowPreloader(!hasInteraction)
-  });
-  useEffect(() => initStepCounter(setStepIndex, setHidden, onDone), []);
+    setHidden(hasInteraction);
+    if (!hasInteraction){
+      setShowNumber(true);
+    }
+  }, []);
   useVH();
   useNoScroll();
-  if (!showPreloader) return null;
 
   return (
     <PreloaderWrapper isHidden={isHidden}>
       <PreloaderHeader>
-        <Number>
+        <Number isActive={showNumber}>
           <NumberInner step={stepIndex}>
             {steps.map((step) => (
               <span key={step}>{step}</span>

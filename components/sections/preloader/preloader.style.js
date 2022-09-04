@@ -51,6 +51,8 @@ export const PreloaderHeader = styled.div`
 export const Number = styled(H3)`
   height: 1.12em;
   overflow: hidden;
+  transition: 2s opacity 0.5s;
+  opacity: ${({isActive}) => isActive ? 1 : 0};
 `;
 
 export const FoxImg = css`
@@ -133,9 +135,11 @@ export const RunningLineWrapper = styled.div`
   left: 0;
   transform: translateY(-${sizes.desktopLG.x2});
   top: calc(100vh + ${sizes.desktopLG.x1});
+  top: calc(var(--fsvh, 1vh) * 100 + ${sizes.desktopLG.x1});
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     transform: translateY(-${sizes.tabletLG.x2});
     top: calc(100vh + ${sizes.tabletLG.x1});
+    top: calc(var(--fsvh, 1vh) * 100 + ${sizes.tabletLG.x1});
   }
   ${({ stepIndex }) =>
     stepIndex ? getCurrentHeightSizeStyle("x1") : "height: 0px;"}
