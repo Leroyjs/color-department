@@ -5,7 +5,7 @@ import {useVH, useNoScroll} from "utils";
 
 const menuItems = [
     { title: 'projects', link: '/projects' },
-    { title: 'team', link: '/about' },
+    { title: 'team', link: '/team' },
     { title: 'shop', link: '/shop' },
     { title: "let's talk", link: '/order' }
 ]

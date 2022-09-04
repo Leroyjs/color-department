@@ -128,7 +128,7 @@ const slides = [
   },
 ];
 
-const About = () => {
+const Team = () => {
     const [isOpen, setOpen] = useState(false);
     const [currentModalId, setCurrentModalId] = useState(-1);
   const [isAboutImg, setAboutImg] = useState(true);
@@ -253,4 +253,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Team;

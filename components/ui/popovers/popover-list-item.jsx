@@ -65,6 +65,7 @@ export const PopoverListItem = ({
       onMouseEnter={handleEnter}
       onMouseMove={debounce(calcPosition, 10)}
       onMouseLeave={handleLeave}
+      isPointer={!!onClick}
       onClick={() => onClick?.(modalId)}
       {...props}
     >

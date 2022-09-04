@@ -153,7 +153,7 @@ export const Item = styled.li`
   height: 100px;
   ${getCurrentPaddingStyle("horizontal", "md")};
   ${getCurrentPaddingStyle("vertical", "md1")};
-  cursor: pointer;
+  cursor: ${({isPointer})=> isPointer ? 'pointer' : 'default'};
   transition: background-color 0.3s, border-top-color 0.3s;
   display: flex;
   align-items: center;
