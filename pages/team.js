@@ -24,9 +24,25 @@ const DEMO_VIDEO =
   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4";
 const slides = [
   {
+    id: 29,
+    title: "Vel iste vel fuga.",
+    description: "Libero dignissimos porro sit et qui.",
+    year: "2019",
+    credentials: {
+      client: "Archangel Studios",
+      colorist: "Archangel Studio",
+      director: "OZZIE PULLIN",
+      other: "ANDRIC WATSON"
+    },
+    video: DEMO_VIDEO,
+    poster: "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
+    photos: ""
+  },
+  {
+    id: 29,
     title: "El corte ingles",
     poster:
-      "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
+      "",
     client: "Archangel Studios",
     colourist: "Archangel Studios",
     video: {
@@ -34,6 +50,7 @@ const slides = [
     },
   },
   {
+    id: 29,
     title: "Lil pump",
     poster:
       "https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d",
@@ -44,6 +61,7 @@ const slides = [
     },
   },
   {
+    id: 29,
     title: "Balkan line",
     poster:
       "https://i.vimeocdn.com/video/969956438-651eaae49450178bd03a0a1a7a19d5daf29ee7e56c410f9507e95e04117952ff-d",
@@ -54,6 +72,7 @@ const slides = [
     },
   },
   {
+    id: 29,
     title: "Paranormal drive",
     poster:
       "https://i.vimeocdn.com/video/1104167332-6b4e20f12306d88f5a65f940acd631da3d03163d57f77fd2052b4ae260f09cb5-d",
@@ -63,8 +82,8 @@ const slides = [
       mp4: DEMO_VIDEO,
     },
   },
-
   {
+    id: 29,
     title: "Zolla",
     poster:
       "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
@@ -75,6 +94,7 @@ const slides = [
     },
   },
   {
+    id: 29,
     title: "In the hood",
     poster:
       "https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d",
@@ -85,6 +105,7 @@ const slides = [
     },
   },
   {
+    id: 29,
     title: "projects",
     poster:
       "https://i.vimeocdn.com/video/969956438-651eaae49450178bd03a0a1a7a19d5daf29ee7e56c410f9507e95e04117952ff-d",
@@ -95,6 +116,7 @@ const slides = [
     },
   },
   {
+    id: 29,
     title: "All categories",
     poster:
       "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
@@ -105,6 +127,7 @@ const slides = [
     },
   },
   {
+    id: 29,
     title: "All genres",
     poster:
       "https://i.vimeocdn.com/video/1104167332-6b4e20f12306d88f5a65f940acd631da3d03163d57f77fd2052b4ae260f09cb5-d",
@@ -114,8 +137,8 @@ const slides = [
       mp4: DEMO_VIDEO,
     },
   },
-
   {
+    id: 29,
     title: "Select corourist",
     poster:
       "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",

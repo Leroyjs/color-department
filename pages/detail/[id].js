@@ -2,6 +2,7 @@ import React from 'react';
 import { DetailTitle, Slider, Footer, Stakeholders, VideoPlayer, Header } from "components";
 import styled from '@emotion/styled';
 import { sizes, breakpointsWidth } from 'styles';
+import {useRouter} from "next/router";
 
 const DEMO_VIDEO =
     "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4";
@@ -121,6 +122,9 @@ const MainComponent = styled.main`
 `
 
 const DetailCardPage = () => {
+    const router = useRouter();
+    const { id } = router.query;
+
     return (
         <>
             <Header />
