@@ -1,13 +1,11 @@
 import { Caption, H1 } from "components";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   RunningLineScrollContent,
   RunningLineSeparator,
-  RunningLineWrapper,
+  RunningLineWrapper
 } from "./running-line.style";
 
-import PropTypes from "prop-types";
-import { withLink } from "utils";
 
 const SeparatorText = () => (
   <div>
@@ -28,7 +26,7 @@ const SeparatorLink = () => (
   </div>
 );
 
-export const RunningLine = React.memo(
+export const RunningLine =
   ({
     titles = ["WE ARE BOLD", "WE ARE HUNGRY", "WE ARE FAST"],
     outline,
@@ -65,14 +63,4 @@ export const RunningLine = React.memo(
       </RunningLineWrapper>
     ) : null;
   }
-);
 
-export const RunningLineLink = withLink(RunningLine);
-
-RunningLine.displayName = "RunningLine";
-RunningLine.propTypes = {
-  title: PropTypes.arrayOf(PropTypes.string),
-  separator: PropTypes.element,
-  outline: PropTypes.bool,
-  link: PropTypes.string,
-};
