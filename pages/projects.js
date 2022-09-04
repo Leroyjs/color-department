@@ -1,10 +1,15 @@
+import "styles/global.style";
+
 import {
   Footer,
   Header,
-  PhotoStartScreen, Preloader, ProjectCards, RunningLineLink
+  PhotoStartScreen,
+  Preloader,
+  ProjectCards,
+  RunningLineLink,
 } from "components";
+
 import { colors } from "styles";
-import "styles/global.style";
 
 const arrayOfImages = [
   "https://i.postimg.cc/0rMRdbBC/img-01.jpg",
@@ -17,10 +22,15 @@ const Projects = () => {
   return (
     <>
       <Header />
-      <PhotoStartScreen arrayOfImages={arrayOfImages} title={['projects']} />
+      <PhotoStartScreen arrayOfImages={arrayOfImages} title={["projects"]} />
       <main style={{ backgroundColor: colors.black }}>
         <ProjectCards />
-        <RunningLineLink mt="xlg" outline={'true'} link={'./order'} />
+        <RunningLineLink
+          mt="xlg"
+          outline={"true"}
+          link={"/order"}
+          titles={["LET’S TALK", "LET’S TALK", "LET’S TALK"]}
+        />
       </main>
       <Footer pt="xlg" />
     </>
