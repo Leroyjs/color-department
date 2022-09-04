@@ -1,5 +1,4 @@
 import { preloaderAnimations, steps } from "./constants";
-import stateStorage from '../../../__data__/state-storage';
 import { getCurrentStyleByDictionary } from "styles";
 
 const getCurrentTransformValueByStep = (values, step) =>
@@ -30,7 +29,7 @@ export const initStepCounter = (setStepIndex, setHidden, onDone) => {
         clearInterval(interval);
         onDone();
         setHidden(true);
-        stateStorage.setPreloaderInteraction(true);
+        window.sessionStorage.setItem('preloader_complited', true);
       }
 
       return prevIndex + 1;

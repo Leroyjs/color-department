@@ -94,8 +94,8 @@ export const RunningLineWrapper = styled.div`
   }
 
   ${({ link }) => (link ? "cursor: pointer" : "")};
-  & > *:nth-of-type(1n) {
-    animation: ${scrollAnimation} 15s linear infinite;
+  & > *:nth-of-type(1) {
+    animation: ${scrollAnimation} 30s linear infinite;
   }
   :hover {
     h1 span {

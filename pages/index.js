@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import {
   AwardMainTextBlock,
   Footer,
@@ -11,7 +11,6 @@ import {
   Popovers
 } from "components";
 import { colors } from "styles";
-import stateStorage  from '../__data__/state-storage'
 
 const DEMO_VIDEO =
   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4";
@@ -178,29 +177,29 @@ const slides = [
 
 const Home = () => {
   const videoContant = useRef(null);
-
-  return (
-    <>
-      { stateStorage.hasInteractionWithPreloader ? null : <Preloader/> }
-      <Header transparentToComponent={videoContant} />
-      <StartScreen />
-      <main ref={videoContant} style={{ backgroundColor: colors.black }}>
-        <IntroMainTextBlock />
-        <PartnersLine partners={mockPartners} />
-        <Slider
-          slides={slides}
-          title={
-            <span>
-              Our work worthy of your <br /> attention
-            </span>
-          }
-        />
-        <AwardMainTextBlock mt="xlg" px="md" />
-        <Popovers options={awardsItems} title="Our Awards" isAboutImg={false} />
-      </main>
-      <Footer pt="xlg" />
-    </>
-  );
+  
+return (
+  <>
+    <Preloader />
+    <Header transparentToComponent={videoContant} />
+    <StartScreen />
+    <main ref={videoContant} style={{ backgroundColor: colors.black }}>
+      <IntroMainTextBlock />
+      <PartnersLine partners={mockPartners} />
+      <Slider
+        slides={slides}
+        title={
+          <span>
+            Our work worthy of your <br /> attention
+          </span>
+        }
+      />
+      <AwardMainTextBlock mt="xlg" px="md" />
+      <Popovers options={awardsItems} title="Our Awards" isAboutImg={false} />
+    </main>
+    <Footer pt="xlg" />
+  </>
+);
 };
 
 export default Home;

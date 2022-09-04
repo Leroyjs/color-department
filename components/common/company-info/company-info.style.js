@@ -36,9 +36,6 @@ export const AdditionInfo = styled.div`
 
 export const MadeBy = styled.div`
     padding-bottom: 16px;
-    & span {
-        color: ${hexToRGBA(colors.white, 0.2)}
-    }
 `
 
 

@@ -19,8 +19,16 @@ import { stubFunction } from "styles";
 export const Preloader = ({ onDone = stubFunction }) => {
   const [stepIndex, setStepIndex] = useState(0);
   const [isHidden, setHidden] = useState(false);
+  const [showPreloader, setShowPreloader] = useState(false);
 
+  useEffect(()=>{
+    const hasInteraction = Boolean(window.sessionStorage.getItem('preloader_complited'))
+    setShowPreloader(!hasInteraction)
+  });
   useEffect(() => initStepCounter(setStepIndex, setHidden, onDone), []);
+
+  if (!showPreloader) return null;
+
   return (
     <PreloaderWrapper isHidden={isHidden}>
       <PreloaderHeader>

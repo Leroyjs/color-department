@@ -12,7 +12,6 @@ import {
   Slider,
 } from "components";
 import { colors } from "styles";
-import stateStorage from '../__data__/state-storage';
 
 const ArrayImages = [
   "https://i.postimg.cc/XpHKgYBn/img-01.jpg",
@@ -191,7 +190,7 @@ const Team = () => {
 
   return (
     <>
-      { stateStorage.hasInteractionWithPreloader ? null : <Preloader/> }
+      <Preloader/>
       <Header />
       <PhotoStartScreen
         arrayOfImages={ArrayImages}
