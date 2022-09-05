@@ -46,8 +46,6 @@ export const StartScreen = () => {
                         playsinline
                         muted
                     />
-                    <Grid />
-                    <RunningLine className={RunningLineStyle} />
                 </ContentWrapper>
         </StartScreenWrapper>
     );
