@@ -204,6 +204,51 @@ function useGetData() {
         year: "2021",
         author: "Archangel Studios",
       },
+      {
+        video: {
+          mp4: "https://drive.google.com/uc?id=1ClreORL5H_AmhGoCL3N3RDkmVxpGk7Zd",
+        },
+        poster:
+          "https://drive.google.com/uc?id=1M7s3Mcy2Ja15X8a04dY3IYUokaThYcUq",
+        id: 7,
+        colourist: "Aleks Ver",
+        genre: "comedy",
+        category: "ads",
+        firstTitle: " gitEl corte ingles ",
+        secondTitle: "show more",
+        year: "2016",
+        author: "Archangel Studios",
+      },
+      {
+        video: {
+          mp4: "https://drive.google.com/uc?id=1yUnz2C5tza_px2UkHJDyzkTtxnRPuO6D",
+        },
+        poster:
+          "https://drive.google.com/uc?id=1n3jYxb5T0YnDCm1VTART2FL_0ayv6vis",
+        id: 8,
+        colourist: "Aleks Ver",
+        genre: "horror",
+        category: "film",
+        firstTitle: " Paranormal drive ",
+        secondTitle: "show more",
+        year: "2016",
+        author: "Archangel Studios",
+      },
+      {
+        video: {
+          mp4: "https://drive.google.com/uc?id=11F0_m9TMiknOq9DHnpTnZLOpv2YrSp7n",
+        },
+        poster:
+          "https://drive.google.com/uc?id=14-fs1zjmVxt1NBrbEhrwoSs_4Pzrt_Ar",
+        id: 9,
+        colourist: "Aleks Ver",
+        genre: "adventure",
+        category: "ads",
+        firstTitle: " Zolla ",
+        secondTitle: "show more",
+        year: "2021",
+        author: "Archangel Studios",
+      },
     ];
     const categories = getUniqValuesByKey(data, "category");
     const genres = getUniqValuesByKey(data, "genre");
