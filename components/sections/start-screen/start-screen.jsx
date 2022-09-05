@@ -39,7 +39,6 @@ export const StartScreen = () => {
 
     return (
         <StartScreenWrapper>
-            <FlexLayerWrapper>
                 <ContentWrapper>
                     <VideoBackground
                         video={video}
@@ -50,7 +49,6 @@ export const StartScreen = () => {
                     <Grid />
                     <RunningLine className={RunningLineStyle} />
                 </ContentWrapper>
-            </FlexLayerWrapper>
         </StartScreenWrapper>
     );
 };
