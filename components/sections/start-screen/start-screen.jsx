@@ -24,8 +24,8 @@ export const StartScreen = () => {
                     <VideoBackground
                         video={video}
                         autoPlay={true}
-                        muted
                         playsinline
+                        muted
                     />
                     <Grid />
                     <RunningLine className={RunningLineStyle} />
