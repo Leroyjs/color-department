@@ -6,10 +6,12 @@ import styled from "@emotion/styled";
 export const GridWrapper = styled.div`
   height: 100%;
   overflow: hidden;
+  pointer-events: none
 `;
 
 export const GridInner = styled.div`
   display: grid;
+  pointer-events: none;
   ${getCurrentGridTemplateColumsStyle()}
   grid-template-rows: repeat(10, 12.5vw);
   align-content: end;
@@ -24,6 +26,7 @@ export const Cell = styled.div`
   height: 100%;
   border-top: 1px solid ${hexToRGBA(colors.white, 0.2)};
   padding: 20px;
+  pointer-events: none;
 
   &:not(:nth-of-type(8n)) {
     border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
