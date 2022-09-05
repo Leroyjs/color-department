@@ -54,7 +54,7 @@ export const DropDownOverlay = styled.div`
 
   @media (max-width: ${breakpointsWidth.tabletSM}) {
     ${({isOpen}) => (isOpen && {
-      backgroundColor: hexToRGBA(colors.black, 0.6)
+      backgroundColor: hexToRGBA(colors.black, 0.9)
     })};
   }
 `;
@@ -189,26 +189,34 @@ export const DropDownItem = styled.li`
   font-family: ${fontFamilies.mainFont};
   ${getCurrentFontSizeStyle("h3")};
   height: 50px;
-  padding: 6px 6px 8px;
+  padding: 10px 6px 6px;
   transition: background-color 0.3s;
+  font-weight: 800;
+  letter-spacing: 0.01em;
 
   &:hover {
-    background-color: ${({theme}) => getCurrentColor("primary", theme)};
+    background-color: ${({ theme }) => getCurrentColor("primary", theme)};
   }
 
   ${({ isActive, theme }) =>
-    isActive && `
+    isActive &&
+    `
     background-color: ${getCurrentColor("primary", theme)};
     `};
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
-    padding: ${getVW(6)} ${getVW(6)} ${getVW(8)};
+    padding: ${getVW(10)} ${getVW(6)} ${getVW(6)};
     height: ${getVW(50)};
   }
 
-  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
-    height: 3.125vw;
-    padding: 0.375vw 0.375vw 0.5vw;
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    height: 40px;
+    padding: 8px 6px 7px;
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    height: 32px;
+    padding: 7px 6px 7px;
   }
 `;
 
