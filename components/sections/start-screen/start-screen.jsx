@@ -18,9 +18,21 @@ export const StartScreen = () => {
     useEffect(()=>{
         const video = document.querySelector('#fuck-safari');
         video.onloadeddata = ()=>{
+            setTimeout(()=>{
+                video.play()
+            })
+            console.log('loaded1')
+        }
+        video.onloadedmetadata = ()=>{
             video.play()
         }
+
+        setTimeout(()=>{
+            video.play()
+        }, 5000)
+
         video.muted = true;
+        video.play();
     },[])
     useVH();
 
