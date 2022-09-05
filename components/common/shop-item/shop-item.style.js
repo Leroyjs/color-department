@@ -137,5 +137,6 @@ export const ProductImage = styled.img`
     grid-template-columns: repeat(1, 1fr);
     width: 50vw;
     height: 50vw;
+    ${getCurrentMarginStyle("vertical", "lg")};
   }
 `;
