@@ -16,6 +16,8 @@ import { renderStatic } from "./renderer";
 import { useVH } from "./useVH";
 import { withCursor } from "./hoc/with-cursor";
 
+export * from "./api"
+
 export {
   renderStatic,
   Freezer,

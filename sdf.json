@@ -1,0 +1,28 @@
+{
+  "id": 1,
+  "title": "Sit modi velit qui.",
+  "description": "Quis fugit quia sapiente deserunt ut.",
+  "year": "2018",
+  "credentials": {
+    "client": "",
+    "colorist": "",
+    "director": "",
+    "other": ""
+  },
+  "category": {
+    "id": 11,
+    "title": "Vero voluptas dolore maxime sequi."
+  },
+  "genre": {
+    "id": 6,
+    "title": "Et ut natus distinctio vel."
+  },
+  "photos": [],
+  "preview": null,
+  "video": null,
+  "shortVideo": null,
+  "categories": [
+    {"value": "11", "label": "Vero voluptas dolore maxime sequi."},
+    {"value": "12", "label": "SDFG dsfdsfsdf lore maxime sequi."},
+  ]
+}

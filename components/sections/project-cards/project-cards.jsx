@@ -22,12 +22,11 @@ function getUniqValuesByKey(data = [], key = "") {
   return uniqValues;
 }
 
-export const ProjectCards = () => {
-  const { data, categories, genres, colourists } = useGetData();
+export const ProjectCards = ({projects, categories, genres, colourists}) => {
   const [currentCategory, setCurrentCategory] = useState();
   const [currentGenre, setCurrentGenre] = useState();
   const [currentColourist, setCurrentColourist] = useState([]);
-  const [cards, setCards] = useState(data);
+  const [cards, setCards] = useState(projects);
   const [isSeeAll, setIsSeeAll] = useState(false);
   const [isNotFound, setIsNotFound] = useState(false);
 
@@ -36,10 +35,10 @@ export const ProjectCards = () => {
   };
 
   useEffect(() => {
-    const filteredCards = data.filter(({ colourist, genre, category }) => {
-      const isColorist = currentColourist?.some(({value}) => (value === colourist))  || !currentColourist?.length;
-      const isGenre = currentGenre?.some(({value}) => (value === genre))  || !currentGenre?.length;
-      const isCategory = currentCategory?.some(({value}) => (value === category))  || !currentCategory?.length;
+    const filteredCards = projects.filter(({ credentials, genre, category }) => {
+      const isColorist = currentColourist?.some(({value}) => (value === credentials.colorist))  || !currentColourist?.length;
+      const isGenre = currentGenre?.some(({value}) => (value === genre.id))  || !currentGenre?.length;
+      const isCategory = currentCategory?.some(({value}) => (value === category.id))  || !currentCategory?.length;
 
       return isColorist && isGenre && isCategory;
     });
@@ -63,7 +62,7 @@ export const ProjectCards = () => {
       setIsNotFound(false);
     }
 
-  }, [data, currentCategory, currentGenre, currentColourist, isSeeAll]);
+  }, [projects, currentCategory, currentGenre, currentColourist, isSeeAll]);
 
   return (
     <ProjectPage>
