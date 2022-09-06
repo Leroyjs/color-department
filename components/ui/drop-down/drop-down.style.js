@@ -193,6 +193,7 @@ export const DropDownItem = styled.li`
   transition: background-color 0.3s;
   font-weight: 800;
   letter-spacing: 0.01em;
+  white-space: nowrap;
 
   &:hover {
     background-color: ${({ theme }) => getCurrentColor("primary", theme)};
@@ -221,6 +222,7 @@ export const DropDownItem = styled.li`
 `;
 
 export const CurrentLabel = styled.span`
+  white-space: nowrap;
 `
 
 export const InputStyled = styled.div`

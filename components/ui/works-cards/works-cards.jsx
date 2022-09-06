@@ -14,12 +14,12 @@ export const WorksCards = ({title, cards}) => {
             )}
             <GridWrapper>
                 {cards.map(card => (
-                    <WorksCard firstTitle={card.firstTitle}
-                               secondTitle={card.secondTitle}
-                               author={card.author}
+                    <WorksCard firstTitle={card.title?.substring(0, 16)}
+                               secondTitle={"see more"}
+                               author={card.credentials.client}
                                year={card.year}
-                               poster={card.poster}
-                               video={card.video}
+                               poster={card.preview}
+                               video={card.shortVideo}
                                key={card.firstTitle}
                                href={"/detail/12"}/>
                 ))}
