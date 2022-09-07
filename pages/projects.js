@@ -32,7 +32,6 @@ const Projects = ({data, casesPreviews, projects = [], categories = [], genres =
 export async function getServerSideProps(context) {
     const res = await getContent('projects') || null;
     const data = res?.data || {};
-
     const projects = data?.projects;
     const categories = data?.categories || [];
     const genres = data?.genres || [];

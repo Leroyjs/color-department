@@ -27,7 +27,7 @@ export const WorksCards = ({ title, cards }) => {
             preview={card.preview}
             video={card.shortVideo}
             key={card.firstTitle}
-            href={'/detail/12'}
+            href={`/detail/${card.id}`}
           />
         ))}
       </GridWrapper>

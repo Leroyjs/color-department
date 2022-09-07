@@ -1,123 +1,10 @@
-import React from 'react'
-import {
-  DetailTitle,
-  Slider,
-  Footer,
-  Stakeholders,
-  VideoPlayer,
-  Header,
-} from 'components'
 import styled from '@emotion/styled'
-import { sizes, breakpointsWidth } from 'styles'
-import { useRouter } from 'next/router'
+import {
+  DetailTitle, Footer, Header, Slider, Stakeholders,
+  VideoPlayer
+} from 'components'
+import { breakpointsWidth, sizes } from 'styles'
 import { getContent } from '../../utils'
-
-const DEMO_VIDEO =
-  'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'
-const slides = [
-  {
-    title: 'El corte ingles',
-    preview:
-      'https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d',
-    client: 'Archangel Studios',
-    colourist: 'Archangel Studios',
-    video: {
-      mp4: DEMO_VIDEO,
-    },
-  },
-  {
-    title: 'Lil pump',
-    preview:
-      'https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d',
-    client: 'JACK MCGINITY',
-    colourist: 'JACK MCGINITY',
-    video: {
-      mp4: DEMO_VIDEO,
-    },
-  },
-  {
-    title: 'Balkan line',
-    preview:
-      'https://i.vimeocdn.com/video/969956438-651eaae49450178bd03a0a1a7a19d5daf29ee7e56c410f9507e95e04117952ff-d',
-    client: 'ANDRIC WATSON',
-    colourist: 'ANDRIC WATSON',
-    video: {
-      mp4: DEMO_VIDEO,
-    },
-  },
-  {
-    title: 'Paranormal drive',
-    preview:
-      'https://i.vimeocdn.com/video/1104167332-6b4e20f12306d88f5a65f940acd631da3d03163d57f77fd2052b4ae260f09cb5-d',
-    client: 'Find out more',
-    colourist: 'Find out more',
-    video: {
-      mp4: DEMO_VIDEO,
-    },
-  },
-
-  {
-    title: 'Zolla',
-    preview:
-      'https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d',
-    client: 'vimeocdn',
-    colourist: 'vimeocdn',
-    video: {
-      mp4: DEMO_VIDEO,
-    },
-  },
-  {
-    title: 'In the hood',
-    preview:
-      'https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d',
-    client: 'El corte ingles',
-    colourist: 'El corte ingles',
-    video: {
-      mp4: DEMO_VIDEO,
-    },
-  },
-  {
-    title: 'projects',
-    preview:
-      'https://i.vimeocdn.com/video/969956438-651eaae49450178bd03a0a1a7a19d5daf29ee7e56c410f9507e95e04117952ff-d',
-    client: 'Studios',
-    colourist: 'Studios',
-    video: {
-      mp4: DEMO_VIDEO,
-    },
-  },
-  {
-    title: 'All categories',
-    preview:
-      'https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d',
-    client: 'Archangel',
-    colourist: 'Archangel',
-    video: {
-      mp4: DEMO_VIDEO,
-    },
-  },
-  {
-    title: 'All genres',
-    preview:
-      'https://i.vimeocdn.com/video/1104167332-6b4e20f12306d88f5a65f940acd631da3d03163d57f77fd2052b4ae260f09cb5-d',
-    client: 'Balkan line',
-    colourist: 'Balkan line',
-    video: {
-      mp4: DEMO_VIDEO,
-    },
-  },
-
-  {
-    title: 'Select corourist',
-    preview:
-      'https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d',
-    client: 'JACK MCGINITY  KEY ERR',
-    colourist: 'JACK MCGINITY  KEY ERR',
-    video: {
-      mp4: DEMO_VIDEO,
-    },
-  },
-]
 
 const MainComponent = styled.main`
   padding-top: ${sizes['desktopLG'].half};
@@ -129,23 +16,21 @@ const MainComponent = styled.main`
   }
 `
 
-const DetailCardPage = () => {
-  const router = useRouter()
-  const { id } = router.query
+const DetailCardPage = ({ title, year, client, colourist, director, dop, photos }) => {
 
   return (
     <>
       <Header />
       <MainComponent>
-        <DetailTitle title="Balkan line" year="2021" py="lg" />
-        <Slider slides={slides} isSimpleMode />
+        <DetailTitle title={title} year={year} py="lg" />
+        <Slider slides={photos} isSimpleMode />
         <Stakeholders
           mt="md"
           mb="xlg"
-          client="Archangel Studios"
-          colourist="JACK MCGINITY"
-          director="OZZIE PULLIN"
-          dop="ANDRIC WATSON"
+          client={client}
+          colourist={colourist}
+          director={director}
+          dop={dop}
         />
         <VideoPlayer />
       </MainComponent>
@@ -157,14 +42,30 @@ const DetailCardPage = () => {
 export default DetailCardPage
 
 export async function getServerSideProps(context) {
-  let data = null
+  const detailViewModel = {
+    title: '',
+    year: '',
+    client: '',
+    colourist: '',
+    director: '',
+    dop: '',
+    photos: []
+  }
   try {
-    data = (await getContent(`projects/${context.params.id}`)) || {}
+    const data = (await getContent(`projects/${context.params.id}`)) || {}
+    detailViewModel.title = detailViewModel.title || data.title;
+    detailViewModel.year = detailViewModel.year || data.year;
+    detailViewModel.client = detailViewModel.client || data.credentials?.client;
+    detailViewModel.colourist = detailViewModel.colourist || data.credentials?.colorist;
+    detailViewModel.director = detailViewModel.director || data.credentials?.director;
+    detailViewModel.dop = detailViewModel.dop || data.credentials?.other;
+    detailViewModel.photos = detailViewModel.photos || data.photos;
+
   } catch (e) {
-    data = {}
+
   }
 
   return {
-    props: { data },
+    props: { ...detailViewModel },
   }
 }
