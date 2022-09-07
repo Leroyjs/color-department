@@ -12,6 +12,7 @@ import {
   Slider,
 } from "components";
 import { colors } from "styles";
+import {getContent} from "../utils";
 
 const ArrayImages = [
   "https://i.postimg.cc/XpHKgYBn/img-01.jpg",
@@ -150,67 +151,9 @@ const slides = [
   },
 ];
 
-const Team = () => {
+const Team = ({employees}) => {
     const [isOpen, setOpen] = useState(false);
     const [currentModalId, setCurrentModalId] = useState(-1);
-  const [isAboutImg, setAboutImg] = useState(true);
-  const SeniorColourists = [
-    {
-      modalId: "/",
-      startLabel: "Сraig Saunders",
-      endLabel: "Senior colourist",
-      img: "https://images.unsplash.com/photo-1660598353451-9c5a0a0ff901?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE2fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-    },
-    {
-      modalId: "/",
-      startLabel: "Ellen Kennedy",
-      endLabel: "VFX-designer",
-      img: "https://images.unsplash.com/photo-1514993805013-c428d7f63ad4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-    },
-    {
-      modalId: "/",
-      startLabel: "Miranda Bell",
-      endLabel: "Creative director",
-      img: "https://images.unsplash.com/photo-1660032109345-f513b154cc2f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMyfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-    },
-  ];
-
-  const Colourists = [
-    {
-      modalId: "/",
-      startLabel: "Herman Payne",
-      endLabel: "CEO-founder",
-      img: "https://images.unsplash.com/photo-1548536082-6959567349c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE3fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-    },
-    {
-      modalId: "/",
-      startLabel: "Jeff Washington",
-      endLabel: "Sales manager",
-      img: "https://images.unsplash.com/photo-1660054031395-3c01627e8842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI4fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-    },
-  ];
-
-  const Assistants = [
-    {
-      modalId: "/",
-      startLabel: "Milton Hogan",
-      endLabel: "Account",
-      img: "https://images.unsplash.com/photo-1659492061718-f3708aae95d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDY2fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-    },
-    {
-      modalId: "/",
-      startLabel: "Dexter Swanson",
-      endLabel: "Account",
-      img: "https://images.unsplash.com/photo-1659273145320-4a9750783c25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg0fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-    },
-    {
-      modalId: "/",
-      startLabel: "Carla Garcia",
-      endLabel: "Manager",
-      img: "https://images.unsplash.com/photo-1502323703385-c3ea9ace787d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg3fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-    },
-  ];
-
   return (
     <>
       <Preloader/>
@@ -221,38 +164,32 @@ const Team = () => {
       />
       <main style={{ backgroundColor: colors.black }}>
         <IntroAboutTextBlock pt="xlg" />
-        <Popovers
-          isAboutImg={isAboutImg}
-          options={SeniorColourists}
-          subtitle="Senior colourists"
-          title="We are bold"
-          mt="xlg"
-          mb="lg"
-          onClick={(modalId) => {
-              setCurrentModalId(modalId);
-              setOpen(true);
-          }}
-        />
-        <Popovers
-          options={Colourists}
-          subtitle="Colourists"
-          mt="lg"
-          isAboutImg={isAboutImg}
-          onClick={(modalId) => {
-              setCurrentModalId(modalId);
-              setOpen(true);
-          }}
-        />
-        <Popovers
-          options={Assistants}
-          subtitle="Assistants"
-          mt="lg"
-          isAboutImg={isAboutImg}
-          onClick={(modalId) => {
-              setCurrentModalId(modalId);
-              setOpen(true);
-          }}
-        />
+
+          {employees.map(([subtitle, options], index) => {
+              if (index === 0) return <Popovers
+                  key={subtitle}
+                  options={options}
+                  subtitle={subtitle}
+                  title="We are bold"
+                  mt="xlg"
+                  mb="lg"
+                  onClick={(modalId) => {
+                      setCurrentModalId(modalId);
+                      setOpen(true);
+                  }}
+              />
+
+              return <Popovers
+                  key={subtitle}
+                  options={options}
+                  subtitle={subtitle}
+                  mt="lg"
+                  onClick={(modalId) => {
+                      setCurrentModalId(modalId);
+                      setOpen(true);
+                  }}
+              />
+          })}
         <PreTitleSlider mt="xlg" mb="md">
           Look at our selected works <br />
           to evaluate our capabilities and skills
@@ -274,5 +211,13 @@ const Team = () => {
     </>
   );
 };
+
+export async function getServerSideProps(context){
+  const data = await getContent('employees') || {};
+
+  return {
+    props: {employees: Object.entries(data)}
+  }
+}
 
 export default Team;

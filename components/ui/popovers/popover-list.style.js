@@ -131,7 +131,7 @@ export const AboutPhoneImg = styled.img`
   object-position: center top;
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    ${({ isAboutImg }) => (isAboutImg ? "display: block;" : "")};
+    display: inline-block;
     width: 64px;
     min-width: 64px;
     height: 64px;
@@ -140,7 +140,6 @@ export const AboutPhoneImg = styled.img`
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
-    ${({ isAboutImg }) => (isAboutImg ? "display: block;" : "")};
     width: 48px;
     min-width: 48px;
     height: 48px;
@@ -163,15 +162,17 @@ export const Item = styled.li`
 
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
   &:hover {
-    ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)}
-    border-top-color: ${({ theme }) => getCurrentColor("primary", theme)};
+    @media screen and (min-width: ${breakpointsWidth.tabletSM}){
+      ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)}
+      border-top-color: ${({ theme }) => getCurrentColor("primary", theme)};
 
-    span:first-of-type {
-      ${({ theme }) => getCurrentColorStyles("black", theme)}
-    }
+      span:first-of-type {
+        ${({ theme }) => getCurrentColorStyles("black", theme)}
+      }
 
-    span:last-of-type {
-      ${({ theme }) => getCurrentColorStyles("white", theme)}
+      span:last-of-type {
+        ${({ theme }) => getCurrentColorStyles("white", theme)}
+      } 
     }
   }
 

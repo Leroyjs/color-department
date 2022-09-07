@@ -10,7 +10,6 @@ import {colors} from "styles";
 import {getCasesPreviews, getContent, getsColourists} from "../utils";
 
 const Projects = ({data, casesPreviews, projects = [], categories = [], genres = [], colourists = []}) => {
-    console.log(colourists)
     return (
         <>
             <Preloader/>

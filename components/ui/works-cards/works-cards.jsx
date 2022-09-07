@@ -16,7 +16,7 @@ export const WorksCards = ({title, cards}) => {
                 {cards.map(card => (
                     <WorksCard firstTitle={card.title?.substring(0, 16)}
                                secondTitle={"see more"}
-                               author={card.credentials.client}
+                               author={card?.credentials?.client || ""}
                                year={card.year}
                                poster={card.preview}
                                video={card.shortVideo}
