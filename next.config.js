@@ -6,6 +6,10 @@ const nextConfig = {
   experimental: {
     emotion: true,
   },
-};
+  images: {
+    domains: ['45.11.27.63'],
+    formats: ['image/avif', 'image/webp'],
+  },
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
