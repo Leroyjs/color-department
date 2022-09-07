@@ -50,3 +50,13 @@ export function getSlides(projects) {
     }
   })
 }
+
+export function getAwards(awards) {
+  return awards.map(({ label, icon, project }) => {
+    return {
+      name: label,
+      position: project,
+      photo: icon,
+    }
+  })
+}

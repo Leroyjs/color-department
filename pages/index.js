@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef } from 'react'
 import {
   AwardMainTextBlock,
   Footer,
@@ -11,36 +11,7 @@ import {
   Popovers,
 } from 'components'
 import { colors } from 'styles'
-import { getContent, getSlides } from '../utils'
-
-const DEMO_VIDEO =
-  'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'
-const awardsItems = [
-  {
-    href: '/',
-    startLabel: 'D&AD',
-    endLabel: 'Balkan line',
-    img: 'https://www.fillmurray.com/400/400',
-  },
-  {
-    href: '/',
-    startLabel: 'CANNES LIONS',
-    endLabel: 'El corte ingles',
-    img: 'https://placebeard.it/400/400',
-  },
-  {
-    href: '/',
-    startLabel: 'WEBBY',
-    endLabel: 'Zolla',
-    img: 'https://www.placecage.com/400/400',
-  },
-  {
-    href: '/',
-    startLabel: 'ONE SHOW',
-    endLabel: 'Lil pump',
-    img: 'https://www.stevensegallery.com/400/400',
-  },
-]
+import { getAwards, getContent, getSlides } from '../utils'
 
 const Home = ({ clients, awards, slides }) => {
   const videoContant = useRef(null)
@@ -62,7 +33,7 @@ const Home = ({ clients, awards, slides }) => {
           }
         />
         <AwardMainTextBlock mt="xlg" px="md" />
-        <Popovers options={awardsItems} title="Our Awards" isAboutImg={false} />
+        <Popovers options={awards} title="Our Awards" isAboutImg={false} />
       </main>
       <Footer pt="xlg" />
     </>
@@ -83,10 +54,11 @@ export async function getServerSideProps(context) {
     }
   }
 
-  const { clients, awards, projects } = data
+  const { clients, awards: rowAwards, projects } = data
   const slides = getSlides(projects)
+  const awards = getAwards(rowAwards)
 
   return {
-    props: { clients, awards, projects, slides },
+    props: { clients, awards, slides },
   }
 }
