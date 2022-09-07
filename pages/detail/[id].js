@@ -3,6 +3,7 @@ import { DetailTitle, Slider, Footer, Stakeholders, VideoPlayer, Header } from "
 import styled from '@emotion/styled';
 import { sizes, breakpointsWidth } from 'styles';
 import {useRouter} from "next/router";
+import {getContent} from "../../utils";
 
 const DEMO_VIDEO =
     "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4";
@@ -144,3 +145,16 @@ const DetailCardPage = () => {
 };
 
 export default DetailCardPage;
+
+export async function getServerSideProps(context){
+    let data = null;
+    try {
+        data = await getContent(`projects/${context.params.id}`) || {};
+    } catch (e) {
+        data = {};
+    }
+
+    return {
+        props: {data}
+    }
+}
