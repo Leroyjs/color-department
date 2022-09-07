@@ -1,4 +1,5 @@
-import { ButtonShop } from "components";
+import { ButtonShop } from 'components'
+import Image from 'next/image'
 import {
   ShopItemWrapper,
   ProductImage,
@@ -6,18 +7,28 @@ import {
   Title,
   Cost,
   CostPhone,
-} from "./shop-item.style";
+} from './shop-item.style'
 
 export const ShopItem = ({ cost, img, title, ...props }) => {
   return (
     <ShopItemWrapper {...props}>
       <TextContainer>
         <Title>{title}</Title>
-        <Cost>{cost}$</Cost>
+        <Cost>{cost.toString().slice(0, 8)}$</Cost>
       </TextContainer>
-      <ProductImage src={img}></ProductImage>
+      <ProductImage>
+        <Image
+          quality={72}
+          layout="responsive"
+          width={240}
+          height={240}
+          objectFit="cover"
+          objectPosition="center"
+          src={img}
+        />
+      </ProductImage>
       <CostPhone>{cost}$</CostPhone>
       <ButtonShop />
     </ShopItemWrapper>
-  );
-};
+  )
+}

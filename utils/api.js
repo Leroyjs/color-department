@@ -16,6 +16,15 @@ export async function getContent(params = '', props = {}) {
   }
 }
 
+export function getDimensions(dimensions) {
+  return (
+    dimensions?.map((size) => ({
+      label: size,
+      value: size,
+    })) || []
+  )
+}
+
 export function getCasesPreviews(data = []) {
   return data?.map(({ preview }) => preview || '') || []
 }

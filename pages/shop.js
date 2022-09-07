@@ -1,21 +1,39 @@
-import { Footer, Header, RunningLineLink, ShopSection } from "components";
+import { Footer, Header, RunningLineLink, ShopSection } from 'components'
+import { getContent, getDimensions } from '../utils'
 
-const Projects = () => {
+const Projects = ({ products }) => {
   return (
     <>
-      <Header/>
+      <Header />
       <main>
-        <ShopSection />
+        <ShopSection products={products} />
         <RunningLineLink
           mt="md"
-          outline={"true"}
-          link={"/order"}
-          titles={["LET’S TALK", "LET’S TALK", "LET’S TALK"]}
+          outline={'true'}
+          link={'/order'}
+          titles={['LET’S TALK', 'LET’S TALK', 'LET’S TALK']}
         />
       </main>
-      <Footer pt="xlg"/>
+      <Footer pt="xlg" />
     </>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects
+
+export async function getServerSideProps(context) {
+  const products = await getContent('products')
+
+  if (!products) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
+
+  return {
+    props: { products },
+  }
+}
