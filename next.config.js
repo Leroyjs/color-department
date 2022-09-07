@@ -7,7 +7,7 @@ const nextConfig = {
     emotion: true,
   },
   images: {
-    domains: ['45.11.27.63'],
+    domains: ['assets.vercel.com', '45.11.27.63'],
     formats: ['image/avif', 'image/webp'],
   },
 }
