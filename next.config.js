@@ -7,7 +7,11 @@ const nextConfig = {
     emotion: true,
   },
   images: {
-    domains: ['assets.vercel.com', '45.11.27.63'],
+    domains: [
+      'assets.vercel.com',
+      'color-department-git-feat-api-leroyjs.vercel.app',
+      '45.11.27.63',
+    ],
     formats: ['image/avif', 'image/webp'],
   },
 }
