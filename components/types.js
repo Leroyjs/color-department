@@ -1,6 +1,6 @@
-import { PropTypes } from "prop-types";
-import { colors } from "../styles";
-import { typesOfoffset } from "../styles";
+import { PropTypes } from 'prop-types'
+import { colors } from '../styles'
+import { typesOfoffset } from '../styles'
 
 export const propTypesMargin = {
   my: PropTypes.oneOf(typesOfoffset),
@@ -10,7 +10,7 @@ export const propTypesMargin = {
   ml: PropTypes.oneOf(typesOfoffset),
   mr: PropTypes.oneOf(typesOfoffset),
   m: PropTypes.oneOf(typesOfoffset),
-};
+}
 
 export const propTypesPadding = {
   py: PropTypes.oneOf(typesOfoffset),
@@ -20,27 +20,30 @@ export const propTypesPadding = {
   pl: PropTypes.oneOf(typesOfoffset),
   pr: PropTypes.oneOf(typesOfoffset),
   p: PropTypes.oneOf(typesOfoffset),
-};
+}
 
 export const propTypesTextTag = {
-  tag: PropTypes.oneOf(["h1", "h2", "h3", "h4", "h5", "h6", "span", "p"]),
-};
+  tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'p']),
+}
 
 export const propTypesColors = {
-  color: PropTypes.oneOf([...Object.keys(colors), "primary"]),
-};
+  color: PropTypes.oneOf([...Object.keys(colors), 'primary']),
+}
 
 export const propTypesChildren = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired
-};
+    PropTypes.node,
+  ]).isRequired,
+}
 
-export const propTypesSource = PropTypes.oneOfType([PropTypes.string, PropTypes.object]);
+export const propTypesSource = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.object,
+])
 
 export const propTypesVideoBg = {
-  poster: propTypesSource,
+  preview: propTypesSource,
   autoPlay: PropTypes.bool,
   video: PropTypes.shape({
     webm: propTypesSource,

@@ -1,57 +1,62 @@
-import React from 'react';
-import {PropTypes} from "prop-types";
-import {Caption, H2} from "components";
-import {WorksCards} from "../../ui/works-cards";
+import React from 'react'
+import { PropTypes } from 'prop-types'
+import { Caption, H2 } from 'components'
+import { WorksCards } from '../../ui/works-cards'
 import {
-    Wrapper,
-    User,
-    UserAvatar,
-    UserAbout,
-    Description,
-    TextCol,
-    CloseBtn,
-    Container,
-    TextRow, ProfileLinks, CaptionLink, ModalWrapper, UserName
-} from "./detail-card-modal.style";
-import Link from 'next/link';
+  Wrapper,
+  User,
+  UserAvatar,
+  UserAbout,
+  Description,
+  TextCol,
+  CloseBtn,
+  Container,
+  TextRow,
+  ProfileLinks,
+  CaptionLink,
+  ModalWrapper,
+  UserName,
+} from './detail-card-modal.style'
+import Link from 'next/link'
 
-const DEMO_VIDEO = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4';
-const DEMO_POSTER = 'https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d?mw=1500&mh=844&q=70'
-
+const DEMO_VIDEO =
+  'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'
+const DEMO_POSTER =
+  'https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d?mw=1500&mh=844&q=70'
 
 const demoCards = [
-    {
-        firstTitle: "Lil pump 1",
-        secondTitle: "Zolla",
-        author: "Archangel Studios",
-        year: "2021",
-        poster: DEMO_POSTER,
-        video: {"mp4": DEMO_VIDEO}
-    },
-    {
-        firstTitle: "Lil pump 2",
-        secondTitle: "Zolla",
-        author: "Archangel Studios",
-        year: "2021",
-        poster: DEMO_POSTER,
-        video: {"mp4": DEMO_VIDEO}
-    },
-    {
-        firstTitle: "Lil pump 3",
-        secondTitle: "Zolla",
-        author: "Archangel Studios",
-        year: "2021",
-        poster: DEMO_POSTER,
-        video: {"mp4": DEMO_VIDEO}
-    },
-    {
-        firstTitle: "Lil pump 4",
-        secondTitle: "Zolla",
-        author: "Archangel Studios",
-        year: "2021",
-        poster: DEMO_POSTER,
-        video: {"mp4": DEMO_VIDEO}
-    },
+  {
+    firstTitle: 'Lil pump 1',
+    secondTitle: 'Zolla',
+    author: 'Archangel Studios',
+    year: '2021',
+    preview: DEMO_POSTER,
+    video: { mp4: DEMO_VIDEO },
+  },
+  {
+    firstTitle: 'Lil pump 2',
+    secondTitle: 'Zolla',
+    author: 'Archangel Studios',
+    year: '2021',
+    preview: DEMO_POSTER,
+    video: { mp4: DEMO_VIDEO },
+  },
+  {
+    firstTitle: 'Lil pump 3',
+    secondTitle: 'Zolla',
+    author: 'Archangel Studios',
+    year: '2021',
+    preview: DEMO_POSTER,
+    video: { mp4: DEMO_VIDEO },
+  },
+  {
+    firstTitle: 'Lil pump 4',
+    secondTitle: 'Zolla',
+    author: 'Archangel Studios',
+    year: '2021',
+    preview: DEMO_POSTER,
+    video: { mp4: DEMO_VIDEO },
+  },
 ]
 
 export const DetailCardModal = ({ isOpen, setOpen, modalId }) => (
@@ -84,8 +89,8 @@ export const DetailCardModal = ({ isOpen, setOpen, modalId }) => (
             </TextCol>
           </TextRow>
           <ProfileLinks>
-            <Link href={"https://www.instagram.com/"}>
-              <Caption color="white" style={{ cursor: "pointer" }}>
+            <Link href={'https://www.instagram.com/'}>
+              <Caption color="white" style={{ cursor: 'pointer' }}>
                 Instagram
               </Caption>
             </Link>
@@ -96,9 +101,9 @@ export const DetailCardModal = ({ isOpen, setOpen, modalId }) => (
     </Wrapper>
     <WorksCards title="Miranda Bell’s cases" cards={demoCards} />
   </ModalWrapper>
-);
+)
 
 DetailCardModal.propTypes = {
-    isOpen: PropTypes.bool.isRequired,
-    setOpen: PropTypes.func.isRequired
+  isOpen: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
 }
