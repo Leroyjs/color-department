@@ -14,7 +14,7 @@ export const VideoPlayer = () => {
             dnt: true,
             keyboard: true,
             responsive: true,
-            title: false
+            title: false,
         });
         player.on('play', () => {
             setPlay(true);
