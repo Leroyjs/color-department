@@ -5,6 +5,7 @@ export const VideoContainer = styled.video`
   display: block;
   object-fit: cover;
   position: absolute;
+  pointer-events: auto;
   top: 0;
   bottom: 0;
   left: 0;

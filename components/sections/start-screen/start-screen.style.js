@@ -5,15 +5,18 @@ import styled from "@emotion/styled";
 export const StartScreenWrapper = styled.div`
   height: 100vh;
   height: calc(var(--fsvh, 1vh) * 100);
+  pointer-events: none;
 `
 
 export const FlexLayerWrapper = styled.div`
     position: fixed;
     z-index: -1;
     width: 100%;
+    pointer-events: none;
 `
 
 export const ContentWrapper = styled.div`
+    pointer-events: none;
     position: relative;
     padding-top: ${sizes["desktopLG"].half};
     @media screen and (max-width: ${breakpointsWidth.tabletLG}){
