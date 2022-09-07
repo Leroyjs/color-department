@@ -11,12 +11,11 @@ import {
 } from "./popover-list.style";
 
 export const PopoverListItem = ({
-  modalId,
-  startLabel,
-  endLabel,
-  img,
+  id: modalId,
+  name: startLabel,
+  position: endLabel,
+  photo: img,
   onClick,
-  isAboutImg = false,
   ...props
 }) => {
   const popOverRef = useRef();
@@ -69,7 +68,7 @@ export const PopoverListItem = ({
       onClick={() => onClick?.(modalId)}
       {...props}
     >
-      <AboutPhoneImg src={img} isAboutImg={isAboutImg} />
+      <AboutPhoneImg src={img} />
       <FlexControl>
         <LabelStart>{startLabel}</LabelStart>
         <LabelEnd>{endLabel}</LabelEnd>
