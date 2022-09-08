@@ -1,18 +1,22 @@
-import styled from "@emotion/styled";
-import { H2, Caption } from "components";
+import { Caption, H2 } from "components";
 import {
-    applyMargins,
-    applyPaddings,
-    colors,
-    fontFamilies,
-    getCurrentBackgroundColorStyles,
-    getCurrentColorStyles,
-    getCurrentFontSizeStyle,
-    hexToRGBA,
-    breakpointsWidth,
-    getCurrentMarginStyle,
-    getCurrentPaddingStyle, getCurrentColor, getVW, zindex,
+  applyMargins,
+  applyPaddings,
+  breakpointsWidth,
+  colors,
+  fontFamilies,
+  getCurrentBackgroundColorStyles,
+  getCurrentColor,
+  getCurrentColorStyles,
+  getCurrentFontSizeStyle,
+  getCurrentMarginStyle,
+  getCurrentPaddingStyle,
+  getVW,
+  hexToRGBA,
+  zindex,
 } from "styles";
+
+import styled from "@emotion/styled";
 
 export const AwardsContainer = styled.div`
   display: block;
@@ -109,10 +113,10 @@ export const PopOver = styled.div`
   &.isShow {
     height: 400px;
   }
-  
+
   ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)};
 
-  @media screen and (min-width: ${breakpointsWidth.desktopLG}){
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     width: ${getVW(400)};
 
     &.isShow {
@@ -152,7 +156,7 @@ export const Item = styled.li`
   height: 100px;
   ${getCurrentPaddingStyle("horizontal", "md")};
   ${getCurrentPaddingStyle("vertical", "md1")};
-  cursor: ${({isPointer})=> isPointer ? 'pointer' : 'default'};
+  cursor: ${({ isPointer }) => (isPointer ? "pointer" : "default")};
   transition: background-color 0.3s, border-top-color 0.3s;
   display: flex;
   align-items: center;
@@ -161,6 +165,7 @@ export const Item = styled.li`
   border-top: 1px solid ${hexToRGBA(colors.white, 0.2)};
 
   ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
+
   &:hover {
     @media screen and (min-width: ${breakpointsWidth.tabletSM}){
       ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)}
@@ -180,11 +185,11 @@ export const Item = styled.li`
     border-bottom: 1px solid ${hexToRGBA(colors.white, 0.2)};
   }
 
-  @media screen and (min-width: ${breakpointsWidth.desktopLG}){
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     height: ${getVW(100)};
     border-width: ${getVW(1)};
 
-    &:last-child{
+    &:last-child {
       border-width: ${getVW(1)};
     }
   }
@@ -209,7 +214,7 @@ export const PopOverImg = styled.img`
   border: none;
   box-shadow: none;
 
-  @media screen and (min-width: ${breakpointsWidth.desktopLG}){
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     width: ${getVW(400)};
     height: ${getVW(400)};
   }
