@@ -17,7 +17,6 @@ const MainComponent = styled.main`
 `
 
 const DetailCardPage = ({ title, year, client, colourist, director, dop, photos }) => {
-
   return (
     <>
       <Header />

@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import { propTypesVideoBg } from '../../types'
-import { VideoContainer } from './video.style'
+import { VideoContainer, VideoStyle } from './video.style'
 
 // eslint-disable-next-line react/display-name
 export const VideoBackground = forwardRef(
@@ -28,4 +28,24 @@ export const VideoBackground = forwardRef(
 
 VideoBackground.propTypes = {
   ...propTypesVideoBg,
+}
+
+export function EmbedVideo(props) {
+  return (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: `
+        <video
+          loop
+          muted
+          autoplay
+          playsinline
+          class="${VideoStyle}"
+        >
+         <source src="https://drive.google.com/uc?id=1bUpQserRqEPb72Yqt-jawGHj1-LB4amq" type="video/mp4"/>
+</video>
+      `,
+      }}
+    ></div>
+  )
 }

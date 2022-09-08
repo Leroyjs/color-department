@@ -13,8 +13,8 @@ import { keyframes } from "@emotion/css";
 import styled from "@emotion/styled";
 
 const scrollAnimation = keyframes`
-    from { transform: translateX(0);}
-    to { transform: translateX(-50%); }
+    from { transform: translateX(0) translateZ(0);}
+    to { transform: translateX(-50%) translateZ(0); }
 `;
 
 const ScrollContentDinamicStyle = ({ outline }) => {
@@ -96,7 +96,12 @@ export const RunningLineWrapper = styled.div`
   ${({ link }) => (link ? "cursor: pointer" : "")};
   & > *:nth-of-type(1) {
     animation: ${scrollAnimation} 30s linear infinite;
+
+    @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+      animation: ${scrollAnimation} 50s linear infinite;
+    }
   }
+
   :hover {
     h1 span {
       color: ${({ theme }) => getCurrentColor("primary", theme)};

@@ -26,38 +26,50 @@ const DEMO_POSTER =
 
 const demoCards = [
   {
-    firstTitle: 'Lil pump 1',
-    secondTitle: 'Zolla',
-    author: 'Archangel Studios',
-    year: '2021',
-    preview: DEMO_POSTER,
-    video: { mp4: DEMO_VIDEO },
+    firstTitle: "Lil pump 1",
+    secondTitle: "Zolla",
+    author: "Archangel Studios",
+    year: "2021",
+    poster:
+      "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
+    video: {
+      mp4: "https://drive.google.com/uc?id=1iSNLWmHI7aB72zl53b6LKrz60SJQJ4k1"
+    },
   },
   {
-    firstTitle: 'Lil pump 2',
-    secondTitle: 'Zolla',
-    author: 'Archangel Studios',
-    year: '2021',
-    preview: DEMO_POSTER,
-    video: { mp4: DEMO_VIDEO },
+    firstTitle: "Lil pump 2",
+    secondTitle: "Zolla",
+    author: "Archangel Studios",
+    year: "2021",
+    poster:
+      "https://i.vimeocdn.com/video/969956438-651eaae49450178bd03a0a1a7a19d5daf29ee7e56c410f9507e95e04117952ff-d",
+    video: {
+      mp4: "https://drive.google.com/uc?id=1Xdyt6G1AU-2Ef-Nas0HcsOxd3Lt6keqO",
+    },
   },
   {
-    firstTitle: 'Lil pump 3',
-    secondTitle: 'Zolla',
-    author: 'Archangel Studios',
-    year: '2021',
-    preview: DEMO_POSTER,
-    video: { mp4: DEMO_VIDEO },
+    firstTitle: "Lil pump 3",
+    secondTitle: "Zolla",
+    author: "Archangel Studios",
+    year: "2021",
+    poster:
+      "https://i.vimeocdn.com/video/1104167332-6b4e20f12306d88f5a65f940acd631da3d03163d57f77fd2052b4ae260f09cb5-d",
+    video: {
+      mp4: "https://drive.google.com/uc?id=1AfYOdwOXA8kq9aS3SerSV2zDam_xQiyf",
+    },
   },
   {
-    firstTitle: 'Lil pump 4',
-    secondTitle: 'Zolla',
-    author: 'Archangel Studios',
-    year: '2021',
-    preview: DEMO_POSTER,
-    video: { mp4: DEMO_VIDEO },
+    firstTitle: "Lil pump 4",
+    secondTitle: "Zolla",
+    author: "Archangel Studios",
+    year: "2021",
+    poster:
+      "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
+    video: {
+      mp4: "https://drive.google.com/uc?id=1cZrJhilm5Zn8DXCurTSM7X2ObEvfhaoK",
+    },
   },
-]
+];
 
 export const DetailCardModal = ({ isOpen, setOpen, modalId }) => (
   <ModalWrapper isOpen={isOpen} setOpen={setOpen}>

@@ -16,6 +16,15 @@ export async function getContent(params = '', props = {}) {
   }
 }
 
+export function getDimensions(dimensions) {
+  return (
+    dimensions?.map((size) => ({
+      label: size,
+      value: size,
+    })) || []
+  )
+}
+
 export function getCasesPreviews(data = []) {
   return data?.map(({ preview }) => preview || '') || []
 }
@@ -47,6 +56,16 @@ export function getSlides(projects) {
       client: credentials.client,
       colourist: credentials.colorist,
       video: short_video,
+    }
+  })
+}
+
+export function getAwards(awards) {
+  return awards.map(({ label, icon, project }) => {
+    return {
+      name: label,
+      position: project,
+      photo: icon,
     }
   })
 }

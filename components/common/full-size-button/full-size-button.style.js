@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
-import { getCurrentPaddingStyle,sizes, getVW, breakpointsWidth} from "styles";
+import { breakpointsWidth, getVW, sizes, getCurrentColor } from "styles";
+
 
 export const FullSizeButtonWrapper = styled.div`
     position: absolute;
@@ -8,7 +9,17 @@ export const FullSizeButtonWrapper = styled.div`
     justify-content: center;
     align-items: center;
     height: ${sizes['desktopLG'].half};
-    cursor: pointer;
+    svg {
+        cursor: pointer;
+        & > * {
+            transition: stroke 0.3s;
+        }
+        &:hover {
+            & > * {
+            stroke: ${({ theme }) => getCurrentColor("primary", theme)};  
+            }
+        }
+    }
     @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
         svg {
             width: ${getVW(26)};
