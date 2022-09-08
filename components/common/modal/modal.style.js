@@ -11,12 +11,18 @@ export const ModalWrapper = styled.div`
   height: 0;
   overflow: scroll;
   visibility: hidden;
-  padding-top: ${sizes["desktopLG"].half};
-  @media screen and (max-width: ${breakpointsWidth.tabletLG}){
-    padding-top: ${sizes["tabletLG"].thirdX2};
+  padding-top: calc(${sizes["desktopLG"].half} - 0.1vw);
+  z-index: 100;
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    padding-top: calc(${sizes["tabletLG"].thirdX2} - 0.15vw);
   }
-  @media screen and (max-width: ${breakpointsWidth.phone}){
-    padding-top: ${sizes["tabletLG"].x1};
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    padding-top: calc(${sizes["tabletLG"].x1} - 0.2vw);
   }
-  ${({ isOpen }) => isOpen && "height: calc(100vh);height: calc(var(--fsvh, 1vh) * 100);visibility:visible;"}
+  @media screen and (max-width: 360px) {
+    padding-top: calc(${sizes["tabletLG"].x1} - 0.30vw);
+  }
+  ${({ isOpen }) =>
+    isOpen &&
+    "height: calc(100vh);height: calc(var(--fsvh, 1vh) * 100);visibility:visible;"}
 `;
