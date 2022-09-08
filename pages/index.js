@@ -42,31 +42,31 @@ const awardsItems = [
 ];
 const mockPartners = [
   {
-    logo: "https://svgshare.com/i/mCU.svg",
+    logo: "/20-century.png",
     label: "century",
   },
   {
-    logo: "https://svgshare.com/i/mBj.svg",
+    logo: "/apple.png",
     label: "apple",
   },
   {
-    logo: "https://svgshare.com/i/m9Y.svg",
+    logo: "/dream-works.png",
     label: "dream-works",
   },
   {
-    logo: "https://svgshare.com/i/mCJ.svg",
+    logo: "/netflix.png",
     label: "netflix",
   },
   {
-    logo: "https://svgshare.com/i/mCw.svg",
+    logo: "/pizza-hunt.png",
     label: "pizza-hunt",
   },
   {
-    logo: "https://svgshare.com/i/m9Y.svg",
+    logo: "/uniqlo.png",
     label: "uniqlo",
   },
   {
-    logo: "https://svgshare.com/i/mC4.svg",
+    logo: "/zara.png",
     label: "zara",
   },
 ];
@@ -77,9 +77,7 @@ const slides = [
       "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
     client: "Archangel Studios",
     colourist: "Archangel Studios",
-    video: {
-      mp4: DEMO_VIDEO,
-    },
+    video: "/BG_reel_temp1.mp4",
   },
   {
     title: "Lil pump",
@@ -87,9 +85,7 @@ const slides = [
       "https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d",
     client: "JACK MCGINITY",
     colourist: "JACK MCGINITY",
-    video: {
-      mp4: DEMO_VIDEO,
-    },
+    video: "/BG_reel_temp3.mp4",
   },
   {
     title: "Balkan line",
@@ -97,9 +93,7 @@ const slides = [
       "https://i.vimeocdn.com/video/969956438-651eaae49450178bd03a0a1a7a19d5daf29ee7e56c410f9507e95e04117952ff-d",
     client: "ANDRIC WATSON",
     colourist: "ANDRIC WATSON",
-    video: {
-      mp4: DEMO_VIDEO,
-    },
+    video: "/BG_reel_temp4.mp4",
   },
   {
     title: "Paranormal drive",
@@ -107,9 +101,7 @@ const slides = [
       "https://i.vimeocdn.com/video/1104167332-6b4e20f12306d88f5a65f940acd631da3d03163d57f77fd2052b4ae260f09cb5-d",
     client: "Find out more",
     colourist: "Find out more",
-    video: {
-      mp4: DEMO_VIDEO,
-    },
+    video: "/BG_reel_temp5.mp4",
   },
 
   {
@@ -118,9 +110,7 @@ const slides = [
       "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
     client: "vimeocdn",
     colourist: "vimeocdn",
-    video: {
-      mp4: DEMO_VIDEO,
-    },
+    video: "/BG_reel_temp6.mp4",
   },
   {
     title: "In the hood",
@@ -128,9 +118,7 @@ const slides = [
       "https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d",
     client: "El corte ingles",
     colourist: "El corte ingles",
-    video: {
-      mp4: DEMO_VIDEO,
-    },
+    video: "/BG_reel_temp6.mp4",
   },
   {
     title: "projects",
@@ -138,41 +126,39 @@ const slides = [
       "https://i.vimeocdn.com/video/969956438-651eaae49450178bd03a0a1a7a19d5daf29ee7e56c410f9507e95e04117952ff-d",
     client: "Studios",
     colourist: "Studios",
-    video: {
-      mp4: DEMO_VIDEO,
-    },
+    video: "/BG_reel_temp7.mp4",
   },
-  {
-    title: "All categories",
-    poster:
-      "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
-    client: "Archangel",
-    colourist: "Archangel",
-    video: {
-      mp4: DEMO_VIDEO,
-    },
-  },
-  {
-    title: "All genres",
-    poster:
-      "https://i.vimeocdn.com/video/1104167332-6b4e20f12306d88f5a65f940acd631da3d03163d57f77fd2052b4ae260f09cb5-d",
-    client: "Balkan line",
-    colourist: "Balkan line",
-    video: {
-      mp4: DEMO_VIDEO,
-    },
-  },
+  // {
+  //   title: "All categories",
+  //   poster:
+  //     "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
+  //   client: "Archangel",
+  //   colourist: "Archangel",
+  //   video: {
+  //     mp4: DEMO_VIDEO,
+  //   },
+  // },
+  // {
+  //   title: "All genres",
+  //   poster:
+  //     "https://i.vimeocdn.com/video/1104167332-6b4e20f12306d88f5a65f940acd631da3d03163d57f77fd2052b4ae260f09cb5-d",
+  //   client: "Balkan line",
+  //   colourist: "Balkan line",
+  //   video: {
+  //     mp4: DEMO_VIDEO,
+  //   },
+  // },
 
-  {
-    title: "Select corourist",
-    poster:
-      "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
-    client: "JACK MCGINITY  KEY ERR",
-    colourist: "JACK MCGINITY  KEY ERR",
-    video: {
-      mp4: DEMO_VIDEO,
-    },
-  },
+  // {
+  //   title: "Select corourist",
+  //   poster:
+  //     "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
+  //   client: "JACK MCGINITY  KEY ERR",
+  //   colourist: "JACK MCGINITY  KEY ERR",
+  //   video: {
+  //     mp4: DEMO_VIDEO,
+  //   },
+  // },
 ];
 
 const Home = () => {
