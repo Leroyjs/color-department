@@ -19,25 +19,25 @@ const awardsItems = [
     href: "/",
     startLabel: "D&AD",
     endLabel: "Balkan line",
-    img: "https://www.fillmurray.com/400/400",
+    img: "/award-2.svg",
   },
   {
     href: "/",
     startLabel: "CANNES LIONS",
     endLabel: "El corte ingles",
-    img: "https://placebeard.it/400/400",
+    img: "/award-2.svg",
   },
   {
     href: "/",
     startLabel: "WEBBY",
     endLabel: "Zolla",
-    img: "https://www.placecage.com/400/400",
+    img: "/award-2.svg",
   },
   {
     href: "/",
     startLabel: "ONE SHOW",
     endLabel: "Lil pump",
-    img: "https://www.stevensegallery.com/400/400",
+    img: "/award-2.svg",
   },
 ];
 const mockPartners = [
