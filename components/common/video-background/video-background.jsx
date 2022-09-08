@@ -20,8 +20,9 @@ VideoBackground.propTypes = {
 
 export function EmbedVideo(props) {
     return (
-        <div dangerouslySetInnerHTML={{
-            __html: `
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `
         <video
           loop
           muted
@@ -29,9 +30,10 @@ export function EmbedVideo(props) {
           playsinline
           class="${VideoStyle}"
         >
-         <source src="https://drive.google.com/uc?id=1c5tNBRmdudEUmxRWSIy7WpgAARacIRlP" type="video/mp4"/>
+         <source src="https://drive.google.com/uc?id=1bUpQserRqEPb72Yqt-jawGHj1-LB4amq" type="video/mp4"/>
 </video>
-      `
-        }}></div>
-    )
+      `,
+        }}
+      ></div>
+    );
 }
