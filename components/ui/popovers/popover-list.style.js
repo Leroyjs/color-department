@@ -1,18 +1,23 @@
 import styled from "@emotion/styled";
-import { H2, Caption } from "components";
+import { Caption, H2 } from 'components'
 import {
-    applyMargins,
-    applyPaddings,
-    colors,
-    fontFamilies,
-    getCurrentBackgroundColorStyles,
-    getCurrentColorStyles,
-    getCurrentFontSizeStyle,
-    hexToRGBA,
-    breakpointsWidth,
-    getCurrentMarginStyle,
-    getCurrentPaddingStyle, getCurrentColor, getVW, zindex,
-} from "styles";
+  applyMargins,
+  applyPaddings,
+  breakpointsWidth,
+  colors,
+  fontFamilies,
+  getCurrentBackgroundColorStyles,
+  getCurrentColor,
+  getCurrentColorStyles,
+  getCurrentFontSizeStyle,
+  getCurrentMarginStyle,
+  getCurrentPaddingStyle,
+  getVW,
+  hexToRGBA,
+  zindex,
+} from 'styles'
+
+import { ImageBox } from '../../common'
 
 export const AwardsContainer = styled.div`
   display: block;
@@ -20,7 +25,7 @@ export const AwardsContainer = styled.div`
 
   ${applyMargins}
   ${applyPaddings}
-`;
+`
 
 export const AwardsTitle = styled(H2)`
   display: inline-block;
@@ -36,7 +41,7 @@ export const AwardsTitle = styled(H2)`
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     margin-bottom: 32px;
   }
-`;
+`
 
 export const AwardsSubTitle = styled(Caption)`
   display: inline-block;
@@ -45,7 +50,7 @@ export const AwardsSubTitle = styled(Caption)`
 
   /* ${applyMargins}
   ${applyPaddings} */
-`;
+`
 
 export const ListStyled = styled.ul`
   display: block;
@@ -53,10 +58,10 @@ export const ListStyled = styled.ul`
 
   ${applyMargins}
   ${applyPaddings}
-`;
+`
 
 export const LabelStart = styled.span`
-  ${({ theme }) => getCurrentColorStyles("white", theme)}
+  ${({ theme }) => getCurrentColorStyles('white', theme)}
 
   pointer-events: none;
   font-family: ${fontFamilies.mainFont};
@@ -65,9 +70,9 @@ export const LabelStart = styled.span`
   display: inline-block;
   line-height: 100%;
   text-transform: uppercase;
-  ${getCurrentFontSizeStyle("h3")};
+  ${getCurrentFontSizeStyle('h3')};
   transition: color 0.3s;
-`;
+`
 
 export const FlexControl = styled.span`
   display: flex;
@@ -75,7 +80,7 @@ export const FlexControl = styled.span`
   justify-content: space-between;
   width: 100%;
   pointer-events: none;
-`;
+`
 
 export const LabelEnd = styled.span`
   color: ${hexToRGBA(colors.white, 0.2)};
@@ -87,9 +92,9 @@ export const LabelEnd = styled.span`
   display: inline-block;
   line-height: 100%;
   text-transform: uppercase;
-  ${getCurrentFontSizeStyle("h3")};
+  ${getCurrentFontSizeStyle('h3')};
   transition: color 0.3s;
-`;
+`
 
 export const PopOver = styled.div`
   pointer-events: none;
@@ -109,10 +114,10 @@ export const PopOver = styled.div`
   &.isShow {
     height: 400px;
   }
-  
-  ${({ theme }) => getCurrentBackgroundColorStyles("white", theme)};
 
-  @media screen and (min-width: ${breakpointsWidth.desktopLG}){
+  ${({ theme }) => getCurrentBackgroundColorStyles('white', theme)};
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     width: ${getVW(400)};
 
     &.isShow {
@@ -123,7 +128,7 @@ export const PopOver = styled.div`
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     display: none;
   }
-`;
+`
 
 export const AboutPhoneImg = styled.img`
   display: none;
@@ -135,7 +140,7 @@ export const AboutPhoneImg = styled.img`
     width: 64px;
     min-width: 64px;
     height: 64px;
-    ${getCurrentMarginStyle("right", "md")};
+    ${getCurrentMarginStyle('right', 'md')};
     border-radius: 50%;
   }
 
@@ -144,15 +149,15 @@ export const AboutPhoneImg = styled.img`
     min-width: 48px;
     height: 48px;
   }
-`;
+`
 
 export const Item = styled.li`
   position: relative;
   width: 100%;
   height: 100px;
-  ${getCurrentPaddingStyle("horizontal", "md")};
-  ${getCurrentPaddingStyle("vertical", "md1")};
-  cursor: ${({isPointer})=> isPointer ? 'pointer' : 'default'};
+  ${getCurrentPaddingStyle('horizontal', 'md')};
+  ${getCurrentPaddingStyle('vertical', 'md1')};
+  cursor: ${({ isPointer }) => (isPointer ? 'pointer' : 'default')};
   transition: background-color 0.3s, border-top-color 0.3s;
   display: flex;
   align-items: center;
@@ -160,19 +165,20 @@ export const Item = styled.li`
 
   border-top: 1px solid ${hexToRGBA(colors.white, 0.2)};
 
-  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)}
+  ${({ theme }) => getCurrentBackgroundColorStyles('black', theme)}
+
   &:hover {
-    @media screen and (min-width: ${breakpointsWidth.tabletSM}){
-      ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)}
-      border-top-color: ${({ theme }) => getCurrentColor("primary", theme)};
+    @media screen and (min-width: ${breakpointsWidth.tabletSM}) {
+      ${({ theme }) => getCurrentBackgroundColorStyles('primary', theme)}
+      border-top-color: ${({ theme }) => getCurrentColor('primary', theme)};
 
       span:first-of-type {
-        ${({ theme }) => getCurrentColorStyles("black", theme)}
+        ${({ theme }) => getCurrentColorStyles('black', theme)}
       }
 
       span:last-of-type {
-        ${({ theme }) => getCurrentColorStyles("white", theme)}
-      } 
+        ${({ theme }) => getCurrentColorStyles('white', theme)}
+      }
     }
   }
 
@@ -180,11 +186,11 @@ export const Item = styled.li`
     border-bottom: 1px solid ${hexToRGBA(colors.white, 0.2)};
   }
 
-  @media screen and (min-width: ${breakpointsWidth.desktopLG}){
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     height: ${getVW(100)};
     border-width: ${getVW(1)};
 
-    &:last-child{
+    &:last-child {
       border-width: ${getVW(1)};
     }
   }
@@ -197,9 +203,9 @@ export const Item = styled.li`
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     height: 64px;
   }
-`;
+`
 
-export const PopOverImg = styled.img`
+export const PopOverImg = styled(ImageBox)`
   pointer-events: none;
   width: 400px;
   height: 400px;
@@ -209,8 +215,8 @@ export const PopOverImg = styled.img`
   border: none;
   box-shadow: none;
 
-  @media screen and (min-width: ${breakpointsWidth.desktopLG}){
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     width: ${getVW(400)};
     height: ${getVW(400)};
   }
-`;
+`

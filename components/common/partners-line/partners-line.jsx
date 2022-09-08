@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { PropTypes } from 'prop-types'
 import { initStepCounter } from './utils'
+import { ImageBox } from 'components'
 import {
   PartnersItem,
   PartnersLineSlider,
@@ -18,7 +19,7 @@ export const PartnersLine = ({ partners = [] }) => {
       <PartnersLineSlider step={step}>
         {pictureArray.map(({ icon, label }, indx) => (
           <PartnersItem key={label + indx}>
-            <img src={icon} alt={label} />
+            <ImageBox src={icon} alt={label} />
           </PartnersItem>
         ))}
       </PartnersLineSlider>
