@@ -96,7 +96,12 @@ export const RunningLineWrapper = styled.div`
   ${({ link }) => (link ? "cursor: pointer" : "")};
   & > *:nth-of-type(1) {
     animation: ${scrollAnimation} 30s linear infinite;
+
+    @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+      animation: ${scrollAnimation} 50s linear infinite;
+    }
   }
+
   :hover {
     h1 span {
       color: ${({ theme }) => getCurrentColor("primary", theme)};
