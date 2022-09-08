@@ -1,15 +1,9 @@
-import React from 'react'
-import {
-  DetailTitle,
-  Slider,
-  Footer,
-  Stakeholders,
-  VideoPlayer,
-  Header,
-} from 'components'
 import styled from '@emotion/styled'
-import { sizes, breakpointsWidth } from 'styles'
-import { useRouter } from 'next/router'
+import {
+  DetailTitle, Footer, Header, Slider, Stakeholders,
+  VideoPlayer
+} from 'components'
+import { breakpointsWidth, sizes } from 'styles'
 import { getContent } from '../../utils'
 
 const MainComponent = styled.main`
@@ -22,23 +16,20 @@ const MainComponent = styled.main`
   }
 `
 
-const DetailCardPage = ({data}) => {
-  const router = useRouter()
-  const { id } = router.query
-
+const DetailCardPage = ({ title, year, client, colourist, director, dop, photos }) => {
   return (
     <>
       <Header />
       <MainComponent>
-        <DetailTitle title="Balkan line" year="2021" py="lg" />
-        <Slider slides={data} isSimpleMode />
+        <DetailTitle title={title} year={year} py="lg" />
+        <Slider slides={photos} isSimpleMode />
         <Stakeholders
           mt="md"
           mb="xlg"
-          client="Archangel Studios"
-          colourist="JACK MCGINITY"
-          director="OZZIE PULLIN"
-          dop="ANDRIC WATSON"
+          client={client}
+          colourist={colourist}
+          director={director}
+          dop={dop}
         />
         <VideoPlayer />
       </MainComponent>
@@ -50,14 +41,30 @@ const DetailCardPage = ({data}) => {
 export default DetailCardPage
 
 export async function getServerSideProps(context) {
-  let data = null
+  const detailViewModel = {
+    title: '',
+    year: '',
+    client: '',
+    colourist: '',
+    director: '',
+    dop: '',
+    photos: []
+  }
   try {
-    data = (await getContent(`projects/${context.params.id}`)) || {}
+    const data = (await getContent(`projects/${context.params.id}`)) || {}
+    detailViewModel.title = detailViewModel.title || data.title;
+    detailViewModel.year = detailViewModel.year || data.year;
+    detailViewModel.client = detailViewModel.client || data.credentials?.client;
+    detailViewModel.colourist = detailViewModel.colourist || data.credentials?.colorist;
+    detailViewModel.director = detailViewModel.director || data.credentials?.director;
+    detailViewModel.dop = detailViewModel.dop || data.credentials?.other;
+    detailViewModel.photos = detailViewModel.photos || data.photos;
+
   } catch (e) {
-    data = {}
+
   }
 
   return {
-    props: { data },
+    props: { ...detailViewModel },
   }
 }
