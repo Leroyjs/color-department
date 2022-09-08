@@ -24,6 +24,8 @@ export const ShopItem = ({ cost, img, title, ...props }) => {
           height={240}
           objectFit="cover"
           objectPosition="center"
+          placeholder="blur"
+          blurDataURL={img}
           src={img}
         />
       </ProductImage>
