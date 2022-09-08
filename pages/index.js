@@ -42,31 +42,31 @@ const awardsItems = [
 ];
 const mockPartners = [
   {
-    logo: "https://svgshare.com/i/mCU.svg",
+    logo: "/20-century.png",
     label: "century",
   },
   {
-    logo: "https://svgshare.com/i/mBj.svg",
+    logo: "/apple.png",
     label: "apple",
   },
   {
-    logo: "https://svgshare.com/i/m9Y.svg",
+    logo: "/dream-works.png",
     label: "dream-works",
   },
   {
-    logo: "https://svgshare.com/i/mCJ.svg",
+    logo: "/netflix.png",
     label: "netflix",
   },
   {
-    logo: "https://svgshare.com/i/mCw.svg",
+    logo: "/pizza-hunt.png",
     label: "pizza-hunt",
   },
   {
-    logo: "https://svgshare.com/i/m9Y.svg",
+    logo: "/uniqlo.png",
     label: "uniqlo",
   },
   {
-    logo: "https://svgshare.com/i/mC4.svg",
+    logo: "/zara.png",
     label: "zara",
   },
 ];
@@ -78,7 +78,7 @@ const slides = [
     client: "Archangel Studios",
     colourist: "Archangel Studios",
     video: {
-      mp4: DEMO_VIDEO,
+      mp4: "https://drive.google.com/uc?id=1sSJQF1aWaEs384M8ni4G7KpqLtqPx4za",
     },
   },
   {
@@ -88,7 +88,7 @@ const slides = [
     client: "JACK MCGINITY",
     colourist: "JACK MCGINITY",
     video: {
-      mp4: DEMO_VIDEO,
+      mp4: "https://drive.google.com/uc?id=1iSNLWmHI7aB72zl53b6LKrz60SJQJ4k1",
     },
   },
   {
@@ -98,7 +98,7 @@ const slides = [
     client: "ANDRIC WATSON",
     colourist: "ANDRIC WATSON",
     video: {
-      mp4: DEMO_VIDEO,
+      mp4: "https://drive.google.com/uc?id=1Xdyt6G1AU-2Ef-Nas0HcsOxd3Lt6keqO",
     },
   },
   {
@@ -108,7 +108,7 @@ const slides = [
     client: "Find out more",
     colourist: "Find out more",
     video: {
-      mp4: DEMO_VIDEO,
+      mp4: "https://drive.google.com/uc?id=1AfYOdwOXA8kq9aS3SerSV2zDam_xQiyf",
     },
   },
 
@@ -119,7 +119,7 @@ const slides = [
     client: "vimeocdn",
     colourist: "vimeocdn",
     video: {
-      mp4: DEMO_VIDEO,
+      mp4: "https://drive.google.com/uc?id=1cZrJhilm5Zn8DXCurTSM7X2ObEvfhaoK",
     },
   },
   {
@@ -129,7 +129,7 @@ const slides = [
     client: "El corte ingles",
     colourist: "El corte ingles",
     video: {
-      mp4: DEMO_VIDEO,
+      mp4: "https://drive.google.com/uc?id=1XPHq3zPl6i2BTF1ot0yjPORM-uow8qRv",
     },
   },
   {
@@ -139,40 +139,40 @@ const slides = [
     client: "Studios",
     colourist: "Studios",
     video: {
-      mp4: DEMO_VIDEO,
+      mp4: "https://drive.google.com/uc?id=1d0FEvvbsleJ0T2XCuu75raRDrH93LCpx",
     },
   },
-  {
-    title: "All categories",
-    poster:
-      "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
-    client: "Archangel",
-    colourist: "Archangel",
-    video: {
-      mp4: DEMO_VIDEO,
-    },
-  },
-  {
-    title: "All genres",
-    poster:
-      "https://i.vimeocdn.com/video/1104167332-6b4e20f12306d88f5a65f940acd631da3d03163d57f77fd2052b4ae260f09cb5-d",
-    client: "Balkan line",
-    colourist: "Balkan line",
-    video: {
-      mp4: DEMO_VIDEO,
-    },
-  },
+  // {
+  //   title: "All categories",
+  //   poster:
+  //     "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
+  //   client: "Archangel",
+  //   colourist: "Archangel",
+  //   video: {
+  //     mp4: DEMO_VIDEO,
+  //   },
+  // },
+  // {
+  //   title: "All genres",
+  //   poster:
+  //     "https://i.vimeocdn.com/video/1104167332-6b4e20f12306d88f5a65f940acd631da3d03163d57f77fd2052b4ae260f09cb5-d",
+  //   client: "Balkan line",
+  //   colourist: "Balkan line",
+  //   video: {
+  //     mp4: DEMO_VIDEO,
+  //   },
+  // },
 
-  {
-    title: "Select corourist",
-    poster:
-      "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
-    client: "JACK MCGINITY  KEY ERR",
-    colourist: "JACK MCGINITY  KEY ERR",
-    video: {
-      mp4: DEMO_VIDEO,
-    },
-  },
+  // {
+  //   title: "Select corourist",
+  //   poster:
+  //     "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
+  //   client: "JACK MCGINITY  KEY ERR",
+  //   colourist: "JACK MCGINITY  KEY ERR",
+  //   video: {
+  //     mp4: DEMO_VIDEO,
+  //   },
+  // },
 ];
 
 const Home = () => {
