@@ -77,7 +77,9 @@ const slides = [
       "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
     client: "Archangel Studios",
     colourist: "Archangel Studios",
-    video: "/BG_reel_temp1.mp4",
+    video: {
+      mp4: "https://drive.google.com/uc?id=1sSJQF1aWaEs384M8ni4G7KpqLtqPx4za",
+    },
   },
   {
     title: "Lil pump",
@@ -85,7 +87,9 @@ const slides = [
       "https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d",
     client: "JACK MCGINITY",
     colourist: "JACK MCGINITY",
-    video: "/BG_reel_temp3.mp4",
+    video: {
+      mp4: "https://drive.google.com/uc?id=1iSNLWmHI7aB72zl53b6LKrz60SJQJ4k1",
+    },
   },
   {
     title: "Balkan line",
@@ -93,7 +97,9 @@ const slides = [
       "https://i.vimeocdn.com/video/969956438-651eaae49450178bd03a0a1a7a19d5daf29ee7e56c410f9507e95e04117952ff-d",
     client: "ANDRIC WATSON",
     colourist: "ANDRIC WATSON",
-    video: "/BG_reel_temp4.mp4",
+    video: {
+      mp4: "https://drive.google.com/uc?id=1Xdyt6G1AU-2Ef-Nas0HcsOxd3Lt6keqO",
+    },
   },
   {
     title: "Paranormal drive",
@@ -101,7 +107,9 @@ const slides = [
       "https://i.vimeocdn.com/video/1104167332-6b4e20f12306d88f5a65f940acd631da3d03163d57f77fd2052b4ae260f09cb5-d",
     client: "Find out more",
     colourist: "Find out more",
-    video: "/BG_reel_temp5.mp4",
+    video: {
+      mp4: "https://drive.google.com/uc?id=1AfYOdwOXA8kq9aS3SerSV2zDam_xQiyf",
+    },
   },
 
   {
@@ -110,7 +118,9 @@ const slides = [
       "https://i.vimeocdn.com/video/847771530-2c68d26f433117c779d19c837bc9c01de91bcba607dd76978ad76f665e76b522-d",
     client: "vimeocdn",
     colourist: "vimeocdn",
-    video: "/BG_reel_temp6.mp4",
+    video: {
+      mp4: "https://drive.google.com/uc?id=1cZrJhilm5Zn8DXCurTSM7X2ObEvfhaoK",
+    },
   },
   {
     title: "In the hood",
@@ -118,7 +128,9 @@ const slides = [
       "https://i.vimeocdn.com/video/1098107786-66e16e6c38f322badf0757fb378d618222697e1e0a3fada0b993df076daea72f-d",
     client: "El corte ingles",
     colourist: "El corte ingles",
-    video: "/BG_reel_temp6.mp4",
+    video: {
+      mp4: "https://drive.google.com/uc?id=1XPHq3zPl6i2BTF1ot0yjPORM-uow8qRv",
+    },
   },
   {
     title: "projects",
@@ -126,7 +138,9 @@ const slides = [
       "https://i.vimeocdn.com/video/969956438-651eaae49450178bd03a0a1a7a19d5daf29ee7e56c410f9507e95e04117952ff-d",
     client: "Studios",
     colourist: "Studios",
-    video: "/BG_reel_temp7.mp4",
+    video: {
+      mp4: "https://drive.google.com/uc?id=1d0FEvvbsleJ0T2XCuu75raRDrH93LCpx",
+    },
   },
   // {
   //   title: "All categories",
