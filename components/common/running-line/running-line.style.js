@@ -13,8 +13,8 @@ import { keyframes } from "@emotion/css";
 import styled from "@emotion/styled";
 
 const scrollAnimation = keyframes`
-    from { transform: translateX(0);}
-    to { transform: translateX(-50%); }
+    from { transform: translateX(0) translateZ(0);}
+    to { transform: translateX(-50%) translateZ(0); }
 `;
 
 const ScrollContentDinamicStyle = ({ outline }) => {
