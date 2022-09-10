@@ -66,6 +66,7 @@ const SliderWithoutCursor = ({
               <SliderItem
                 key={slide.preview + index}
                 {...slide}
+                slideImg={typeof slide === 'string' ? slide : null}
                 isPlayed={currentSlide === index}
               />
             ))}

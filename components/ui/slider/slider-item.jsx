@@ -4,10 +4,11 @@ import { SlideWrapper } from './slider-item.style'
 import { propTypesVideoBg } from '../../types'
 import { PropTypes } from 'prop-types'
 
-export const SliderItem = ({ preview, video, isPlayed = false }) => {
+export const SliderItem = ({ preview, video, isPlayed = false, slideImg }) => {
   const videoRef = useRef()
 
   useEffect(() => {
+    if (Boolean(slideImg)) return
     if (isPlayed) {
       videoRef.current.play()
     } else {
@@ -17,7 +18,11 @@ export const SliderItem = ({ preview, video, isPlayed = false }) => {
 
   return (
     <SlideWrapper className="glide__slide right">
-      <VideoBackground preview={preview} video={video} ref={videoRef} />
+      {slideImg ? (
+        <img src={slideImg} alt={slideImg} />
+      ) : (
+        <VideoBackground preview={preview} video={video} ref={videoRef} />
+      )}
     </SlideWrapper>
   )
 }
