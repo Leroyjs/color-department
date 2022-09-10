@@ -20,7 +20,7 @@ export const WorksCard = ({
   year,
 }) => {
   const videoRef = useRef()
-
+  console.log(preview)
   return (
     <CardWrapper
       href={href}

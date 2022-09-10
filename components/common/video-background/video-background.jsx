@@ -13,7 +13,7 @@ export const VideoBackground = forwardRef(
         muted
         loop
         controls={false}
-        preview={preview}
+        poster={preview}
         {...props}
       >
         {video?.webm && <source src={video.webm} type="video/webm" />}

@@ -19,7 +19,7 @@ export const PartnersLine = ({ partners = [] }) => {
       <PartnersLineSlider step={step}>
         {pictureArray.map(({ icon, label }, indx) => (
           <PartnersItem key={label + indx}>
-            <ImageBox src={icon} alt={label} />
+            <ImageBox loader={({ src }) => src} src={icon} alt={label} />
           </PartnersItem>
         ))}
       </PartnersLineSlider>

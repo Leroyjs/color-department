@@ -12,7 +12,7 @@ export const ImageBox = ({
 }) => {
   return (
     <PictureWrapper className={className}>
-      <Image layout={layout} src={src} alt={alt} {...props} />
+      <Image layout={layout} alt={alt} {...props} src={src} />
     </PictureWrapper>
   )
 }

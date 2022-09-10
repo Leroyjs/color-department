@@ -1,7 +1,11 @@
 import styled from '@emotion/styled'
 import {
-  DetailTitle, Footer, Header, Slider, Stakeholders,
-  VideoPlayer
+  DetailTitle,
+  Footer,
+  Header,
+  Slider,
+  Stakeholders,
+  VideoPlayer,
 } from 'components'
 import { breakpointsWidth, sizes } from 'styles'
 import { getContent } from '../../utils'
@@ -16,8 +20,15 @@ const MainComponent = styled.main`
   }
 `
 
-const DetailCardPage = ({ title, year, client, colourist, director, dop, photos }) => {
-
+const DetailCardPage = ({
+  title,
+  year,
+  client,
+  colourist,
+  director,
+  dop,
+  photos,
+}) => {
   return (
     <>
       <Header />
@@ -49,21 +60,20 @@ export async function getServerSideProps(context) {
     colourist: '',
     director: '',
     dop: '',
-    photos: []
+    photos: [],
   }
   try {
     const data = (await getContent(`projects/${context.params.id}`)) || {}
-    detailViewModel.title = detailViewModel.title || data.title;
-    detailViewModel.year = detailViewModel.year || data.year;
-    detailViewModel.client = detailViewModel.client || data.credentials?.client;
-    detailViewModel.colourist = detailViewModel.colourist || data.credentials?.colorist;
-    detailViewModel.director = detailViewModel.director || data.credentials?.director;
-    detailViewModel.dop = detailViewModel.dop || data.credentials?.other;
-    detailViewModel.photos = detailViewModel.photos || data.photos;
-
-  } catch (e) {
-
-  }
+    detailViewModel.title = detailViewModel.title || data.title
+    detailViewModel.year = detailViewModel.year || data.year
+    detailViewModel.client = detailViewModel.client || data.credentials?.client
+    detailViewModel.colourist =
+      detailViewModel.colourist || data.credentials?.colorist
+    detailViewModel.director =
+      detailViewModel.director || data.credentials?.director
+    detailViewModel.dop = detailViewModel.dop || data.credentials?.other
+    detailViewModel.photos = data.photos || []
+  } catch (e) {}
 
   return {
     props: { ...detailViewModel },
