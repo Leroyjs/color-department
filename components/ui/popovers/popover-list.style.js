@@ -214,6 +214,11 @@ export const PopOverImg = styled(ImageBox)`
   overflow: hidden;
   border: none;
   box-shadow: none;
+  
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     width: ${getVW(400)};

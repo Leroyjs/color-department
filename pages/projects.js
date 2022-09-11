@@ -7,7 +7,7 @@ import {
     RunningLineLink,
 } from "components";
 import {colors} from "styles";
-import {getCasesPreviews, getContent, getsColourists} from "../utils";
+import {getCasesPreviews, getContent, getOptionsByLabels} from "../utils";
 
 const Projects = ({data, casesPreviews, projects = [], categories = [], genres = [], colourists = []}) => {
     return (
@@ -35,7 +35,7 @@ export async function getServerSideProps(context) {
     const projects = data?.projects;
     const categories = data?.categories || [];
     const genres = data?.genres || [];
-    const colourists = getsColourists(data?.projects);
+    const colourists = getOptionsByLabels(data.colorists);
     const casesPreviews = getCasesPreviews(data?.projects);
 
     return {

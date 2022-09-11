@@ -22,7 +22,7 @@ const Projects = ({ products }) => {
 export default Projects
 
 export async function getServerSideProps(context) {
-  const products = await getContent('products')
+  const {products} = await getContent('products')
 
   if (!products) {
     return {

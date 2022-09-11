@@ -218,10 +218,10 @@ const Team = ({ employees }) => {
 }
 
 export async function getServerSideProps(context) {
-  const data = (await getContent('employees')) || {}
+  const {employees} = (await getContent('employees')) || {}
 
   return {
-    props: { employees: Object.entries(data) },
+    props: { employees: Object.entries(employees) },
   }
 }
 
