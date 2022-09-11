@@ -5,22 +5,12 @@ import {propTypesVideoBg} from "../../types";
 import {PropTypes} from "prop-types";
 
 export const SliderItem = ({poster, video, isPlayed = false}) => {
-    const videoRef = useRef();
-
-    useEffect(() => {
-        if (isPlayed) {
-            videoRef.current.play()
-        } else {
-            videoRef.current.pause()
-        }
-    }, [isPlayed])
-
     return (
         <SlideWrapper className="glide__slide right">
             <VideoBackground
                 poster={poster}
                 video={video}
-                ref={videoRef}
+                playing={isPlayed}
             />
         </SlideWrapper>
     );

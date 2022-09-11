@@ -1,19 +1,21 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import {propTypesVideoBg} from "../../types";
 import {VideoBackground} from "components";
 import {PropTypes} from "prop-types";
 import {CardCaption, CardFooter, CardTitle, CardTitleWrapper, CardWrapper} from "./works-card.style";
 
 export const WorksCard = ({poster, video, href = "/", firstTitle, secondTitle = "", author, year}) => {
-    const videoRef = useRef();
+    const [isPlaying, setIsPlaying] = useState(false);
 
     return (
-        <CardWrapper href={href} p="md" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+        <CardWrapper href={href} p="md"
+                     onMouseEnter={() => setIsPlaying(true)}
+                     onMouseLeave={() => setIsPlaying(false)}>
             <VideoBackground
                 poster={poster}
                 video={video}
-                ref={videoRef}
-             />
+                playing={isPlaying}
+            />
 
             <CardTitle wrapperProps={{className: CardTitleWrapper}}
                        data-default={firstTitle}
@@ -28,16 +30,6 @@ export const WorksCard = ({poster, video, href = "/", firstTitle, secondTitle = 
         </CardWrapper>
     );
 };
-
-function handleEnter(event) {
-    const {target} = event;
-    target.firstChild.play?.();
-}
-
-function handleLeave(event) {
-    const {target} = event;
-    target.firstChild.pause?.();
-}
 
 WorksCard.propTypes = {
     ...propTypesVideoBg,
