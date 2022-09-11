@@ -182,6 +182,18 @@ export const Item = styled.li`
       ${({ theme, isPointer }) =>
         isPointer && getCurrentColorStyles("white", theme)}
     }
+    @media screen and (min-width: ${breakpointsWidth.tabletLG}) {
+      ${({ theme }) => getCurrentBackgroundColorStyles("primary", theme)}
+      border-top-color: ${({ theme }) => getCurrentColor("primary", theme)};
+
+      span:first-of-type {
+        ${({ theme }) => getCurrentColorStyles("black", theme)}
+      }
+
+      span:last-of-type {
+        ${({ theme }) => getCurrentColorStyles("white", theme)}
+      }
+    }
   }
 
   &:last-child {
