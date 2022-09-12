@@ -2,19 +2,27 @@ import { CompanyInfo, FooterNavigation, FullSizeButton, MapWrapper } from 'compo
 import { useState, useEffect } from 'react';
 import { DynamicHeightForMap, FooterMapWrapper, FooterModalWrapper, FooterCompanyInfoMobile } from './navigation-bar-map.style';
 import { zindex } from 'styles';
-import { useVH, useNoScroll } from 'utils';
-export const NavigationBarMap = ({ isParentOpen, ...props }) => {
+import { useVH, useNoScroll, moveDownPage } from 'utils';
+export const NavigationBarMap = ({ isParentOpen, hasAutoscroll = false, ...props }) => {
     const [isOpenMap, setMapState] = useState(false);
     useEffect(() => {
         if (!isParentOpen) {
             setMapState(false);
         }
     }, [isParentOpen]);
-    
+
     useVH();
     useNoScroll(isOpenMap);
 
-    const toggleMapState = () => { setMapState(prevState => !prevState) };
+    const toggleMapState = () => {
+        setMapState(prevState => {
+            const newState = !prevState
+            if (newState && hasAutoscroll) {
+                moveDownPage();
+            }
+            return newState;
+        })
+    };
 
     return (
         <>
