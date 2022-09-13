@@ -1,26 +1,24 @@
 import {Footer, Header, FormWork,} from "components";
 import {getContent, MainComponent} from "utils";
 
-const Order = ({selectors}) => {
+const Order = ({common, selectors}) => {
     return (
         <>
-            <Header/>
+            <Header common={common}/>
             <MainComponent>
                 <FormWork {...selectors}/>
             </MainComponent>
-            <Footer/>
+            <Footer common={common}/>
         </>
     );
 };
 
 export default Order;
 
-export async function getServerSideProps(context) {
-    const {
-        selectors
-    } = await getContent('order')
+export async function getServerSideProps() {
+    const data = await getContent('order')
 
-    if (!selectors) {
+    if (!data) {
         return {
             redirect: {
                 destination: '/',
@@ -29,7 +27,9 @@ export async function getServerSideProps(context) {
         }
     }
 
+    const {selectors, common} = data;
+
     return {
-        props: {selectors},
+        props: {selectors, common},
     }
 }

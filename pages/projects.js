@@ -9,11 +9,11 @@ import {
 import {colors} from "styles";
 import {getCasesPreviews, getContent, getOptionsByLabels} from "../utils";
 
-const Projects = ({data, casesPreviews, projects = [], categories = [], genres = [], colourists = []}) => {
+const Projects = ({common, casesPreviews, projects = [], categories = [], genres = [], colourists = []}) => {
     return (
         <>
             <Preloader/>
-            <Header/>
+            <Header common={common}/>
             <PhotoStartScreen arrayOfImages={casesPreviews} title={["projects"]}/>
             <main style={{backgroundColor: colors.black}}>
                 <ProjectCards projects={projects} categories={categories} genres={genres} colourists={colourists}/>
@@ -24,14 +24,27 @@ const Projects = ({data, casesPreviews, projects = [], categories = [], genres =
                     titles={["LET’S TALK", "LET’S TALK", "LET’S TALK"]}
                 />
             </main>
-            <Footer pt="xlg"/>
+            <Footer common={common} pt="xlg"/>
         </>
     );
 };
 
 export async function getServerSideProps(context) {
-    const res = await getContent('projects') || null;
-    const data = res?.data || {};
+    const response = await getContent('projects');
+
+    if (!response) {
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false,
+            },
+        }
+    }
+
+
+    const {data, links} = response;
+
+    const common = data.common;
     const projects = data?.projects;
     const categories = data?.categories || [];
     const genres = data?.genres || [];
@@ -39,7 +52,7 @@ export async function getServerSideProps(context) {
     const casesPreviews = getCasesPreviews(data?.projects);
 
     return {
-        props: {data, casesPreviews, projects, categories, genres, colourists}, // will be passed to the page component as props
+        props: {common, data, casesPreviews, projects, categories, genres, colourists},
     }
 }
 

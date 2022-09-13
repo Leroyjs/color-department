@@ -30,13 +30,13 @@ export function getOptionsByLabels(data = []) {
 }
 
 export function getSlides(projects) {
-    return projects.map(({id, title, preview, credentials, short_video}) => {
+    return projects.map(({id, title, preview, client, colorist, short_video}) => {
         return {
             id,
             title,
             preview,
-            client: credentials.client,
-            colourist: credentials.colorist,
+            client: client,
+            colourist: colorist,
             video: short_video,
         }
     })
@@ -50,6 +50,16 @@ export function getAwards(awards) {
             photo: icon,
         }
     })
+}
+
+export function getAvatars(employees) {
+    let arr = [];
+    employees?.forEach(([key, items]) => {
+        items?.forEach(({photo}) => {
+            arr.push(photo)
+        })
+    })
+    return arr;
 }
 
 export async function postContact(body) {

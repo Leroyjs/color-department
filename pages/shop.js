@@ -1,39 +1,41 @@
-import { Footer, Header, RunningLineLink, ShopSection } from 'components'
-import { getContent, getDimensions } from '../utils'
+import {Footer, Header, RunningLineLink, ShopSection} from 'components'
+import {getContent} from '../utils'
 
-const Projects = ({ products }) => {
-  return (
-    <>
-      <Header />
-      <main>
-        <ShopSection products={products} />
-        <RunningLineLink
-          mt="md"
-          outline={'true'}
-          link={'/order'}
-          titles={['LET’S TALK', 'LET’S TALK', 'LET’S TALK']}
-        />
-      </main>
-      <Footer pt="xlg" />
-    </>
-  )
+const Shop = ({common, products}) => {
+    return (
+        <>
+            <Header common={common}/>
+            <main>
+                <ShopSection products={products}/>
+                <RunningLineLink
+                    mt="md"
+                    outline={'true'}
+                    link={'/order'}
+                    titles={['LET’S TALK', 'LET’S TALK', 'LET’S TALK']}
+                />
+            </main>
+            <Footer common={common} pt="xlg"/>
+        </>
+    )
 }
 
-export default Projects
+export default Shop
 
-export async function getServerSideProps(context) {
-  const {products} = await getContent('products')
+export async function getServerSideProps() {
+    const data = await getContent('products')
 
-  if (!products) {
-    return {
-      redirect: {
-        destination: '/',
-        permanent: false,
-      },
+    if (!data) {
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false,
+            },
+        }
     }
-  }
 
-  return {
-    props: { products },
-  }
+    const {common, products} = data;
+
+    return {
+        props: {common, products},
+    }
 }
