@@ -10,7 +10,7 @@ import {
   FlexControl,
 } from './popover-list.style'
 
-export const PopoverListItem = ({
+export const PopoverListItemComponent = ({
   id: modalId,
   name: startLabel,
   position: endLabel,
@@ -79,9 +79,12 @@ export const PopoverListItem = ({
           width="100%"
           height="100%"
           lazy="eager"
+          quality={64}
           src={img}
         />
       </PopOver>
     </Item>
   )
 }
+
+export const PopoverListItem = React.memo(PopoverListItemComponent)

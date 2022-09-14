@@ -22,7 +22,7 @@ export const WorksCards = ({ title, cards }) => {
           <WorksCard
             firstTitle={card.title?.substring(0, 16)}
             secondTitle={'see more'}
-            author={card?.credentials?.client || ''}
+            author={card?.client || card?.credentials?.client || ''}
             year={card.year}
             preview={card.preview}
             video={card.shortVideo}

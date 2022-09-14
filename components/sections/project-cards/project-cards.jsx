@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { ButtonEllipse, DropDown, WorksCards } from 'components'
 import {
   ColouristFilter,
   DropDownsWrapper,
@@ -6,21 +7,6 @@ import {
   NotFound,
   ProjectPage,
 } from './project-cards.style'
-import { ButtonEllipse, DropDown, WorksCards } from 'components'
-
-function getUniqValuesByKey(data = [], key = '') {
-  const uniqValues = []
-
-  data.reduce((acc, item) => {
-    if (acc.indexOf(item[key]) === -1) {
-      acc.push(item[key])
-      uniqValues.push({ label: item[key], value: item[key] })
-    }
-    return acc
-  }, [])
-
-  return uniqValues
-}
 
 export const ProjectCards = ({ projects, categories, genres, colourists }) => {
   const [currentCategory, setCurrentCategory] = useState()
@@ -35,37 +21,34 @@ export const ProjectCards = ({ projects, categories, genres, colourists }) => {
   }
 
   useEffect(() => {
-    const filteredCards = projects.filter(
-      ({ colorist, genre, category }) => {
-        const isColorist =
-          currentColourist?.some(
-            ({ value }) => value === colorist
-          ) || !currentColourist?.length
-        const isGenre =
-          currentGenre?.some(({ value }) => value === genre.id) ||
-          !currentGenre?.length
-        const isCategory =
-          currentCategory?.some(({ value }) => value === category.id) ||
-          !currentCategory?.length
+    const filteredCards = projects.filter(({ colorist, genre, category }) => {
+      const isColorist =
+        currentColourist?.some(({ value }) => value === colorist) ||
+        !currentColourist?.length
+      const isGenre =
+        currentGenre?.some(({ value }) => value === genre.id) ||
+        !currentGenre?.length
+      const isCategory =
+        currentCategory?.some(({ value }) => value === category.id) ||
+        !currentCategory?.length
 
-        return isColorist && isGenre && isCategory
-      }
-    )
+      return isColorist && isGenre && isCategory
+    })
 
-    if (isSeeAll == false) {
+    if (!isSeeAll) {
       setCards(filteredCards.slice(0, 6))
 
-      if (filteredCards.length == 6) {
+      if (filteredCards.length === 6) {
         setIsSeeAll(true)
       }
-      if (filteredCards.length == 0) {
+      if (filteredCards.length === 0) {
         setIsNotFound(true)
       }
-    } else if (isSeeAll == true) {
+    } else if (isSeeAll === true) {
       setCards(filteredCards)
     }
 
-    if (filteredCards.length == 0) {
+    if (filteredCards.length === 0) {
       setIsNotFound(true)
     } else if (filteredCards.length !== 0) {
       setIsNotFound(false)

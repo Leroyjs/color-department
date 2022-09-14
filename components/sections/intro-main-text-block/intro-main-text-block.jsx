@@ -1,4 +1,4 @@
-import { Caption, H2, Text, } from "components";
+import { Caption, H2, Text } from 'components'
 import {
   TextSectionWrapper,
   FirstLineWrapper,
@@ -18,10 +18,10 @@ import {
   StyledPhoneMDBR,
   StyledPhoneSMBR,
   StyledDesktopLGBR,
-} from "./intro-main-text-block.style";
-import Link from "next/link";
+} from './intro-main-text-block.style'
+import Link from 'next/link'
 
-export const IntroMainTextBlock = () => {
+export const IntroMainTextBlock = ({ promo_subtitle, promo_hints }) => {
   return (
     <TextSectionWrapper>
       <FirstLineWrapper>
@@ -82,12 +82,8 @@ export const IntroMainTextBlock = () => {
         </Caption>
       </CaptionWrapper>
       <TextWrapper>
-        <Text style={{ opacity: 0.4 }}>
-          With skills that go beyond
-          <br />
-          color grading, we have worked with
-        </Text>
+        <Text style={{ opacity: 0.4 }}>{promo_hints}</Text>
       </TextWrapper>
     </TextSectionWrapper>
-  );
-};
+  )
+}

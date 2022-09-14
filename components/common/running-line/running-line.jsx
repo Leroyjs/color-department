@@ -1,13 +1,13 @@
-import { Caption, H1 } from "components";
-import React, { useEffect, useRef, useState } from "react";
+import { Caption, H1 } from 'components'
+import React, { useEffect, useRef, useState } from 'react'
 import {
   RunningLineScrollContent,
   RunningLineSeparator,
   RunningLineWrapper,
-} from "./running-line.style";
+} from './running-line.style'
 
-import PropTypes from "prop-types";
-import { withLink } from "utils";
+import PropTypes from 'prop-types'
+import { withLink } from 'utils'
 
 const SeparatorText = () => (
   <div>
@@ -18,7 +18,7 @@ const SeparatorText = () => (
     <Caption>in los angeles</Caption>
     <br />
   </div>
-);
+)
 
 const SeparatorLink = () => (
   <div>
@@ -26,25 +26,20 @@ const SeparatorLink = () => (
     <br />
     <Caption>to chat with you</Caption>
   </div>
-);
+)
 
 export const RunningLine = React.memo(
-  ({
-    titles = ["WE ARE BOLD", "WE ARE HUNGRY", "WE ARE FAST"],
-    outline,
-    link,
-    ...props
-  }) => {
-    const separator = link ? SeparatorLink : SeparatorText;
-    const [data, setData] = useState(null);
+  ({ titles = [], outline, link, ...props }) => {
+    const separator = link ? SeparatorLink : SeparatorText
+    const [data, setData] = useState(null)
 
     useEffect(() => {
       const content = titles.reduce((acc, curr) => {
-        acc.push(curr, separator);
-        return acc;
-      }, []);
+        acc.push(curr, separator)
+        return acc
+      }, [])
       //Добавляем в массив его копию, нужно для анимации
-      content.push(...content);
+      content.push(...content)
       const data = content.map((title, index) =>
         index % 2 ? (
           <RunningLineSeparator key={index} outline={outline}>
@@ -53,9 +48,9 @@ export const RunningLine = React.memo(
         ) : (
           <H1 key={index}>{title}</H1>
         )
-      );
-      setData(data);
-    }, []);
+      )
+      setData(data)
+    }, [])
 
     return data ? (
       <RunningLineWrapper link={link} {...props}>
@@ -63,16 +58,16 @@ export const RunningLine = React.memo(
           {data}
         </RunningLineScrollContent>
       </RunningLineWrapper>
-    ) : null;
+    ) : null
   }
-);
+)
 
-export const RunningLineLink = withLink(RunningLine);
+export const RunningLineLink = withLink(RunningLine)
 
-RunningLine.displayName = "RunningLine";
+RunningLine.displayName = 'RunningLine'
 RunningLine.propTypes = {
   title: PropTypes.arrayOf(PropTypes.string),
   separator: PropTypes.element,
   outline: PropTypes.bool,
   link: PropTypes.string,
-};
+}

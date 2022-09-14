@@ -31,7 +31,7 @@ const DetailCardPage = ({ title, year, credentials, photos, common }) => {
           mt="md"
           mb="xlg"
           client={credentials.client}
-          colourist={credentials.colourist}
+          colourist={credentials.colorist}
           director={credentials.director}
           dop={credentials.other}
         />
