@@ -6,7 +6,7 @@ import {
   RunningLineStyle,
   StartScreenWrapper,
 } from './start-screen.style'
-import { EmbedVideo } from '../../common/video-background/video-background'
+import { EmbedVideo } from '../../common'
 
 export const StartScreen = ({ running_line, promo_video }) => {
   useVH()

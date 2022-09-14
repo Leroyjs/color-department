@@ -29,11 +29,12 @@ export const VideoBackground = forwardRef(
 VideoBackground.propTypes = {
   ...propTypesVideoBg,
 }
-export function EmbedVideo(props) {
-    return (
-        <div
-            dangerouslySetInnerHTML={{
-                __html: `
+
+export function EmbedVideo({ promo_video }) {
+  return (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: `
         <video
           loop
           muted
@@ -41,10 +42,10 @@ export function EmbedVideo(props) {
           playsinline
           class="${VideoStyle}"
         >
-         <source src="https://github.com/Kaigarodov/image-data/blob/master/video/BG_video_lite.mp4?raw=true" type="video/mp4"/>
+         <source src="${promo_video}" type="video/mp4"/>
         </video>
       `,
-            }}
-        ></div>
-    );
+      }}
+    ></div>
+  )
 }
