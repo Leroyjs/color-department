@@ -8,7 +8,8 @@ import {
   withFormProvider,
   withLink,
   useNoScroll,
-  MainComponent
+  MainComponent,
+  moveDownPage
 } from "./common";
 
 import { Freezer } from "./Freezer";
@@ -30,5 +31,6 @@ export {
   withFormProvider,
   useNoScroll,
   withLink,
+  moveDownPage,
   MainComponent
 };

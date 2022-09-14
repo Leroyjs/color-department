@@ -115,3 +115,11 @@ export const MainComponent = styled.main`
     padding-top: ${sizes["tabletLG"].x1};
   }
 `;
+
+export function moveDownPage() {
+  window.scrollTo({
+    left: 0,
+    top: document.body.scrollHeight || document.documentElement.scrollHeight,
+    behavior: "smooth"
+  });
+}
