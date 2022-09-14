@@ -11,7 +11,8 @@ export const FooterWrapper = styled.div`
     display: grid;
     flex-direction: column;
     position: relative;
-    z-index: 0;
+    /* z-index:0;   */
+    z-index: 2;
     ${getCurrentGridTemplateColumsStyle()};
     ${applyPaddings};
     ${applyMargins};
@@ -60,7 +61,7 @@ export const FoxStyle = css`
         width: 90px;
         height: 90px;
     }
-    
+
 `
 
 export const HideForMobile = styled.div`
@@ -81,5 +82,5 @@ export const FoxTitleMobile = styled(Caption)`
     @media screen and (max-width: ${breakpointsWidth.phone}) {
         display: inline-block;
     }
-    
+
 `
