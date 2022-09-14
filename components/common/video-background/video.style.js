@@ -1,11 +1,8 @@
-import styled from "@emotion/styled";
-import {css} from "@emotion/css";
-import {getCurrentColor} from "styles";
-import dynamic from "next/dynamic";
+import styled from '@emotion/styled'
+import { css } from '@emotion/css'
+import { getCurrentColor } from 'styles'
 
-const ReactPlayer = dynamic(() => import("react-player/lazy"), {ssr: false});
-
-export const VideoContainer = styled(ReactPlayer)`
+export const VideoContainer = styled.video`
   display: block;
   object-fit: cover;
   position: absolute;
@@ -17,7 +14,7 @@ export const VideoContainer = styled(ReactPlayer)`
   width: 100% !important;
   height: 100% !important;
   z-index: -1;
-  background-color: ${({theme}) => getCurrentColor("black", theme)};
+  background-color: ${({ theme }) => getCurrentColor('black', theme)};
   border: none;
   background-size: cover;
 
@@ -26,7 +23,7 @@ export const VideoContainer = styled(ReactPlayer)`
     height: 100%;
     object-fit: cover;
   }
-`;
+`
 
 export const VideoStyle = css`
   display: block;
@@ -40,10 +37,10 @@ export const VideoStyle = css`
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-color: ${({theme}) => getCurrentColor("black", theme)};
+  background-color: ${({ theme }) => getCurrentColor('black', theme)};
   border: none;
 
   source {
     background-size: cover;
   }
-`;
+`

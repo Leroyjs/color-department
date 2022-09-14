@@ -1,14 +1,14 @@
 import styled from '@emotion/styled'
 import {
-    DetailTitle,
-    Footer,
-    Header,
-    Slider,
-    Stakeholders,
-    VideoPlayer,
+  DetailTitle,
+  Footer,
+  Header,
+  Slider,
+  Stakeholders,
+  VideoPlayer,
 } from 'components'
-import {breakpointsWidth, sizes} from 'styles'
-import {getContent} from '../../utils'
+import { breakpointsWidth, sizes } from 'styles'
+import { getContent } from '../../utils'
 
 const MainComponent = styled.main`
   padding-top: ${sizes['desktopLG'].half};
@@ -20,75 +20,43 @@ const MainComponent = styled.main`
   }
 `
 
-const DetailCardPage = ({
-                            title,
-                            year,
-                            client,
-                            colourist,
-                            director,
-                            dop,
-                            photos,
-                            common
-                        }) => {
-    return (
-        <>
-            <Header common={common}/>
-            <MainComponent>
-                <DetailTitle title={title} year={year} py="lg"/>
-                <Slider slides={photos} isSimpleMode/>
-                <Stakeholders
-                    mt="md"
-                    mb="xlg"
-                    client={client}
-                    colourist={colourist}
-                    director={director}
-                    dop={dop}
-                />
-                <VideoPlayer/>
-            </MainComponent>
-            <Footer common={common} pt="xlg"/>
-        </>
-    )
+const DetailCardPage = ({ title, year, credentials, photos, common }) => {
+  return (
+    <>
+      <Header common={common} />
+      <MainComponent>
+        <DetailTitle title={title} year={year} py="lg" />
+        <Slider slides={photos} isSimpleMode />
+        <Stakeholders
+          mt="md"
+          mb="xlg"
+          client={credentials.client}
+          colourist={credentials.colourist}
+          director={credentials.director}
+          dop={credentials.other}
+        />
+        <VideoPlayer />
+      </MainComponent>
+      <Footer common={common} pt="xlg" />
+    </>
+  )
 }
 
 export default DetailCardPage
 
 export async function getServerSideProps(context) {
-    const detailViewModel = {
-        title: '',
-        year: '',
-        client: '',
-        colourist: '',
-        director: '',
-        dop: '',
-        photos: [],
-    }
-
-    try {
-        const data = await getContent(`projects/${context.params.id}`)
-
-        if (!data) {
-            return {
-                redirect: {
-                    destination: '/',
-                    permanent: false,
-                },
-            }
-        }
-
-        detailViewModel.title = detailViewModel.title || data.title
-        detailViewModel.year = detailViewModel.year || data.year
-        detailViewModel.client = detailViewModel.client || data.credentials?.client
-        detailViewModel.colourist =
-            detailViewModel.colourist || data.credentials?.colorist
-        detailViewModel.director =
-            detailViewModel.director || data.credentials?.director
-        detailViewModel.dop = detailViewModel.dop || data.credentials?.other
-        detailViewModel.photos = data.photos || []
-    } catch (e) {
-    }
+  try {
+    const data = await getContent(`projects/${context.params.id}`)
 
     return {
-        props: {...detailViewModel, common: data.common},
+      props: { ...data },
     }
+  } catch (e) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
 }
