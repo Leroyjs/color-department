@@ -22,16 +22,29 @@ function getUniqValuesByKey(data = [], key = '') {
   return uniqValues
 }
 
+/**Шаг пагинации для карт с проектами*/
+const paginationStep = 6;
+
 export const ProjectCards = ({ projects, categories, genres, colourists }) => {
   const [currentCategory, setCurrentCategory] = useState()
   const [currentGenre, setCurrentGenre] = useState()
   const [currentColourist, setCurrentColourist] = useState([])
+
   const [cards, setCards] = useState(projects)
-  const [isSeeAll, setIsSeeAll] = useState(false)
+  /**Количество видимых элементов */
+  const [amountOfVailableCards, setAmountOfVailableCards] = useState(paginationStep)
   const [isNotFound, setIsNotFound] = useState(false)
 
-  const handleClick = () => {
-    setIsSeeAll(true)
+  const showMore = () => {
+    setAmountOfVailableCards(prev => (prev + paginationStep))
+  }
+
+  /**Ресет пагинации при изменении фильтра */
+  const onChangeFilter = (state) => {
+    return (...args) => {
+      setAmountOfVailableCards(paginationStep);
+      state(...args);
+    }
   }
 
   useEffect(() => {
@@ -52,25 +65,14 @@ export const ProjectCards = ({ projects, categories, genres, colourists }) => {
       }
     )
 
-    if (isSeeAll == false) {
-      setCards(filteredCards.slice(0, 6))
-
-      if (filteredCards.length == 6) {
-        setIsSeeAll(true)
-      }
-      if (filteredCards.length == 0) {
-        setIsNotFound(true)
-      }
-    } else if (isSeeAll == true) {
-      setCards(filteredCards)
-    }
+    setCards(filteredCards.slice(0, amountOfVailableCards));
 
     if (filteredCards.length == 0) {
       setIsNotFound(true)
     } else if (filteredCards.length !== 0) {
       setIsNotFound(false)
     }
-  }, [projects, currentCategory, currentGenre, currentColourist, isSeeAll])
+  }, [projects, currentCategory, currentGenre, currentColourist, amountOfVailableCards])
 
   return (
     <ProjectPage>
@@ -78,7 +80,7 @@ export const ProjectCards = ({ projects, categories, genres, colourists }) => {
         <DropDown
           mb="md"
           title="All category"
-          onChange={(option) => setCurrentCategory(option)}
+          onChange={onChangeFilter(setCurrentCategory)}
           options={categories}
           multiple={true}
           value={currentCategory}
@@ -86,7 +88,7 @@ export const ProjectCards = ({ projects, categories, genres, colourists }) => {
         <DropDown
           mb="md"
           title="All genres"
-          onChange={(option) => setCurrentGenre(option)}
+          onChange={onChangeFilter(setCurrentGenre)}
           options={genres}
           multiple={true}
           value={currentGenre}
@@ -96,15 +98,15 @@ export const ProjectCards = ({ projects, categories, genres, colourists }) => {
             mb="md"
             title="All colourist"
             multiple={true}
-            onChange={(option) => setCurrentColourist(option)}
+            onChange={onChangeFilter(setCurrentColourist)}
             options={colourists}
             value={currentColourist}
           />
         </ColouristFilter>
       </DropDownsWrapper>
       <WorksCards cards={cards} />
-      <MoreWrapper isSeeAll={isSeeAll} mt="md">
-        <ButtonEllipse onClick={() => handleClick()}>More</ButtonEllipse>
+      <MoreWrapper isSeeAll={cards?.length < amountOfVailableCards} mt="md">
+        <ButtonEllipse onClick={showMore}>More</ButtonEllipse>
       </MoreWrapper>
       <NotFound mt="md" isNotFound={isNotFound}>
         Not found
