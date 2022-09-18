@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Parser from 'html-react-parser'
 import {
   Popovers,
   Preloader,
@@ -30,10 +31,7 @@ const Team = ({
     <>
       <Preloader running_line={running_line} />
       <Header common={common} />
-      <PhotoStartScreen
-        arrayOfImages={avatars}
-        title={['We are', `${common.company_name}`]}
-      />
+      <PhotoStartScreen arrayOfImages={avatars} title={title_team} />
       <main style={{ backgroundColor: colors.black }}>
         <IntroAboutTextBlock pt="xlg" />
         {employees.map(([subtitle, options], index) => {
@@ -67,7 +65,7 @@ const Team = ({
           )
         })}
         <PreTitleSlider mt="xlg" mb="md">
-          {subtitle_project}
+          {Parser(String(subtitle_project))}
         </PreTitleSlider>
         <Slider slides={slides} />
         <RunningLineLink

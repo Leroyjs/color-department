@@ -7,90 +7,106 @@ import {
   getCurrentBackgroundColorStyles,
   namesOfBreakpoints,
   breakpointsWidth,
-} from "styles";
-import styled from "@emotion/styled";
-import { H2,  } from "components";
-import { LeftBracket, RightBracket, Planet } from "../../common"
+  getVW,
+} from 'styles'
+import styled from '@emotion/styled'
+import { H2 } from 'components'
+import { LeftBracket, RightBracket, Planet } from '../../common'
 
 export const TextSectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  ${getCurrentPaddingStyle("top", "xlg")};
-  ${getCurrentPaddingStyle("bottom", "md")};
-  ${getCurrentPaddingStyle("horizontal", "md")};
-  ${({ theme }) => getCurrentBackgroundColorStyles("black", theme)};
+  ${getCurrentPaddingStyle('top', 'xlg')};
+  ${getCurrentPaddingStyle('bottom', 'md')};
+  ${getCurrentPaddingStyle('horizontal', 'md')};
+  ${({ theme }) => getCurrentBackgroundColorStyles('black', theme)};
   width: 100vw;
 
   h2 {
     display: inline-block;
     margin: 0;
   }
-`;
+`
 
- export const FirstLineWrapper = styled.div`
-   display: inline-block;
-   text-align: center;
- `;
+export const FirstLineWrapper = styled.div`
+  display: inline-block;
+  text-align: center;
+`
 
-  export const CaptionLink = styled.div`
-    display: inline-flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: auto;
-    cursor: pointer;
-    transition: 0.3s;
+export const CaptionLink = styled.div`
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: auto;
+  cursor: pointer;
+  transition: 0.3s;
 
+  svg {
+    stroke: ${({ theme }) => getCurrentColor('white', theme)};
+    transition: stroke 0.3s;
+  }
+
+  span {
+    align-self: center;
+    ${({ theme }) => getCurrentColorStyles('white', theme)};
+    transition: color 0.3s;
+  }
+
+  &:hover {
     svg {
-      stroke: ${({ theme }) => getCurrentColor("white", theme)};
-      transition: stroke 0.3s;
+      stroke: ${({ theme }) => getCurrentColor('primary', theme)};
     }
 
     span {
-      align-self: center;
-      ${({ theme }) => getCurrentColorStyles("white", theme)};
-      transition: color 0.3s;
+      ${({ theme }) => getCurrentColorStyles('primary', theme)};
     }
+  }
+`
 
-    &:hover {
-      svg {
-        stroke: ${({ theme }) => getCurrentColor("primary", theme)};
-      }
+export const CaptionWrapper = styled.div`
+  display: inline-block;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  ${getCurrentMarginStyle('top', 'lg')}
+  color: ${getCurrentColor('white')};
+  width: auto;
+  line-height: 130%;
 
-      span {
-        ${({ theme }) => getCurrentColorStyles("primary", theme)};
-      }
-    }
-  `;
+  ${getCurrentMarginStyle('bottom', 'sxlg')}
+  span {
+    color: ${getCurrentColor('white')};
+  }
 
- export const CaptionWrapper = styled.div`
-   display: inline-block;
-   justify-content: center;
-   align-items: flex-start;
-   text-align: center;
-   ${getCurrentMarginStyle("top", "lg")}
-   color:${getCurrentColor("white")};
-   width: auto;
-   ${getCurrentMarginStyle("bottom", "sxlg")}
+  max-width: 690px;
 
-   span {
-     color: ${getCurrentColor("white")};
-   }
- `;
+  @media screen and (min-width: ${breakpointsWidth.desktopXLG}) {
+    max-width: ${getVW(690)};
+  }
 
- export const TextWrapper = styled.div`
-   display: flex;
-   justify-content: flex-end;
-   align-items: flex-end;
-   justify-self: flex-end;
-   width: 100%;
+  @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
+    max-width: 590px;
+  }
 
-   span {
-     text-align: end;
-     color: ${getCurrentColor("white")};
-   }
- `;
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    max-width: 287px;
+  }
+`
+
+export const TextWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  justify-self: flex-end;
+  width: 100%;
+
+  span {
+    text-align: end;
+    color: ${getCurrentColor('white')};
+  }
+`
 
 export const StyledDesktopBR = styled.br`
   display: block;
@@ -98,7 +114,7 @@ export const StyledDesktopBR = styled.br`
   @media screen and (max-width: 1512px) {
     display: none;
   }
-`;
+`
 
 export const StyledDesktopLGBR = styled.br`
   display: none;
@@ -110,7 +126,7 @@ export const StyledDesktopLGBR = styled.br`
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     display: none;
   }
-`;
+`
 
 export const StyledTabletBR = styled.br`
   display: none;
@@ -122,7 +138,7 @@ export const StyledTabletBR = styled.br`
   @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
     display: none;
   }
-`;
+`
 
 export const StyledTabletSMBR = styled.br`
   display: none;
@@ -134,7 +150,7 @@ export const StyledTabletSMBR = styled.br`
   @media screen and (max-width: 670px) {
     display: none;
   }
-`;
+`
 
 export const StyledCaptionBR = styled.br`
   display: block;
@@ -142,7 +158,7 @@ export const StyledCaptionBR = styled.br`
   @media screen and (max-width: 608px) {
     display: none;
   }
-`;
+`
 
 export const StyledCaptionPhoneBR = styled.br`
   display: none;
@@ -150,7 +166,7 @@ export const StyledCaptionPhoneBR = styled.br`
   @media screen and (max-width: 600px) {
     display: block;
   }
-`;
+`
 
 export const StyledPhoneBR = styled.br`
   display: none;
@@ -162,7 +178,7 @@ export const StyledPhoneBR = styled.br`
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     display: none;
   }
-`;
+`
 
 export const StyledPhoneMDBR = styled.br`
   display: none;
@@ -174,7 +190,7 @@ export const StyledPhoneMDBR = styled.br`
   @media screen and (max-width: 365px) {
     display: none;
   }
-`;
+`
 
 export const StyledPhoneSMBR = styled.br`
   display: none;
@@ -182,12 +198,12 @@ export const StyledPhoneSMBR = styled.br`
   @media screen and (max-width: 365px) {
     display: block;
   }
-`;
+`
 
 export const StyledWhiteH2 = styled(H2)`
-  color: ${getCurrentColor("white")};
+  color: ${getCurrentColor('white')};
   ${applyMargins};
-`;
+`
 
 export const StyledLeftBracket = styled(LeftBracket)`
   width: 10px;
@@ -217,7 +233,7 @@ export const StyledLeftBracket = styled(LeftBracket)`
     width: 0.625vw;
     height: 3.875vw;
   }
-`;
+`
 
 export const StyledRightBracket = styled(RightBracket)`
   width: 10px;
@@ -247,7 +263,7 @@ export const StyledRightBracket = styled(RightBracket)`
     width: 0.625vw;
     height: 3.875vw;
   }
-`;
+`
 
 export const StyledPlanet = styled(Planet)`
   width: 60px;
@@ -277,4 +293,4 @@ export const StyledPlanet = styled(Planet)`
     width: 3.75vw;
     height: 3.75vw;
   }
-`;
+`

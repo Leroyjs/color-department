@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import Parser from 'html-react-parser'
 import { Caption } from 'components'
 import {
   AllSlides,
@@ -58,7 +59,7 @@ const SliderWithoutCursor = ({
 
   return (
     <>
-      {title && <ContentTitlePhone>{title}</ContentTitlePhone>}
+      {title && <ContentTitlePhone>{Parser(String(title))}</ContentTitlePhone>}
       <SliderWrapper className="glide">
         <SliderTrack className="glide__track" data-glide-el="track">
           <SliderSlides className="glide__slides">
@@ -117,7 +118,7 @@ const SliderWithoutCursor = ({
               </>
             ) : (
               <>
-                {title && <ContentTitle>{title}</ContentTitle>}
+                {title && <ContentTitle>{Parser(String(title))}</ContentTitle>}
                 <ContentMain>
                   <Tape
                     color="white"

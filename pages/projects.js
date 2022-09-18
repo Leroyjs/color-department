@@ -22,7 +22,7 @@ const Projects = ({
     <>
       <Preloader running_line={running_line} />
       <Header common={common} />
-      <PhotoStartScreen arrayOfImages={casesPreviews} title={['projects']} />
+      <PhotoStartScreen arrayOfImages={casesPreviews} title={'projects'} />
       <main style={{ backgroundColor: colors.black }}>
         <ProjectCards
           projects={projects}
