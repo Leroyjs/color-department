@@ -1,4 +1,5 @@
-export const BASE_URL = 'http://45.11.27.63/api/v1'
+// export const BASE_URL = 'http://45.11.27.63/api/v1'
+export const BASE_URL = 'https://devi-bs.ru/api/v1'
 
 export async function getContent(params = '', props = {}) {
   try {
