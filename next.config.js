@@ -7,7 +7,7 @@ const nextConfig = {
     emotion: true,
   },
   images: {
-    domains: ['45.11.27.63', 'devi-bs.ru'],
+    domains: ['colordepartment.la', '45.11.27.63', 'devi-bs.ru'],
     formats: ['image/webp'],
   },
 }
