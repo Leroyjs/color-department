@@ -70,6 +70,7 @@ export async function getServerSideProps(context) {
     projects,
     common,
   } = data
+
   const slides = getSlides(projects)
   const awards = getAwards(data.awards)
 

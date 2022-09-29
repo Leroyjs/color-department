@@ -34,7 +34,10 @@ export const Menu = ({isOpen, props, common}) => {
                 </MenuList>
                 <MenuMap>
                     <MapWrapper
-                        coordinates={[common.map.longitude, common.map.latitude]}
+                        coordinates={[
+                            common.map?.longitude || 0,
+                            common.map?.latitude || 0,
+                        ]}
                         source={"https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"}
                     />
                 </MenuMap>
