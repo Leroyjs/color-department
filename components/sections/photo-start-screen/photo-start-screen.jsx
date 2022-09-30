@@ -11,12 +11,11 @@ import {
 
 export const PhotoStartScreen = ({ arrayOfImages, title }) => {
   useVH()
-
   return (
     <PhotoStartScreenWrapper>
       <FlexLayerWrapper>
         <ContentWrapper>
-          <Title>{Parser(title)}</Title>
+          <Title>{Parser(title || '')}</Title>
           <Grid arrayOfImages={arrayOfImages} withWolf />
           <RunningLine className={RunningLineStyle} />
         </ContentWrapper>

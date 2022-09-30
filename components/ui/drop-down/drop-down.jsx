@@ -67,8 +67,13 @@ export const DropDown = ({
         }
       })
     } else {
-      setSelected([option])
-      onChange?.(option)
+      if (!option?.value) {
+        setSelected([])
+        onChange?.()
+      } else {
+        setSelected([option])
+        onChange?.(option)
+      }
     }
 
     setOpen(false)

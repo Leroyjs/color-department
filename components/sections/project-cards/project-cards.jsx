@@ -9,56 +9,56 @@ import {
 import { ButtonEllipse, DropDown, WorksCards } from 'components'
 
 /**Шаг пагинации для карт с проектами*/
-const paginationStep = 6;
+const paginationStep = 6
 
 export const ProjectCards = ({ projects, categories, genres, colourists }) => {
-  const [currentCategory, setCurrentCategory] = useState()
-  const [currentGenre, setCurrentGenre] = useState()
-  const [currentColourist, setCurrentColourist] = useState([])
+  const [currentCategory, setCurrentCategory] = useState('')
+  const [currentGenre, setCurrentGenre] = useState('')
+  const [currentColourist, setCurrentColourist] = useState('')
 
   const [cards, setCards] = useState(projects)
   /**Количество видимых элементов */
-  const [amountOfVailableCards, setAmountOfVailableCards] = useState(paginationStep)
+  const [amountOfVailableCards, setAmountOfVailableCards] =
+    useState(paginationStep)
   const [isNotFound, setIsNotFound] = useState(false)
 
   const showMore = () => {
-    setAmountOfVailableCards(prev => (prev + paginationStep))
+    setAmountOfVailableCards((prev) => prev + paginationStep)
   }
 
   /**Ресет пагинации при изменении фильтра */
   const onChangeFilter = (state) => {
     return (...args) => {
-      setAmountOfVailableCards(paginationStep);
-      state(...args);
+      setAmountOfVailableCards(paginationStep)
+      state(...args)
     }
   }
 
   useEffect(() => {
-    const filteredCards = projects.filter(
-      ({ credentials, genre, category }) => {
-        const isColorist =
-          currentColourist?.some(
-            ({ value }) => value === credentials.colorist
-          ) || !currentColourist?.length
-        const isGenre =
-          currentGenre?.some(({ value }) => value === genre.id) ||
-          !currentGenre?.length
-        const isCategory =
-          currentCategory?.some(({ value }) => value === category.id) ||
-          !currentCategory?.length
+    const filteredCards = projects.filter(({ colorist, genre, category }) => {
+      const isColorist =
+        currentColourist?.value === colorist || !currentColourist
+      const isGenre = currentGenre?.value === genre.id || !currentGenre?.value
+      const isCategory =
+        currentCategory?.value === category.id || !currentCategory?.value
 
-        return isColorist && isGenre && isCategory
-      }
-    )
+      return isColorist && isGenre && isCategory
+    })
 
-    setCards(filteredCards.slice(0, amountOfVailableCards));
+    setCards(filteredCards.slice(0, amountOfVailableCards))
 
     if (filteredCards.length == 0) {
       setIsNotFound(true)
     } else if (filteredCards.length !== 0) {
       setIsNotFound(false)
     }
-  }, [projects, currentCategory, currentGenre, currentColourist, amountOfVailableCards])
+  }, [
+    projects,
+    currentCategory,
+    currentGenre,
+    currentColourist,
+    amountOfVailableCards,
+  ])
 
   return (
     <ProjectPage>
@@ -68,24 +68,33 @@ export const ProjectCards = ({ projects, categories, genres, colourists }) => {
           title="All category"
           onChange={onChangeFilter(setCurrentCategory)}
           options={categories}
-          multiple={true}
           value={currentCategory}
         />
         <DropDown
           mb="md"
           title="All genres"
           onChange={onChangeFilter(setCurrentGenre)}
-          options={genres}
-          multiple={true}
+          options={[
+            ...genres,
+            {
+              value: '',
+              label: 'Reset',
+            },
+          ]}
           value={currentGenre}
         />
         <ColouristFilter>
           <DropDown
             mb="md"
             title="All colourist"
-            multiple={true}
             onChange={onChangeFilter(setCurrentColourist)}
-            options={colourists}
+            options={[
+              ...colourists,
+              {
+                value: '',
+                label: 'Reset',
+              },
+            ]}
             value={currentColourist}
           />
         </ColouristFilter>
