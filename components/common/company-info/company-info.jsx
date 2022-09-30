@@ -6,6 +6,8 @@ import {
   ContactInfo,
   MadeBy,
   CaptionLink,
+  LinksBy,
+  CaptionBr,
 } from './company-info.style'
 import { colors } from 'styles'
 import Link from 'next/link'
@@ -15,6 +17,7 @@ export const CompanyInfo = ({
   phone,
   company_name,
   link_policy,
+  link_terms,
   ...props
 }) => {
   return (
@@ -37,9 +40,15 @@ export const CompanyInfo = ({
           <Caption>made by</Caption>
           <Caption style={{ whiteSpace: 'nowrap' }}>design department</Caption>
         </MadeBy>
-        <Link href={link_policy}>
-          <CaptionLink>privacy policy</CaptionLink>
-        </Link>
+        <LinksBy>
+          <Link href={link_policy || ''}>
+            <CaptionLink>Privacy </CaptionLink>
+          </Link>
+          <CaptionBr>|</CaptionBr>
+          <Link href={link_terms || ''}>
+            <CaptionLink>Terms</CaptionLink>
+          </Link>
+        </LinksBy>
       </AdditionInfo>
     </CompanyInfoWrapper>
   )

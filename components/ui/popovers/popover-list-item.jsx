@@ -46,16 +46,16 @@ export const PopoverListItemComponent = ({
 
     const rectTarget = target.getBoundingClientRect()
     const rectPopOver = popOver.getBoundingClientRect()
-    const endX = rectTarget.width - (rectPopOver.width + 80)
+    const endX = rectTarget.width - (rectPopOver.width + 40)
     const x =
       e.clientX - rectTarget.left >= endX
-        ? e.clientX - (rectTarget.left + rectPopOver.width) - 40
-        : e.clientX - rectTarget.left + 40
+        ? e.clientX - (rectTarget.left + rectPopOver.width) - 20
+        : e.clientX - rectTarget.left + 20
     const y = e.clientY - rectTarget.top
 
     popOver?.setAttribute(
       'style',
-      `transform: translate(${x}px, calc(-100% + ${y - 40}px))`
+      `transform: translate(${x}px, calc(-100% + ${y - 20}px))`
     )
   }
 

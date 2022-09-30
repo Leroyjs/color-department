@@ -32,6 +32,7 @@ export const Footer = ({ common, ...props }) => {
             phone={common.phone}
             company_name={common.company_name}
             link_policy={common.link_policy}
+            link_terms={common.link_terms}
           />
         </HideForMobile>
       </FooterInfoWrapper>

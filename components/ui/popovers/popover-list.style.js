@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 import { Caption, H2 } from 'components'
 import {
   applyMargins,
@@ -102,7 +102,7 @@ export const PopOver = styled.div`
   top: 0;
   left: 0;
   z-index: ${zindex.popOver};
-  width: 400px;
+  width: 180px;
   height: 0px;
   object-fit: cover;
   object-position: center;
@@ -112,16 +112,16 @@ export const PopOver = styled.div`
   transition: height 0.35s;
 
   &.isShow {
-    height: 400px;
+    height: 180px;
   }
 
   ${({ theme }) => getCurrentBackgroundColorStyles('white', theme)};
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
-    width: ${getVW(400)};
+    width: ${getVW(180)};
 
     &.isShow {
-      height: ${getVW(400)};
+      height: ${getVW(180)};
     }
   }
 
@@ -207,14 +207,14 @@ export const Item = styled.li`
 
 export const PopOverImg = styled(ImageBox)`
   pointer-events: none;
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   object-position: center;
   overflow: hidden;
   border: none;
   box-shadow: none;
-  
+
   img {
     object-fit: cover;
     object-position: center;

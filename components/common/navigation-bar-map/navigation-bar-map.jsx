@@ -1,18 +1,13 @@
-import { useState, useEffect } from 'react'
+import GoogleMap from 'google-map-react'
+import { CompanyInfo, FooterNavigation } from 'components'
+import { useVH } from 'utils'
 import {
-  CompanyInfo,
-  FooterNavigation,
-  FullSizeButton,
-  MapWrapper,
-} from 'components'
-import { useVH, useNoScroll, moveDownPage } from 'utils'
-import { zindex } from 'styles'
-import {
-  DynamicHeightForMap,
   FooterMapWrapper,
   FooterModalWrapper,
   FooterCompanyInfoMobile,
 } from './navigation-bar-map.style'
+import { mapStyle } from '../../../styles'
+import { FoxMarker } from './fox-marker'
 
 export const NavigationBarMap = ({
   common,
@@ -20,47 +15,33 @@ export const NavigationBarMap = ({
   hasAutoscroll = false,
   ...props
 }) => {
-  const [isOpenMap, setMapState] = useState(false)
-
-  useEffect(() => {
-    if (!isParentOpen) {
-      setMapState(false)
-    }
-  }, [isParentOpen])
-
   useVH()
-  useNoScroll(isOpenMap)
-
-  const toggleMapState = () => {
-    setMapState((prevState) => {
-      const newState = !prevState
-      if (newState && hasAutoscroll) {
-        moveDownPage()
-      }
-      return newState
-    })
-  }
 
   return (
     <>
-      <FooterModalWrapper isOpen={isOpenMap} {...props}>
+      <FooterModalWrapper {...props}>
         <FooterNavigation social={common.social} />
-        <FooterMapWrapper style={{ position: 'relative' }}>
-          <FullSizeButton
-            onClick={toggleMapState}
-            style={{ zIndex: zindex.footer }}
-          />
-          <DynamicHeightForMap isOpen={isOpenMap}>
-            <MapWrapper
-              coordinates={[
-                common.map?.longitude || 0,
-                common.map?.latitude || 0,
-              ]}
-              source={
-                'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png'
-              }
+        <FooterMapWrapper>
+          <GoogleMap
+            bootstrapURLKeys={{
+              key: 'AIzaSyDkrKVrZ7zshTB5jW2VNgUeur45GNMkeHw',
+              version: 'weekly',
+            }}
+            options={{ styles: mapStyle }}
+            defaultCenter={{
+              center: {
+                lat: +common.map?.latitude || 0,
+                lng: +common.map?.longitude || 0,
+              },
+            }}
+            defaultZoom={11}
+          >
+            <FoxMarker
+              title={common.map?.title || ''}
+              lat={+common.map?.latitude || 0}
+              lng={+common.map?.longitude || 0}
             />
-          </DynamicHeightForMap>
+          </GoogleMap>
         </FooterMapWrapper>
       </FooterModalWrapper>
       <FooterCompanyInfoMobile>
@@ -69,6 +50,7 @@ export const NavigationBarMap = ({
           phone={common.phone}
           company_name={common.company_name}
           link_policy={common.link_policy}
+          link_terms={common.link_terms}
         />
       </FooterCompanyInfoMobile>
     </>
