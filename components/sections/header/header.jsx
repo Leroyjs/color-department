@@ -14,7 +14,7 @@ import { setTransperentByScroll } from "./utils";
 //TODO: Кривой импорт
 import theme from "../../../__data__/theme";
 
-export const Header = ({ transparentToComponent }) => {
+export const Header = ({ transparentToComponent, common }) => {
   const headerRef = useRef(null);
   //Прозрачность фона
   const [transparentBg, setTransparentBg] = useState(1);
@@ -50,7 +50,9 @@ export const Header = ({ transparentToComponent }) => {
         <Link href={"/"}>
           <HeaderItemTitle>
             <Title>
-              <H3 color="white">color department los angeles</H3>
+              <H3 color="white">
+                {common.main_title}
+              </H3>
             </Title>
           </HeaderItemTitle>
         </Link>
@@ -60,7 +62,7 @@ export const Header = ({ transparentToComponent }) => {
           </HeaderItemLetsGo>
         </Link>
       </HeaderWrapper>
-      <Menu isOpen={isOpenMenu}/>
+      <Menu common={common} isOpen={isOpenMenu}/>
     </>
   );
 }

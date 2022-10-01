@@ -8,7 +8,7 @@ import {
   AwardsSubTitle,
 } from "./popover-list.style";
 
-export const Popovers = ({ options, title, subtitle, isAboutImg, onClick, ...props }) => {
+export const Popovers = ({ options, title, subtitle, onClick, ...props }) => {
   return (
     <AwardsContainer {...props}>
       {title && (
@@ -22,7 +22,6 @@ export const Popovers = ({ options, title, subtitle, isAboutImg, onClick, ...pro
         </AwardsSubTitle>
       )}
       <PopoverList
-        isAboutImg={isAboutImg}
         options={options}
         onClick={onClick}
       />

@@ -1,29 +1,25 @@
-import { Grid, H2, RunningLine } from "components";
-import { useVH } from "utils";
+import Parser from 'html-react-parser'
+import { Grid, RunningLine } from 'components'
+import { useVH } from 'utils'
 import {
   ContentWrapper,
   FlexLayerWrapper,
   PhotoStartScreenWrapper,
   RunningLineStyle,
-  Title
-} from "./photo-start-screen.style";
+  Title,
+} from './photo-start-screen.style'
 
 export const PhotoStartScreen = ({ arrayOfImages, title }) => {
-  useVH();
-  
+  useVH()
   return (
     <PhotoStartScreenWrapper>
       <FlexLayerWrapper>
         <ContentWrapper>
-          <Title>
-            {
-              title.map((row, key) => <H2 key={key} color='white'>{row}</H2>) || ''
-            }
-          </Title>
+          <Title>{Parser(title || '')}</Title>
           <Grid arrayOfImages={arrayOfImages} withWolf />
-          <RunningLine className={RunningLineStyle}></RunningLine>
+          <RunningLine className={RunningLineStyle} />
         </ContentWrapper>
       </FlexLayerWrapper>
     </PhotoStartScreenWrapper>
-  );
-};
+  )
+}

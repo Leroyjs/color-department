@@ -1,4 +1,5 @@
-import { Caption, H2, Text, } from "components";
+import { Caption, H2, Text } from 'components'
+import Parser from 'html-react-parser'
 import {
   TextSectionWrapper,
   FirstLineWrapper,
@@ -12,16 +13,16 @@ import {
   StyledDesktopBR,
   StyledTabletBR,
   StyledTabletSMBR,
-  StyledCaptionPhoneBR,
-  StyledCaptionBR,
   StyledPhoneBR,
   StyledPhoneMDBR,
   StyledPhoneSMBR,
   StyledDesktopLGBR,
-} from "./intro-main-text-block.style";
-import Link from "next/link";
+  CaptionEllipse,
+  StyledBrEllipse,
+} from './intro-main-text-block.style'
+import Link from 'next/link'
 
-export const IntroMainTextBlock = () => {
+export const IntroMainTextBlock = ({ promo_subtitle, promo_hints }) => {
   return (
     <TextSectionWrapper>
       <FirstLineWrapper>
@@ -68,26 +69,22 @@ export const IntroMainTextBlock = () => {
             <StyledRightBracket />
           </CaptionLink>
         </Link>
-        <StyledWhiteH2>&nbsp;Whatever the task is.</StyledWhiteH2>
+        <StyledWhiteH2>&nbsp;Whatever the task is.&nbsp;</StyledWhiteH2>
+        <StyledBrEllipse />
+        <Link href="">
+          <Caption wrapperProps={{ className: CaptionEllipse }}>
+            Color, Dailies,
+            <br />
+            VFX, Finishing
+          </Caption>
+        </Link>
       </FirstLineWrapper>
       <CaptionWrapper>
-        <Caption>
-          We have personality. We love what&nbsp;
-          <StyledCaptionPhoneBR /> we do. We make it fun for us and our&nbsp;
-          <StyledCaptionPhoneBR />
-          clients.
-          <StyledCaptionBR />
-          That said, we take deadlines and&nbsp;
-          <StyledCaptionPhoneBR /> agreements very seriously.
-        </Caption>
+        <Caption>{Parser(promo_subtitle)}</Caption>
       </CaptionWrapper>
       <TextWrapper>
-        <Text style={{ opacity: 0.4 }}>
-          With skills that go beyond
-          <br />
-          color grading, we have worked with
-        </Text>
+        <Text style={{ opacity: 0.4 }}>{Parser(promo_hints)}</Text>
       </TextWrapper>
     </TextSectionWrapper>
-  );
-};
+  )
+}

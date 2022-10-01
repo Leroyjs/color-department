@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { debounce } from "utils";
+import React, { useRef } from 'react'
+import { debounce } from 'utils'
 import {
   Item,
   LabelEnd,
@@ -8,56 +8,55 @@ import {
   PopOverImg,
   AboutPhoneImg,
   FlexControl,
-} from "./popover-list.style";
+} from './popover-list.style'
 
-export const PopoverListItem = ({
-  modalId,
-  startLabel,
-  endLabel,
-  img,
+export const PopoverListItemComponent = ({
+  id: modalId,
+  name: startLabel,
+  position: endLabel,
+  photo: img,
   onClick,
-  isAboutImg = false,
   ...props
 }) => {
-  const popOverRef = useRef();
+  const popOverRef = useRef()
 
   function handleEnter(e) {
-    const optionContainerEl = popOverRef.current;
-    if (!optionContainerEl) return;
-    calcPosition(e);
-    optionContainerEl.classList.add("isShow");
+    const optionContainerEl = popOverRef.current
+    if (!optionContainerEl) return
+    calcPosition(e)
+    optionContainerEl.classList.add('isShow')
   }
 
   function handleLeave() {
-    const optionContainerEl = popOverRef.current;
+    const optionContainerEl = popOverRef.current
 
-    if (optionContainerEl?.classList.contains("isShow")) {
-      optionContainerEl.classList.remove("isShow");
-      setTimeout(()=> {
-        optionContainerEl.removeAttribute('style');
-      }, 350);
+    if (optionContainerEl?.classList.contains('isShow')) {
+      optionContainerEl.classList.remove('isShow')
+      setTimeout(() => {
+        optionContainerEl.removeAttribute('style')
+      }, 350)
     }
   }
 
   function calcPosition(e) {
-    const target = e.target;
-    const popOver = popOverRef.current;
+    const target = e.target
+    const popOver = popOverRef.current
 
-    if (!popOver || !target) return;
+    if (!popOver || !target) return
 
-    const rectTarget = target.getBoundingClientRect();
-    const rectPopOver = popOver.getBoundingClientRect();
-    const endX = rectTarget.width - (rectPopOver.width + 80);
+    const rectTarget = target.getBoundingClientRect()
+    const rectPopOver = popOver.getBoundingClientRect()
+    const endX = rectTarget.width - (rectPopOver.width + 40)
     const x =
-        e.clientX - rectTarget.left >= endX
-            ? e.clientX - (rectTarget.left + rectPopOver.width) - 40
-            : e.clientX - rectTarget.left + 40;
-    const y = e.clientY - rectTarget.top;
+      e.clientX - rectTarget.left >= endX
+        ? e.clientX - (rectTarget.left + rectPopOver.width) - 20
+        : e.clientX - rectTarget.left + 20
+    const y = e.clientY - rectTarget.top
 
     popOver?.setAttribute(
-        "style",
-        `transform: translate(${x}px, calc(-100% + ${y - 40}px))`
-    );
+      'style',
+      `transform: translate(${x}px, calc(-100% + ${y - 20}px))`
+    )
   }
 
   return (
@@ -69,14 +68,23 @@ export const PopoverListItem = ({
       onClick={() => onClick?.(modalId)}
       {...props}
     >
-      <AboutPhoneImg src={img} isAboutImg={isAboutImg} />
+      <AboutPhoneImg src={img} />
       <FlexControl>
         <LabelStart>{startLabel}</LabelStart>
         <LabelEnd>{endLabel}</LabelEnd>
       </FlexControl>
       <PopOver ref={popOverRef}>
-        <PopOverImg src={img} />
+        <PopOverImg
+          layout="responsive"
+          width="100%"
+          height="100%"
+          lazy="eager"
+          quality={64}
+          src={img}
+        />
       </PopOver>
     </Item>
-  );
-};
+  )
+}
+
+export const PopoverListItem = React.memo(PopoverListItemComponent)

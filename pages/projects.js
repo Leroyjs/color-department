@@ -5,34 +5,77 @@ import {
   Preloader,
   ProjectCards,
   RunningLineLink,
-} from "components";
-import { colors } from "styles";
+} from 'components'
+import { colors } from 'styles'
+import { getCasesPreviews, getContent, getOptionsByLabels } from '../utils'
 
-const arrayOfImages = [
-  "https://i.postimg.cc/0rMRdbBC/img-01.jpg",
-  "https://i.postimg.cc/RJnkMDHY/img-02.jpg",
-  "https://i.postimg.cc/G8N0nCHY/img-03.jpg",
-  "https://i.postimg.cc/WFtRy3bT/img-04.jpg",
-];
-
-const Projects = () => {
+const Projects = ({
+  common,
+  running_line,
+  casesPreviews,
+  projects = [],
+  categories = [],
+  genres = [],
+  colourists = [],
+}) => {
   return (
     <>
-      <Preloader/>
-      <Header />
-      <PhotoStartScreen arrayOfImages={arrayOfImages} title={["projects"]} />
+      <Preloader running_line={running_line} />
+      <Header common={common} />
+      <PhotoStartScreen arrayOfImages={casesPreviews} title={'projects'} />
       <main style={{ backgroundColor: colors.black }}>
-        <ProjectCards />
+        <ProjectCards
+          projects={projects}
+          categories={categories}
+          genres={genres}
+          colourists={colourists}
+        />
         <RunningLineLink
           mt="xlg"
-          outline={"true"}
-          link={"/order"}
-          titles={["LET’S TALK", "LET’S TALK", "LET’S TALK"]}
+          outline={'true'}
+          link={'/order'}
+          titles={['LET’S TALK', 'LET’S TALK', 'LET’S TALK']}
         />
       </main>
-      <Footer pt="xlg" />
+      <Footer common={common} pt="xlg" />
     </>
-  );
-};
+  )
+}
 
-export default Projects;
+export async function getServerSideProps(context) {
+  const response = await getContent('projects')
+
+  if (!response) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
+
+  const { data, links } = response
+
+  const common = data.common
+  const running_line = data?.running_line || []
+  const projects = data.projects
+  const categories = data?.categories || []
+  const genres = data?.genres || []
+  const colourists = getOptionsByLabels(data.colorists)
+  const casesPreviews = getCasesPreviews(data?.projects)
+
+  return {
+    props: {
+      common,
+      running_line,
+      data,
+      casesPreviews,
+      projects,
+      categories,
+      genres,
+      colourists,
+    },
+  }
+}
+
+export default Projects

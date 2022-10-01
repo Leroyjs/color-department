@@ -1,20 +1,23 @@
-import "@glidejs/glide/dist/css/glide.core.css";
+import '@glidejs/glide/dist/css/glide.core.css'
 
 import {
-    applyColor,
-    applyMargins,
-    applyPaddings,
-    colors,
-    fontFamilies, getCurrentColor,
-    getCurrentColorStyles,
-    getCurrentFontSizeStyle,
-    hexToRGBA,
-    getVW, breakpointsWidth, getCurrentPaddingStyle
-} from "styles";
+  applyColor,
+  applyMargins,
+  applyPaddings,
+  colors,
+  fontFamilies,
+  getCurrentColor,
+  getCurrentColorStyles,
+  getCurrentFontSizeStyle,
+  hexToRGBA,
+  getVW,
+  breakpointsWidth,
+  getCurrentPaddingStyle,
+} from 'styles'
 
-import styled from "@emotion/styled";
-import {Caption} from "../caption";
-import {H3} from "../h3";
+import styled from '@emotion/styled'
+import { Caption } from '../caption'
+import { H3 } from '../h3'
 
 export const SliderWrapper = styled.div`
   height: calc(100vh - 100px);
@@ -33,12 +36,12 @@ export const SliderWrapper = styled.div`
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     height: clamp(220px, 0.6vw, 0.5vh);
   }
-`;
+`
 
 export const SliderTrack = styled.div`
   height: 100%;
   width: 100%;
-`;
+`
 
 export const SliderSlides = styled.ul`
   position: relative;
@@ -52,7 +55,7 @@ export const SliderSlides = styled.ul`
       left: 0;
     }
   }
-`;
+`
 
 export const SliderContent = styled.div`
   position: absolute;
@@ -64,22 +67,21 @@ export const SliderContent = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: ${hexToRGBA(colors.black, 0.6)};
   pointer-events: none;
   ${applyMargins};
   ${applyPaddings}
-`;
+`
 
 export const ContentTitle = styled(H3)`
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     display: none;
   }
-`;
+`
 
 export const ContentTitlePhone = styled(H3)`
   display: none;
-  ${getCurrentPaddingStyle("left", "md")};
-  ${getCurrentPaddingStyle("bottom", "md")};
+  ${getCurrentPaddingStyle('left', 'md')};
+  ${getCurrentPaddingStyle('bottom', 'md')};
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     display: flex;
@@ -88,7 +90,7 @@ export const ContentTitlePhone = styled(H3)`
     text-align: left;
     margin-top: 80px;
   }
-`;
+`
 
 export const ContentMain = styled.div`
   display: flex;
@@ -97,14 +99,14 @@ export const ContentMain = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-`;
+`
 
 export const NavBullets = styled.ul`
   pointer-events: auto;
   display: flex;
   align-items: center;
   max-width: 100%;
-`;
+`
 
 export const NavBullet = styled.button`
   color: ${hexToRGBA(colors.white, 0.4)};
@@ -113,14 +115,14 @@ export const NavBullet = styled.button`
   font-weight: 500;
   display: inline-block;
   line-height: 140%;
-  ${getCurrentFontSizeStyle("text")};
+  ${getCurrentFontSizeStyle('text')};
   position: relative;
   transition: color 0.3s;
   width: 60px;
   height: 60px;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -181,7 +183,7 @@ export const NavBullet = styled.button`
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     display: none;
   }
-`;
+`
 
 export const NavPoints = styled.ul`
   pointer-events: auto;
@@ -192,10 +194,10 @@ export const NavPoints = styled.ul`
   justify-self: self-end;
   margin-top: auto;
 
-  @media screen and (max-width: ${breakpointsWidth.phone}) {  
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
     display: none;
   }
-`;
+`
 
 export const NavPoint = styled.button`
   width: 6px;
@@ -211,8 +213,8 @@ export const NavPoint = styled.button`
   transition: border-color 0.3s, background-color 0.3s;
 
   &.active {
-    border-color: ${({theme}) => getCurrentColor("primary", theme)};
-    background-color: ${({theme}) => getCurrentColor("primary", theme)};
+    border-color: ${({ theme }) => getCurrentColor('primary', theme)};
+    background-color: ${({ theme }) => getCurrentColor('primary', theme)};
   }
 
   & + & {
@@ -230,14 +232,13 @@ export const NavPoint = styled.button`
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
-    
   }
-`;
+`
 
 export const ContentFooter = styled.div`
   position: relative;
   width: 100%;
-`;
+`
 
 export const NavFooterPhone = styled.div`
   display: none;
@@ -252,17 +253,17 @@ export const NavFooterPhone = styled.div`
     align-items: center;
     justify-content: center;
   }
-`;
+`
 
 export const CurrentSlide = styled(Caption)`
   color: ${colors.white};
   margin-right: 8px;
-`;
+`
 
 export const AllSlides = styled(Caption)`
   color: ${hexToRGBA(colors.white, 0.4)};
   margin-left: 8px;
-`;
+`
 
 export const ContentFooterPhone = styled.div`
   display: none;
@@ -275,7 +276,7 @@ export const ContentFooterPhone = styled.div`
     justify-content: space-between;
     margin-top: 16px;
   }
-`;
+`
 
 export const LeftCol = styled.div`
   position: absolute;
@@ -304,7 +305,7 @@ export const LeftCol = styled.div`
     transform: none;
     left: auto;
   }
-`;
+`
 
 export const RightCol = styled.div`
   position: absolute;
@@ -332,7 +333,7 @@ export const RightCol = styled.div`
     transform: none;
     right: auto;
   }
-`;
+`
 
 export const CaptionCopyright = styled(Caption)`
   color: ${colors.white};
@@ -341,7 +342,7 @@ export const CaptionCopyright = styled(Caption)`
     font-size: 10px;
     color: ${hexToRGBA(colors.white, 0.4)};
   }
-`;
+`
 
 export const CopyrightList = styled.ul`
   position: relative;
@@ -357,13 +358,13 @@ export const CopyrightList = styled.ul`
   ${applyMargins};
   ${applyPaddings}
   ${applyColor};
-  ${getCurrentFontSizeStyle("h3")};
-  ${({theme}) => getCurrentColorStyles("white", theme)};
+  ${getCurrentFontSizeStyle('h3')};
+  ${({ theme }) => getCurrentColorStyles('white', theme)};
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     width: 100%;
   }
-`;
+`
 
 export const CopyrightItem = styled.li`
   height: 1em;
@@ -374,9 +375,9 @@ export const CopyrightItem = styled.li`
   position: absolute;
   transition: opacity 0.6s, visibility 0.6s;
 
-  ${({isRight}) =>
-          isRight &&
-          `
+  ${({ isRight }) =>
+    isRight &&
+    `
     left: auto;
     right: 0;
     
@@ -386,9 +387,9 @@ export const CopyrightItem = styled.li`
     }
   `};
 
-  ${({isLeft}) =>
-          isLeft &&
-          `
+  ${({ isLeft }) =>
+    isLeft &&
+    `
     right: auto;
     left: 0;
     
@@ -398,11 +399,11 @@ export const CopyrightItem = styled.li`
     }
   `};
 
-  ${({isActive}) =>
-          isActive &&
-          `
+  ${({ isActive }) =>
+    isActive &&
+    `
       visibility: visible;
       opacity: 1;
       transition-delay: 0.3s;
   `}
-`;
+`

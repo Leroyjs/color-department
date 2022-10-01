@@ -20,6 +20,7 @@ export const CardTitle = styled(H2)`
   display: block;
   color: transparent;
   content: "content";
+  line-height: 1.25em;
 
   &:after, &:before {
     position: absolute;

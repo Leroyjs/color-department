@@ -1,43 +1,58 @@
-import React, {useState} from "react";
-import {useFormContext} from "react-hook-form";
+import React, { useState } from 'react'
+import { useFormContext } from 'react-hook-form'
 import {
-    ButtonRectangle,
-    H2,
-    WorkModal,
-    InputField,
-    TextAreaField,
-    DropDownField
-} from "components";
-import {formatPhoneNumber, withFormProvider} from "utils";
+  ButtonRectangle,
+  H2,
+  WorkModal,
+  InputField,
+  TextAreaField,
+  DropDownField,
+} from 'components'
 import {
-    FormSection,
-    FormWrapper,
-    FormColumnLeft,
-    FormColumnRight,
-} from "./form-work.style";
+  formatPhoneNumber,
+  getOptionsByLabels,
+  postContact,
+  postOrder,
+  withFormProvider,
+} from 'utils'
+import {
+  FormSection,
+  FormWrapper,
+  FormColumnLeft,
+  FormColumnRight,
+} from './form-work.style'
 
 const ServiceOptions = [
-    {label: "color grading", value: "11"},
-    {label: "VFX-design", value: "12"},
-    {label: "Dailies", value: "13"},
-];
+  { label: 'color grading', value: '11' },
+  { label: 'VFX-design', value: '12' },
+  { label: 'Dailies', value: '13' },
+]
 const TypeOptions = [
-    {label: "color grading", value: "11"},
-    {label: "VFX-design", value: "12"},
-    {label: "Dailies", value: "13"},
-    // Заглушка
-];
+  { label: 'color grading', value: '11' },
+  { label: 'VFX-design', value: '12' },
+  { label: 'Dailies', value: '13' },
+  // Заглушка
+]
 const TitleOptions = [
-    {label: "color grading", value: "11"},
-    {label: "VFX-design", value: "12"},
-    {label: "Dailies", value: "13"},
-    // Заглушка
-];
+  { label: 'color grading', value: '11' },
+  { label: 'VFX-design', value: '12' },
+  { label: 'Dailies', value: '13' },
+  // Заглушка
+]
 
-export const FormWork = withFormProvider(({ ...props}) => {
-    const {handleSubmit} = useFormContext();
-    const onSubmit = () => setModalOpen(true);
-    const [isModalOpen, setModalOpen] = useState(false);
+export const FormWork = withFormProvider(
+  ({ first_selector, second_selector, third_selector, ...props }) => {
+    const { handleSubmit } = useFormContext()
+    const onSubmit = (data) => {
+      postContact({ ...data, titles: [data?.titles || ''] })
+        .then(() => {
+          setModalOpen(true)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
+    const [isModalOpen, setModalOpen] = useState(false)
 
     return (
       <FormSection onSubmit={handleSubmit(onSubmit)} {...props}>
@@ -48,27 +63,26 @@ export const FormWork = withFormProvider(({ ...props}) => {
           <FormColumnLeft>
             <DropDownField
               mb="md2"
-              name="service"
-              title="Service"
-              options={ServiceOptions}
+              name={'services'}
+              title={first_selector.title}
+              options={getOptionsByLabels(first_selector.options)}
               isFullWidth
               multiple
             />
             <DropDownField
               mb="md2"
-              name="type"
-              title="Type"
-              options={TypeOptions}
+              name={'types'}
+              title={second_selector.title}
+              options={getOptionsByLabels(second_selector.options)}
               isFullWidth
               multiple
             />
-            <DropDownField
+            <InputField
               mb="md2"
-              name="title"
-              title="Title"
-              options={TitleOptions}
+              name={'titles'}
+              title={third_selector.title}
+              propsInput={{ placeholder: 'title' }}
               isFullWidth
-              multiple
             />
 
             <InputField
@@ -76,21 +90,29 @@ export const FormWork = withFormProvider(({ ...props}) => {
               isFullWidth
               title="NAME*"
               mb="md2"
-              propsInput={{ placeholder: "My name is" }}
+              propsInput={{ placeholder: 'My name is' }}
             />
             <InputField
               name="phone"
               isFullWidth
               title="PLEASE CONTACT ME AT*"
-              propsInput={{ placeholder: "My e-mail or number phone" }}
+              propsInput={{ placeholder: 'My e-mail or number phone' }}
             />
           </FormColumnLeft>
           <FormColumnRight>
-            <TextAreaField name="message" rules={{}} isFullWidth title="About your work" />
-            <ButtonRectangle mt="md3" mb="xlg">SEND</ButtonRectangle>
+            <TextAreaField
+              name="message"
+              rules={{}}
+              isFullWidth
+              title="About your work"
+            />
+            <ButtonRectangle mt="md3" mb="xlg">
+              SEND
+            </ButtonRectangle>
           </FormColumnRight>
         </FormWrapper>
         <WorkModal isOpen={isModalOpen} setOpen={setModalOpen} />
       </FormSection>
-    );
-});
+    )
+  }
+)

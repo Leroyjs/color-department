@@ -1,1 +1,1 @@
-export {VideoBackground} from "./video-background"
+export { VideoBackground, EmbedVideo } from './video-background'

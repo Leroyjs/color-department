@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { stubFunction } from "styles";
-import { RunningLine } from "components";
-import { initStepCounter } from "./utils";
-import { FoxBox } from "./fox-box";
-import { steps } from "./constants";
+import { useEffect, useState } from 'react'
+import { stubFunction } from 'styles'
+import { RunningLine } from 'components'
+import { initStepCounter } from './utils'
+import { FoxBox } from './fox-box'
+import { steps } from './constants'
 import {
   GridStyled,
   GridWrapper,
@@ -13,24 +13,26 @@ import {
   PreloaderHeader,
   PreloaderWrapper,
   RunningLineWrapper,
-} from "./preloader.style";
-import { useNoScroll, useVH } from "utils";
+} from './preloader.style'
+import { useNoScroll, useVH } from 'utils'
 
-export const Preloader = ({ onDone = stubFunction }) => {
-  const [stepIndex, setStepIndex] = useState(0);
-  const [isHidden, setHidden] = useState(false);
-  const [showNumber, setShowNumber] = useState(false);
+export const Preloader = ({ running_line = [], onDone = stubFunction }) => {
+  const [stepIndex, setStepIndex] = useState(0)
+  const [isHidden, setHidden] = useState(false)
+  const [showNumber, setShowNumber] = useState(false)
 
   useEffect(() => {
-    initStepCounter(setStepIndex, setHidden, onDone);
-    const hasInteraction = Boolean(window.sessionStorage.getItem('preloader_complited'))
-    setHidden(hasInteraction);
-    if (!hasInteraction){
-      setShowNumber(true);
+    initStepCounter(setStepIndex, setHidden, onDone)
+    const hasInteraction = Boolean(
+      window.sessionStorage.getItem('preloader_complited')
+    )
+    setHidden(hasInteraction)
+    if (!hasInteraction) {
+      setShowNumber(true)
     }
-  }, []);
-  useVH();
-  useNoScroll();
+  }, [])
+  useVH()
+  useNoScroll()
 
   return (
     <PreloaderWrapper isHidden={isHidden}>
@@ -49,8 +51,8 @@ export const Preloader = ({ onDone = stubFunction }) => {
         <FoxBox stepIndex={stepIndex} isHidden={isHidden} />
       </GridWrapper>
       <RunningLineWrapper stepIndex={stepIndex}>
-        <RunningLine />
+        <RunningLine titles={running_line} />
       </RunningLineWrapper>
     </PreloaderWrapper>
-  );
-};
+  )
+}
