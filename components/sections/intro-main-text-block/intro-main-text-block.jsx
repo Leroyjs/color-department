@@ -17,6 +17,8 @@ import {
   StyledPhoneMDBR,
   StyledPhoneSMBR,
   StyledDesktopLGBR,
+  CaptionEllipse,
+  StyledBrEllipse,
 } from './intro-main-text-block.style'
 import Link from 'next/link'
 
@@ -67,7 +69,15 @@ export const IntroMainTextBlock = ({ promo_subtitle, promo_hints }) => {
             <StyledRightBracket />
           </CaptionLink>
         </Link>
-        <StyledWhiteH2>&nbsp;Whatever the task is.</StyledWhiteH2>
+        <StyledWhiteH2>&nbsp;Whatever the task is.&nbsp;</StyledWhiteH2>
+        <StyledBrEllipse />
+        <Link href="">
+          <Caption wrapperProps={{ className: CaptionEllipse }}>
+            Color, Dailies,
+            <br />
+            VFX, Finishing
+          </Caption>
+        </Link>
       </FirstLineWrapper>
       <CaptionWrapper>
         <Caption>{Parser(promo_subtitle)}</Caption>
