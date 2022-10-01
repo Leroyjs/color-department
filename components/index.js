@@ -38,7 +38,6 @@ import { Text } from './ui/text'
 import { DropDown } from './ui/drop-down'
 import { TextArea } from './ui/text-area'
 import { ButtonShop } from './ui/button-shop'
-import { MapWrapper } from './common/map/map-wrapper'
 import { Counter } from './ui/counter'
 import { Plus } from './ui/plus'
 import { Minus } from './ui/minus'
@@ -128,7 +127,6 @@ export {
   Planet,
   FormWork,
   WorkModal,
-  MapWrapper,
   WorksCards,
   ProjectCards,
   InputField,

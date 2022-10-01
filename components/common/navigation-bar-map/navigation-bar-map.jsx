@@ -16,6 +16,8 @@ export const NavigationBarMap = ({
   ...props
 }) => {
   useVH()
+  const latitude = Number(common.map?.latitude || 0)
+  const longitude = Number(common.map?.longitude || 0)
 
   return (
     <>
@@ -25,21 +27,18 @@ export const NavigationBarMap = ({
           <GoogleMap
             bootstrapURLKeys={{
               key: 'AIzaSyDkrKVrZ7zshTB5jW2VNgUeur45GNMkeHw',
-              version: 'weekly',
             }}
             options={{ styles: mapStyle }}
             defaultCenter={{
-              center: {
-                lat: +common.map?.latitude || 0,
-                lng: +common.map?.longitude || 0,
-              },
+              lat: latitude,
+              lng: longitude,
             }}
             defaultZoom={11}
           >
             <FoxMarker
               title={common.map?.title || ''}
-              lat={+common.map?.latitude || 0}
-              lng={+common.map?.longitude || 0}
+              lat={latitude}
+              lng={longitude}
             />
           </GoogleMap>
         </FooterMapWrapper>

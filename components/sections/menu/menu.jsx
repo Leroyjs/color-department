@@ -1,3 +1,4 @@
+import GoogleMapReact from 'google-map-react'
 import { NavigationBarMap, CompanyInfo, FooterNavigation } from 'components'
 import { MenuItem } from './menu-item/menu-item'
 import {
@@ -10,11 +11,13 @@ import {
   ShowForMobile,
 } from './menu.style'
 import { useVH, useNoScroll } from 'utils'
-import GoogleMap from 'google-map-react'
 import { mapStyle } from '../../../styles'
 import { FoxMarker } from '../../common/navigation-bar-map/fox-marker'
+import GoogleMap from 'google-map-react'
 
 export const Menu = ({ isOpen, props, common }) => {
+  const latitude = Number(common.map?.latitude || 0)
+  const longitude = Number(common.map?.longitude || 0)
   useVH()
   useNoScroll(isOpen)
 
@@ -39,21 +42,18 @@ export const Menu = ({ isOpen, props, common }) => {
           <GoogleMap
             bootstrapURLKeys={{
               key: 'AIzaSyDkrKVrZ7zshTB5jW2VNgUeur45GNMkeHw',
-              version: 'weekly',
             }}
             options={{ styles: mapStyle }}
             defaultCenter={{
-              center: {
-                lat: +common.map?.latitude || 0,
-                lng: +common.map?.longitude || 0,
-              },
+              lat: latitude,
+              lng: longitude,
             }}
             defaultZoom={11}
           >
             <FoxMarker
               title={common.map?.title || ''}
-              lat={+common.map?.latitude || 0}
-              lng={+common.map?.longitude || 0}
+              lat={latitude}
+              lng={longitude}
             />
           </GoogleMap>
         </MenuMap>
