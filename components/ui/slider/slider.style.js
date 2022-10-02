@@ -136,6 +136,11 @@ export const NavBullet = styled.button`
     transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
   }
 
+  &:hover {
+    color: ${colors.white};
+    cursor: default;
+  }
+
   &.active {
     color: ${colors.white};
     cursor: default;
