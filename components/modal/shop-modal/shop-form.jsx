@@ -65,7 +65,7 @@ export const ShopForm = withFormProvider(
             </ProductDiscription>
 
             <FormWrapper onSubmit={handleSubmit(onSubmit)}>
-              {dimensions?.length && (
+              {dimensions?.length && !dimensions?.includes('-') && (
                 <DropDownField
                   mt="md"
                   title="Select size"

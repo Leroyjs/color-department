@@ -10,10 +10,10 @@ export const GridWrapper = styled.div`
 
 export const GridInner = styled.div`
   display: grid;
-  ${getCurrentGridTemplateColumsStyle()}
+  ${getCurrentGridTemplateColumsStyle()};
   grid-template-rows: repeat(10, 12.5vw);
-  //align-content: end;
   height: 100%;
+
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     grid-template-rows: repeat(20, 25vw);
   }
@@ -22,6 +22,7 @@ export const GridInner = styled.div`
 export const Cell = styled.div`
   width: 100%;
   height: 100%;
+
   border-top: 1px solid ${hexToRGBA(colors.white, 0.2)};
   padding: 20px;
 
@@ -29,6 +30,9 @@ export const Cell = styled.div`
     border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
   }
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    min-height: 25vw;
+    height: 25vw;
+
     &:nth-of-type(4n) {
       border-right: none;
     }

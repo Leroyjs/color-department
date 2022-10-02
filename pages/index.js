@@ -37,7 +37,7 @@ const Home = ({
           promo_hints={promo_hints}
         />
         <PartnersLine partners={clients} />
-        <Slider slides={slides} title={<span>{title_project}</span>} />
+        <Slider slides={slides} title={title_project} />
         <AwardMainTextBlock mt="xlg" px="md" />
         <Popovers options={awards} title="Our Awards" isAboutImg={false} />
       </main>
