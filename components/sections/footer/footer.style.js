@@ -26,13 +26,6 @@ export const FooterWrapper = styled.div`
 export const FooterInfoWrapper = styled.div`
   grid-column: 1/-1;
   position: relative;
-  margin-bottom: ${sizes['desktopLG'].x1};
-  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    margin-bottom: ${sizes['tabletLG'].thirdX2};
-  }
-  @media screen and (max-width: ${breakpointsWidth.phone}) {
-    margin-bottom: calc(${sizes['tabletLG'].x1} + 86px);
-  }
 `
 
 export const FooterLogo = styled.div`
