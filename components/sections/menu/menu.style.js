@@ -31,10 +31,6 @@ export const MenuWrapper = styled.div`
 export const MenuMap = styled.div`
   position: relative;
   grid-column: 5/9;
-
-  .leaflet-map-pane {
-    z-index: 0;
-  }
 `
 export const MenuList = styled.ul`
   display: flex;
@@ -42,27 +38,25 @@ export const MenuList = styled.ul`
   grid-column: 1/5;
   justify-content: center;
   border-right: 1px solid ${hexToRGBA(colors.white, 0.2)};
+  margin-top: -${sizes['tabletLG'].thirdX2};
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    margin-top: -${sizes['tabletLG'].thirdX2};
+  }
+
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     border-right: none;
+    margin-top: 1vw;
   }
 `
 export const MenuBody = styled.nav`
-  top: ${sizes['desktopLG'].half};
+  margin-top: ${sizes['desktopLG'].half};
   width: 100%;
-  position: absolute;
+  min-height: 100%;
   display: grid;
-  height: calc(100vh - ${sizes['desktopLG'].x1});
-  height: calc(var(--fsvh, 1vh) * 100 - ${sizes['desktopLG'].x1});
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    top: ${sizes['tabletLG'].thirdX2};
-    height: calc(
-      100vh - ${sizes['tabletLG'].thirdX2} - ${sizes['tabletLG'].thirdX1}
-    );
-    height: calc(
-      var(--fsvh, 1vh) * 100 - ${sizes['tabletLG'].thirdX2} -
-        ${sizes['tabletLG'].thirdX1}
-    );
+    margin-top: ${sizes['tabletLG'].thirdX2};
 
     ${MenuMap} {
       grid-column: 3/5;
@@ -72,10 +66,10 @@ export const MenuBody = styled.nav`
       grid-column: 1/3;
     }
   }
+
   @media screen and (max-width: ${breakpointsWidth.phone}) {
-    top: ${sizes['desktopLG'].x2};
-    height: calc(100vh - ${sizes['tabletLG'].x2} - 83px);
-    height: calc(var(--fsvh, 1vh) * 100 - ${sizes['tabletLG'].x2} - 83px);
+    margin-top: ${sizes['desktopLG'].x2};
+    min-height: auto;
 
     ${MenuMap} {
       display: none;
@@ -90,11 +84,14 @@ export const MenuBody = styled.nav`
 `
 
 export const MenuFooter = styled.div`
-  position: absolute;
   width: 100%;
-  bottom: 0;
+  min-height: 100%;
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
   transition: opacity ease-in 0.2s;
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    min-height: auto;
+  }
 `
 
 export const HideForMobile = styled.span`

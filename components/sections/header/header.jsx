@@ -1,4 +1,4 @@
-import { Caption, H3, Menu, Blob, Hamburger } from 'components';
+import { Caption, H3, Menu, Blob, Hamburger } from 'components'
 import {
   HeaderItemBlob,
   HeaderItemHumburger,
@@ -6,20 +6,22 @@ import {
   HeaderItemTitle,
   HeaderWrapper,
   Title,
-} from "./header.style";
-import { useEffect, useRef, useState } from "react";
+} from './header.style'
+import { useEffect, useRef, useState } from 'react'
 
-import Link from "next/link";
-import { setTransperentByScroll } from "./utils";
+import Link from 'next/link'
+import { setTransperentByScroll } from './utils'
 //TODO: Кривой импорт
-import theme from "../../../__data__/theme";
+import theme from '../../../__data__/theme'
+import { useRouter } from 'next/router'
 
 export const Header = ({ transparentToComponent, common }) => {
-  const headerRef = useRef(null);
+  const headerRef = useRef(null)
+  const router = useRouter()
   //Прозрачность фона
-  const [transparentBg, setTransparentBg] = useState(1);
+  const [transparentBg, setTransparentBg] = useState(1)
   //Открытие меню
-  const [isOpenMenu, setMenuState] = useState(false);
+  const [isOpenMenu, setMenuState] = useState(false)
 
   //Обработка скрола, для изменения прозрачности
   useEffect(() => {
@@ -28,8 +30,8 @@ export const Header = ({ transparentToComponent, common }) => {
       setTransparentBg,
       headerRef,
       window
-    );
-  }, []);
+    )
+  }, [])
 
   return (
     <>
@@ -47,22 +49,20 @@ export const Header = ({ transparentToComponent, common }) => {
         <HeaderItemBlob onClick={() => theme.setNextThemeName()}>
           <Blob />
         </HeaderItemBlob>
-        <Link href={"/"}>
+        <Link href={'/'}>
           <HeaderItemTitle>
             <Title>
-              <H3 color="white">
-                {common.main_title}
-              </H3>
+              <H3 color="white">{common.main_title}</H3>
             </Title>
           </HeaderItemTitle>
         </Link>
-        <Link href={"/order"}>
+        <Link href={router.pathname === '/order' ? '/' : '/order'}>
           <HeaderItemLetsGo>
             <Caption color="white">Lets talk</Caption>
           </HeaderItemLetsGo>
         </Link>
       </HeaderWrapper>
-      <Menu common={common} isOpen={isOpenMenu}/>
+      <Menu common={common} isOpen={isOpenMenu} />
     </>
-  );
+  )
 }

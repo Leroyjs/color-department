@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   ColouristFilter,
   DropDownsWrapper,
@@ -6,7 +6,12 @@ import {
   NotFound,
   ProjectPage,
 } from './project-cards.style'
-import { ButtonEllipse, DropDown, WorksCards } from 'components'
+import {
+  ButtonEllipse,
+  ButtonRectangle,
+  DropDown,
+  WorksCards,
+} from 'components'
 
 /**Шаг пагинации для карт с проектами*/
 const paginationStep = 6
@@ -37,7 +42,7 @@ export const ProjectCards = ({ projects, categories, genres, colourists }) => {
   useEffect(() => {
     const filteredCards = projects.filter(({ colorist, genre, category }) => {
       const isColorist =
-        currentColourist?.value === colorist || !currentColourist
+        currentColourist?.value === colorist || !currentColourist?.value
       const isGenre = currentGenre?.value === genre.id || !currentGenre?.value
       const isCategory =
         currentCategory?.value === category.id || !currentCategory?.value
@@ -74,13 +79,7 @@ export const ProjectCards = ({ projects, categories, genres, colourists }) => {
           mb="md"
           title="All genres"
           onChange={onChangeFilter(setCurrentGenre)}
-          options={[
-            ...genres,
-            {
-              value: '',
-              label: 'Reset',
-            },
-          ]}
+          options={genres}
           value={currentGenre}
         />
         <ColouristFilter>
@@ -88,13 +87,7 @@ export const ProjectCards = ({ projects, categories, genres, colourists }) => {
             mb="md"
             title="All colourist"
             onChange={onChangeFilter(setCurrentColourist)}
-            options={[
-              ...colourists,
-              {
-                value: '',
-                label: 'Reset',
-              },
-            ]}
+            options={colourists}
             value={currentColourist}
           />
         </ColouristFilter>

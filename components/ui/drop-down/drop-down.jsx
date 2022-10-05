@@ -71,8 +71,19 @@ export const DropDown = ({
         setSelected([])
         onChange?.()
       } else {
-        setSelected([option])
-        onChange?.(option)
+        setSelected((prevOptions) => {
+          const isInclude = prevOptions.some(
+            ({ value }) => value === option.value
+          )
+
+          if (isInclude) {
+            onChange?.([])
+            return []
+          } else {
+            onChange?.(option)
+            return [option]
+          }
+        })
       }
     }
 

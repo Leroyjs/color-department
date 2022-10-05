@@ -157,9 +157,5 @@ export const getArrayOfImagesOnThisStep = (
  * @returns (indexOfPosition) => {}
  */
 export const isValidPositionFn = (numdersOfPositions) => (indexOfPosition) => {
-  console.log(
-    'numdersOfPositions: ' + numdersOfPositions,
-    'indexOfPosition: ' + indexOfPosition
-  )
   return numdersOfPositions.indexOf(indexOfPosition) !== -1
 }
