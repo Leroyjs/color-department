@@ -5,6 +5,7 @@ import {
   FooterMapWrapper,
   FooterModalWrapper,
   FooterCompanyInfoMobile,
+  OverlayMap,
 } from './navigation-bar-map.style'
 import { mapStyle } from '../../../styles'
 import { FoxMarker } from './fox-marker'
@@ -35,6 +36,7 @@ export const NavigationBarMap = ({
             }}
             defaultZoom={11}
           >
+            <OverlayMap />
             <FoxMarker
               title={common.map?.title || ''}
               lat={latitude}

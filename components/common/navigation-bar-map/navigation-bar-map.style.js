@@ -42,6 +42,19 @@ export const FooterMapWrapper = styled.div`
   }
 `
 
+export const OverlayMap = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.36);
+  z-index: -1;
+`
+
 export const FooterModalWrapper = styled.div`
   position: relative;
   transition: height 0.7s;

@@ -14,6 +14,7 @@ import { useVH, useNoScroll } from 'utils'
 import { mapStyle } from '../../../styles'
 import { FoxMarker } from '../../common/navigation-bar-map/fox-marker'
 import GoogleMap from 'google-map-react'
+import { OverlayMap } from '../../common/navigation-bar-map/navigation-bar-map.style'
 
 export const Menu = ({ isOpen, props, common }) => {
   const latitude = Number(common.map?.latitude || 0)
@@ -50,6 +51,7 @@ export const Menu = ({ isOpen, props, common }) => {
             }}
             defaultZoom={11}
           >
+            <OverlayMap />
             <FoxMarker
               title={common.map?.title || ''}
               lat={latitude}
