@@ -45,6 +45,7 @@ export const CellImage = styled.div`
   background-image: url('${({ image }) => image}');
   background-position: center;
   background-size: cover;
-  transition: opacity 0.3s ${({ step }) => step * 0.2}s;
+  transition: opacity 0.3s
+    ${({ step, isVisible }) => step * 0.2 + (isVisible ? 0 : 1.1)}s;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
 `

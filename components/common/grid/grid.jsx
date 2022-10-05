@@ -88,7 +88,7 @@ export const Grid = ({ props, arrayOfImages }) => {
         }
         return !prevApearenceState
       })
-    }, 2000)
+    }, 2500)
 
     return () => clearInterval(interval)
   }, [])
