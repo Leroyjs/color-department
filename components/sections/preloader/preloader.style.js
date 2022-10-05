@@ -91,6 +91,7 @@ export const GridWrapper = styled.div`
   height: 100%;
   bottom: 0;
   padding-top: ${sizes['desktopLG'].half};
+
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     padding-top: ${sizes['tabletLG'].thirdX2};
   }
@@ -114,7 +115,7 @@ export const FoxBoxWrapper = styled.div`
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     height: calc(100% - ${sizes['desktopLG'].half});
     height: calc(var(--fsvh, 1vh) * 100 - ${sizes['desktopLG'].half});
-    margin-top: ${sizes['desktopLG'].half};
+    margin-top: ${sizes['tabletLG'].x1};
   }
 `
 
