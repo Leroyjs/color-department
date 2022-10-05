@@ -15,7 +15,11 @@ import { setTransperentByScroll } from './utils'
 import theme from '../../../__data__/theme'
 import { useRouter } from 'next/router'
 
-export const Header = ({ transparentToComponent, common }) => {
+export const Header = ({
+  transparentToComponent,
+  common,
+  isBorder = false,
+}) => {
   const headerRef = useRef(null)
   const router = useRouter()
   //Прозрачность фона
@@ -37,6 +41,7 @@ export const Header = ({ transparentToComponent, common }) => {
     <>
       <HeaderWrapper
         ref={headerRef}
+        isBorder={isBorder || isOpenMenu}
         transparency={transparentBg}
         isMenuOpen={isOpenMenu}
         className="header-main"
