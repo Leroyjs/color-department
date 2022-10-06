@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import {
   ColouristFilter,
+  ColouristResetBtn,
   DropDownsWrapper,
   MoreWrapper,
   NotFound,
   ProjectPage,
+  ResetBtn,
+  ResetBtnH3,
 } from './project-cards.style'
 import {
   ButtonEllipse,
   ButtonRectangle,
   DropDown,
+  H3,
   WorksCards,
 } from 'components'
 
@@ -91,9 +95,19 @@ export const ProjectCards = ({ projects, categories, genres, colourists }) => {
             value={currentColourist}
           />
         </ColouristFilter>
+        <ResetBtnH3
+          wrapperProps={{ className: ResetBtn }}
+          onClick={() => {
+            setCurrentCategory('')
+            setCurrentGenre('')
+            setCurrentColourist('')
+          }}
+        >
+          Delete all filtres
+        </ResetBtnH3>
       </DropDownsWrapper>
       <WorksCards cards={cards} />
-      <MoreWrapper isSeeAll={cards?.length < amountOfVailableCards} mt="md">
+      <MoreWrapper isSeeAll={cards?.length <= amountOfVailableCards} mt="md">
         <ButtonEllipse onClick={showMore}>More</ButtonEllipse>
       </MoreWrapper>
       <NotFound mt="md" isNotFound={isNotFound}>

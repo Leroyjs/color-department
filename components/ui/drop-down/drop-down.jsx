@@ -93,7 +93,7 @@ export const DropDown = ({
   return (
     <InputWrapper isFullWidth={isFullWidth} {...props}>
       <InputStyled
-        isActive={isActive}
+        isActive={value && isActive}
         isOpen={isOpen}
         onChange={onChange}
         onClick={handleOpen}
@@ -110,7 +110,7 @@ export const DropDown = ({
         </CurrentLabel>
         <IconPlus
           isError={error}
-          isActive={isActive}
+          isActive={value && isActive}
           isOpen={isOpen}
           viewBox="0 0 26 26"
           fill="none"
@@ -125,7 +125,9 @@ export const DropDown = ({
         {options?.map((option) => (
           <DropDownItem
             key={option.value}
-            isActive={selected.some(({ value }) => value === option.value)}
+            isActive={
+              value && selected.some(({ value }) => value === option.value)
+            }
             onClick={() => handleOption(option)}
           >
             {option.label}
