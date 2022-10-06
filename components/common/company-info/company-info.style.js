@@ -50,6 +50,7 @@ export const AdditionInfo = styled.div`
 
 export const MadeBy = styled.div`
   padding-bottom: 16px;
+  cursor: pointer;
 
   & span {
     color: ${colors.white};

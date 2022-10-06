@@ -30,7 +30,7 @@ const Team = ({
   return (
     <>
       <Preloader running_line={running_line} />
-      <Header common={common} />
+      <Header common={common} isBorder />
       <PhotoStartScreen arrayOfImages={avatars} title={title_team} />
       <main style={{ backgroundColor: colors.black }}>
         <IntroAboutTextBlock pt="xlg" />

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {
   ColouristFilter,
-  ColouristResetBtn,
   DropDownsWrapper,
   MoreWrapper,
   NotFound,
@@ -9,13 +8,7 @@ import {
   ResetBtn,
   ResetBtnH3,
 } from './project-cards.style'
-import {
-  ButtonEllipse,
-  ButtonRectangle,
-  DropDown,
-  H3,
-  WorksCards,
-} from 'components'
+import { ButtonEllipse, DropDown, WorksCards } from 'components'
 
 /**Шаг пагинации для карт с проектами*/
 const paginationStep = 6
