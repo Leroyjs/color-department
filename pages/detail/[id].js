@@ -23,7 +23,7 @@ const MainComponent = styled.main`
 const DetailCardPage = ({ title, year, credentials, photos, common }) => {
   return (
     <>
-      <Header common={common} />
+      <Header common={common} isBorder />
       <MainComponent>
         <DetailTitle title={title} year={year} py="lg" />
         <Slider slides={photos} isSimpleMode />
