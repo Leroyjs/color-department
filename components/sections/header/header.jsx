@@ -54,14 +54,14 @@ export const Header = ({
         <HeaderItemBlob onClick={() => theme.setNextThemeName()}>
           <Blob />
         </HeaderItemBlob>
-        <Link href={'/'}>
+        <Link href={'/test'}>
           <HeaderItemTitle>
             <Title>
               <H3 color="white">{common.main_title}</H3>
             </Title>
           </HeaderItemTitle>
         </Link>
-        <Link href={router.pathname === '/order' ? '/' : '/order'}>
+        <Link href={router.pathname === '/order' ? '/test' : '/order'}>
           <HeaderItemLetsGo>
             <Caption color="white">Lets talk</Caption>
           </HeaderItemLetsGo>
