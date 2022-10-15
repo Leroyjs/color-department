@@ -1,7 +1,7 @@
 import { Footer, Header, FormWork } from 'components'
 import { getContent, MainComponent } from 'utils'
 
-const Order = ({ common, selectors }) => {
+const Letstalk = ({ common, selectors }) => {
   return (
     <>
       <Header common={common} isBorder />
@@ -13,7 +13,7 @@ const Order = ({ common, selectors }) => {
   )
 }
 
-export default Order
+export default Letstalk
 
 export async function getServerSideProps() {
   const data = await getContent('order')

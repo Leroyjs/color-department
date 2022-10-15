@@ -33,6 +33,7 @@ const Home = ({
       <StartScreen running_line={running_line} promo_video={promo_video} />
       <main ref={videoContant} style={{ backgroundColor: colors.black }}>
         <IntroMainTextBlock
+          common={common}
           promo_subtitle={promo_subtitle}
           promo_hints={promo_hints}
         />

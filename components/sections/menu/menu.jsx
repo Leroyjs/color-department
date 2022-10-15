@@ -34,8 +34,8 @@ export const Menu = ({ isOpen, props, common }) => {
           <MenuItem link="/team" key="/team" title={common.nav_labels.team} />
           <MenuItem link="/shop" key="/shop" title={common.nav_labels.shop} />
           <MenuItem
-            link="/order"
-            key="/order"
+            link="/letstalk"
+            key="/letstalk"
             title={common.nav_labels.order}
           />
         </MenuList>

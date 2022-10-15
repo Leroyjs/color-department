@@ -1,14 +1,18 @@
-import { colors } from "./constants";
-import {breakpointsWidth} from 'styles';
-import { injectGlobal } from "@emotion/css";
-import { resetStyles } from "./reset.style";
+import { colors } from './constants'
+import { breakpointsWidth } from 'styles'
+import { injectGlobal } from '@emotion/css'
+import { resetStyles } from './reset.style'
 
 export const initGlobalStyles = injectGlobal`
   ${resetStyles}
-
   body {
     background-color: ${colors.black};
     scroll-behavior: smooth;
+  }
+
+  a {
+    color: transparent;
+    text-decoration: none;
   }
 
   //Ширину я бы не трогал
@@ -31,4 +35,4 @@ export const initGlobalStyles = injectGlobal`
       }
     }
   }
-`;
+`

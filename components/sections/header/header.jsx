@@ -61,7 +61,7 @@ export const Header = ({
             </Title>
           </HeaderItemTitle>
         </Link>
-        <Link href={router.pathname === '/order' ? '/test' : '/order'}>
+        <Link href={router.pathname === '/letstalk' ? '/test' : '/letstalk'}>
           <HeaderItemLetsGo>
             <Caption color="white">Lets talk</Caption>
           </HeaderItemLetsGo>

@@ -23,7 +23,7 @@ export const Footer = ({ common, ...props }) => {
             {new Date().getFullYear()} {common.company_name}
           </FoxTitleDA>
           <FoxTitleMobile color="white">
-            ${common.email} <br /> ${common.phone}
+            {common.email} <br /> {common.phone}
           </FoxTitleMobile>
         </FooterLogo>
         <HideForMobile>

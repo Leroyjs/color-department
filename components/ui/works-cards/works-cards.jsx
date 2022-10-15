@@ -25,7 +25,7 @@ export const WorksCards = ({ title, cards }) => {
             author={card?.client || card?.credentials?.client || ''}
             year={card.year}
             preview={card.preview}
-            video={card.shortVideo}
+            video={card.short_video}
             key={card.firstTitle}
             href={`/detail/${card.id}`}
           />

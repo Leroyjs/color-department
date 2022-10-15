@@ -33,7 +33,7 @@ const Projects = ({
         <RunningLineLink
           mt="xlg"
           outline={'true'}
-          link={'/order'}
+          link={'/letstalk'}
           titles={['LET’S TALK', 'LET’S TALK', 'LET’S TALK']}
         />
       </main>

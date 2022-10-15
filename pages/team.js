@@ -71,7 +71,7 @@ const Team = ({
         <RunningLineLink
           mt="lg"
           outline={'true'}
-          link={'/order'}
+          link={'/letstalk'}
           titles={['LET’S TALK', 'LET’S TALK', 'LET’S TALK']}
         />
         <DetailCardModal

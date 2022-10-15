@@ -36,22 +36,26 @@ export const CompanyInfo = ({
         </Caption>
       </YearInfoMobile>
       <AdditionInfo>
-        <Link href="https://instagram.com/friendsdesigndepartment?igshid=YmMyMTA2M2Y=">
+        <a
+          href="https://instagram.com/friendsdesigndepartment?igshid=YmMyMTA2M2Y="
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <MadeBy>
             <Caption>made by</Caption>
             <Caption style={{ whiteSpace: 'nowrap' }}>
               design department
             </Caption>
           </MadeBy>
-        </Link>
+        </a>
         <LinksBy>
-          <Link href={link_policy || ''}>
+          <a href={link_policy || ''} target="_blank" rel="noopener noreferrer">
             <CaptionLink>Privacy </CaptionLink>
-          </Link>
+          </a>
           <CaptionBr>|</CaptionBr>
-          <Link href={link_terms || ''}>
+          <a href={link_terms || ''} target="_blank" rel="noopener noreferrer">
             <CaptionLink>Terms</CaptionLink>
-          </Link>
+          </a>
         </LinksBy>
       </AdditionInfo>
     </CompanyInfoWrapper>

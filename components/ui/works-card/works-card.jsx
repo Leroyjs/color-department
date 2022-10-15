@@ -20,7 +20,7 @@ export const WorksCard = ({
   year,
 }) => {
   const videoRef = useRef()
-  console.log(preview)
+
   return (
     <CardWrapper
       href={href}
@@ -48,6 +48,7 @@ export const WorksCard = ({
 
 function handleEnter(event) {
   const { target } = event
+  console.log(target.firstChild)
   target.firstChild.play?.()
 }
 

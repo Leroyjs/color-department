@@ -22,7 +22,7 @@ import {
 } from './intro-main-text-block.style'
 import Link from 'next/link'
 
-export const IntroMainTextBlock = ({ promo_subtitle, promo_hints }) => {
+export const IntroMainTextBlock = ({ promo_subtitle, promo_hints, common }) => {
   return (
     <TextSectionWrapper>
       <FirstLineWrapper>
@@ -36,7 +36,13 @@ export const IntroMainTextBlock = ({ promo_subtitle, promo_hints }) => {
         <StyledDesktopLGBR />
         <StyledPhoneBR />
         <StyledWhiteH2>Based in Los Angeles.</StyledWhiteH2>
-        <StyledPlanet />
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={`https://maps.google.com/?q=${common.map?.latitude},${common.map?.longitude}`}
+        >
+          <StyledPlanet />
+        </a>
         <StyledTabletBR />
         <StyledTabletSMBR />
         <StyledPhoneBR />

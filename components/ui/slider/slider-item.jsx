@@ -19,6 +19,7 @@ export const SliderItem = ({ preview, video, isPlayed = false, slideImg }) => {
   return (
     <SlideWrapper className="glide__slide right">
       {slideImg ? (
+        // eslint-disable-next-line @next/next/no-img-element
         <img src={slideImg} alt={slideImg} />
       ) : (
         <VideoBackground preview={preview} video={video} ref={videoRef} />

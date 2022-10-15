@@ -1,15 +1,21 @@
-import styled from "@emotion/styled";
-import {breakpointsWidth, getVW} from "styles";
+import styled from '@emotion/styled'
+import { breakpointsWidth, getVW } from 'styles'
 
 export const SlideWrapper = styled.li`
   overflow: hidden;
   width: 0 !important;
   height: 100%;
   position: absolute;
-  transform: scale(1.04);
   transition: 0.7s transform cubic-bezier(0.25, 0.1, 0.25, 1),
     0s width cubic-bezier(0.25, 0.1, 0.25, 1) 0.7s;
   cursor: grab;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 
   &.right {
     left: auto;
@@ -25,10 +31,9 @@ export const SlideWrapper = styled.li`
     z-index: 1;
     width: 100% !important;
     height: 100% !important;
-    transform: none;
     transition: 0.4s width ease-in;
   }
-`;
+`
 
 export const Prev = styled.div`
   position: absolute;
@@ -40,7 +45,7 @@ export const Prev = styled.div`
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     display: none;
   }
-`;
+`
 
 export const Next = styled.div`
   position: absolute;
@@ -52,7 +57,7 @@ export const Next = styled.div`
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     display: none;
   }
-`;
+`
 
 export const Cursor = styled.div`
   position: fixed;
@@ -68,7 +73,7 @@ export const Cursor = styled.div`
   pointer-events: none;
   transition: opacity 0.3s;
 
-  @media screen and (min-width: ${breakpointsWidth.desktopLG}){
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     width: ${getVW(1)};
     height: ${getVW(1)};
   }
@@ -80,4 +85,4 @@ export const Cursor = styled.div`
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     display: none;
   }
-`;
+`

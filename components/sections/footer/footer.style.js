@@ -42,7 +42,7 @@ export const FoxWrapper = styled.div`
   ${getCurrentPaddingStyle('vertical', 'md')};
 `
 
-export const FoxWrapperMap = styled.div`
+export const FoxWrapperMap = styled.a`
   display: inline-flex;
   text-align: center;
   align-items: center;
@@ -51,6 +51,15 @@ export const FoxWrapperMap = styled.div`
   transform: translate(-50%, -50%);
   min-width: 240px;
   ${getCurrentPaddingStyle('vertical', 'md')};
+  outline: none;
+  border: none;
+  box-shadow: none;
+
+  &:visited {
+    outline: none;
+    border: none;
+    box-shadow: none;
+  }
 `
 
 export const FoxStyle = css`

@@ -10,7 +10,7 @@ const Shop = ({ common, products }) => {
         <RunningLineLink
           mt="md"
           outline={'true'}
-          link={'/order'}
+          link={'/letstalk'}
           titles={['LET’S TALK', 'LET’S TALK', 'LET’S TALK']}
         />
       </main>

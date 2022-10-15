@@ -1,5 +1,5 @@
-import { Caption, H2, } from "components";
-import Link from "next/link";
+import { Caption, H2 } from 'components'
+import Link from 'next/link'
 import {
   TextSectionWrapper,
   RoundedNumber,
@@ -14,9 +14,9 @@ import {
   StyledDesktopBR,
   StyledPhoneLGBR,
   StyledPhoneSMBR,
-} from "./intro-about-text-block.style";
+} from './intro-about-text-block.style'
 
-export const IntroAboutTextBlock = ({...props}) => {
+export const IntroAboutTextBlock = ({ ...props }) => {
   return (
     <TextSectionWrapper {...props}>
       <H2>a color grading studio&nbsp;</H2>
@@ -24,9 +24,7 @@ export const IntroAboutTextBlock = ({...props}) => {
       <StyledTabletSMBR />
       <StyledPhoneSMBR />
       <H2>Based in&nbsp;</H2>
-        <StyledWhiteH2>
-          Los Angeles, CALIFORNIA.&nbsp;
-        </StyledWhiteH2>
+      <StyledWhiteH2>Los Angeles, CALIFORNIA.&nbsp;</StyledWhiteH2>
       <StyledPlanet />
       <StyledDesktopBR />
       <StyledDesktopSMBR />
@@ -71,12 +69,12 @@ export const IntroAboutTextBlock = ({...props}) => {
       <StyledTabletSMBR />
       <StyledPhoneSMBR />
       <H2> and&nbsp;</H2>
-      <Link href="/order">
+      <Link href="/letstalk">
         <TextDecorationWrapper>
           <StyledWhiteH2>agreements very seriously.</StyledWhiteH2>
           <StyledUnderline />
         </TextDecorationWrapper>
       </Link>
     </TextSectionWrapper>
-  );
-};
+  )
+}

@@ -52,6 +52,14 @@ export const MadeBy = styled.div`
   padding-bottom: 16px;
   cursor: pointer;
 
+  color: ${colors.white};
+
+  &:hover {
+    color: ${({ theme }) => getCurrentColor('primary', theme)};
+  }
+
+  transition: color 0.3s;
+
   & span {
     color: ${colors.white};
   }

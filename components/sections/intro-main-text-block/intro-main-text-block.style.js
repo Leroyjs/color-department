@@ -318,6 +318,14 @@ export const StyledPlanet = styled(Planet)`
   width: 60px;
   height: 60px;
 
+  stroke: ${({ theme }) => getCurrentColor('white', theme)};
+  transition: stroke 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    stroke: ${({ theme }) => getCurrentColor('primary', theme)};
+  }
+
   @media screen and (max-width: ${breakpointsWidth.desktopMD}) {
     width: 52px;
     height: 52px;
