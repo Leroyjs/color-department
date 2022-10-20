@@ -43,7 +43,7 @@ export const NavigationBarMap = ({
               lng={longitude}
               target="_blank"
               rel="noopener noreferrer"
-              href={`https://maps.google.com/?q=${common.map?.latitude},${common.map?.longitude}`}
+              href={`https://www.google.com/maps/dir//${common.map?.latitude},${common.map?.longitude}`}
             />
           </GoogleMap>
         </FooterMapWrapper>

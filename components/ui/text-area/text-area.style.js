@@ -1,32 +1,33 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 import {
-    breakpointsWidth,
-    colors,
-    fontFamilies,
-    fontSizes, getCurrentColor,
-    getCurrentFontSizeStyle,
-    getCurrentPaddingStyle,
-    getCurrentMarginStyle,
-    hexToRGBA,
-    applyMargins,
-} from "styles";
+  breakpointsWidth,
+  colors,
+  fontFamilies,
+  fontSizes,
+  getCurrentColor,
+  getCurrentFontSizeStyle,
+  getCurrentPaddingStyle,
+  getCurrentMarginStyle,
+  hexToRGBA,
+  applyMargins,
+} from 'styles'
 
 const lineHeight = 90
 export const InputWrapper = styled.div`
   position: relative;
-  ${({ isFullWidth }) => isFullWidth && "width: 100%;"}
-`;
+  ${({ isFullWidth }) => isFullWidth && 'width: 100%;'}
+`
 
-export const TextAreaInput = styled("textarea")`
+export const TextAreaInput = styled('textarea')`
   padding-top: 18px;
   margin-bottom: -20px;
   width: 100%;
   overflow: hidden;
   text-transform: uppercase;
   resize: none;
-  ${getCurrentFontSizeStyle("h3")};
+  ${getCurrentFontSizeStyle('h3')};
   font-family: ${fontFamilies.mainFont};
-  color: ${({ theme }) => getCurrentColor("primary", theme)};
+  color: ${({ theme }) => getCurrentColor('primary', theme)};
   line-height: ${`${lineHeight}px`};
   background-image: ${`linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${hexToRGBA(
     colors.white,
@@ -90,16 +91,14 @@ export const TextAreaInput = styled("textarea")`
     )} 0px)`};
     background-size: ${`100% 5.57vw;`};
   }
-`;
-
-
+`
 
 export const TextAreaWrapper = styled.div`
   width: 100%;
   position: relative;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -111,7 +110,7 @@ export const TextAreaWrapper = styled.div`
 
     font-size: ${fontSizes.desktopLG.h3};
     font-family: ${fontFamilies.mainFont};
-    line-height: ${lineHeight + "px"};
+    line-height: ${lineHeight + 'px'};
     background-image: ${`linear-gradient(transparent, transparent calc(${lineHeight}px - 2px), ${colors.white} 0px)`};
     background-size: ${`100% ${lineHeight}px`};
     transition: transform 0.5s;
@@ -156,7 +155,7 @@ export const TextAreaWrapper = styled.div`
       background-size: ${`100% 5.57vw`};
     }
   }
-`;
+`
 
 export const Error = styled.div`
   width: 100%;
@@ -166,20 +165,20 @@ export const Error = styled.div`
   top: calc(100% + 4px);
   font-family: ${fontFamilies.subFont};
 
-  ${getCurrentFontSizeStyle("caption")};
-`;
+  ${getCurrentFontSizeStyle('caption')};
+`
 
 export const Title = styled.h3`
   text-transform: uppercase;
   font-size: ${fontSizes.desktopLG.h3};
   font-family: ${fontFamilies.mainFont};
-  color: ${(colors.white)};
+  color: ${colors.white};
   margin-bottom: 10px;
 
-  ${getCurrentPaddingStyle("top", "xxsm")};
+  ${getCurrentPaddingStyle('top', 'xxsm')};
 
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    ${getCurrentFontSizeStyle("h3")}
+    ${getCurrentFontSizeStyle('h3')}
     margin-bottom: 10px;
   }
 
@@ -189,6 +188,6 @@ export const Title = styled.h3`
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     margin-bottom: calc(0.5vw + 2px);
-    ${getCurrentFontSizeStyle("h3")}
+    ${getCurrentFontSizeStyle('h3')}
   }
-`;
+`

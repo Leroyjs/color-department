@@ -215,42 +215,11 @@ export const StyledBrEllipse = styled.br`
 `
 
 export const CaptionEllipse = css`
-  position: relative;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transform: translate(2em, -100%);
-
-  span {
-    color: ${getCurrentColor('white')};
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 2px solid ${getCurrentColor('white')};
-    border-radius: 50%;
-    padding: 2em;
-    height: 60px;
-    width: calc(100% + 4em);
-
-    @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
-      height: ${getVW(60)};
-      border-width: ${getVW(2)};
-    }
-
-    @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-      height: 48px;
-      padding: 1.5em;
-    }
-  }
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
-    transform: translate(0, 50%);
+    margin-top: 0.25em;
   }
 `
 

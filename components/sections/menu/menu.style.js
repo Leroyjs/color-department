@@ -31,6 +31,7 @@ export const MenuWrapper = styled.div`
 export const MenuMap = styled.div`
   position: relative;
   grid-column: 5/9;
+  height: calc(100vh - 2 * 6.25vw);
 `
 export const MenuList = styled.ul`
   display: flex;

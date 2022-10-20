@@ -6,6 +6,7 @@ import {
   Slider,
   Stakeholders,
   VideoPlayer,
+  WorksCards,
 } from 'components'
 import { breakpointsWidth, sizes } from 'styles'
 import { getContent } from '../../utils'
@@ -20,7 +21,14 @@ const MainComponent = styled.main`
   }
 `
 
-const DetailCardPage = ({ title, year, credentials, photos, common }) => {
+const DetailCardPage = ({
+  title,
+  year,
+  credentials,
+  photos,
+  common,
+  coloristProjects,
+}) => {
   return (
     <>
       <Header common={common} isBorder />
@@ -37,6 +45,7 @@ const DetailCardPage = ({ title, year, credentials, photos, common }) => {
         />
         <VideoPlayer />
       </MainComponent>
+      <WorksCards cards={coloristProjects} />
       <Footer common={common} pt="xlg" />
     </>
   )
@@ -46,10 +55,18 @@ export default DetailCardPage
 
 export async function getServerSideProps(context) {
   try {
+    const {
+      data: { projects },
+    } = await getContent('projects')
     const data = await getContent(`projects/${context.params.id}`)
+    const currentColorist = data.credentials?.colorist
+
+    const coloristProjects = projects
+      .filter(({ colorist }) => currentColorist === colorist)
+      ?.slice(0, 4)
 
     return {
-      props: { ...data },
+      props: { ...data, coloristProjects },
     }
   } catch (e) {
     return {

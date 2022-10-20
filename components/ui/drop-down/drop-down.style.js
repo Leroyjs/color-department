@@ -1,38 +1,42 @@
 import {
-  applyMargins, applyPaddings,
+  applyMargins,
+  applyPaddings,
   colors,
-  fontFamilies, fontSizes, getCurrentColor,
+  fontFamilies,
+  fontSizes,
+  getCurrentColor,
   getCurrentFontSizeStyle,
   getCurrentPaddingStyle,
   hexToRGBA,
-  breakpointsWidth, getVW,
-} from "styles";
+  breakpointsWidth,
+  getVW,
+} from 'styles'
 
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
-const errorConditionBackgroundColor = ({isError}) =>
-    isError ? `background-color: ${colors.red}; transform: scaleX(1);` : "";
+const errorConditionBackgroundColor = ({ isError }) =>
+  isError ? `background-color: ${colors.red}; transform: scaleX(1);` : ''
 
 export const UnderlineInner = styled.div`
   width: 100%;
   height: 100%;
-  transform: scaleX(${({isActive}) => (isActive ? 1 : 0)});
+  transform: scaleX(${({ isActive }) => (isActive ? 1 : 0)});
   transform-origin: left;
   background-color: ${colors.white};
   transition: transform 0.5s;
 
   ${errorConditionBackgroundColor}
-`;
+`
 
 export const Underline = styled.div`
   width: 100%;
   height: 2px;
   background-color: ${hexToRGBA(colors.white, 0.2)};
-  
+
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     height: ${getVW(2)};
   }
-`;
+`
 
 export const DropDownOverlay = styled.div`
   position: fixed;
@@ -47,17 +51,19 @@ export const DropDownOverlay = styled.div`
   z-index: 1;
   transition: background-color 0.3s;
 
-  ${({isOpen}) => (isOpen && {
-    visibility: "visible",
-    pointerEvents: "auto"
-  })};
+  ${({ isOpen }) =>
+    isOpen && {
+      visibility: 'visible',
+      pointerEvents: 'auto',
+    }};
 
   @media (max-width: ${breakpointsWidth.tabletSM}) {
-    ${({isOpen}) => (isOpen && {
-      backgroundColor: hexToRGBA(colors.black, 0.9)
-    })};
+    ${({ isOpen }) =>
+      isOpen && {
+        backgroundColor: hexToRGBA(colors.black, 0.9),
+      }};
   }
-`;
+`
 
 export const DropDownList = styled.ul`
   position: absolute;
@@ -71,19 +77,20 @@ export const DropDownList = styled.ul`
   transition: max-height 0.35s, visibility 0.35s;
   overflow: hidden;
   z-index: 5;
-  
-  ${({isOpen}) => (isOpen && {
-    visibility: "visible",
-    maxHeight: "var(--height-drop-down, 40vh)",
-  })};
 
-  
+  ${({ isOpen }) =>
+    isOpen && {
+      visibility: 'visible',
+      maxHeight: 'var(--height-drop-down, 40vh)',
+    }};
+
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     top: calc(100% - ${getVW(2)});
 
-    ${({isOpen}) => (isOpen && {
-      maxHeight: "calc(var(--height-drop-down, 40vh) / 1600 * 100vw)",
-    })};
+    ${({ isOpen }) =>
+      isOpen && {
+        maxHeight: 'calc(var(--height-drop-down, 40vh) / 1600 * 100vw)',
+      }};
   }
 
   @media (max-width: ${breakpointsWidth.tabletSM}) {
@@ -102,7 +109,7 @@ export const DropDownList = styled.ul`
       font-weight: 700;
       display: inline-block;
       text-transform: uppercase;
-      ${getCurrentFontSizeStyle("caption")};
+      ${getCurrentFontSizeStyle('caption')};
       color: ${colors.white};
       position: absolute;
       bottom: calc(100% + 24px);
@@ -111,10 +118,18 @@ export const DropDownList = styled.ul`
       transition: opacity 0.4s;
       opacity: 0;
 
-      ${({isOpen}) => (isOpen && {
-        opacity: 1
-      })};
+      ${({ isOpen }) =>
+        isOpen && {
+          opacity: 1,
+        }};
     }
+
+    ${({ isOpen }) =>
+      isOpen && {
+        visibility: 'visible',
+        maxHeight: 'calc(var(--height-drop-down, 40vh) + 24px)',
+      }};
+    padding-bottom: 24px;
   }
 
   @media (max-width: ${breakpointsWidth.phone}) {
@@ -122,22 +137,22 @@ export const DropDownList = styled.ul`
       bottom: calc(100% + 12px);
     }
   }
-`;
+`
 
 export const IconPlus = styled.svg`
   display: inline-block;
   width: 26px;
   height: 26px;
-  transition: stroke .3s;
-  ${({isOpen, isActive, isError, theme}) => {
+  transition: stroke 0.3s;
+  ${({ isOpen, isActive, isError, theme }) => {
     if (isOpen) {
-      return { stroke: colors.white };
+      return { stroke: colors.white }
     } else if (isActive) {
-      return {stroke: getCurrentColor("primary", theme)}
+      return { stroke: getCurrentColor('primary', theme) }
     } else if (isError) {
-      return { stroke: colors.red };
+      return { stroke: colors.red }
     } else {
-      return { stroke: colors.white };
+      return { stroke: colors.white }
     }
   }};
 
@@ -180,14 +195,14 @@ export const IconPlus = styled.svg`
     height: 1.625vw;
     width: 1.625vw;
   }
-`;
+`
 
 export const DropDownItem = styled.li`
   width: 100%;
   cursor: pointer;
   text-transform: uppercase;
   font-family: ${fontFamilies.mainFont};
-  ${getCurrentFontSizeStyle("h3")};
+  ${getCurrentFontSizeStyle('h3')};
   height: 50px;
   padding: 10px 6px 6px;
   transition: background-color 0.3s;
@@ -196,13 +211,13 @@ export const DropDownItem = styled.li`
   white-space: nowrap;
 
   &:hover {
-    background-color: ${({ theme }) => getCurrentColor("primary", theme)};
+    background-color: ${({ theme }) => getCurrentColor('primary', theme)};
   }
 
   ${({ isActive, theme }) =>
     isActive &&
     `
-    background-color: ${getCurrentColor("primary", theme)};
+    background-color: ${getCurrentColor('primary', theme)};
     `};
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
@@ -216,10 +231,12 @@ export const DropDownItem = styled.li`
   }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
-    height: 32px;
-    padding: 7px 6px 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
   }
-`;
+`
 
 export const CurrentLabel = styled.span`
   white-space: nowrap;
@@ -231,23 +248,23 @@ export const InputStyled = styled.div`
   justify-content: space-between;
   cursor: pointer;
   width: 100%;
-  color: ${({theme}) => theme.primary};
+  color: ${({ theme }) => theme.primary};
   text-transform: uppercase;
   font-family: ${fontFamilies.mainFont};
-  ${getCurrentPaddingStyle("vertical", "xxsm")};
+  ${getCurrentPaddingStyle('vertical', 'xxsm')};
   font-family: ${fontFamilies.mainFont};
   text-align: left;
   transition: color 0.3s;
 
-  ${({isOpen, isActive, isError, theme}) => {
+  ${({ isOpen, isActive, isError, theme }) => {
     if (isOpen) {
-      return {color: colors.white};
+      return { color: colors.white }
     } else if (isActive) {
-      return {color: getCurrentColor("primary", theme)};
+      return { color: getCurrentColor('primary', theme) }
     } else if (isError) {
-      return {color: colors.red};
+      return { color: colors.red }
     } else {
-      return {color: hexToRGBA(colors.white, 0.2)};
+      return { color: hexToRGBA(colors.white, 0.2) }
     }
   }}
 
@@ -257,12 +274,12 @@ export const InputStyled = styled.div`
     }
   }
 
-  ${getCurrentFontSizeStyle("h3")};
+  ${getCurrentFontSizeStyle('h3')};
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     align-items: flex-end;
   }
-`;
+`
 
 export const Error = styled.div`
   width: 100%;
@@ -272,16 +289,16 @@ export const Error = styled.div`
   top: calc(100% + 4px);
   font-family: ${fontFamilies.subFont};
 
-  ${getCurrentFontSizeStyle("caption")};
-  
-    @media screen and (min-width: ${breakpointsWidth.desktopLG}) {  
-      top: calc(100% + ${getVW(4)});
+  ${getCurrentFontSizeStyle('caption')};
+
+  @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
+    top: calc(100% + ${getVW(4)});
   }
-`;
+`
 
 export const InputWrapper = styled.div`
   position: relative;
-  ${({isFullWidth}) => isFullWidth && "width: 100%;"}
+  ${({ isFullWidth }) => isFullWidth && 'width: 100%;'}
   ${applyMargins};
   ${applyPaddings}
-`;
+`
