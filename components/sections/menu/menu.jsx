@@ -56,6 +56,9 @@ export const Menu = ({ isOpen, props, common }) => {
               title={common.map?.title || ''}
               lat={latitude}
               lng={longitude}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={`https://www.google.com/maps/dir//${latitude},${longitude}`}
             />
           </GoogleMap>
         </MenuMap>

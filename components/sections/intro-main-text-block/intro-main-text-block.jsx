@@ -77,7 +77,7 @@ export const IntroMainTextBlock = ({ promo_subtitle, promo_hints, common }) => {
         </Link>
         <StyledWhiteH2>&nbsp;Whatever the task is.&nbsp;</StyledWhiteH2>
         <StyledBrEllipse />
-        <Link href="/projects">
+        <Link href="/letstalk">
           <CaptionLink>
             <StyledLeftBracket />
             <Caption wrapperProps={{ className: CaptionEllipse }}>
