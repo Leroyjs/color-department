@@ -27,6 +27,7 @@ const DetailCardPage = ({
   credentials,
   photos,
   common,
+  video,
   coloristProjects,
 }) => {
   return (
@@ -43,7 +44,7 @@ const DetailCardPage = ({
           director={credentials.director}
           dop={credentials.other}
         />
-        <VideoPlayer />
+        <VideoPlayer videoId={video} />
       </MainComponent>
       <WorksCards cards={coloristProjects} />
       <Footer common={common} pt="xlg" />
