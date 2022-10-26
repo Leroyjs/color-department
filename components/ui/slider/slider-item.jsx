@@ -10,9 +10,9 @@ export const SliderItem = ({ preview, video, isPlayed = false, slideImg }) => {
   useEffect(() => {
     if (Boolean(slideImg)) return
     if (isPlayed) {
-      videoRef.current.play()
+      videoRef?.current.play()
     } else {
-      videoRef.current.pause()
+      videoRef?.current.pause()
     }
   }, [isPlayed])
 

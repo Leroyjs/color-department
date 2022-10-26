@@ -10,12 +10,19 @@ export const SlideWrapper = styled.li`
     0s width cubic-bezier(0.25, 0.1, 0.25, 1) 0.7s;
   cursor: grab;
 
-  img {
-    width: 100%;
+  img,
+  source,
+  video {
+    width: 100vw !important;
+    min-width: 100vw !important;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    overflow: hidden;
   }
+
+  left: auto;
+  right: 0;
 
   &.right {
     left: auto;
