@@ -7,6 +7,7 @@ import {
   Title,
 } from './text-area.style'
 import { propTypesMargin, propTypesPadding } from '../../types'
+import { useEffect, useRef } from 'react'
 
 export const TextArea = ({
   title,
@@ -20,6 +21,9 @@ export const TextArea = ({
   isResizable = true,
   ...props
 }) => {
+  const ref = useRef()
+  const ref2 = useRef()
+
   function resizeHeight(e) {
     e.target.style.height = 'auto'
     const scrollHeight = e.target.scrollHeight
@@ -29,21 +33,23 @@ export const TextArea = ({
   function handleKeyUp(e) {
     isResizable && resizeHeight(e)
     const value = e.target.value
-    if (value.length > maxLength) return
+    // console.log(ref.current.scrollHeight, ref2.current.scrollHeight)
+    // if (ref.current.scrollHeight > ref2.current.scrollHeight) return
     onChange?.(value)
   }
 
   return (
     <InputWrapper isFullWidth={isFullWidth} {...props}>
       {title && <Title>{title}</Title>}
-      <TextAreaWrapper isActive={!!value} maxRows={rows}>
+      <TextAreaWrapper isActive={!!value} maxRows={rows} ref={ref2}>
         <TextAreaInput
           placeholder="About your work"
           onChange={handleKeyUp}
           defaultValue={defaultValue}
-          maxLength={maxLength}
+          // maxLength={maxLength}
           value={value}
           rows={rows}
+          ref={ref}
           {...propsInput}
         />
       </TextAreaWrapper>

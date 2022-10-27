@@ -34,8 +34,8 @@ export const TextAreaInput = styled('textarea')`
     0.2
   )} 0px)`};
   background-size: ${`100% ${lineHeight}px`};
-  ${applyMargins}
 
+  ${applyMargins}
   &::placeholder {
     color: ${hexToRGBA(colors.white, 0)};
 
@@ -43,29 +43,6 @@ export const TextAreaInput = styled('textarea')`
       color: ${hexToRGBA(colors.white, 0.2)};
       padding-top: 2px;
     }
-  }
-
-  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
-    padding-top: 10px;
-    margin-bottom: -10px;
-    line-height: 66px;
-    background-image: ${`linear-gradient(transparent, transparent calc(66px - 2px), ${hexToRGBA(
-      colors.white,
-      0.2
-    )} 0px)`};
-    background-size: ${`100% 66px`};
-  }
-
-  @media screen and (max-width: ${breakpointsWidth.phone}) {
-    padding-top: 11px;
-    margin-bottom: -18px;
-    line-height: 48px;
-    background-image: ${`linear-gradient(transparent, transparent calc(56px - 2px), ${hexToRGBA(
-      colors.white,
-      0.2
-    )} 0px)`};
-    background-size: ${`100% 56px`};
-    height: 230px;
   }
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
@@ -91,11 +68,35 @@ export const TextAreaInput = styled('textarea')`
     )} 0px)`};
     background-size: ${`100% 5.57vw;`};
   }
+
+  @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
+    padding-top: 10px;
+    margin-bottom: -10px;
+    line-height: 66px;
+    background-image: ${`linear-gradient(transparent, transparent calc(66px - 2px), ${hexToRGBA(
+      colors.white,
+      0.2
+    )} 0px)`};
+    background-size: ${`100% 66px`};
+  }
+
+  @media screen and (max-width: ${breakpointsWidth.phone}) {
+    padding-top: 11px;
+    margin-bottom: -18px;
+    line-height: 56px;
+    background-image: ${`linear-gradient(transparent, transparent calc(56px - 2px), ${hexToRGBA(
+      colors.white,
+      0.2
+    )} 0px)`};
+    background-size: ${`100% 56px`};
+    height: 230px;
+  }
 `
 
 export const TextAreaWrapper = styled.div`
   width: 100%;
   position: relative;
+  overflow: hidden;
 
   &:after {
     content: '';
