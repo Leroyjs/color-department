@@ -27,6 +27,7 @@ export const TextArea = ({
   function resizeHeight(e) {
     e.target.style.height = 'auto'
     const scrollHeight = e.target.scrollHeight
+    e.target.parentNode.style.height = `${scrollHeight}px`
     e.target.style.height = `${scrollHeight}px`
   }
 
