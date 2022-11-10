@@ -13,7 +13,7 @@ const SeparatorText = () => (
   <div>
     <Caption>a color</Caption>
     <br />
-    <Caption>grading studion based</Caption>
+    <Caption>grading studio based</Caption>
     <br />
     <Caption>in los angeles</Caption>
     <br />
