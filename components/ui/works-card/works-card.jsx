@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { propTypesVideoBg } from '../../types'
 import { VideoBackground } from 'components'
 import { PropTypes } from 'prop-types'
@@ -20,6 +20,10 @@ export const WorksCard = ({
   year,
 }) => {
   const videoRef = useRef()
+
+  useEffect(() => {
+    videoRef.current.load?.()
+  }, [video])
 
   return (
     <CardWrapper
@@ -48,7 +52,7 @@ export const WorksCard = ({
 
 function handleEnter(event) {
   const { target } = event
-  console.log(target.firstChild)
+  target.firstChild.load?.()
   target.firstChild.play?.()
 }
 

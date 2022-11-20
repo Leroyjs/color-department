@@ -67,14 +67,14 @@ export const ProjectCards = ({ projects, categories, genres, colourists }) => {
       <DropDownsWrapper>
         <DropDown
           mb="md"
-          title="All category"
+          title="All categories"
           onChange={onChangeFilter(setCurrentCategory)}
           options={categories}
           value={currentCategory}
         />
         <DropDown
           mb="md"
-          title="All genres"
+          title="All genreies"
           onChange={onChangeFilter(setCurrentGenre)}
           options={genres}
           value={currentGenre}
@@ -82,7 +82,7 @@ export const ProjectCards = ({ projects, categories, genres, colourists }) => {
         <ColouristFilter>
           <DropDown
             mb="md"
-            title="All colourist"
+            title="All colourists"
             onChange={onChangeFilter(setCurrentColourist)}
             options={colourists}
             value={currentColourist}
