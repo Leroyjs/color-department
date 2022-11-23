@@ -1,5 +1,13 @@
-import styled from "@emotion/styled";
-import {applyMargins, applyPaddings, breakpointsWidth, colors, getVW, hexToRGBA} from "styles";
+import styled from '@emotion/styled'
+import { css } from '@emotion/css'
+import {
+  applyMargins,
+  applyPaddings,
+  breakpointsWidth,
+  colors,
+  getVW,
+  hexToRGBA,
+} from 'styles'
 
 export const PlayButton = styled.div`
   position: absolute;
@@ -24,9 +32,14 @@ export const PlayButton = styled.div`
     object-fit: cover;
     width: 12.5%;
     height: 12.5%;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.25);
+      transform-origin: center;
+    }
   }
-  
-  
+
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     width: ${getVW(160)};
     height: ${getVW(160)};
@@ -36,17 +49,20 @@ export const PlayButton = styled.div`
   @media screen and (max-width: ${breakpointsWidth.tabletLG}) {
     width: 140px;
     height: 140px;
-  };
+  }
 
   @media screen and (max-width: ${breakpointsWidth.phone}) {
     width: 80px;
     height: 80px;
-  };
-`;
+  } ;
+`
 
 export const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   ${applyMargins};
 
   ${applyPaddings}
@@ -63,7 +79,9 @@ export const Wrapper = styled.div`
     transition: opacity 0.6s;
   }
 
-  ${({isPlay}) => isPlay && `
+  ${({ isPlay }) =>
+    isPlay &&
+    `
     ${PlayButton} {
           visibility: hidden;
           opacity: 0;
@@ -75,4 +93,28 @@ export const Wrapper = styled.div`
     }
     `};
 
-`;
+  #myVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+`
+
+export const VideoPreview = styled.img`
+  width: 100%;
+  object-fit: contain;
+`
+
+export const WrapperPlayer = styled.div`
+  position: relative;
+  padding-bottom: 56.25%;
+`
+
+export const PlayerCss = css`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-height: 81vh;
+`

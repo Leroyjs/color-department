@@ -46,18 +46,22 @@ export const DetailCardModal = ({
             <TextCol color="white">{bio}</TextCol>
             <TextCol color="white">{bio_second}</TextCol>
           </TextRow>
-          <ProfileLinks>
-            <Link href={`https://www.instagram.com/${networks}`}>
-              <Caption color="white" style={{ cursor: 'pointer' }}>
-                Instagram
-              </Caption>
-            </Link>
+          <ProfileLinks
+            href={`https://www.instagram.com/${networks}`}
+            target="_blank"
+          >
+            <Caption color="white" style={{ cursor: 'pointer' }}>
+              Instagram
+            </Caption>
             <CaptionLink>@{networks}</CaptionLink>
           </ProfileLinks>
         </Description>
       </Container>
     </Wrapper>
-    <WorksCards title={`${name}’s cases`} cards={projects} />
+    <WorksCards
+      title={`${name?.split(' ')?.[1] || name}’s cases`}
+      cards={projects}
+    />
   </ModalWrapper>
 )
 

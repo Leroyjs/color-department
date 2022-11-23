@@ -52,7 +52,7 @@ export const WorksCard = ({
 
 function handleEnter(event) {
   const { target } = event
-  target.firstChild.load?.()
+  // target.firstChild.load?.()
   target.firstChild.play?.()
 }
 

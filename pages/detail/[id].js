@@ -10,6 +10,7 @@ import {
 } from 'components'
 import { breakpointsWidth, sizes } from 'styles'
 import { getContent } from '../../utils'
+import React from 'react'
 
 const MainComponent = styled.main`
   padding-top: ${sizes['desktopLG'].half};
@@ -29,6 +30,7 @@ const DetailCardPage = ({
   common,
   video,
   coloristProjects,
+  preview,
 }) => {
   return (
     <>
@@ -44,9 +46,14 @@ const DetailCardPage = ({
           director={credentials.director}
           dop={credentials.other}
         />
-        <VideoPlayer videoId={video} />
+        <VideoPlayer preview={preview} videoId={video} />
       </MainComponent>
-      <WorksCards cards={coloristProjects} />
+      <WorksCards
+        title={`${
+          credentials.colorist?.split(' ')?.[1] || credentials.colorist
+        }’s cases`}
+        cards={coloristProjects}
+      />
       <Footer common={common} pt="xlg" />
     </>
   )
