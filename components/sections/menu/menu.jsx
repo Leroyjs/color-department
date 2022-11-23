@@ -32,7 +32,7 @@ export const Menu = ({ isOpen, props, common }) => {
             title={common.nav_labels.projects}
           />
           <MenuItem link="/team" key="/team" title={common.nav_labels.team} />
-          <MenuItem link="/shop" key="/shop" title={common.nav_labels.shop} />
+          {/*<MenuItem link="/shop" key="/shop" title={common.nav_labels.shop} />*/}
           <MenuItem
             link="/letstalk"
             key="/letstalk"
@@ -42,7 +42,7 @@ export const Menu = ({ isOpen, props, common }) => {
         <MenuMap>
           <GoogleMap
             bootstrapURLKeys={{
-              key: 'AIzaSyD1R1d0uOtMb-qbPF9AW8dklLkbqE5V2D8',
+              key: 'AIzaSyDyLuA6yuEcVbclON5r98coYy8d2seslO4',
             }}
             options={{ styles: mapStyle }}
             defaultCenter={{

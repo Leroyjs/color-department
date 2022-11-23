@@ -27,7 +27,7 @@ export const NavigationBarMap = ({
         <FooterMapWrapper>
           <GoogleMap
             bootstrapURLKeys={{
-              key: 'AIzaSyD1R1d0uOtMb-qbPF9AW8dklLkbqE5V2D8',
+              key: 'AIzaSyDyLuA6yuEcVbclON5r98coYy8d2seslO4',
             }}
             options={{ styles: mapStyle }}
             defaultCenter={{

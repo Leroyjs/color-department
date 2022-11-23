@@ -110,6 +110,7 @@ export const VideoPreview = styled.img`
 export const WrapperPlayer = styled.div`
   position: relative;
   padding-bottom: 56.25%;
+  margin-bottom: 42px;
 `
 
 export const PlayerCss = css`

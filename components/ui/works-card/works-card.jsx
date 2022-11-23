@@ -52,13 +52,13 @@ export const WorksCard = ({
 
 function handleEnter(event) {
   const { target } = event
-  // target.firstChild.load?.()
   target.firstChild.play?.()
 }
 
 function handleLeave(event) {
   const { target } = event
   target.firstChild.pause?.()
+  target.firstChild.load?.()
 }
 
 WorksCard.propTypes = {

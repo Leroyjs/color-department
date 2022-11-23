@@ -12,33 +12,41 @@ export const Stakeholders = ({
 }) => {
   return (
     <Wrapper {...props}>
-      <Item>
-        <CaptionStyled color="white" mb="xxsm">
-          Client
-        </CaptionStyled>
-        <H3 color="white">{client}</H3>
-      </Item>
+      {client && (
+        <Item>
+          <CaptionStyled color="white" mb="xxsm">
+            Client
+          </CaptionStyled>
+          <H3 color="white">{client}</H3>
+        </Item>
+      )}
 
-      <Item>
-        <CaptionStyled color="white" mb="xxsm">
-          Director
-        </CaptionStyled>
-        <H3 color="white">{director}</H3>
-      </Item>
+      {director && (
+        <Item>
+          <CaptionStyled color="white" mb="xxsm">
+            Director
+          </CaptionStyled>
+          <H3 color="white">{director}</H3>
+        </Item>
+      )}
 
-      <Item>
-        <CaptionStyled color="white" mb="xxsm">
-          DOP
-        </CaptionStyled>
-        <H3 color="white">{dop}</H3>
-      </Item>
+      {dop && (
+        <Item>
+          <CaptionStyled color="white" mb="xxsm">
+            DOP
+          </CaptionStyled>
+          <H3 color="white">{dop}</H3>
+        </Item>
+      )}
 
-      <Item>
-        <CaptionStyled color="white" mb="xxsm">
-          Colourist
-        </CaptionStyled>
-        <H3 color="white">{colourist}</H3>
-      </Item>
+      {colourist && (
+        <Item>
+          <CaptionStyled color="white" mb="xxsm">
+            Colourist
+          </CaptionStyled>
+          <H3 color="white">{colourist}</H3>
+        </Item>
+      )}
     </Wrapper>
   )
 }
