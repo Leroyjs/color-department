@@ -38,9 +38,11 @@ const Home = ({
           promo_hints={promo_hints}
         />
         <PartnersLine partners={clients} />
-        <Slider slides={slides} title={title_project} />
+        {slides?.length && <Slider slides={slides} title={title_project} />}
         <AwardMainTextBlock mt="xlg" px="md" />
-        <Popovers options={awards} title="Our Awards" isAboutImg={false} />
+        {awards?.length && (
+          <Popovers options={awards} title="Our Awards" isAboutImg={false} />
+        )}
       </main>
       <Footer common={common} pt="xlg" />
     </>
@@ -51,8 +53,9 @@ export default Home
 
 export async function getServerSideProps(context) {
   const data = await getContent('home')
+  const projectsRes = await getContent('projects')
 
-  if (!data) {
+  if (!data || !projectsRes) {
     return {
       redirect: {
         destination: '/',
@@ -68,11 +71,10 @@ export async function getServerSideProps(context) {
     title_project,
     promo_video,
     clients,
-    projects,
     common,
   } = data
 
-  const slides = getSlides(projects)
+  const slides = getSlides(projectsRes.data.projects)
   const awards = getAwards(data.awards)
 
   return {

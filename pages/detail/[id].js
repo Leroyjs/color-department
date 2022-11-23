@@ -48,12 +48,14 @@ const DetailCardPage = ({
         />
         <VideoPlayer preview={preview} videoId={video} />
       </MainComponent>
-      <WorksCards
-        title={`${
-          credentials.colorist?.split(' ')?.[1] || credentials.colorist
-        }’s cases`}
-        cards={coloristProjects}
-      />
+      {coloristProjects?.length && (
+        <WorksCards
+          title={`${
+            credentials.colorist?.split(' ')?.[1] || credentials.colorist
+          }’s cases`}
+          cards={coloristProjects}
+        />
+      )}
       <Footer common={common} pt="xlg" />
     </>
   )

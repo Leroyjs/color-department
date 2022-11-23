@@ -31,8 +31,9 @@ export function getOptionsByLabels(data = []) {
 }
 
 export function getSlides(projects) {
-  return projects.map(
-    ({ id, title, preview, client, colorist, short_video }) => {
+  return projects
+    .filter(({ show_in_favorite }) => Boolean(show_in_favorite))
+    .map(({ id, title, preview, client, colorist, short_video }) => {
       return {
         id,
         title,
@@ -41,8 +42,7 @@ export function getSlides(projects) {
         colourist: colorist,
         video: short_video,
       }
-    }
-  )
+    })
 }
 
 export function getAwards(awards) {

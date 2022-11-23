@@ -18,18 +18,23 @@ export const WorksCards = ({ title, cards }) => {
         </WorksTitle>
       )}
       <GridWrapper>
-        {cards.map((card) => (
-          <WorksCard
-            firstTitle={card.title?.substring(0, 16)}
-            secondTitle={'see more'}
-            author={card?.client || card?.credentials?.client || ''}
-            year={card.year}
-            preview={card.preview}
-            video={card.short_video}
-            key={card.firstTitle}
-            href={`/detail/${card.id}`}
-          />
-        ))}
+        {cards
+          .sort(
+            ({ sort_order: sortOrderA }, { sort_order: sortOrderB }) =>
+              sortOrderA - sortOrderB
+          )
+          .map((card) => (
+            <WorksCard
+              firstTitle={card.title?.substring(0, 16)}
+              secondTitle={'see more'}
+              author={card?.client || card?.credentials?.client || ''}
+              year={card.year}
+              preview={card.preview}
+              video={card.short_video}
+              key={card.firstTitle}
+              href={`/detail/${card.id}`}
+            />
+          ))}
       </GridWrapper>
     </WorksWrapper>
   )
