@@ -13,7 +13,13 @@ import {
   Slider,
 } from 'components'
 import { colors } from 'styles'
-import { getAvatars, getContent, getEmployeeModal, getSlides } from '../utils'
+import {
+  getAvatars,
+  getContent,
+  getEmployeeModal,
+  getSlides,
+  getSlidesTeam,
+} from '../utils'
 
 const Team = ({
   common,
@@ -113,7 +119,7 @@ export async function getServerSideProps(context) {
       avatars: getAvatars(Object.entries(employees)),
       title_team,
       subtitle_project,
-      slides: getSlides(projects),
+      slides: getSlidesTeam(projects),
     },
   }
 }

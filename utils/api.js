@@ -45,6 +45,21 @@ export function getSlides(projects) {
     })
 }
 
+export function getSlidesTeam(projects) {
+  return projects.map(
+    ({ id, title, preview, client, colorist, short_video }) => {
+      return {
+        id,
+        title,
+        preview,
+        client: client,
+        colourist: colorist,
+        video: short_video,
+      }
+    }
+  )
+}
+
 export function getAwards(awards) {
   return awards.map(({ label, icon, project }) => {
     return {
