@@ -93,8 +93,9 @@ const Team = ({
 
 export async function getServerSideProps(context) {
   const data = await getContent('team')
+  const projectsRes = await getContent('projects')
 
-  if (!data) {
+  if (!data || !projectsRes) {
     return {
       redirect: {
         destination: '/',
@@ -108,8 +109,8 @@ export async function getServerSideProps(context) {
     subtitle_project,
     common,
     employees,
-    projects,
   } = data
+
   return {
     props: {
       common,
@@ -119,7 +120,7 @@ export async function getServerSideProps(context) {
       avatars: getAvatars(Object.entries(employees)),
       title_team,
       subtitle_project,
-      slides: getSlidesTeam(projects),
+      slides: getSlides(projectsRes.data.projects),
     },
   }
 }

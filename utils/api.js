@@ -33,6 +33,10 @@ export function getOptionsByLabels(data = []) {
 export function getSlides(projects) {
   return projects
     .filter(({ show_in_favorite }) => Boolean(show_in_favorite))
+    .sort(
+      ({ sort_order: sortOrderA }, { sort_order: sortOrderB }) =>
+        sortOrderA - sortOrderB
+    )
     .map(({ id, title, preview, client, colorist, short_video }) => {
       return {
         id,

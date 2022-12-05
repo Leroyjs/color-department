@@ -60,7 +60,7 @@ export const DetailCardModal = ({
     </Wrapper>
     {projects?.length && (
       <WorksCards
-        title={`${name?.split(' ')?.[1] || name}’s cases`}
+        title={`${name?.split(' ')?.[0] || name}’s cases`}
         cards={projects}
       />
     )}

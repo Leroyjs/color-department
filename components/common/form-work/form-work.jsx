@@ -96,7 +96,7 @@ export const FormWork = withFormProvider(
               name="phone"
               isFullWidth
               title="PLEASE CONTACT ME AT*"
-              propsInput={{ placeholder: 'My e-mail or number phone' }}
+              propsInput={{ placeholder: 'My e-mail or phone number' }}
             />
           </FormColumnLeft>
           <FormColumnRight>

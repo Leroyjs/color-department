@@ -51,7 +51,7 @@ const DetailCardPage = ({
       {coloristProjects?.length && (
         <WorksCards
           title={`${
-            credentials.colorist?.split(' ')?.[1] || credentials.colorist
+            credentials.colorist?.split(' ')?.[0] || credentials.colorist
           }’s cases`}
           cards={coloristProjects}
         />
@@ -68,11 +68,14 @@ export async function getServerSideProps(context) {
     const {
       data: { projects },
     } = await getContent('projects')
-    const data = await getContent(`projects/${context.params.id}`)
+    const currentId = context.params.id
+    const data = await getContent(`projects/${currentId}`)
     const currentColorist = data.credentials?.colorist
 
     const coloristProjects = projects
-      .filter(({ colorist }) => currentColorist === colorist)
+      .filter(
+        ({ colorist, id }) => currentColorist === colorist && currentId != id
+      )
       ?.slice(0, 4)
 
     return {

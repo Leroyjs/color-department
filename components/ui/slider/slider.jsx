@@ -156,7 +156,11 @@ const SliderWithoutCursor = ({
                 <ContentFooter>
                   <LeftCol className="desktop">
                     <CaptionCopyright color="white" mb="xxsm">
-                      Client
+                      {
+                        slides.map(({ client }) =>
+                          Boolean(client?.trim()) ? 'Client' : null
+                        )[currentSlide]
+                      }
                     </CaptionCopyright>
                     <CopyrightList>
                       {slides.map(({ client }, index) => (
@@ -172,7 +176,11 @@ const SliderWithoutCursor = ({
                   </LeftCol>
                   <RightCol className="desktop">
                     <CaptionCopyright color="white" mb="xxsm">
-                      Colourist
+                      {
+                        slides.map(({ colourist }) =>
+                          Boolean(colourist?.trim()) ? 'Colorist' : null
+                        )[currentSlide]
+                      }
                     </CaptionCopyright>
                     <CopyrightList>
                       {slides.map(({ colourist }, index) => (
@@ -199,7 +207,11 @@ const SliderWithoutCursor = ({
         <ContentFooterPhone px="md">
           <LeftCol>
             <CaptionCopyright color="white" mb="xxsm">
-              Client
+              {
+                slides.map(({ client }) =>
+                  Boolean(client?.trim()) ? 'Client' : null
+                )[currentSlide]
+              }
             </CaptionCopyright>
             <CopyrightList>
               {slides.map(({ client }, index) => (
@@ -215,7 +227,11 @@ const SliderWithoutCursor = ({
           </LeftCol>
           <RightCol>
             <CaptionCopyright color="white" mb="xxsm">
-              Colourist
+              {
+                slides.map(({ colourist }) =>
+                  Boolean(colourist?.trim()) ? 'Colorist' : null
+                )[currentSlide]
+              }
             </CaptionCopyright>
             <CopyrightList>
               {slides.map(({ colourist }, index) => (

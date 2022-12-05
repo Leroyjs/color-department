@@ -42,7 +42,7 @@ export const Stakeholders = ({
       {colourist && (
         <Item>
           <CaptionStyled color="white" mb="xxsm">
-            Colourist
+            Colorist
           </CaptionStyled>
           <H3 color="white">{colourist}</H3>
         </Item>

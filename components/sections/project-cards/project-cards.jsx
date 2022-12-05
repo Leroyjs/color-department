@@ -74,7 +74,7 @@ export const ProjectCards = ({ projects, categories, genres, colourists }) => {
         />
         <DropDown
           mb="md"
-          title="All genreies"
+          title="All genres"
           onChange={onChangeFilter(setCurrentGenre)}
           options={genres}
           value={currentGenre}
@@ -82,7 +82,7 @@ export const ProjectCards = ({ projects, categories, genres, colourists }) => {
         <ColouristFilter>
           <DropDown
             mb="md"
-            title="All colourists"
+            title="All colorists"
             onChange={onChangeFilter(setCurrentColourist)}
             options={colourists}
             value={currentColourist}
@@ -100,7 +100,7 @@ export const ProjectCards = ({ projects, categories, genres, colourists }) => {
         </ResetBtnH3>
       </DropDownsWrapper>
       <WorksCards cards={cards} />
-      <MoreWrapper isSeeAll={cards?.length <= amountOfVailableCards} mt="md">
+      <MoreWrapper isSeeAll={cards?.length < amountOfVailableCards} mt="md">
         <ButtonEllipse onClick={showMore}>More</ButtonEllipse>
       </MoreWrapper>
       <NotFound mt="md" isNotFound={isNotFound}>
