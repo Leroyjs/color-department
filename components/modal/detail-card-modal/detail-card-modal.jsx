@@ -19,6 +19,23 @@ import {
 } from './detail-card-modal.style'
 import Link from 'next/link'
 
+function shuffle(array) {
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex
+
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex)
+    currentIndex -= 1
+
+    temporaryValue = array[currentIndex]
+    array[currentIndex] = array[randomIndex]
+    array[randomIndex] = temporaryValue
+  }
+
+  return array
+}
+
 export const DetailCardModal = ({
   isOpen,
   setOpen,
@@ -61,7 +78,7 @@ export const DetailCardModal = ({
     {projects?.length && (
       <WorksCards
         title={`${name?.split(' ')?.[0] || name}’s cases`}
-        cards={projects}
+        cards={shuffle(projects)}
       />
     )}
   </ModalWrapper>

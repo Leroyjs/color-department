@@ -33,15 +33,12 @@ export const WorksCard = ({
       onMouseLeave={handleLeave}
     >
       <VideoBackground preview={preview} video={video} ref={videoRef} />
-
-      <CardTitle
-        wrapperProps={{ className: CardTitleWrapper }}
-        data-default={firstTitle}
-        data-hover={secondTitle || firstTitle}
-      >
-        {firstTitle}
+      <CardTitle wrapperProps={{ className: CardTitleWrapper }}>
+        <div className="inner-card-title">
+          <span dangerouslySetInnerHTML={{ __html: firstTitle }}></span>
+          <span> {secondTitle || firstTitle}</span>
+        </div>
       </CardTitle>
-
       <CardFooter>
         <CardCaption color="white">{author}</CardCaption>
         <CardCaption color="white">{year}</CardCaption>

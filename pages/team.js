@@ -33,6 +33,7 @@ const Team = ({
 }) => {
   const [isOpen, setOpen] = useState(false)
   const [currentModalId, setCurrentModalId] = useState(-1)
+
   return (
     <>
       <Preloader running_line={running_line} />

@@ -18,18 +18,46 @@ export const CardTitle = styled(H2)`
   text-align: center;
   overflow: hidden;
   display: block;
-  color: transparent;
+  color: white;
   content: 'content';
   line-height: 1.25em;
+  max-height: 2.5em;
 
-  &:after,
+  .inner-card-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    transition: transform 0.3s;
+  }
+
+  span {
+    &:first-of-type {
+    }
+
+    &:last-of-type {
+      ${({ theme }) => getCurrentColorStyles('primary', theme)}
+      position: absolute;
+      top: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  /* &:after,
   &:before {
     position: absolute;
     left: 0;
     text-align: inherit;
-    top: 0;
+    bottom: 0;
     min-width: 100%;
-    white-space: nowrap;
+    max-height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     content: attr(data-default);
     transform: translateZ(0);
     transition: transform 0.35s;
@@ -39,8 +67,9 @@ export const CardTitle = styled(H2)`
   &:after {
     transform: translateY(100%) translateZ(0);
     content: attr(data-hover);
+    height: 100%;
     ${({ theme }) => getCurrentColorStyles('primary', theme)}
-  }
+  } */
 
   @media screen and (max-width: ${breakpointsWidth.tabletSM}) {
     text-align: left;
@@ -64,14 +93,8 @@ export const CardWrapper = styled.a`
   ${applyPaddings};
 
   &:hover {
-    ${CardTitle} {
-      &:after {
-        transform: translateY(0%);
-      }
-
-      &:before {
-        transform: translateY(-100%);
-      }
+    .inner-card-title {
+      transform: translateY(-100%);
     }
 
     ${CardCaption} {
