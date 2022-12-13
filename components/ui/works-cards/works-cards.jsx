@@ -25,7 +25,7 @@ export const WorksCards = ({ title, cards }) => {
           )
           .map((card) => (
             <WorksCard
-              firstTitle={'Adidas <br/> Run For The Oceans'}
+              firstTitle={card.title}
               secondTitle={'see more'}
               author={card?.client || card?.credentials?.client || ''}
               year={card.year}

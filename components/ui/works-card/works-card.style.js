@@ -33,9 +33,6 @@ export const CardTitle = styled(H2)`
   }
 
   span {
-    &:first-of-type {
-    }
-
     &:last-of-type {
       ${({ theme }) => getCurrentColorStyles('primary', theme)}
       position: absolute;
