@@ -37,7 +37,7 @@ export const CompanyInfo = ({
       </YearInfoMobile>
       <AdditionInfo>
         <a
-          href="https://instagram.com/friendsdesigndepartment?igshid=YmMyMTA2M2Y="
+          href="https://designdepartment.ru/"
           target="_blank"
           rel="noopener noreferrer"
         >

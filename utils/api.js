@@ -37,6 +37,10 @@ export function getSlides(projects) {
       ({ sort_order: sortOrderA }, { sort_order: sortOrderB }) =>
         sortOrderA - sortOrderB
     )
+    .sort(
+      ({ sort_in_favorite: sortOrderA }, { sort_in_favorite: sortOrderB }) =>
+        sortOrderA - sortOrderB
+    )
     .map(({ id, title, preview, client, colorist, short_video }) => {
       return {
         id,
