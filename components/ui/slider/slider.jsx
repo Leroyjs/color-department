@@ -154,7 +154,15 @@ const SliderWithoutCursor = ({
                   <AllSlides>{slides.length}</AllSlides>
                 </NavFooterPhone>
                 <ContentFooter>
-                  <LeftCol className="desktop">
+                  <LeftCol
+                    className="desktop"
+                    central={
+                      slides.map(
+                        ({ colourist, client }) =>
+                          !colourist?.trim() || !client?.trim()
+                      )[currentSlide]
+                    }
+                  >
                     <CaptionCopyright color="white" mb="xxsm">
                       {
                         slides.map(({ client }) =>
@@ -174,7 +182,15 @@ const SliderWithoutCursor = ({
                       ))}
                     </CopyrightList>
                   </LeftCol>
-                  <RightCol className="desktop">
+                  <RightCol
+                    className="desktop"
+                    central={
+                      slides.map(
+                        ({ colourist, client }) =>
+                          !colourist?.trim() || !client?.trim()
+                      )[currentSlide]
+                    }
+                  >
                     <CaptionCopyright color="white" mb="xxsm">
                       {
                         slides.map(({ colourist }) =>

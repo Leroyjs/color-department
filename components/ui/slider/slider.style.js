@@ -293,6 +293,9 @@ export const LeftCol = styled.div`
   flex-direction: column;
   align-items: flex-end;
 
+  ${({ central }) =>
+    central && 'transform: translateX(-50%); text-align: center;'};
+
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     transform: translateX(calc(-100% - ${getVW(20)}));
   }
@@ -320,6 +323,9 @@ export const RightCol = styled.div`
   bottom: 0;
   right: 50%;
   transform: translateX(calc(100% + 20px));
+
+  ${({ central }) =>
+    central && 'transform: translateX(50%); text-align: center;'};
 
   @media screen and (min-width: ${breakpointsWidth.desktopLG}) {
     transform: translateX(calc(100% + ${getVW(20)}));
